@@ -9,7 +9,8 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T16:26:04Z
-content_hash: "sha256:0601ae76bdcaea6e11fb28ce671179058ac71a486239c20e55288a6dfb7de704"
+content_hash: "sha256:b2ddf83fcde350175931e066c5814b41e5555bc69e6ad6dc0dd9a375b4d61db6"
+blocks: [OJ-fgc3]
 ---
 
 ## Description
@@ -55,9 +56,10 @@ status: new
 
 
 ## History
-
+- 2026-10-17T16:26:05Z dep_added: blocks OJ-fgc3
 
 ## Links
 - Parent: [[OJ-fnna]]
+- Blocks: [[OJ-fgc3]]
 
 ## Comments
