@@ -8,8 +8,8 @@ labels: [contest, backend, evidence, rejected]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:57:58Z
-content_hash: "sha256:37e4b08d0c2c73b9bdf5bae38b396e983412e8ebb151fa9863c10c578147d044"
+updated_at: 2026-10-17T17:00:25Z
+content_hash: "sha256:b01458b535ef0aae321c90e0a99159b5d6d6dc7e6ca4e9578b6dd26de37305a7"
 blocks: [OJ-vwzl, OJ-mbn5]
 assignee: dev-OJ-i6n6
 follows: [OJ-ef2q]
@@ -134,6 +134,53 @@ status: new
 [x] AC #3: PASS — explicit owner-gated live-smoke blocker is recorded instead of fabricated execution evidence.
 [x] AC #4: PASS — changed-file credential scan found zero matches.
 
+## nd_contract
+status: delivered
+
+### evidence
+- Rework commit SHA: 84a0c59b90026a3c111ba0ef07dea5fc542a3df1 on story/OJ-i6n6; no push.
+- PM defect fixed: ComfySdkRunner now passes resolved_api_key—not the original api_key argument—to the official Comfy client.
+- Regression coverage proves explicit api_key and environment COMFY_API_KEY forwarding, while retaining both fail-closed tests.
+- No credential, GPU/compute, deployment call, or publication was used.
+
+### proof
+- [x] AC #1: PASS — explicit and environment API-key forwarding are regression-tested.
+- [x] AC #2: PASS — missing-key and missing-base-url fail-closed coverage still passes.
+- [x] AC #3: PASS — full pytest, pip check, and credential-shaped scan pass.
+- [x] AC #4: PASS — rework evidence records commands and outputs without credential exposure.
+
+## Implementation Evidence
+
+- Commit SHA: `84a0c59b90026a3c111ba0ef07dea5fc542a3df1` on `story/OJ-i6n6`; no push.
+- Implementation: `src/openjutsu/comfy_sdk_runner.py` passes `resolved_api_key` to `Comfy`.
+- Forwarding regressions: `tests/test_comfy_sdk_runner.py::test_resolved_api_key_is_forwarded_to_comfy`.
+- Retained fail-closed regressions: missing API key and missing deployment URL tests.
+- Evidence: `docs/evidence/OJ-i6n6-comfy-sdk.md`, “PM rework — 2026-10-17”.
+
+### CI/Test Results
+
+- Targeted tests: `7 passed in 0.02s`.
+- Full test suite: `15 passed in 3.62s`.
+- Dependency health: `No broken requirements found.`
+- Credential-shaped scan over rework files: `0 matches`; ripgrep exit status `1`, its expected no-match status.
+
+Commands run:
+- `../../../.venv/bin/python -m pytest tests/test_comfy_sdk_runner.py tests/test_config.py -q`
+- `../../../.venv/bin/python -m pytest -q`
+- `../../../.venv/bin/python -m pip check`
+- `rg -n --pcre2 -i '<credential-shaped-pattern>' docs/evidence/OJ-i6n6-comfy-sdk.md src/openjutsu/comfy_sdk_runner.py tests/test_comfy_sdk_runner.py`
+- `git diff --check`
+- `git commit -m 'Forward resolved Comfy SDK credentials'`
+- `pvg story deliver OJ-i6n6`
+- `pvg story verify-delivery OJ-i6n6`
+
+Summary: Corrected environment/explicit credential forwarding to the official Comfy SDK client, added parameterized forwarding regressions, retained fail-closed coverage, and updated evidence without credentials, compute spend, publication, or push.
+
+### AC Verification
+[x] AC #1: PASS — resolved explicit/environment key is forwarded to Comfy.
+[x] AC #2: PASS — explicit and environment forwarding paths are covered by regression tests.
+[x] AC #3: PASS — missing-key and missing-base-url fail-closed tests remain passing.
+[x] AC #4: PASS — full tests, pip check, credential-shaped scan, scoped commit, evidence update, and delivery transition are recorded.
 
 ## nd_contract
 status: rejected
