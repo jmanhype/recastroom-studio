@@ -8,8 +8,8 @@ labels: [contest, qc, rights, evidence]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:31:40Z
-content_hash: "sha256:306d4c2a2c42fc05497ec65a11f21f9929b10952d11a6d0b485c22733ad1eeaa"
+updated_at: 2026-10-17T16:42:58Z
+content_hash: "sha256:6809b5c591150ae96c159a7658e6ab525e20d0bdbb884724ebf31e6972919161"
 blocks: [OJ-fgc3, OJ-mbn5]
 assignee: dev-OJ-ef2q
 ---
@@ -126,7 +126,25 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: delivered
 
+### evidence
+- Commit on `story/OJ-ef2q` (no push): `d4299eae5275571e83925a5cd41ae0674902d2fa`.
+- Imported 44 approved keeper artifacts (11 finals, 11 compares, 11 contacts, 11 Qwen reports) plus 4 provenance receipts under `docs/evidence/slate/`.
+- Machine manifest: `docs/evidence/slate/manifest.json`; verifier: `tools/verify_keeper_evidence.py`.
+- Immutable verifier result: `PASS`, `keeper_count=11`, `artifact_count=48`, manifest SHA-256 `5e3220dbce12bab2f792975abc96359e389b6af2a0b731731d6e6ede34f780cf`.
+- Controlled mutation proof: `docs/evidence/slate-verification.md`; temporary copy changed `cameramove_jay_stretch_qwen.md` byte `[-2] XOR 0x01`, original SHA-256 `853edbf8b0a37fa46e7aec03bdc6302fdee5791189cfcef2a4482159288c6882`, mutated SHA-256 `2df22b65b3ae39a29b6f011fdaca263428bcc0afb9cf66923e93f6afdde9f5e8`, and verification failed on `sha256 changed`.
+- Rights/privacy scan found 0 private/unconsented entries among all 48 manifest entries and no private film/TV, credential, URL, or absolute user-path markers in the staged textual evidence.
+- Scoped tests: `/opt/homebrew/bin/pytest tests/test_evidence.py -q` → `3 passed in 3.16s`.
+- Full tests: `/opt/homebrew/bin/pytest -q` → `10 passed in 3.16s`.
+- Documentation: `docs/KEEPER_EVIDENCE.md`; importer: `tools/build_keeper_evidence.py`; mutation self-test: `tools/selftest_keeper_evidence.py`.
+
+### proof
+- [x] AC #1: Exactly 11 intended keepers and their nine format-concept labels are enumerated; rejected anime variant is excluded.
+- [x] AC #2: Every one of 48 imported entries has rights provenance, recorded operator/Jay consent, byte size, and SHA-256; all finals/compares/contacts have media probes.
+- [x] AC #3: Manifest verification passes on the immutable pack and fails after a controlled one-byte mutation in a temporary copy.
+- [x] AC #4: Each keeper traces to its included Qwen report and final all-11 human approval receipt.
 
 ## History
 - 2026-10-17T16:26:05Z dep_added: blocks OJ-fgc3
