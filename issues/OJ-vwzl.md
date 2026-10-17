@@ -9,11 +9,11 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T19:15:24Z
-content_hash: "sha256:6ab456beab08325c16cb1fe9ba8d6917dca6d5a25a89492c42eb5d4a6d34df04"
+content_hash: "sha256:5798e4f4417217b0eaf4fb9669caa4228dd6a017f40cdc90f24c95865193807d"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
 assignee: dev-OJ-vwzl
-follows: [OJ-i6n6]
+follows: [OJ-i6n6, OJ-ef2q]
 ---
 
 ## Description
@@ -154,11 +154,13 @@ status: delivered
 - 2026-10-17T18:55:24Z status: open -> in_progress
 - 2026-10-17T18:55:24Z auto-follows: linked to predecessor OJ-i6n6
 - 2026-10-17T18:55:24Z claimed by dev-OJ-vwzl
+- 2026-10-17T19:15:24Z status: in_progress -> in_progress
+- 2026-10-17T19:15:24Z auto-follows: linked to predecessor OJ-ef2q
 
 ## Links
 - Parent: [[OJ-fnna]]
 - Blocks: [[OJ-2t3g]], [[OJ-mbn5]]
 - Was blocked by: [[OJ-i6n6]]
-- Follows: [[OJ-i6n6]]
+- Follows: [[OJ-i6n6]], [[OJ-ef2q]]
 
 ## Comments

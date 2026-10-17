@@ -9,11 +9,11 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T16:57:33Z
-content_hash: "sha256:6b608b980c176fa1b819e462a3631967ffd9ab3f6cfd862b0eca782fa04be69d"
+content_hash: "sha256:4b5227d8f1f2706ccc6af12fa4b2ccd3603c033259d014ede3cd0a4033091219"
 assignee: dev-OJ-ef2q
 closed_at: 2026-10-17T16:56:45Z
 close_reason: "Accepted: independently reproduced full pytest (10 passed), manifest verification (11 keepers / 48 artifacts), controlled byte-mutation failure, rights flags private_ip=false and third_party_film_tv=false, and credential-shaped scan with zero matches. Commit d4299ea was inspected and worktree was clean."
-led_to: [OJ-i6n6, OJ-fgc3]
+led_to: [OJ-i6n6, OJ-fgc3, OJ-vwzl]
 ---
 
 ## Description
@@ -269,7 +269,7 @@ status: delivered
 
 ## Links
 - Parent: [[OJ-fnna]]
-- Led to: [[OJ-i6n6]], [[OJ-fgc3]]
+- Led to: [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]]
 
 ## Comments
 
