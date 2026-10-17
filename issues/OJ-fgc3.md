@@ -8,8 +8,8 @@ labels: [contest, release, packaging, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T19:15:12Z
-content_hash: "sha256:fb9a8686705cccc8f525cf95fee84d4464971e089e82be92e6a11bdc51edbc7a"
+updated_at: 2026-10-17T19:15:13Z
+content_hash: "sha256:17ca665ec22099463cb23ec5cf99f2d166a3118364552df7144ca8e4291208d4"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
@@ -125,6 +125,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-17.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## nd_contract
 status: delivered
 
