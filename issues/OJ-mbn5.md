@@ -8,8 +8,8 @@ labels: [contest, compliance, capstone]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
-updated_at: 2026-10-17T21:18:45Z
-content_hash: "sha256:03b0a2873bc2cdf239bc1ca9c9dafaa1e369f6f6f708c6f5f2cb00aae3669e03"
+updated_at: 2026-10-17T21:24:32Z
+content_hash: "sha256:c4ef2b6d1db96023fa881048548470885c214cfa758124e2c42581a71d13b269"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 assignee: dev-OJ-mbn5
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
@@ -124,7 +124,27 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: delivered
 
+### evidence
+- Commit: eb626d244c181e0cd406fc3b2b856a87b3030c92 on story/OJ-mbn5; clean worktree. No push, publication, submission, credentials, network, GPU or cloud operations.
+- Gate-selected source commit: fb1e745 (full revision/tree in docs/evidence/OJ-mbn5-final-gate/gate.json). Final commit adds evidence and corrects packet's local archive location only; not claimed as same archive.
+- python -m pytest -q: 31 passed, 1 Starlette deprecation warning in 9.27s. Extracted-package full suite also passed; output in gate.json.
+- python -m pip check: No broken requirements found. Repeated in extracted package.
+- pvg verify changed source/docs/evidence: VERIFY: PASSED (2 files scanned, 0 issues). git diff --check: exit 0. Credential/local-user-path scan changed source/docs/evidence: 0 matches, rg exit 1.
+- Final gate exited 1, eligible_to_submit=false. Existing release audit rejects tests/test_local_trial.py synthetic absolute-user-path and credential-like literals. DISCOVERED_BUG.md records this predecessor OJ-2t3g regression; dispatcher explicitly requested separate repair, no scanner waiver.
+- Public package built twice deterministically at work/final-gate-v2/public-package.zip; SHA-256 aa86e002eb549b55e70094e4bd58e3059c28133109866830279e2c50f8f900b7. This failing candidate is NOT approved for release.
+- Gate evidence SHA-256 aed021538b62093ecfb6fbfc82777cf47b094423ada115d248fef22ee9f208f8.
+- Actual named public demo probe: 108.052 seconds, 1152x768, 24fps H264/MP4, AAC stereo 48000Hz, 24873113 bytes; SHA-256 7cbe824a3e7dc4ff515c23fe1672630e938e2520e9b7c3686c87fa90a4db089d. No private media inspected.
+- Keeper verification: 11 keepers/48 artifacts; mutation selftest rejects changed byte and preserves committed pack. Evidence: docs/evidence/OJ-mbn5-final-gate/keeper-selftest.txt.
+- OWNER_BLOCKED: public repo/tag, public demo/final URL card, social post, Typeform, optional deployment, exact-demo timeline/audio rights and third-party model licenses, official live SDK smoke, fresh environment install/launch. No URLs fabricated; no risk waiver promoted to pass.
+
+### proof
+- [x] AC #1: Every official requirement has a concrete evidence citation and PASS/OWNER_BLOCKED/FAIL row in docs/evidence/OJ-mbn5-final-gate/gate.json; final submission remains ineligible.
+- [x] AC #2: Actual demo duration/resolution/container/audio/hash independently measured; bounded rights-clean keeper provenance cited in demo-provenance.md. Exact-demo composition/audio clearance explicitly OWNER_BLOCKED, not fabricated.
+- [x] AC #3: Public package built/hash-verified locally, audit executed and FAIL retained; keepers verified; full package tests and pip check pass. Public URLs, clean install and optional deployment remain owner-blocked, never asserted verified.
+- [x] AC #4: docs/FINAL_SUBMISSION_PACKET.md provides explicit unpublished owner-only publication/X/Typeform/local-VPN runbooks, pre-publication stop, verification, timeout handling, rollback and do-not-submit rule.
 
 ## History
 - 2026-10-17T16:26:05Z dep_added: blocked_by OJ-i6n6
