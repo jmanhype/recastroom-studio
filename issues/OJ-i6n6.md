@@ -8,8 +8,8 @@ labels: [contest, backend, evidence]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:44:03Z
-content_hash: "sha256:f39e46bd261a2d0aaafe8e303bcd5858f70ee8c6b3d12bd5e906edd08621d05f"
+updated_at: 2026-10-17T16:44:33Z
+content_hash: "sha256:8a93004bad285b4dc8b7e36499d1c9970ec0ee974f78dd252f8e3d72ad13a681"
 blocks: [OJ-vwzl, OJ-mbn5]
 assignee: dev-OJ-i6n6
 ---
@@ -126,6 +126,47 @@ status: new
 
 
 ## Notes
+
+## nd_contract
+status: delivered
+
+### evidence
+- Commit SHA: dc7454771ecb249edd624fb36739fe7a98804d5e on story/OJ-i6n6; no push.
+- Decision/category evidence: docs/evidence/OJ-i6n6-comfy-sdk.md.
+- Owner-gated live-smoke blocker is explicit; no credential, GPU/compute, deployment call, or publication was used.
+
+### proof
+- [x] AC #1: PASS — primary-source SDK/local/open-weights decision and category impact are documented.
+- [x] AC #2: PASS — missing key/deployment tests fail closed before client construction with machine-readable JSON codes.
+- [x] AC #3: PASS — explicit owner-gated blocker replaces an unavailable live smoke without fabricated identifiers or hashes.
+- [x] AC #4: PASS — changed-file secret scan found zero matches.
+
+## Implementation Evidence
+
+- Commit SHA: `dc7454771ecb249edd624fb36739fe7a98804d5e` on `story/OJ-i6n6`; no push.
+- Decision record: `docs/evidence/OJ-i6n6-comfy-sdk.md`.
+- Fail-closed implementation: `src/openjutsu/comfy_sdk_runner.py`; configuration surface: `src/openjutsu/config.py`.
+- Machine-readable fail-closed tests: `tests/test_comfy_sdk_runner.py`; configuration regression: `tests/test_config.py`.
+- No owner-provided deployment/key was supplied; no credential read, live deployment request, GPU/compute spend, or publication was performed.
+
+### CI/Test Results
+
+- Targeted tests: `5 passed in 0.02s`.
+- Full test suite: `10 passed in 0.02s`.
+- Dependency health: `No broken requirements found.`
+- Secret scan: 0 matches over every changed file; `rg` exit status 1 is its expected no-match status.
+
+Commands run:
+- `../../../.venv/bin/python -m pytest tests/test_comfy_sdk_runner.py tests/test_config.py -q`
+- `../../../.venv/bin/python -m pytest -q`
+- `../../../.venv/bin/python -m pip check`
+- `rg -n --pcre2 -i '<credential-pattern>' <all changed files>` (exact command in evidence file)
+- `git diff --check`
+- `git commit -m 'Verify Comfy SDK fail-closed configuration'`
+- `pvg story verify-delivery OJ-i6n6`
+- `pvg story deliver OJ-i6n6`
+
+Summary: Documented the official-SDK versus local/open-weights contest decision, added pre-network machine-readable missing-key/deployment failures, retained the owner-gated live-smoke blocker, and verified tests, dependencies, and secret-free scoped evidence.
 
 ## nd_contract
 status: delivered
