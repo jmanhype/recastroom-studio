@@ -1,16 +1,18 @@
 ---
 id: OJ-2gs4
 title: "Bug: OJ-2t3g synthetic test literals fail public release audit"
-status: open
+status: in_progress
 priority: 0
 type: task
 labels: [release-audit, regression]
 parent: OJ-fnna
 created_at: 2026-10-17T21:36:40Z
 created_by: speed
-updated_at: 2026-10-17T21:36:40Z
-content_hash: "sha256:6fe4741177133fbe49572bb9e28ff69698e243066a982c69e114ad3f524fa556"
+updated_at: 2026-10-17T21:36:57Z
+content_hash: "sha256:b66a5476095faf6b4a26334ee9a4dc5fe32c48af3b66561dd32d61ce53f87ddc"
 blocks: [OJ-mbn5]
+assignee: dev-OJ-2gs4
+follows: [OJ-mbn5]
 ---
 
 ## Description
@@ -103,9 +105,13 @@ status: new
 
 ## History
 - 2026-10-17T21:36:41Z dep_added: blocks OJ-mbn5
+- 2026-10-17T21:36:58Z status: open -> in_progress
+- 2026-10-17T21:36:58Z auto-follows: linked to predecessor OJ-mbn5
+- 2026-10-17T21:36:58Z claimed by dev-OJ-2gs4
 
 ## Links
 - Parent: [[OJ-fnna]]
 - Blocks: [[OJ-mbn5]]
+- Follows: [[OJ-mbn5]]
 
 ## Comments

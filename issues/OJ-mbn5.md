@@ -9,12 +9,13 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:32:26Z
-content_hash: "sha256:5251fab65f750f1a3e7c5ae6d6d0de74313a327009bbafa414230c0b5ecd38a2"
+content_hash: "sha256:075a5a4f45cd070636aa06cf85b21a0cb3a2254fc28924b6255241400584618d"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g, OJ-b71t]
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 closed_at: 2026-10-17T21:32:26Z
 close_reason: "Accepted: final packet is complete and correctly fail-closed"
 blocked_by: [OJ-2gs4]
+led_to: [OJ-2gs4]
 ---
 
 ## Description
@@ -346,6 +347,7 @@ status: delivered
 - Blocked by: [[OJ-2gs4]]
 - Was blocked by: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]], [[OJ-b71t]]
 - Follows: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]]
+- Led to: [[OJ-2gs4]]
 
 ## Comments
 
