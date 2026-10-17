@@ -1,18 +1,17 @@
 ---
 id: OJ-vwzl
 title: "Complete hosted upload-to-output execution"
-status: in_progress
+status: open
 priority: 1
 type: feature
 labels: [contest, app, e2e, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T19:17:51Z
-content_hash: "sha256:14f78e48c0b0a9a53bc3f63c7b5cf469135e0e4d56fbe53156bfca59ad9f3dd1"
+updated_at: 2026-10-17T20:32:50Z
+content_hash: "sha256:94c4cf29249011ff770cc953d33c73854d7f16e4f6b528442712cde05c0b5be1"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
-assignee: dev-OJ-vwzl
 follows: [OJ-i6n6, OJ-ef2q]
 ---
 
@@ -295,6 +294,8 @@ status: delivered
 - 2026-10-17T18:55:24Z claimed by dev-OJ-vwzl
 - 2026-10-17T19:15:24Z status: in_progress -> in_progress
 - 2026-10-17T19:15:24Z auto-follows: linked to predecessor OJ-ef2q
+- 2026-10-17T20:32:50Z status: in_progress -> open
+- 2026-10-17T20:32:50Z released by speed
 
 ## Links
 - Parent: [[OJ-fnna]]
