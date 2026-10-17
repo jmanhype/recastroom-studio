@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T20:52:53Z
-content_hash: "sha256:bdd7c60a7b36457d81fd757df1b40eb0c1b6d4ed5a8a8302bd32a84ee1f5fe9a"
+content_hash: "sha256:c039fb6bdc206ff12354884d6f664e85637b69a6264ed888001bcb2380ef5774"
 was_blocked_by: [OJ-i6n6]
 follows: [OJ-i6n6, OJ-ef2q, OJ-fgc3]
 assignee: dev-OJ-vwzl
@@ -404,3 +404,6 @@ status: delivered
 
 ### 2026-10-17T20:32:50Z speed
 EXPECTED: the delivered E2E path must remain compatible with the accepted public release-candidate gates on current main 91407a9. DELIVERED: deterministic dry_run backend, strict backend registry, rights rejection, SDK fail-closed, API/browser upload-to-output evidence, 19 passing branch tests, pip check, and 12/12 evidence hashes verified. GAP: the branch is based on pre-FGC3 7223c99. Its committed OJ-vwzl evidence and receipt generator expose absolute local paths (/Users/speed and /private/tmp), and the old workflow evidence retains cached private-reference data. Running the accepted tools/audit_release.py against this branch fails; merging it unchanged would regress the accepted public release audit. FIX: merge current main 91407a9 into story/OJ-vwzl, preserve both FGC3 release cleanup and VWZL E2E, sanitize or normalize all committed evidence/receipt paths, regenerate E2E artifacts/receipts on the merged tree, make the filtered public release audit pass, rerun full tests/API/browser E2E, commit, append delivery evidence, and redeliver.
+
+### 2026-10-17T20:52:53Z speed
+Merge receipt: pvg story merge failed because this local repository has no origin remote. Main and story/OJ-vwzl were clean/current, so the accepted story was merged locally with git merge --no-ff. No push occurred.
