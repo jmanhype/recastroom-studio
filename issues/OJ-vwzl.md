@@ -1,18 +1,19 @@
 ---
 id: OJ-vwzl
 title: "Complete hosted upload-to-output execution"
-status: open
+status: in_progress
 priority: 1
 type: feature
 labels: [contest, app, e2e, rejected]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T20:32:51Z
-content_hash: "sha256:7dc2098ebf7a4c7deeafba2b93ca0d0b19ac3226fe2936c6899fdde84f78b91c"
+updated_at: 2026-10-17T20:33:02Z
+content_hash: "sha256:1832765fd6468994be87b12b37f724354f570d079abb88ac85a2b65156ef2187"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
-follows: [OJ-i6n6, OJ-ef2q]
+follows: [OJ-i6n6, OJ-ef2q, OJ-fgc3]
+assignee: dev-OJ-vwzl
 ---
 
 ## Description
@@ -308,12 +309,15 @@ status: delivered
 - 2026-10-17T19:15:24Z auto-follows: linked to predecessor OJ-ef2q
 - 2026-10-17T20:32:50Z status: in_progress -> open
 - 2026-10-17T20:32:50Z released by speed
+- 2026-10-17T20:33:02Z status: open -> in_progress
+- 2026-10-17T20:33:02Z auto-follows: linked to predecessor OJ-fgc3
+- 2026-10-17T20:33:02Z claimed by dev-OJ-vwzl
 
 ## Links
 - Parent: [[OJ-fnna]]
 - Blocks: [[OJ-2t3g]], [[OJ-mbn5]]
 - Was blocked by: [[OJ-i6n6]]
-- Follows: [[OJ-i6n6]], [[OJ-ef2q]]
+- Follows: [[OJ-i6n6]], [[OJ-ef2q]], [[OJ-fgc3]]
 
 ## Comments
 
