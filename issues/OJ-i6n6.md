@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T18:52:21Z
-content_hash: "sha256:ef4aa433df8fbcc3ee27256062692306c2367d572f888d4228d275299fef1779"
+content_hash: "sha256:90cba9d58a211be7275b7e74c7dc34b1089bfc37851b64270c4d815bb0f63de2"
 assignee: dev-OJ-i6n6
 follows: [OJ-ef2q]
 closed_at: 2026-10-17T18:52:21Z
@@ -134,6 +134,16 @@ status: new
 [x] AC #2: PASS — missing key/deployment tests fail closed before SDK client construction with JSON-serializable error codes.
 [x] AC #3: PASS — explicit owner-gated live-smoke blocker is recorded instead of fabricated execution evidence.
 [x] AC #4: PASS — changed-file credential scan found zero matches.
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
 
 
 ## nd_contract
