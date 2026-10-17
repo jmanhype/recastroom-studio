@@ -4,11 +4,11 @@ title: "Package the eleven-workflow rights-clean QC evidence set"
 status: closed
 priority: 1
 type: feature
-labels: [contest, qc, rights, evidence, delivered]
+labels: [contest, qc, rights, evidence, delivered, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:56:45Z
+updated_at: 2026-10-17T16:56:46Z
 content_hash: "sha256:d328c6b1562ce0aca9727c62a668307ca7c6f3a18421d3fb44d6cad28e146fc1"
 assignee: dev-OJ-ef2q
 closed_at: 2026-10-17T16:56:45Z
