@@ -9,12 +9,13 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:32:26Z
-content_hash: "sha256:224a14b51e315a70613509860422cef92f19ed7de0c86b80f9d479ea40d49cde"
+content_hash: "sha256:6bde6cb1fec675866b1c147d1549b1e6a7fe1b58388156c5c8fbf7c229ebca3f"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g, OJ-b71t, OJ-2gs4]
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 closed_at: 2026-10-17T21:32:26Z
 close_reason: "Accepted: final packet is complete and correctly fail-closed"
 led_to: [OJ-2gs4]
+blocked_by: [OJ-v983]
 ---
 
 ## Description
@@ -341,9 +342,11 @@ status: delivered
 - 2026-10-17T21:36:40Z dep_removed: was_blocked_by OJ-b71t
 - 2026-10-17T21:36:41Z dep_added: blocked_by OJ-2gs4
 - 2026-10-17T21:51:20Z dep_removed: was_blocked_by OJ-2gs4
+- 2026-10-17T22:05:49Z dep_added: blocked_by OJ-v983
 
 ## Links
 - Parent: [[OJ-fnna]]
+- Blocked by: [[OJ-v983]]
 - Was blocked by: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]], [[OJ-b71t]], [[OJ-2gs4]]
 - Follows: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]]
 - Led to: [[OJ-2gs4]]
