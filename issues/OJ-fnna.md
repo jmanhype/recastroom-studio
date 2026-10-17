@@ -1,16 +1,14 @@
 ---
 id: OJ-fnna
 title: "Ship the Openjutsu contest production lane"
-status: closed
+status: open
 priority: 0
 type: epic
 labels: [contest, openjutsu, accepted]
 created_at: 2026-10-17T16:25:53Z
 created_by: speed
-updated_at: 2026-10-17T21:32:35Z
-content_hash: "sha256:427d88627216679c2100ebf6f3135e3b3fd07d1d509e3db36097b416bfc4cbde"
-closed_at: 2026-10-17T21:32:35Z
-close_reason: "All stories accepted"
+updated_at: 2026-10-17T21:35:23Z
+content_hash: "sha256:a4c9961b0b37fe4c18aaca4887dbf6302158244eb61e292ee90a830088fb8489"
 ---
 
 ## Description
@@ -49,6 +47,7 @@ status: new
 
 ## History
 - 2026-10-17T21:32:35Z status: open -> closed
+- 2026-10-17T21:35:23Z status: closed -> open (reopened)
 
 ## Links
 
