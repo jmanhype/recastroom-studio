@@ -8,8 +8,8 @@ labels: [contest, release, packaging]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T18:52:56Z
-content_hash: "sha256:a4b8d829366c89addf6480cfbf67c1fc01e8994fab6e5c7d0f2d8e2fbce55ca1"
+updated_at: 2026-10-17T18:55:21Z
+content_hash: "sha256:dcf068a1dcf1d99a4fe9172a9db9191f1de19d288ce7af00402176b50ecf3996"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q]
@@ -143,3 +143,6 @@ status: new
 - Follows: [[OJ-ef2q]]
 
 ## Comments
+
+### 2026-10-17T18:55:21Z speed
+Recovery incident: the first OJ-fgc3 worker disappeared with a large staged, uncommitted worktree. pvg loop recover removed that worktree/branch. Before any Git cleanup, all 77 staged blobs were preserved on local branch recovery/OJ-fgc3-staged-blobs at commit c251db9b2962cfa8b322cfcd33763196e693688b (tree ad6ac72f1681ed5359071d097e867fb52443bea3). A size/hash inventory is at ../oj-fgc3-unreachable-inventory.txt. No object garbage collection was run.
