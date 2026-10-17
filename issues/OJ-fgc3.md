@@ -4,7 +4,7 @@ title: "Prepare the public repository release candidate"
 status: in_progress
 priority: 1
 type: feature
-labels: [contest, release, packaging]
+labels: [contest, release, packaging, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
