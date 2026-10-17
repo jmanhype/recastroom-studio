@@ -1,18 +1,19 @@
 ---
 id: OJ-i6n6
 title: "Verify the official Comfy SDK execution path"
-status: in_progress
+status: closed
 priority: 0
 type: feature
 labels: [contest, backend, evidence, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T17:00:25Z
-content_hash: "sha256:23727140e393da5a38f99f7646b258cdceee90f2350c5791e30a9adcf3960164"
-blocks: [OJ-vwzl, OJ-mbn5]
+updated_at: 2026-10-17T18:52:21Z
+content_hash: "sha256:ef4aa433df8fbcc3ee27256062692306c2367d572f888d4228d275299fef1779"
 assignee: dev-OJ-i6n6
 follows: [OJ-ef2q]
+closed_at: 2026-10-17T18:52:21Z
+close_reason: "Accepted: independently reproduced 15 passing tests, pip check, zero credential-shaped matches, live source-link checks (4 HTTP 200 responses), and a fake-client probe proving COMFY_API_KEY is forwarded as resolved_api_key. Commit 84a0c59 and evidence hash 9b2e3a3c3ae5672c2bf4bf1a7ea67b54afe5af5d01509e432a3009f5eb2568d5 verified. Live SDK spend remains explicitly owner-gated."
 ---
 
 ## Description
@@ -288,10 +289,12 @@ status: delivered
 - 2026-10-17T16:57:58Z auto-follows: linked to predecessor OJ-ef2q
 - 2026-10-17T16:57:58Z claimed by dev-OJ-i6n6
 - 2026-10-17T17:00:25Z status: in_progress -> in_progress
+- 2026-10-17T18:52:21Z status: in_progress -> closed
+- 2026-10-17T18:52:21Z dep_removed: no_longer_blocks OJ-vwzl
+- 2026-10-17T18:52:21Z dep_removed: no_longer_blocks OJ-mbn5
 
 ## Links
 - Parent: [[OJ-fnna]]
-- Blocks: [[OJ-vwzl]], [[OJ-mbn5]]
 - Follows: [[OJ-ef2q]]
 
 ## Comments
