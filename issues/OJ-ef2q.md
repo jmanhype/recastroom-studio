@@ -8,8 +8,8 @@ labels: [contest, qc, rights, evidence, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:56:46Z
-content_hash: "sha256:ed0f45b16562750006fb8bb6cf830c60924dbe0c4c69b6ba0ab504bf5bdd81bb"
+updated_at: 2026-10-17T16:57:33Z
+content_hash: "sha256:1f68f7bab362c81eff17c9a4dab9af1191468ff41804afc3c1573805b38a3f1d"
 assignee: dev-OJ-ef2q
 closed_at: 2026-10-17T16:56:45Z
 close_reason: "Accepted: independently reproduced full pytest (10 passed), manifest verification (11 keepers / 48 artifacts), controlled byte-mutation failure, rights flags private_ip=false and third_party_film_tv=false, and credential-shaped scan with zero matches. Commit d4299ea was inspected and worktree was clean."
@@ -270,3 +270,6 @@ status: delivered
 - Parent: [[OJ-fnna]]
 
 ## Comments
+
+### 2026-10-17T16:57:33Z speed
+Merge receipt: pvg story merge was blocked because this local repository has no origin remote. Verified main and story/OJ-ef2q were current and clean, then performed the accepted-story merge locally with git merge --no-ff. No push occurred.
