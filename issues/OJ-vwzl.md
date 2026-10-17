@@ -1,19 +1,20 @@
 ---
 id: OJ-vwzl
 title: "Complete hosted upload-to-output execution"
-status: in_progress
+status: closed
 priority: 1
 type: feature
 labels: [contest, app, e2e, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T20:52:38Z
-content_hash: "sha256:f72ea8fa5ff539c0d3a9a56e2f928afe3bd7a464c556c8abf81dfe4717a8473c"
-blocks: [OJ-2t3g, OJ-mbn5]
+updated_at: 2026-10-17T20:52:52Z
+content_hash: "sha256:eac8e504842715e29b67747f22e54e3f7f91a51009c5d9ff21f4b15f73230e20"
 was_blocked_by: [OJ-i6n6]
 follows: [OJ-i6n6, OJ-ef2q, OJ-fgc3]
 assignee: dev-OJ-vwzl
+closed_at: 2026-10-17T20:52:52Z
+close_reason: "Accepted: independently reproduced final worktree tests (25 passed), pip check, public filtered-archive tests (25 passed), release audit PASS, public archive API E2E ok, zero local absolute evidence paths, browser completion with all three artifacts, and keeper verifier 11/48. Final commit 5a53569 integrates accepted main and preserves the release gate; no credentials, GPU, publication, or push."
 ---
 
 ## Description
@@ -380,10 +381,12 @@ status: delivered
 - 2026-10-17T20:33:02Z auto-follows: linked to predecessor OJ-fgc3
 - 2026-10-17T20:33:02Z claimed by dev-OJ-vwzl
 - 2026-10-17T20:52:38Z status: in_progress -> in_progress
+- 2026-10-17T20:52:52Z status: in_progress -> closed
+- 2026-10-17T20:52:52Z dep_removed: no_longer_blocks OJ-2t3g
+- 2026-10-17T20:52:52Z dep_removed: no_longer_blocks OJ-mbn5
 
 ## Links
 - Parent: [[OJ-fnna]]
-- Blocks: [[OJ-2t3g]], [[OJ-mbn5]]
 - Was blocked by: [[OJ-i6n6]]
 - Follows: [[OJ-i6n6]], [[OJ-ef2q]], [[OJ-fgc3]]
 
