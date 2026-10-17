@@ -4,11 +4,11 @@ title: "Run the final contest submission gate"
 status: open
 priority: 0
 type: feature
-labels: [contest, compliance, release-gate, capstone]
+labels: [contest, compliance, capstone]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
-updated_at: 2026-10-17T16:26:47Z
+updated_at: 2026-10-17T16:27:21Z
 content_hash: "sha256:1db4b4e6d9ba9e5cf914f2152b27db7ffb443d87e5d64a1f0861268bd504344f"
 blocked_by: [OJ-i6n6, OJ-fgc3, OJ-2t3g]
 ---
