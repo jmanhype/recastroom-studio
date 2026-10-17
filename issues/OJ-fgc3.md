@@ -8,8 +8,8 @@ labels: [contest, release, packaging]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T19:15:01Z
-content_hash: "sha256:4a2b3afcd84170c8fa0714c8796dfc3246329bec3f64abe3c46b8ebfa5b8d9c2"
+updated_at: 2026-10-17T19:15:12Z
+content_hash: "sha256:fb9a8686705cccc8f525cf95fee84d4464971e089e82be92e6a11bdc51edbc7a"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
@@ -197,6 +197,7 @@ Summary: Prepared the owner-gated public release candidate with deliberate recov
 - 2026-10-17T18:55:23Z status: open -> in_progress
 - 2026-10-17T18:55:23Z auto-follows: linked to predecessor OJ-i6n6
 - 2026-10-17T18:55:23Z claimed by dev-OJ-fgc3
+- 2026-10-17T19:15:12Z status: in_progress -> in_progress
 
 ## Links
 - Parent: [[OJ-fnna]]
