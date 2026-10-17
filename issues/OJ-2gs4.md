@@ -4,7 +4,7 @@ title: "Bug: OJ-2t3g synthetic test literals fail public release audit"
 status: closed
 priority: 0
 type: task
-labels: [release-audit, regression, delivered]
+labels: [release-audit, regression, delivered, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T21:36:40Z
 created_by: speed
