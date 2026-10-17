@@ -7,8 +7,8 @@ type: epic
 labels: [contest, openjutsu, accepted]
 created_at: 2026-10-17T16:25:53Z
 created_by: speed
-updated_at: 2026-10-17T22:35:24Z
-content_hash: "sha256:c928fc7aee07641805af8d7da047b556474b14d11a84652254881afb90817858"
+updated_at: 2026-10-17T22:44:01Z
+content_hash: "sha256:d0d68252a18f15494c6953f3dcf0f792cb0ae6e871a8de69e7609b8806d15bdc"
 closed_at: 2026-10-17T22:27:51Z
 close_reason: "All stories accepted"
 ---
@@ -45,6 +45,72 @@ status: new
 
 
 ## Notes
+# Retrospective: OJ-fnna - Ship the Openjutsu contest production lane
+
+## Source Stories
+- OJ-ef2q — accepted; no labeled `LEARNINGS:`; raw implementation/AC evidence used.
+- OJ-i6n6 — accepted; no labeled `LEARNINGS:`; raw delivery, rework, rejection comment, and evidence used.
+- OJ-fgc3 — accepted; no labeled `LEARNINGS:`; raw delivery, recovery comment, and evidence used.
+- OJ-vwzl — accepted; raw `LEARNINGS:` and `OBSERVATIONS (unrelated): None` used.
+- OJ-2t3g — accepted; raw `LEARNINGS:` and `DISCOVERED_BUG` used.
+- OJ-b71t — accepted/superseded; raw story body and history used; no developer delivery.
+- OJ-mbn5 — accepted; no labeled `LEARNINGS:`; raw capstone evidence, rejection, corrected acceptance, and `DISCOVERED_BUG` used.
+- OJ-2gs4 — post-capstone remediation, accepted; no labeled `LEARNINGS:`; raw implementation/evidence/PM review used.
+- OJ-v983 — post-capstone remediation, accepted; no labeled `LEARNINGS:`; raw implementation/evidence/PM differential review used.
+- OJ-fnna anchor — raw `REVIEW_RESULT: GAPS_FOUND` and recheck `REVIEW_RESULT: VALIDATED` used.
+
+## Raw Learning Extraction
+- Labeled `LEARNINGS:` present: OJ-2t3g and OJ-vwzl.
+- Explicit `OBSERVATIONS` present: OJ-vwzl only; it records `None`.
+- Missing required `LEARNINGS:`: OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-b71t, OJ-2gs4, OJ-v983, and OJ-mbn5. This is a process defect; their insights below were reconstructed only from raw delivery/AC/comment evidence and current code/test state, not from a prior summary.
+- OJ-b71t was superseded by OJ-2gs4 and has no developer-delivery learning section.
+
+## Learnings (Actionable)
+1. Rerun accepted cross-story release gates after every merge (Action: integration AC must include merged-main release audit, full tests, API/browser E2E, keeper verification, scans, and regenerated receipts; Applies to: integration/release stories). Source: OJ-vwzl rejection/redelivery and OJ-fgc3.
+2. Make evidence public-safe as it is generated (Action: expose artifact names, redact paths in generation code, scan generated receipts/screenshots, regenerate after changes; Applies to: app/E2E/release evidence). Source: OJ-vwzl LEARNINGS and OJ-2t3g.
+3. Construct scanner negative fixtures at runtime (Action: forbid complete absolute-path/credential-like literals in source while asserting both real findings; Applies to: security/release tests). Source: OJ-mbn5 DISCOVERED_BUG and OJ-2gs4.
+4. Preserve explicit FAIL versus OWNER_BLOCKED boundaries (Action: use a tri-state matrix and never fabricate credentials, URLs, rights, live SDK, or deployment evidence; Applies to: final gates and external integrations). Source: OJ-i6n6, OJ-mbn5, and the epic boundary.
+5. Bind media claims to tamper-evident rights packs (Action: exact keeper enumeration plus provenance/consent/QC/human verdict/probe/hash and controlled mutation failure; Applies to: public media evidence). Source: OJ-ef2q.
+6. Preserve staged work before Git recovery and prove stream identity (Action: snapshot all staged blobs, hash inventory, match packet hashes before remux recovery, reject regressing source; Applies to: incident recovery). Source: OJ-fgc3.
+7. Prove verifier refactors differentially (Action: preserve public signatures/exceptions, compare real pack plus controlled failures, require gates; Applies to: gate/verifier maintenance). Source: OJ-v983 and anchor gap/recheck.
+8. Own every warning and verify the actual backlog schema (Action: every warning is fixed or centrally owned by DISCOVERED_BUG; repeat raw query before rejection; Applies to: developer/PM delivery checks). Source: OJ-mbn5 rejection/corrected acceptance and OJ-2t3g.
+9. Reuse accepted E2E infrastructure and default review deployments to loopback (Action: use accepted launcher/server semantics, bind 127.0.0.1, dry_run, and owner-gate broader exposure; Applies to: reviewer trials). Source: OJ-2t3g LEARNINGS and current local trial.
+10. Require exact labeled learnings in every delivery (Action: add a deterministic delivery/PM check for nonempty `LEARNINGS:` and relevant `OBSERVATIONS:`; Applies to: story templates and acceptance). Source: raw accepted-story extraction defect.
+
+## Rejection Patterns
+- Environment-key forwarding validated but original argument passed to SDK client -> add an explicit fake-client probe for both explicit and environment credential sources before acceptance. Source: OJ-i6n6.
+- Functional branch based behind accepted release cleanup -> merge accepted main and rerun public gates before acceptance. Source: OJ-vwzl.
+- Warning query projection missed an existing story block -> query the actual nd fields/raw story and require central DISCOVERED_BUG ownership. Source: OJ-mbn5.
+- Synthetic scanner fixture literals failed public audit -> generate fixture bytes at runtime and rerun exact pattern scan/final gate. Source: OJ-mbn5 -> OJ-b71t/OJ-2gs4.
+- Concentrated verifier accumulated stages -> decompose behind stable public API and prove differential behavior. Source: anchor gap -> OJ-v983.
+
+## Hard-TDD Effectiveness
+- No child story carried a `hard-tdd` label, so this epic provides no valid hard-TDD versus normal-story rejection-rate or overhead comparison. Do not infer a scope change from this epic.
+
+## Independent Current-State Check (2026-10-17)
+- Clean worktree at `bf764110720aa29f38329562419a9f6ac4ff9b91`.
+- `pvg gates app src scripts tools`: exit 0, `GATES: PASS (9 warn, 0 skipped)`.
+- Full pytest: exit 0, `31 passed, 1 warning in 10.46s`; the warning is the disclosed Starlette/httpx deprecation.
+- `pip check`: exit 0, `No broken requirements found.`
+- Keeper verifier: exit 0, 11 keepers, 48 artifacts, manifest SHA-256 `ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33`.
+- Fresh loopback local trial: exit 0, dry-run job completed with loopback binding, public URL null, credential/cloud forwarding false, exposure scan PASS.
+- Fresh offline final gate at HEAD: expected exit 2 only for eight owner blockers; 11 PASS / 0 FAIL / 8 OWNER_BLOCKED; `release_audit.errors=[]`; `eligible_to_submit=false`.
+
+## Backlog Follow-Ups
+- [ ] Create story: eliminate or centrally remediate the Starlette/httpx TestClient deprecation warning without suppressing test coverage. (Reason: current full suite still discloses one warning.)
+- [ ] Create story: enforce a nonempty exact `LEARNINGS:` block in delivery verification. (Reason: seven accepted children lacked the contract section.)
+- [ ] Update story template: release/integration AC must require merged-main gates, public-safe generated evidence, runtime-constructed negative fixtures, and differential proof for verifier/gate refactors.
+- [ ] Update PM checklist: query raw accepted stories with actual nd field casing before rejecting warning ownership; distinguish FAIL from OWNER_BLOCKED.
+
+## Vault Knowledge And UAT
+- Pattern notes created under `.vault/knowledge/patterns/`: Rerun Cross-Story Release Gates After Merges; Create Public-Safe Evidence At Generation Time; Use Tamper-Evident Rights Evidence Packs; Reuse Accepted E2E Infrastructure With Loopback Defaults.
+- Debug notes created under `.vault/knowledge/debug/`: Build Negative Scanner Fixtures Without Forbidden Literals; Recover Staged Media By Stream Hash Before Cleanup; Own Every Warning And Verify Backlog Queries.
+- Convention notes created under `.vault/knowledge/conventions/`: Keep External Actions Owner-Blocked; Prove Refactors With Differential Gate Evidence; Require Labeled LEARNINGS In Every Delivery.
+- Mandatory UAT: `.vault/knowledge/uat/UAT OJ-fnna.md`.
+
+## Boundary
+Knowledge capture only. This retro changed epic notes/project vault knowledge, not story statuses, source code, public state, credentials, cloud/GPU state, or publication/submission state.
+
 ## ANCHOR REVIEW (MILESTONE_REVIEW RECHECK)
 REVIEW_RESULT: VALIDATED
 
