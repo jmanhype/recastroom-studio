@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T20:52:53Z
-content_hash: "sha256:eac8e504842715e29b67747f22e54e3f7f91a51009c5d9ff21f4b15f73230e20"
+content_hash: "sha256:bdd7c60a7b36457d81fd757df1b40eb0c1b6d4ed5a8a8302bd32a84ee1f5fe9a"
 was_blocked_by: [OJ-i6n6]
 follows: [OJ-i6n6, OJ-ef2q, OJ-fgc3]
 assignee: dev-OJ-vwzl
@@ -129,6 +129,16 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
 
 
 ## nd_contract
