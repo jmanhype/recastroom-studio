@@ -8,8 +8,8 @@ labels: [contest, release, packaging, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T19:16:12Z
-content_hash: "sha256:2b3f18024eef49a559736c9c5dac7e04531fe114f2b1281ebed691a3e65a167f"
+updated_at: 2026-10-17T19:17:09Z
+content_hash: "sha256:18c3c640299f87b27845ee227f29abe69215ebcad275b3b3b99c3cbe5eedd3aa"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
@@ -246,3 +246,10 @@ status: delivered
 - [x] AC #2: License/header and private-artifact audits pass on the filtered public tree.
 - [x] AC #3: README quickstart and API examples reproduce the local credential-free gates.
 - [x] AC #4: Release archive, source tree, filtered-content tree, size, and SHA-256 receipts are recorded without publishing.
+
+### 2026-10-17T19:17:08Z speed
+AC verification:
+[x] AC #1: PASS — clean install, pip check, 21 tests, CLI 0.1.1, health, home, and bundled workflow pass.
+[x] AC #2: PASS — filtered public rights/license/credential/absolute-path/media audit reports zero errors.
+[x] AC #3: PASS — reviewer quickstart and API examples reproduce the credential-free local app gates.
+[x] AC #4: PASS — reproducible archive, tree/content/size/SHA receipts, and no-publication controls are recorded.
