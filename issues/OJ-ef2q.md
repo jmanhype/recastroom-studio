@@ -8,8 +8,8 @@ labels: [contest, qc, rights, evidence, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:43:48Z
-content_hash: "sha256:58d9a6681eb0016b878b0039d261ff78917bcc30dd8a6157df84fbf9a194f51a"
+updated_at: 2026-10-17T16:44:05Z
+content_hash: "sha256:137b9530855f5f0ce458d87363fbef6fcd3812293bfe0836b2c5be6e031d335c"
 blocks: [OJ-fgc3, OJ-mbn5]
 assignee: dev-OJ-ef2q
 ---
@@ -126,6 +126,30 @@ status: new
 
 
 ## Notes
+## AC Verification
+
+| AC | Result | Evidence |
+|---|---|---|
+| AC #1 | PASS | Exactly 11 intended keepers and format concepts in `docs/evidence/slate/manifest.json`; anime and private film/TV material excluded. |
+| AC #2 | PASS | All 48 artifacts have rights provenance, consent, size, SHA-256; all media artifacts have probes. |
+| AC #3 | PASS | Immutable PASS plus temporary-copy one-byte FAIL recorded in `docs/evidence/slate-verification.md`. |
+| AC #4 | PASS | Every keeper links its included Qwen report and all-11 operator/Jay approval receipt. |
+
+Commit SHA: d4299eae5275571e83925a5cd41ae0674902d2fa
+
+## nd_contract
+status: delivered
+
+### evidence
+- Final authoritative delivery block; all details and commands are in Implementation Evidence and AC Verification above.
+- Commit SHA: d4299eae5275571e83925a5cd41ae0674902d2fa.
+
+### proof
+- [x] AC #1: PASS.
+- [x] AC #2: PASS.
+- [x] AC #3: PASS.
+- [x] AC #4: PASS.
+
 ## Implementation Evidence
 
 - Commit SHA: `d4299eae5275571e83925a5cd41ae0674902d2fa` on `story/OJ-ef2q`; no push.
