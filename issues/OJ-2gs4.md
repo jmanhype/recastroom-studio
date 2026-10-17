@@ -8,8 +8,8 @@ labels: [release-audit, regression, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T21:36:40Z
 created_by: speed
-updated_at: 2026-10-17T21:46:28Z
-content_hash: "sha256:14565d34b6f14ad3973d7d03431dec0b37544ddab950b3aa2a2118a7d3b0b34c"
+updated_at: 2026-10-17T21:47:04Z
+content_hash: "sha256:a982cd36424807f580faa325b352d713d6b384b6720b5bdb861cb202ca6311bc"
 blocks: [OJ-mbn5]
 assignee: dev-OJ-2gs4
 follows: [OJ-mbn5, OJ-2t3g]
@@ -101,6 +101,54 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
+
+### CI/Test Results
+
+- Full pytest: PASS — `31 passed, 1 warning in 9.08s`.
+- Targeted local-trial test: PASS — `2 passed in 0.17s`.
+- pip check: PASS — `No broken requirements found.`
+- Final gate: expected owner-gated exit 2 — local matrix failures 0, owner-blocked items 8.
+
+Commands run:
+- `python -m pytest -q tests/test_local_trial.py`
+- `python -m pytest -q`
+- `python -m pip check`
+- `pvg verify tests/test_local_trial.py docs/evidence/OJ-2gs4-release-audit`
+- `git diff --check`
+- `git diff --check HEAD^ HEAD`
+- `python scripts/local_trial.py --host 127.0.0.1 --port 8890 --output-dir work/OJ-2gs4-local-trial`
+- `python tools/final_submission_gate.py --commit HEAD --demo <approved-demo-v1> --output work/OJ-2gs4-final-gate`
+- credential/private-path regex scan over target test and evidence files
+
+Summary: Synthetic unsafe fixture bytes are now constructed at runtime while both real scanner findings remain covered; filtered release-audit findings are zero and the final gate has no local FAIL.
+
+Commit SHA: 7381af42a00936305b20b74f5ded1febf5f94805 (implementation), 92b175d114a1f90a9c6b8fa2487b266306fe3082 (evidence).
+
+## Acceptance Verification
+
+| AC | Result | Evidence |
+| --- | --- | --- |
+| AC #1 filtered public release audit has zero findings | PASS | `docs/evidence/OJ-2gs4-release-audit/final-gate/gate.json`: `release_audit.errors=[]` |
+| AC #2 constructed negative fixtures still produce both findings | PASS | `tests/test_local_trial.py`; targeted result `2 passed` |
+| AC #3 fresh loopback and explicit-commit final gate remove local release-audit FAIL | PASS | loopback complete, scan PASS; final-gate matrix `FAIL=0`, `OWNER_BLOCKED=8`, exit 2 |
+| AC #4 no forbidden-looking source/evidence bytes and no semantic waiver | PASS | credential/private-path scan `files_scanned=6`, `matches=[]`; scanner and gate unchanged |
+
+## nd_contract
+status: delivered
+
+### evidence
+- Delivered implementation SHA `7381af42a00936305b20b74f5ded1febf5f94805`.
+- Evidence SHA `92b175d114a1f90a9c6b8fa2487b266306fe3082`.
+
+### proof
+[x] AC #1: PASS — filtered release audit reports zero errors.
+- [x] AC #1: PASS — filtered release audit reports zero errors.
+- [x] AC #2: PASS — both scanner findings are still asserted from constructed bytes.
+- [x] AC #3: PASS — fresh loopback trial complete; explicit-commit gate has zero local FAIL.
+- [x] AC #4: PASS — unchanged owner gates, zero forbidden-pattern evidence matches.
+
+
 ## Implementation Evidence
 
 ### CI/Test Results
