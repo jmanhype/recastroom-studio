@@ -4,11 +4,11 @@ title: "Stand up the reviewer trial deployment"
 status: in_progress
 priority: 2
 type: feature
-labels: [contest, deployment, hosting]
+labels: [contest, deployment, hosting, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
-updated_at: 2026-10-17T21:06:44Z
+updated_at: 2026-10-17T21:06:45Z
 content_hash: "sha256:e6ca4cfed879da1fb52fe700c5b201e3bb97c50e381b3ea5f860b9519954cd68"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-vwzl]
