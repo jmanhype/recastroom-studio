@@ -4,11 +4,11 @@ title: "Prepare the public repository release candidate"
 status: closed
 priority: 1
 type: feature
-labels: [contest, release, packaging, delivered]
+labels: [contest, release, packaging, delivered, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T20:28:18Z
+updated_at: 2026-10-17T20:28:19Z
 content_hash: "sha256:486b36021ba336299657867e26c35bae43d1f41afd22fe86e13c1b62172199e0"
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
