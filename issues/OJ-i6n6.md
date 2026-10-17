@@ -9,11 +9,12 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T18:52:22Z
-content_hash: "sha256:46db055eec545943cf74a6ee9290b1044776775ff106bb60989df094cf481d67"
+content_hash: "sha256:01185f7a2ccb5e7a8c4824b8f4fe37b2847c26c237cc2d8f782529684288784c"
 assignee: dev-OJ-i6n6
 follows: [OJ-ef2q]
 closed_at: 2026-10-17T18:52:21Z
 close_reason: "Accepted: independently reproduced 15 passing tests, pip check, zero credential-shaped matches, live source-link checks (4 HTTP 200 responses), and a fake-client probe proving COMFY_API_KEY is forwarded as resolved_api_key. Commit 84a0c59 and evidence hash 9b2e3a3c3ae5672c2bf4bf1a7ea67b54afe5af5d01509e432a3009f5eb2568d5 verified. Live SDK spend remains explicitly owner-gated."
+led_to: [OJ-fgc3]
 ---
 
 ## Description
@@ -306,6 +307,7 @@ status: delivered
 ## Links
 - Parent: [[OJ-fnna]]
 - Follows: [[OJ-ef2q]]
+- Led to: [[OJ-fgc3]]
 
 ## Comments
 
