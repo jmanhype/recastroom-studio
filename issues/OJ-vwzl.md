@@ -4,7 +4,7 @@ title: "Complete hosted upload-to-output execution"
 status: in_progress
 priority: 1
 type: feature
-labels: [contest, app, e2e]
+labels: [contest, app, e2e, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
