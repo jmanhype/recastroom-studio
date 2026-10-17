@@ -1,16 +1,18 @@
 ---
 id: OJ-mbn5
 title: "Run the final contest submission gate"
-status: open
+status: in_progress
 priority: 0
 type: feature
 labels: [contest, compliance, capstone]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
-updated_at: 2026-10-17T16:27:38Z
-content_hash: "sha256:dc77db31f05b00c4e9fb9c3c551a2181585b4b762c76f6af148d66ed37a71ee9"
+updated_at: 2026-10-17T21:18:45Z
+content_hash: "sha256:03b0a2873bc2cdf239bc1ca9c9dafaa1e369f6f6f708c6f5f2cb00aae3669e03"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
+assignee: dev-OJ-mbn5
+follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 ---
 
 ## Description
@@ -135,9 +137,17 @@ status: new
 - 2026-10-17T20:28:18Z dep_removed: was_blocked_by OJ-fgc3
 - 2026-10-17T20:52:52Z dep_removed: was_blocked_by OJ-vwzl
 - 2026-10-17T21:14:50Z dep_removed: was_blocked_by OJ-2t3g
+- 2026-10-17T21:18:45Z status: open -> in_progress
+- 2026-10-17T21:18:45Z auto-follows: linked to predecessor OJ-ef2q
+- 2026-10-17T21:18:45Z auto-follows: linked to predecessor OJ-i6n6
+- 2026-10-17T21:18:45Z auto-follows: linked to predecessor OJ-fgc3
+- 2026-10-17T21:18:45Z auto-follows: linked to predecessor OJ-vwzl
+- 2026-10-17T21:18:45Z auto-follows: linked to predecessor OJ-2t3g
+- 2026-10-17T21:18:45Z claimed by dev-OJ-mbn5
 
 ## Links
 - Parent: [[OJ-fnna]]
 - Was blocked by: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]]
+- Follows: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]]
 
 ## Comments
