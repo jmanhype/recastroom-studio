@@ -8,8 +8,8 @@ labels: [contest, release, packaging, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T19:15:13Z
-content_hash: "sha256:17ca665ec22099463cb23ec5cf99f2d166a3118364552df7144ca8e4291208d4"
+updated_at: 2026-10-17T19:15:43Z
+content_hash: "sha256:56619ac9f7b24bbe571444f4f495c13d0f503e42c4fa5ab16157022fe066a2e1"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
@@ -125,7 +125,18 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: delivered
 
+### evidence
+- Authoritative implementation, commands, outputs, commit/tree/archive hashes, recovery decisions, clean-checkout gates, and unpacked-archive gates are recorded in the Implementation Evidence block above.
+- Commit: d020e40ef1f906d5851b0a0d8bd5812ed7cca858; archive SHA-256: be52c145d2035fdf7b280d230a0444c50693383cf393f132c9311e1690a1b1c3; published=false; tag_created=false; no push.
+
+### proof
+- [x] AC #1: Clean-checkout install, pip check, full tests, CLI version, app health/home, and workflow checks pass.
+- [x] AC #2: License/header and private-artifact audits pass on the filtered public tree.
+- [x] AC #3: README quickstart and API examples reproduce the local credential-free gates.
+- [x] AC #4: Release archive, source tree, filtered-content tree, size, and SHA-256 receipts are recorded without publishing.
 
 ## nd_contract
 status: delivered
