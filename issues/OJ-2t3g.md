@@ -9,13 +9,13 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:14:50Z
-content_hash: "sha256:9f59c25ee2d7cc703a0ffe9442cdc6fa38932020c86a2304557f2b9b0e4511b7"
+content_hash: "sha256:d95ef9baf5c5af36fc27be0a713043d0e84e60d21d0dd3713557cb1de1e86224"
 was_blocked_by: [OJ-vwzl]
 assignee: dev-OJ-2t3g
 follows: [OJ-vwzl, OJ-fgc3]
 closed_at: 2026-10-17T21:14:49Z
 close_reason: "Accepted: local reviewer deployment evidence meets ACs"
-led_to: [OJ-mbn5]
+led_to: [OJ-mbn5, OJ-2gs4]
 ---
 
 ## Description
@@ -302,6 +302,6 @@ status: delivered
 - Parent: [[OJ-fnna]]
 - Was blocked by: [[OJ-vwzl]]
 - Follows: [[OJ-vwzl]], [[OJ-fgc3]]
-- Led to: [[OJ-mbn5]]
+- Led to: [[OJ-mbn5]], [[OJ-2gs4]]
 
 ## Comments

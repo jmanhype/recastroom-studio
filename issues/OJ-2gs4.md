@@ -8,11 +8,11 @@ labels: [release-audit, regression]
 parent: OJ-fnna
 created_at: 2026-10-17T21:36:40Z
 created_by: speed
-updated_at: 2026-10-17T21:45:03Z
-content_hash: "sha256:50f42f39db0a71b00753bef502db0db8b71e98093d3707d311528c4121cbe5cf"
+updated_at: 2026-10-17T21:45:18Z
+content_hash: "sha256:6aadd05f7a7d1ab9c1096e8886639eac49b592513cbfaec1aa082d7d47e5a161"
 blocks: [OJ-mbn5]
 assignee: dev-OJ-2gs4
-follows: [OJ-mbn5]
+follows: [OJ-mbn5, OJ-2t3g]
 ---
 
 ## Description
@@ -134,10 +134,12 @@ status: delivered
 - 2026-10-17T21:36:58Z status: open -> in_progress
 - 2026-10-17T21:36:58Z auto-follows: linked to predecessor OJ-mbn5
 - 2026-10-17T21:36:58Z claimed by dev-OJ-2gs4
+- 2026-10-17T21:45:18Z status: in_progress -> in_progress
+- 2026-10-17T21:45:18Z auto-follows: linked to predecessor OJ-2t3g
 
 ## Links
 - Parent: [[OJ-fnna]]
 - Blocks: [[OJ-mbn5]]
-- Follows: [[OJ-mbn5]]
+- Follows: [[OJ-mbn5]], [[OJ-2t3g]]
 
 ## Comments
