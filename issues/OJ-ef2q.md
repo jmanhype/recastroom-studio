@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T16:42:58Z
-content_hash: "sha256:4554a2751c687aae2cff9c85eaf180fe853dbdfb76bd4383cd74c69cf2c15375"
+content_hash: "sha256:b7062e2ed9a346b9ee0f39442fbb5fe4bd44edb690d048688f909bf777c774b4"
 blocks: [OJ-fgc3, OJ-mbn5]
 assignee: dev-OJ-ef2q
 ---
@@ -126,6 +126,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-17.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## nd_contract
 status: delivered
 
