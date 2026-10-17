@@ -8,8 +8,8 @@ labels: [contest, backend, evidence, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T18:52:21Z
-content_hash: "sha256:90cba9d58a211be7275b7e74c7dc34b1089bfc37851b64270c4d815bb0f63de2"
+updated_at: 2026-10-17T18:52:22Z
+content_hash: "sha256:46db055eec545943cf74a6ee9290b1044776775ff106bb60989df094cf481d67"
 assignee: dev-OJ-i6n6
 follows: [OJ-ef2q]
 closed_at: 2026-10-17T18:52:21Z
@@ -314,3 +314,6 @@ loop: reset orphaned in_progress to open (no developer worktree found; prior ses
 
 ### 2026-10-17T16:57:38Z speed
 EXPECTED: a configured environment key is passed through to the official SDK client when api_key is omitted. DELIVERED: missing-key/missing-base-url fail-closed tests, docs, 10 passing tests, and clean secret scan at dc74547. GAP: independent probe with COMFY_API_KEY=environment-key-for-probe and api_key=None showed FakeComfy received api_key=None; runner validates resolved_api_key but constructs Comfy(api_key=api_key). FIX: pass resolved_api_key to Comfy, add a regression test proving the environment key is forwarded, rerun full tests and secret scan, commit on story/OJ-i6n6, and redeliver.
+
+### 2026-10-17T18:52:21Z speed
+Merge receipt: pvg story merge was again blocked by the absent local origin remote. Main and story/OJ-i6n6 were clean and current, so the accepted story was merged locally with git merge --no-ff. No push occurred.
