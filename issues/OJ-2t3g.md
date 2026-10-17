@@ -8,8 +8,8 @@ labels: [contest, deployment, hosting, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
-updated_at: 2026-10-17T21:06:45Z
-content_hash: "sha256:ee16f8fb77ef6a38ddbe3b1894081d3f4d58658e458833f7a4207a907ef94e33"
+updated_at: 2026-10-17T21:08:16Z
+content_hash: "sha256:87852183f2936af1e716bb88bd7cee07af0958534a132098c9a560cc5d1b0b9e"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-vwzl]
 assignee: dev-OJ-2t3g
@@ -122,6 +122,46 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
+
+### CI/Test Results
+Commands run:
+- `../../../.venv/bin/python scripts/local_trial.py --host 127.0.0.1 --port 8890`
+- `../../../.venv/bin/python -m pip check`
+- `../../../.venv/bin/python -m pytest -q`
+- `git diff --check`
+- `pvg verify docs/LOCAL_TRIAL_DEPLOYMENT.md scripts/local_trial.py tests/test_local_trial.py docs/evidence/OJ-2t3g-local-trial/receipt.json docs/evidence/OJ-2t3g-local-trial/secret-scan.json docs/evidence/OJ-2t3g-local-trial/server.log --format=text`
+
+Summary: local trial PASS (`ok:true`, job `2e0c7c137ef8`, terminal `complete`); dependency check PASS (`No broken requirements found.`); full test suite PASS (`27 passed, 1 warning`); whitespace PASS; pvg verify PASS (`2 files scanned, 0 issues`). Exposure scan PASS (`158` files, zero findings). Coverage: not configured or measured.
+
+### Commit
+- Branch: `story/OJ-2t3g`
+- Commit SHA: `9776ba126bd416c6d2ba4ba0c0317780d7acb433`
+
+### AC Verification
+| AC # | Requirement | Evidence | Status |
+|---|---|---|---|
+| 1 | Deployment architecture, no-public-default policy, VPN boundary, rate-limit posture, rights gate, storage lifetime, and environment variables documented. | `docs/LOCAL_TRIAL_DEPLOYMENT.md:1-78` | PASS |
+| 2 | Repeatable loopback-only dry-run command/workflow. | `scripts/local_trial.py:205-330`; `docs/LOCAL_TRIAL_DEPLOYMENT.md:80-109` | PASS |
+| 3 | Health, home, prepare, rights rejection, and generation status probes run against `http://127.0.0.1:8890`. | `docs/evidence/OJ-2t3g-local-trial/receipt.json` | PASS |
+| 4 | Credential/local-path exposure scan records zero findings across 158 files. | `docs/evidence/OJ-2t3g-local-trial/secret-scan.json` | PASS |
+
+The detailed command output, hashes, rights response, terminal status, learnings, and pre-existing test warning are in the preceding delivered evidence note.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Commit SHA: `9776ba126bd416c6d2ba4ba0c0317780d7acb433` on `story/OJ-2t3g`.
+- Local trial evidence: `docs/evidence/OJ-2t3g-local-trial/receipt.json` SHA-256 `b010ca4923bc3b9fee0235ec48a15c69e6ed97ae980c50f17362bb244aa66f09`.
+- Exposure scan: `docs/evidence/OJ-2t3g-local-trial/secret-scan.json`, 158 files, zero findings, PASS.
+- Tests/dependencies: 27 passed with one pre-existing Starlette warning; pip check found no broken requirements.
+
+### proof
+- [x] AC #1: Deployment policy, boundary, rate-limit posture, rights gate, storage lifetime, architecture, and variables are documented.
+- [x] AC #2: The loopback dry-run workflow is repeatable through `scripts/local_trial.py`.
+- [x] AC #3: Live health/home/prepare/rights/status probes returned the expected responses and are recorded in machine-readable evidence.
+- [x] AC #4: Credential and local-path exposure scan completed with zero findings.
 
 
 ## nd_contract
