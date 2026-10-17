@@ -8,8 +8,8 @@ labels: [release-audit, regression, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T21:36:40Z
 created_by: speed
-updated_at: 2026-10-17T21:47:04Z
-content_hash: "sha256:a982cd36424807f580faa325b352d713d6b384b6720b5bdb861cb202ca6311bc"
+updated_at: 2026-10-17T21:51:13Z
+content_hash: "sha256:82838a19079195b7a1670d1ec5402304e510078d6652ea1e6da6f8cab8c8ab09"
 blocks: [OJ-mbn5]
 assignee: dev-OJ-2gs4
 follows: [OJ-mbn5, OJ-2t3g]
@@ -101,6 +101,31 @@ status: new
 
 
 ## Notes
+## PM Accepted Evidence
+ACCEPTED [2026-10-17]: Evidence-based review passed; full suite was not rerun because the recorded commits, source tree, target-test hash, and committed evidence hashes match.
+
+- Delivered HEAD `92b175d114a1f90a9c6b8fa2487b266306fe3082`; implementation commit `7381af42a00936305b20b74f5ded1febf5f94805`; implementation tree `c94b81691ab3f0aa5af319ca97d9ebaf38e0836c` match `validation.json` and `gate.json`.
+- Verified target-test SHA-256 `cef3da5202d539891a8fabbf7db7bc3e17c2bd9f04a6338820baec18c3f3d626`; committed gate, loopback receipt, and loopback scan hashes match `validation.json:artifact_hashes`.
+- Inspected both delivered commits: implementation changes only `tests/test_local_trial.py`; evidence commit adds the required machine-readable evidence. Scanner and final-gate semantics are unchanged.
+- Fresh targeted negative-path check: `.venv/bin/python -m pytest -q tests/test_local_trial.py` -> exit 0, `2 passed in 0.11s`; constructed credential and absolute-path findings remain asserted.
+- Exact release-audit regex scan over the changed test plus committed evidence: 6 files scanned, 0 absolute-user-path or credential-value matches.
+- Committed final gate records `release_audit.errors=[]`, matrix `PASS=11`, `FAIL=0`, `OWNER_BLOCKED=8`, exit 2, and `eligible_to_submit=false`; the owner-gated exit is expected.
+- Loopback evidence records dry-run backend, loopback binding, complete terminal state, no credential/cloud forwarding, and exposure scan PASS with zero findings.
+- Static review found no stubs, no public-function type gaps, no stale public docs, and no scope or security regression. Existing Starlette/httpx warning remains owned by the accepted predecessor OJ-2t3g DISCOVERED_BUG block.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Reviewed two-commit diff, delivered source/evidence, live story proof, and matching commit/tree/file hashes.
+- Targeted test and exact forbidden-pattern scan rerun synchronously; delivered-range whitespace check clean.
+
+### proof
+- [x] AC #1: Release-audit errors are empty on the audited implementation commit.
+- [x] AC #2: Constructed unsafe fixtures still produce both asserted scanner findings.
+- [x] AC #3: Fresh loopback and explicit-commit final-gate evidence has zero FAIL and expected eight OWNER_BLOCKED entries.
+- [x] AC #4: No forbidden-looking literal is stored in changed source/evidence; scanner and gate semantics remain fail-closed.
+
 ## Implementation Evidence
 
 ### CI/Test Results
