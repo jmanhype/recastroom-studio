@@ -8,8 +8,8 @@ labels: [contest, app, e2e]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T18:55:24Z
-content_hash: "sha256:6b2b7acf5a73ac03703a3679c7b168d031334ebccb39c0c5406f576b79a7d3fd"
+updated_at: 2026-10-17T19:15:24Z
+content_hash: "sha256:6ab456beab08325c16cb1fe9ba8d6917dca6d5a25a89492c42eb5d4a6d34df04"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
 assignee: dev-OJ-vwzl
@@ -128,7 +128,23 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: delivered
 
+### evidence
+- Implementation commits: `c9e729e832494eb65f5e383fb09a602d3ad2d2f6` (deterministic dry-run backend, fixtures, HTTP driver, tests), `95a8bc7a7d309be79bedc1abf16bb566a234b7e9` (optional-upload routing fix and browser driver), `dc2cd41256db0e030d20df013d35c0c9e39f4f4c` (committed E2E evidence).
+- Clean detached checkout under test: `/private/tmp/oj-vwzl-clean.Uj9BdG` at `95a8bc7a7d309be79bedc1abf16bb566a234b7e9`; final evidence commit verified independently in `/private/tmp/oj-vwzl-clean.07Cksk` at `dc2cd41256db0e030d20df013d35c0c9e39f4f4c`.
+- Full tests/dependency check at final clean HEAD: `python -m pytest -q` → `19 passed, 1 warning in 5.60s`; `python -m pip check` → `No broken requirements found`.
+- API E2E: `tools/e2e_smoke.py --output-dir ... --dry-port 8903 --sdk-port 8904` → dry-run job reached `complete`, all generated/final/side-by-side downloads returned HTTP 200, and isolated SDK job reached error `missing_comfy_api_key` before network/client construction. Missing and invalid rights attestations both returned HTTP 422 before job creation.
+- Browser E2E from the clean worktree: real browser uploaded synthetic source/reference/word timing, passed rights checkbox, prepared job `06e10c33b91b`, ran it, polled HTTP 200 to `complete`, and exposed all three download links. Full-page screenshot: `docs/evidence/OJ-vwzl-upload-to-output/browser/app-complete.png`.
+- Evidence and probes: `docs/evidence/OJ-vwzl-upload-to-output/README.md`, `api/receipt.json`, `browser/browser-transcript.txt`, and `RECEIPTS.json`. All 12 committed evidence hashes verified from the final clean HEAD.
+- No credentials were read or printed; no GPU/compute, deployment call, publication, social action, or push was performed.
+
+### proof
+- [x] AC #1: The full hosted dry-run path returns downloadable generated, restored-audio final, and source/final review media artifacts.
+- [x] AC #2: Missing and invalid rights attestations are rejected with HTTP 422 before execution.
+- [x] AC #3: Final clean-checkout tests and smoke output pass (`19 passed`, clean `pip check`, API E2E `ok:true`).
+- [x] AC #4: Every recorded evidence artifact has a SHA-256 receipt; each media/image artifact has an ffprobe record.
 
 ## History
 - 2026-10-17T16:26:04Z dep_added: blocked_by OJ-i6n6
