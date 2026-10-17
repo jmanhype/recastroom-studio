@@ -1,17 +1,19 @@
 ---
 id: OJ-vwzl
 title: "Complete hosted upload-to-output execution"
-status: open
+status: in_progress
 priority: 1
 type: feature
 labels: [contest, app, e2e]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:27:38Z
-content_hash: "sha256:1dc7ca54170408e74f7bd8ae8982037bf44221e29e9dc8c4e8ff9ec28d338c45"
+updated_at: 2026-10-17T18:55:24Z
+content_hash: "sha256:6b2b7acf5a73ac03703a3679c7b168d031334ebccb39c0c5406f576b79a7d3fd"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
+assignee: dev-OJ-vwzl
+follows: [OJ-i6n6]
 ---
 
 ## Description
@@ -133,10 +135,14 @@ status: new
 - 2026-10-17T16:26:05Z dep_added: blocks OJ-2t3g
 - 2026-10-17T16:27:21Z dep_added: blocks OJ-mbn5
 - 2026-10-17T18:52:21Z dep_removed: was_blocked_by OJ-i6n6
+- 2026-10-17T18:55:24Z status: open -> in_progress
+- 2026-10-17T18:55:24Z auto-follows: linked to predecessor OJ-i6n6
+- 2026-10-17T18:55:24Z claimed by dev-OJ-vwzl
 
 ## Links
 - Parent: [[OJ-fnna]]
 - Blocks: [[OJ-2t3g]], [[OJ-mbn5]]
 - Was blocked by: [[OJ-i6n6]]
+- Follows: [[OJ-i6n6]]
 
 ## Comments
