@@ -8,8 +8,8 @@ labels: [contest, backend, evidence, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:44:33Z
-content_hash: "sha256:8a93004bad285b4dc8b7e36499d1c9970ec0ee974f78dd252f8e3d72ad13a681"
+updated_at: 2026-10-17T16:44:51Z
+content_hash: "sha256:68904104d84921b192ada2cb382384524bed27553d1bb6ec428993ba31f29702"
 blocks: [OJ-vwzl, OJ-mbn5]
 assignee: dev-OJ-i6n6
 ---
@@ -126,6 +126,12 @@ status: new
 
 
 ## Notes
+
+### AC Verification
+[x] AC #1: PASS — SDK/local/open-weights decision and category impact use official Comfy sources.
+[x] AC #2: PASS — missing key/deployment tests fail closed before SDK client construction with JSON-serializable error codes.
+[x] AC #3: PASS — explicit owner-gated live-smoke blocker is recorded instead of fabricated execution evidence.
+[x] AC #4: PASS — changed-file credential scan found zero matches.
 
 ## nd_contract
 status: delivered
