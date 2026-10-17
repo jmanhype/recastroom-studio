@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:30:43Z
-content_hash: "sha256:3b6911f80de407f8c0a2910fe6b8ec4f263972c8396bf2fe9665d930ff5c3b2c"
+content_hash: "sha256:71d169323e752476cf2d6e36c4020618f25c0dafc648b91831275bc56fa00663"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 ---
@@ -123,6 +123,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: rejected
+
+### evidence
+- PM rejection applied via pvg story reject on 2026-10-17.
+
+### proof
+- [ ] Story requires another developer delivery before it can be accepted.
+
+
 ## Implementation Evidence
 
 PROOF:
