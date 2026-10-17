@@ -1,17 +1,16 @@
 ---
 id: OJ-mbn5
 title: "Run the final contest submission gate"
-status: in_progress
+status: open
 priority: 0
 type: feature
 labels: [contest, compliance, capstone, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
-updated_at: 2026-10-17T21:25:00Z
-content_hash: "sha256:539d93ddff89f998486268ff32972b4c1eb0038c614623a6201276b97e57f9ef"
+updated_at: 2026-10-17T21:30:43Z
+content_hash: "sha256:60967bf1aa6e6ed126dd23ad36f55b2900d6d9f3d9161d5a698969a10bf994c4"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
-assignee: dev-OJ-mbn5
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 ---
 
@@ -286,6 +285,8 @@ status: delivered
 - 2026-10-17T21:18:45Z claimed by dev-OJ-mbn5
 - 2026-10-17T21:24:32Z status: in_progress -> in_progress
 - 2026-10-17T21:24:54Z status: in_progress -> in_progress
+- 2026-10-17T21:30:43Z status: in_progress -> open
+- 2026-10-17T21:30:43Z released by speed
 
 ## Links
 - Parent: [[OJ-fnna]]
