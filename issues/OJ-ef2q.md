@@ -1,17 +1,18 @@
 ---
 id: OJ-ef2q
 title: "Package the eleven-workflow rights-clean QC evidence set"
-status: in_progress
+status: closed
 priority: 1
 type: feature
 labels: [contest, qc, rights, evidence, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:44:27Z
-content_hash: "sha256:3ec040f83814a0068d75e075042dc1a512d1d19f54a4f497d9f8d93920ba0b26"
-blocks: [OJ-fgc3, OJ-mbn5]
+updated_at: 2026-10-17T16:56:45Z
+content_hash: "sha256:d328c6b1562ce0aca9727c62a668307ca7c6f3a18421d3fb44d6cad28e146fc1"
 assignee: dev-OJ-ef2q
+closed_at: 2026-10-17T16:56:45Z
+close_reason: "Accepted: independently reproduced full pytest (10 passed), manifest verification (11 keepers / 48 artifacts), controlled byte-mutation failure, rights flags private_ip=false and third_party_film_tv=false, and credential-shaped scan with zero matches. Commit d4299ea was inspected and worktree was clean."
 ---
 
 ## Description
@@ -250,9 +251,11 @@ status: delivered
 - 2026-10-17T16:31:40Z status: open -> in_progress
 - 2026-10-17T16:31:40Z claimed by dev-OJ-ef2q
 - 2026-10-17T16:42:58Z status: in_progress -> in_progress
+- 2026-10-17T16:56:45Z status: in_progress -> closed
+- 2026-10-17T16:56:46Z dep_removed: no_longer_blocks OJ-fgc3
+- 2026-10-17T16:56:46Z dep_removed: no_longer_blocks OJ-mbn5
 
 ## Links
 - Parent: [[OJ-fnna]]
-- Blocks: [[OJ-fgc3]], [[OJ-mbn5]]
 
 ## Comments

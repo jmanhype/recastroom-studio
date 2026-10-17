@@ -9,9 +9,9 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T16:27:38Z
-content_hash: "sha256:7b0dc6efddcec38f6a5f0b3d129cbeb3f39743ebb2a70e72fc86812be6d1c590"
-blocked_by: [OJ-ef2q]
+content_hash: "sha256:2d6939f4b142e12853fb36b6bfa7eb7dd4d2cedcba6a7034b1eae26a1f6a2746"
 blocks: [OJ-mbn5]
+was_blocked_by: [OJ-ef2q]
 ---
 
 ## Description
@@ -128,10 +128,11 @@ status: new
 ## History
 - 2026-10-17T16:26:05Z dep_added: blocked_by OJ-ef2q
 - 2026-10-17T16:26:05Z dep_added: blocks OJ-mbn5
+- 2026-10-17T16:56:45Z dep_removed: was_blocked_by OJ-ef2q
 
 ## Links
 - Parent: [[OJ-fnna]]
 - Blocks: [[OJ-mbn5]]
-- Blocked by: [[OJ-ef2q]]
+- Was blocked by: [[OJ-ef2q]]
 
 ## Comments
