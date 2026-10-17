@@ -8,8 +8,8 @@ labels: [contest, qc, rights, evidence, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:42:58Z
-content_hash: "sha256:b7062e2ed9a346b9ee0f39442fbb5fe4bd44edb690d048688f909bf777c774b4"
+updated_at: 2026-10-17T16:43:48Z
+content_hash: "sha256:58d9a6681eb0016b878b0039d261ff78917bcc30dd8a6157df84fbf9a194f51a"
 blocks: [OJ-fgc3, OJ-mbn5]
 assignee: dev-OJ-ef2q
 ---
@@ -126,7 +126,49 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
 
+- Commit SHA: `d4299eae5275571e83925a5cd41ae0674902d2fa` on `story/OJ-ef2q`; no push.
+- Evidence pack: `docs/evidence/slate/` contains 11 keepers and 48 fully manifested artifacts (11 finals, 11 compares, 11 contacts, 11 Qwen reports, 4 provenance receipts).
+- Manifest and verifier: `docs/evidence/slate/manifest.json`, `tools/verify_keeper_evidence.py`.
+- Importer and documentation: `tools/build_keeper_evidence.py`, `docs/KEEPER_EVIDENCE.md`.
+- Controlled mutation transcript: `docs/evidence/slate-verification.md`.
+- Rights provenance: every artifact records `rights_clean_generated`, `private_ip=false`, `third_party_film_tv=false`, and operator/Jay consent “Done and perfect”.
+- Media and hashes: every final/compare/contact has a media probe; every one of 48 artifacts has byte size and SHA-256.
+- Rejected optional `era_anime_plate_a` is documented but excluded. No private film/TV experiment is included.
+
+### CI/Test Results
+
+- Scoped evidence tests: `3 passed in 3.16s`.
+- Full test suite: `10 passed in 3.16s`.
+- Immutable manifest verification: `PASS`, `keeper_count=11`, `artifact_count=48`.
+- Controlled mutation check: expected non-zero verifier result and `sha256 changed`.
+- Staged text scan: no credentials, URLs, absolute user paths, or private film/TV markers.
+
+Commands run:
+- `/opt/homebrew/bin/pytest tests/test_evidence.py -q`
+- `/opt/homebrew/bin/pytest -q`
+- `PYTHONPATH=src python tools/verify_keeper_evidence.py docs/evidence/slate/manifest.json`
+- `PYTHONPATH=src python tools/selftest_keeper_evidence.py docs/evidence/slate/manifest.json --report docs/evidence/slate-verification.md`
+- `git diff --cached --check`
+- `pvg story deliver OJ-ef2q`
+- `pvg story verify-delivery OJ-ef2q`
+
+Summary: Packaged the verified, rights-clean, human-approved eleven-workflow keeper evidence set with fail-closed byte/rights/QC/media verification and controlled mutation proof.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Immutable verifier output: `PASS`, keeper count 11, artifact count 48, manifest SHA-256 `5e3220dbce12bab2f792975abc96359e389b6af2a0b731731d6e6ede34f780cf`.
+- Controlled temporary-copy mutation: `cameramove_jay_stretch_qwen.md` byte `[-2] XOR 0x01`; original SHA-256 `853edbf8b0a37fa46e7aec03bdc6302fdee5791189cfcef2a4482159288c6882`, mutated SHA-256 `2df22b65b3ae39a29b6f011fdaca263428bcc0afb9cf66923e93f6afdde9f5e8`; verifier failed closed.
+- Commit SHA: `d4299eae5275571e83925a5cd41ae0674902d2fa`.
+
+### proof
+- [x] AC #1: Exactly the intended 11-keeper set is enumerated with intended format concepts and no private film/TV material.
+- [x] AC #2: Every included artifact has rights provenance/consent and SHA-256 (plus probes for all media artifacts).
+- [x] AC #3: Manifest verification passes, then fails after a controlled one-byte mutation.
+- [x] AC #4: Qwen machine QC and final human approval are traceable to every keeper.
 
 ## nd_contract
 status: delivered
