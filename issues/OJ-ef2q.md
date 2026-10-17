@@ -1,16 +1,17 @@
 ---
 id: OJ-ef2q
 title: "Package the eleven-workflow rights-clean QC evidence set"
-status: open
+status: in_progress
 priority: 1
 type: feature
 labels: [contest, qc, rights, evidence]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:27:38Z
-content_hash: "sha256:f6083fcdc13d0bd6eed86f493f4defd488b6d90ea1e551f2ba09e5b0377541d4"
+updated_at: 2026-10-17T16:31:40Z
+content_hash: "sha256:306d4c2a2c42fc05497ec65a11f21f9929b10952d11a6d0b485c22733ad1eeaa"
 blocks: [OJ-fgc3, OJ-mbn5]
+assignee: dev-OJ-ef2q
 ---
 
 ## Description
@@ -130,6 +131,8 @@ status: new
 ## History
 - 2026-10-17T16:26:05Z dep_added: blocks OJ-fgc3
 - 2026-10-17T16:27:21Z dep_added: blocks OJ-mbn5
+- 2026-10-17T16:31:40Z status: open -> in_progress
+- 2026-10-17T16:31:40Z claimed by dev-OJ-ef2q
 
 ## Links
 - Parent: [[OJ-fnna]]
