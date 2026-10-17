@@ -4,7 +4,7 @@ title: "Stand up the reviewer trial deployment"
 status: closed
 priority: 2
 type: feature
-labels: [contest, deployment, hosting, delivered, accepted]
+labels: [contest, deployment, hosting, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
