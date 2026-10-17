@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:30:43Z
-content_hash: "sha256:60967bf1aa6e6ed126dd23ad36f55b2900d6d9f3d9161d5a698969a10bf994c4"
+content_hash: "sha256:3b6911f80de407f8c0a2910fe6b8ec4f263972c8396bf2fe9665d930ff5c3b2c"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 ---
@@ -294,3 +294,27 @@ status: delivered
 - Follows: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]]
 
 ## Comments
+
+### 2026-10-17T21:30:43Z speed
+## PM Decision
+REJECTED [2026-10-17]:
+
+EXPECTED: The delivery standard requires zero warnings/errors, or a DISCOVERED_BUG block owning every warning in the recorded test/build output.
+DELIVERED: docs/evidence/OJ-mbn5-final-gate/gate.json records the extracted-package full-suite output as "31 passed, 1 warning" with a StarletteDeprecationWarning from fastapi.testclient.py. The delivery contains a DISCOVERED_BUG block only for the predecessor release-audit regression; a live-backlog search found no Starlette/httpx2/deprecation bug report.
+GAP: The warning is acknowledged in evidence but not owned by a corresponding DISCOVERED_BUG block or eliminated, so the mandatory zero-warning/error ownership gate fails.
+FIX: Either eliminate the Starlette/httpx deprecation warning and rerun the full suite with zero warnings, or add the required centralized DISCOVERED_BUG block for it (without waiving the warning), then redeliver from a new pinned commit with updated hashes. Do not change the correct FAIL/OWNER_BLOCKED submission verdict.
+
+## nd_contract
+status: rejected
+
+### evidence
+- Reviewed delivered SHA eb626d244c181e0cd406fc3b2b856a87b3030c92 and matching gate/archive/demo hashes.
+- Reproduced targeted gate tests (4 passed), keeper verification, exact demo hash/probe, matrix artifact hashes, archive exclusions, and predecessor release-audit failure.
+- Recorded full-suite warning at docs/evidence/OJ-mbn5-final-gate/gate.json has no matching bug block.
+
+### proof
+- [ ] Delivery evidence: every recorded warning is either eliminated or backed by a DISCOVERED_BUG block.
+- [x] AC #1: requirement matrix is concrete, evidence-backed, fail-closed, and non-fabricated.
+- [x] AC #2: demo duration/media/hash and bounded provenance verified; exact rights remain OWNER_BLOCKED.
+- [x] AC #3: package/archive/license/setup/workflow/deployment posture verified without credential exposure; release audit FAIL is correctly retained.
+- [x] AC #4: unpublished owner runbook includes publication/X/Typeform, timeout, rollback, and do-not-submit-while-gated instructions.
