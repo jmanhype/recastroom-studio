@@ -8,13 +8,51 @@ labels: [contest, app, e2e]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:26:46Z
-content_hash: "sha256:2ac1f95f30b90d8a5ba55823dc608f3768fc530f1c4ce860360ef6ecf3c480ed"
+updated_at: 2026-10-17T16:27:38Z
+content_hash: "sha256:3f12f3e776bf7e537dcb1d170f77a801804a2f28c1b97c88a5be7bb7eb03eaa9"
 blocked_by: [OJ-i6n6]
 blocks: [OJ-2t3g, OJ-mbn5]
 ---
 
 ## Description
+
+## Context
+
+The app can prepare a job and serve workflow/prompt artifacts, while the hosted
+generation-to-download loop is not yet proven end to end.
+
+## Required outcome
+
+A reviewer can upload owned inputs, pass the rights gate, execute a configured
+backend, monitor status, download the result, and receive restored-audio review
+artifacts.
+
+## Acceptance evidence
+
+1. Exercise upload, preflight, timing, rights attestation, queueing, status, download, audio restoration, and side-by-side output.
+2. Include API and browser evidence from a clean checkout.
+3. Preserve fail-closed behavior for unattested or invalid rights inputs.
+4. Record commands, HTTP responses, media probes, and output hashes.
+
+## nd_contract
+status: new
+
+### evidence
+- Created from `docs/ARCHITECTURE.md`, the app walkthrough in `STATUS.md`, and demo v1 receipts.
+
+### proof
+- [ ] AC #1: The full hosted path returns a downloadable final media artifact.
+- [ ] AC #2: The rights gate rejects missing or invalid attestation before execution.
+- [ ] AC #3: Tests and clean-checkout smoke output pass.
+- [ ] AC #4: Every public artifact has a SHA-256 receipt and ffprobe record.
+
+
+## Observable outcome
+The story returns pass/fail evidence and stores every artifact referenced by its proof block.
+
+## MANDATORY SKILLS
+None identified.
+
 
 ## Context
 
