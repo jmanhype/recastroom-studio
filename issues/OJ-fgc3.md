@@ -9,13 +9,13 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T20:28:22Z
-content_hash: "sha256:b1521e9025247641ee8aaa74aef8e2e5dd5283e8b2681ee700ba0e9ab5076e08"
+content_hash: "sha256:0f9bc1bc5bf02ba7feb9d4ea8a7186d36d484ab5dae4a9ca1d6be2f0968f5f09"
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
 assignee: dev-OJ-fgc3
 closed_at: 2026-10-17T20:28:18Z
 close_reason: "Accepted: independently reproduced 21 passing tests, pip check, CLI 0.1.1, filtered release audit PASS, unpacked-archive app health/home 200, keeper verifier 11/48, controlled mutation failure, identical archive reproduction SHA be52c145d2035fdf7b280d230a0444c50693383cf393f132c9311e1690a1b1c3, and 11/11 identical remux video/audio packet hashes. Commit d020e40 and worktree were clean; publication remains owner-gated."
-led_to: [OJ-vwzl]
+led_to: [OJ-vwzl, OJ-2t3g]
 ---
 
 ## Description
@@ -242,7 +242,7 @@ Summary: Prepared the owner-gated public release candidate with deliberate recov
 - Parent: [[OJ-fnna]]
 - Was blocked by: [[OJ-ef2q]]
 - Follows: [[OJ-ef2q]], [[OJ-i6n6]]
-- Led to: [[OJ-vwzl]]
+- Led to: [[OJ-vwzl]], [[OJ-2t3g]]
 
 ## Comments
 
