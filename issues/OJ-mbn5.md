@@ -9,9 +9,9 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T16:27:38Z
-content_hash: "sha256:b5efd97c046547a0caf2301724efca0f89905995101666c737d8e50e68825b43"
-blocked_by: [OJ-fgc3, OJ-2t3g, OJ-vwzl]
-was_blocked_by: [OJ-ef2q, OJ-i6n6]
+content_hash: "sha256:95610edf2c97d9943432330d98078960c95e37e05b6d030220d2906eceabd879"
+blocked_by: [OJ-2t3g, OJ-vwzl]
+was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3]
 ---
 
 ## Description
@@ -133,10 +133,11 @@ status: new
 - 2026-10-17T16:27:21Z dep_added: blocked_by OJ-ef2q
 - 2026-10-17T16:56:46Z dep_removed: was_blocked_by OJ-ef2q
 - 2026-10-17T18:52:21Z dep_removed: was_blocked_by OJ-i6n6
+- 2026-10-17T20:28:18Z dep_removed: was_blocked_by OJ-fgc3
 
 ## Links
 - Parent: [[OJ-fnna]]
-- Blocked by: [[OJ-fgc3]], [[OJ-2t3g]], [[OJ-vwzl]]
-- Was blocked by: [[OJ-ef2q]], [[OJ-i6n6]]
+- Blocked by: [[OJ-2t3g]], [[OJ-vwzl]]
+- Was blocked by: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]]
 
 ## Comments
