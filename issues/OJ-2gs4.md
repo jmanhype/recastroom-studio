@@ -8,8 +8,8 @@ labels: [release-audit, regression]
 parent: OJ-fnna
 created_at: 2026-10-17T21:36:40Z
 created_by: speed
-updated_at: 2026-10-17T21:36:57Z
-content_hash: "sha256:b66a5476095faf6b4a26334ee9a4dc5fe32c48af3b66561dd32d61ce53f87ddc"
+updated_at: 2026-10-17T21:45:03Z
+content_hash: "sha256:50f42f39db0a71b00753bef502db0db8b71e98093d3707d311528c4121cbe5cf"
 blocks: [OJ-mbn5]
 assignee: dev-OJ-2gs4
 follows: [OJ-mbn5]
@@ -101,6 +101,32 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: delivered
+
+### evidence
+- Implementation commit: `7381af42a00936305b20b74f5ded1febf5f94805` (source tree `c94b81691ab3f0aa5af319ca97d9ebaf38e0836c`).
+- Evidence commit: `92b175d114a1f90a9c6b8fa2487b266306fe3082`.
+- Changed `tests/test_local_trial.py` so negative fixture bytes are constructed at runtime. Target test SHA-256: `cef3da5202d539891a8fabbf7db7bc3e17c2bd9f04a6338820baec18c3f3d626`.
+- Target check: `python -m pytest -q tests/test_local_trial.py` -> exit 0, `2 passed in 0.17s`; both `possible-credential-value` and `absolute-or-private-network-path` findings remain asserted.
+- Full final-state test: `python -m pytest -q` -> exit 0, `31 passed, 1 warning in 9.08s` (known Starlette/httpx deprecation).
+- Dependency consistency: `python -m pip check` -> exit 0, `No broken requirements found.`
+- Changed-file scan: `pvg verify tests/test_local_trial.py docs/evidence/OJ-2gs4-release-audit` -> exit 0, `VERIFY: PASSED (1 files scanned, 0 issues)`.
+- Whitespace: `git diff --check` and `git diff --check HEAD^ HEAD` -> exit 0, no output.
+- Isolated loopback trial: `python scripts/local_trial.py --host 127.0.0.1 --port 8890 --output-dir work/OJ-2gs4-local-trial` -> exit 0; job `ecbc04d8b2fb` terminal state `complete`; dry-run backend; exposure scan `PASS`, 0 findings.
+- Final gate: `python tools/final_submission_gate.py --commit HEAD --demo <approved-demo-v1> --output work/OJ-2gs4-final-gate` on commit `7381af42a00936305b20b74f5ded1febf5f94805` -> exit 2 (expected owner gate), `eligible_to_submit=false`.
+- Final-gate release audit: PASS, `errors=[]`; 141 tracked files, 98 text, 43 binary, 43 probed media. Matrix: 11 PASS, 0 FAIL, 8 OWNER_BLOCKED.
+- Reproducible package: filtered content SHA-256 `51c213437a2669ea58b7dffcd18f5513fd72cfe357f14eb549a44f773ef3b284`; archive SHA-256 `3faede7ccf6a7de02c15c62b126ffaf6d92d079ec564d62465a225a1aa351217`, 83398293 bytes.
+- Gate-embedded checks: pytest exit 0 (`31 passed, 1 warning in 9.24s`); pip check exit 0 (`No broken requirements found.`).
+- Credential/private-path regex scan over target test plus six-file evidence set -> exit 0, `files_scanned=6`, `matches=[]`, status PASS.
+- Committed machine-readable evidence: `docs/evidence/OJ-2gs4-release-audit/validation.json`, `docs/evidence/OJ-2gs4-release-audit/final-gate/gate.json`, `docs/evidence/OJ-2gs4-release-audit/local-trial/receipt.json`, and `docs/evidence/OJ-2gs4-release-audit/local-trial/secret-scan.json`.
+- Boundary: no publish, push, merge, credential use, cloud/GPU operation, or final-gate semantic change.
+
+### proof
+- [x] AC #1: Filtered public release audit reports zero findings on commit `7381af42a00936305b20b74f5ded1febf5f94805`.
+- [x] AC #2: Constructed unsafe fixtures still produce both scanner findings; targeted test passes without forbidden-looking complete literals in source.
+- [x] AC #3: Fresh isolated loopback trial completed and final gate ran on the explicit fixed commit; release-audit local FAIL is gone.
+- [x] AC #4: No local FAIL or OWNER_BLOCKED status changed; exit 2 is solely the unchanged owner-gated matrix. Evidence contains no forbidden-looking credential match or local-user-path match.
 
 
 ## History
