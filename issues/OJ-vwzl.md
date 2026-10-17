@@ -8,8 +8,8 @@ labels: [contest, app, e2e, rejected]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T20:33:02Z
-content_hash: "sha256:1832765fd6468994be87b12b37f724354f570d079abb88ac85a2b65156ef2187"
+updated_at: 2026-10-17T20:52:37Z
+content_hash: "sha256:d02ce7b0b31f909035441bb28777ba2e3e05099532c3635de333951543214758"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
 follows: [OJ-i6n6, OJ-ef2q, OJ-fgc3]
@@ -128,7 +128,62 @@ status: new
 
 
 ## Notes
+## Implementation Evidence (DELIVERED)
 
+PROOF:
+
+### Merge/rework
+- Integrated current accepted main `91407a9` into `story/OJ-vwzl` at merge commit `e262c09`.
+- Preserved both accepted release-candidate cleanup and the hosted upload-to-output implementation.
+- Final source commit: `5a535691d18c0d3e43b5ac6a71660c34cc9c89f1`.
+- Final evidence commit: `0c275f9`; later `5a53569` only adds required MIT SPDX headers to the three new E2E Python files.
+- Worktree was clean after verification.
+
+### Public-surface sanitization
+- Public prepare responses now expose filenames for scene path, manifest paths, and artifact names—not machine paths.
+- `tools/e2e_smoke.py` redacts `<workspace>` and `<output-dir>` from all JSON evidence and transcript commands.
+- `tools/build_e2e_receipts.py` redacts local ffprobe filenames to stable relative paths.
+- `tools/browser_smoke.sh` redacts workspace/output roots and strips transcript trailing whitespace.
+- Replaced the stale pre-merge evidence directory with regenerated post-merge evidence.
+- Local-path scan over all textual OJ-vwzl evidence found zero `/Users/speed`, `/private/tmp`, or `/tmp/oj-*` references.
+
+### CI/Test Results
+- Final worktree: `25 passed, 1 warning in 9.21s`.
+- Final worktree `pip check`: `No broken requirements found`.
+- Public filtered archive: `25 passed, 1 warning in 9.12s`.
+- Public archive `pip check`: `No broken requirements found`.
+- Public archive API E2E: `{"ok": true}`; generated, final, and side-by-side downloads all returned HTTP 200.
+- Public archive API evidence path scan: zero local absolute paths.
+- Browser E2E uploaded source/reference/word timing, passed the rights checkbox, reached `complete`, and exposed one link each for generated, final, and side_by_side.
+- Visual screenshot inspection confirmed complete dry-run state, checked rights gate, artifact names only, and all three download links.
+
+### Public release gate
+- Built a filtered archive from final commit `5a535691d18c0d3e43b5ac6a71660c34cc9c89f1`.
+- Source tree: `522df9acede520b86ced119e97ab7da7d0b4cecd`.
+- Filtered-content digest: `29c9d5f61c06abb29c6fd346f4fd2bfc9fe2d170ef81fb150deceb8404ce8812`.
+- Archive bytes: `83,376,605`.
+- Archive SHA-256: `055cc81d4b07694372260727cf06512d743674fbe3fc076da9d27e3d58830c03`.
+- Unpacked filtered-tree release audit: `PASS: release audit` with 127 files, 84 text files, 43 binary files, and 43 probed media files.
+- Keeper verifier on public archive: `PASS`, 11 keepers, 48 artifacts, manifest SHA-256 `ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33`.
+- No credential, hosted deployment call, GPU/compute, publication, tag, social action, or push was used.
+
+### AC Verification
+| AC | Requirement | Evidence | Status |
+|---|---|---|---|
+| 1 | Full hosted path returns downloadable generated, restored-audio final, and review media | API/browser E2E receipts and HTTP 200 downloads | PASS |
+| 2 | Missing/invalid rights rejected before execution | API E2E rights records return 422 before job creation | PASS |
+| 3 | Clean tests and smoke pass | 25 worktree tests, 25 archive tests, pip check, API E2E ok | PASS |
+| 4 | Every evidence artifact hashed; media/image ffprobe records | RECEIPTS verifies 12 artifacts byte-for-byte and hash-for-hash | PASS |
+| 5 | Compatibility with accepted public release gate | Filtered public archive release audit PASS and no local paths | PASS |
+| 6 | Correct rework baseline and redelivery | Merged main 91407a9; final branch clean; this contract appended before delivery | PASS |
+
+LEARNINGS:
+- Cross-story release gates must be rerun after merging a functional story into an accepted release-candidate baseline.
+- Public API responses and generated evidence need path redaction at creation time; post-hoc sanitization risks stale receipts.
+- Browser screenshots are public artifacts too: use filenames in status payloads so the image itself cannot leak server paths.
+
+### OBSERVATIONS (unrelated)
+- None.
 
 ## nd_contract
 status: rejected
