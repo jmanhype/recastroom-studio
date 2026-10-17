@@ -8,8 +8,8 @@ labels: [contest, app, e2e, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T19:16:35Z
-content_hash: "sha256:fe1d018362038a9b2b14d44cd40e742ea5c4ea411ddd7a48d4886c63df051ded"
+updated_at: 2026-10-17T19:17:51Z
+content_hash: "sha256:14f78e48c0b0a9a53bc3f63c7b5cf469135e0e4d56fbe53156bfca59ad9f3dd1"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
 assignee: dev-OJ-vwzl
@@ -128,6 +128,51 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
+
+- Changed implementation: `app/main.py`, `app/web/index.html`, `src/openjutsu/config.py`.
+- Tests, fixtures, and reproducible drivers: `tests/fixtures/`, `tests/test_app_e2e.py`, `tests/test_config.py`, `tools/e2e_smoke.py`, `tools/browser_smoke.sh`, `tools/build_e2e_receipts.py`.
+- Public evidence: `docs/evidence/OJ-vwzl-upload-to-output/`.
+
+### CI/Test Results
+
+- `python -m pytest -q` at final clean HEAD → `19 passed, 1 warning in 5.60s`.
+- `python -m pip check` at final clean HEAD → `No broken requirements found`.
+- Final clean API E2E → dry-run complete; generated/final/side-by-side HTTP 200; SDK missing-key fail closed; `ok:true`.
+- Receipt audit → all 12 committed evidence hashes verified.
+
+### AC Verification
+
+All four acceptance criteria are checked in the contract below.
+
+## nd_contract
+status: delivered
+
+### evidence
+Commands run:
+- `python -m pytest -q`
+- `python -m pip check`
+- `python tools/e2e_smoke.py --output-dir /private/tmp/oj-vwzl-head-api.K2SETi --dry-port 8903 --sdk-port 8904`
+- `./tools/browser_smoke.sh http://127.0.0.1:8901 ...`
+- `./tools/build_e2e_receipts.py --evidence-dir docs/evidence/OJ-vwzl-upload-to-output --source-commit 95a8bc7a7d309be79bedc1abf16bb566a234b7e9`
+- Commit SHA: dc2cd41256db0e030d20df013d35c0c9e39f4f4c
+
+Summary: Complete rights-gated upload-to-output dry-run path, browser evidence, downloadable restored-audio/review artifacts, and fail-closed SDK proof.
+
+### proof
+- [x] AC #1: complete hosted dry-run path and downloadable outputs
+- [x] AC #2: missing/invalid rights rejected before execution
+- [x] AC #3: clean tests and smoke pass
+- [x] AC #4: SHA-256 and ffprobe receipts complete
+
+### Proof
+| AC | Status | Evidence |
+|---|---|---|
+| AC #1 | PASS | API `complete`; generated/final/side-by-side HTTP 200; browser job complete |
+| AC #2 | PASS | missing and invalid rights both HTTP 422 before job creation |
+| AC #3 | PASS | 19 tests, clean pip check, API and browser E2E |
+| AC #4 | PASS | `RECEIPTS.json` records 12 hashes and media probes |
+
 ## Implementation Evidence
 
 - Changed implementation: `app/main.py`, `app/web/index.html`, `src/openjutsu/config.py`.
