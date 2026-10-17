@@ -4,7 +4,7 @@ title: "Package the eleven-workflow rights-clean QC evidence set"
 status: in_progress
 priority: 1
 type: feature
-labels: [contest, qc, rights, evidence]
+labels: [contest, qc, rights, evidence, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
