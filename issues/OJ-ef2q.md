@@ -8,8 +8,8 @@ labels: [contest, qc, rights, evidence, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:44:05Z
-content_hash: "sha256:137b9530855f5f0ce458d87363fbef6fcd3812293bfe0836b2c5be6e031d335c"
+updated_at: 2026-10-17T16:44:27Z
+content_hash: "sha256:3ec040f83814a0068d75e075042dc1a512d1d19f54a4f497d9f8d93920ba0b26"
 blocks: [OJ-fgc3, OJ-mbn5]
 assignee: dev-OJ-ef2q
 ---
@@ -126,6 +126,26 @@ status: new
 
 
 ## Notes
+### AC Verification
+[x] AC #1: PASS — exactly 11 intended keepers, intended concepts, no private film/TV material.
+[x] AC #2: PASS — all 48 artifacts have rights provenance/consent and SHA-256; media artifacts have probes.
+[x] AC #3: PASS — immutable manifest passes and a controlled one-byte temporary mutation fails closed.
+[x] AC #4: PASS — Qwen QC and operator/Jay human approval trace to every keeper.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Commit SHA: d4299eae5275571e83925a5cd41ae0674902d2fa.
+- Manifest SHA-256: 5e3220dbce12bab2f792975abc96359e389b6af2a0b731731d6e6ede34f780cf.
+- Full implementation evidence, commands, tests, hashes, and controlled mutation transcript are recorded above.
+
+### proof
+[x] AC #1: PASS.
+[x] AC #2: PASS.
+[x] AC #3: PASS.
+[x] AC #4: PASS.
+
 ## AC Verification
 
 | AC | Result | Evidence |
