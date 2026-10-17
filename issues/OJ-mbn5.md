@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:32:26Z
-content_hash: "sha256:671254aeb8be8ae7d3869fedfd39f217a824689e183d7069e15bf2c4a8165d7f"
+content_hash: "sha256:8de9c5e970cf3cf3b14f8e1f913eae284796d2b942d16a80079822fce59988a0"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 closed_at: 2026-10-17T21:32:26Z
@@ -125,6 +125,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Accepted Evidence
 ACCEPTED [2026-10-17]: Final evidence-based review passes after correcting the PM's interim backlog-query projection.
 
