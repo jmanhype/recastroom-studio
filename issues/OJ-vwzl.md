@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T20:32:50Z
-content_hash: "sha256:94c4cf29249011ff770cc953d33c73854d7f16e4f6b528442712cde05c0b5be1"
+content_hash: "sha256:3430cac31c701f8f97da97988430adb460da6dea9724b9275fdd7a9366e51144"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
 follows: [OJ-i6n6, OJ-ef2q]
@@ -304,3 +304,6 @@ status: delivered
 - Follows: [[OJ-i6n6]], [[OJ-ef2q]]
 
 ## Comments
+
+### 2026-10-17T20:32:50Z speed
+EXPECTED: the delivered E2E path must remain compatible with the accepted public release-candidate gates on current main 91407a9. DELIVERED: deterministic dry_run backend, strict backend registry, rights rejection, SDK fail-closed, API/browser upload-to-output evidence, 19 passing branch tests, pip check, and 12/12 evidence hashes verified. GAP: the branch is based on pre-FGC3 7223c99. Its committed OJ-vwzl evidence and receipt generator expose absolute local paths (/Users/speed and /private/tmp), and the old workflow evidence retains cached private-reference data. Running the accepted tools/audit_release.py against this branch fails; merging it unchanged would regress the accepted public release audit. FIX: merge current main 91407a9 into story/OJ-vwzl, preserve both FGC3 release cleanup and VWZL E2E, sanitize or normalize all committed evidence/receipt paths, regenerate E2E artifacts/receipts on the merged tree, make the filtered public release audit pass, rerun full tests/API/browser E2E, commit, append delivery evidence, and redeliver.
