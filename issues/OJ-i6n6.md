@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T16:30:57Z
-content_hash: "sha256:3ea607d373625e0b277ecf71727eb358f3dab8e07e9ec3b9556ad50098890730"
+content_hash: "sha256:2069dc1f2653765804fe030fb10a1beaf8e4a06423a0d5f2e85a41e2db653aec"
 blocks: [OJ-vwzl, OJ-mbn5]
 assignee: dev-OJ-i6n6
 ---
@@ -140,3 +140,6 @@ status: new
 - Blocks: [[OJ-vwzl]], [[OJ-mbn5]]
 
 ## Comments
+
+### 2026-10-17T16:30:57Z speed
+loop: reset orphaned in_progress to open (no developer worktree found; prior session presumed dead)
