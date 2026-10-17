@@ -4,7 +4,7 @@ title: "Ship the Openjutsu contest production lane"
 status: open
 priority: 0
 type: epic
-labels: [contest, openjutsu, accepted]
+labels: [contest, openjutsu]
 created_at: 2026-10-17T16:25:53Z
 created_by: speed
 updated_at: 2026-10-17T22:05:49Z
