@@ -8,8 +8,8 @@ labels: [contest, compliance, capstone, rejected]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
-updated_at: 2026-10-17T21:30:43Z
-content_hash: "sha256:71d169323e752476cf2d6e36c4020618f25c0dafc648b91831275bc56fa00663"
+updated_at: 2026-10-17T21:32:26Z
+content_hash: "sha256:df04eb73d6d0681346882065996af335f7e86670ca9db25b10ad8faf54be757f"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 ---
@@ -123,7 +123,29 @@ status: new
 
 
 ## Notes
+## PM Accepted Evidence
+ACCEPTED [2026-10-17]: Final evidence-based review passes after correcting the PM's interim backlog-query projection.
 
+- The prior rejection asserted that no Starlette/httpx2/deprecation bug report existed. Repeating the live query with the actual uppercase pvg JSON fields found the accepted predecessor OJ-2t3g DISCOVERED_BUG block titled "Test suite emits Starlette httpx deprecation warning" (affected files tests/test_app.py, tests/test_app_e2e.py, pyproject.toml). The warning is therefore already centrally owned; the zero-warning ownership requirement is satisfied.
+- Delivered commit and worktree verified at eb626d244c181e0cd406fc3b2b856a87b3030c92; gate-selected commit fb1e745 and tree 214950b00e38869adb48df45000095cd3f0772ce match evidence.
+- gate.json SHA-256 aed021538b62093ecfb6fbfc82777cf47b094423ada115d248fef22ee9f208f8, local candidate archive SHA-256 aa86e002eb549b55e70094e4bd58e3059c28133109866830279e2c50f8f900b7, and demo SHA-256 7cbe824a3e7dc4ff515c23fe1672630e938e2520e9b7c3686c87fa90a4db089d all match recorded proof.
+- Independent ffprobe confirmed 108.052 seconds, 1152x768 H.264 at 24 fps, AAC stereo at 48 kHz, and 24,873,113 bytes. Keeper verification passed with 11 keepers and 48 artifacts.
+- All five matrix artifact hashes match fb1e745; archive exclusions are absent; security-like added-line scan is clean; scoped stub scan is clean; git diff --check passes; targeted final-gate tests pass 4/4.
+- Reunpacking and auditing the exact archive reproduced only the two documented OJ-2t3g synthetic-literal release-audit failures, with the same 137/94/43 counts. The gate correctly remains exit 1, eligible_to_submit=false.
+- The requirement matrix is concrete and non-fabricated: local PASS/FAIL results are evidence-backed, mandatory owner actions remain OWNER_BLOCKED, and no URL/rights/live-SDK claim is fabricated. The owner packet includes fresh-install/SDK/rights stops, publication/X/Typeform procedures, timeout and rollback handling, and the explicit do-not-submit-while-gated rule.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Corrected warning-ownership query against accepted predecessor OJ-2t3g.
+- Full evidence-based ladder rerun from pinned delivered worktree without code changes.
+
+### proof
+- [x] AC #1: Official/checklist requirements map to concrete PASS/FAIL/OWNER_BLOCKED rows with artifact evidence.
+- [x] AC #2: Demo bytes, duration, media properties, and bounded provenance are hash-verified; exact-demo rights remain OWNER_BLOCKED.
+- [x] AC #3: Package, hashes, local tests/dependencies, audit failure, exclusions, and owner-blocked public/deployment checks are correctly represented without credential exposure.
+- [x] AC #4: Unpublished owner-only runbook is complete with rollback, timeout, and do-not-submit handling.
 
 ## nd_contract
 status: rejected
