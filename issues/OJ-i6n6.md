@@ -4,11 +4,11 @@ title: "Verify the official Comfy SDK execution path"
 status: in_progress
 priority: 0
 type: feature
-labels: [contest, backend, evidence, delivered]
+labels: [contest, backend, evidence]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:44:51Z
+updated_at: 2026-10-17T16:44:56Z
 content_hash: "sha256:c718e7775734779b9ab19bfeb8a47ed3d13313ecb68ac609be6f55ca7abacbcc"
 blocks: [OJ-vwzl, OJ-mbn5]
 assignee: dev-OJ-i6n6
