@@ -4,7 +4,7 @@ title: "Run the final contest submission gate"
 status: open
 priority: 0
 type: feature
-labels: [contest, compliance, capstone, delivered]
+labels: [contest, compliance, capstone]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
