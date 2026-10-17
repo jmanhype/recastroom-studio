@@ -8,8 +8,8 @@ labels: [contest, app, e2e, rejected]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T20:32:50Z
-content_hash: "sha256:3430cac31c701f8f97da97988430adb460da6dea9724b9275fdd7a9366e51144"
+updated_at: 2026-10-17T20:32:51Z
+content_hash: "sha256:7dc2098ebf7a4c7deeafba2b93ca0d0b19ac3226fe2936c6899fdde84f78b91c"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
 follows: [OJ-i6n6, OJ-ef2q]
@@ -127,6 +127,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: rejected
+
+### evidence
+- PM rejection applied via pvg story reject on 2026-10-17.
+
+### proof
+- [ ] Story requires another developer delivery before it can be accepted.
+
+
 ## Implementation Evidence
 
 - Changed implementation: `app/main.py`, `app/web/index.html`, `src/openjutsu/config.py`.
