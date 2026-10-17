@@ -8,8 +8,8 @@ labels: [contest, release, packaging, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T19:15:43Z
-content_hash: "sha256:56619ac9f7b24bbe571444f4f495c13d0f503e42c4fa5ab16157022fe066a2e1"
+updated_at: 2026-10-17T19:16:12Z
+content_hash: "sha256:2b3f18024eef49a559736c9c5dac7e04531fe114f2b1281ebed691a3e65a167f"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
@@ -232,3 +232,17 @@ Summary: Prepared the owner-gated public release candidate with deliberate recov
 
 ### 2026-10-17T18:55:21Z speed
 Recovery incident: the first OJ-fgc3 worker disappeared with a large staged, uncommitted worktree. pvg loop recover removed that worktree/branch. Before any Git cleanup, all 77 staged blobs were preserved on local branch recovery/OJ-fgc3-staged-blobs at commit c251db9b2962cfa8b322cfcd33763196e693688b (tree ad6ac72f1681ed5359071d097e867fb52443bea3). A size/hash inventory is at ../oj-fgc3-unreachable-inventory.txt. No object garbage collection was run.
+
+### 2026-10-17T19:16:12Z speed
+## nd_contract
+status: delivered
+
+### evidence
+- Authoritative implementation, commands, outputs, commit/tree/archive hashes, recovery decisions, clean-checkout gates, and unpacked-archive gates are recorded in the Implementation Evidence block above.
+- Commit: d020e40ef1f906d5851b0a0d8bd5812ed7cca858; archive SHA-256: be52c145d2035fdf7b280d230a0444c50693383cf393f132c9311e1690a1b1c3; published=false; tag_created=false; no push.
+
+### proof
+- [x] AC #1: Clean-checkout install, pip check, full tests, CLI version, app health/home, and workflow checks pass.
+- [x] AC #2: License/header and private-artifact audits pass on the filtered public tree.
+- [x] AC #3: README quickstart and API examples reproduce the local credential-free gates.
+- [x] AC #4: Release archive, source tree, filtered-content tree, size, and SHA-256 receipts are recorded without publishing.
