@@ -8,8 +8,8 @@ labels: [contest, app, e2e, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T19:15:25Z
-content_hash: "sha256:05af57c0d34076067b1dfe30be3aa1d5a61a85c4c94e9a53c5bcdbbc71d39183"
+updated_at: 2026-10-17T19:15:46Z
+content_hash: "sha256:26bfd4eb37089a85f535989bf70a50076e63f243deb882b47eb5c49793b4d111"
 blocks: [OJ-2t3g, OJ-mbn5]
 was_blocked_by: [OJ-i6n6]
 assignee: dev-OJ-vwzl
@@ -128,7 +128,48 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
 
+- Deterministic backend and routing: `app/main.py`, `src/openjutsu/config.py`.
+- Browser output links and optional-upload handling: `app/main.py`, `app/web/index.html`.
+- Synthetic owned fixtures and tests: `tests/fixtures/`, `tests/test_app_e2e.py`, `tests/test_config.py`.
+- Reproducible API/browser/receipt drivers: `tools/e2e_smoke.py`, `tools/browser_smoke.sh`, `tools/build_e2e_receipts.py`.
+- Public evidence pack: `docs/evidence/OJ-vwzl-upload-to-output/`.
+- Clean-checkout API job `8091736d2cc3` reached `complete`; generated/final/side-by-side artifact downloads all returned HTTP 200.
+- Clean-checkout browser job `06e10c33b91b` reached `complete`; the full-page screenshot shows all three download links.
+- Official SDK job `ae102cf4381d` failed closed with `missing_comfy_api_key`; missing and invalid rights attestations returned HTTP 422 before execution.
+
+## CI/Test Results
+
+- Final clean HEAD `dc2cd41256db0e030d20df013d35c0c9e39f4f4c`: `19 passed, 1 warning in 5.60s`.
+- Final clean HEAD dependency check: `No broken requirements found`.
+- Final clean HEAD API smoke: dry-run complete, three artifact downloads HTTP 200, SDK fail-closed error, driver returned `{"ok": true}`.
+- Final clean HEAD receipt audit: verified all 12 committed evidence hashes.
+- Credential-shaped scan across changed app/test/tool/evidence paths: 0 matches.
+
+## nd_contract
+status: delivered
+
+### evidence
+
+Commands run:
+- `git worktree add --detach /private/tmp/oj-vwzl-clean.07Cksk dc2cd41256db0e030d20df013d35c0c9e39f4f4c`
+- `python -m pytest -q`
+- `python -m pip check`
+- `python tools/e2e_smoke.py --output-dir /private/tmp/oj-vwzl-head-api.K2SETi --dry-port 8903 --sdk-port 8904`
+- `./tools/browser_smoke.sh http://127.0.0.1:8901 ...`
+- `shasum -a 256 ...` and ffprobe records via `docs/evidence/OJ-vwzl-upload-to-output/RECEIPTS.json`
+- `pvg story verify-delivery OJ-vwzl`
+
+Summary: Complete credential-free upload → preflight → rights gate → preparation → dry-run backend routing/status → downloads → restored-audio final → source/final review artifacts path, plus real-browser evidence and fail-closed SDK proof.
+
+Commit SHA: `dc2cd41256db0e030d20df013d35c0c9e39f4f4c`
+
+### proof
+- [x] AC #1: The full hosted dry-run path returns downloadable final and review media artifacts.
+- [x] AC #2: Missing and invalid rights attestations are rejected with HTTP 422 before execution.
+- [x] AC #3: Final clean-checkout tests and smoke output pass.
+- [x] AC #4: Every recorded evidence artifact has a SHA-256 receipt; media/image artifacts have ffprobe records.
 
 ## nd_contract
 status: delivered
