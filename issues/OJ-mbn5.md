@@ -1,7 +1,7 @@
 ---
 id: OJ-mbn5
 title: "Run the final contest submission gate"
-status: open
+status: closed
 priority: 0
 type: feature
 labels: [contest, compliance, capstone, rejected]
@@ -9,9 +9,11 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:32:26Z
-content_hash: "sha256:df04eb73d6d0681346882065996af335f7e86670ca9db25b10ad8faf54be757f"
+content_hash: "sha256:671254aeb8be8ae7d3869fedfd39f217a824689e183d7069e15bf2c4a8165d7f"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
+closed_at: 2026-10-17T21:32:26Z
+close_reason: "Accepted: final packet is complete and correctly fail-closed"
 ---
 
 ## Description
@@ -321,6 +323,7 @@ status: delivered
 - 2026-10-17T21:24:54Z status: in_progress -> in_progress
 - 2026-10-17T21:30:43Z status: in_progress -> open
 - 2026-10-17T21:30:43Z released by speed
+- 2026-10-17T21:32:26Z status: open -> closed
 
 ## Links
 - Parent: [[OJ-fnna]]
