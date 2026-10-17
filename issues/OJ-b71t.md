@@ -1,7 +1,7 @@
 ---
 id: OJ-b71t
 title: "Bug: OJ-2t3g synthetic test literals fail public release audit"
-status: open
+status: closed
 priority: 0
 type: task
 labels: [release-audit, regression, superseded, accepted]
@@ -9,7 +9,9 @@ parent: OJ-fnna
 created_at: 2026-10-17T21:35:23Z
 created_by: speed
 updated_at: 2026-10-17T22:05:27Z
-content_hash: "sha256:fb6ed1c5a75e752fa68e369efb6d21abef95e78b85eb13c0719f11dc10a06e74"
+content_hash: "sha256:ba6b71a91da1598f006711ce8caeb49ae73b70ea36d7714c25d4dada53ff5623"
+closed_at: 2026-10-17T22:05:27Z
+close_reason: "Superseded by accepted OJ-2gs4 release-audit fix"
 ---
 
 ## Description
@@ -179,6 +181,7 @@ status: new
 ## History
 - 2026-10-17T21:36:07Z dep_added: blocks OJ-mbn5
 - 2026-10-17T21:36:40Z dep_removed: no_longer_blocks OJ-mbn5
+- 2026-10-17T22:05:27Z status: open -> closed
 
 ## Links
 - Parent: [[OJ-fnna]]
