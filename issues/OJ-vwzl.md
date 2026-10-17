@@ -4,11 +4,11 @@ title: "Complete hosted upload-to-output execution"
 status: closed
 priority: 1
 type: feature
-labels: [contest, app, e2e, delivered]
+labels: [contest, app, e2e, delivered, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T20:52:52Z
+updated_at: 2026-10-17T20:52:53Z
 content_hash: "sha256:eac8e504842715e29b67747f22e54e3f7f91a51009c5d9ff21f4b15f73230e20"
 was_blocked_by: [OJ-i6n6]
 follows: [OJ-i6n6, OJ-ef2q, OJ-fgc3]
