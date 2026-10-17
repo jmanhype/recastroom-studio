@@ -1,15 +1,15 @@
 ---
 id: OJ-i6n6
 title: "Verify the official Comfy SDK execution path"
-status: open
+status: in_progress
 priority: 0
 type: feature
 labels: [contest, backend, evidence]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:30:57Z
-content_hash: "sha256:2069dc1f2653765804fe030fb10a1beaf8e4a06423a0d5f2e85a41e2db653aec"
+updated_at: 2026-10-17T16:31:09Z
+content_hash: "sha256:e7e7b3d5895590cc6f737014153bb1c216cfb6aeffa5d514be0c5eddb72532ff"
 blocks: [OJ-vwzl, OJ-mbn5]
 assignee: dev-OJ-i6n6
 ---
@@ -134,6 +134,8 @@ status: new
 - 2026-10-17T16:30:56Z status: open -> in_progress
 - 2026-10-17T16:30:56Z claimed by dev-OJ-i6n6
 - 2026-10-17T16:30:57Z status: in_progress -> open
+- 2026-10-17T16:31:09Z status: open -> in_progress
+- 2026-10-17T16:31:10Z claimed by dev-OJ-i6n6
 
 ## Links
 - Parent: [[OJ-fnna]]
