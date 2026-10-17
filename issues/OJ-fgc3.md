@@ -8,8 +8,8 @@ labels: [contest, release, packaging]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T18:55:23Z
-content_hash: "sha256:eec1c1b89614e6e6bb36f55170cf0ce8839e8490ddcfe6f0536c79cd5bd0eeb9"
+updated_at: 2026-10-17T19:15:01Z
+content_hash: "sha256:4a2b3afcd84170c8fa0714c8796dfc3246329bec3f64abe3c46b8ebfa5b8d9c2"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
@@ -125,7 +125,65 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: delivered
 
+### evidence
+- Commit SHA: d020e40ef1f906d5851b0a0d8bd5812ed7cca858 on story/OJ-fgc3; source Git tree 7e0e6e5052fc09073faecfe012b808cb48e56936; no push or tag.
+- Release archive: work/release/openjutsu-studio-v0.1.1-rc.1.zip, 82039746 bytes, SHA-256 be52c145d2035fdf7b280d230a0444c50693383cf393f132c9311e1690a1b1c3; receipt work/release/openjutsu-studio-v0.1.1-rc.1.receipt.json; filtered-content digest 58909dc728e3be80fb2260100d8f00c1f28c5ca9dcfa2b426a66f5605be4f305.
+- A second build of the same commit produced the identical SHA-256; cmp exited 0.
+- Public-tree audit: 106 files, 69 text, 37 binaries, 37 probed media, zero errors. Development-tree audit failed only on six intentionally retained local-only paths (.paivot/4, .vault/2, and two local-only tools), which the archive excludes.
+- Clean checkout d020e40: pip check reported No broken requirements found; pytest reported 21 passed, 1 warning; openjutsu --version reported 0.1.1; /api/health returned ok=true, workflow=openjutsu_h3_lipsync_local.json, workflow_exists=true, backend=legacy; / returned a 5902-byte HTML page; bundled workflow JSON parsed successfully.
+- Unpacked-archive audit passed; archive pytest reported 21 passed, 1 warning; archive verifier passed with 11 keepers, 48 artifacts, manifest SHA-256 ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33; archive /api/health and home checks passed.
+- Keeper self-test passed the immutable pack, then failed a controlled one-byte temporary mutation with sha256 changed; the committed pack remained unchanged.
+- Recovery decision: restored the clean 9,855-byte workflow, 22 stream-copy-remuxed MP4 blobs, and matching 84,970-byte manifest from recovery/OJ-fgc3-staged-blobs only after proving all 22 original/remuxed video-plus-audio packet MD5s matched. This removes cached private-reference container metadata without recompression.
+- Recovery exclusions: rejected recovered src/openjutsu/comfy_sdk_runner.py and src/openjutsu/config.py versions that would regress accepted OJ-i6n6 fail-closed/base-url behavior; retained .paivot/, .vault/, and initialization tools in development while excluding them from the public archive.
+- Inventory correction: line for pipeline blob prints ...a35c293..., but the preserved object/tree entry is 0bb323a7339bbc7bcc64dc12a356293cbedfb9b2; the object was recovered by its actual OID.
+- No credential, GPU spend, hosted deployment call, publication, social action, tag, or push was used.
+
+### proof
+- [x] AC #1: PASS — rights/private-artifact/license/credential/absolute-path audit passes on the filtered public tree; local-only control paths are deliberately retained in development and excluded from the archive.
+- [x] AC #2: PASS — reviewer quickstart and API examples are present and reproduce clean-checkout install, tests, CLI, health, home, and workflow gates.
+- [x] AC #3: PASS — clean-checkout and unpacked-archive full suites, pip check, CLI version, health, home, workflow JSON, and manifest verifier all pass.
+- [x] AC #4: PASS — reproducible filtered archive and commit/tree/content/size/SHA receipts are recorded without publication.
+- [x] AC #5: PASS — scoped commit d020e40 exists on story/OJ-fgc3 and delivery evidence is append-only.
+- [x] AC #6: PASS — pvg story deliver OJ-fgc3 and pvg story verify-delivery OJ-fgc3 are run as the final workflow transition.
+
+## Implementation Evidence
+
+- Commit SHA: d020e40ef1f906d5851b0a0d8bd5812ed7cca858 on story/OJ-fgc3.
+- Reviewer documents: docs/QUICKSTART.md, docs/API_EXAMPLES.md, docs/RELEASE.md, README.md, CHANGELOG.md.
+- Audit/archive tools: tools/audit_release.py and tools/build_release_archive.py.
+- CLI/app hardening: src/openjutsu/cli.py, scripts/openjutsu.py, app/main.py, src/openjutsu/workflow.py, src/openjutsu/media.py, and src/openjutsu/evidence.py.
+- Regression coverage: tests/test_app.py, tests/test_media.py, tests/test_release_tools.py, tests/test_evidence.py, and tests/test_workflow.py.
+- Gate artifacts: work/oj-fgc3-release-gates/ (clean/archive commands and outputs) and work/release/ (official/reproduction receipts).
+- Recovery source: local recovery/OJ-fgc3-staged-blobs at c251db9b2962cfa8b322cfcd33763196e693688b; no gc/prune was run.
+
+### CI/Test Results
+
+- Clean checkout: pip check No broken requirements found.
+- Clean checkout: 21 passed, 1 warning.
+- Clean archive: 21 passed, 1 warning.
+- Evidence verifier: PASS; keeper_count=11; artifact_count=48; manifest_sha256=ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33.
+- Public audit: PASS: release audit.
+- Archive reproduction: both SHA-256 values equal be52c145d2035fdf7b280d230a0444c50693383cf393f132c9311e1690a1b1c3.
+
+Commands run:
+- git add -A && git write-tree
+- python /tmp/audit_oj_candidate.py
+- python3.11 -m pytest -q
+- python3.11 tools/selftest_keeper_evidence.py docs/evidence/slate/manifest.json --report /tmp/oj-fgc3-selftest.txt
+- git diff --cached --check
+- git commit -m 'Prepare public release candidate'
+- clean-checkout install/gate script using python3.11 -m venv, pip install '.[dev]', pip check, pytest, openjutsu --version, uvicorn health/home, and workflow JSON checks
+- python3.11 tools/build_release_archive.py --commit HEAD (official and reproduction outputs)
+- shasum -a 256 official.zip reproduction.zip
+- cmp official.zip reproduction.zip
+- unzip + tools/audit_release.py + pytest + verifier + uvicorn health/home on the unpacked archive
+- pvg story deliver OJ-fgc3
+- pvg story verify-delivery OJ-fgc3
+
+Summary: Prepared the owner-gated public release candidate with deliberate recovery of stream-preserving rights-clean media, public quickstart/API/release documentation, fail-closed audits, CLI packaging, clean checkout/archive gates, and reproducible receipts; no publication, tag, credential use, GPU spend, or push occurred.
 
 ## History
 - 2026-10-17T16:26:05Z dep_added: blocked_by OJ-ef2q
