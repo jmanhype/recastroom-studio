@@ -9,11 +9,12 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:32:26Z
-content_hash: "sha256:8de9c5e970cf3cf3b14f8e1f913eae284796d2b942d16a80079822fce59988a0"
+content_hash: "sha256:e837e8281451708fc4de8db9d8eea9a54a1212302966e73c6f8d8bcbd131835a"
 was_blocked_by: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 follows: [OJ-ef2q, OJ-i6n6, OJ-fgc3, OJ-vwzl, OJ-2t3g]
 closed_at: 2026-10-17T21:32:26Z
 close_reason: "Accepted: final packet is complete and correctly fail-closed"
+blocked_by: [OJ-b71t]
 ---
 
 ## Description
@@ -336,9 +337,11 @@ status: delivered
 - 2026-10-17T21:30:43Z status: in_progress -> open
 - 2026-10-17T21:30:43Z released by speed
 - 2026-10-17T21:32:26Z status: open -> closed
+- 2026-10-17T21:36:07Z dep_added: blocked_by OJ-b71t
 
 ## Links
 - Parent: [[OJ-fnna]]
+- Blocked by: [[OJ-b71t]]
 - Was blocked by: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]]
 - Follows: [[OJ-ef2q]], [[OJ-i6n6]], [[OJ-fgc3]], [[OJ-vwzl]], [[OJ-2t3g]]
 

@@ -9,7 +9,8 @@ parent: OJ-fnna
 created_at: 2026-10-17T21:35:23Z
 created_by: speed
 updated_at: 2026-10-17T21:36:07Z
-content_hash: "sha256:8f5563bf58936ffa1bd15cb995f4eafc9eca4ebc564c558781cbf5e9e071b77b"
+content_hash: "sha256:c55570021209cd841ca3772f6fdedf22b659a0a04b67600525c1c3e44a0fd9c5"
+blocks: [OJ-mbn5]
 ---
 
 ## Description
@@ -177,9 +178,10 @@ status: new
 
 
 ## History
-
+- 2026-10-17T21:36:07Z dep_added: blocks OJ-mbn5
 
 ## Links
 - Parent: [[OJ-fnna]]
+- Blocks: [[OJ-mbn5]]
 
 ## Comments
