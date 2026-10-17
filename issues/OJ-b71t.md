@@ -9,9 +9,10 @@ parent: OJ-fnna
 created_at: 2026-10-17T21:35:23Z
 created_by: speed
 updated_at: 2026-10-17T22:05:27Z
-content_hash: "sha256:ba6b71a91da1598f006711ce8caeb49ae73b70ea36d7714c25d4dada53ff5623"
+content_hash: "sha256:9e4e9effc0a76e81df25a8ad97a15010072bb05a2301fc3a4f6b0a674858ee33"
 closed_at: 2026-10-17T22:05:27Z
 close_reason: "Superseded by accepted OJ-2gs4 release-audit fix"
+led_to: [OJ-v983]
 ---
 
 ## Description
@@ -185,5 +186,6 @@ status: new
 
 ## Links
 - Parent: [[OJ-fnna]]
+- Led to: [[OJ-v983]]
 
 ## Comments
