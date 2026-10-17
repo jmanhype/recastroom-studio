@@ -1,7 +1,7 @@
 ---
 id: OJ-2t3g
 title: "Stand up the reviewer trial deployment"
-status: in_progress
+status: closed
 priority: 2
 type: feature
 labels: [contest, deployment, hosting, delivered]
@@ -9,11 +9,12 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:14:49Z
-content_hash: "sha256:754b8e3a98fc28d4a9d6aab05562ed8e26f3e8aeeeac87cd48c6faab12a9a708"
-blocks: [OJ-mbn5]
+content_hash: "sha256:596f0d1575a10005e2c3deecb7e36ef13ac0995555b865590b7904a1de5addad"
 was_blocked_by: [OJ-vwzl]
 assignee: dev-OJ-2t3g
 follows: [OJ-vwzl, OJ-fgc3]
+closed_at: 2026-10-17T21:14:49Z
+close_reason: "Accepted: local reviewer deployment evidence meets ACs"
 ---
 
 ## Description
@@ -281,10 +282,11 @@ status: delivered
 - 2026-10-17T20:55:47Z claimed by dev-OJ-2t3g
 - 2026-10-17T21:06:44Z status: in_progress -> in_progress
 - 2026-10-17T21:06:45Z auto-follows: linked to predecessor OJ-fgc3
+- 2026-10-17T21:14:49Z status: in_progress -> closed
+- 2026-10-17T21:14:50Z dep_removed: no_longer_blocks OJ-mbn5
 
 ## Links
 - Parent: [[OJ-fnna]]
-- Blocks: [[OJ-mbn5]]
 - Was blocked by: [[OJ-vwzl]]
 - Follows: [[OJ-vwzl]], [[OJ-fgc3]]
 
