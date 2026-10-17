@@ -8,8 +8,8 @@ labels: [release-audit, regression, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T21:36:40Z
 created_by: speed
-updated_at: 2026-10-17T21:51:20Z
-content_hash: "sha256:372e02b5c58297d04426a53f8149402e2bc1f4986f718295e961021e555f4303"
+updated_at: 2026-10-17T21:51:21Z
+content_hash: "sha256:cabae85e1e22afebb795d90e8979e1ebd53397869ad3d9f6ca3d696555dc2d64"
 assignee: dev-OJ-2gs4
 follows: [OJ-mbn5, OJ-2t3g]
 closed_at: 2026-10-17T21:51:20Z
@@ -102,6 +102,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Accepted Evidence
 ACCEPTED [2026-10-17]: Evidence-based review passed; full suite was not rerun because the recorded commits, source tree, target-test hash, and committed evidence hashes match.
 
