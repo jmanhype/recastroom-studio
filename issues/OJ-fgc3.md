@@ -8,8 +8,8 @@ labels: [contest, release, packaging, accepted]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T20:28:19Z
-content_hash: "sha256:171f7f4fa75055d31c3dc791f17066815dd7bf1274a06415a78332e150d63edb"
+updated_at: 2026-10-17T20:28:22Z
+content_hash: "sha256:9636a1bf2b749dcb3d56e159dfc8ba8b8e56e86eee7006bd0f6d99e6f15b2f51"
 was_blocked_by: [OJ-ef2q]
 follows: [OJ-ef2q, OJ-i6n6]
 assignee: dev-OJ-fgc3
@@ -267,3 +267,6 @@ AC verification:
 [x] AC #2: PASS — filtered public rights/license/credential/absolute-path/media audit reports zero errors.
 [x] AC #3: PASS — reviewer quickstart and API examples reproduce the credential-free local app gates.
 [x] AC #4: PASS — reproducible archive, tree/content/size/SHA receipts, and no-publication controls are recorded.
+
+### 2026-10-17T20:28:22Z speed
+Merge receipt: pvg story merge failed because this local repository has no origin remote. Verified main and story/OJ-fgc3 were clean/current, then merged the accepted story locally with git merge --no-ff. No push occurred.
