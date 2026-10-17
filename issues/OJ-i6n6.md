@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T16:57:38Z
-content_hash: "sha256:b54ff27b93e909ed5e07f5f0f7e01ab59cd2a19dfcad8b6ef117f7dad7beb196"
+content_hash: "sha256:31c9c5a4753260e7654c8ced57e68c51a538f9f904fba81f56a0ea652424601a"
 blocks: [OJ-vwzl, OJ-mbn5]
 ---
 
@@ -223,3 +223,6 @@ status: delivered
 
 ### 2026-10-17T16:30:57Z speed
 loop: reset orphaned in_progress to open (no developer worktree found; prior session presumed dead)
+
+### 2026-10-17T16:57:38Z speed
+EXPECTED: a configured environment key is passed through to the official SDK client when api_key is omitted. DELIVERED: missing-key/missing-base-url fail-closed tests, docs, 10 passing tests, and clean secret scan at dc74547. GAP: independent probe with COMFY_API_KEY=environment-key-for-probe and api_key=None showed FakeComfy received api_key=None; runner validates resolved_api_key but constructs Comfy(api_key=api_key). FIX: pass resolved_api_key to Comfy, add a regression test proving the environment key is forwarded, rerun full tests and secret scan, commit on story/OJ-i6n6, and redeliver.
