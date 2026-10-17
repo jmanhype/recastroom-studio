@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T16:56:46Z
-content_hash: "sha256:d328c6b1562ce0aca9727c62a668307ca7c6f3a18421d3fb44d6cad28e146fc1"
+content_hash: "sha256:ed0f45b16562750006fb8bb6cf830c60924dbe0c4c69b6ba0ab504bf5bdd81bb"
 assignee: dev-OJ-ef2q
 closed_at: 2026-10-17T16:56:45Z
 close_reason: "Accepted: independently reproduced full pytest (10 passed), manifest verification (11 keepers / 48 artifacts), controlled byte-mutation failure, rights flags private_ip=false and third_party_film_tv=false, and credential-shaped scan with zero matches. Commit d4299ea was inspected and worktree was clean."
@@ -132,6 +132,17 @@ status: new
 [x] AC #2: PASS — all 48 artifacts have rights provenance/consent and SHA-256; media artifacts have probes.
 [x] AC #3: PASS — immutable manifest passes and a controlled one-byte temporary mutation fails closed.
 [x] AC #4: PASS — Qwen QC and operator/Jay human approval trace to every keeper.
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
 
 ## nd_contract
 status: delivered
