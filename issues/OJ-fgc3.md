@@ -1,17 +1,19 @@
 ---
 id: OJ-fgc3
 title: "Prepare the public repository release candidate"
-status: open
+status: in_progress
 priority: 1
 type: feature
 labels: [contest, release, packaging]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:27:38Z
-content_hash: "sha256:2d6939f4b142e12853fb36b6bfa7eb7dd4d2cedcba6a7034b1eae26a1f6a2746"
+updated_at: 2026-10-17T16:57:59Z
+content_hash: "sha256:0ecbfcae70b234e0f384749f5cd092220c5ceb3e7be6ccb70ead4e5a459da496"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-ef2q]
+assignee: dev-OJ-fgc3
+follows: [OJ-ef2q]
 ---
 
 ## Description
@@ -129,10 +131,14 @@ status: new
 - 2026-10-17T16:26:05Z dep_added: blocked_by OJ-ef2q
 - 2026-10-17T16:26:05Z dep_added: blocks OJ-mbn5
 - 2026-10-17T16:56:45Z dep_removed: was_blocked_by OJ-ef2q
+- 2026-10-17T16:57:59Z status: open -> in_progress
+- 2026-10-17T16:57:59Z auto-follows: linked to predecessor OJ-ef2q
+- 2026-10-17T16:57:59Z claimed by dev-OJ-fgc3
 
 ## Links
 - Parent: [[OJ-fnna]]
 - Blocks: [[OJ-mbn5]]
 - Was blocked by: [[OJ-ef2q]]
+- Follows: [[OJ-ef2q]]
 
 ## Comments
