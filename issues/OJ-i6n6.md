@@ -8,8 +8,8 @@ labels: [contest, backend, evidence]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
-updated_at: 2026-10-17T16:31:09Z
-content_hash: "sha256:e7e7b3d5895590cc6f737014153bb1c216cfb6aeffa5d514be0c5eddb72532ff"
+updated_at: 2026-10-17T16:44:03Z
+content_hash: "sha256:f39e46bd261a2d0aaafe8e303bcd5858f70ee8c6b3d12bd5e906edd08621d05f"
 blocks: [OJ-vwzl, OJ-mbn5]
 assignee: dev-OJ-i6n6
 ---
@@ -127,6 +127,23 @@ status: new
 
 ## Notes
 
+## nd_contract
+status: delivered
+
+### evidence
+- Commit on `story/OJ-i6n6`: `dc7454771ecb249edd624fb36739fe7a98804d5e`.
+- Decision/category evidence: `docs/evidence/OJ-i6n6-comfy-sdk.md`.
+- Targeted tests: `../../../.venv/bin/python -m pytest tests/test_comfy_sdk_runner.py tests/test_config.py -q` → `5 passed in 0.02s`.
+- Full tests: `../../../.venv/bin/python -m pytest -q` → `10 passed in 0.02s`.
+- Dependency health: `../../../.venv/bin/python -m pip check` → `No broken requirements found.`
+- Secret scan over every changed file → 0 matches (`rg` exit status 1, its no-match status); command recorded in the evidence file.
+- Live SDK smoke remains owner-gated: no owner deployment/key was supplied to this bounded worker; no credential read, deployment call, GPU/compute spend, or publication was performed.
+
+### proof
+- [x] AC #1: SDK/Open Weights eligibility decision is documented with primary-source links and category impact in `docs/evidence/OJ-i6n6-comfy-sdk.md`.
+- [x] AC #2: Missing-key and missing-deployment tests fail closed before SDK client construction with JSON-serializable codes `missing_comfy_api_key` and `missing_comfy_base_url`.
+- [x] AC #3: Live smoke records an explicit owner-gated blocker rather than fabricating hashes, identifiers, output, or elapsed time.
+- [x] AC #4: Secret scan of all changed/evidence files finds zero credential matches.
 
 ## History
 - 2026-10-17T16:26:04Z dep_added: blocks OJ-vwzl
