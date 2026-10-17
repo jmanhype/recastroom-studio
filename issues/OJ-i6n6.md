@@ -9,7 +9,8 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:04Z
 created_by: speed
 updated_at: 2026-10-17T16:26:04Z
-content_hash: "sha256:8a477ef0374aef36fce51115c856035da9c8db7bbeb41f25a8c06b9449ab722b"
+content_hash: "sha256:14906cfe1e11d709fe05f9097ec2cc4f36431c04464e34006f4cd92cfa98140b"
+blocks: [OJ-vwzl]
 ---
 
 ## Description
@@ -55,9 +56,10 @@ status: new
 
 
 ## History
-
+- 2026-10-17T16:26:04Z dep_added: blocks OJ-vwzl
 
 ## Links
 - Parent: [[OJ-fnna]]
+- Blocks: [[OJ-vwzl]]
 
 ## Comments
