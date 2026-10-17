@@ -9,11 +9,12 @@ parent: OJ-fnna
 created_at: 2026-10-17T21:36:40Z
 created_by: speed
 updated_at: 2026-10-17T21:51:21Z
-content_hash: "sha256:cabae85e1e22afebb795d90e8979e1ebd53397869ad3d9f6ca3d696555dc2d64"
+content_hash: "sha256:6eae88e57084aecaf123633f284d57441eeee2e7bac66927d0025c68fc7bfbec"
 assignee: dev-OJ-2gs4
 follows: [OJ-mbn5, OJ-2t3g]
 closed_at: 2026-10-17T21:51:20Z
 close_reason: "Accepted: release audit regression repaired with real negative-path coverage"
+led_to: [OJ-v983]
 ---
 
 ## Description
@@ -332,5 +333,6 @@ status: delivered
 ## Links
 - Parent: [[OJ-fnna]]
 - Follows: [[OJ-mbn5]], [[OJ-2t3g]]
+- Led to: [[OJ-v983]]
 
 ## Comments
