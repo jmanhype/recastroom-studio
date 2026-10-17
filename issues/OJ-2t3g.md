@@ -9,7 +9,7 @@ parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
 updated_at: 2026-10-17T21:14:50Z
-content_hash: "sha256:596f0d1575a10005e2c3deecb7e36ef13ac0995555b865590b7904a1de5addad"
+content_hash: "sha256:75e1d57653f9eb14605e103e69faadb50c0cd0c1205b947b9b47ca36ca252a49"
 was_blocked_by: [OJ-vwzl]
 assignee: dev-OJ-2t3g
 follows: [OJ-vwzl, OJ-fgc3]
@@ -124,6 +124,18 @@ status: new
 
 ## Notes
 Commit SHA: 9776ba126bd416c6d2ba4ba0c0317780d7acb433
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Decision
 ACCEPTED [2026-10-17]: Evidence reviewed and meets the story bar for the owner-approved local, loopback-only dry-run boundary.
 
