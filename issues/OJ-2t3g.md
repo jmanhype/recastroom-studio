@@ -8,8 +8,8 @@ labels: [contest, deployment, hosting, delivered]
 parent: OJ-fnna
 created_at: 2026-10-17T16:26:05Z
 created_by: speed
-updated_at: 2026-10-17T21:08:53Z
-content_hash: "sha256:822c67eda5cf1490fc1321cf3e7016c0580008008a208816547f6ee9a6eda8d0"
+updated_at: 2026-10-17T21:14:49Z
+content_hash: "sha256:754b8e3a98fc28d4a9d6aab05562ed8e26f3e8aeeeac87cd48c6faab12a9a708"
 blocks: [OJ-mbn5]
 was_blocked_by: [OJ-vwzl]
 assignee: dev-OJ-2t3g
@@ -123,6 +123,25 @@ status: new
 
 ## Notes
 Commit SHA: 9776ba126bd416c6d2ba4ba0c0317780d7acb433
+## PM Decision
+ACCEPTED [2026-10-17]: Evidence reviewed and meets the story bar for the owner-approved local, loopback-only dry-run boundary.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Reviewed delivered commit 9776ba126bd416c6d2ba4ba0c0317780d7acb433 on story/OJ-2t3g; diff scope is 6 new local-trial files, 756 insertions.
+- Verified committed artifact SHA-256 values: receipt b010ca4923bc3b9fee0235ec48a15c69e6ed97ae980c50f17362bb244aa66f09, secret scan 552cf8c3f8a25a108d464c86b6b61c5c228abc7aa577957f438cbe297fcc8dc2, server log 34248dcd8623d2565c1ab79d98de9ca2bdc27e9fbdb4d2b1b09bc3a6a2bcd6b3.
+- Independently asserted receipt invariants: 127.0.0.1 loopback, dry_run backend, public_url null, credential/cloud flags false, health/home/rights rejection/attested prepare/queued/complete all as required.
+- Independently asserted exposure report PASS with 158 reported targets and zero findings; fixture hashes in receipt match committed fixtures.
+- Deterministic review: stub scan clean, git diff --check clean, pvg verify PASS, and pvg gates PASS with two non-blocking complexity warnings. Full tests were not rerun because the complete developer proof and committed evidence matched.
+- Public hosting remains correctly owner-gated; acceptance is limited to the documented reviewer-safe local dry-run boundary.
+
+### proof
+- [x] AC #1: Architecture, no-public-default policy, compensating rate-limit posture, rights gate, storage lifetime, and environment variables are documented.
+- [x] AC #2: The loopback-only deployment/probe workflow is repeatable and committed.
+- [x] AC #3: Health, home, rights rejection, attested prepare, queue, and terminal generation status are recorded from the local URL.
+- [x] AC #4: Credential/path exposure evidence is committed, hash-verified, and reports zero findings.
 
 ## Implementation Evidence
 
