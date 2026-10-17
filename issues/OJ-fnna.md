@@ -7,8 +7,8 @@ type: epic
 labels: [contest, openjutsu, accepted]
 created_at: 2026-10-17T16:25:53Z
 created_by: speed
-updated_at: 2026-10-17T22:27:51Z
-content_hash: "sha256:effbb7186acb97f3c778acbe7a3ffb0823494a7a5b7d36466ada6c7b558ef203"
+updated_at: 2026-10-17T22:35:24Z
+content_hash: "sha256:c928fc7aee07641805af8d7da047b556474b14d11a84652254881afb90817858"
 closed_at: 2026-10-17T22:27:51Z
 close_reason: "All stories accepted"
 ---
@@ -45,6 +45,21 @@ status: new
 
 
 ## Notes
+## ANCHOR REVIEW (MILESTONE_REVIEW RECHECK)
+REVIEW_RESULT: VALIDATED
+
+### Gaps
+- None. Both prior milestone-review gaps are resolved.
+
+### Recheck Evidence
+- Reviewed clean `main` at `bf764110720aa29f38329562419a9f6ac4ff9b91`; implementation `80821d7` is an ancestor and no tracked working-tree changes were present.
+- Prior dangling-reference gap resolved: capstone `OJ-mbn5` historical blockers resolve to eight closed/accepted children (`OJ-ef2q`, `OJ-i6n6`, `OJ-fgc3`, `OJ-vwzl`, `OJ-2t3g`, `OJ-b71t`, `OJ-2gs4`, `OJ-v983`). `OJ-b71t` specifically resolves as closed with `release-audit,regression,superseded,accepted`. `pvg nd dep cycles` found no cycles and `pvg nd stale --days=14` found no stale issues.
+- Prior quality-gate gap resolved: `pvg gates app src scripts tools` exited 0 with `GATES: PASS (9 warn, 0 skipped)`; `verify_manifest` is now CCN 26 and no BLOCK finding remains. Accepted `OJ-v983` records `evidence.py` at 303 non-blank lines and `manifest_verifier.py` at 174.
+- Type/refactor spot check: `pvg verify src/openjutsu/evidence.py src/openjutsu/manifest_verifier.py docs/evidence/OJ-v983-quality-gate` exited 0 with 2 files/0 issues; AST scan found 3 public functions in `evidence.py` and 0 signature gaps. Real keeper verification passed with 11 keepers, 48 artifacts, manifest SHA-256 `ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33`.
+- E2E existence: `pvg verify --check-e2e` exited 0 and found `tests/test_app_e2e.py` plus `tools/build_e2e_receipts.py`. Independent full pytest exited 0 with `31 passed, 1 warning in 9.38s` (disclosed Starlette/httpx deprecation); independent `pip check` exited 0.
+- Fresh offline final gate at HEAD: `tools/final_submission_gate.py --commit HEAD --demo ../openjutsu_planb/demo_v1/openjutsu-demo-v1.mp4 --output work/anchor-oj-fnna-final-gate-bf76411` exited 2 solely for the eight intentional owner blockers. Matrix was 11 PASS / 0 FAIL / 8 OWNER_BLOCKED; `release_audit.errors=[]`; embedded pytest and pip check both exited 0. Generated gate SHA-256: `de99e6f1faa9b69f0c54d1db14afecceb4ab163a5868eff5ff446dd02c6a5b32`; public package SHA-256: `a6d49ddd1267aad1b346518cf55442e1e61ffd98ab2759f731d4ea882e0950f8`.
+- Boundary preserved: review only; no story status change, code edit, commit, merge, push, publication, credential use, or cloud/GPU operation.
+
 ## ANCHOR REVIEW (MILESTONE_REVIEW)
 REVIEW_RESULT: GAPS_FOUND
 
