@@ -8,8 +8,8 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-18T23:48:38Z
-content_hash: "sha256:782f79decdd24e7c208cd18eb43633d77d1e0a3d6923c2311a383a61caff572b"
+updated_at: 2026-10-18T23:52:34Z
+content_hash: "sha256:090819556b4ded46a271fe139f9f84d85dfde866a2a66a3c8e0939a003397ab8"
 blocks: [OJ-oain]
 assignee: dev-OJ-oc1m
 follows: [OJ-g2xx]
@@ -74,3 +74,6 @@ Live-proof checkpoint: blocked before external spend. Browser evidence shows Per
 
 ### 2026-10-18T23:48:38Z speed
 Evidence checkpoint committed locally on story/OJ-oc1m at c480e60. No merge, push, or external spend performed.
+
+### 2026-10-18T23:52:34Z speed
+Owner constraint update: no funds are currently available for Comfy credits or API spend. The Colab path was used because it was the available compute source. Do not continue to Stripe or any paid Comfy transaction. Investigate no-cost contest credits and local/SDK-proxy proof paths first.
