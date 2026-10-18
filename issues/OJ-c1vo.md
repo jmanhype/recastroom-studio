@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
 updated_at: 2026-10-18T15:41:42Z
-content_hash: "sha256:73300ecd49ac9da2c63bc5b08aaf34fa2b24919bed8a938b84c53a0d22c51ccc"
+content_hash: "sha256:e8a3f9ce91001c99d589eb39c56d92c4e727f36ec13ad84efb59d6efef5e2ed1"
 blocks: [OJ-yf2c]
 follows: [OJ-p8rd, OJ-inuo, OJ-xtk4]
 assignee: dev-OJ-c1vo
@@ -158,3 +158,44 @@ status: new
 - Follows: [[OJ-p8rd]], [[OJ-inuo]], [[OJ-xtk4]]
 
 ## Comments
+
+### 2026-10-18T15:41:42Z speed
+## Implementation Evidence
+Summary: Fail-closed legacy renderer readiness implemented and locally verified.
+Commit: 98de3ff703f584755d38c01cb6bb66fc997f0707
+Branch: story/OJ-c1vo
+
+### CI/Test Results
+PROOF:
+Commands run:
+- <root>/.venv/bin/python -m pytest -q (twice independently): 63 passed, 1 existing warning both runs; no skips.
+- node --check app/web/studio.js: passed.
+- git diff --check: passed.
+- shasum -a 256 -c docs/evidence/backend-readiness/HASHES.sha256: all OK.
+- Browser QA actual CUA interactions: see committed BROWSER_QA.md and browser/receipt.json.
+Coverage percentage: not measured; no coverage claim.
+
+LEARNINGS:
+- Local health is not renderer readiness; preparation can remain available offline.
+- A post-submit 503 is not inherently proof that nothing was submitted; retain unknown-state protection except for the explicit local legacy guard.
+- Paivot append-notes inserts before legacy top-level contract headings in this issue. This same evidence is mirrored as an append-only comment so the final contract is authoritative without deleting history.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Local story commit 98de3ff on story/OJ-c1vo, base 7881cb0. No push.
+- Worker full pytest twice: 63 passed, 1 existing Starlette/httpx warning.
+- Independent parent full pytest twice: 63 passed, 1 warning (77.02s, 337.84s); node syntax and git diff checks passed.
+- Parent verified worker HASHES.sha256; browser receipt and screenshots in docs/evidence/backend-readiness/browser; BROWSER_QA.md describes precise limits.
+- Real browser + local ASGI app + labelled no-GPU HTTP fixture: offline prepare succeeds/Run blocked, recovery enables Run preserving job/consent, disconnect before click blocks with no run POST. Exactly 3 fixture GETs, zero fixture POSTs, zero app run POSTs; workflow survives/no queued status file.
+- Existing test files, media/workflow, dependencies and live8893 unchanged pending acceptance/restart. No GPU or paid API spend.
+- bd sync --from-main unavailable because no Beads database; canonical pvg nd retained.
+
+### proof
+- [x] AC #1: bounded read-only renderer readiness with sanitized errors, truthful dry_run/unchecked SDK semantics.
+- [x] AC #2: independent legacy run guard before mutation, 404/409 preserved; real HTTP TestClient tests pass.
+- [x] AC #3: offline Run gating, recoverable prepared state, fresh pre-submit check, unknown-submission safety reviewed.
+- [x] AC #4: new 15-case readiness suite; existing 48 tests unchanged; full suite passes twice independently.
+- [x] AC #5: parent browser QA without AI, sanitized reports, hashed screenshots/requests/test logs committed.
+
