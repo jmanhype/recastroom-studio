@@ -8,8 +8,8 @@ labels: [capstone, e2e, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T13:49:50Z
-content_hash: "sha256:e07693e5bc56268720ffd1dbfa6d49c16cce6a1a20666bc927f2e2d054b894e6"
+updated_at: 2026-10-18T13:49:51Z
+content_hash: "sha256:2c203d08204046bfa80710abeecc7406fad76f39d7538790462a527ce4fd3daf"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo]
 ---
@@ -226,6 +226,30 @@ status: new
 ## Notes
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
+## nd_contract
+status: new
+
+### evidence
+- Local checkpoint ada128cdb0a5167a5c8acd57a1ff3b4d72485d7a on story/OJ-yf2c; clean worktree; not merged, pushed, delivered, or accepted. Claim released because no worker remains active; incomplete evidence remains open.
+- Four new real TestClient/static tests; focused suite passed twice, full suite passed twice (45 tests); coordinator rerun: 45 passed, 1 preexisting warning in 23.71s. No mocks or prior test edits.
+- Real CUA dry_run E2E completed on isolated loopback 8894 with keyboard upload/prepare/run/download. Desktop/mobile, consent, invalid prepare, terminal error, retry, active/unknown/stale and reset evidence recorded in docs/evidence/frontend-upgrade/REPORT.md and browser/.
+- Observed actual status HTTP500/JSONDecodeError during retry; UI safely blocked duplicate run and Check status again recovered. Separate P1 OJ-p8rd records non-atomic status publication diagnosis; production fix not included here.
+- GLM read-only checkpoint review: APPROVED CHECKPOINT, not capstone acceptance. Independently checked all 10 manifest hashes, screenshot dimensions/encoding, fixture/test hashes, scope and private-path scan; no blocking findings.
+- 8894 test server stopped; approved 8893 PID82602 retained; viewport override reset; Chrome motion preference restored. Explicit temporary IAB-tab close blocked by error-page URL policy and not proven.
+- No GPU/API generation spend, no production/design/render changes. bd sync --from-main unavailable: this repository has no beads database; existing shared Paivot nd vault remains source of record, no competing database initialized.
+
+### proof
+- [x] AC #1: Actual local dry-run browser E2E and byte-verified final download.
+- [x] AC #2: Desktop/mobile/reduced-motion image artifacts, dimensions and hashes.
+- [ ] AC #3: Substantial keyboard proof present; exhaustive focus proof for every native media subcontrol and conditional health-retry control remains open.
+- [x] AC #4: Required negative scenarios exercised, genuine backend defect disclosed and recovery proven.
+- [x] AC #5: Repeated focused/full deterministic suites and independent coordinator full run pass.
+- [ ] AC #6: Commands/viewports/fixtures/runtime/teardown evidence present; exact IAB engine version and explicit QA-tab cleanup not independently proven.
+- [x] AC #7: Only test/evidence additions; no production semantics or external spend changes.
+
+LEARNINGS: Serial TestClient green does not establish concurrent polling safety. Immediate active-state capture is necessary before short dry-run jobs complete.
+
+OBSERVATIONS: Next evidence work must resolve AC3/AC6 without reopening approved design; OJ-p8rd is a separate bounded concurrency repair requiring review. This checkpoint is not a release or epic-completion claim.
 
 ## History
 - 2026-10-18T01:53:57Z dep_added: blocked_by OJ-4rht
