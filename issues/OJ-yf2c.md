@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T14:18:29Z
-content_hash: "sha256:7b48d4870f7e79dda657ba56c120c51d0bb8c99909d684c45131f0d1390da85a"
+content_hash: "sha256:ee84eb77f7dd893de1f0b912354736b13d5b442c14cdfa12e7ccbdcd63ab120e"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
 assignee: dev-OJ-yf2c
@@ -279,3 +279,6 @@ OBSERVATIONS: Next evidence work must resolve AC3/AC6 without reopening approved
 - Follows: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]]
 
 ## Comments
+
+### 2026-10-18T14:18:29Z speed
+loop: reset orphaned in_progress to open (no developer worktree found; prior session presumed dead)
