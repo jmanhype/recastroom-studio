@@ -1,17 +1,19 @@
 ---
 id: OJ-inuo
 title: "Preserve restored source audio layout and loudness"
-status: open
+status: in_progress
 priority: 1
 type: bug
 labels: [bug, media, local, dogfood]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
-updated_at: 2026-10-18T03:57:59Z
-content_hash: "sha256:31b4e61315c638efee86a396e12d2e520ae9d648a5dacd32f6df6843a0935faa"
+updated_at: 2026-10-18T04:15:55Z
+content_hash: "sha256:d5cf7a25c2e6ad1d29c13fc7988037a050da376d7dd76b43e3151ca55d22a9f3"
 blocks: [OJ-yf2c]
 was_blocked_by: [OJ-xtk4]
+assignee: dev-OJ-inuo
+follows: [OJ-xtk4]
 ---
 
 ## Description
@@ -177,10 +179,14 @@ status: new
 - 2026-10-18T03:50:46Z dep_added: blocked_by OJ-xtk4
 - 2026-10-18T03:53:02Z dep_added: blocks OJ-yf2c
 - 2026-10-18T04:14:18Z dep_removed: was_blocked_by OJ-xtk4
+- 2026-10-18T04:15:55Z status: open -> in_progress
+- 2026-10-18T04:15:55Z auto-follows: linked to predecessor OJ-xtk4
+- 2026-10-18T04:15:55Z claimed by dev-OJ-inuo
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Blocks: [[OJ-yf2c]]
 - Was blocked by: [[OJ-xtk4]]
+- Follows: [[OJ-xtk4]]
 
 ## Comments
