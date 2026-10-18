@@ -4,7 +4,7 @@ title: "E2e: prove the cinematic local studio upgrade"
 status: open
 priority: 1
 type: task
-labels: [capstone, e2e, frontend, external-integration]
+labels: [capstone, e2e, frontend, external-integration, rejected]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
