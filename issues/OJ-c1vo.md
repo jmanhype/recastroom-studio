@@ -7,8 +7,8 @@ type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
-updated_at: 2026-10-18T15:08:17Z
-content_hash: "sha256:9ad9f64699a8eb42433fc9fccdde8d7e92e172694627f05e2c20e960b12919bb"
+updated_at: 2026-10-18T15:40:55Z
+content_hash: "sha256:d8066fbd8b4dfa291702759635a3a835be7ca4b2f41d2977525cd1a04596d582"
 blocks: [OJ-yf2c]
 follows: [OJ-p8rd, OJ-inuo]
 assignee: dev-OJ-c1vo
@@ -58,6 +58,25 @@ Research-first checkpoint, 2026-10-18:
 Owner answered the fresh-G4 decision with 'do research on how this should go'. No GPU allocated and no new render. colab status/usage returned no active sessions, 58.65 CU, 0.00/hr, zero assignments. Parent researched official Colab restrictions/lifecycle and Comfy custom API deployments/SDK v2. Research artifact: /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/frontend-evidence/readiness-20261018/RESEARCH.md; SHA256 293852cd5f754530142f1670579023cdcf2ce171af980f05d01dccdc4c95abaf.
 Recommended next architectural evaluation: versioned exact-workflow Comfy API deployment, min0/max1, durable asset uploads/provider-job recovery/result storage, subject to provider policy, hardware compatibility and cost approval. Colab FAQ includes a creating-deepfakes restriction for all managed runtimes; no consensual-recasting exception was established. Do not automatically start a Colab recasting runtime from this story.
 Worker /root/renderer_ready_c1vo was stopped at the research-first boundary. Story checkout verified clean at base7881cb0; no implementation edits or deployment. Worker reported baseline48 tests with the existing warning; this checkpoint does not promote that report to implementation proof. Live8893 remains unchanged and still lacks the renderer Run guard. Prior app/video outputs preserved.
+## nd_contract
+status: delivered
+
+### evidence
+- Local story commit 98de3ff on story/OJ-c1vo, base 7881cb0. No push.
+- Worker full pytest twice: 63 passed, 1 existing Starlette/httpx warning.
+- Independent parent full pytest twice: 63 passed, 1 warning (77.02s, 337.84s); node syntax and git diff checks passed.
+- Parent verified worker HASHES.sha256; browser receipt and screenshots in docs/evidence/backend-readiness/browser; BROWSER_QA.md describes precise limits.
+- Real browser + local ASGI app + labelled no-GPU HTTP fixture: offline prepare succeeds/Run blocked, recovery enables Run preserving job/consent, disconnect before click blocks with no run POST. Exactly 3 fixture GETs, zero fixture POSTs, zero app run POSTs; workflow survives/no queued status file.
+- Existing test files, media/workflow, dependencies and live8893 unchanged pending acceptance/restart. No GPU or paid API spend.
+- bd sync --from-main unavailable because no Beads database; canonical pvg nd retained.
+
+### proof
+- [x] AC #1: bounded read-only renderer readiness with sanitized errors, truthful dry_run/unchecked SDK semantics.
+- [x] AC #2: independent legacy run guard before mutation, 404/409 preserved; real HTTP TestClient tests pass.
+- [x] AC #3: offline Run gating, recoverable prepared state, fresh pre-submit check, unknown-submission safety reviewed.
+- [x] AC #4: new 15-case readiness suite; existing 48 tests unchanged; full suite passes twice independently.
+- [x] AC #5: parent browser QA without AI, sanitized reports, hashed screenshots/requests/test logs committed.
+
 
 ## nd_contract
 status: new
