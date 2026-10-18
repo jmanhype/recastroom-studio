@@ -4,11 +4,11 @@ title: "Preserve restored source audio layout and loudness"
 status: in_progress
 priority: 1
 type: bug
-labels: [bug, media, local, dogfood]
+labels: [bug, media, local, dogfood, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
-updated_at: 2026-10-18T04:28:03Z
+updated_at: 2026-10-18T04:28:04Z
 content_hash: "sha256:11c3bb2e7911a1277801d1abfff5c9ded0bc2938da14d415fae0ed5f900f7b93"
 blocks: [OJ-yf2c]
 was_blocked_by: [OJ-xtk4]
