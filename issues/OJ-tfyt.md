@@ -7,11 +7,11 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:06:53Z
-content_hash: "sha256:62780cfddd031937f4bf901f4c179e45f3b531b1b1d9ab39565193530f35b3c6"
+updated_at: 2026-10-18T16:34:08Z
+content_hash: "sha256:813de87201238c2596498960d40cd7230e429031cb0127242e7af3313098651f"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
-follows: [OJ-c1vo]
+follows: [OJ-c1vo, OJ-p8rd]
 ---
 
 ## Description
@@ -47,10 +47,12 @@ status: new
 - 2026-10-18T16:06:53Z status: open -> in_progress
 - 2026-10-18T16:06:53Z auto-follows: linked to predecessor OJ-c1vo
 - 2026-10-18T16:06:53Z claimed by dev-OJ-tfyt
+- 2026-10-18T16:34:08Z status: in_progress -> in_progress
+- 2026-10-18T16:34:08Z auto-follows: linked to predecessor OJ-p8rd
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Blocks: [[OJ-yf2c]]
-- Follows: [[OJ-c1vo]]
+- Follows: [[OJ-c1vo]], [[OJ-p8rd]]
 
 ## Comments
