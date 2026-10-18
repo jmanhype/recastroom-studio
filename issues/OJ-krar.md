@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:31:53Z
-content_hash: "sha256:9eacb6186f7fd5bbf3d949e07a4e36590f181f97e3d5ed2245cf58042d89e901"
+updated_at: 2026-10-18T16:31:54Z
+content_hash: "sha256:0c87adfaa138393cc59f26c8887896ad60f261148bbb96f25903d17ad03d1f72"
 blocks: [OJ-yf2c]
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4, OJ-4rht]
 labels: [delivered]
@@ -40,6 +40,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-18.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## Implementation Evidence
 
 Summary: Coordinator integrated and independently reran the delivered SDK asset-binding implementation.
