@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T14:22:12Z
-content_hash: "sha256:b12a08ad639f986ea273bbcf7360582734646a39145491f2340413e3d2e8bc87"
+content_hash: "sha256:1e9159d1e96058bf7e305885d0b2637ba8f43fdc433832150ca5547bcc697cdb"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
 ---
@@ -226,6 +226,33 @@ status: new
 ## Notes
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
+
+## nd_contract
+status: new
+
+### evidence
+- Partial local checkpoint baa28bc6bb5da5a8fddec4c308bf5422dd1328a6; no delivery, acceptance, or capstone/epic merge. OJ-yf2c released open for remaining browser proof.
+- Accepted OJ-p8rd source a7ed346 locally merged epic 7881cb0; repaired status retry has four real status GETs HTTP200, zero status500. Separate true missing-job run404 recovery proved.
+- Combined suite on 5bc83e8: 52 passed twice (17.31s / 16.67s), one existing Starlette/httpx warning, no skipped regressions. Logs committed in docs/evidence/frontend-upgrade/followup/.
+- Independently verified 47 screenshot originals/copies/hashes/dimensions and text manifests. Keyboard traversed three native players and six subcontrols each; downloads, reset, status recovery and health recovery exercised. This uses isolated synthetic QA fixtures, not the approved creative reference.
+- Final authoritative report: docs/evidence/frontend-upgrade/followup/COORDINATOR_CHECKPOINT.md; LIVE_CHECK.json and COORDINATOR_SHA256SUMS.json record local liveness and unchanged approved artifact hashes.
+- pvg loop recover removed the serving preview checkout/epic ref; coordinator restored exact 7881cb0 from retained history and restarted identical config/data as PID49984. Page/health/original job status200, workflow exists. QA ports8894/8895 stopped; two new QA tabs explicitly closed before teardown; original8893 intentionally running.
+- Two native Chrome capture failures -3811 leave actual #result reduced-motion suppression unproven. Earlier body-only CSS is insufficient. Exact IAB patch version and exhaustive native-control focus-indicator proof remain open.
+- No design/render change, GPU/API inference spend, push, publication, or public tunnel. bd sync --from-main unavailable: no beads database; shared Paivot nd remains the existing tracker, no competing database initialized.
+
+### proof
+- [x] AC #1: Real local dry-run flow, repaired retry and byte-identical downloaded final demonstrated.
+- [x] AC #2: Existing desktop/mobile/motion screenshots retained; follow-up hashes and dimensions verified.
+- [ ] AC #3: Keyboard traversal demonstrated, but every-control visible-focus audit and actual reduced-motion suppression still require browser proof.
+- [x] AC #4: Earlier negative/stale evidence retained; repaired retry and genuine health recovery added without invented progress.
+- [x] AC #5: Focused evidence retained; combined full suite52 passes twice with one disclosed warning.
+- [ ] AC #6: New QA cleanup/commands/hashes proven; exact IAB patch engine version still not established by reduced UA Chrome/155.0.0.0.
+- [x] AC #7: This checkpoint changes evidence only; atomic backend repair was separately accepted as OJ-p8rd.
+
+LEARNINGS: A completed traversal is not exhaustive visual focus proof. Body CSS cannot prove a child animation is suppressed. Recovery tooling can delete a serving worktree; preserve commit history and reverify liveness.
+OBSERVATIONS: Status-race fix accepted/live; capstone remains open, not all-green. No workers remain active.
+
+
 ## nd_contract
 status: new
 
