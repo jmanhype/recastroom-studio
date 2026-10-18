@@ -11,7 +11,7 @@ updated_at: 2026-10-18T14:11:21Z
 content_hash: "sha256:6c37edf4a6474ffab9c87eddd90f3b7616c09b5d2696603318d1663749292858"
 assignee: dev-OJ-p8rd
 follows: [OJ-inuo, OJ-xtk4]
-labels: [delivered]
+labels: [delivered, accepted]
 closed_at: 2026-10-18T14:11:21Z
 close_reason: "Accepted: a7ed346 atomically replaces same-directory status snapshots, preserves 404/state behavior, passes focused and legacy-control verification, all recorded hashes/browser receipts match, and scope remains app/main.py plus dedicated tests/evidence."
 ---
