@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration, rejected]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T03:51:58Z
-content_hash: "sha256:d8b80dad661c88254971b79008b67021454e8fc314f2f8c59208bf1872b16ed6"
+updated_at: 2026-10-18T03:57:58Z
+content_hash: "sha256:ae71e9836a6276dec788289ecd6585c06f77665bbd9e1711b8cf425a61952eec"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -49,7 +49,7 @@ PRODUCES:
 - `app/web/studio.js` -> frozen read-only public seam `window.StudioUI.getState(): { epoch, jobId, busy, running, recommended, backend }`
 
 CONSUMES:
-- Existing local HTTP contracts embedded above. The UI code is not a leaf producer of mutable StudioUI methods.
+- (none -- leaf story; all existing HTTP contracts are embedded above and no mutable StudioUI methods are produced)
 
 INTERFACE RECONCILIATION:
 - `app/web/studio.js:159-160` at story/OJ-4rht `63b9c00` exposes only frozen, read-only `errorText` and `getState`.
