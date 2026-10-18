@@ -8,7 +8,8 @@ parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
 updated_at: 2026-10-18T16:04:00Z
-content_hash: "sha256:208868fca043d2b6c5f58cb4064e65f18efd270a71f54c29bb08a6198ccf6426"
+content_hash: "sha256:686562742e4b165b1e4f6b5f180d018f8ef0d16f966b67a38ac348fe36b18ba3"
+blocks: [OJ-yf2c]
 ---
 
 ## Description
@@ -40,9 +41,10 @@ status: new
 
 
 ## History
-
+- 2026-10-18T16:04:00Z dep_added: blocks OJ-yf2c
 
 ## Links
 - Parent: [[OJ-a7l6]]
+- Blocks: [[OJ-yf2c]]
 
 ## Comments
