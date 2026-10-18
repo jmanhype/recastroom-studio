@@ -1,19 +1,20 @@
 ---
 id: OJ-inuo
 title: "Preserve restored source audio layout and loudness"
-status: in_progress
+status: closed
 priority: 1
 type: bug
 labels: [bug, media, local, dogfood, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
-updated_at: 2026-10-18T04:29:00Z
-content_hash: "sha256:e7b4823f0d176818add8f1d417f6bb756d61cab198b61bb4e4a4b421e427bc93"
-blocks: [OJ-yf2c]
+updated_at: 2026-10-18T04:33:19Z
+content_hash: "sha256:12fa3da7343a8310d29692030c3d22a2878d33ed440aa35aec1f8031acff6419"
 was_blocked_by: [OJ-xtk4]
 assignee: dev-OJ-inuo
 follows: [OJ-xtk4, OJ-4rht]
+closed_at: 2026-10-18T04:33:19Z
+close_reason: "Accepted: independently verified source-layout-preserving audio export evidence across mono, stereo, and 5.1; focused/full test receipts, compact artifacts and hashes, and real local re-export geometry/audio all meet the six ACs."
 ---
 
 ## Description
@@ -298,10 +299,11 @@ status: delivered
 - 2026-10-18T04:28:03Z status: in_progress -> in_progress
 - 2026-10-18T04:28:03Z auto-follows: linked to predecessor OJ-4rht
 - 2026-10-18T04:28:41Z status: in_progress -> in_progress
+- 2026-10-18T04:33:19Z status: in_progress -> closed
+- 2026-10-18T04:33:19Z dep_removed: no_longer_blocks OJ-yf2c
 
 ## Links
 - Parent: [[OJ-a7l6]]
-- Blocks: [[OJ-yf2c]]
 - Was blocked by: [[OJ-xtk4]]
 - Follows: [[OJ-xtk4]], [[OJ-4rht]]
 
