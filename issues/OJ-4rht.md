@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T02:14:21Z
-content_hash: "sha256:54e7fc1b79c964811be3371a10fa17be016dd87ff7b061d6c5327e2d59053faf"
+updated_at: 2026-10-18T02:22:05Z
+content_hash: "sha256:25f0f66723fd5a7f6d2a58263db9bf38acf012bf1b7b067e3698f41c5a62f016"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -99,6 +99,7 @@ status: new
 
 ## Notes
 Routing recovery: GLM native worker stopped after repeated provider status502 stream failures; git status in story worktree clean and branch still7ab3b8c. Router activity confirmed no active old request before replacement. Fresh worker qwen_frontend_4rht routed exactly custom/Qwen-Ambassador/Qwen3.8-Max (not modelscope), same claimed isolated story. Implementation pending; no source changes or tests claimed.
+User explicitly requested GPT-6 Astra frontend replacement. Qwen stopped, router activity empty, story worktree clean at7ab3b8c before replacement. Recreated clean Paivot-owned worktree on existing story branch. Fresh Astra bounded frontend-only task dispatched; medium effort, no delegation. Local commits only, backend/generation untouched; independent acceptance pending.
 
 ## nd_contract
 status: in_progress
