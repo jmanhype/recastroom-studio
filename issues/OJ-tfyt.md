@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:34:08Z
-content_hash: "sha256:3ec333e639559225c3db4d65facbc27e300ec21a156713a04d30a3cbfbbf796b"
+updated_at: 2026-10-18T16:34:31Z
+content_hash: "sha256:11e8de12dd43be476ad6f5f6c3d6d7e9879b65753819e09b938216bf26b7566b"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -41,6 +41,44 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
+- Commit SHA: 98de3ff (base only; worker made no commit).
+- Scoped artifacts: deploy/comfy/{asset-manifest.json,comfy-build.yaml,dependency-matrix.json,validation.json}, docs/deployment/PREDEPLOY.md, tests/test_deployment_manifest.py.
+- Artifact SHA-256 values are recorded in the immediately preceding developer evidence and PREDEPLOY.md; canonical workflow SHA-256 is 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21.
+- Public metadata/source only; no model weights, credentials, account status, provider uploads, remote build, GPU, download, install, commit, merge, or push.
+
+## CI/Test Results
+- Offline scoped deployment tests: 12 passed in 0.04s.
+- Full repository suite: 75 passed, 1 pre-existing Starlette/httpx deprecation warning, 17.71s.
+- Offline comfy-cli 1.22.0 build validate: exit 0, ok=true, remote=false, model_count=13, folder_case_checked=false.
+- Offline comfy-cli 1.22.0 build push --dry-run: exit 0, created=false, upload_count=0, upload_bytes=0, uploaded=0, deduped=0, folder_case_checked=false.
+- git diff --check: clean.
+
+Commands run:
+- pvg nd show OJ-tfyt
+- PYTHONPATH=src work/openjutsu-studio/.venv/bin/python -m pytest -q tests/test_deployment_manifest.py
+- PYTHONPATH=src work/openjutsu-studio/.venv/bin/python -m pytest -q
+- cd /private/tmp && uvx --offline --python 3.12 --from comfy-cli==1.22.0 comfy --json build validate <owned-deploy-comfy-directory>
+- cd /private/tmp && uvx --offline --python 3.12 --from comfy-cli==1.22.0 comfy --json build push <owned-deploy-comfy-directory> --dry-run
+- git diff --check
+- shasum -a 256 deploy/comfy/* docs/deployment/PREDEPLOY.md tests/test_deployment_manifest.py
+
+## Summary
+Delivered a fail-closed local candidate, machine-readable 13-asset manifest with current public digests/revisions/sizes and exact implicit-source traces, runtime/dependency blocker matrix, syntax-only CLI receipts, and offline no-skip structural/hash/closure tests. Historical byte identity, runtime staging/import compatibility, hosted compatibility, several licenses, and SDK asset binding remain unresolved; no runnable deployment or readiness is claimed.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Detailed implementation evidence and measured results above; authoritative file hashes and source citations in the prior developer block and PREDEPLOY.md.
+
+### proof
+- [x] AC1 verified
+- [x] AC2 verified
+- [x] AC3 verified
+- [x] AC4 verified
+- [x] AC5 verified
+
 ## nd_contract
 status: delivered
 
