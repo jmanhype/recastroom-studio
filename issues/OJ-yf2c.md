@@ -1,17 +1,18 @@
 ---
 id: OJ-yf2c
 title: "E2e: prove the cinematic local studio upgrade"
-status: open
+status: in_progress
 priority: 1
 type: task
 labels: [capstone, e2e, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T13:49:51Z
-content_hash: "sha256:c563049640e078797777da4e1bcc99c1afd929280c602505580e7ff743430e48"
+updated_at: 2026-10-18T14:13:38Z
+content_hash: "sha256:f1a1bcf4a1595ab2bb75004d92a3262ab0dadab4ce7729648f9eb542e96a17dd"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
-follows: [OJ-4rht, OJ-xtk4, OJ-inuo]
+follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
+assignee: dev-OJ-yf2c
 ---
 
 ## Description
@@ -267,10 +268,13 @@ OBSERVATIONS: Next evidence work must resolve AC3/AC6 without reopening approved
 - 2026-10-18T13:49:50Z released by speed
 - 2026-10-18T13:55:48Z dep_added: blocked_by OJ-p8rd
 - 2026-10-18T14:11:21Z dep_removed: was_blocked_by OJ-p8rd
+- 2026-10-18T14:13:38Z status: open -> in_progress
+- 2026-10-18T14:13:38Z auto-follows: linked to predecessor OJ-p8rd
+- 2026-10-18T14:13:38Z claimed by dev-OJ-yf2c
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Was blocked by: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]]
-- Follows: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]]
+- Follows: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]]
 
 ## Comments
