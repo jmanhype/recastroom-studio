@@ -1,18 +1,17 @@
 ---
 id: OJ-yf2c
 title: "E2e: prove the cinematic local studio upgrade"
-status: in_progress
+status: open
 priority: 1
 type: task
 labels: [capstone, e2e, frontend, external-integration, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T19:35:57Z
-content_hash: "sha256:b128eacc81f03a6e5083021a0ee76b5947c2c73aba7215b4b6bcb5e0cdc8e54a"
+updated_at: 2026-10-18T19:40:04Z
+content_hash: "sha256:8e368b9eb4a4c5415ebe904bfaa27f372af4816bfea8242bc79a0c7f84b37149"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
-assignee: dev-OJ-yf2c
 ---
 
 ## Description
@@ -374,6 +373,8 @@ OBSERVATIONS: Next evidence work must resolve AC3/AC6 without reopening approved
 - 2026-10-18T16:46:24Z auto-follows: linked to predecessor OJ-tfyt
 - 2026-10-18T16:46:24Z claimed by dev-OJ-yf2c
 - 2026-10-18T19:35:24Z status: in_progress -> in_progress
+- 2026-10-18T19:40:04Z status: in_progress -> open
+- 2026-10-18T19:40:04Z released by speed
 
 ## Links
 - Parent: [[OJ-a7l6]]
