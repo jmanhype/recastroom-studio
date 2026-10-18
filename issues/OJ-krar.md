@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
 updated_at: 2026-10-18T16:35:30Z
-content_hash: "sha256:d370fd9a69b8dc711354ad69f7cb40a76c93b3a07c8a217069b7e847c348f441"
+content_hash: "sha256:2fbb96c6cc999e057c8d261f5bccb757f59845afd4805652740683b18f2d0ca4"
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4, OJ-4rht]
 labels: [accepted]
 closed_at: 2026-10-18T16:35:30Z
@@ -41,6 +41,16 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-18.
+
+### proof
+- [x] Story closed after accepted label was applied.
 
 
 ## nd_contract
