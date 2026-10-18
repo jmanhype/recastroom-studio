@@ -9,8 +9,9 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T03:57:59Z
-content_hash: "sha256:eab75c229d39a34257e03eb85cc545ee716de6f33b626a295de0b403adfb93b4"
-blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo]
+content_hash: "sha256:ff3ea3077d71df705fca867eb7f7f6365208b2e584f7cd9498397a3fa7ba2828"
+blocked_by: [OJ-xtk4, OJ-inuo]
+was_blocked_by: [OJ-4rht]
 ---
 
 ## Description
@@ -230,9 +231,11 @@ status: new
 - 2026-10-18T01:53:57Z dep_added: blocked_by OJ-4rht
 - 2026-10-18T03:53:02Z dep_added: blocked_by OJ-xtk4
 - 2026-10-18T03:53:02Z dep_added: blocked_by OJ-inuo
+- 2026-10-18T04:08:39Z dep_removed: was_blocked_by OJ-4rht
 
 ## Links
 - Parent: [[OJ-a7l6]]
-- Blocked by: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]]
+- Blocked by: [[OJ-xtk4]], [[OJ-inuo]]
+- Was blocked by: [[OJ-4rht]]
 
 ## Comments
