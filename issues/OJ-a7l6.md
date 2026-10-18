@@ -1,14 +1,16 @@
 ---
 id: OJ-a7l6
 title: "Cinematic local Openjutsu studio frontend upgrade"
-status: open
+status: closed
 priority: 1
 type: epic
 labels: [frontend, local]
 created_at: 2026-10-18T01:53:45Z
 created_by: speed
 updated_at: 2026-10-18T19:48:25Z
-content_hash: "sha256:91aea4273e2bed696871ab4fc1a77357ffa3d6806ee10cd340771ab06d5ae625"
+content_hash: "sha256:34114ad9bfc031dea5206906bdcdf87bc64f6b2bb9c3bf27682a08f51a0d7274"
+closed_at: 2026-10-18T19:48:25Z
+close_reason: "All child stories accepted; final capstone PM-approved and merged; merged epic suite 105 passed with one disclosed warning."
 ---
 
 ## Description
@@ -132,7 +134,7 @@ status: accepted
 - [x] Epic goal and local-only boundary are satisfied.
 
 ## History
-
+- 2026-10-18T19:48:25Z status: open -> closed
 
 ## Links
 
