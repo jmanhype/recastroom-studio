@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
 updated_at: 2026-10-18T16:28:14Z
-content_hash: "sha256:40d25cbc0439dbe04ebfe7e44d3a5ad2b096ad44879ff39253d7c5fb7e3c6f32"
+content_hash: "sha256:1e3614c3c58247ada8d8bf1a200bcf995be193667718c850df0a9d91ee3de388"
 blocks: [OJ-yf2c]
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4]
 labels: [rejected]
@@ -242,3 +242,26 @@ Reviewed commit 147a748e4bb418eadc242383c3e444d828818c05 against base 98de3ff703
 - Installed SDK verified as comfy-sdk 0.5.0 from the root checkout virtual environment.
 
 PM gate finding: Tier 1b requires type specifications for public functions in new modules. `src/openjutsu/sdk_assets.py` exposes `validate_inputs` and `bind_graph` without parameter/return annotations, and `custom_nodes/openjutsu_assets/__init__.py` exposes `OpenJutsuAssetPlan.INPUT_TYPES` and `.bind` without return/parameter annotations. This is a rejection independent of the tracker-format false positives above.
+
+### 2026-10-18T16:28:14Z speed
+## PM Decision
+REJECTED [2026-10-18]:
+EXPECTED: PM Tier 1b requires every public function in a new module to have complete parameter and return type specifications.
+DELIVERED: At commit 147a748e4bb418eadc242383c3e444d828818c05, `src/openjutsu/sdk_assets.py` exposes `validate_inputs(workflow, source, reference_1, reference_2=None)` and `bind_graph(client, workflow, plan, files)` without annotations, and `custom_nodes/openjutsu_assets/__init__.py` exposes `OpenJutsuAssetPlan.INPUT_TYPES(cls)` and `bind(self, plan, video, global_ref, global_ref2="")` without complete signatures/returns.
+GAP: The functional AC evidence and independent tests pass, but the deterministic new-public-function type-spec gate does not.
+FIX: Add precise parameter/return annotations (using SDK `Any`/protocol or type aliases where exact SDK types are not exported), then rerun focused and full suites and regenerate/update the scoped SHA256SUMS evidence for changed files.
+
+Structural verify-delivery judgment: its `nd_contract:eof` and `proof:ac_items` failures are formatting/parser issues, not missing substantive evidence. The authoritative delivered contract and AC1-AC5 proof are present, as are commit SHA, commands, counts, hashes, and boundaries. That judgment is documented in the PM review comment, but does not waive the type-spec gate.
+
+## nd_contract
+status: rejected
+
+### evidence
+- Independent focused suite: 30 passed in 6.64s.
+- Independent full suite: 89 passed, 1 existing Starlette/httpx deprecation warning, in 24.21s.
+- All 12 scoped SHA256SUMS entries passed; canonical workflow hash is exactly 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21.
+- PM Tier 1b static inspection found missing annotations on the new public functions/methods listed above.
+
+### proof
+- [ ] Quality gate: public functions in new SDK asset modules have complete parameter and return type specifications.
+- [x] Substantive story evidence was independently present despite `verify-delivery` contract-placement/AC-parser formatting failures.
