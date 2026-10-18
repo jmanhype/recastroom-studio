@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:39:06Z
-content_hash: "sha256:294e67893855e5b22c0f5c161213494a946cf56d86e5c0935216b00e21998b5b"
+updated_at: 2026-10-18T16:41:10Z
+content_hash: "sha256:0b9ef6214b440c917c8a4454f15108e582b47771f089b57ce32e34156fad80eb"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -62,6 +62,36 @@ Fail-closed local candidate delivered with exact current metadata/source evidenc
 | AC5 | Yes: commands/results/hashes/blockers and SDK-bridge dependency reported. |
 Correction: the final PREDEPLOY.md SHA-256 after removing the temporary-directory pathname is 6d205747c2dfc70d2247fb79634f6023dd4b921228afe3344e6c1be96ec0a825; this supersedes the earlier 404ecb4f8f1040e7b059d373be00b87aa3e6a13b77d6a45387632f2eeb3ffc05 hash. All other artifact hashes are unchanged.
 Final artifact correction: PREDEPLOY.md now lists deploy/comfy/validation.json and records the final 17.85s full-suite duration. Its final SHA-256 is 1d866ccb24c0228c48b3407a6e8bd0b66eae31c2341d5f03cae75bbce954016e; this supersedes all earlier PREDEPLOY hashes. No other artifact changed.
+## Implementation Evidence
+
+Summary: Coordinator integrated and independently reran the fail-closed deployment candidate.
+
+Commit SHA: 70c9c8324dc52083a4ed48e46b26dceeb50a7191
+
+Commands run:
+- PYTHONPATH=src .venv/bin/python -m pytest -q tests/test_deployment_manifest.py
+- PYTHONPATH=src .venv/bin/python -m pytest -q
+- Offline comfy-cli 1.22.0 build validate from an isolated temporary directory
+- Offline comfy-cli 1.22.0 build push --dry-run from an isolated temporary directory
+- git diff --check
+
+CI/Test Results:
+- Focused deployment suite: 12 passed in 0.02s.
+- Full suite: 75 passed, 1 pre-existing Starlette/httpx warning, in 18.30s.
+- Offline validate: exit 0, ok=true, remote=false, model_count=13, folder_case_checked=false.
+- Offline push dry-run: exit 0, created=false, upload_count=0, upload_bytes=0, uploaded=0, deduped=0.
+- git diff --check passed.
+
+AC Verification:
+- [x] AC1: Local candidate/build spec and 13-entry machine-readable manifest pin commits, immutable current revisions, digests, sizes, destinations, and workflow hash 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21.
+- [x] AC2: Exact current BiRefNet and YuNet/SFace source traces, revisions, hashes, sizes, destinations, license evidence/unknowns, and fail-closed historical/runtime boundaries are recorded.
+- [x] AC3: Python/Torch/CUDA mismatch, missing lock, groundingdino no-build preview, dynamic imports, graph drift, and unfetchable bare BFS ref remain explicit blockers with no selected base.
+- [x] AC4: Twelve offline no-network/no-skip structural/hash/closure tests plus syntax-only CLI validate/push dry-run distinguish candidate from runnable deployment.
+- [x] AC5: Commands, measured results, artifact hashes, rights boundaries, SDK-bridge dependency, and remaining blockers are reported without weights, paid calls, remote builds, or readiness claims.
+
+Boundaries:
+- This remains a fail-closed local candidate. Hosted compatibility, runtime staging/imports, historical byte identity, several licenses, SDK bridge inclusion, and runnable deployment remain unproven.
+
 
 ## nd_contract
 status: delivered
