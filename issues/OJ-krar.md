@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:31:54Z
-content_hash: "sha256:0c87adfaa138393cc59f26c8887896ad60f261148bbb96f25903d17ad03d1f72"
+updated_at: 2026-10-18T16:35:30Z
+content_hash: "sha256:697bf8d939041173afa26246ecd055e8a53de87d9423750d550dde7c8b3ef32d"
 blocks: [OJ-yf2c]
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4, OJ-4rht]
 labels: [delivered]
@@ -319,3 +319,24 @@ status: rejected
 ### proof
 - [ ] Quality gate: public functions in new SDK asset modules have complete parameter and return type specifications.
 - [x] Substantive story evidence was independently present despite `verify-delivery` contract-placement/AC-parser formatting failures.
+
+### 2026-10-18T16:35:30Z speed
+## PM Recheck Evidence (2026-10-18)
+
+Rechecked only `147a748e4bb418eadc242383c3e444d828818c05..1afb6fd87f99065fe1f485568f36850e2d05e5d4` at story commit `1afb6fd87f99065fe1f485568f36850e2d05e5d4`.
+
+- Diff scope: 6 files, 74 insertions, 7 deletions, limited to annotations/type aliases and rework evidence/hash updates. `git diff --check`: PASS.
+- The four previously untyped public entry points now have complete annotations:
+  - `validate_inputs(workflow: WorkflowGraph, source: str | Path, reference_1: str | Path, reference_2: str | Path | None = None) -> tuple[PlannerData, AssetFiles, str]`
+  - `bind_graph(client: Comfy, workflow: WorkflowGraph, plan: PlannerData, files: AssetFiles) -> Workflow`
+  - `OpenJutsuAssetPlan.INPUT_TYPES(cls: type[OpenJutsuAssetPlan]) -> InputSchema`
+  - `OpenJutsuAssetPlan.bind(plan: str, video: str, global_ref: str, global_ref2: str = "") -> tuple[str]`
+- Annotation-normalized AST comparison: `src/openjutsu/sdk_assets.py` identical (`53763510fc358043153bc53deab6549deb5e83e3e56b6c269250d808ae78cd59`); `custom_nodes/openjutsu_assets/__init__.py` identical (`a9825670b0781d242b1f410242cbbe309dce66d909c00a2e7586bfb828e35da6`). No executable behavior branch, validation rule, default, network call, graph field, or output selection changed.
+- TYPE_CHECKING-only SDK imports resolve against installed comfy-sdk 0.5.0.
+- Focused suite with root checkout `.venv/bin/python`, `PYTHONPATH=src`: 30 passed in 6.71s.
+- Full suite with root checkout `.venv/bin/python`, `PYTHONPATH=src`: 89 passed, 1 existing Starlette/httpx deprecation warning, in 24.90s.
+- `shasum -a 256 -c docs/evidence/sdk-assets/SHA256SUMS.txt`: all 15 entries OK.
+- Canonical workflow is untouched by the annotation-rework diff.
+- `pvg story verify-delivery OJ-krar` still reports 7 passed / 2 failed from the previously documented contract-placement/AC-parser formatting issues; substantive evidence remains complete.
+
+The sole PM rejection—missing complete public-function type specifications—is closed.
