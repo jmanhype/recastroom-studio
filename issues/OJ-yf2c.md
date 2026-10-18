@@ -8,8 +8,8 @@ labels: [capstone, e2e, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T03:57:40Z
-content_hash: "sha256:0665025f6c618d123e7ad33e63bf5525e43449db5e1db8969e2fd92b70808f6c"
+updated_at: 2026-10-18T03:57:59Z
+content_hash: "sha256:0fd43891523c6e1bd27118a3517b769d65cdc830652a009fb601750b88237906"
 blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo]
 ---
 
@@ -45,13 +45,20 @@ PRODUCES:
 - `docs/evidence/frontend-upgrade/` -> local browser run log, desktop/mobile/reduced-motion screenshots, SHA-256 manifest, and any bounded dependent export checks
 
 CONSUMES:
-- OJ-4rht `app/web/index.html` -> complete real guided flow and semantic controls.
-- OJ-4rht `app/web/studio.js` -> real user-driven DOM/event flow; tests must not call nonexistent `setStage`, `renderStatus`, `renderPrepareResult`, or `resetStaleJob` methods.
-- OJ-4rht `app/web/studio.js` -> frozen read-only `window.StudioUI.errorText(value): string` for normalized error observation only.
-- OJ-4rht `app/web/studio.js` -> frozen read-only `window.StudioUI.getState(): { epoch, jobId, busy, running, recommended, backend }` for state observation only.
-- Backend HTTP endpoints independently: `POST /api/prepare`, `POST /api/jobs/{job_id}/run` (409 when active), and `GET /api/jobs/{job_id}/status`; complete artifacts are `generated|final|side_by_side`.
-- OJ-xtk4 -> accepted aspect-preserving `make_side_by_side` behavior.
-- OJ-inuo -> accepted source-layout/loudness-preserving restored audio behavior.
+- OJ-4rht: `app/web/index.html` -> complete real guided flow and semantic controls
+  source: app/web/index.html
+  event: real DOM interaction; do not call nonexistent mutation methods
+- OJ-4rht: `app/web/studio.js` -> real user-driven DOM/event flow
+  source: app/web/studio.js
+  spec: `setStage`, `renderStatus`, `renderPrepareResult`, and `resetStaleJob` are not public methods
+- OJ-4rht: `app/web/studio.js` -> frozen read-only observation seam
+  source: app/web/studio.js
+  spec: `window.StudioUI.errorText(value): string`; `window.StudioUI.getState(): { epoch, jobId, busy, running, recommended, backend }`
+  endpoint: `POST /api/prepare`; `POST /api/jobs/{job_id}/run`; `GET /api/jobs/{job_id}/status`
+- OJ-xtk4: `src/openjutsu/media.py` -> accepted aspect-preserving `make_side_by_side`
+  source: src/openjutsu/media.py
+- OJ-inuo: `src/openjutsu/media.py` -> accepted source-layout/loudness-preserving restored audio
+  source: src/openjutsu/media.py
 
 ## Story Acceptance Criteria
 1. Manual verification/smoke test: a real local CUA browser E2E run uses the real dry-run backend and all three synthetic fixtures to complete upload, rights consent, prepare, run, status transitions, compare, and artifact download without mocks or external inference.
@@ -59,7 +66,7 @@ CONSUMES:
 3. Keyboard-only operation reaches every interactive control with visible focus, submits the guided flow, and activates download/recovery controls; reduced-motion evidence proves motion is suppressed when the browser preference is set.
 4. Negative browser scenarios cover missing consent, prepare failure, terminal `error`, retry/new-job recovery, active/unknown/stale job handling, and no state that fabricates percent, ETA, QC verdict, or artifact availability.
 5. Deterministic pytest regressions encode static UI invariants and real TestClient API behavior (no mocked backend) and pass repeatedly on the repository venv; the full suite also passes with the prior 31 tests intact and no skipped regressions.
-6. Evidence identifies the local browser engine/version, viewport sizes, exact server/test commands, loopback bind address, fixture hashes, and clean process teardown; it contains no credentials, public URLs, absolute user paths, or public-safe claims not actually tested.
+6. Evidence identifies the local browser engine/version, viewport sizes, exact server/test commands, loopback bind address, fixture hashes, and clean process teardown; private raw evidence outside the repository may retain absolute local paths for provenance, while checked-in receipts sanitize user-specific/public paths and contain no credentials, public leakage, or public-safe claims not actually tested.
 7. The capstone changes only local deterministic tests/evidence plus CUA browser artifacts and any minimal frontend test hook required by OJ-4rht; it does not alter backend semantics, add a mandatory browser dependency, initialize the loop, or create source branches.
 
 ## Testing Requirements
@@ -163,7 +170,7 @@ CONSUMES:
 3. Keyboard-only operation reaches every interactive control with visible focus, submits the guided flow, and activates download/recovery controls; reduced-motion evidence proves motion is suppressed when the browser preference is set.
 4. Negative browser scenarios cover missing consent, prepare failure, terminal `error`, retry/new-job recovery, active/unknown/stale job handling, and no state that fabricates percent, ETA, QC verdict, or artifact availability.
 5. Deterministic pytest regressions encode static UI invariants and real TestClient API behavior (no mocked backend) and pass repeatedly on the repository venv; the full suite also passes with the prior 31 tests intact and no skipped regressions.
-6. Evidence identifies the local browser engine/version, viewport sizes, exact server/test commands, loopback bind address, fixture hashes, and clean process teardown; it contains no credentials, public URLs, absolute user paths, or public-safe claims not actually tested.
+6. Evidence identifies the local browser engine/version, viewport sizes, exact server/test commands, loopback bind address, fixture hashes, and clean process teardown; private raw evidence outside the repository may retain absolute local paths for provenance, while checked-in receipts sanitize user-specific/public paths and contain no credentials, public leakage, or public-safe claims not actually tested.
 7. The capstone changes only local deterministic tests/evidence plus CUA browser artifacts and any minimal frontend test hook required by OJ-4rht; it does not alter backend semantics, add a mandatory browser dependency, initialize the loop, or create source branches.
 
 ## Testing Requirements
