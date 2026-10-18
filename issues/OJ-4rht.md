@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T02:27:58Z
-content_hash: "sha256:74110fd7ddd78c6700627a3dce13f3bf4726a0b530ca216bafa4e9600eaee30c"
+content_hash: "sha256:9710f367f11121df8a2120d967c1709096830a62550529679b2e29fc51ba565b"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -100,6 +100,18 @@ status: new
 ## Notes
 Routing recovery: GLM native worker stopped after repeated provider status502 stream failures; git status in story worktree clean and branch still7ab3b8c. Router activity confirmed no active old request before replacement. Fresh worker qwen_frontend_4rht routed exactly custom/Qwen-Ambassador/Qwen3.8-Max (not modelscope), same claimed isolated story. Implementation pending; no source changes or tests claimed.
 User explicitly requested GPT-6 Astra frontend replacement. Qwen stopped, router activity empty, story worktree clean at7ab3b8c before replacement. Recreated clean Paivot-owned worktree on existing story branch. Fresh Astra bounded frontend-only task dispatched; medium effort, no delegation. Local commits only, backend/generation untouched; independent acceptance pending.
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-17.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## nd_contract
 status: delivered
 
