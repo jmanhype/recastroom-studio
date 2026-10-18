@@ -8,14 +8,14 @@ labels: [walking-skeleton, skeleton, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T01:57:44Z
-content_hash: "sha256:8b514eb31ddae393c5f33bcafa052c567260fcdbaaeaf14e95678c5b531e943e"
+updated_at: 2026-10-18T01:57:45Z
+content_hash: "sha256:49794290e493896a8ffdf0c97b3e3431b8bff1e9ac20063b02aeb98b74b22c79"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
 
 ## Description
-PROBE_DESCRIPTION
+
 
 ## USER INTENT
 As an authorized creator, I want a clear cinematic studio surface for my source clip and performer references, so I can confidently prepare, run, inspect, compare, and download a local job without pretending to know progress that the API does not provide.
