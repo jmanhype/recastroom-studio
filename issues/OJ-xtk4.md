@@ -8,8 +8,8 @@ labels: [bug, media, local, dogfood, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
-updated_at: 2026-10-18T04:09:05Z
-content_hash: "sha256:204c86173af02e1dfc0e8e14c46e0a1d8733881174e130be41cf71c9fa7a8d09"
+updated_at: 2026-10-18T04:09:45Z
+content_hash: "sha256:3eb46fbf34cd452925d9e7dea67d88c5bb4c9030266fb17a9ace1e146a25a31b"
 blocks: [OJ-inuo, OJ-yf2c]
 assignee: dev-OJ-xtk4
 follows: [OJ-4rht]
@@ -166,7 +166,33 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
 
+Commands run:
+- `PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest tests/test_media.py -q`
+- `PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest`
+- `PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python docs/evidence/dogfood-repairs/OJ-xtk4/generate_evidence.py`
+- `PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python docs/evidence/dogfood-repairs/OJ-xtk4/measure_media_coverage.py`
+- `pvg verify src/openjutsu/media.py tests/test_media.py docs/evidence/dogfood-repairs/OJ-xtk4/generate_evidence.py --include-tests --format=text`
+- `git diff --check`
+
+Summary: RED 4 failed, 1 passed; focused GREEN 7 passed; full suite 37 passed, 1 pre-existing warning; changed-function statement coverage 4/4 = 100.00%; pvg verify passed 3 files; git diff check passed.
+Commit SHA: 415e3d51bf5bfd52f60c73450101bea9b8cb00cc on local-only branch `story/OJ-xtk4`.
+Artifacts and SHA-256 hashes: `docs/evidence/dogfood-repairs/OJ-xtk4/REPORT.md`, `pytest-red.txt`, `pytest-focused.txt`, `pytest-full.txt`, `measurements.json`, `SHA256SUMS.json`, `hash-check.txt`.
+
+## nd_contract
+status: delivered
+
+### evidence
+- RED `4 failed, 1 passed`; focused `7 passed`; full `37 passed, 1 warning`; changed-function coverage `100.00%`; generator, pvg verify, and diff check passed.
+- Local-only commit `415e3d51bf5bfd52f60c73450101bea9b8cb00cc` on `story/OJ-xtk4`; evidence and hashes under `docs/evidence/dogfood-repairs/OJ-xtk4/`.
+
+### proof
+- [x] AC #1: DAR-based scale-fit/pad produces centered even tiles, square SAR, and no crop/stretch.
+- [x] AC #2: 3:2, portrait 9:16, 16:9, mixed-aspect, and non-square-SAR inputs are covered.
+- [x] AC #3: Real ffprobe geometry and decoded RGB padding checks fail on baseline stretch and pass after repair.
+- [x] AC #4: Local export semantics and audio options remain bounded; no new dependency, GPU, API, publication, or push.
+- [x] AC #5: Focused/full tests, 100% changed-function statement coverage, diff check, artifacts, hashes, outputs, and commit SHA are recorded.
 
 ## nd_contract
 status: delivered
