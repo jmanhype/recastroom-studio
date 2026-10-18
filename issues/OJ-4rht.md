@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T02:22:05Z
-content_hash: "sha256:25f0f66723fd5a7f6d2a58263db9bf38acf012bf1b7b067e3698f41c5a62f016"
+updated_at: 2026-10-18T02:27:57Z
+content_hash: "sha256:aa435229a152a5e30af123e29da6aaed1b0b56d821eea991b0c04498f775748a"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -100,6 +100,32 @@ status: new
 ## Notes
 Routing recovery: GLM native worker stopped after repeated provider status502 stream failures; git status in story worktree clean and branch still7ab3b8c. Router activity confirmed no active old request before replacement. Fresh worker qwen_frontend_4rht routed exactly custom/Qwen-Ambassador/Qwen3.8-Max (not modelscope), same claimed isolated story. Implementation pending; no source changes or tests claimed.
 User explicitly requested GPT-6 Astra frontend replacement. Qwen stopped, router activity empty, story worktree clean at7ab3b8c before replacement. Recreated clean Paivot-owned worktree on existing story branch. Fresh Astra bounded frontend-only task dispatched; medium effort, no delegation. Local commits only, backend/generation untouched; independent acceptance pending.
+## nd_contract
+status: delivered
+
+### evidence
+- Implementation b5fd8e4; browser fix/evidence 90ec73d on story/OJ-4rht.
+- env -u OPENJUTSU_DATA_DIR PYTHONPATH=src root/.venv/bin/python -m pytest -q: 31 passed, 1 existing warning in 11.08s. docs/evidence/OJ-4rht/pytest.txt.
+- git diff --check and node --check app/web/studio.js: exit 0.
+- CUA browser real synthetic dry-run job 3af79afdac1c completed with source, final, paired videos and artifact links; paired download SHA256 eaecc945dc74d1c4008bf4403c20ad4c2ffb133f4421ef45715b648bb60aefd9 matches server artifact.
+- docs/evidence/OJ-4rht/desktop-review.jpg SHA256 e1129e68d907e0b8bd7f039334c4f55e1cae0d146f3fb73c1deeb43a1415c9db.
+- docs/evidence/OJ-4rht/mobile-review.jpg SHA256 5839db2d82d46cb44dd5eb5bfa395a48ffcd17023a3691a7fa01b2ad829db082.
+- Widths 375/414/768/1024/1440 had no horizontal overflow. Keyboard Space consent; two-reference job c00bba38d22c; reset during run remained cleared after server completion. Malformed timing input displayed actionable prepare error and disabled Run.
+- Full procedure and limitations: docs/evidence/OJ-4rht/DELIVERY.md.
+
+### proof
+- [x] AC #1: Responsive source/two-reference previews, labels/focus/keyboard Space, reduced-motion stylesheet.
+- [x] AC #2: Explicit unchecked rights gate, guided select/prepare/run/review with disabled explanations.
+- [x] AC #3: Server states only, unknown health not free/local, dry_run explicitly no AI inference.
+- [x] AC #4: Complete job shows final/paired review and real artifact links; paired download byte-hash verified.
+- [x] AC #5: Inline errors and retry/reset; epoch/job snapshots, abort, URL revocation and text-safe API rendering. Browser reset race exercised; broader permutations reserved for dependent regression story.
+- [x] AC #6: Backend unchanged, 31 baseline tests pass, real browser smoke and screenshot hashes saved.
+
+### LEARNINGS
+- Form control id reset shadows form.reset; use the prototype method. Browser smoke exposed and verified this repair.
+
+### OBSERVATIONS
+- No live inference/GPU/paid calls. No formal screen-reader or exhaustive race-suite claim. User judges aesthetics; independent PM acceptance remains required. Preview loopback 8892 remains running for review.
 
 ## nd_contract
 status: in_progress
