@@ -11,7 +11,7 @@ updated_at: 2026-10-18T16:45:18Z
 content_hash: "sha256:777f8340508593f88742a6f4465aa9d59fa10dd74488ea022537a622c44fe74a"
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
-labels: [delivered]
+labels: [delivered, accepted]
 closed_at: 2026-10-18T16:45:18Z
 close_reason: "Accepted: all five offline fail-closed packaging ACs independently verified at 70c9c8324dc52083a4ed48e46b26dceeb50a7191; no runnable deployment or hosted compatibility claimed."
 ---
