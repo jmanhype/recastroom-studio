@@ -4,11 +4,11 @@ title: "Cinematic guided studio frontend"
 status: in_progress
 priority: 1
 type: task
-labels: [walking-skeleton, skeleton, frontend, external-integration]
+labels: [walking-skeleton, skeleton, frontend, external-integration, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T02:27:57Z
+updated_at: 2026-10-18T02:27:58Z
 content_hash: "sha256:74110fd7ddd78c6700627a3dce13f3bf4726a0b530ca216bafa4e9600eaee30c"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
