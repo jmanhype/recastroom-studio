@@ -1,18 +1,19 @@
 ---
 id: OJ-c1vo
 title: "Fail closed when the legacy renderer is disconnected"
-status: in_progress
+status: closed
 priority: 1
 type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
 updated_at: 2026-10-18T15:47:09Z
-content_hash: "sha256:a390cb6953ec8502ca49d66e72e2ee4e80f27e1667aa9989b33664319572c385"
-blocks: [OJ-yf2c]
+content_hash: "sha256:2e6e11f07ee3a9c78a2a646c9201593ec82a0ffca02f1cbcfc1b6948a5809d64"
 follows: [OJ-p8rd, OJ-inuo, OJ-xtk4]
 assignee: dev-OJ-c1vo
 labels: [delivered]
+closed_at: 2026-10-18T15:47:09Z
+close_reason: "Accepted: independently verified focused tests, hashes, browser receipts, source behavior, and all five ACs; sole pvg bare-pass finding is a documented false positive."
 ---
 
 ## Description
@@ -202,10 +203,11 @@ status: new
 - 2026-10-18T15:08:17Z claimed by dev-OJ-c1vo
 - 2026-10-18T15:40:55Z status: in_progress -> in_progress
 - 2026-10-18T15:40:55Z auto-follows: linked to predecessor OJ-xtk4
+- 2026-10-18T15:47:09Z status: in_progress -> closed
+- 2026-10-18T15:47:09Z dep_removed: no_longer_blocks OJ-yf2c
 
 ## Links
 - Parent: [[OJ-a7l6]]
-- Blocks: [[OJ-yf2c]]
 - Follows: [[OJ-p8rd]], [[OJ-inuo]], [[OJ-xtk4]]
 
 ## Comments
