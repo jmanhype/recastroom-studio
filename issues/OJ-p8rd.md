@@ -8,13 +8,13 @@ parent: OJ-a7l6
 created_at: 2026-10-18T13:42:26Z
 created_by: speed
 updated_at: 2026-10-18T14:12:13Z
-content_hash: "sha256:c9951f89ef874541bedd154552127ccdc70fc3bf1c97e8cde3cfe4fa1729df4f"
+content_hash: "sha256:43897a6e6bb7a522701879ecc12640133f0ef4e127e8724c19ad70fdb5dc9b5d"
 assignee: dev-OJ-p8rd
 follows: [OJ-inuo, OJ-xtk4]
 labels: [accepted]
 closed_at: 2026-10-18T14:11:21Z
 close_reason: "Accepted: a7ed346 atomically replaces same-directory status snapshots, preserves 404/state behavior, passes focused and legacy-control verification, all recorded hashes/browser receipts match, and scope remains app/main.py plus dedicated tests/evidence."
-led_to: [OJ-yf2c, OJ-c1vo]
+led_to: [OJ-yf2c, OJ-c1vo, OJ-krar]
 ---
 
 ## Description
@@ -183,6 +183,6 @@ status: delivered
 ## Links
 - Parent: [[OJ-a7l6]]
 - Follows: [[OJ-inuo]], [[OJ-xtk4]]
-- Led to: [[OJ-yf2c]], [[OJ-c1vo]]
+- Led to: [[OJ-yf2c]], [[OJ-c1vo]], [[OJ-krar]]
 
 ## Comments
