@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-18T20:09:03Z
 created_by: speed
 updated_at: 2026-10-18T20:30:00Z
-content_hash: "sha256:97e4490e6bc466788d7686fafdc2cd6e43d9d762287e7b8af76e34ccfda204a6"
+content_hash: "sha256:fc52c19c3b9cef09c775f90c65aa93f935277f47908fdc50f0b30b9aedf9c7b6"
 assignee: dev-OJ-g2xx
 closed_at: 2026-10-18T20:30:00Z
 close_reason: "Independent PM approved commit 38bd79c4f449f42d64a171793fe8cf7572530eb2; all five ACs verified, manifest/test/scope checks passed, and only the four documented owner-gated submission blockers remain."
@@ -48,6 +48,18 @@ No credentials, cloud/GPU spend, live SDK run, push, publication, X activity, Ty
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-18.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## Implementation Evidence
 
 PROOF:
