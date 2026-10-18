@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:34:39Z
-content_hash: "sha256:15558ea904888eb37f957ab5c990993a6a9c5588824347cd32d3b66d1f935818"
+updated_at: 2026-10-18T16:35:44Z
+content_hash: "sha256:3c0f3ffec94cee9b3b2e1adb623195117393fea2fbe406877dad9d83dc8e86b2"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -48,6 +48,27 @@ CI/Test Results:
 
 Summary:
 Fail-closed local candidate delivered with exact current metadata/source evidence and offline tests; runnable deployment, historical byte identity, several licenses, runtime imports, and SDK asset binding remain unresolved.
+### CI/Test Results
+- Scoped: 12 passed; full: 75 passed, 1 pre-existing warning.
+- Offline comfy validate and push --dry-run both exit 0; dry run uploads zero bytes.
+
+### Proof
+| AC | Verified |
+| --- | --- |
+| AC1 | Yes: exact candidate/manifest pins and workflow hash. |
+| AC2 | Yes: exact implicit source/metadata traces; unknowns fail closed. |
+| AC3 | Yes: runtime matrix and dependency blockers; no base selected. |
+| AC4 | Yes: offline no-skip tests and syntax-only CLI receipts. |
+| AC5 | Yes: commands/results/hashes/blockers and SDK-bridge dependency reported. |
+
+## nd_contract
+status: delivered
+
+### evidence
+- See detailed Implementation Evidence and CI/Test Results above.
+
+### proof
+- [x] AC1-5 delivered as a non-runnable local candidate.
 
 ## nd_contract
 status: delivered
