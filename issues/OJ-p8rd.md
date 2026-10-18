@@ -7,8 +7,8 @@ type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T13:42:26Z
 created_by: speed
-updated_at: 2026-10-18T14:07:13Z
-content_hash: "sha256:1acee57ead814edca6e31e2ac2fc2a5b996bcc99dd2815c91c9be78560adf210"
+updated_at: 2026-10-18T14:07:26Z
+content_hash: "sha256:f468e18a27e8e3eb641adaa20a0b40d1ae532e2c6c93c476edfd44ce61652fda"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-p8rd
 follows: [OJ-inuo, OJ-xtk4]
@@ -25,6 +25,48 @@ Observed during OJ-yf2c CUA on source 2b22504: real dry_run retry GET status ret
 
 
 ## Notes
+## Implementation Evidence
+
+### CI/Test Results
+Commands run:
+  - PYTHONPATH=src <repo>/.venv/bin/python docs/evidence/status-atomic/OJ-p8rd/verify.py
+  - PYTHONPATH=src <repo>/.venv/bin/python -m pytest tests/test_status_atomic.py -q
+  - shasum -a 256 -c docs/evidence/status-atomic/OJ-p8rd/SHA256SUMS
+  - git diff --check
+Summary: focused7 PASSx3; full48 PASS; parent focused7 PASS; original-code control500 vs expected200 FAIL as intended; all recorded hashes PASS; CUA retry COMPLETE, zero500.
+- Coverage: no statement/branch percentage claimed.
+
+### Commit
+- Branch: story/OJ-p8rd
+- SHA: a7ed346
+
+### AC Verification
+| AC # | Requirement | Evidence | Status |
+|---|---|---|---|
+| 1 | Atomic coherent publication and cleanup | app/main.py _set_status; barrier/failure tests | PASS |
+| 2 | Old fail, new concurrent reads pass and404/schema preserved | tests/test_status_atomic.py; legacy-control/full-suite logs | PASS |
+| 3 | Real browser retry without500 | BROWSER.md; browser/events.json; requests.jsonl | PASS |
+| 4 | Bounded scope, tests and sanitized evidence | committed diff; SHA256SUMS; browser manifest | PASS |
+
+## nd_contract
+status: delivered
+
+### evidence
+- Source scope: app/main.py only; dedicated in-process status lock, copy-on-write snapshots, same-directory unique temporary file and os.replace. No UI/media/workflow changes.
+- New tests/test_status_atomic.py: 7 passed on three worker runs and coordinator rerun (0.52s); full suite48 passed, one existing warning. Actual base-commit writer fails controlled regression with500, fixed200.
+- docs/evidence/status-atomic/OJ-p8rd/REPORT.md, BROWSER.md, captured outputs, SHA256SUMS and browser/ receipts independently checked. Real CUA retry job85b97f14514e completes; four status GETs all200, zero500; deliberate missing-job run404 and keyboard recovery succeeds. Download byte verified.
+- Local-only, no inference/GPU spend. Tests use isolated data; production8893 untouched. No multiprocess coordinator or crash-durability promise.
+
+### proof
+- [x] AC #1: Status publication is atomic; serialized in-process updates publish coherent disk/memory snapshots, unique same-directory temps, exception cleanup.
+- [x] AC #2: Old writer deterministically fails; fixed barrier, 3writers/3readers180requests, failure preservation, schema and missing/invalid404 tests pass repeatedly.
+- [x] AC #3: Real local browser retry completes without status500; duplicate-prevention and missing-job recovery remain functional.
+- [x] AC #4: Patch scope preserved, full suite passes, sanitized logs/screenshots/hash evidence exists; no UI/GPU/external changes.
+
+LEARNINGS: Atomic rename removes the exposed truncation window; serial client tests alone missed this defect.
+
+OBSERVATIONS: Local preview8893 restart and capstone acceptance pending independent PM review. No full release claim.
+
 ## Implementation Evidence (DELIVERED)
 
 ### CI/Test Results
