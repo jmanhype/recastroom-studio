@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T02:31:40Z
-content_hash: "sha256:8bd4a9fd3d39e0e5a689a28ba36e0ae03a793cbf11622a03afd052c89c3977ab"
+content_hash: "sha256:1ad87cbd824d6d4bf871622147842f69460627fbab81f53b861cef4b46321997"
 blocks: [OJ-yf2c]
 ---
 
@@ -237,3 +237,43 @@ status: delivered
 
 ### OBSERVATIONS
 - No live inference/GPU/paid calls. No formal screen-reader or exhaustive race-suite claim. User judges aesthetics; independent PM acceptance remains required. Preview loopback 8892 remains running for review.
+
+### 2026-10-18T02:31:40Z speed
+## PM Decision
+REJECTED [2026-10-17]: Delivery/contract gaps; no confirmed user-facing async-state source defect from this bounded review.
+
+EXPECTED: Exact AC-by-AC proof for all eight story criteria and successful delivery preflight.
+DELIVERED: verify-delivery reports 8 passed, 1 failed (proof:ac_items). Receipt has six AC numbers with meanings shifted after AC3; AC7 and AC8 are not mapped separately.
+GAP: A green backend suite and broad narrative do not satisfy the exact acceptance proof gate.
+FIX: Correct the delivery receipt to map all eight actual AC, include literal commands/current implementation SHA, and rerun verify-delivery successfully without bypass. Preserve history and verify the authoritative last contract.
+
+EXPECTED: Boundary map accurately describes PRODUCES and downstream CONSUMES.
+DELIVERED: studio.js:159-160 exposes read-only getState/errorText, not the four mutable methods named in OJ-4rht; OJ-yf2c consumes two nonexistent methods.
+GAP: Tracker interface contract contradicts implementation and dependent work.
+FIX: Sr PM/coordinator must explicitly reconcile both boundary maps with private helpers/read-only observation and user-driven regression tests. Do not add unsafe mutation seams just to satisfy stale tracker text.
+
+EXPECTED: Testing requirements include browser keyboard traversal, visible focus, and prefers-reduced-motion check.
+DELIVERED: DELIVERY.md records Space on consent and responsive widths; reduced motion is asserted from CSS, with no browser preference/check result recorded.
+GAP: Full specified manual check is not evidenced. Broader deterministic coverage remains OJ-yf2c scope.
+FIX: Perform and record bounded keyboard traversal/visible-focus and reduced-motion browser checks against the real local UI; no new dependency or live inference required.
+
+EXPECTED: PM warning ownership requires a DISCOVERED_BUG report rather than dismissing baseline warnings.
+DELIVERED: pytest.txt has 31 passed, 1 Starlette/httpx deprecation warning, described only as existing.
+GAP: Warning is acknowledged but not tracked in the required structured report.
+FIX: Add a DISCOVERED_BUG block for centralized triage; do not expand this frontend story into backend/dependency changes.
+
+## nd_contract
+status: rejected
+
+### evidence
+- Reviewed story/OJ-4rht at 63b9c005e64fcfa0bdba04ee798acaedd79450e7; source readonly, no merge or commits.
+- Read both OJ-4rht and OJ-yf2c native tracker bodies, actual source, desktop/mobile screenshots, DELIVERY.md and pytest.txt.
+- node --check app/web/studio.js and git diff --check exit 0.
+- pvg story verify-delivery OJ-4rht: 8 passed, 1 failed, proof:ac_items.
+- Recorded suite evidence: 31 passed, 1 warning in 11.08s; no redundant suite rerun during PM review.
+- Async invalidation checks epoch/job snapshots after await, aborts requests on reset/input, clears artifacts; no confirmed race defect in static pass. No exhaustive race claim.
+
+### proof
+- [ ] AC #1: Browser focus/traversal/reduced-motion verification evidence incomplete.
+- [ ] AC #2-8: Exact eight-item authoritative delivery proof and boundary reconciliation required.
+
