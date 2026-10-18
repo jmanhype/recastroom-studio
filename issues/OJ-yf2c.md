@@ -8,8 +8,8 @@ labels: [capstone, e2e, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T16:46:24Z
-content_hash: "sha256:2c94a7760f086990738be0211e74561bb845ea02cd8ee124876cbd8712f1dde6"
+updated_at: 2026-10-18T19:35:11Z
+content_hash: "sha256:7eb4250ddb2796081d7e219e644ab294e18a70105c9fdd8ca0eb3614b1aa8ede"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 assignee: dev-OJ-yf2c
@@ -227,6 +227,53 @@ status: new
 ## Notes
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
+## Implementation Evidence
+Summary: Completed the local browser capstone with real dry-run replay, exact native-engine provenance, completed-surface reduced-motion proof, exhaustive visible-focus evidence, conditional renderer-recovery proof, and deterministic RED-to-GREEN test reconciliation.
+Commit SHA: 76582b4c7287b7b49dcb7fae95c390952d92a98e
+Branch: story/OJ-yf2c
+
+### CI/Test Results
+PROOF:
+Commands run:
+- `PYTHONPATH=src <repo>/.venv/bin/python -m pytest -q tests/test_frontend_regression.py` twice.
+- `PYTHONPATH=src <repo>/.venv/bin/python -m pytest -q` twice.
+- Initial stale-contract control runs recorded RED twice for both focused and full suites.
+- Green results: focused 4 passed twice; full 105 passed twice; one existing Starlette/httpx warning, no skips.
+- Browser evidence and commands: see `docs/evidence/frontend-upgrade/final/FINAL_REPORT.md`.
+
+### AC Verification
+| AC | Verification | Result |
+|---|---|---|
+| 1 | Two real loopback dry-run browser jobs completed with synthetic fixtures and no mocks | PASS |
+| 2 | Completed-state reduced-motion screenshot, dimensions, and hash exist | PASS |
+| 3 | Brand, all DOM controls, all 18 native media subcontrols, media containers, downloads, and conditional recovery control show keyboard focus | PASS |
+| 4 | Negative, stale, retry, and disconnected-renderer behavior remains truthful under accepted readiness semantics | PASS |
+| 5 | Focused/full suites pass twice after RED-to-GREEN reconciliation | PASS |
+| 6 | Exact native Chrome version, IAB runtime, viewport/raster data, fixture hashes, commands, and clean teardown recorded | PASS |
+| 7 | Only one stale test assertion and browser/test evidence changed; no production semantics, GPU/API spend, credentials, push, or publication | PASS |
+
+LEARNINGS: Native media focus needs cropped control-bar sheets because full-page screenshots make the ring illegible; reduced-motion proof must target completed `#result`, not body CSS.
+OBSERVATIONS: The stale health assertion correctly exposed incomplete reconciliation with accepted OJ-c1vo readiness behavior.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Local story commit `76582b4c7287b7b49dcb7fae95c390952d92a98e`; clean worktree after commit.
+- Final authoritative report: `docs/evidence/frontend-upgrade/final/FINAL_REPORT.md`.
+- Hash manifest: `docs/evidence/frontend-upgrade/final/SHA256SUMS`; all 102 listed artifacts verify OK.
+- Real browser jobs `8f999d26dab4` and `0a8128290f64` completed locally in dry-run.
+- Reduced-motion proof on native Chrome `155.0.8059.80`: media reduce=true, `.result` animationName=none, duration=0s, transitionDuration=0s.
+- QA servers 8894/8895 stopped; temporary IAB and native Chrome QA tabs closed; no OS accessibility setting changed.
+
+### proof
+- [x] AC #1: Real dry-run browser E2E completes with synthetic fixtures and no mocks.
+- [x] AC #2: Desktop, mobile, motion, and final completed-state evidence/hashes exist.
+- [x] AC #3: Keyboard-only focus and actual reduced-motion suppression are proven in browser.
+- [x] AC #4: Required negative, stale, retry, active/unknown, and disconnected-renderer states are proven without fiction.
+- [x] AC #5: Focused and full suites pass twice.
+- [x] AC #6: Runtime, viewport, fixture, command, hash, and teardown provenance are complete.
+- [x] AC #7: Local test/evidence-only boundary is preserved.
 
 ## nd_contract
 status: new
