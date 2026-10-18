@@ -8,13 +8,42 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-18T20:09:04Z
-content_hash: "sha256:316442a6caa95fd767deedc15cac1ce349b0e1407c82190fb4d967a602c7f301"
+updated_at: 2026-10-18T20:49:06Z
+content_hash: "sha256:909ed54acb41faf4f2583981fdf90bc6019a39707a38d33040798049de017a87"
 blocks: [OJ-oain]
 ---
 
 ## Description
-Run the smallest real owner-authorized Comfy API/SDK/Router smoke that proves Openjutsu executes through the Comfy Developer Platform. Credentials and spend are owner-gated; no secret may enter Git or evidence.
+## USER INTENT
+As the owner, I want one bounded real Comfy Developer Platform execution receipt, so judges can distinguish Openjutsu's actual SDK/API integration from local-only dry-run evidence.
+
+## Authorization
+The operator answered Yes to the proposed live Comfy proof. Use the smallest viable real job, prefer an existing configured deployment, and stop on credential, balance, deployment, or workflow errors. Never print or commit secret values.
+
+## Scope
+- Verify credential/deployment presence without exposing values.
+- Reuse or create the minimum Comfy Developer Platform deployment required by the prepared build candidate.
+- Upload only the synthetic rights-clean smoke fixtures needed for the smallest execution.
+- Run Openjutsu through its official Comfy SDK adapter, not a bypass script.
+- Download and hash real outputs; keep credentials and unnecessary raw provider diagnostics outside Git.
+- Record sanitized setup, IDs, timings, credits/spend if exposed, output hashes, and teardown.
+
+## Out of scope
+No public repo push, X activity, Typeform submission, unrelated model experiments, benchmark suite, or repository history rewrite.
+
+## Acceptance Criteria
+1. Credential/deployment readiness is checked without secret disclosure; missing configuration fails closed.
+2. A real Comfy Developer Platform job is created through Openjutsu's SDK adapter using the prepared workflow/deployment surface.
+3. The job reaches a verified terminal state and at least one real output is downloaded and hash-verified.
+4. Evidence records sanitized commands, environment variable names only, deployment identity, job/execution identifiers, timing, spend/credit signal if available, workflow hash, fixture hashes, and output hashes.
+5. Any deployment/build changes remain bounded to the prepared Openjutsu asset bridge/workflow and are validated; no secret enters Git.
+6. The live path is distinguishable from dry-run and local legacy paths in the receipt.
+7. Teardown removes temporary QA processes/tabs where applicable and documents any intentionally retained deployment.
+
+## Testing
+- Run focused SDK/config/deployment tests before external spend.
+- Run the external smoke once unless a transient provider failure requires one documented retry.
+- Run full pytest after any code/config/evidence changes.
 
 ## Acceptance Criteria
 
