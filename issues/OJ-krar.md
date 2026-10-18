@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:06:50Z
-content_hash: "sha256:c8371a2edb98adfa04bc67a7680018db58207f8ae4f9a1bf3c392a80ba1d3616"
+updated_at: 2026-10-18T16:17:19Z
+content_hash: "sha256:d6bece440b96ceb53b067dfa1ce7ff4f86784fc03be8401a27d808650c680bd9"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-krar
 follows: [OJ-c1vo]
@@ -40,7 +40,23 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: delivered
 
+### evidence
+- Bounded uncommitted OJ-krar diff at story worktree dev-OJ-krar, base98de3ff. Parent integrates; PM accepts. No commits/pushes by worker.
+- Full suite with root .venv/bin/python and PYTHONPATH=src: 89 passed, 1 warning in 25.05s. Focused constructor/assets/protocol suite: 30 passed in 6.92s. git diff --check passed.
+- Logs: docs/evidence/sdk-assets/pytest.txt and focused.txt. Implementation/evidence hashes: docs/evidence/sdk-assets/SHA256SUMS.txt. Detail: docs/evidence/sdk-assets/DELIVERY.md.
+- Canonical workflow SHA256 unchanged: 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21.
+- Real installed comfy-sdk0.5.0 exercised against synthetic-only localhost HTTP protocol fixture. No credentials, provider upload, inference, model download or remote build.
+
+### proof
+- [x] AC1: local planner/file validation, optional ref2, explicit core/ASSET filename bridge to BFS plan STRING, runtime input-root/file checks; deployment configuration fails closed by default.
+- [x] AC2: actual manifest inputs passed, canonical workflow unchanged, node751 output chosen, original source finalization retained, filenames/errors sanitized; legacy/dry-run/existing tests unchanged.
+- [x] AC3: stable durable key and immediate durable provider ID, known-ID GET recovery, ambiguous-loss refusal, prepared upload-failure distinction, local duplicate submission serialization tested.
+- [x] AC4: real SDK localhost fixture covers required content/route, missing input, output/audio wiring, upload/terminal failures, response loss, restart-like recovery, traversal paths; full suite passes.
+- [x] AC5: constructor contract retained, SDK floor0.5.0, docs/deployment/SDK_ASSETS.md explains build inclusion and unproven stages.
+- [ ] Separate hosted acceptance: materialization, bridge registration, build/model execution and output quality remain unproven. No live-render/production-ready claim. Explicit bridge flag is not attestation; real server must materialize filenames or bridge fails closed.
 
 ## History
 - 2026-10-18T16:04:00Z dep_added: blocks OJ-yf2c
