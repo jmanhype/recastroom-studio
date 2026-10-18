@@ -7,8 +7,8 @@ type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T13:42:26Z
 created_by: speed
-updated_at: 2026-10-18T14:11:21Z
-content_hash: "sha256:6fbdd3b1d7a5004b740b37511f035835ef2c289217d4f41e077198a9585fc3b9"
+updated_at: 2026-10-18T14:12:13Z
+content_hash: "sha256:6a356e4d01f18291a182b1853ecafed6f78c5ce616e1d4d67bf1cd6e92b2ef43"
 assignee: dev-OJ-p8rd
 follows: [OJ-inuo, OJ-xtk4]
 labels: [accepted]
@@ -26,7 +26,25 @@ Observed during OJ-yf2c CUA on source 2b22504: real dry_run retry GET status ret
 
 
 ## Notes
+## PM Decision
+ACCEPTED [2026-10-18]: Independent evidence review at story HEAD a7ed346407ad0f97cdf80795132c6655995e5a9b meets the bounded story bar.
 
+## nd_contract
+status: accepted
+
+### evidence
+- Reviewed pm_acceptor requirements, OJ-p8rd notes, delivery preflight (9/9), and the exact story diff from base 2b225041402b155ad3ed42582d6e0d63cbf99946; non-evidence scope is only app/main.py and tests/test_status_atomic.py.
+- Independently ran PYTHONPATH=src with the root project virtualenv: tests/test_status_atomic.py => 7 passed, 1 disclosed preexisting Starlette/httpx deprecation warning, 0 failed (0.59s); git diff --check clean; stub/TODO scan clean.
+- Independently ran the committed source-Ast legacy control: exit 1 as expected because base 2b22504 truncating writer yields HTTP 500 while the repaired publication boundary requires HTTP 200.
+- Verified all 9 entries in docs/evidence/status-atomic/OJ-p8rd/SHA256SUMS and all 5 entries in browser/SHA256SUMS.json. Current app/main.py SHA-256 is ace2ab9e2a658fdb60e9f75594a53271f8adc3f40b53430ecfce9e8649b24aa1, matching REPORT.md and browser receipt.
+- Reaggregated browser/requests.jsonl: 21 local requests, 4 status GETs all HTTP 200, 0 status HTTP 500, and exactly 1 intentional run HTTP 404; receipt reports dry_run, inference_spend 0, downloaded final hash match, and synthetic-source fixture use.
+- Did not rerun the already-recorded full suite or perform browser/network/GPU operations. Accepted limits: in-process atomic visibility only; no multiprocess coordinator, queue-admission redesign, fsync/crash durability, or live 8893 deployment claim.
+
+### proof
+- [x] AC #1: app/main.py:138-163 serializes read/merge/publish, writes a unique same-directory temporary snapshot, and atomically replaces status.json before updating memory; failure tests preserve disk/memory and clean temporary files.
+- [x] AC #2: The base-source control deterministically fails with the old truncation HTTP 500; the fixed boundary/concurrent tests pass, including 3 writers/3 readers/180 coherent requests plus invalid/missing-job 404 behavior.
+- [x] AC #3: Committed real-browser receipts show retry reaches COMPLETE with four status GETs all 200/zero 500, deliberate missing-job 404, keyboard recovery, and byte-identical final download.
+- [x] AC #4: Scope, tests, sanitized local-only evidence, and all recorded hash manifests were independently verified at a7ed346.
 
 ## nd_contract
 status: accepted
