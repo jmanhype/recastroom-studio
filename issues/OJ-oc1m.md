@@ -8,8 +8,8 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-18T23:48:20Z
-content_hash: "sha256:513e5cc029c1ecc5e3fbd5453cc476b96a1899144918c60dc16aa8b7df7c7d99"
+updated_at: 2026-10-18T23:48:38Z
+content_hash: "sha256:782f79decdd24e7c208cd18eb43633d77d1e0a3d6923c2311a383a61caff572b"
 blocks: [OJ-oain]
 assignee: dev-OJ-oc1m
 follows: [OJ-g2xx]
@@ -71,3 +71,6 @@ No public repo push, X activity, Typeform submission, unrelated model experiment
 
 ### 2026-10-18T23:48:20Z speed
 Live-proof checkpoint: blocked before external spend. Browser evidence shows Personal Workspace credits remaining 0, spend 0, and no deployments. API key `openjutsu-live-proof` exists only as a masked platform value; the external 0600 credential file fails official `comfy_sdk.models.list` with Unauthorized, so the captured value is incomplete/unusable. Billing is a free plan with Stripe options ($10/$25/$50/$100; $25 selected by default); no purchase was made. The offline deployment candidate also retains the documented BFS ref, dependency/runtime, 46.6GB asset, and asset-bridge blockers. Evidence: `docs/evidence/OJ-oc1m/README.md`, `auth-check.txt`, cropped dashboard/API-key/billing screenshots, `pytest.txt`, and `SHA256SUMS` on story branch `story/OJ-oc1m`. Full local tests: 105 passed, 1 warning. Required owner actions: action-time confirmation for a replacement API key and exact credit amount, plus a choice between strict deployment proof or formally rescoping to a bounded official Router proof.
+
+### 2026-10-18T23:48:38Z speed
+Evidence checkpoint committed locally on story/OJ-oc1m at c480e60. No merge, push, or external spend performed.
