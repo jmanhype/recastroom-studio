@@ -7,8 +7,8 @@ type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
-updated_at: 2026-10-18T14:53:04Z
-content_hash: "sha256:e51728e625b3fc73625b131bf8ba7ea32c3a0b206bbdd4a186de85e549b233a9"
+updated_at: 2026-10-18T15:04:14Z
+content_hash: "sha256:ae7d023d4280990e1f0575591906e1d9970ae2b2ba4352a8564c9c26dad3336f"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-c1vo
 follows: [OJ-p8rd]
@@ -54,6 +54,19 @@ status: new
 
 
 ## Notes
+Research-first checkpoint, 2026-10-18:
+Owner answered the fresh-G4 decision with 'do research on how this should go'. No GPU allocated and no new render. colab status/usage returned no active sessions, 58.65 CU, 0.00/hr, zero assignments. Parent researched official Colab restrictions/lifecycle and Comfy custom API deployments/SDK v2. Research artifact: /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/frontend-evidence/readiness-20261018/RESEARCH.md; SHA256 293852cd5f754530142f1670579023cdcf2ce171af980f05d01dccdc4c95abaf.
+Recommended next architectural evaluation: versioned exact-workflow Comfy API deployment, min0/max1, durable asset uploads/provider-job recovery/result storage, subject to provider policy, hardware compatibility and cost approval. Colab FAQ includes a creating-deepfakes restriction for all managed runtimes; no consensual-recasting exception was established. Do not automatically start a Colab recasting runtime from this story.
+Worker /root/renderer_ready_c1vo was stopped at the research-first boundary. Story checkout verified clean at base7881cb0; no implementation edits or deployment. Worker reported baseline48 tests with the existing warning; this checkpoint does not promote that report to implementation proof. Live8893 remains unchanged and still lacks the renderer Run guard. Prior app/video outputs preserved.
+
+## nd_contract
+status: new
+### evidence
+- Official-source research saved with the SHA256 above; no spend.
+- Parent git status --porcelain verified no story edits; child interrupted; story claim released for later continuation.
+- bd sync --from-main reports no Beads database; canonical shared pvg nd vault retained, no competing tracker initialized.
+### proof
+- [ ] AC1-5 remain unimplemented/unaccepted; no readiness fix or production migration claimed.
 
 
 ## History
