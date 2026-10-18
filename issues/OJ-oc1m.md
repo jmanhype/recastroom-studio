@@ -8,8 +8,8 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-18T23:52:34Z
-content_hash: "sha256:090819556b4ded46a271fe139f9f84d85dfde866a2a66a3c8e0939a003397ab8"
+updated_at: 2026-10-18T23:59:23Z
+content_hash: "sha256:67ea8730ae15a917bc8a2456ffa48b1055450126ab68785a195c9b5bc372fa0a"
 blocks: [OJ-oain]
 assignee: dev-OJ-oc1m
 follows: [OJ-g2xx]
@@ -77,3 +77,6 @@ Evidence checkpoint committed locally on story/OJ-oc1m at c480e60. No merge, pus
 
 ### 2026-10-18T23:52:34Z speed
 Owner constraint update: no funds are currently available for Comfy credits or API spend. The Colab path was used because it was the available compute source. Do not continue to Stripe or any paid Comfy transaction. Investigate no-cost contest credits and local/SDK-proxy proof paths first.
+
+### 2026-10-18T23:59:23Z speed
+No-cost path checkpoint: owner confirmed no funds. A real local official-SDK execution succeeded on the 3090 through comfy-api-proxy 0.1.6 and comfy-sdk 0.5.0: job aada51c8-ddd6-437e-a664-f6a17829d576, 24-frame 320x180 H.264 MP4, output SHA-256 c444aa186a05f623c0815f7dd4f099f3425e37955666953c756712921b4bb87d, provider credits used 0. Temporary ComfyUI/proxy processes were stopped. Boundary: core-node local SDK smoke, not the prepared H3 workflow or Openjutsu asset bridge, so strict OJ-oc1m AC remains unmet. Evidence committed at 8822da8 on story/OJ-oc1m. Official signup form remains a possible free-credit route; no personal data submitted yet.
