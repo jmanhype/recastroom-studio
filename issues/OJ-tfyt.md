@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:36:49Z
-content_hash: "sha256:931117a44249abc7141f074cd9be5b9eb6226d7927cda14102d76cd3dd24b6a7"
+updated_at: 2026-10-18T16:37:48Z
+content_hash: "sha256:782e142b3ece6898e4d689b34eb609012ce126a677ca84a553a83056d510e0e0"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -60,6 +60,21 @@ Fail-closed local candidate delivered with exact current metadata/source evidenc
 | AC3 | Yes: runtime matrix and dependency blockers; no base selected. |
 | AC4 | Yes: offline no-skip tests and syntax-only CLI receipts. |
 | AC5 | Yes: commands/results/hashes/blockers and SDK-bridge dependency reported. |
+Correction: the final PREDEPLOY.md SHA-256 after removing the temporary-directory pathname is 6d205747c2dfc70d2247fb79634f6023dd4b921228afe3344e6c1be96ec0a825; this supersedes the earlier 404ecb4f8f1040e7b059d373be00b87aa3e6a13b77d6a45387632f2eeb3ffc05 hash. All other artifact hashes are unchanged.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Final owned artifact hashes: asset-manifest 2fb34f910fca9ad3bb9229ab3883a9b04539d77a457435e0700c096a47e106a0; comfy-build 89a52d508ce9e5bbf2ff52f5540d8b297f76f78982a785858c7c13029cb42342; dependency-matrix 87da3f9341b26c8e3e9ac41ab02d4358ed4c41efdf3433ffd044083285e65e02; validation 485ef1936a6b1d3ff40d72f1876170a4ae4a9aff86dce672228c224e5868d942; PREDEPLOY 6d205747c2dfc70d2247fb79634f6023dd4b921228afe3344e6c1be96ec0a825; test c669f8b7491f38740dbc04ad5cba3cad85f980f93b545f09c987172903c0ef38.
+
+### proof
+[x] AC1: final hashes corrected without changing ownership or claims.
+[x] AC2: prior exact source/metadata evidence remains unchanged.
+[x] AC3: dependency/runtime matrix remains unchanged.
+[x] AC4: measured test/CLI evidence remains unchanged.
+[x] AC5: final report uses the corrected PREDEPLOY hash.
+
 ## nd_contract
 status: delivered
 
