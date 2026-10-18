@@ -8,10 +8,11 @@ labels: [bug, media, local, dogfood]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
-updated_at: 2026-10-18T04:09:04Z
-content_hash: "sha256:d5d0f7b4168832a71cc6be9f25b5006d73471c832790b513c568285b22eeec92"
+updated_at: 2026-10-18T04:09:05Z
+content_hash: "sha256:ff563c5f1f105d9a4a23a541df399f95c409338a62c40d745daf6c0874461750"
 blocks: [OJ-inuo, OJ-yf2c]
 assignee: dev-OJ-xtk4
+follows: [OJ-4rht]
 ---
 
 ## Description
@@ -238,9 +239,12 @@ status: delivered
 - 2026-10-18T03:51:25Z status: open -> in_progress
 - 2026-10-18T03:51:25Z claimed by dev-OJ-xtk4
 - 2026-10-18T03:53:02Z dep_added: blocks OJ-yf2c
+- 2026-10-18T04:09:05Z status: in_progress -> in_progress
+- 2026-10-18T04:09:05Z auto-follows: linked to predecessor OJ-4rht
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Blocks: [[OJ-inuo]], [[OJ-yf2c]]
+- Follows: [[OJ-4rht]]
 
 ## Comments
