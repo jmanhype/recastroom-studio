@@ -4,11 +4,11 @@ title: "Prepare the judge-facing Openjutsu winning package"
 status: in_progress
 priority: 0
 type: task
-labels: [contest, local, evidence]
+labels: [contest, local, evidence, delivered]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:03Z
 created_by: speed
-updated_at: 2026-10-18T20:22:09Z
+updated_at: 2026-10-18T20:22:10Z
 content_hash: "sha256:3972941459da5502fb906ae742b774613167180c4af3ad0589058082237bfc7d"
 assignee: dev-OJ-g2xx
 ---
