@@ -11,7 +11,7 @@ updated_at: 2026-10-18T15:47:09Z
 content_hash: "sha256:2e6e11f07ee3a9c78a2a646c9201593ec82a0ffca02f1cbcfc1b6948a5809d64"
 follows: [OJ-p8rd, OJ-inuo, OJ-xtk4]
 assignee: dev-OJ-c1vo
-labels: [delivered]
+labels: [delivered, accepted]
 closed_at: 2026-10-18T15:47:09Z
 close_reason: "Accepted: independently verified focused tests, hashes, browser receipts, source behavior, and all five ACs; sole pvg bare-pass finding is a documented false positive."
 ---
