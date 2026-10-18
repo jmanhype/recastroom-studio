@@ -8,8 +8,8 @@ labels: [capstone, e2e, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T03:53:01Z
-content_hash: "sha256:7f46df118d32d421df5ebe4c6acddab7c12c4441cb12f0948eee8216cd737f26"
+updated_at: 2026-10-18T03:57:40Z
+content_hash: "sha256:0665025f6c618d123e7ad33e63bf5525e43449db5e1db8969e2fd92b70808f6c"
 blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo]
 ---
 
@@ -216,7 +216,7 @@ status: new
 
 
 ## Notes
-
+2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 
 ## History
 - 2026-10-18T01:53:57Z dep_added: blocked_by OJ-4rht
