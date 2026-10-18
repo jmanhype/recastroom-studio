@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:45:18Z
-content_hash: "sha256:777f8340508593f88742a6f4465aa9d59fa10dd74488ea022537a622c44fe74a"
+updated_at: 2026-10-18T16:45:19Z
+content_hash: "sha256:5bc5548faea72bb60560bc58edc3d7cb20d6e66f6e6ac81cc11b1c608ea829ab"
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
 labels: [accepted]
@@ -63,6 +63,18 @@ Fail-closed local candidate delivered with exact current metadata/source evidenc
 | AC5 | Yes: commands/results/hashes/blockers and SDK-bridge dependency reported. |
 Correction: the final PREDEPLOY.md SHA-256 after removing the temporary-directory pathname is 6d205747c2dfc70d2247fb79634f6023dd4b921228afe3344e6c1be96ec0a825; this supersedes the earlier 404ecb4f8f1040e7b059d373be00b87aa3e6a13b77d6a45387632f2eeb3ffc05 hash. All other artifact hashes are unchanged.
 Final artifact correction: PREDEPLOY.md now lists deploy/comfy/validation.json and records the final 17.85s full-suite duration. Its final SHA-256 is 1d866ccb24c0228c48b3407a6e8bd0b66eae31c2341d5f03cae75bbce954016e; this supersedes all earlier PREDEPLOY hashes. No other artifact changed.
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-18.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Decision
 ACCEPTED [2026-10-18]: Independent review at commit 70c9c8324dc52083a4ed48e46b26dceeb50a7191 meets all five OJ-tfyt ACs within the unpaid, offline candidate boundary.
 
