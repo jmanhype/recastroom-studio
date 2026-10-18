@@ -9,10 +9,9 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T14:22:12Z
-content_hash: "sha256:dcbd9b88dc35c5531a25e964fb92570d63c45b5c392125bc46519a9325dc132e"
-was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar]
+content_hash: "sha256:3be9cb8ea005a4b79dad80a747322ceeff1e9e080b820bb055cd27bbd73544bf"
+was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
-blocked_by: [OJ-tfyt]
 ---
 
 ## Description
@@ -308,11 +307,11 @@ OBSERVATIONS: Next evidence work must resolve AC3/AC6 without reopening approved
 - 2026-10-18T16:04:00Z dep_added: blocked_by OJ-tfyt
 - 2026-10-18T16:04:00Z dep_added: blocked_by OJ-krar
 - 2026-10-18T16:35:30Z dep_removed: was_blocked_by OJ-krar
+- 2026-10-18T16:45:18Z dep_removed: was_blocked_by OJ-tfyt
 
 ## Links
 - Parent: [[OJ-a7l6]]
-- Blocked by: [[OJ-tfyt]]
-- Was blocked by: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]], [[OJ-c1vo]], [[OJ-krar]]
+- Was blocked by: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]], [[OJ-c1vo]], [[OJ-krar]], [[OJ-tfyt]]
 - Follows: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]]
 
 ## Comments
