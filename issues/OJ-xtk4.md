@@ -1,7 +1,7 @@
 ---
 id: OJ-xtk4
 title: "Preserve paired-review aspect ratio"
-status: in_progress
+status: closed
 priority: 1
 type: bug
 labels: [bug, media, local, dogfood, delivered]
@@ -9,10 +9,11 @@ parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
 updated_at: 2026-10-18T04:14:18Z
-content_hash: "sha256:82ce2bbe7328d5ce84effa4f1224903df2827db5903e40de4eba0c876eac695e"
-blocks: [OJ-inuo, OJ-yf2c]
+content_hash: "sha256:77e6ce6eb2d93a77c82a8b60197cdfb12d09dcbe6a759c17f8e49941ca9d8725"
 assignee: dev-OJ-xtk4
 follows: [OJ-4rht]
+closed_at: 2026-10-18T04:14:18Z
+close_reason: "Accepted: independent baseline RED replay, focused GREEN rerun, ffprobe/decoded measurements, byte-identical regeneration, hash verification, and scope review all support the aspect-ratio repair."
 ---
 
 ## Description
@@ -305,10 +306,12 @@ status: delivered
 - 2026-10-18T03:53:02Z dep_added: blocks OJ-yf2c
 - 2026-10-18T04:09:05Z status: in_progress -> in_progress
 - 2026-10-18T04:09:05Z auto-follows: linked to predecessor OJ-4rht
+- 2026-10-18T04:14:18Z status: in_progress -> closed
+- 2026-10-18T04:14:18Z dep_removed: no_longer_blocks OJ-inuo
+- 2026-10-18T04:14:18Z dep_removed: no_longer_blocks OJ-yf2c
 
 ## Links
 - Parent: [[OJ-a7l6]]
-- Blocks: [[OJ-inuo]], [[OJ-yf2c]]
 - Follows: [[OJ-4rht]]
 
 ## Comments
