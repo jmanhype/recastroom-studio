@@ -9,7 +9,8 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T01:53:57Z
-content_hash: "sha256:63dd024b5c7d574608b53f139b3d4d89e6d66e452ff149134676426f2eb0b276"
+content_hash: "sha256:aa4bfe968f9ed50efaa87c195dde522546887a0de6069690c21aacfae1a58bc3"
+blocked_by: [OJ-4rht]
 ---
 
 ## Description
@@ -97,9 +98,10 @@ status: new
 
 
 ## History
-
+- 2026-10-18T01:53:57Z dep_added: blocked_by OJ-4rht
 
 ## Links
 - Parent: [[OJ-a7l6]]
+- Blocked by: [[OJ-4rht]]
 
 ## Comments
