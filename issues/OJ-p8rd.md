@@ -1,18 +1,19 @@
 ---
 id: OJ-p8rd
 title: "Fix non-atomic status persistence observed during browser retry"
-status: in_progress
+status: closed
 priority: 1
 type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T13:42:26Z
 created_by: speed
-updated_at: 2026-10-18T14:07:26Z
-content_hash: "sha256:f468e18a27e8e3eb641adaa20a0b40d1ae532e2c6c93c476edfd44ce61652fda"
-blocks: [OJ-yf2c]
+updated_at: 2026-10-18T14:11:21Z
+content_hash: "sha256:6c37edf4a6474ffab9c87eddd90f3b7616c09b5d2696603318d1663749292858"
 assignee: dev-OJ-p8rd
 follows: [OJ-inuo, OJ-xtk4]
 labels: [delivered]
+closed_at: 2026-10-18T14:11:21Z
+close_reason: "Accepted: a7ed346 atomically replaces same-directory status snapshots, preserves 404/state behavior, passes focused and legacy-control verification, all recorded hashes/browser receipts match, and scope remains app/main.py plus dedicated tests/evidence."
 ---
 
 ## Description
@@ -145,10 +146,11 @@ status: delivered
 - 2026-10-18T13:56:09Z claimed by dev-OJ-p8rd
 - 2026-10-18T14:06:13Z status: in_progress -> in_progress
 - 2026-10-18T14:06:13Z auto-follows: linked to predecessor OJ-xtk4
+- 2026-10-18T14:11:21Z status: in_progress -> closed
+- 2026-10-18T14:11:21Z dep_removed: no_longer_blocks OJ-yf2c
 
 ## Links
 - Parent: [[OJ-a7l6]]
-- Blocks: [[OJ-yf2c]]
 - Follows: [[OJ-inuo]], [[OJ-xtk4]]
 
 ## Comments

@@ -9,10 +9,9 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T13:49:51Z
-content_hash: "sha256:25a2cd05f53cce015a05c528ed8c50af58ee29cf78125923cc86d095bab524ec"
-was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo]
+content_hash: "sha256:c563049640e078797777da4e1bcc99c1afd929280c602505580e7ff743430e48"
+was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo]
-blocked_by: [OJ-p8rd]
 ---
 
 ## Description
@@ -267,11 +266,11 @@ OBSERVATIONS: Next evidence work must resolve AC3/AC6 without reopening approved
 - 2026-10-18T13:49:50Z status: in_progress -> open
 - 2026-10-18T13:49:50Z released by speed
 - 2026-10-18T13:55:48Z dep_added: blocked_by OJ-p8rd
+- 2026-10-18T14:11:21Z dep_removed: was_blocked_by OJ-p8rd
 
 ## Links
 - Parent: [[OJ-a7l6]]
-- Blocked by: [[OJ-p8rd]]
-- Was blocked by: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]]
+- Was blocked by: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]]
 - Follows: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]]
 
 ## Comments
