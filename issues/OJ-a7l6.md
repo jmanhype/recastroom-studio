@@ -7,8 +7,8 @@ type: epic
 labels: [frontend, local]
 created_at: 2026-10-18T01:53:45Z
 created_by: speed
-updated_at: 2026-10-18T03:51:58Z
-content_hash: "sha256:d18cd6a19770f55960a8b955fc8617ba73fbfbc63323cc368f4629039e2837ee"
+updated_at: 2026-10-18T14:53:03Z
+content_hash: "sha256:6c9d2201ce94c64208ed8240d972f8e95dc6ded6c8057b0115a45cfb6267420b"
 ---
 
 ## Description
@@ -96,6 +96,7 @@ status: new
 ## Notes
 REVIEW_RESULT: APPROVED
 Independent backlog Anchor frontend_backlog_anchor approved current two-story scope after native nd recovery. pvg lint: 0 errors, 2 nonblocking credential-provisioning reviews because all API use is local dry_run with no keys. RTM extracted 0 requirements; not coverage proof. Developer OJ-4rht gate opened. Local commits/merges only; no remote configured.
+Owner-approved bounded scope extension: repair false-positive legacy renderer readiness in OJ-c1vo; preserve SDK/generation/media semantics and design. Parent checks existing Colab connection separately; no new render is authorized by this repair story.
 
 ## History
 
