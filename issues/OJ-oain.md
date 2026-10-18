@@ -9,7 +9,8 @@ parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
 updated_at: 2026-10-18T20:09:04Z
-content_hash: "sha256:e5cf6111444669d14ff2453ca6b0c257d035ad232f16d70f17b09c7b8a2bbedd"
+content_hash: "sha256:82822c189a50148bafbc0438b9090b241ffb5457538f850e6183674a1605676e"
+blocked_by: [OJ-oc1m]
 ---
 
 ## Description
@@ -25,9 +26,10 @@ Publish the audited clean-history repository, release tag, and final two-minute 
 
 
 ## History
-
+- 2026-10-18T20:49:05Z dep_added: blocked_by OJ-oc1m
 
 ## Links
 - Parent: [[OJ-fglb]]
+- Blocked by: [[OJ-oc1m]]
 
 ## Comments
