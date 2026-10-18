@@ -9,11 +9,11 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T04:09:37Z
-content_hash: "sha256:e86a186c2a6621eacab5b2e44d7d891c2b57fa79e971062f72d729c1616cd451"
+content_hash: "sha256:f767e1e2f33a80cfaa992001cb48502f5998bff0d3f3c85ea1a6b334b9fcf0d7"
 assignee: dev-OJ-4rht
 closed_at: 2026-10-18T04:08:39Z
 close_reason: "Accepted: all nine AC and prior boundary, accessibility, warning-triage, and portrait-clipping gaps independently verified at 6ca79a5."
-led_to: [OJ-xtk4]
+led_to: [OJ-xtk4, OJ-inuo]
 ---
 
 ## Description
@@ -688,7 +688,7 @@ status: in_progress
 
 ## Links
 - Parent: [[OJ-a7l6]]
-- Led to: [[OJ-xtk4]]
+- Led to: [[OJ-xtk4]], [[OJ-inuo]]
 
 ## Comments
 
