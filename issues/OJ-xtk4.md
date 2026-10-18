@@ -8,8 +8,8 @@ labels: [bug, media, local, dogfood]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
-updated_at: 2026-10-18T03:57:58Z
-content_hash: "sha256:2a57044c9f42d5cc4e9b7a3d3033ed7f39a4e397b3afc9005e567b3fd5ca4e87"
+updated_at: 2026-10-18T04:09:04Z
+content_hash: "sha256:d5d0f7b4168832a71cc6be9f25b5006d73471c832790b513c568285b22eeec92"
 blocks: [OJ-inuo, OJ-yf2c]
 assignee: dev-OJ-xtk4
 ---
@@ -165,7 +165,73 @@ status: new
 
 
 ## Notes
+## Implementation Evidence (DELIVERED)
 
+PROOF:
+
+### CI/Test Results
+- Commands run:
+  - `PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest tests/test_media.py -q`
+  - `PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest`
+  - `PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python docs/evidence/dogfood-repairs/OJ-xtk4/generate_evidence.py`
+  - `PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python docs/evidence/dogfood-repairs/OJ-xtk4/measure_media_coverage.py`
+  - `pvg verify src/openjutsu/media.py tests/test_media.py docs/evidence/dogfood-repairs/OJ-xtk4/generate_evidence.py --include-tests --format=text`
+  - `git diff --check`
+- RED before repair: `4 failed, 1 passed in 1.44s`; every new geometry case observed red at a tile edge that must be black padding. Artifact: `docs/evidence/dogfood-repairs/OJ-xtk4/pytest-red.txt`.
+- GREEN focused: `7 passed in 1.75s`. Artifact: `docs/evidence/dogfood-repairs/OJ-xtk4/pytest-focused.txt`.
+- Full suite: `37 passed, 1 warning in 12.59s`. Artifact: `docs/evidence/dogfood-repairs/OJ-xtk4/pytest-full.txt`.
+- Changed-function executable statement coverage: `4/4 = 100.00%`. Artifact: `docs/evidence/dogfood-repairs/OJ-xtk4/coverage-media.txt`.
+- Generator exit: `0`; output geometry/decoded pixels in `measurements.json`; SHA-256 values in `SHA256SUMS.json` and `hash-check.txt`.
+- `pvg verify`: `VERIFY: PASSED (3 files scanned, 0 issues)`.
+- `git diff --check`: exit `0`.
+
+### Measured geometry
+- Common tile: even `960x384`; each paired output: even `1920x384`, SAR `1:1`, DAR `5:1`.
+- 3:2 `576x384`: decoded content width `576`, black padding `192+192` per tile.
+- Portrait 9:16 `216x384`: content width `216`, padding `372+372`.
+- 16:9 `640x360`: nearest even-pixel content width `682`, padding `138+140`.
+- Mixed 3:2 + 9:16: independent widths `576` and `216`.
+- Non-square input `288x384`, SAR `2:1`, DAR `3:2`: square-SAR content width `576`; output byte-identical to equivalent square-pixel 3:2 artifact.
+- Output hashes include `3-2-paired.mp4` `39617c93e19d1f923d175cbb77124500cfb1690d0a807d25bf5d74f906a435f8`, `9-16-portrait-paired.mp4` `9bd21d88b0d5bb780a944fc79497ed53d16d7e9393941a48a5c81d56becefa7e`, `16-9-paired.mp4` `dfda5d3e0dd53fc99469aa94e8fce87db84a7894b1de89afdac63882431ec551`, and mixed/non-SAR values in `SHA256SUMS.json`.
+
+### Commit
+- Branch: `story/OJ-xtk4`
+- SHA: `415e3d51bf5bfd52f60c73450101bea9b8cb00cc`
+- Local commit only; no push performed.
+
+### AC Verification
+| AC # | Requirement | Code Location | Test/Evidence Location | Status |
+|---|---|---|---|---|
+| AC #1 | DAR-based scale-fit into centered even tiles, square SAR, no crop/stretch | `src/openjutsu/media.py:156-184` | `tests/test_media.py:106-167,179-200`; `measurements.json` | PASS |
+| AC #2 | 3:2, portrait, 16:9, mixed-aspect, and non-square-SAR inputs | `src/openjutsu/media.py:169-184` | `tests/test_media.py:170-229`; `REPORT.md` | PASS |
+| AC #3 | Real ffprobe geometry plus decoded RGB padding checks; red fails stretch baseline | repaired function | `pytest-red.txt`, `pytest-focused.txt`, `measurements.json` | PASS |
+| AC #4 | Local-only semantics; no audio redesign, new dependency, GPU, API, publication, or push | `src/openjutsu/media.py:174-205` unchanged audio options after filter | `git show 415e3d5 --stat`; `REPORT.md` | PASS |
+| AC #5 | Focused/full tests, coverage, diff check, artifacts/hashes, commit SHA | `docs/evidence/dogfood-repairs/OJ-xtk4/` | `pytest-*.txt`, `coverage-media.txt`, `hash-check.txt` | PASS |
+
+LEARNINGS:
+- Scale expressions should use input DAR, not storage width/height, before resetting SAR to `1:1`; this makes non-square-SAR and square-pixel equivalents produce identical square-pixel tiles.
+- Sampling both black tile edges and expected color near fit boundaries distinguishes padding from full-width stretching without image-library dependencies.
+- Even-pixel geometry necessarily rounds 16:9 at height 384 to `682x384`, visible as `138+140` padding rather than exact symmetric fractional width.
+
+### DISCOVERED_BUG
+  title: Full suite emits pre-existing StarletteDeprecationWarning
+  context: Full pytest emits `StarletteDeprecationWarning: Using httpx with starlette.testclient is deprecated; install httpx2 instead` from `.venv/lib/python3.11/site-packages/fastapi/testclient.py:1`. It is unrelated to this media-only change and was not expanded under this story boundary.
+  affected_files: tests/test_app.py; tests/test_app_e2e.py; .venv/lib/python3.11/site-packages/fastapi/testclient.py
+  discovered_during: OJ-xtk4
+
+## nd_contract
+status: delivered
+
+### evidence
+- RED: `4 failed, 1 passed`; GREEN focused: `7 passed`; full: `37 passed, 1 warning`; generator and diff checks passed.
+- Branch `story/OJ-xtk4`, commit `415e3d51bf5bfd52f60c73450101bea9b8cb00cc`; evidence and hashes under `docs/evidence/dogfood-repairs/OJ-xtk4/`.
+
+### proof
+- [x] AC #1: Each input is scaled from intrinsic DAR onto an even centered `960x384` tile with square SAR and no crop/stretch.
+- [x] AC #2: 3:2, portrait 9:16, 16:9, mixed-aspect, and non-square-SAR cases are covered.
+- [x] AC #3: Real ffprobe geometry and decoded RGB padding/color checks fail on the baseline stretch and pass after repair.
+- [x] AC #4: Local export semantics remain bounded; audio options and unrelated media behavior are unchanged, with no new dependency, GPU, API, publication, or push.
+- [x] AC #5: Focused/full tests, 100% changed-function statement coverage, diff check, artifacts, SHA-256 hashes, exact outputs, and local commit SHA are recorded.
 
 ## History
 - 2026-10-18T03:50:46Z dep_added: blocks OJ-inuo
