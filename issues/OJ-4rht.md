@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration, accepted]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T04:09:12Z
-content_hash: "sha256:635bef82f6a322de9bb497977e41aeacecf6b5b639e440afef49c051c718751e"
+updated_at: 2026-10-18T04:09:37Z
+content_hash: "sha256:e86a186c2a6621eacab5b2e44d7d891c2b57fa79e971062f72d729c1616cd451"
 assignee: dev-OJ-4rht
 closed_at: 2026-10-18T04:08:39Z
 close_reason: "Accepted: all nine AC and prior boundary, accessibility, warning-triage, and portrait-clipping gaps independently verified at 6ca79a5."
@@ -437,7 +437,18 @@ User explicitly requested GPT-6 Astra frontend replacement. Qwen stopped, router
 | 7 | PASS | Scoped vanilla CSS/test/evidence diff; backend/media/graph untouched; 32 tests, Node syntax, and diff checks pass. |
 | 8 | PASS | Real loopback browser/UI dry-run job `c2a3a70973ec` exercised prepare/run/status/artifacts; timing limitation disclosed. |
 | 9 | PASS | Both reference slots, both orientations, desktop/mobile: contain ratios 0.75/1.5 within <=0.01 tolerance, no overflow, full intrinsic image visible. |
+## PM Decision
+ACCEPTED [2026-10-17]: Post-close authoritative receipt; the accepted decision above remains intact and all nine AC independently verified at final story head `6ca79a5ce8efd082759c5841197589a614b7ba13`.
 
+## nd_contract
+status: accepted
+
+### evidence
+- Delivery preflight passed 9/0; branch scope, boundary maps, hashes, screenshots, raw receipts, persisted dry-run job, and byte-identical server/download artifacts were independently checked.
+- Story is closed with the accepted label; three epic siblings remain open, so no epic completion is claimed.
+
+### proof
+- [x] AC #1-#9: All nine story acceptance criteria and every prior rejection gap verified.
 
 ## nd_contract
 status: accepted
