@@ -1,15 +1,17 @@
 ---
 id: OJ-c1vo
 title: "Fail closed when the legacy renderer is disconnected"
-status: open
+status: in_progress
 priority: 1
 type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
-updated_at: 2026-10-18T14:53:03Z
-content_hash: "sha256:40cbbf4d012265c2c9978266ada97bdd032652778dc2b6f5e0942effaed4e7f4"
+updated_at: 2026-10-18T14:53:04Z
+content_hash: "sha256:e51728e625b3fc73625b131bf8ba7ea32c3a0b206bbdd4a186de85e549b233a9"
 blocks: [OJ-yf2c]
+assignee: dev-OJ-c1vo
+follows: [OJ-p8rd]
 ---
 
 ## Description
@@ -56,9 +58,13 @@ status: new
 
 ## History
 - 2026-10-18T14:53:03Z dep_added: blocks OJ-yf2c
+- 2026-10-18T14:53:04Z status: open -> in_progress
+- 2026-10-18T14:53:04Z auto-follows: linked to predecessor OJ-p8rd
+- 2026-10-18T14:53:04Z claimed by dev-OJ-c1vo
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Blocks: [[OJ-yf2c]]
+- Follows: [[OJ-p8rd]]
 
 ## Comments
