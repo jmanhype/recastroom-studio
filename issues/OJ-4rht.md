@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T04:06:31Z
-content_hash: "sha256:1b0bf70ba9053beb49c59df843157e6d3f582b58f84fc48fadae06bf755dcba2"
+updated_at: 2026-10-18T04:07:03Z
+content_hash: "sha256:e63818cf6e5fdb477a2ce41f451293f14f494150b49abebebe58091fa8cfa5af"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -422,6 +422,20 @@ status: new
 ## Notes
 Routing recovery: GLM native worker stopped after repeated provider status502 stream failures; git status in story worktree clean and branch still7ab3b8c. Router activity confirmed no active old request before replacement. Fresh worker qwen_frontend_4rht routed exactly custom/Qwen-Ambassador/Qwen3.8-Max (not modelscope), same claimed isolated story. Implementation pending; no source changes or tests claimed.
 User explicitly requested GPT-6 Astra frontend replacement. Qwen stopped, router activity empty, story worktree clean at7ab3b8c before replacement. Recreated clean Paivot-owned worktree on existing story branch. Fresh Astra bounded frontend-only task dispatched; medium effort, no delegation. Local commits only, backend/generation untouched; independent acceptance pending.
+### AC Verification
+
+| AC | Result | Evidence |
+| --- | --- | --- |
+| 1 | PASS | Current desktop/mobile portrait-landscape measurements, screenshots, labels, live previews, and visible keyboard focus in `docs/evidence/OJ-4rht/rework/portrait-and-focus.json`. |
+| 2 | PASS | Rights false/Prepare disabled before manual consent, guided prepare/run/review flow, media-change consent reset, and post-complete reset in `dryrun-browser-proof.json`. |
+| 3 | PASS | Current PREPARING/DOWNLOADING/COMPLETE API states plus unchanged `status.state` rendering and retained state evidence; no fabricated progress or verdict. |
+| 4 | PASS | Current dry-run snapshots state no AI inference; unchanged code makes that wording conditional on `dry_run`. |
+| 5 | PASS | Complete review and three real API artifact links; download and server SHA-256 values match. |
+| 6 | PASS | Current reset recovery plus retained prepare/network/error paths and retry/reset implementation. |
+| 7 | PASS | Scoped vanilla CSS/test/evidence diff; backend/media/graph untouched; 32 tests, Node syntax, and diff checks pass. |
+| 8 | PASS | Real loopback browser/UI dry-run job `c2a3a70973ec` exercised prepare/run/status/artifacts; timing limitation disclosed. |
+| 9 | PASS | Both reference slots, both orientations, desktop/mobile: contain ratios 0.75/1.5 within <=0.01 tolerance, no overflow, full intrinsic image visible. |
+
 ## nd_contract
 status: delivered
 
