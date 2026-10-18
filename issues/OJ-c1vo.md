@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
 updated_at: 2026-10-18T15:50:28Z
-content_hash: "sha256:d147a0575a5c97c4a0b74ce74b97d7aa7d7ed1aaf0057e81aaa52f8b131c61b6"
+content_hash: "sha256:a3b8f3df0ea19c02e15eb830d9234d3cc61139c9cc4e26a63fa107b05d263078"
 follows: [OJ-p8rd, OJ-inuo, OJ-xtk4]
 assignee: dev-OJ-c1vo
 labels: [accepted]
@@ -347,3 +347,16 @@ ACCEPTED [2026-10-18]: Independent evidence-based review meets all five story AC
 - [x] AC #3: offline Run gating, visible retry/recovery, fresh pre-submit check, and prepared-state preservation.
 - [x] AC #4: focused protocol/API coverage plus two independently recorded full 63-pass runs; only existing warning disclosed.
 - [x] AC #5: hashed sanitized browser evidence proves no-generation disconnected/recovery behavior and states its limits.
+
+### 2026-10-18T15:50:28Z speed
+## Live integration evidence
+Accepted exact commit98de3ff now serves preview8893 on epic/OJ-a7l6. pvg story merge failed on absent origin in this local-only repo. A fail-closed script independently required accepted+closed, clean preview, exact base/reviewed SHAs and ancestry before git merge --ff-only; no stale remote state or push. main remains untouched. Live GET health is ok=true (local app), renderer_ready=false/code renderer_unreachable. Browser reload visibly shows disconnected/retry. Existing final and comparison video hashes match before/after. No GPU, deployment or plan purchase. Receipt: work/frontend-evidence/readiness-20261018/LIVE-VERIFICATION.json outside repo; reviewed implementation and browser QA remain committed in docs/evidence/backend-readiness.
+
+## nd_contract
+status: accepted
+### evidence
+- PM accepted commit98de3ff with focused15 tests and hashes; local preview now uses that exact commit.
+- Parent live verification and media hashes recorded; current renderer is deliberately still offline.
+### proof
+- [x] AC1-5 verified for bounded offline readiness story; no production migration or full capstone completion claimed.
+
