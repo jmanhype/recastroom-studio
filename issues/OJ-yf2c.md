@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T03:57:59Z
-content_hash: "sha256:0fd43891523c6e1bd27118a3517b769d65cdc830652a009fb601750b88237906"
+content_hash: "sha256:eab75c229d39a34257e03eb85cc545ee716de6f33b626a295de0b403adfb93b4"
 blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo]
 ---
 
@@ -223,6 +223,7 @@ status: new
 
 
 ## Notes
+2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 
 ## History
