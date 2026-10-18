@@ -7,8 +7,8 @@ type: epic
 labels: [frontend, local]
 created_at: 2026-10-18T01:53:45Z
 created_by: speed
-updated_at: 2026-10-18T14:53:03Z
-content_hash: "sha256:6c9d2201ce94c64208ed8240d972f8e95dc6ded6c8057b0115a45cfb6267420b"
+updated_at: 2026-10-18T19:48:25Z
+content_hash: "sha256:91aea4273e2bed696871ab4fc1a77357ffa3d6806ee10cd340771ab06d5ae625"
 ---
 
 ## Description
@@ -97,6 +97,39 @@ status: new
 REVIEW_RESULT: APPROVED
 Independent backlog Anchor frontend_backlog_anchor approved current two-story scope after native nd recovery. pvg lint: 0 errors, 2 nonblocking credential-provisioning reviews because all API use is local dry_run with no keys. RTM extracted 0 requirements; not coverage proof. Developer OJ-4rht gate opened. Local commits/merges only; no remote configured.
 Owner-approved bounded scope extension: repair false-positive legacy renderer readiness in OJ-c1vo; preserve SDK/generation/media semantics and design. Parent checks existing Colab connection separately; no new render is authorized by this repair story.
+## Implementation Evidence
+Summary: Completed and integrated the cinematic local Openjutsu studio epic after independent PM acceptance of the final browser capstone.
+Commit SHA: 0e8e3fb8808e9518c2ece8224c900378747924cc
+Branch: epic/OJ-a7l6
+
+### CI/Test Results
+PROOF:
+Commands run:
+- `PYTHONPATH=src <repo>/.venv/bin/python -m pytest -q` on merged epic commit `0e8e3fb`.
+- Result: 105 passed, 1 existing Starlette/httpx warning in 28.92s; no skips.
+- Story OJ-yf2c independently passed focused/full suites twice and PM re-review approved commit `11ba30e`.
+
+### AC Verification
+| AC | Verification | Result |
+|---|---|---|
+| 1 | OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt, and OJ-yf2c completed through Paivot delivery/acceptance | PASS |
+| 2 | Final browser capstone proves real dry-run flow, reduced motion, exhaustive focus, recovery, runtime provenance, and cleanup | PASS |
+| 3 | Accepted OJ-yf2c merged locally into epic `0e8e3fb`; merged epic suite passes | PASS |
+| 4 | No push, publication, GPU/API inference, credential use, or public tunnel | PASS |
+
+LEARNINGS: The final capstone required reconciling its stale health assertion with the accepted additive renderer-readiness contract.
+OBSERVATIONS: All child work is accepted; the local epic is ready for main integration.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Merged epic commit `0e8e3fb8808e9518c2ece8224c900378747924cc`.
+- Independent PM approval for final OJ-yf2c fix commit `11ba30ee71cec9ed8872b321cda7dca0e914f2a2`.
+- Merged epic full suite: 105 passed, 1 warning.
+
+### proof
+- [x] Epic goal and local-only boundary are satisfied.
 
 ## History
 
