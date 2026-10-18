@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T04:07:44Z
-content_hash: "sha256:87b56064dbcf790135a3b302ddeaa6f589bee6d9382468e6c9ee0cc98ddf2e93"
+updated_at: 2026-10-18T04:08:39Z
+content_hash: "sha256:b4c9e6a8273bddd181ee0174e08863a03a83410bee823e0faa8c6e2d00014f31"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -435,6 +435,34 @@ User explicitly requested GPT-6 Astra frontend replacement. Qwen stopped, router
 | 7 | PASS | Scoped vanilla CSS/test/evidence diff; backend/media/graph untouched; 32 tests, Node syntax, and diff checks pass. |
 | 8 | PASS | Real loopback browser/UI dry-run job `c2a3a70973ec` exercised prepare/run/status/artifacts; timing limitation disclosed. |
 | 9 | PASS | Both reference slots, both orientations, desktop/mobile: contain ratios 0.75/1.5 within <=0.01 tolerance, no overflow, full intrinsic image visible. |
+## PM Decision
+ACCEPTED [$(date +%Y-%m-%d)]: Independent evidence review meets all nine acceptance criteria and closes the prior rejection gaps.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Pinned final story head `6ca79a5ce8efd082759c5841197589a614b7ba13`; substantive portrait fix remains `1649a937fd8685076abf522158f4783ea830edfe`.
+- Independently reviewed the story and reconciled OJ-yf2c boundary maps, scoped Git diff, implementation, receipts, raw private evidence, and checked-in sanitized artifacts.
+- `pvg story verify-delivery OJ-4rht`: 9 passed, 0 failed after the authoritative 9-AC receipt normalization.
+- Static review found no stub/TODO markers, no dependency/backend/media/graph changes, no stale mutable StudioUI boundary, and no secret disclosure in checked-in evidence. `git diff --check 7ab3b8c..6ca79a5` and `node --check app/web/studio.js` exited 0.
+- Trusted recorded suites were not rerun: developer at `1649a93` recorded 32 passed/1 warning in 10.91s and root independently reran 32 passed/1 warning in 10.48s; final head changes receipt text only.
+- Verified both evidence SHA manifests. Visually inspected portrait desktop/mobile, keyboard-focus, reduced-motion, and completed dry-run screenshots; raw accessibility receipts match their recorded original hashes.
+- Independently computed contain-rendered ratios 0.75/1.5 with zero ratio delta and no box overflow for both 472×198 and 165×148 cases.
+- Persisted dry-run job `c2a3a70973ec` is complete; generated, final, and side_by_side server files are byte-identical to the three browser downloads and match all recorded SHA-256 hashes.
+- Existing Starlette/httpx warning is explicitly owned by a DISCOVERED_BUG block for centralized triage; no unrelated defect was found during PM review.
+
+### proof
+- [x] AC #1: Responsive cinematic layout, live source/two-reference previews, labels, focus, and desktop/mobile evidence verified.
+- [x] AC #2: Manual unchecked rights gate and guided upload/prepare/run/review flow verified.
+- [x] AC #3: API-backed stage truth and no fabricated progress, ETA, backend state, or QC verdict verified.
+- [x] AC #4: Dry-run no-AI disclosure is conditional and other backends make no no-inference claim.
+- [x] AC #5: Complete review and exactly the three real API artifact routes/downloads verified.
+- [x] AC #6: Visible recoverable errors, retry, and non-reload reset verified from current and retained evidence.
+- [x] AC #7: Static vanilla frontend and backend/API/generation boundaries preserved; trusted 32-test evidence accepted.
+- [x] AC #8: Real loopback dry-run health/prepare/run/status/artifact browser exercise verified.
+- [x] AC #9: Both slots preserve complete intrinsic portrait/landscape media within the stated <=0.01 ratio tolerance on desktop and mobile.
+
 ## nd_contract
 status: delivered
 
