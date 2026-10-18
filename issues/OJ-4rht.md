@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T02:31:40Z
-content_hash: "sha256:1ad87cbd824d6d4bf871622147842f69460627fbab81f53b861cef4b46321997"
+content_hash: "sha256:d230e5ac3bbd88175f9d579dcece61005b4ba5f5b42fdae76b9722c42cb4a5fc"
 blocks: [OJ-yf2c]
 ---
 
@@ -99,6 +99,18 @@ status: new
 ## Notes
 Routing recovery: GLM native worker stopped after repeated provider status502 stream failures; git status in story worktree clean and branch still7ab3b8c. Router activity confirmed no active old request before replacement. Fresh worker qwen_frontend_4rht routed exactly custom/Qwen-Ambassador/Qwen3.8-Max (not modelscope), same claimed isolated story. Implementation pending; no source changes or tests claimed.
 User explicitly requested GPT-6 Astra frontend replacement. Qwen stopped, router activity empty, story worktree clean at7ab3b8c before replacement. Recreated clean Paivot-owned worktree on existing story branch. Fresh Astra bounded frontend-only task dispatched; medium effort, no delegation. Local commits only, backend/generation untouched; independent acceptance pending.
+
+
+## nd_contract
+status: rejected
+
+### evidence
+- PM rejection applied via pvg story reject on 2026-10-17.
+
+### proof
+- [ ] Story requires another developer delivery before it can be accepted.
+
+
 ## Implementation Evidence
 Summary: Cinematic static studio implemented, real browser smoke passed; independent acceptance pending.
 Commit SHA: 90ec73d
