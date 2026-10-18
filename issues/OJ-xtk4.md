@@ -4,7 +4,7 @@ title: "Preserve paired-review aspect ratio"
 status: in_progress
 priority: 1
 type: bug
-labels: [bug, media, local, dogfood]
+labels: [bug, media, local, dogfood, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
