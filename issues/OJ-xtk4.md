@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
 updated_at: 2026-10-18T04:09:05Z
-content_hash: "sha256:ff563c5f1f105d9a4a23a541df399f95c409338a62c40d745daf6c0874461750"
+content_hash: "sha256:204c86173af02e1dfc0e8e14c46e0a1d8733881174e130be41cf71c9fa7a8d09"
 blocks: [OJ-inuo, OJ-yf2c]
 assignee: dev-OJ-xtk4
 follows: [OJ-4rht]
@@ -166,6 +166,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-17.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## Implementation Evidence (DELIVERED)
 
 PROOF:
