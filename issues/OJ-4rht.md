@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T04:05:26Z
-content_hash: "sha256:bfb80d44152233d4eaa37fc1dc333cc59e01556a9d4e8f1c7905f5217f2b3115"
+updated_at: 2026-10-18T04:06:18Z
+content_hash: "sha256:85450ddf21adbf6bbb63eb68c0468787cfeff67be9bcb972e52bcf6ffdcf33b0"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -713,3 +713,29 @@ status: delivered
 ### OBSERVATIONS
 - `window.StudioUI` intentionally remains frozen/read-only (`getState`, `errorText`); tracker BoundaryMap reconciliation belongs to SrPM and dependent regression ownership to OJ-yf2c.
 - Existing Starlette/httpx warning and separately assigned media/backend findings remain open with their proper owners; this frontend story claims no such repair.
+
+### 2026-10-18T04:06:18Z speed
+## nd_contract
+status: delivered
+
+### evidence
+- Final story head: `6ca79a5ce8efd082759c5841197589a614b7ba13` on `story/OJ-4rht`; portrait fix: `1649a937fd8685076abf522158f4783ea830edfe`.
+- Full authoritative evidence, sanitized browser artifacts, commands, source-line mapping, and SHA-256 manifest: `docs/evidence/OJ-4rht/REWORK.md` and `docs/evidence/OJ-4rht/rework/`.
+- Local suite and independent root rerun: 32 passed, 1 existing Starlette/httpx warning; Node syntax and diff checks exited 0.
+
+### proof
+- [x] AC1: Responsive cinematic studio, source/two-reference previews, labels, current desktop/mobile portrait-landscape measurements, and visible keyboard focus proved.
+- [x] AC2: Manual unchecked rights gate, disabled-to-enabled guided flow, media-change consent reset, run/review separation, and reset proved.
+- [x] AC3: API-backed stage truth proved for current PREPARING/DOWNLOADING/COMPLETE; unchanged status-state source plus retained evidence covers queued/uploading/generating/error with no fabricated progress or QC verdict.
+- [x] AC4: Dry-run no-AI-inference disclosure proved; non-dry backend wording remains conditional and makes no no-inference claim.
+- [x] AC5: Complete final/paired review and exactly generated/final/side_by_side API routes proved; all downloads matched server SHA-256.
+- [x] AC6: Current reset recovery and retained prepare/network/error evidence prove visible recoverable behavior without reload.
+- [x] AC7: Static vanilla frontend boundary preserved; backend/API/generation untouched; 32 tests, Node syntax, and diff checks pass.
+- [x] AC8: Real loopback browser dry-run health/prepare/run/status/artifact exercise proved via job `c2a3a70973ec`; timing tool-gap limitation disclosed.
+- [x] AC9: Both reference slots preserve complete intrinsic 1086×1448 portrait and 1152×768 landscape content at 1440×1000 and 390×844; tolerance <=0.01 aspect-ratio difference, contain ratios 0.75/1.5, no overflow, full head/torso visually confirmed.
+
+### LEARNINGS
+- Centered grid media items require zero automatic minima in both axes; object-fit contain preserves ratio after that intrinsic minimum is controlled.
+
+### OBSERVATIONS
+- StudioUI remains read-only; centralized warning and media/backend findings remain with their assigned owners.
