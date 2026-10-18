@@ -12,6 +12,7 @@ content_hash: "sha256:4c4f70852c8d12c9e3134d0229bed0f885f3efafd4d8d5d6b9638d161e
 blocks: [OJ-yf2c]
 assignee: dev-OJ-p8rd
 follows: [OJ-inuo, OJ-xtk4]
+labels: [delivered]
 ---
 
 ## Description
