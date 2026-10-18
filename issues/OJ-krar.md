@@ -12,6 +12,7 @@ content_hash: "sha256:f4288bc26f93c54c0cdac443caf839ed8057247d5ae3c686d31bdaa584
 blocks: [OJ-yf2c]
 assignee: dev-OJ-krar
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4]
+labels: [delivered]
 ---
 
 ## Description
