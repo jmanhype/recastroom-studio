@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
 updated_at: 2026-10-18T16:28:14Z
-content_hash: "sha256:1e3614c3c58247ada8d8bf1a200bcf995be193667718c850df0a9d91ee3de388"
+content_hash: "sha256:42a34f0760d47757f07b2baab5d46dd0ba9ffe8d99801c21c49912800ba1a2ce"
 blocks: [OJ-yf2c]
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4]
 labels: [rejected]
@@ -40,6 +40,16 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: rejected
+
+### evidence
+- PM rejection applied via pvg story reject on 2026-10-18.
+
+### proof
+- [ ] Story requires another developer delivery before it can be accepted.
 
 
 ## nd_contract
