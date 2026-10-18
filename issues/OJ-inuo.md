@@ -9,12 +9,13 @@ parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
 updated_at: 2026-10-18T04:35:29Z
-content_hash: "sha256:777ec2c9368fc7e4a8363c8fec19b86240a0035cd57fa93778f907b17a25d19d"
+content_hash: "sha256:cbdc067a535ddeb50cb04c2127cde53ffea746d15c6a4abbde42963cada360fc"
 was_blocked_by: [OJ-xtk4]
 assignee: dev-OJ-inuo
 follows: [OJ-xtk4, OJ-4rht]
 closed_at: 2026-10-18T04:33:19Z
 close_reason: "Accepted: independently verified source-layout-preserving audio export evidence across mono, stereo, and 5.1; focused/full test receipts, compact artifacts and hashes, and real local re-export geometry/audio all meet the six ACs."
+led_to: [OJ-yf2c]
 ---
 
 ## Description
@@ -336,6 +337,7 @@ status: delivered
 - Parent: [[OJ-a7l6]]
 - Was blocked by: [[OJ-xtk4]]
 - Follows: [[OJ-xtk4]], [[OJ-4rht]]
+- Led to: [[OJ-yf2c]]
 
 ## Comments
 
