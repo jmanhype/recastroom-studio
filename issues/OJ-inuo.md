@@ -8,8 +8,8 @@ labels: [bug, media, local, dogfood, accepted]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
-updated_at: 2026-10-18T04:33:19Z
-content_hash: "sha256:12fa3da7343a8310d29692030c3d22a2878d33ed440aa35aec1f8031acff6419"
+updated_at: 2026-10-18T04:33:20Z
+content_hash: "sha256:58a02290d57a7d9449de921b868a467e212f9467fdd8a5f9e6f50d9210d2805c"
 was_blocked_by: [OJ-xtk4]
 assignee: dev-OJ-inuo
 follows: [OJ-xtk4, OJ-4rht]
@@ -174,6 +174,17 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
 
 ## Implementation Evidence
 
