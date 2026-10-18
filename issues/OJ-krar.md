@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:17:53Z
-content_hash: "sha256:9b5aa0c453f567e16525683ce8918cb63276823d3fca9c4caa2939b84b4ae76a"
+updated_at: 2026-10-18T16:20:37Z
+content_hash: "sha256:45ea9f7b8440bbeec8b871b501eb1075cf6dcd44d4b825b33032e319d028461c"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-krar
 follows: [OJ-c1vo, OJ-p8rd]
@@ -41,6 +41,36 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
+
+Summary: Coordinator integrated and independently reran the delivered SDK asset-binding implementation.
+
+Commit SHA: 147a748e4bb418eadc242383c3e444d828818c05
+
+### Commands run:
+- PYTHONPATH=src .venv/bin/python -m pytest -q tests/test_comfy_sdk_runner.py tests/test_sdk_assets.py tests/test_sdk_protocol.py
+- PYTHONPATH=src .venv/bin/python -m pytest -q
+- git diff --check
+- shasum -a 256 -c docs/evidence/sdk-assets/SHA256SUMS.txt
+
+### CI/Test Results:
+- Focused suite: 30 passed in 6.73s.
+- Full suite: 89 passed, 1 pre-existing Starlette/httpx warning, in 25.29s.
+- git diff --check passed.
+- All 12 scoped SHA256 entries verified.
+- Canonical workflow SHA256 remains 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21.
+
+### AC verification:
+- [x] AC1: Local planner/file validation, optional ref2, explicit SDK asset references, bridge route, and fail-closed deployment flag are implemented and tested.
+- [x] AC2: App manifest inputs are wired; canonical workflow/audio/legacy behavior preserved; deterministic node 751 output and sanitized errors/filenames are tested.
+- [x] AC3: Durable key/phase/provider-ID state, known-ID recovery, no resubmit after ambiguous response loss, and local duplicate serialization are tested.
+- [x] AC4: Real installed comfy-sdk 0.5.0 protocol fixture covers required binding, output/audio wiring, failures, recovery, persistence, and traversal cases; focused/full suites pass.
+- [x] AC5: Constructor contract and SDK floor are retained; deployment inclusion and unproven hosted stages are documented. No paid inference or production-ready claim.
+
+### Boundaries:
+- Hosted materialization, bridge registration, build packaging, model execution, and output quality remain unproven and require a separately authorized smoke test.
+
+
 ## Implementation Evidence (DELIVERED)
 
 Summary: Uncommitted unpaid SDK asset binding and durable submission recovery delivered for parent integration and independent PM review.
