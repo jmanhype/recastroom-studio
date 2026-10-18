@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T19:40:05Z
-content_hash: "sha256:8e368b9eb4a4c5415ebe904bfaa27f372af4816bfea8242bc79a0c7f84b37149"
+content_hash: "sha256:8b74cf11218afa13c3120f885ce82d50f377f48b117aab5af1bdd86145ab0ae6"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 ---
@@ -396,3 +396,6 @@ status: delivered
 
 ### proof
 - [x] AC #1-7 verified in the authoritative Implementation Evidence block.
+
+### 2026-10-18T19:40:05Z speed
+PM REJECTED: RED receipts leaked user-specific pytest temporary paths. Fix sanitizer, regenerate manifest, commit, and redeliver.
