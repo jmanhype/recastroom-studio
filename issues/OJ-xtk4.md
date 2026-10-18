@@ -8,8 +8,8 @@ labels: [bug, media, local, dogfood]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
-updated_at: 2026-10-18T03:53:01Z
-content_hash: "sha256:2cb9d44612efd97e3aca32c738676b71966f0a6f8b931feadee611c9031d4f9d"
+updated_at: 2026-10-18T03:57:58Z
+content_hash: "sha256:2a57044c9f42d5cc4e9b7a3d3033ed7f39a4e397b3afc9005e567b3fd5ca4e87"
 blocks: [OJ-inuo, OJ-yf2c]
 assignee: dev-OJ-xtk4
 ---
@@ -37,8 +37,7 @@ PRODUCES:
 - `docs/evidence/dogfood-repairs/OJ-xtk4/` -> exact commands, ffprobe/PCM or pixel measurements, output hashes, and limitations
 
 CONSUMES:
-- The repository's existing local `ffmpeg` dependency and locally generated or project-owned fixtures only.
-- The read-only dogfood evidence cited above; do not mutate or re-run generation.
+- (none -- leaf bug; local ffmpeg and read-only dogfood evidence are external inputs embedded above)
 
 ## Story Acceptance Criteria
 1. Paired review scale-fits and pads each source and final frame onto a common even-width/even-height tile without cropping or changing each input's intrinsic display aspect ratio; sample aspect ratio remains square.
@@ -53,6 +52,9 @@ CONSUMES:
 - Commands to run: `PYTHONPATH=src .venv/bin/python -m pytest tests/test_media.py -q`, then `PYTHONPATH=src .venv/bin/python -m pytest`.
 - Check in only small deterministic local fixtures/evidence needed to reproduce the result; no credentials, public URLs, cloud artifacts, GPU work, or external API calls.
 - `git diff --check` must pass.
+
+## MANDATORY SKILLS
+- `tool-systematic-debugging`: establish the measured red geometry regression before changing export behavior.
 
 ## OUT OF SCOPE
 - Audio channel layout, loudness, or speech-preservation changes: those belong to the serialized dependent audio bug.
@@ -116,8 +118,7 @@ PRODUCES:
 - `docs/evidence/dogfood-repairs/PENDING-ID/` -> exact commands, ffprobe/PCM or pixel measurements, output hashes, and limitations
 
 CONSUMES:
-- The repository's existing local `ffmpeg` dependency and locally generated or project-owned fixtures only.
-- The read-only dogfood evidence cited above; do not mutate or re-run generation.
+- (none -- leaf bug; local ffmpeg and read-only dogfood evidence are external inputs embedded above)
 
 ## Story Acceptance Criteria
 1. Paired review scale-fits and pads each source and final frame onto a common even-width/even-height tile without cropping or changing each input's intrinsic display aspect ratio; sample aspect ratio remains square.
@@ -132,6 +133,9 @@ CONSUMES:
 - Commands to run: `PYTHONPATH=src .venv/bin/python -m pytest tests/test_media.py -q`, then `PYTHONPATH=src .venv/bin/python -m pytest`.
 - Check in only small deterministic local fixtures/evidence needed to reproduce the result; no credentials, public URLs, cloud artifacts, GPU work, or external API calls.
 - `git diff --check` must pass.
+
+## MANDATORY SKILLS
+- `tool-systematic-debugging`: establish the measured red geometry regression before changing export behavior.
 
 ## OUT OF SCOPE
 - Audio channel layout, loudness, or speech-preservation changes: those belong to the serialized dependent audio bug.
