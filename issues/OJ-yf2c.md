@@ -1,17 +1,18 @@
 ---
 id: OJ-yf2c
 title: "E2e: prove the cinematic local studio upgrade"
-status: open
+status: in_progress
 priority: 1
 type: task
 labels: [capstone, e2e, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T14:22:12Z
-content_hash: "sha256:3be9cb8ea005a4b79dad80a747322ceeff1e9e080b820bb055cd27bbd73544bf"
+updated_at: 2026-10-18T16:46:24Z
+content_hash: "sha256:2c94a7760f086990738be0211e74561bb845ea02cd8ee124876cbd8712f1dde6"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
-follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd]
+follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
+assignee: dev-OJ-yf2c
 ---
 
 ## Description
@@ -308,11 +309,16 @@ OBSERVATIONS: Next evidence work must resolve AC3/AC6 without reopening approved
 - 2026-10-18T16:04:00Z dep_added: blocked_by OJ-krar
 - 2026-10-18T16:35:30Z dep_removed: was_blocked_by OJ-krar
 - 2026-10-18T16:45:18Z dep_removed: was_blocked_by OJ-tfyt
+- 2026-10-18T16:46:24Z status: open -> in_progress
+- 2026-10-18T16:46:24Z auto-follows: linked to predecessor OJ-c1vo
+- 2026-10-18T16:46:24Z auto-follows: linked to predecessor OJ-krar
+- 2026-10-18T16:46:24Z auto-follows: linked to predecessor OJ-tfyt
+- 2026-10-18T16:46:24Z claimed by dev-OJ-yf2c
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Was blocked by: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]], [[OJ-c1vo]], [[OJ-krar]], [[OJ-tfyt]]
-- Follows: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]]
+- Follows: [[OJ-4rht]], [[OJ-xtk4]], [[OJ-inuo]], [[OJ-p8rd]], [[OJ-c1vo]], [[OJ-krar]], [[OJ-tfyt]]
 
 ## Comments
 

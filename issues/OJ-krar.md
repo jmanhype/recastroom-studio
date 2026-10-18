@@ -8,11 +8,12 @@ parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
 updated_at: 2026-10-18T16:35:30Z
-content_hash: "sha256:2fbb96c6cc999e057c8d261f5bccb757f59845afd4805652740683b18f2d0ca4"
+content_hash: "sha256:6fc3750bd592ee7f5d4fccd92a50c7b537d3b611cdb47bde35fad985daaa756b"
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4, OJ-4rht]
 labels: [accepted]
 closed_at: 2026-10-18T16:35:30Z
 close_reason: "Accepted: annotation rework closes the sole PM type-spec rejection; behavior, tests, hashes, and workflow remain verified."
+led_to: [OJ-yf2c]
 ---
 
 ## Description
@@ -256,6 +257,7 @@ status: delivered
 ## Links
 - Parent: [[OJ-a7l6]]
 - Follows: [[OJ-c1vo]], [[OJ-p8rd]], [[OJ-inuo]], [[OJ-xtk4]], [[OJ-4rht]]
+- Led to: [[OJ-yf2c]]
 
 ## Comments
 
