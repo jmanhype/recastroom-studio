@@ -8,7 +8,8 @@ parent: OJ-a7l6
 created_at: 2026-10-18T13:42:26Z
 created_by: speed
 updated_at: 2026-10-18T13:42:26Z
-content_hash: "sha256:2c3f1ad8b7976c3baae1458dbfb88f57bc70dd63e7af5950413d92b4785cb322"
+content_hash: "sha256:7ddcb9c95f960797b57b0e0dee138579ab6170d00580e8f80d434ea89dc87fb8"
+blocks: [OJ-yf2c]
 ---
 
 ## Description
@@ -24,9 +25,10 @@ Observed during OJ-yf2c CUA on source 2b22504: real dry_run retry GET status ret
 
 
 ## History
-
+- 2026-10-18T13:55:48Z dep_added: blocks OJ-yf2c
 
 ## Links
 - Parent: [[OJ-a7l6]]
+- Blocks: [[OJ-yf2c]]
 
 ## Comments
