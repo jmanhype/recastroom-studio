@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T01:59:43Z
-content_hash: "sha256:9a5684fb5adaf55b25718788c9f10da4e3d4f2e82c35a856f5b2fec58336419b"
+updated_at: 2026-10-18T02:00:32Z
+content_hash: "sha256:cbb537c5cd7aa6b9ce0d195bd7a81a9c88965e6c9dccf34c416141b2a709e115"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -98,7 +98,16 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: in_progress
 
+### evidence
+- Claimed atomically by dispatcher; story/OJ-4rht worktree created from epic/OJ-a7l6 at 7ab3b8c.
+- User explicitly authorized local commits and merges only. No remote configured.
+- Backlog repaired through native restore/edit/sync; local API does not require secret provisioning.
+
+### proof
+- [ ] AC #1-8: Implementation and browser acceptance pending.
 
 ## History
 - 2026-10-18T01:53:57Z dep_added: blocks OJ-yf2c
