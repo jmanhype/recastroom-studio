@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:35:55Z
-content_hash: "sha256:3f5540f26fdbcff169e2406bd7f407ec0d3786e20789b0211a173f5fb9bb6d09"
+updated_at: 2026-10-18T16:36:49Z
+content_hash: "sha256:931117a44249abc7141f074cd9be5b9eb6226d7927cda14102d76cd3dd24b6a7"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -60,6 +60,19 @@ Fail-closed local candidate delivered with exact current metadata/source evidenc
 | AC3 | Yes: runtime matrix and dependency blockers; no base selected. |
 | AC4 | Yes: offline no-skip tests and syntax-only CLI receipts. |
 | AC5 | Yes: commands/results/hashes/blockers and SDK-bridge dependency reported. |
+## nd_contract
+status: delivered
+
+### evidence
+- Detailed evidence, commands, file hashes, CI/Test Results, Summary, and blocker disclosure above.
+
+### proof
+[x] AC1: reproducible local candidate/manifest pins and workflow hash verified.
+[x] AC2: exact implicit metadata/source traces verified with fail-closed unknowns.
+[x] AC3: runtime matrix and dependency blockers verified without installs.
+[x] AC4: offline no-network/no-skip tests and syntax-only receipts verified.
+[x] AC5: exact results and remaining blockers reported; SDK bridge remains external.
+
 ## nd_contract
 status: delivered
 
