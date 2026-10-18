@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T19:40:20Z
-content_hash: "sha256:734a0fa6fef90c09698d05e3134b3a5a22a53e13983494a44d29e9a18eaf6671"
+content_hash: "sha256:ca4891947dbed9e59c4cf35b19cc51ea6be480e8bd926b8cf91e66a020675635"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 ---
@@ -454,3 +454,14 @@ status: delivered
 
 ### 2026-10-18T19:40:05Z speed
 PM REJECTED: RED receipts leaked user-specific pytest temporary paths. Fix sanitizer, regenerate manifest, commit, and redeliver.
+
+### 2026-10-18T19:40:20Z speed
+## nd_contract
+status: delivered
+
+### evidence
+- Authoritative delivery evidence is the full `## Implementation Evidence` block for commit `76582b4c7287b7b49dcb7fae95c390952d92a98e` in Notes.
+- `docs/evidence/frontend-upgrade/final/FINAL_REPORT.md` and `SHA256SUMS` record the browser, test, hash, and cleanup proof.
+
+### proof
+- [x] AC #1-7 verified in the authoritative Implementation Evidence block.
