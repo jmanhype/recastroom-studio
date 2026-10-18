@@ -8,8 +8,8 @@ labels: [capstone, e2e, frontend, external-integration, rejected]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T19:40:05Z
-content_hash: "sha256:881cfa16e2a13ca0f39b7d3bfc557f0f2d3064280fa85163c4ee5258408d0369"
+updated_at: 2026-10-18T19:40:19Z
+content_hash: "sha256:04f2c4c73f2225efec698a548ac9595de7243e6dbe4ab6e727a1721da174c736"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 ---
@@ -226,7 +226,39 @@ status: new
 ## Notes
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
+## Implementation Evidence
+Summary: Repaired the sole PM rejection by sanitizing user-specific pytest temporary paths in all checked-in RED receipts, updating the sanitizer/report/hash manifest, and preserving all substantive browser/test evidence.
+Commit SHA: 11ba30ee71cec9ed8872b321cda7dca0e914f2a2
+Branch: story/OJ-yf2c
 
+### CI/Test Results
+PROOF:
+Commands run:
+- `python3 docs/evidence/frontend-upgrade/final/sanitize_test_logs.py`
+- Repository-wide evidence scan for `/Users/`, `/private/var/folders`, `pytest-of-speed`, and credential names: no findings.
+- `shasum -a 256 -c docs/evidence/frontend-upgrade/final/SHA256SUMS`: all entries OK.
+- `git diff --check`: passed.
+
+### AC Verification
+| AC | Verification | Result |
+|---|---|---|
+| 1-5 | Existing real browser and repeated RED/GREEN test evidence unchanged in substance | PASS |
+| 6 | User-specific worktree and pytest temporary paths removed from checked-in receipts; manifest refreshed | PASS |
+| 7 | Fix changes evidence sanitization only; no production semantics or external spend | PASS |
+
+LEARNINGS: Sanitizing repository roots alone is insufficient; pytest failure receipts also expose user-specific temporary directories.
+OBSERVATIONS: The PM rejection was valid and narrowly scoped.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Fix commit `11ba30ee71cec9ed8872b321cda7dca0e914f2a2`; clean worktree after commit.
+- Four RED receipts now show `<pytest-temp>` instead of the user-specific macOS temporary path.
+- Updated report and 102-entry SHA manifest verify.
+
+### proof
+- [x] AC #1-7 remain satisfied after sanitization.
 
 ## nd_contract
 status: rejected
