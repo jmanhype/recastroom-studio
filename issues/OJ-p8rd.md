@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T13:42:26Z
 created_by: speed
 updated_at: 2026-10-18T14:11:21Z
-content_hash: "sha256:6c37edf4a6474ffab9c87eddd90f3b7616c09b5d2696603318d1663749292858"
+content_hash: "sha256:6fbdd3b1d7a5004b740b37511f035835ef2c289217d4f41e077198a9585fc3b9"
 assignee: dev-OJ-p8rd
 follows: [OJ-inuo, OJ-xtk4]
 labels: [accepted]
@@ -26,6 +26,18 @@ Observed during OJ-yf2c CUA on source 2b22504: real dry_run retry GET status ret
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-18.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## Implementation Evidence
 
 ### CI/Test Results
