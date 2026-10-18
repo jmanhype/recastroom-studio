@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T04:08:40Z
-content_hash: "sha256:34dde671414e43fe9596c37b275fc116cef8e92a3c7c33be7fbe87f05a379d33"
+content_hash: "sha256:e39332e6a33dd2149460245b88f4b854342b32492b6da90e59c00bb16de575dc"
 assignee: dev-OJ-4rht
 closed_at: 2026-10-18T04:08:39Z
 close_reason: "Accepted: all nine AC and prior boundary, accessibility, warning-triage, and portrait-clipping gaps independently verified at 6ca79a5."
@@ -436,6 +436,18 @@ User explicitly requested GPT-6 Astra frontend replacement. Qwen stopped, router
 | 7 | PASS | Scoped vanilla CSS/test/evidence diff; backend/media/graph untouched; 32 tests, Node syntax, and diff checks pass. |
 | 8 | PASS | Real loopback browser/UI dry-run job `c2a3a70973ec` exercised prepare/run/status/artifacts; timing limitation disclosed. |
 | 9 | PASS | Both reference slots, both orientations, desktop/mobile: contain ratios 0.75/1.5 within <=0.01 tolerance, no overflow, full intrinsic image visible. |
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Decision
 ACCEPTED [$(date +%Y-%m-%d)]: Independent evidence review meets all nine acceptance criteria and closes the prior rejection gaps.
 
