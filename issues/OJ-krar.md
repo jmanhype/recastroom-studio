@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:22:29Z
-content_hash: "sha256:9b29f81e022e462d68c00c5f19a993f8f73eaf22ba9230e7ccc297eb10fc6f8d"
+updated_at: 2026-10-18T16:28:05Z
+content_hash: "sha256:e951230aac495cbdcc0bef960d5c575a23d3918c86613059ceab9a8cb07011e9"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-krar
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4]
@@ -226,3 +226,18 @@ Commit SHA: 147a748e4bb418eadc242383c3e444d828818c05
 Boundaries:
 - Hosted materialization, bridge registration, build packaging, model execution, and output quality remain unproven and require a separately authorized smoke test.
 
+
+### 2026-10-18T16:28:05Z speed
+## PM Review Evidence (2026-10-18)
+
+Reviewed commit 147a748e4bb418eadc242383c3e444d828818c05 against base 98de3ff703f584755d38c01cb6bb66fc997f0707.
+
+- Scoped diff: 15 files, 778 insertions, 20 deletions; confined to assigned app/SDK/bridge/floor/tests/docs/evidence scope; `git diff --check` passed.
+- `pvg story verify-delivery OJ-krar`: 7 passed, 2 failed (`nd_contract:eof`, `proof:ac_items`). Judgment: substantive evidence is nevertheless complete—the last delivered contract is identifiable and contains explicit AC1-AC5 proof, while commit SHA/commands/results are present in the coordinator evidence comment; the EOF failure reflects generated History/Links content after the contract and the AC parser does not recognize the `AC1` spelling. These are formatting/parser failures, not absent evidence.
+- Focused suite with root checkout `.venv/bin/python`, `PYTHONPATH=src`: 30 passed in 6.64s.
+- Full suite with root checkout `.venv/bin/python`, `PYTHONPATH=src`: 89 passed, 1 Starlette/httpx deprecation warning, in 24.21s.
+- `shasum -a 256 -c docs/evidence/sdk-assets/SHA256SUMS.txt`: all 12 entries OK.
+- Canonical `workflows/openjutsu_h3_lipsync_local.json` SHA256: 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21; workflow also has zero diff across the story range.
+- Installed SDK verified as comfy-sdk 0.5.0 from the root checkout virtual environment.
+
+PM gate finding: Tier 1b requires type specifications for public functions in new modules. `src/openjutsu/sdk_assets.py` exposes `validate_inputs` and `bind_graph` without parameter/return annotations, and `custom_nodes/openjutsu_assets/__init__.py` exposes `OpenJutsuAssetPlan.INPUT_TYPES` and `.bind` without return/parameter annotations. This is a rejection independent of the tracker-format false positives above.
