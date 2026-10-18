@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T19:40:05Z
-content_hash: "sha256:8b74cf11218afa13c3120f885ce82d50f377f48b117aab5af1bdd86145ab0ae6"
+content_hash: "sha256:881cfa16e2a13ca0f39b7d3bfc557f0f2d3064280fa85163c4ee5258408d0369"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 ---
@@ -226,6 +226,16 @@ status: new
 ## Notes
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
+
+
+## nd_contract
+status: rejected
+
+### evidence
+- PM rejection applied via pvg story reject on 2026-10-18.
+
+### proof
+- [ ] Story requires another developer delivery before it can be accepted.
 
 
 ## nd_contract
