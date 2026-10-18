@@ -4,7 +4,7 @@ title: "Prepare the judge-facing Openjutsu winning package"
 status: closed
 priority: 0
 type: task
-labels: [contest, local, evidence, delivered]
+labels: [contest, local, evidence, delivered, accepted]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:03Z
 created_by: speed
