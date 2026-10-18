@@ -1,15 +1,17 @@
 ---
 id: OJ-p8rd
 title: "Fix non-atomic status persistence observed during browser retry"
-status: open
+status: in_progress
 priority: 1
 type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T13:42:26Z
 created_by: speed
-updated_at: 2026-10-18T13:42:26Z
-content_hash: "sha256:7ddcb9c95f960797b57b0e0dee138579ab6170d00580e8f80d434ea89dc87fb8"
+updated_at: 2026-10-18T13:56:09Z
+content_hash: "sha256:53354a9b2f6e0ffcd5f259b1d0eb9ae6a10621d196655e9bab40496587812e9e"
 blocks: [OJ-yf2c]
+assignee: dev-OJ-p8rd
+follows: [OJ-inuo]
 ---
 
 ## Description
@@ -26,9 +28,13 @@ Observed during OJ-yf2c CUA on source 2b22504: real dry_run retry GET status ret
 
 ## History
 - 2026-10-18T13:55:48Z dep_added: blocks OJ-yf2c
+- 2026-10-18T13:56:09Z status: open -> in_progress
+- 2026-10-18T13:56:09Z auto-follows: linked to predecessor OJ-inuo
+- 2026-10-18T13:56:09Z claimed by dev-OJ-p8rd
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Blocks: [[OJ-yf2c]]
+- Follows: [[OJ-inuo]]
 
 ## Comments
