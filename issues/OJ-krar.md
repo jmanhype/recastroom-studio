@@ -11,6 +11,7 @@ updated_at: 2026-10-18T16:28:14Z
 content_hash: "sha256:40d25cbc0439dbe04ebfe7e44d3a5ad2b096ad44879ff39253d7c5fb7e3c6f32"
 blocks: [OJ-yf2c]
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4]
+labels: [rejected]
 ---
 
 ## Description
