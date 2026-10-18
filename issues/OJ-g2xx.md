@@ -1,16 +1,18 @@
 ---
 id: OJ-g2xx
 title: "Prepare the judge-facing Openjutsu winning package"
-status: in_progress
+status: closed
 priority: 0
 type: task
 labels: [contest, local, evidence, delivered]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:03Z
 created_by: speed
-updated_at: 2026-10-18T20:23:00Z
-content_hash: "sha256:60b319e2f28f769f162110a4f05e2c3930d5ee48d1ce722944ea4337a5f4e64d"
+updated_at: 2026-10-18T20:30:00Z
+content_hash: "sha256:97e4490e6bc466788d7686fafdc2cd6e43d9d762287e7b8af76e34ccfda204a6"
 assignee: dev-OJ-g2xx
+closed_at: 2026-10-18T20:30:00Z
+close_reason: "Independent PM approved commit 38bd79c4f449f42d64a171793fe8cf7572530eb2; all five ACs verified, manifest/test/scope checks passed, and only the four documented owner-gated submission blockers remain."
 ---
 
 ## Description
@@ -226,6 +228,7 @@ status: delivered
 - 2026-10-18T20:09:20Z claimed by dev-OJ-g2xx
 - 2026-10-18T20:22:09Z status: in_progress -> in_progress
 - 2026-10-18T20:22:43Z status: in_progress -> in_progress
+- 2026-10-18T20:30:00Z status: in_progress -> closed
 
 ## Links
 - Parent: [[OJ-fglb]]
