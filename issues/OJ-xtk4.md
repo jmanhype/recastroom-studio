@@ -1,16 +1,17 @@
 ---
 id: OJ-xtk4
 title: "Preserve paired-review aspect ratio"
-status: open
+status: in_progress
 priority: 1
 type: bug
 labels: [bug, media, local, dogfood]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
-updated_at: 2026-10-18T03:50:45Z
-content_hash: "sha256:0ab80f6676f4c8359c4fc7ba5e363968b6402ca64d6ffd870b553b0520cdf68d"
+updated_at: 2026-10-18T03:51:25Z
+content_hash: "sha256:4f5b5f54ee73a7fca87bace6e8e13b9532186f076cd26a8f22b0228703e0bbbd"
 blocks: [OJ-inuo]
+assignee: dev-OJ-xtk4
 ---
 
 ## Description
@@ -83,6 +84,8 @@ status: new
 
 ## History
 - 2026-10-18T03:50:46Z dep_added: blocks OJ-inuo
+- 2026-10-18T03:51:25Z status: open -> in_progress
+- 2026-10-18T03:51:25Z claimed by dev-OJ-xtk4
 
 ## Links
 - Parent: [[OJ-a7l6]]
