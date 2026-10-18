@@ -7,8 +7,8 @@ type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
-updated_at: 2026-10-18T15:42:20Z
-content_hash: "sha256:9a655ebc722ccf1b3a50487280a7813ef64aa4dcd377e41a560f7a57a2a5791a"
+updated_at: 2026-10-18T15:47:09Z
+content_hash: "sha256:a390cb6953ec8502ca49d66e72e2ee4e80f27e1667aa9989b33664319572c385"
 blocks: [OJ-yf2c]
 follows: [OJ-p8rd, OJ-inuo, OJ-xtk4]
 assignee: dev-OJ-c1vo
@@ -302,3 +302,24 @@ status: delivered
 - [x] AC #4: new 15-case readiness suite; existing 48 tests unchanged; full suite passes twice independently.
 - [x] AC #5: parent browser QA without AI, sanitized reports, hashed screenshots/requests/test logs committed.
 
+
+### 2026-10-18T15:47:09Z speed
+## PM Decision
+ACCEPTED [2026-10-18]: Independent evidence-based review meets all five story ACs.
+
+### Independent PM evidence
+- Reviewed story worktree at commit `98de3ff703f584755d38c01cb6bb66fc997f0707` against base `7881cb0762ef53556995f036166bb6a85c95a899`; worktree remained clean. The changed path set is confined to the story-owned app/UI/readiness/test/evidence scope, and `tests/test_backend_readiness.py` is the only test path changed.
+- Independently ran `PYTHONPATH=src <root>/.venv/bin/python -m pytest -q tests/test_backend_readiness.py`: **15 passed, 1 existing Starlette/httpx warning in 5.61s** (no skips/failures). This corroborates the worker focused log and the independently recorded two full-suite 63-pass logs.
+- Verified all 8 records in `docs/evidence/backend-readiness/HASHES.sha256` and all 6 records in `docs/evidence/backend-readiness/browser/SHA256SUMS`: every file `OK`. Independently ran `node --check app/web/studio.js` and the base-to-HEAD `git diff --check`: both exited 0.
+- Read the browser report/receipt and inspected the three hashed screenshots: disconnected prepare leaves Run unavailable; fresh loopback success enables Run while preserving the same job/consent; a final fresh failed check shows `RUN BLOCKED`, preserves prepared files/permissions, and exposes connection retry. Receipt records exactly 3 fixture GETs, 0 fixture generation/upload POSTs, 0 app run POSTs, and no `status.json`.
+- Source review confirms health is additive/read-only, legacy uses bounded no-retry/no-redirect `GET /system_stats` with schema and sanitized failure handling; run independently guards before queued status/background submission; 404/409 and dry-run/SDK semantics remain separate; UI performs a fresh check and distinguishes a proven pre-submit/structured guard from unknown post-submit failures.
+
+### Structural verifier finding
+`pvg verify app/main.py app/web/studio.js src/openjutsu/readiness.py tests/test_backend_readiness.py` genuinely exited FAILED with its sole finding: `tests/test_backend_readiness.py:118 [stub] bare pass statement`. This is explicitly a verifier false positive, not a claimed pass. In `closed_loopback_url` (lines 109-118), the socket is bound only to reserve an ephemeral port, the port is captured, and `server.close()` runs before `yield`; the `finally: pass` owns no open resource and is a redundant no-op. The surrounding offline-refusal test exercises the URL and passed. No test cleanup/edit is authorized for acceptance.
+
+### AC proof
+- [x] AC #1: additive health readiness with safe bounded Comfy protocol checks and truthful dry-run/SDK semantics.
+- [x] AC #2: independent fresh run guard returns 503 before mutation/queueing while preserving 404/409.
+- [x] AC #3: offline Run gating, visible retry/recovery, fresh pre-submit check, and prepared-state preservation.
+- [x] AC #4: focused protocol/API coverage plus two independently recorded full 63-pass runs; only existing warning disclosed.
+- [x] AC #5: hashed sanitized browser evidence proves no-generation disconnected/recovery behavior and states its limits.
