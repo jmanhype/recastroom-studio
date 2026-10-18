@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T02:00:32Z
-content_hash: "sha256:cbb537c5cd7aa6b9ce0d195bd7a81a9c88965e6c9dccf34c416141b2a709e115"
+updated_at: 2026-10-18T02:14:21Z
+content_hash: "sha256:54e7fc1b79c964811be3371a10fa17be016dd87ff7b061d6c5327e2d59053faf"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -98,6 +98,8 @@ status: new
 
 
 ## Notes
+Routing recovery: GLM native worker stopped after repeated provider status502 stream failures; git status in story worktree clean and branch still7ab3b8c. Router activity confirmed no active old request before replacement. Fresh worker qwen_frontend_4rht routed exactly custom/Qwen-Ambassador/Qwen3.8-Max (not modelscope), same claimed isolated story. Implementation pending; no source changes or tests claimed.
+
 ## nd_contract
 status: in_progress
 
