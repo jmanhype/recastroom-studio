@@ -1,0 +1,56 @@
+---
+id: OJ-a7l6
+title: "Cinematic local Openjutsu studio frontend upgrade"
+status: open
+priority: 1
+type: epic
+labels: [frontend, local]
+created_at: 2026-10-18T01:53:45Z
+created_by: speed
+updated_at: 2026-10-18T01:53:45Z
+content_hash: "sha256:5161c11817583ddb2d635ff9536dd93ca18acd432a36f99887be0aa768691f0d"
+---
+
+## Description
+## Goal
+Upgrade the existing rights-aware vanilla Openjutsu Studio interface into a cinematic, truthful, local-first production surface while preserving the accepted backend/API and generation boundary.
+
+## USER INTENT
+An authorized creator can clearly upload owned source material and performer references, understand every production stage, compare output to source, download real artifacts, and recover from local errors without fabricated progress or rights shortcuts.
+
+## Scope
+- Static frontend work under `app/web/`.
+- Local dry-run browser verification and deterministic regressions.
+- Preserve backend/API behavior and generation semantics.
+
+## Global Out Of Scope
+- No publication, social posting, remote deployment, push, credentials, GPU/compute spend, or cloud inference.
+- No mandatory React migration or new runtime/package dependency.
+- No backend/API/generation redesign.
+
+## nd_contract
+status: new
+
+### evidence
+- Approved local frontend upgrade at main `7ab3b8c`.
+- Previous contest epic is closed; baseline full suite is 31 passing tests.
+
+### proof
+- [ ] The two dependent child stories are delivered with local browser/screenshot evidence and deterministic test output.
+
+## Acceptance Criteria
+
+
+## Design
+
+
+## Notes
+
+
+## History
+
+
+## Links
+
+
+## Comments
