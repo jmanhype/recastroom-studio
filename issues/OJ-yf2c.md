@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
 updated_at: 2026-10-18T19:35:24Z
-content_hash: "sha256:630a0d4dd045c3126c0b1ebb902812617822b256bee2914d10f3bbaa61106800"
+content_hash: "sha256:cac1b2c586cee933a033c201deed906b96ce378f41d9c733ca1bf5ed5ee88880"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 assignee: dev-OJ-yf2c
@@ -227,6 +227,18 @@ status: new
 ## Notes
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
 2026-10-17 evidence-path policy: AC6 distinguishes private raw CUA/browser evidence from checked-in receipts. Raw local evidence outside Git may preserve absolute paths for provenance; checked-in receipts must sanitize user-specific paths and prevent public leakage while retaining hashes, artifact identity, commands, and reference to the private source.
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-18.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## Implementation Evidence
 Summary: Completed the local browser capstone with real dry-run replay, exact native-engine provenance, completed-surface reduced-motion proof, exhaustive visible-focus evidence, conditional renderer-recovery proof, and deterministic RED-to-GREEN test reconciliation.
 Commit SHA: 76582b4c7287b7b49dcb7fae95c390952d92a98e
