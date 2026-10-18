@@ -4,11 +4,11 @@ title: "Preserve paired-review aspect ratio"
 status: closed
 priority: 1
 type: bug
-labels: [bug, media, local, dogfood, delivered, accepted]
+labels: [bug, media, local, dogfood, accepted]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
-updated_at: 2026-10-18T04:14:18Z
+updated_at: 2026-10-18T04:14:19Z
 content_hash: "sha256:77e6ce6eb2d93a77c82a8b60197cdfb12d09dcbe6a759c17f8e49941ca9d8725"
 assignee: dev-OJ-xtk4
 follows: [OJ-4rht]
