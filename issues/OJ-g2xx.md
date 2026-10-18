@@ -8,8 +8,8 @@ labels: [contest, local, evidence, delivered]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:03Z
 created_by: speed
-updated_at: 2026-10-18T20:22:10Z
-content_hash: "sha256:9d1265c179e3583b8ecf76a4d1af037fe012df3a4f63643c12e974f38f094002"
+updated_at: 2026-10-18T20:22:43Z
+content_hash: "sha256:3b7a82ae6eec11110b1395b6a86ca3ce8b9ac069e4eb394b06429753b0d2f617"
 assignee: dev-OJ-g2xx
 ---
 
@@ -46,7 +46,57 @@ No credentials, cloud/GPU spend, live SDK run, push, publication, X activity, Ty
 
 
 ## Notes
+## Implementation Evidence
 
+PROOF:
+
+### CI/Test Results
+Commands run:
+- `../../../.venv/bin/python -m pytest -q`
+- `git diff --check`
+- `git diff --cached --check`
+- `pvg verify README.md docs/CONTEST.md docs/DEMO_PLAN.md docs/FINAL_SUBMISSION_PACKET.md docs/SUBMISSION_CHECKLIST.md docs/evidence/OJ-g2xx --format=text`
+- `shasum -a 256 -c docs/evidence/OJ-g2xx/SHA256SUMS`
+- changed-evidence PCRE2 private-path/credential scan recorded in `docs/evidence/OJ-g2xx/scan.txt`
+
+Summary: full pytest PASS (`105 passed, 1 warning`; existing Starlette/httpx deprecation); whitespace PASS (both diff checks exit 0, no output); pvg verify PASS; all 10 recorded hashes OK; scan had 0 matches (ripgrep no-match exit 1 expected). Coverage is not applicable to this docs/evidence-only change.
+
+Commit SHA: `38bd79c4f449f42d64a171793fe8cf7572530eb2` on `story/OJ-g2xx`.
+
+### AC Verification
+| AC # | Requirement | Status |
+|---|---|---|
+| 1 | Official current rules distinguished from secondary signals with official citations | PASS |
+| 2 | Current asset inventory with useful paths/hashes | PASS |
+| 3 | One performance-preserving MiniMax H3 recasting studio narrative | PASS |
+| 4 | Only the four real owner blockers listed | PASS |
+| 5 | Local checks pass; no secrets/private paths/private media committed | PASS |
+
+LEARNINGS:
+- Use the verifier's exact plain `## Implementation Evidence`, `Commands run:`, `Summary:`, and `Commit SHA:` labels; decorated variants can carry the same facts but fail structural preflight.
+- Final-gate receipts are commit-bound and must be rerun on the future public candidate.
+- Stage newly created evidence before the final whitespace check so untracked-file trailing spaces are caught.
+
+### OBSERVATIONS
+- [TOOLING] The configured `pvg notes search` vault `Claude` is absent; both relevant searches failed without repository changes.
+- [PROCESS] Prior audited archives recorded 31 tests while current HEAD records 105 passing tests, reinforcing that old gate output is not current-tree certification.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Full pytest: `105 passed, 1 warning`; existing Starlette/httpx deprecation.
+- `git diff --check` and `git diff --cached --check`: exit 0, no output.
+- Private-path/credential scan: 0 matches; expected ripgrep exit 1.
+- Hash receipt: all 10 entries verified OK.
+- Commit: `38bd79c4f449f42d64a171793fe8cf7572530eb2` on `story/OJ-g2xx`.
+
+### proof
+- [x] AC #1: Official current signals are separated from supporting wiki/prior-challenge signals and official URLs are cited.
+- [x] AC #2: Current assets, boundaries, paths, commit/tree IDs, and selected hashes are inventoried.
+- [x] AC #3: The refreshed narrative frames one performance-preserving MiniMax H3 recasting studio.
+- [x] AC #4: The only listed blockers are live Developer Platform proof, public repo/demo, X post, and Typeform.
+- [x] AC #5: Full pytest, whitespace, verification, hash, and private-path/credential checks pass; no credentials or private media were committed.
 
 ## nd_contract
 status: delivered
