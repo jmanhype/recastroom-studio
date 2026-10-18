@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T13:42:26Z
 created_by: speed
 updated_at: 2026-10-18T14:06:13Z
-content_hash: "sha256:4c4f70852c8d12c9e3134d0229bed0f885f3efafd4d8d5d6b9638d161ee5834b"
+content_hash: "sha256:20af07dad1af97097eeadec9a8aa77c7bae5dc268af1eda839f5c2e8511ef49f"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-p8rd
 follows: [OJ-inuo, OJ-xtk4]
@@ -25,6 +25,16 @@ Observed during OJ-yf2c CUA on source 2b22504: real dry_run retry GET status ret
 
 
 ## Notes
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-18.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
 
 
 ## History
