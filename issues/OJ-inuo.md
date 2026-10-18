@@ -8,8 +8,8 @@ labels: [bug, media, local, dogfood]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
-updated_at: 2026-10-18T03:53:01Z
-content_hash: "sha256:d7b4813ac39aef6fe2a1a7a8bd00b64a2a14f088118fa5394ee4e2e05a5c90d1"
+updated_at: 2026-10-18T03:57:59Z
+content_hash: "sha256:604e9ab26f9c7d94be844a43c45ef0c8d95bd5e4cad998bba440416adeaa064c"
 blocked_by: [OJ-xtk4]
 blocks: [OJ-yf2c]
 ---
@@ -36,8 +36,9 @@ PRODUCES:
 - `docs/evidence/dogfood-repairs/OJ-inuo/` -> exact commands, ffprobe layouts, decoded PCM metrics, output hashes, and limitations
 
 CONSUMES:
-- The aspect-ratio repair story's accepted `make_side_by_side` baseline; this story starts only after that dependency is delivered/accepted.
-- An authorized project-owned original-speech sample (for example a short local derivative of the dogfood source) plus locally generated mono/stereo/5.1 channel fixtures.
+- OJ-xtk4: `src/openjutsu/media.py` -> accepted aspect-preserving `make_side_by_side` baseline
+  source: src/openjutsu/media.py
+  spec: authorized local speech/ffmpeg fixtures are embedded above and must remain private/local
 
 ## Story Acceptance Criteria
 1. For mono, stereo, and 5.1 source fixtures, restored final and paired-review outputs preserve the source audio channel count and channel layout; no path forces `5.1`, downmixes stereo, or invents channels.
@@ -54,6 +55,9 @@ CONSUMES:
 - Commands to run: `PYTHONPATH=src .venv/bin/python -m pytest tests/test_media.py -q`, then `PYTHONPATH=src .venv/bin/python -m pytest`.
 - Check in only compact deterministic local fixtures/evidence; no credentials, public URLs, cloud artifacts, GPU work, or external API calls.
 - `git diff --check` must pass.
+
+## MANDATORY SKILLS
+- `tool-systematic-debugging`: establish measured forced-5.1/loudness red regressions before changing audio behavior.
 
 ## OUT OF SCOPE
 - Generation workflow/API redesign, speech-to-video synchronization changes, loudness normalization that changes the source, progress UX, remote services, GPU work, publication, or push.
@@ -115,8 +119,9 @@ PRODUCES:
 - `docs/evidence/dogfood-repairs/PENDING-ID/` -> exact commands, ffprobe layouts, decoded PCM metrics, output hashes, and limitations
 
 CONSUMES:
-- The aspect-ratio repair story's accepted `make_side_by_side` baseline; this story starts only after that dependency is delivered/accepted.
-- An authorized project-owned original-speech sample (for example a short local derivative of the dogfood source) plus locally generated mono/stereo/5.1 channel fixtures.
+- OJ-xtk4: `src/openjutsu/media.py` -> accepted aspect-preserving `make_side_by_side` baseline
+  source: src/openjutsu/media.py
+  spec: authorized local speech/ffmpeg fixtures are embedded above and must remain private/local
 
 ## Story Acceptance Criteria
 1. For mono, stereo, and 5.1 source fixtures, restored final and paired-review outputs preserve the source audio channel count and channel layout; no path forces `5.1`, downmixes stereo, or invents channels.
@@ -133,6 +138,9 @@ CONSUMES:
 - Commands to run: `PYTHONPATH=src .venv/bin/python -m pytest tests/test_media.py -q`, then `PYTHONPATH=src .venv/bin/python -m pytest`.
 - Check in only compact deterministic local fixtures/evidence; no credentials, public URLs, cloud artifacts, GPU work, or external API calls.
 - `git diff --check` must pass.
+
+## MANDATORY SKILLS
+- `tool-systematic-debugging`: establish measured forced-5.1/loudness red regressions before changing audio behavior.
 
 ## OUT OF SCOPE
 - Generation workflow/API redesign, speech-to-video synchronization changes, loudness normalization that changes the source, progress UX, remote services, GPU work, publication, or push.
