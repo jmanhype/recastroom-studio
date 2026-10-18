@@ -9,7 +9,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
 updated_at: 2026-10-18T04:14:19Z
-content_hash: "sha256:77e6ce6eb2d93a77c82a8b60197cdfb12d09dcbe6a759c17f8e49941ca9d8725"
+content_hash: "sha256:8ed818de897530540633055ff09610e7b2a31314be65a1ccb3370273d27fe578"
 assignee: dev-OJ-xtk4
 follows: [OJ-4rht]
 closed_at: 2026-10-18T04:14:18Z
@@ -167,6 +167,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-17.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Decision
 ACCEPTED [2026-10-17]: Independently reviewed delivery at commit 415e3d51bf5bfd52f60c73450101bea9b8cb00cc.
 
