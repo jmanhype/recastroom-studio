@@ -1,15 +1,17 @@
 ---
 id: OJ-krar
 title: "Bind SDK assets and preserve submission identity without paid inference"
-status: open
+status: in_progress
 priority: 0
 type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:04:00Z
-content_hash: "sha256:73e05b673e2950bd44a901c1eab8ad45fa20ac566838e91887f115598f01cb0a"
+updated_at: 2026-10-18T16:06:50Z
+content_hash: "sha256:c8371a2edb98adfa04bc67a7680018db58207f8ae4f9a1bf3c392a80ba1d3616"
 blocks: [OJ-yf2c]
+assignee: dev-OJ-krar
+follows: [OJ-c1vo]
 ---
 
 ## Description
@@ -42,9 +44,13 @@ status: new
 
 ## History
 - 2026-10-18T16:04:00Z dep_added: blocks OJ-yf2c
+- 2026-10-18T16:06:50Z status: open -> in_progress
+- 2026-10-18T16:06:50Z auto-follows: linked to predecessor OJ-c1vo
+- 2026-10-18T16:06:50Z claimed by dev-OJ-krar
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Blocks: [[OJ-yf2c]]
+- Follows: [[OJ-c1vo]]
 
 ## Comments
