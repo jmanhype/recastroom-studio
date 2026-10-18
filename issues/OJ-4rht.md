@@ -4,7 +4,7 @@ title: "Cinematic guided studio frontend"
 status: in_progress
 priority: 1
 type: task
-labels: [walking-skeleton, skeleton, frontend, external-integration]
+labels: [walking-skeleton, skeleton, frontend, external-integration, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
