@@ -9,7 +9,8 @@ parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
 updated_at: 2026-10-18T03:50:45Z
-content_hash: "sha256:aed87ce882b648eaf4f01869f15a93ca939cd03c3001249fae9b564ad7897e09"
+content_hash: "sha256:0ab80f6676f4c8359c4fc7ba5e363968b6402ca64d6ffd870b553b0520cdf68d"
+blocks: [OJ-inuo]
 ---
 
 ## Description
@@ -81,9 +82,10 @@ status: new
 
 
 ## History
-
+- 2026-10-18T03:50:46Z dep_added: blocks OJ-inuo
 
 ## Links
 - Parent: [[OJ-a7l6]]
+- Blocks: [[OJ-inuo]]
 
 ## Comments
