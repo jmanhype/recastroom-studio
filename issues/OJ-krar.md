@@ -10,7 +10,7 @@ created_by: speed
 updated_at: 2026-10-18T16:35:30Z
 content_hash: "sha256:d370fd9a69b8dc711354ad69f7cb40a76c93b3a07c8a217069b7e847c348f441"
 follows: [OJ-c1vo, OJ-p8rd, OJ-inuo, OJ-xtk4, OJ-4rht]
-labels: [delivered]
+labels: [delivered, accepted]
 closed_at: 2026-10-18T16:35:30Z
 close_reason: "Accepted: annotation rework closes the sole PM type-spec rejection; behavior, tests, hashes, and workflow remain verified."
 ---
