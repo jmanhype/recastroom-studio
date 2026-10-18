@@ -7,8 +7,8 @@ type: bug
 parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
-updated_at: 2026-10-18T15:47:09Z
-content_hash: "sha256:639b5a5d2610d426643c01b8d03a50df34a5319250caa3a7e4c500a70035c24f"
+updated_at: 2026-10-18T15:50:28Z
+content_hash: "sha256:d147a0575a5c97c4a0b74ce74b97d7aa7d7ed1aaf0057e81aaa52f8b131c61b6"
 follows: [OJ-p8rd, OJ-inuo, OJ-xtk4]
 assignee: dev-OJ-c1vo
 labels: [accepted]
@@ -60,6 +60,16 @@ Research-first checkpoint, 2026-10-18:
 Owner answered the fresh-G4 decision with 'do research on how this should go'. No GPU allocated and no new render. colab status/usage returned no active sessions, 58.65 CU, 0.00/hr, zero assignments. Parent researched official Colab restrictions/lifecycle and Comfy custom API deployments/SDK v2. Research artifact: /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/frontend-evidence/readiness-20261018/RESEARCH.md; SHA256 293852cd5f754530142f1670579023cdcf2ce171af980f05d01dccdc4c95abaf.
 Recommended next architectural evaluation: versioned exact-workflow Comfy API deployment, min0/max1, durable asset uploads/provider-job recovery/result storage, subject to provider policy, hardware compatibility and cost approval. Colab FAQ includes a creating-deepfakes restriction for all managed runtimes; no consensual-recasting exception was established. Do not automatically start a Colab recasting runtime from this story.
 Worker /root/renderer_ready_c1vo was stopped at the research-first boundary. Story checkout verified clean at base7881cb0; no implementation edits or deployment. Worker reported baseline48 tests with the existing warning; this checkpoint does not promote that report to implementation proof. Live8893 remains unchanged and still lacks the renderer Run guard. Prior app/video outputs preserved.
+## Live integration evidence
+Accepted exact commit98de3ff now serves preview8893 on epic/OJ-a7l6. pvg story merge failed on absent origin in this local-only repo. A fail-closed script independently required accepted+closed, clean preview, exact base/reviewed SHAs and ancestry before git merge --ff-only; no stale remote state or push. main remains untouched. Live GET health is ok=true (local app), renderer_ready=false/code renderer_unreachable. Browser reload visibly shows disconnected/retry. Existing final and comparison video hashes match before/after. No GPU, deployment or plan purchase. Receipt: work/frontend-evidence/readiness-20261018/LIVE-VERIFICATION.json outside repo; reviewed implementation and browser QA remain committed in docs/evidence/backend-readiness.
+
+## nd_contract
+status: accepted
+### evidence
+- PM accepted commit98de3ff with focused15 tests and hashes; local preview now uses that exact commit.
+- Parent live verification and media hashes recorded; current renderer is deliberately still offline.
+### proof
+- [x] AC1-5 verified for bounded offline readiness story; no production migration or full capstone completion claimed.
 
 
 ## nd_contract
