@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:37:48Z
-content_hash: "sha256:782e142b3ece6898e4d689b34eb609012ce126a677ca84a553a83056d510e0e0"
+updated_at: 2026-10-18T16:39:06Z
+content_hash: "sha256:294e67893855e5b22c0f5c161213494a946cf56d86e5c0935216b00e21998b5b"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -61,6 +61,23 @@ Fail-closed local candidate delivered with exact current metadata/source evidenc
 | AC4 | Yes: offline no-skip tests and syntax-only CLI receipts. |
 | AC5 | Yes: commands/results/hashes/blockers and SDK-bridge dependency reported. |
 Correction: the final PREDEPLOY.md SHA-256 after removing the temporary-directory pathname is 6d205747c2dfc70d2247fb79634f6023dd4b921228afe3344e6c1be96ec0a825; this supersedes the earlier 404ecb4f8f1040e7b059d373be00b87aa3e6a13b77d6a45387632f2eeb3ffc05 hash. All other artifact hashes are unchanged.
+Final artifact correction: PREDEPLOY.md now lists deploy/comfy/validation.json and records the final 17.85s full-suite duration. Its final SHA-256 is 1d866ccb24c0228c48b3407a6e8bd0b66eae31c2341d5f03cae75bbce954016e; this supersedes all earlier PREDEPLOY hashes. No other artifact changed.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Final PREDEPLOY.md SHA-256: 1d866ccb24c0228c48b3407a6e8bd0b66eae31c2341d5f03cae75bbce954016e.
+- Final full-suite result: 75 passed, 1 pre-existing Starlette/httpx warning, 17.85s.
+- Offline scoped result: 12 passed in 0.04s; comfy validate/push dry-run exit 0 with zero uploads.
+- git diff --check and pvg story verify-delivery were rerun after this correction.
+
+### proof
+[x] AC1: final owned artifact inventory and workflow hash are accurate.
+[x] AC2: exact implicit asset metadata/source evidence is unchanged.
+[x] AC3: fail-closed runtime/dependency analysis is unchanged.
+[x] AC4: offline test and syntax-only CLI boundaries are accurately recorded.
+[x] AC5: final hashes, results, blockers, and pending SDK bridge are reported without readiness claims.
 
 ## nd_contract
 status: delivered
