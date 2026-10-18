@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:41:10Z
-content_hash: "sha256:0b9ef6214b440c917c8a4454f15108e582b47771f089b57ce32e34156fad80eb"
+updated_at: 2026-10-18T16:45:18Z
+content_hash: "sha256:57d93f62bd2843fb1bb8eeb27a7a9f811edca7eba34a5a3bc686bf0e7d31ac6a"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -62,6 +62,26 @@ Fail-closed local candidate delivered with exact current metadata/source evidenc
 | AC5 | Yes: commands/results/hashes/blockers and SDK-bridge dependency reported. |
 Correction: the final PREDEPLOY.md SHA-256 after removing the temporary-directory pathname is 6d205747c2dfc70d2247fb79634f6023dd4b921228afe3344e6c1be96ec0a825; this supersedes the earlier 404ecb4f8f1040e7b059d373be00b87aa3e6a13b77d6a45387632f2eeb3ffc05 hash. All other artifact hashes are unchanged.
 Final artifact correction: PREDEPLOY.md now lists deploy/comfy/validation.json and records the final 17.85s full-suite duration. Its final SHA-256 is 1d866ccb24c0228c48b3407a6e8bd0b66eae31c2341d5f03cae75bbce954016e; this supersedes all earlier PREDEPLOY hashes. No other artifact changed.
+## PM Decision
+ACCEPTED [2026-10-18]: Independent review at commit 70c9c8324dc52083a4ed48e46b26dceeb50a7191 meets all five OJ-tfyt ACs within the unpaid, offline candidate boundary.
+
+### evidence
+- Reviewed exactly one commit over base 98de3ff703f584755d38c01cb6bb66fc997f0707: 6 allowed new files, 1053 insertions, no app/SDK/workflow/media/dependency changes; worktree clean; git diff --check clean.
+- Verified SHA-256: asset-manifest 2fb34f910fca9ad3bb9229ab3883a9b04539d77a457435e0700c096a47e106a0; comfy-build 89a52d508ce9e5bbf2ff52f5540d8b297f76f78982a785858c7c13029cb42342; dependency-matrix 87da3f9341b26c8e3e9ac41ab02d4358ed4c41efdf3433ffd044083285e65e02; validation 485ef1936a6b1d3ff40d72f1876170a4ae4a9aff86dce672228c224e5868d942; PREDEPLOY 1d866ccb24c0228c48b3407a6e8bd0b66eae31c2341d5f03cae75bbce954016e; tests c669f8b7491f38740dbc04ad5cba3cad85f980f93b545f09c987172903c0ef38.
+- Direct workflow hash: 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21 for workflows/openjutsu_h3_lipsync_local.json.
+- Commands rerun from dev worktree with root .venv and PYTHONPATH=src: focused deployment tests -> 12 passed in 0.02s; full suite -> 75 passed, 1 warning in 18.40s. The Starlette/httpx warning is the previously reported OJ-2t3g DISCOVERED_BUG, not a new deployment defect.
+- Independently asserted 13 unique assets with immutable >=40-char revisions, 64-char digests, positive sizes, model destinations; explicit-H3 total 45,687,037,691 bytes and model-weight total 46,610,845,489 bytes; five repository pins and four custom-node refs.
+- Privacy scan found no private account IDs, tokens, credentials, absolute private paths, or account-status material in deployment artifacts/docs. The only pattern matches in the test are deliberate negative fixtures asserting those forbidden literals/values are absent.
+- Fail-closed claims verified: runnable deployment, remote build, model downloads, provider upload, GPU, historical byte identity, runtime import closure, custom-node fetch, and dynamic imports remain false/unknown; no base selected; SDK bridge explicitly pending.
+- PM review used no network/provider service and downloaded no weights.
+
+### proof
+- [x] AC1: reproducible local candidate and 13-entry manifest pin code/assets and preserve the canonical workflow hash without private material.
+- [x] AC2: exact BiRefNet and YuNet/SFace traces, revisions, digests, sizes, destinations, and verified/unknown license boundaries are recorded without pretending historical/runtime closure.
+- [x] AC3: recorded Python/Torch/CUDA mismatch and dependency/source/dynamic-import blockers are explicit; no base selected and no false GPU/import compatibility.
+- [x] AC4: 12 offline no-network/no-skip tests and syntax-only CLI receipts distinguish candidate from runnable deployment and preserve unknown rights.
+- [x] AC5: exact commands, measured results, hashes, SDK-bridge dependency, and remaining blockers are reported without paid/readiness claims.
+
 ## Implementation Evidence
 
 Summary: Coordinator integrated and independently reran the fail-closed deployment candidate.
