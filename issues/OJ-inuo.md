@@ -8,8 +8,8 @@ labels: [bug, media, local, dogfood, accepted]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
-updated_at: 2026-10-18T04:33:20Z
-content_hash: "sha256:58a02290d57a7d9449de921b868a467e212f9467fdd8a5f9e6f50d9210d2805c"
+updated_at: 2026-10-18T04:33:49Z
+content_hash: "sha256:84a3ed4dd236bdb4b49c9d3e779683c2943ae737804dd9147a469881988066c2"
 was_blocked_by: [OJ-xtk4]
 assignee: dev-OJ-inuo
 follows: [OJ-xtk4, OJ-4rht]
@@ -174,7 +174,26 @@ status: new
 
 
 ## Notes
+## PM Decision
+ACCEPTED [2026-10-18]: Independently reviewed direct diff, receipts, artifacts, hashes, decoded PCM, probes, and real local re-export against all six ACs.
 
+## nd_contract
+status: accepted
+
+### evidence
+- Reviewed HEAD 5304b7a04089fce0224670ab38d5acb2e1abbe23 against base cda27bc; implementation 01c234a1fec42dcd64387d10215b997bcd0c993a removes exactly the two `-af aformat=channel_layouts=5.1` pairs. Test/fixture blobs are unchanged from implementation through HEAD, and source/test files have no later changes.
+- RED transcript: 2 failed (mono and stereo expanded to 6), 1 passed (5.1), 4.23s. GREEN transcript: 3 passed, 3.08s. Full transcript: 41 passed, 1 disclosed preexisting Starlette/httpx warning, 23.34s. No redundant PM pytest rerun was needed.
+- Independent ffprobe/decode/hash verification of committed artifacts: mono/1, stereo/2, and 5.1/6 are preserved in final and comparison; all use 48 kHz and 96,256 decoded samples/channel; all metric-file hashes match. Worst absolute RMS delta is 0.046214032 dB (5.1); lowest zero-lag correlation is 0.997914923 (5.1); all peaks remain nonzero.
+- Real local re-export receipt independently checked: new_inference=false and generation_spend=0; final SHA f69e776234249ee45dfbea199aba49adbd8d9c7c5a261ae7fd0d63329a9130c9 and comparison SHA 062b8f59140981e0eefcf4be69958fc77fcdd5249fc65e0fe7594d4e107fb2a5; both hashes/files match. Both are stereo/48 kHz with 282,624 samples/channel, RMS delta 0.000655451 dB, correlation 0.999999031. Geometry is final 768x512 and comparison 1536x512, 141 frames/24 fps; original artifact hashes remain unchanged.
+- Static checks found no stubs in changed source/test and no remaining hardcoded `channel_layouts=5.1` outside historical evidence. `git diff --check cda27bc..HEAD` passed. REPORT.md explicitly discloses existing warning/static findings/fixture failure and does not claim statement/branch coverage or identity/phoneme-sync QC.
+
+### proof
+- [x] AC #1: Mono/1, stereo/2, and 5.1/6 source layouts and counts are preserved by both export paths.
+- [x] AC #2: Committed artifacts independently decode with exact sample counts, nonzero peaks, per-channel RMS, and zero-lag correlations.
+- [x] AC #3: Worst measured active-channel RMS delta is 0.046214032 dB <= 1.0 dB and no active channel is silent.
+- [x] AC #4: Definitive RED is 2 failed/1 passed; unchanged tests are GREEN 3 passed.
+- [x] AC #5: Only forced audio conversion changed; accepted video geometry is unchanged, with no new dependency, API/generation redesign, GPU work, or spend.
+- [x] AC #6: Focused/full logs, real re-export receipt, metrics, probes, artifact hashes, and diff/static evidence are independently verified on disk.
 
 ## nd_contract
 status: accepted
