@@ -9,12 +9,12 @@ parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
 updated_at: 2026-10-18T04:15:47Z
-content_hash: "sha256:8c2e04addb283ffb7c50d0ec44aad15dca7d43ddac1d9055871beabcf1dc1bb7"
+content_hash: "sha256:58e10784f6e900a332331e7aac5a36b537aa3c178617ab3694baba3cf9007dd6"
 assignee: dev-OJ-xtk4
 follows: [OJ-4rht]
 closed_at: 2026-10-18T04:14:18Z
 close_reason: "Accepted: independent baseline RED replay, focused GREEN rerun, ffprobe/decoded measurements, byte-identical regeneration, hash verification, and scope review all support the aspect-ratio repair."
-led_to: [OJ-inuo, OJ-yf2c, OJ-p8rd]
+led_to: [OJ-inuo, OJ-yf2c, OJ-p8rd, OJ-c1vo]
 ---
 
 ## Description
@@ -326,7 +326,7 @@ status: delivered
 ## Links
 - Parent: [[OJ-a7l6]]
 - Follows: [[OJ-4rht]]
-- Led to: [[OJ-inuo]], [[OJ-yf2c]], [[OJ-p8rd]]
+- Led to: [[OJ-inuo]], [[OJ-yf2c]], [[OJ-p8rd]], [[OJ-c1vo]]
 
 ## Comments
 
