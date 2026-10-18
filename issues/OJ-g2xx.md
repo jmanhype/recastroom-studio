@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-18T20:09:03Z
 created_by: speed
 updated_at: 2026-10-18T20:22:10Z
-content_hash: "sha256:3972941459da5502fb906ae742b774613167180c4af3ad0589058082237bfc7d"
+content_hash: "sha256:9d1265c179e3583b8ecf76a4d1af037fe012df3a4f63643c12e974f38f094002"
 assignee: dev-OJ-g2xx
 ---
 
@@ -46,6 +46,18 @@ No credentials, cloud/GPU spend, live SDK run, push, publication, X activity, Ty
 
 
 ## Notes
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-18.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## Implementation Evidence (DELIVERED)
 
 PROOF:
