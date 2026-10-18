@@ -3,12 +3,12 @@ id: OJ-yf2c
 title: "E2e: prove the cinematic local studio upgrade"
 status: open
 priority: 1
-type: feature
-labels: [capstone, e2e, frontend]
+type: task
+labels: [capstone, e2e, frontend, external-integration]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T01:53:57Z
+updated_at: 2026-10-18T01:55:12Z
 content_hash: "sha256:aa4bfe968f9ed50efaa87c195dde522546887a0de6069690c21aacfae1a58bc3"
 blocked_by: [OJ-4rht]
 ---
