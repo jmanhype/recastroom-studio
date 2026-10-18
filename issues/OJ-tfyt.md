@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
 updated_at: 2026-10-18T16:34:08Z
-content_hash: "sha256:9c3519ae5dd6e7e962d4f45d255433e2020d08d41d10f7cd578112ac23baef7c"
+content_hash: "sha256:3ec333e639559225c3db4d65facbc27e300ec21a156713a04d30a3cbfbbf796b"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -41,7 +41,25 @@ status: new
 
 
 ## Notes
+## nd_contract
+status: delivered
 
+### evidence
+- Worktree base 98de3ff; scoped files only: deploy/comfy/asset-manifest.json, comfy-build.yaml, dependency-matrix.json, validation.json; docs/deployment/PREDEPLOY.md; new tests/test_deployment_manifest.py. git diff --check clean; no commit/merge/push.
+- Artifact SHA-256: asset-manifest 2fb34f910fca9ad3bb9229ab3883a9b04539d77a457435e0700c096a47e106a0; comfy-build 89a52d508ce9e5bbf2ff52f5540d8b297f76f78982a785858c7c13029cb42342; dependency-matrix 87da3f9341b26c8e3e9ac41ab02d4358ed4c41efdf3433ffd044083285e65e02; validation 485ef1936a6b1d3ff40d72f1876170a4ae4a9aff86dce672228c224e5868d942; PREDEPLOY 404ecb4f8f1040e7b059d373be00b87aa3e6a13b77d6a45387632f2eeb3ffc05; test c669f8b7491f38740dbc04ad5cba3cad85f980f93b545f09c987172903c0ef38.
+- Canonical workflow SHA-256 remains 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21.
+- PYTHONPATH=src work/openjutsu-studio/.venv/bin/python -m pytest -q tests/test_deployment_manifest.py: 12 passed in 0.04s. Full suite: 75 passed, 1 pre-existing Starlette/httpx warning, 17.71s.
+- Offline comfy-cli 1.22.0 via uvx --offline --python 3.12 from /private/tmp: build validate exit 0 ok=true remote=false 13 model entries folder_case_checked=false; build push --dry-run exit 0 created=false upload_count=0 upload_bytes=0 uploaded=0 deduped=0 folder_case_checked=false. Receipt: deploy/comfy/validation.json.
+- Current public metadata closes evidence paths for BiRefNet-general 77277264c0e8c74149d3ff2fade4fd8176965b7108f3c5fc3b8c9c811edb4519/884878856 bytes plus three support files at 1038lab/BiRefNet revision 4d000788a9698c7f8d67c8c6ce2b40c768f5b909; YuNet 8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4/232589 and SFace 0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79/38696353 at opencv/opencv_zoo commit 47534e27c9851bb1128ccc0102f1145e27f23f98. Total current model metadata: 10 weights/46610845489 bytes.
+- Exact source traces: RMBG py/AILab_BiRefNet.py:33-45,278-292,308-348; exact BFS parent 7b57eacb7b755ac6d7d7358e0a62e4096d83fce7 plus commit patch SHA256 42202e85dd9dba1c59100171bebb80f7c86518660a328a68e65a359977e48e83 gives bfs_shot_loop.py:728-751,759-786 and SHA256 663541cd85225f6fc4f14b61fb00f4672a8e9330687ebcb3e170988c8c80824d. No weights downloaded.
+- Fail-closed blockers are explicit: no exact base image for Python3.13.15/Torch2.11.0+cu130; no selected base; no dependency lock; groundingdino-py no-wheel under no-build preview; dynamic imports; graph schema drift; recorded BFS bare SHA no longer fetchable although exact patch is public; RMBG/BiRefNet and opencv_face staging and licenses unresolved; SDK asset bridge pending parallel story. Candidate/runnable distinction and no legal conclusion are asserted.
+
+### proof
+- [x] AC1: reproducible local candidate and machine-readable 13-asset manifest preserve all five commits, immutable current revisions/digests/sizes, workflow hash, and contain no private account IDs/tokens/private local paths.
+- [x] AC2: exact pinned source traces and current metadata for BiRefNet-general support/config plus YuNet/SFace; destinations come from code, historical identity and runtime closure remain explicitly false.
+- [x] AC3: recorded/catalog runtime matrix, source-build and dynamic-import blockers documented; no base selected and compatibility fails closed; no installs.
+- [x] AC4: 12 offline no-network/no-skip structural/hash/model-closure tests; syntax-only CLI validate/push dry-run receipts distinguish candidate from runnable deployment and preserve unknown rights.
+- [x] AC5: exact commands, results, hashes, source citations, SDK-bridge dependency, and remaining blockers recorded here and in PREDEPLOY.md; parent review/commit/PM acceptance remains outside worker.
 
 ## nd_contract
 status: delivered
