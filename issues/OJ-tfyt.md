@@ -7,8 +7,8 @@ type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:34:31Z
-content_hash: "sha256:11e8de12dd43be476ad6f5f6c3d6d7e9879b65753819e09b938216bf26b7566b"
+updated_at: 2026-10-18T16:34:39Z
+content_hash: "sha256:15558ea904888eb37f957ab5c990993a6a9c5588824347cd32d3b66d1f935818"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-tfyt
 follows: [OJ-c1vo, OJ-p8rd]
@@ -41,6 +41,27 @@ status: new
 
 
 ## Notes
+CI/Test Results:
+- 12 passed in 0.04s (tests/test_deployment_manifest.py).
+- 75 passed, 1 pre-existing warning, 17.71s (full suite).
+- Offline comfy validate exit 0; push --dry-run exit 0 with zero uploads.
+
+Summary:
+Fail-closed local candidate delivered with exact current metadata/source evidence and offline tests; runnable deployment, historical byte identity, several licenses, runtime imports, and SDK asset binding remain unresolved.
+
+## nd_contract
+status: delivered
+
+### evidence
+- CI/Test Results and Summary above; detailed evidence and hashes above.
+
+### proof
+- [x] AC #1: local candidate and manifest pin exact code/assets while preserving workflow hash.
+- [x] AC #2: exact BiRefNet and YuNet/SFace paths/revisions/digests/sizes/licenses-or-unknowns traced from pinned source.
+- [x] AC #3: runtime matrix and dependency/source-build/dynamic-import blockers documented; no false compatibility.
+- [x] AC #4: offline no-network/no-skip tests and syntax-only CLI receipts distinguish candidate from runnable deployment.
+- [x] AC #5: commands, results, hashes, SDK-bridge dependency, and blockers reported without deployment/readiness claims.
+
 ## Implementation Evidence
 - Commit SHA: 98de3ff (base only; worker made no commit).
 - Scoped artifacts: deploy/comfy/{asset-manifest.json,comfy-build.yaml,dependency-matrix.json,validation.json}, docs/deployment/PREDEPLOY.md, tests/test_deployment_manifest.py.
