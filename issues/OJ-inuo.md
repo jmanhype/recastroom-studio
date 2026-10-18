@@ -8,8 +8,8 @@ labels: [bug, media, local, dogfood, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
-updated_at: 2026-10-18T04:28:50Z
-content_hash: "sha256:1f6c3213bffcd3bebe8458efcf977620f6d900b39ad58b51e0dbf9f410c37aa7"
+updated_at: 2026-10-18T04:29:00Z
+content_hash: "sha256:e7b4823f0d176818add8f1d417f6bb756d61cab198b61bb4e4a4b421e427bc93"
 blocks: [OJ-yf2c]
 was_blocked_by: [OJ-xtk4]
 assignee: dev-OJ-inuo
@@ -173,6 +173,53 @@ status: new
 
 
 ## Notes
+
+## Implementation Evidence
+
+Summary: Remove forced 5.1 expansion while preserving source speech layout and loudness.
+Commit SHA: 5304b7a04089fce0224670ab38d5acb2e1abbe23; implementation 01c234a1fec42dcd64387d10215b997bcd0c993a.
+
+### CI/Test Results
+Commands run:
+- PYTHONPATH=src root-venv/bin/python -m pytest tests/test_media_audio.py -q
+- PYTHONPATH=src root-venv/bin/python -m pytest -q
+- pvg verify src/openjutsu/media.py tests/test_media_audio.py --include-tests
+- git diff --check cda27bc..HEAD
+
+Results: RED2failed1passed4.23s; GREEN3passed3.08s; full41passed1existingwarning23.34s.
+PROOF: docs/evidence/dogfood-repairs/OJ-inuo/REPORT.md, transcripts, artifact metrics/probes/hashes.
+LEARNINGS: test layout and per-channel loudness, not only waveform correlation.
+OBSERVATIONS: preexisting warning/static findings and initial fixture failure disclosed in REPORT.md.
+
+### AC Verification
+| AC # | Evidence | Status |
+|---|---|---|
+| AC #1 | Mono/stereo/5.1 source and output probes; no forced expansion | PASS |
+| AC #2 | Per-channel sample count, peaks, RMS and zero-lag correlation in metrics.json | PASS |
+| AC #3 | All channels within <=1dB predeclared RMS limit | PASS |
+| AC #4 | Definitive RED2failed1passed; GREEN3passed unchanged tests | PASS |
+| AC #5 | Four-line audio-only deletion, accepted geometry retained | PASS |
+| AC #6 | Focused/full suites, diff scan, artifacts, probes, SHA256SUMS | PASS |
+
+## nd_contract
+status: delivered
+
+### evidence
+- Summary/implementation: four-line deletion removes forced 5.1 conversion in both audio export paths; source commit 01c234a1fec42dcd64387d10215b997bcd0c993a; final commit SHA 5304b7a04089fce0224670ab38d5acb2e1abbe23.
+- Commands run: PYTHONPATH=src root-venv/bin/python -m pytest tests/test_media_audio.py -q (RED 2 failed,1 passed in4.23s; GREEN3 passed in3.08s); same command full suite41 passed,1 preexisting warning in23.34s.
+- CI/test results: local only; no remote CI claimed. git diff --check passed; pvg verify src/openjutsu/media.py tests/test_media_audio.py --include-tests passed2files0issues.
+- PROOF: docs/evidence/dogfood-repairs/OJ-inuo/REPORT.md, full/red/green logs, source-probes.json, artifact metrics and SHA256SUMS.json. Coverage: 2/2 changed functions exercised; statement coverage not measured.
+- Existing real render re-export: stereo/48k preserved, 282624samples/channel, RMS delta -0.00065545dB, correlation0.99999903; final SHA f69e776234249ee45dfbea199aba49adbd8d9c7c5a261ae7fd0d63329a9130c9, comparison062b8f59140981e0eefcf4be69958fc77fcdd5249fc65e0fe7594d4e107fb2a5. Original hashes unchanged. No GPU generation or publication.
+- LEARNINGS: correlation alone misses attenuation; compare layout and per-channel RMS; band-limit LFE fixtures. OBSERVATIONS: existing Starlette warning and 3 unrelated preexisting unscoped static-scan findings retained; initial fixture error and prior root ENOSPC failure explicitly recorded.
+
+### proof
+- [x] AC #1: Mono/stereo/5.1 channel counts and layouts preserved in final and paired outputs.
+- [x] AC #2: Real speech decoded; sample counts, peaks, per-channel RMS and zero-lag correlation measured.
+- [x] AC #3: Every active channel satisfies predeclared <=1dB loudness bound and remains nonzero.
+- [x] AC #4: Forced5.1 RED mono/stereo failures and unchanged5.1 baseline pass; all3 GREEN.
+- [x] AC #5: Accepted video geometry unchanged; local only, no new dependency/API/generation work.
+- [x] AC #6: Focused/full suites and diff checks pass; files/probes/metrics/hashes recorded on disk.
+
 
 ## Implementation Evidence
 
