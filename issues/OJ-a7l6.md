@@ -8,7 +8,7 @@ labels: [frontend, local, accepted]
 created_at: 2026-10-18T01:53:45Z
 created_by: speed
 updated_at: 2026-10-18T19:48:26Z
-content_hash: "sha256:34114ad9bfc031dea5206906bdcdf87bc64f6b2bb9c3bf27682a08f51a0d7274"
+content_hash: "sha256:4cf54d09180d3289faecfda3030f12037d5a8bf8404a616c0c4896bf8786b3c8"
 closed_at: 2026-10-18T19:48:25Z
 close_reason: "All child stories accepted; final capstone PM-approved and merged; merged epic suite 105 passed with one disclosed warning."
 ---
@@ -99,6 +99,18 @@ status: new
 REVIEW_RESULT: APPROVED
 Independent backlog Anchor frontend_backlog_anchor approved current two-story scope after native nd recovery. pvg lint: 0 errors, 2 nonblocking credential-provisioning reviews because all API use is local dry_run with no keys. RTM extracted 0 requirements; not coverage proof. Developer OJ-4rht gate opened. Local commits/merges only; no remote configured.
 Owner-approved bounded scope extension: repair false-positive legacy renderer readiness in OJ-c1vo; preserve SDK/generation/media semantics and design. Parent checks existing Colab connection separately; no new render is authorized by this repair story.
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-18.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## Implementation Evidence
 Summary: Completed and integrated the cinematic local Openjutsu studio epic after independent PM acceptance of the final browser capstone.
 Commit SHA: 0e8e3fb8808e9518c2ece8224c900378747924cc
