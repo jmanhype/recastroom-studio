@@ -8,8 +8,8 @@ labels: [bug, media, local, dogfood, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:45Z
 created_by: speed
-updated_at: 2026-10-18T04:09:45Z
-content_hash: "sha256:3eb46fbf34cd452925d9e7dea67d88c5bb4c9030266fb17a9ace1e146a25a31b"
+updated_at: 2026-10-18T04:14:18Z
+content_hash: "sha256:82ce2bbe7328d5ce84effa4f1224903df2827db5903e40de4eba0c876eac695e"
 blocks: [OJ-inuo, OJ-yf2c]
 assignee: dev-OJ-xtk4
 follows: [OJ-4rht]
@@ -166,6 +166,32 @@ status: new
 
 
 ## Notes
+## PM Decision
+ACCEPTED [2026-10-17]: Independently reviewed delivery at commit 415e3d51bf5bfd52f60c73450101bea9b8cb00cc.
+
+Evidence checked:
+- Delivery preflight passed 9/9.
+- Source diff is confined to aspect-preserving `make_side_by_side` filter/validation; audio mapping/encoding options remain unchanged.
+- Current focused rerun: 7 passed in 1.66s; `pvg verify` passed 3 files with 0 issues; Python compile passed.
+- Baseline replay using base 7ab3b8c with the delivered tests produced 6 failed / 1 passed, including the four recorded geometry RED cases (the committed RED artifact records the intermediate 4 failed / 1 passed snapshot before the strengthening tests were added).
+- All five committed paired MP4s independently ffprobed as 1920x384 video, SAR 1:1, DAR 5:1, with AAC audio.
+- Independent temporary regeneration matched `measurements.json` exactly and all five MP4s byte-for-byte; actual SHA-256 values matched `SHA256SUMS.json`.
+- Committed full-suite evidence records 37 passed, 1 warning; the pre-existing Starlette warning is disclosed as a DISCOVERED_BUG.
+- Required clean-worktree `git diff --check` passed; worktree remained clean during review.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Delivery preflight 9/9; focused rerun 7 passed; independent baseline RED replay 6 failed / 1 passed; regenerated media/hashes/measurements all match committed evidence at 415e3d5.
+
+### proof
+- [x] AC #1: DAR-based scale-fit produces centered even 960x384 tiles, square output SAR, and measured black padding without crop/stretch.
+- [x] AC #2: 3:2, portrait 9:16, 16:9, mixed-aspect, and non-square-SAR cases are covered.
+- [x] AC #3: ffprobe geometry and decoded RGB checks detect baseline stretch and pass after repair.
+- [x] AC #4: Only `make_side_by_side` behavior changed; audio options, local export boundary, dependencies, GPU/API/publication/push scope are preserved.
+- [x] AC #5: Focused/full test artifacts, coverage, diff check, decoded measurements, hashes, paths, and exact commit SHA are recorded and independently corroborated.
+
 ## Implementation Evidence
 
 Commands run:
