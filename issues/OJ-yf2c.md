@@ -8,8 +8,8 @@ labels: [capstone, e2e, frontend, external-integration, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T19:35:24Z
-content_hash: "sha256:cac1b2c586cee933a033c201deed906b96ce378f41d9c733ca1bf5ed5ee88880"
+updated_at: 2026-10-18T19:35:57Z
+content_hash: "sha256:b128eacc81f03a6e5083021a0ee76b5947c2c73aba7215b4b6bcb5e0cdc8e54a"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 assignee: dev-OJ-yf2c
@@ -384,3 +384,14 @@ OBSERVATIONS: Next evidence work must resolve AC3/AC6 without reopening approved
 
 ### 2026-10-18T14:18:29Z speed
 loop: reset orphaned in_progress to open (no developer worktree found; prior session presumed dead)
+
+### 2026-10-18T19:35:57Z speed
+## nd_contract
+status: delivered
+
+### evidence
+- Authoritative delivery evidence is the full `## Implementation Evidence` block for commit `76582b4c7287b7b49dcb7fae95c390952d92a98e` in Notes.
+- `docs/evidence/frontend-upgrade/final/FINAL_REPORT.md` and `SHA256SUMS` record the browser, test, hash, and cleanup proof.
+
+### proof
+- [x] AC #1-7 verified in the authoritative Implementation Evidence block.
