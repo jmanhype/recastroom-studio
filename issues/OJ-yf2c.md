@@ -4,11 +4,11 @@ title: "E2e: prove the cinematic local studio upgrade"
 status: closed
 priority: 1
 type: task
-labels: [capstone, e2e, frontend, external-integration, delivered]
+labels: [capstone, e2e, frontend, external-integration, delivered, accepted]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T19:46:49Z
+updated_at: 2026-10-18T19:46:50Z
 content_hash: "sha256:0d4580e38be16736ac3398b60b95897072e7f011902bc5c4c3b487e677e95652"
 was_blocked_by: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
 follows: [OJ-4rht, OJ-xtk4, OJ-inuo, OJ-p8rd, OJ-c1vo, OJ-krar, OJ-tfyt]
