@@ -1,15 +1,17 @@
 ---
 id: OJ-tfyt
 title: "Package the recorded H3 environment without paid deployment"
-status: open
+status: in_progress
 priority: 0
 type: feature
 parent: OJ-a7l6
 created_at: 2026-10-18T16:04:00Z
 created_by: speed
-updated_at: 2026-10-18T16:04:00Z
-content_hash: "sha256:686562742e4b165b1e4f6b5f180d018f8ef0d16f966b67a38ac348fe36b18ba3"
+updated_at: 2026-10-18T16:06:53Z
+content_hash: "sha256:62780cfddd031937f4bf901f4c179e45f3b531b1b1d9ab39565193530f35b3c6"
 blocks: [OJ-yf2c]
+assignee: dev-OJ-tfyt
+follows: [OJ-c1vo]
 ---
 
 ## Description
@@ -42,9 +44,13 @@ status: new
 
 ## History
 - 2026-10-18T16:04:00Z dep_added: blocks OJ-yf2c
+- 2026-10-18T16:06:53Z status: open -> in_progress
+- 2026-10-18T16:06:53Z auto-follows: linked to predecessor OJ-c1vo
+- 2026-10-18T16:06:53Z claimed by dev-OJ-tfyt
 
 ## Links
 - Parent: [[OJ-a7l6]]
 - Blocks: [[OJ-yf2c]]
+- Follows: [[OJ-c1vo]]
 
 ## Comments

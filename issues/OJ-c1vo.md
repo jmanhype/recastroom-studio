@@ -8,13 +8,13 @@ parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
 updated_at: 2026-10-18T15:50:28Z
-content_hash: "sha256:abb31aab0a9e2ac14ff39fbc110a27b13f1f2370c4d48f8538012f5a5e670785"
+content_hash: "sha256:4577b44d18b68b89d6cd262fb3e13f25fb74db640fc912754629efda7d6d2cab"
 follows: [OJ-p8rd, OJ-inuo, OJ-xtk4]
 assignee: dev-OJ-c1vo
 labels: [accepted]
 closed_at: 2026-10-18T15:47:09Z
 close_reason: "Accepted: independently verified focused tests, hashes, browser receipts, source behavior, and all five ACs; sole pvg bare-pass finding is a documented false positive."
-led_to: [OJ-krar]
+led_to: [OJ-krar, OJ-tfyt]
 ---
 
 ## Description
@@ -232,7 +232,7 @@ status: new
 ## Links
 - Parent: [[OJ-a7l6]]
 - Follows: [[OJ-p8rd]], [[OJ-inuo]], [[OJ-xtk4]]
-- Led to: [[OJ-krar]]
+- Led to: [[OJ-krar]], [[OJ-tfyt]]
 
 ## Comments
 
