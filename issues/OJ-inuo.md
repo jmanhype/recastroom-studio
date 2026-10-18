@@ -4,7 +4,7 @@ title: "Preserve restored source audio layout and loudness"
 status: closed
 priority: 1
 type: bug
-labels: [bug, media, local, dogfood, delivered]
+labels: [bug, media, local, dogfood, delivered, accepted]
 parent: OJ-a7l6
 created_at: 2026-10-18T03:50:46Z
 created_by: speed
