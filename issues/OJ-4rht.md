@@ -8,8 +8,8 @@ labels: [walking-skeleton, skeleton, frontend, external-integration, delivered]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T04:00:26Z
-content_hash: "sha256:ba3cc946929c8ebd152b4473335a194e02b2043ed39f9d5c2e5ec96816860d2c"
+updated_at: 2026-10-18T04:00:43Z
+content_hash: "sha256:650aba4ced1d33f820461072be56dfcbf16a3359325745a37d5e2274506b62f1"
 blocks: [OJ-yf2c]
 assignee: dev-OJ-4rht
 ---
@@ -652,3 +652,33 @@ status: rejected
 - [ ] AC #1: Browser focus/traversal/reduced-motion verification evidence incomplete.
 - [ ] AC #2-8: Exact eight-item authoritative delivery proof and boundary reconciliation required.
 
+
+### 2026-10-18T04:00:43Z speed
+## nd_contract
+status: delivered
+
+### evidence
+- Rework base `63b9c005e64fcfa0bdba04ee798acaedd79450e7`; portrait fix `1649a937fd8685076abf522158f4783ea830edfe`; proof receipt/story head `07620ba5c3da199e2c4189af1ad8a6684ea6d1de`.
+- Scoped files: `app/web/styles.css`, `tests/test_app.py`, and `docs/evidence/OJ-4rht/REWORK.md` plus sanitized `docs/evidence/OJ-4rht/rework/`. No backend, media, graph, dependency, GPU, remote, or browser-architecture changes.
+- Local suite: `env -u OPENJUTSU_DATA_DIR PYTHONPATH=src ../../../.venv/bin/python -m pytest -q` → 32 passed, 1 existing Starlette/httpx warning in 10.91s; independent root rerun at `1649a93` → 32 passed, same warning in 10.48s. `node --check app/web/studio.js` and `git diff --check` exited 0.
+- Root browser proof at `1649a93`: both reference slots with portrait 1086×1448 and landscape 1152×768 at 1440×1000 and 390×844; boxes 472×198 desktop and 165×148 mobile, contain, computed minima 0px, no overflow, full head/torso visually confirmed.
+- Keyboard pass: summary→words→identity→seed→rights→reset with visible 2px gold outlines. Live Chrome reduce: body animation 0s/none, transition 0s/none, scroll auto, universal active rule.
+- Real dry-run job `c2a3a70973ec` through loopback UI: rights initially false/Prepare disabled, manual consent, prepare/run, DOWNLOADING→COMPLETE, no-AI disclosure, three real artifact routes, downloads byte-matched server hashes, and reset restored the manual gate. Timing observations include tool gaps, not backend latency.
+- Structured warning receipt records the existing Starlette/httpx deprecation as a DISCOVERED_BUG for centralized triage without pretending this frontend fixes it.
+
+### proof
+- [x] AC #1: Responsive cinematic studio, source/two-reference live previews, and accessible controls proved by current portrait/landscape mobile/desktop measurements, screenshots, keyboard/focus proof, labels, and retained implementation.
+- [x] AC #2: Guided upload→rights→prepare→run→review flow proved with false/unchecked initial rights and disabled Prepare, manual consent, current dry-run flow, and unchanged media-change consent reset.
+- [x] AC #3: API-backed stage truth proved for current PREPARING/DOWNLOADING/COMPLETE; unchanged `status.state` rendering covers all API states, with retained prior evidence for unobserved queued/uploading/generating/error. No percentage, ETA, invented state, or fabricated QC verdict.
+- [x] AC #4: Dry-run no-AI-inference disclosure proved in current browser snapshots; unchanged code applies the no-inference wording only to `dry_run`, while other backends remain identified without that claim.
+- [x] AC #5: Complete review and exactly generated/final/side_by_side API artifact links proved; all three downloads matched server SHA-256.
+- [x] AC #6: Current reset recovery proved (manual rights false, files empty, review hidden, Prepare disabled); unchanged error paths and retained malformed-input/error evidence cover recoverability.
+- [x] AC #7: Static vanilla boundary preserved; scoped CSS/test/evidence diff, 32 tests pass, Node syntax and whitespace checks pass, backend/media/graph untouched.
+- [x] AC #8: Real current-browser loopback dry-run health/prepare/run/status/artifact exercise proved through job `c2a3a70973ec`, with byte-verified downloads and timing limitation disclosed.
+
+### LEARNINGS
+- Centered CSS grid items need explicit zero automatic minima in both axes when fixed media boxes must contain tall intrinsic images; `object-fit:contain` alone does not override that intrinsic minimum.
+
+### OBSERVATIONS
+- `window.StudioUI` intentionally remains frozen/read-only (`getState`, `errorText`); tracker BoundaryMap reconciliation belongs to SrPM and dependent regression ownership to OJ-yf2c.
+- Existing Starlette/httpx warning and separately assigned media/backend findings remain open with their proper owners; this frontend story claims no such repair.
