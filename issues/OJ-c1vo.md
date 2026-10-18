@@ -8,7 +8,7 @@ parent: OJ-a7l6
 created_at: 2026-10-18T14:53:03Z
 created_by: speed
 updated_at: 2026-10-18T15:42:20Z
-content_hash: "sha256:dd3fdbca5a0fddfef8cf08b525434189fd444b0d638c9329eb5fc18f0f51fbe7"
+content_hash: "sha256:9a655ebc722ccf1b3a50487280a7813ef64aa4dcd377e41a560f7a57a2a5791a"
 blocks: [OJ-yf2c]
 follows: [OJ-p8rd, OJ-inuo, OJ-xtk4]
 assignee: dev-OJ-c1vo
@@ -225,6 +225,58 @@ Commands run:
 - shasum -a 256 -c docs/evidence/backend-readiness/HASHES.sha256: all OK.
 - Browser QA actual CUA interactions: see committed BROWSER_QA.md and browser/receipt.json.
 Coverage percentage: not measured; no coverage claim.
+
+LEARNINGS:
+- Local health is not renderer readiness; preparation can remain available offline.
+- A post-submit 503 is not inherently proof that nothing was submitted; retain unknown-state protection except for the explicit local legacy guard.
+- Paivot append-notes inserts before legacy top-level contract headings in this issue. This same evidence is mirrored as an append-only comment so the final contract is authoritative without deleting history.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Local story commit 98de3ff on story/OJ-c1vo, base 7881cb0. No push.
+- Worker full pytest twice: 63 passed, 1 existing Starlette/httpx warning.
+- Independent parent full pytest twice: 63 passed, 1 warning (77.02s, 337.84s); node syntax and git diff checks passed.
+- Parent verified worker HASHES.sha256; browser receipt and screenshots in docs/evidence/backend-readiness/browser; BROWSER_QA.md describes precise limits.
+- Real browser + local ASGI app + labelled no-GPU HTTP fixture: offline prepare succeeds/Run blocked, recovery enables Run preserving job/consent, disconnect before click blocks with no run POST. Exactly 3 fixture GETs, zero fixture POSTs, zero app run POSTs; workflow survives/no queued status file.
+- Existing test files, media/workflow, dependencies and live8893 unchanged pending acceptance/restart. No GPU or paid API spend.
+- bd sync --from-main unavailable because no Beads database; canonical pvg nd retained.
+
+### proof
+- [x] AC #1: bounded read-only renderer readiness with sanitized errors, truthful dry_run/unchecked SDK semantics.
+- [x] AC #2: independent legacy run guard before mutation, 404/409 preserved; real HTTP TestClient tests pass.
+- [x] AC #3: offline Run gating, recoverable prepared state, fresh pre-submit check, unknown-submission safety reviewed.
+- [x] AC #4: new 15-case readiness suite; existing 48 tests unchanged; full suite passes twice independently.
+- [x] AC #5: parent browser QA without AI, sanitized reports, hashed screenshots/requests/test logs committed.
+
+
+### 2026-10-18T15:42:20Z speed
+## Implementation Evidence
+Summary: Fail-closed legacy renderer readiness implemented and locally verified.
+Commit SHA: 98de3ff703f584755d38c01cb6bb66fc997f0707
+Branch: story/OJ-c1vo
+
+### CI/Test Results
+PROOF:
+Commands run:
+- <root>/.venv/bin/python -m pytest -q (twice independently): 63 passed, 1 existing warning both runs; no skips.
+- node --check app/web/studio.js: passed.
+- git diff --check: passed.
+- shasum -a 256 -c docs/evidence/backend-readiness/HASHES.sha256: all OK.
+- Browser QA actual CUA interactions: see committed BROWSER_QA.md and browser/receipt.json.
+Coverage percentage: not measured; no coverage claim.
+
+### AC Verification
+| AC | Verification | Result |
+| --- | --- | --- |
+| 1 | TestClient real HTTP failures/recovery and sanitized response tests | PASS |
+| 2 | Fresh run guard, no status mutation, 404/409, dry_run/SDK tests | PASS |
+| 3 | Browser offline/recovery/offline sequence and preserved consent/files | PASS |
+| 4 | 63 tests twice; original tests unchanged; warning disclosed | PASS |
+| 5 | Parent screenshots, receipt and test logs with SHA256 files | PASS |
+
+Structural verifier observation: pvg verify reports tests/test_backend_readiness.py:118 bare pass as a stub. This is a no-op cleanup finally in a contextmanager after the socket is already closed, not missing implementation. Request independent PM review of that false-positive; do not silently bypass it or claim the command passed.
 
 LEARNINGS:
 - Local health is not renderer readiness; preparation can remain available offline.
