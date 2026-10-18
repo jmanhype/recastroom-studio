@@ -1,16 +1,17 @@
 ---
 id: OJ-4rht
 title: "Cinematic guided studio frontend"
-status: open
+status: in_progress
 priority: 1
 type: task
 labels: [walking-skeleton, skeleton, frontend, external-integration, rejected]
 parent: OJ-a7l6
 created_at: 2026-10-18T01:53:57Z
 created_by: speed
-updated_at: 2026-10-18T02:31:40Z
-content_hash: "sha256:d230e5ac3bbd88175f9d579dcece61005b4ba5f5b42fdae76b9722c42cb4a5fc"
+updated_at: 2026-10-18T03:47:31Z
+content_hash: "sha256:0446df2b82bcce4c2275b382fc11cba639db38437a8a729876648b2c68a72ccf"
 blocks: [OJ-yf2c]
+assignee: dev-OJ-4rht
 ---
 
 ## Description
@@ -203,6 +204,8 @@ status: in_progress
 - 2026-10-18T02:27:57Z status: in_progress -> in_progress
 - 2026-10-18T02:31:39Z status: in_progress -> open
 - 2026-10-18T02:31:40Z released by speed
+- 2026-10-18T03:47:31Z status: open -> in_progress
+- 2026-10-18T03:47:31Z claimed by dev-OJ-4rht
 
 ## Links
 - Parent: [[OJ-a7l6]]
