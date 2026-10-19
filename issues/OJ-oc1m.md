@@ -8,8 +8,8 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-18T23:59:23Z
-content_hash: "sha256:67ea8730ae15a917bc8a2456ffa48b1055450126ab68785a195c9b5bc372fa0a"
+updated_at: 2026-10-19T00:19:35Z
+content_hash: "sha256:766e1bce9fc9e531142a1d6be66f5d0bc45867e496d6ad45a3d603712c4e8312"
 blocks: [OJ-oain]
 assignee: dev-OJ-oc1m
 follows: [OJ-g2xx]
@@ -80,3 +80,6 @@ Owner constraint update: no funds are currently available for Comfy credits or A
 
 ### 2026-10-18T23:59:23Z speed
 No-cost path checkpoint: owner confirmed no funds. A real local official-SDK execution succeeded on the 3090 through comfy-api-proxy 0.1.6 and comfy-sdk 0.5.0: job aada51c8-ddd6-437e-a664-f6a17829d576, 24-frame 320x180 H.264 MP4, output SHA-256 c444aa186a05f623c0815f7dd4f099f3425e37955666953c756712921b4bb87d, provider credits used 0. Temporary ComfyUI/proxy processes were stopped. Boundary: core-node local SDK smoke, not the prepared H3 workflow or Openjutsu asset bridge, so strict OJ-oc1m AC remains unmet. Evidence committed at 8822da8 on story/OJ-oc1m. Official signup form remains a possible free-credit route; no personal data submitted yet.
+
+### 2026-10-19T00:19:35Z speed
+Official free-credit signup was submitted with owner authorization. Typeform returned You're in, with credits on the way if the submission made the first 200. After a wait and refresh, Comfy still showed 0 credits, 0 spend, and no deployments, so no replacement API key was created and no payment occurred. Sanitized signup and post-signup evidence committed at 81bc6cc on story/OJ-oc1m; full tests remain 105 passed, 1 warning.
