@@ -8,8 +8,8 @@ labels: [contest, local, integration, walking-skeleton, delivered]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T03:29:48Z
-content_hash: "sha256:e2989db4d8cb8f6a133b0061b80c39b99a97c107a6fb71ab0bd134c9bcb0b4e3"
+updated_at: 2026-10-22T03:33:34Z
+content_hash: "sha256:94138568e7e265221d0d71776db294361f184bf2474563a264a1f0e635806e1b"
 blocks: [OJ-oc1m, OJ-xodm]
 assignee: dev-OJ-rrw1
 follows: [OJ-g2xx]
@@ -198,6 +198,60 @@ status: new
 ## Notes
 PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
 Post-commit verification at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4: PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q completed synchronously: 119 passed, 1 disclosed warning in 27.00s; no background work remains.
+## Implementation Evidence
+Summary: Coordinator independently checked the committed C1 preparation change.
+SHA: 40aa30b772f4cbf9f475318bbd6e787e25cb1af4
+Branch: story/OJ-rrw1; reviewed in a separate detached worktree.
+
+### CI/Test Results
+Commands run:
+- PYTHONPATH=src <root>/.venv/bin/python -m pytest -q
+  Result: 119 passed, 1 Starlette/httpx deprecation warning in 27.70s; no skips.
+- git diff epic/OJ-fglb..story/OJ-rrw1 --stat
+  Result: 9 files changed, 390 insertions, 9 deletions.
+Test log: work/reviews/OJ-rrw1/coordinator-pytest.log.
+Developer command evidence and exact AC mapping are committed in
+docs/evidence/OJ-rrw1/PROOF.md. No line-coverage percentage was measured.
+
+### AC Verification
+[x] AC1: default/template preserved by immutable-hash and regression tests.
+[x] AC2: all C1 graph mutations tested against a sanitized full expected graph.
+[x] AC3: C1 requires reference 2; legacy accepts its absence.
+[x] AC4: timed source audio, ExactAudioLock and sampler links inspected.
+[x] AC5: real decoded 124/141/158-frame windows and rejection cases executed.
+[x] AC6: real offline API preparation, manifests, CLI and UI wiring tested.
+[x] AC7: unknown names fail before job/upload creation.
+[x] AC8: 119 offline tests pass, including 14 new C1 cases; no render claimed.
+
+### LEARNINGS:
+- The runtime recipe must branch before mutating the removed Head Swap node.
+- Complete source windows must be verified, not silently clamped to 141 frames.
+
+### OBSERVATIONS:
+- The existing nd issue contains duplicate structural headings. append-notes
+  inserts new sections before earlier top-level proof headings. This exact
+  evidence is mirrored through nd's supported append-only comment API so the
+  delivery validator can see an authoritative trailing contract. No issue
+  source, AC, old evidence or history was rewritten.
+- Whole-repository gates are not green: developer reports 16 duplication
+  blocks and 11 complexity warnings, separately from scoped recipe checks.
+- DISCOVERED_BUG: Starlette/httpx emits a dependency deprecation warning.
+  The coordinator reproduced it; no warning suppression was added.
+- DISCOVERED_BUG: existing scene preflight says clips over 5.875 seconds
+  will be padded/trimmed even when C1 preserves an exact supported window.
+  app/main.py uses the shared analyze_scene report; review this mismatch.
+- No GPU work, provider spend, publishing, credentials or new render occurred.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Developer commit and coordinator test log above; PM acceptance pending.
+
+### proof
+- [x] AC1-AC8 have recorded implementation and offline verification evidence.
+
+
 ## Implementation Evidence (DELIVERED)
 
 PROOF:
