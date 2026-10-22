@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T04:09:01Z
-content_hash: "sha256:246e8b52c7c24f9e19d4c4bc319f7fc8b78a08775f07fbc503257d8ebdc0ef19"
+content_hash: "sha256:4c311d5640935241c7c0a3c4527b286533394d0de0d1d5481555d824b43821ef"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
 closed_at: 2026-10-22T04:09:00Z
@@ -776,3 +776,20 @@ status: delivered
 ### proof
 - [x] AC1-AC8 unchanged and fully evidenced; provenance correction is explicit.
 
+
+### 2026-10-22T04:09:01Z speed
+## PM Decision
+ACCEPTED [2026-10-21]: Final documentation/provenance correction accepted at 9c9c737e319b22647bf041552052fc83ee4dbaa7.
+
+Git-resolved identities independently checked: code 20f0b0ff2ecb712b691a5b748c1206d63add6352; prior evidence 8fac58564a2bb700099dfb6db1d7021915849858; corrected proof HEAD 9c9c737e319b22647bf041552052fc83ee4dbaa7. The delta from 8fac58564a2bb700099dfb6db1d7021915849858 is only docs/evidence/OJ-rrw1/PROOF.md (17 insertions, 1 deletion), correcting identifiers and clarifying scoped gates/whole-gate debt. No executable code or test changed. Earlier behavior evidence remains valid: 121 passed, 0 skipped, one disclosed Starlette/httpx warning; C1 truthfulness regression and 15-second fail-closed frame verification passed focused review.
+
+## nd_contract
+status: accepted
+
+### evidence
+- pvg story verify-delivery passed 9/9 before this final acceptance.
+- Exact Git object IDs resolved with git rev-parse; docs-only delta inspected without checkout or source edits.
+
+### proof
+- [x] AC #1 through AC #8 remain verified on the unchanged executable tree.
+- [x] Provenance references resolve to actual Git objects and whole-repository gate debt is not represented as green.
