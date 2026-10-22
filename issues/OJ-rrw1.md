@@ -8,8 +8,8 @@ labels: [contest, local, integration, walking-skeleton, rejected]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T03:44:27Z
-content_hash: "sha256:44b3824ebb21acdce75f99e47389b1f6171bc87e70f7d7e121abf14a27836a7d"
+updated_at: 2026-10-22T03:59:16Z
+content_hash: "sha256:15569d0c3da081ac4d93cfd957906cf70c02c0e57c7d864c1790837d8b19178f"
 blocks: [OJ-oc1m, OJ-xodm]
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
@@ -198,6 +198,69 @@ status: new
 ## Notes
 PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
 Post-commit verification at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4: PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q completed synchronously: 119 passed, 1 disclosed warning in 27.00s; no background work remains.
+## Implementation Evidence (DELIVERED)
+
+PROOF:
+
+### CI/Test Results
+- Commands run and final synchronous results:
+  - `PYTHONPATH=src "$ROOT/.venv/bin/python" -m pytest -q tests/test_c1_recipe.py`: 16 passed, 1 disclosed warning in 2.12s.
+  - `PYTHONPATH=src "$ROOT/.venv/bin/python" -m pytest -q`: 121 passed, 1 disclosed warning in 26.51s; 0 failed, 0 skipped.
+  - `"$ROOT/.venv/bin/python" -m pip check`: No broken requirements found.
+  - `git diff --check`: PASS with no output.
+  - `pvg verify src/openjutsu/scene.py src/openjutsu/pipeline.py app/main.py tests/test_c1_recipe.py --format=text`: PASSED, 4 files, 0 issues.
+  - `pvg gates --changed d9c8e805c4a1e56b7860a5087c57ceb9e0ee37fd`: PASS, 1 existing Studio controls warning, 0 skipped.
+  - `pvg gates`: FAIL, 16 historical duplication blocks and 11 complexity warnings; prior whole-repository debt preserved.
+- The first focused iteration had 6 failures because metadata guards were wrapped into the generic frame-probe error. Validation was separated; final focused result is 16/16 and full result is 121/121.
+- Coverage: 8/8 ACs verified; line coverage not measured (coverage package unavailable; no dependency installation attempted).
+
+### Commit
+- Code: `20f0b0f6881c64be86664d8cd97f22c8954aa921` (`fix(OJ-rrw1): make C1 preflight geometry truthful`).
+- Evidence: `8fac585e83a1fa38f3a351af06082bd9a74cdcbd` (`docs(OJ-rrw1): prove C1 preflight rework`).
+- Branch: `story/OJ-rrw1`; local commits only, no push.
+- Code budget: 75 changed non-evidence lines (71 insertions, 4 deletions) across 4 owned files.
+
+### Rework Verification
+- `app/main.py` disables only the legacy grid heuristic warning for validated C1 requests; default/legacy calls still receive it.
+- No-mock generated-158-frame API regression proves the legacy warning remains, the C1 warning is absent, and persisted `end_f=158`.
+- `_c1_frames` rejects missing audio, non-finite duration/FPS, non-24 fps, and durations outside 5..15 seconds before `-show_frames`, then bounds the frame scan with a 15-second timeout and deterministic `ValueError`.
+- A generated 362-frame source proves long-media rejection occurs before any frame scan. Exact frame count/timestamp and 124..345 grid validation remain unchanged.
+
+### AC Verification
+| AC # | Requirement | Status |
+|------|-------------|--------|
+| 1 | Legacy/default semantics and warning preserved | PASS |
+| 2 | Exact C1 graph contract unchanged and covered | PASS |
+| 3 | C1 second-reference fail-closed behavior preserved | PASS |
+| 4 | Timed audio and ExactAudioLock links preserved | PASS |
+| 5 | Exact geometry and bounded pre-scan metadata rejection | PASS |
+| 6 | Truthful C1 API scene preflight for valid 158-frame window | PASS |
+| 7 | Unknown preset fail-closed behavior preserved | PASS |
+| 8 | Offline synthetic/no-mock proof with 121 passing tests | PASS |
+
+LEARNINGS:
+- Metadata guards must stay outside the broad frame-probe wrapper so deterministic API reasons survive.
+- A preset-specific public report can omit a legacy heuristic while the pipeline independently enforces exact C1 geometry before success.
+
+OBSERVATIONS:
+- Existing Starlette/httpx deprecation warning, scoped Studio controls warning, and whole-repository metric debt are disclosed rather than suppressed.
+- No GPU, model inference/downloads, network/SDK, credentials, private media/config reads, rendering, publishing, or push occurred.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Code commit `20f0b0f6881c64be86664d8cd97f22c8954aa921`; evidence commit `8fac585e83a1fa38f3a351af06082bd9a74cdcbd`; exact commands and 121/121 result above.
+
+### proof
+- [x] AC #1: legacy/default behavior and pad/trim warning preserved.
+- [x] AC #2: exact copied C1 graph contract unchanged and tested.
+- [x] AC #3: C1 requires reference 2 while legacy remains optional.
+- [x] AC #4: timed audio and ExactAudioLock routing unchanged and tested.
+- [x] AC #5: complete geometry retained; invalid metadata rejected before bounded frame scan.
+- [x] AC #6: valid 158-frame C1 API response has no false warning and persists end_f=158.
+- [x] AC #7: unknown preset still fails closed before writes.
+- [x] AC #8: deterministic offline proof expanded to 121 passing tests with no skips.
 
 
 ## nd_contract
