@@ -9,8 +9,8 @@ parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
 updated_at: 2026-10-22T03:19:41Z
-content_hash: "sha256:3d002cef469c85d10b909a205cbee29a3f60fd2ac270e78d54977dd88f8112e7"
-blocked_by: [OJ-oain, OJ-g2xx]
+content_hash: "sha256:929a21c3d1a9573c19db2c16815dec0161b88a14f54703d43608b2f239b02058"
+blocked_by: [OJ-oain, OJ-g2xx, OJ-oc1m]
 ---
 
 ## Description
@@ -51,9 +51,10 @@ After owner approval, publish the #OpenSourceHiggsfield demo post and submit the
 ## History
 - 2026-10-18T20:49:05Z dep_added: blocked_by OJ-oain
 - 2026-10-22T03:20:42Z dep_added: blocked_by OJ-g2xx
+- 2026-10-22T03:20:42Z dep_added: blocked_by OJ-oc1m
 
 ## Links
 - Parent: [[OJ-fglb]]
-- Blocked by: [[OJ-oain]], [[OJ-g2xx]]
+- Blocked by: [[OJ-oain]], [[OJ-g2xx]], [[OJ-oc1m]]
 
 ## Comments
