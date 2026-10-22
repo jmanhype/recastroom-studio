@@ -4,11 +4,11 @@ title: "Post X thread and submit Comfy Typeform"
 status: open
 priority: 0
 type: task
-labels: [contest, publication, owner-gated]
+labels: [contest, publication, owner-gated, capstone]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-22T03:19:40Z
+updated_at: 2026-10-22T03:19:41Z
 content_hash: "sha256:5379003b5e1051ef2f02fc71686f8d1c76f33ce6870784d9f60f084ba4908a92"
 blocked_by: [OJ-oain]
 ---
