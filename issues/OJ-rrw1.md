@@ -1,19 +1,17 @@
 ---
 id: OJ-rrw1
 title: "Add opt-in C1 recipe selection"
-status: closed
+status: open
 priority: 1
 type: task
 labels: [contest, local, integration, walking-skeleton, accepted]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T04:04:21Z
-content_hash: "sha256:4ab4fc5ee7c4fa7f69a0b975b4917f94b304b8fd7ae4e153a9456ffc59294354"
+updated_at: 2026-10-22T04:07:15Z
+content_hash: "sha256:04e7e8196ace8a5a6a4def854829f9597bd37c6a6fabc88a0b5347f683c0193d"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
-closed_at: 2026-10-22T04:03:48Z
-close_reason: "Accepted at 8fac585e83a1fa38f3a351af06082bd9a74cdcbd: prior false C1 geometry warning is repaired with legacy regression, C1 158-frame omission/end_f proof, early metadata rejection, and bounded frame verification."
 ---
 
 ## Description
@@ -499,6 +497,7 @@ Acceptance coverage: 8/8 ACs mapped below; Python line coverage was not measured
 - 2026-10-22T04:03:48Z status: in_progress -> closed
 - 2026-10-22T04:03:48Z dep_removed: no_longer_blocks OJ-oc1m
 - 2026-10-22T04:03:48Z dep_removed: no_longer_blocks OJ-xodm
+- 2026-10-22T04:07:15Z status: closed -> open (reopened)
 
 ## Links
 - Parent: [[OJ-fglb]]
