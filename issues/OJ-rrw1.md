@@ -8,8 +8,8 @@ labels: [contest, local, integration, walking-skeleton]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T03:20:56Z
-content_hash: "sha256:2fb92e6a1f540eaafa357dc05ea7551d8d3c3e5e9f10a7ad01944ee03815f32c"
+updated_at: 2026-10-22T03:28:21Z
+content_hash: "sha256:f3fffeba19b21db4a8c8d97144bc461e28dcb428c4573f4c84bbcd9487de6145"
 blocks: [OJ-oc1m, OJ-xodm]
 assignee: dev-OJ-rrw1
 follows: [OJ-g2xx]
@@ -196,7 +196,81 @@ status: new
 
 
 ## Notes
+PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
 
+# OJ-rrw1 — offline C1 preparation proof
+
+Base: `d9c8e805c4a1e56b7860a5087c57ceb9e0ee37fd`. Branch: `story/OJ-rrw1`.
+The implementation commit is recorded in the append-only story delivery notes.
+`ROOT` below means the main Openjutsu checkout; all commands ran from its
+`.claude/worktrees/dev-OJ-rrw1` worktree, using the existing `$ROOT/.venv`.
+
+## PROOF:
+
+Commands and measured results:
+
+```sh
+PYTHONPATH=src "$ROOT/.venv/bin/python" -m pytest -q tests/test_c1_recipe.py tests/test_workflow.py tests/test_app_e2e.py tests/test_frontend_regression.py
+# 23 passed, 1 warning in 9.19s
+PYTHONPATH=src "$ROOT/.venv/bin/python" -m pytest -q
+# 119 passed, 1 warning (0 failures, 0 skipped)
+"$ROOT/.venv/bin/python" -m pip check
+# No broken requirements found.
+git diff --check
+# exit 0, no output
+pvg verify src/openjutsu/workflow.py src/openjutsu/pipeline.py src/openjutsu/cli.py app/main.py app/web/index.html app/web/studio.js tests/test_c1_recipe.py workflows/README.md --format=text
+# VERIFY: PASSED (6 files scanned, 0 issues)
+pvg gates src/openjutsu/workflow.py src/openjutsu/pipeline.py src/openjutsu/cli.py app/main.py app/web/index.html app/web/studio.js tests/test_c1_recipe.py workflows/README.md
+# GATES: PASS (1 warn, 0 skipped); controls() CCN 29 > 15
+pvg gates
+# GATES: FAIL (16 block, 11 warn, 0 skipped)
+shasum -a 256 workflows/openjutsu_h3_lipsync_local.json
+# 06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21
+shasum -a 256 "$ROOT/work/recast-engines/reference-recast-jay-v1/renders/keepers/c1_jay_20261021/workflow_api.json"
+# 1bf97e171b9e947160d5992c12d6286eca5905570f42993d9639acf0b938e129
+```
+
+Acceptance coverage: 8/8 ACs mapped below; Python line coverage was not measured
+(coverage package unavailable; no dependency installation attempted).
+
+| AC | Verifiable proof |
+|---|---|
+| 1 | Immutable template SHA; `test_graph_contract_and_immutable_template`; full legacy suite; real API and CLI default branches retain node 1192. |
+| 2 | Whole-dictionary C1 comparison against sanitized expected deltas; deepcopy equality; only runtime prompt/media/seed/prefix/window vary. Runtime has no keeper dependency. |
+| 3 | Missing second ref raises WorkflowError/direct or ValueError/pipeline, HTTP 422/API, nonzero/CLI; legacy real API accepts absent second ref. |
+| 4 | Whole-dictionary contract asserts exact 200/201 inputs and 14 latent link; API persisted graph independently checked. |
+| 5 | Real generated 124-, 141-, 158-frame sources retain their complete windows; 107/144/362 frames, 25fps, and absent audio fail closed before job creation. |
+| 6 | No-mock TestClient prepare writes graph and manifest; public basenames/preset asserted; CLI runs actual preparation; HTML parser/static JS prove named/labelled selector, conditional ref2 requirement, FormData and epoch invalidation. |
+| 7 | Unknown preset rejected at configure/pipeline/API/CLI; API validation precedes upload/job creation, pipeline validation precedes source reads and job writes. |
+| 8 | 14 new offline cases, 119 total passing; tiny runtime ffmpeg color/sine sources and existing synthetic reference only. Immutable provenance hash manually verified, not required by portable tests. |
+
+## LEARNINGS:
+
+- The inherited planner window is 141 frames; actual decoded timestamps/count are
+  necessary to avoid silently truncating different sources. This recipe accepts
+  the existing 5–15 second envelope at CFR24 on the H3 17n+5 grid, not arbitrary
+  inputs or a new normalization algorithm.
+- C1 removes a legacy-required node, so required-node validation must branch
+  before legacy-only Head Swap strength mutation.
+- Public manifest redaction already handles the new scalar preset without
+  exposing filesystem paths. Preparation is not rendering, readiness or QC.
+
+## OBSERVATIONS:
+
+- Whole-repository metric gates remain blocked: 23.3% duplication (>10%), with
+  15 individual duplication blocks in historical `docs/evidence` JSON receipts,
+  workflows and probes (OJ-2gs4, OJ-2t3g, OJ-vwzl, OJ-inuo, OJ-xtk4).
+  Eleven complexity warnings include Studio controls and ten other functions.
+  Scoped changed-file gates pass, but this is **not** a whole-repository gate pass.
+- DISCOVERED_BUG: Starlette test-client import emits
+  `StarletteDeprecationWarning: Using httpx with starlette.testclient is deprecated; install httpx2 instead.`
+  Reproduced by the full pytest command above. Dependency migration is outside
+  this recipe change; no warning was suppressed.
+- `pvg notes search C1` cannot reach its configured `Claude` vault (not found).
+- No GPU, model inference/downloads, SDK/network execution, public exposure,
+  credential access, remote push or submission occurred. No render-quality claim.
+- Differential behavior: manifests now include `preset`; failed preparations
+  no longer create an empty job directory before graph validation.
 
 ## History
 - 2026-10-22T03:15:30Z dep_added: blocks OJ-oc1m
