@@ -8,8 +8,8 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-22T13:17:59Z
-content_hash: "sha256:a1654d8aa0210883e38c6e3634ee984977ae961c524d99b8fe4eab6f3aff6f29"
+updated_at: 2026-10-22T13:34:25Z
+content_hash: "sha256:1b0d1628bee75c9ac6da2c71273f096c516e0013ad29fe6c8ae96a710c92f1f9"
 blocks: [OJ-oain, OJ-xodm]
 follows: [OJ-g2xx, OJ-rrw1]
 was_blocked_by: [OJ-rrw1]
@@ -416,3 +416,17 @@ status: new
 - [ ] AC #7: teardown or authorized retention proved after execution.
 - [ ] AC #8: owner-authorized hosted/local official endpoint live execution.
 
+
+### 2026-10-22T13:34:25Z speed
+## Alternative demo source prepared — 2026-10-22
+User authorized using an alternative rather than recording new footage. Prepared source candidate: work/demo-sources/tears-of-steel-20261022/candidate_older_man_126p667_8s.mp4. Public Blender film Tears of Steel, CC BY3.0; official portrait-rights note permits technical demos, not actor advertisements. Direct official download returned403; separately published Clarkson Blender mirror succeeded. Original movie SHA efa9062d9cdb7a338e40ad530dfdf234806743f29ae6a1a136b97ece4e588e8f.
+Coordinator independently verified candidate SHA 8e607b45bc9563e2596663652682a7c6fb92fc83d9eca6094280be0d621f0d76; ffprobe:960x400,yuv420p,H264/AAC,192 frames,24fps,8s. Full ffmpeg decode exited0. Reviewed timestamped still sheet, not continuous playback or audio listening. One foreground target plus second background man; transient forearm/face occlusion disclosed. Complete-utterance boundaries are not certified. It is a source candidate, not a generated Jay result, approved public demo, or completed SDK proof. Preview opening was queued, not confirmed visible. GLM used after CoS handshake was unverifiable. No renderer/model/GPU call, credit spend, service change, public hosting, source-code commit or push.
+## nd_contract
+status: new
+### evidence
+- Candidate file, source download, fetch log, metadata and review sheets under work/demo-sources/tears-of-steel-20261022/.
+- Main d9c8e805c4a1e56b7860a5087c57ceb9e0ee37fd and accepted epic caf24a9f82f557a4bb1f999ac7aa83cb306a74ae remain clean.
+### proof
+- [ ] AC1: live SDK execution readiness still unproven.
+- [ ] AC2-8: live job/output/spend and teardown proof remains pending fresh owner authorization.
+Honesty check for this bounded source-preparation turn: Q1-6 no test/gate changes, faked fixtures, golden updates, relaxations, hardcoded demo-success path or zero-run-green claim (checked clean main/epic, real source hash and decode). Q7-12 no unrun inspection claim, replay-as-live proof, concealed material blocker, cited stderr suppression, closure or requirement rewrite (checked command output; source remains only a candidate). Q13 no worker tracker access/closure; Q14 positive media, negative multi-cut/occluded-person and no-claim criteria supplied; Q15 actual media re-probed/decoded and sheet visually checked; Q16 no refusal-only closure (initial download blocker followed by real public-mirror source); Q17 same-source agent agreement not independent corroboration; Q18 no score/denominator claimed. Q19 metadata alone cannot prove speech completeness or public actor consent; those were explicitly excluded. Q20 strongest evidence is actual re-decodable candidate with hash above. Prior-session audit not attempted; this is not a global system certification.
