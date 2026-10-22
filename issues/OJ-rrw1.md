@@ -9,7 +9,8 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T03:15:29Z
-content_hash: "sha256:61b70eaea1425e4d4a9f9ed8b451957d2c3418060c2cdfe75f4405009d876f22"
+content_hash: "sha256:219a59f84a97f50a4bfdebd8eb13af4272a791a6132c8e2518d0b4bf72d29470"
+blocks: [OJ-oc1m]
 ---
 
 ## Description
@@ -98,9 +99,10 @@ status: new
 
 
 ## History
-
+- 2026-10-22T03:15:30Z dep_added: blocks OJ-oc1m
 
 ## Links
 - Parent: [[OJ-fglb]]
+- Blocks: [[OJ-oc1m]]
 
 ## Comments
