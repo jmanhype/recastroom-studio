@@ -8,8 +8,8 @@ labels: [contest, local, integration, walking-skeleton, rejected, rejected-x3]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T04:07:16Z
-content_hash: "sha256:69e599576368758afa12bbe61c58f0770c77ded89ddcd9d57841dc2f73f6532a"
+updated_at: 2026-10-22T04:08:02Z
+content_hash: "sha256:c7009df89c43bb2b330a208d855eea1172c8b4ea3f19ef75d98d25ab5da07791"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
 ---
@@ -197,6 +197,37 @@ status: new
 ## Notes
 PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
 Post-commit verification at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4: PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q completed synchronously: 119 passed, 1 disclosed warning in 27.00s; no background work remains.
+## Implementation Evidence
+Summary: Documentation-only correction of full provenance IDs; executable code and tests unchanged.
+SHA: 9c9c737e319b22647bf041552052fc83ee4dbaa7
+Verified rework code: 20f0b0ff2ecb712b691a5b748c1206d63add6352
+Verified initial rework evidence: 8fac58564a2bb700099dfb6db1d7021915849858
+Earlier reported full suffixes were incorrect. Use these Git-resolved identifiers.
+
+### CI/Test Results
+Commands run:
+- git log -3 --format='%H %s' story/OJ-rrw1: identities above.
+- git diff --name-only 8fac58564a2bb700099dfb6db1d7021915849858 9c9c737e319b22647bf041552052fc83ee4dbaa7: docs/evidence/OJ-rrw1/PROOF.md only.
+- Coordinator test log: 121 passed, 1 known warning, 0 skipped in26.31s on
+  the exact executable/test tree retained in this documentation-only revision.
+- pip check and diff check clean. Explicit changed-source gates PASS with2
+  existing warnings; whole-repository metrics remain blocked as disclosed.
+
+### AC Verification
+[x] AC1-AC8 retain prior verified behavior and tests; no executable/test changes.
+[x] Evidence references now resolve to actual full Git object IDs.
+
+LEARNINGS: obtain full hashes from git rev-parse, never reconstruct suffixes.
+OBSERVATIONS: prior source acceptance is preserved in history; this review concerns evidence integrity only.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Verified code 20f0b0ff2ecb712b691a5b748c1206d63add6352; corrected proof 9c9c737e319b22647bf041552052fc83ee4dbaa7; PM review pending.
+
+### proof
+- [x] AC1-AC8 unchanged and fully evidenced; provenance correction is explicit.
 
 
 ## nd_contract
