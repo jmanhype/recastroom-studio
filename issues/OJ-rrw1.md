@@ -1,16 +1,18 @@
 ---
 id: OJ-rrw1
 title: "Add opt-in C1 recipe selection"
-status: open
+status: in_progress
 priority: 1
 type: task
 labels: [contest, local, integration, walking-skeleton]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T03:19:40Z
-content_hash: "sha256:e513138d60092e670d8c60fe7bc14e3443ebf1a8745c932516eb8a330673d5c7"
+updated_at: 2026-10-22T03:20:56Z
+content_hash: "sha256:2fb92e6a1f540eaafa357dc05ea7551d8d3c3e5e9f10a7ad01944ee03815f32c"
 blocks: [OJ-oc1m, OJ-xodm]
+assignee: dev-OJ-rrw1
+follows: [OJ-g2xx]
 ---
 
 ## Description
@@ -199,9 +201,13 @@ status: new
 ## History
 - 2026-10-22T03:15:30Z dep_added: blocks OJ-oc1m
 - 2026-10-22T03:20:42Z dep_added: blocks OJ-xodm
+- 2026-10-22T03:20:56Z status: open -> in_progress
+- 2026-10-22T03:20:56Z auto-follows: linked to predecessor OJ-g2xx
+- 2026-10-22T03:20:56Z claimed by dev-OJ-rrw1
 
 ## Links
 - Parent: [[OJ-fglb]]
 - Blocks: [[OJ-oc1m]], [[OJ-xodm]]
+- Follows: [[OJ-g2xx]]
 
 ## Comments
