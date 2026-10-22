@@ -4,11 +4,11 @@ title: "Add opt-in C1 recipe selection"
 status: closed
 priority: 1
 type: task
-labels: [contest, local, integration, walking-skeleton, delivered]
+labels: [contest, local, integration, walking-skeleton, delivered, accepted]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T04:03:48Z
+updated_at: 2026-10-22T04:03:49Z
 content_hash: "sha256:1afcb26a94716b6f8966f9d612810c52bc6588cda8d564ce0c41ac81c7695612"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
