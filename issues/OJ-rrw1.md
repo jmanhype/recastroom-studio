@@ -8,8 +8,8 @@ labels: [contest, local, integration, walking-skeleton, rejected-x3, accepted]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T04:09:01Z
-content_hash: "sha256:4c311d5640935241c7c0a3c4527b286533394d0de0d1d5481555d824b43821ef"
+updated_at: 2026-10-22T04:11:58Z
+content_hash: "sha256:ab2c6246c3bf38be5bbddae3952e9d5b8055ea9127904133e9ab755baeaa295c"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
 closed_at: 2026-10-22T04:09:00Z
@@ -199,6 +199,28 @@ status: new
 ## Notes
 PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
 Post-commit verification at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4: PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q completed synchronously: 119 passed, 1 disclosed warning in 27.00s; no background work remains.
+## Local integration receipt
+Accepted story 9c9c737e319b22647bf041552052fc83ee4dbaa7 merged locally into epic/OJ-fglb at caf24a9f82f557a4bb1f999ac7aa83cb306a74ae.
+Main remains d9c8e805c4a1e56b7860a5087c57ceb9e0ee37fd; no remote/push/publication.
+The remote-only pvg merge helper stopped on absent origin. A guarded clean-tree
+local fallback succeeded with command-scoped --no-autostash; no setting changed.
+Post-merge full suite: 121 passed, 1 existing Starlette/httpx warning, 0 skipped
+in26.50s. Accepted source/test/workflow/proof tree equals merged epic tree.
+Log: work/reviews/OJ-rrw1/epic-merged-pytest.log.
+Report: work/reviews/OJ-rrw1/COORDINATOR_REVIEW.md.
+Whole-repository metric debt remains disclosed, not green. No real render,
+GPU/video credit spend, public demo, or submission was performed. Owner gates
+remain unclaimed. Retained worktrees/evidence were not deleted.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Independent PM acceptance and locally verified merge caf24a9f82f557a4bb1f999ac7aa83cb306a74ae.
+- Full post-merge test log and unchanged frozen keeper/template hashes.
+
+### proof
+- [x] AC1-AC8 accepted; exact corrected object IDs and local integration verified.
 
 
 ## nd_contract
