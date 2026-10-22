@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T04:08:03Z
-content_hash: "sha256:bcf62a2dcea37a20387141ef602f4f8c3a3b1daab8e3e8f125a4502018f39ba7"
+content_hash: "sha256:8330263a55ca41e2f7f24f309e2d3cc7e890649152b058b2aad4cb37bdcd6d37"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
 ---
@@ -729,3 +729,37 @@ status: accepted
 
 ### 2026-10-22T04:07:15Z speed
 EXPECTED: provenance references resolve to actual Git objects. DELIVERED: earlier rework proof and delivery messages supplied full SHA suffixes that do not resolve, though seven-character prefixes matched. Actual code20f0b0ff2ecb712b691a5b748c1206d63add6352 and evidence8fac58564a2bb700099dfb6db1d7021915849858 were independently checked. GAP: audit references needed correction before merge; no source behavior defect. FIX: documentation-only9c9c737e319b22647bf041552052fc83ee4dbaa7 corrects identifiers and clarifies explicit changed-source gates PASS2 existing warnings. Re-review the exact documentation revision and unchanged executable tree.
+
+### 2026-10-22T04:08:03Z speed
+## Implementation Evidence
+Summary: Documentation-only correction of full provenance IDs; executable code and tests unchanged.
+SHA: 9c9c737e319b22647bf041552052fc83ee4dbaa7
+Verified rework code: 20f0b0ff2ecb712b691a5b748c1206d63add6352
+Verified initial rework evidence: 8fac58564a2bb700099dfb6db1d7021915849858
+Earlier reported full suffixes were incorrect. Use these Git-resolved identifiers.
+
+### CI/Test Results
+Commands run:
+- git log -3 --format='%H %s' story/OJ-rrw1: identities above.
+- git diff --name-only 8fac58564a2bb700099dfb6db1d7021915849858 9c9c737e319b22647bf041552052fc83ee4dbaa7: docs/evidence/OJ-rrw1/PROOF.md only.
+- Coordinator test log: 121 passed, 1 known warning, 0 skipped in26.31s on
+  the exact executable/test tree retained in this documentation-only revision.
+- pip check and diff check clean. Explicit changed-source gates PASS with2
+  existing warnings; whole-repository metrics remain blocked as disclosed.
+
+### AC Verification
+[x] AC1-AC8 retain prior verified behavior and tests; no executable/test changes.
+[x] Evidence references now resolve to actual full Git object IDs.
+
+LEARNINGS: obtain full hashes from git rev-parse, never reconstruct suffixes.
+OBSERVATIONS: prior source acceptance is preserved in history; this review concerns evidence integrity only.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Verified code 20f0b0ff2ecb712b691a5b748c1206d63add6352; corrected proof 9c9c737e319b22647bf041552052fc83ee4dbaa7; PM review pending.
+
+### proof
+- [x] AC1-AC8 unchanged and fully evidenced; provenance correction is explicit.
+
