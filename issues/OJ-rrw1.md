@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T04:03:49Z
-content_hash: "sha256:1afcb26a94716b6f8966f9d612810c52bc6588cda8d564ce0c41ac81c7695612"
+content_hash: "sha256:a316831c48c781680a0b70852c1a47fe3d0c2e4a340400888285c889fe8b21ff"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
 closed_at: 2026-10-22T04:03:48Z
@@ -199,6 +199,16 @@ status: new
 ## Notes
 PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
 Post-commit verification at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4: PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q completed synchronously: 119 passed, 1 disclosed warning in 27.00s; no background work remains.
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-21.
+
+### proof
+- [x] Story closed after accepted label was applied.
 
 
 ## nd_contract
