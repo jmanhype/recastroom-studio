@@ -8,8 +8,8 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-22T12:05:07Z
-content_hash: "sha256:2d55565ae3e6fafa94c6bf64d26b4443960200eb1ba312972ab332d2d01544b0"
+updated_at: 2026-10-22T12:16:00Z
+content_hash: "sha256:54f133dc75632787461e988045e09331470d98fe98bc15193f6e9d2bcb903e89"
 blocks: [OJ-oain, OJ-xodm]
 follows: [OJ-g2xx, OJ-rrw1]
 was_blocked_by: [OJ-rrw1]
@@ -294,6 +294,43 @@ No public repo push, X activity, Typeform submission, unrelated model experiment
 
 
 ## Notes
+## No-spend readiness checkpoint — 2026-10-22
+
+OWNER_BLOCKED; this is preflight only, not delivery or acceptance.
+Evidence: work/reviews/OJ-oc1m/20261022/READINESS_CHECKPOINT.md,
+NO_SPEND_PREFLIGHT.json, GPU_HOST_READINESS.txt, COORDINATOR_SPOT_CHECKS.json,
+and SHA256SUMS. Main d9c8e805c4a1e56b7860a5087c57ceb9e0ee37fd and accepted
+epic caf24a9f82f557a4bb1f999ac7aa83cb306a74ae are clean. Local renderer ports
+8188/8189 unreachable; 3090 SSH succeeded, 24576 MiB VRAM with 634 MiB used,
+no checked Comfy/proxy listener, 25 GB disk free (97% used). No model or service
+changes. No Colab balance/runtime or hosted account recheck. Frozen private
+C1 source permission remains unrecorded for public use. Six scoped candidate
+clips inventoried by GLM; coordinator independently checked hashes/metadata for
+private C1 source and original car pilot. No playback/listening claimed.
+
+Next input: original/permission-cleared speaking-person source and public-demo
+reference-use approval, or a documented fictional carrier. Normalization may be
+local and explicit; technical off-grid media is not inherently unusable.
+No new render/spend/publish authorization was inferred from agreement.
+
+## nd_contract
+status: new
+
+### evidence
+- Read-only readiness and remote SSH checks retained in the paths above.
+- Worker report hash verified: 7229ffede4a501838b1555d2097a68a58e27568e8055f405612b27fb51abecd0.
+- No queued job, video/model call, credit purchase, source commit, push, or publication.
+- No full live SDK proof delivered. Claim released to prevent stale ownership.
+
+### proof
+- [ ] AC #1: authenticated/deployment execution readiness; preflight assessed, not ready.
+- [ ] AC #2: real SDK-adapter job execution.
+- [ ] AC #3: terminal real output and verified hash.
+- [ ] AC #4: sanitized execution, spend, workflow, source, and output evidence.
+- [ ] AC #5: bounded live-proof changes and secret hygiene reviewed as a delivery.
+- [ ] AC #6: real execution distinguished from dry_run/legacy.
+- [ ] AC #7: teardown or authorized retention proved after execution.
+- [ ] AC #8: owner-authorized hosted/local official endpoint live execution.
 
 
 ## History
