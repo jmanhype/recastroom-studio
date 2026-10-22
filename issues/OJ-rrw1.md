@@ -8,8 +8,8 @@ labels: [contest, local, integration, walking-skeleton]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T03:28:21Z
-content_hash: "sha256:f3fffeba19b21db4a8c8d97144bc461e28dcb428c4573f4c84bbcd9487de6145"
+updated_at: 2026-10-22T03:28:46Z
+content_hash: "sha256:e0e66dd61a674ea78914d1263a732240c3fe5f8eb76b25584db8713cca00e36d"
 blocks: [OJ-oc1m, OJ-xodm]
 assignee: dev-OJ-rrw1
 follows: [OJ-g2xx]
@@ -197,6 +197,7 @@ status: new
 
 ## Notes
 PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
+Post-commit verification at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4: PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q completed synchronously: 119 passed, 1 disclosed warning in 27.00s; no background work remains.
 
 # OJ-rrw1 — offline C1 preparation proof
 
