@@ -9,10 +9,10 @@ parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
 updated_at: 2026-10-22T03:19:41Z
-content_hash: "sha256:1c617c1d06f1fd3dac723717abb342c3040d16b7750b83dd6dd741b2a5cbc085"
+content_hash: "sha256:4faec07d57af875f4fdd9e9acfaae17b51a6bdc3f2d0eeea838c753456b54f74"
 blocks: [OJ-oain, OJ-xodm]
 follows: [OJ-g2xx]
-blocked_by: [OJ-rrw1]
+was_blocked_by: [OJ-rrw1]
 ---
 
 ## Description
@@ -304,11 +304,12 @@ No public repo push, X activity, Typeform submission, unrelated model experiment
 - 2026-10-22T03:13:52Z released by speed
 - 2026-10-22T03:15:30Z dep_added: blocked_by OJ-rrw1
 - 2026-10-22T03:20:42Z dep_added: blocks OJ-xodm
+- 2026-10-22T04:03:48Z dep_removed: was_blocked_by OJ-rrw1
 
 ## Links
 - Parent: [[OJ-fglb]]
 - Blocks: [[OJ-oain]], [[OJ-xodm]]
-- Blocked by: [[OJ-rrw1]]
+- Was blocked by: [[OJ-rrw1]]
 - Follows: [[OJ-g2xx]]
 
 ## Comments

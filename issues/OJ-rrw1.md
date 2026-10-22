@@ -1,18 +1,19 @@
 ---
 id: OJ-rrw1
 title: "Add opt-in C1 recipe selection"
-status: in_progress
+status: closed
 priority: 1
 type: task
 labels: [contest, local, integration, walking-skeleton, delivered]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T03:59:16Z
-content_hash: "sha256:5d5438b6d8ba3d38335307ebf4f539334adaa0301b85ce0579a54ae6bc22a461"
-blocks: [OJ-oc1m, OJ-xodm]
+updated_at: 2026-10-22T04:03:48Z
+content_hash: "sha256:1afcb26a94716b6f8966f9d612810c52bc6588cda8d564ce0c41ac81c7695612"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
+closed_at: 2026-10-22T04:03:48Z
+close_reason: "Accepted at 8fac585e83a1fa38f3a351af06082bd9a74cdcbd: prior false C1 geometry warning is repaired with legacy regression, C1 158-frame omission/end_f proof, early metadata rejection, and bounded frame verification."
 ---
 
 ## Description
@@ -485,10 +486,12 @@ Acceptance coverage: 8/8 ACs mapped below; Python line coverage was not measured
 - 2026-10-22T03:44:27Z status: open -> in_progress
 - 2026-10-22T03:44:27Z claimed by dev-OJ-rrw1
 - 2026-10-22T03:59:16Z status: in_progress -> in_progress
+- 2026-10-22T04:03:48Z status: in_progress -> closed
+- 2026-10-22T04:03:48Z dep_removed: no_longer_blocks OJ-oc1m
+- 2026-10-22T04:03:48Z dep_removed: no_longer_blocks OJ-xodm
 
 ## Links
 - Parent: [[OJ-fglb]]
-- Blocks: [[OJ-oc1m]], [[OJ-xodm]]
 - Follows: [[OJ-g2xx]]
 
 ## Comments
