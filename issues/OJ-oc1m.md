@@ -8,8 +8,8 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-22T14:09:31Z
-content_hash: "sha256:c4ff4ea5bc6fd07dbd4c6f93179e2b376d8a9e6a35b3b6b1703fed821cfd2858"
+updated_at: 2026-10-22T14:29:48Z
+content_hash: "sha256:68050f1282790785b09075f87aa55794dfec3fc22dd0526c1fbd171e3e711f1c"
 blocks: [OJ-oain, OJ-xodm]
 follows: [OJ-g2xx, OJ-rrw1]
 was_blocked_by: [OJ-rrw1]
@@ -437,3 +437,15 @@ Honesty check for this bounded source-preparation turn: Q1-6 no test/gate change
 
 ### 2026-10-22T14:09:31Z speed
 Fresh authorization 2026-10-22: user explicitly confirmed one Tears of Steel Jay C1 H3 render, maximum3 Colab CU, actual-photo plus crop, automatic shutdown. Live Colab Resources before any new connection:54.85 CU available,0active sessions,0/hour. G4 selectable; selected while disconnected. Frozen C1 workflow hash1bf97e171b9e947160d5992c12d6286eca5905570f42993d9639acf0b938e129 and both reference hashes independently match. Offline bundle prep assigned /root/tos_c1_bundle under work/recast-engines/tears-of-steel-jay-c1-20261022/. No new runtime started yet. Do not treat prior render authorizations as reusable, do not submit >1prompt, do not use synthetic ref, public Comfy exposure, paid Comfy API or publish. This H3 render alone is not automatically live Comfy SDK-adapter proof; leave full story acceptance pending actual evidence.
+
+### 2026-10-22T14:29:48Z speed
+Fresh 3-CU authorization checkpoint: exactly one Tears of Steel Jay C1 render using actual photo plus crop, setup included, automatic shutdown, no second prompt submission or credit purchase. Offline-only bundle verified independently: 27 static checks pass from isolated zip; HTTP 200/202, dynamic ExactAudio schema, symlink rejection and complete fresh-upload cell regressions pass. bundle.zip SHA256 326decc27fca658507494ecd05a5bb485f42e0ac4d630d8f684dfab2a0ab8a0e; notebook SHA256 6ff6eedf07f2eb732b5e7cbd7d80b74adaf8080edb6b8657b2c72252210d17ac. Artifacts: work/recast-engines/tears-of-steel-jay-c1-20261022/. Browser blocked by repeatedly reappearing external Chrome remote-debugging permission prompt; cancellation was attempted, no new access granted. User asked to dismiss/stop the requesting app. No new Colab runtime, model load, render prompt, CU spend, source commit, push or publication occurred. Last Colab preconnection reading was 54.85 CU, zero active sessions and zero/hour. Offline readiness is not SDK execution proof. Releasing claim to avoid stale ownership while browser permission is unresolved.
+
+## nd_contract
+status: new
+### evidence
+- Coordinator ran test_offline_regressions.py and isolated extracted verify_static.py successfully; 27 checks passed.
+- Main remains clean at d9c8e805c4a1e56b7860a5087c57ceb9e0ee37fd.
+- No live render or official SDK job was submitted; no video result is claimed.
+### proof
+- [ ] AC1-8: complete live SDK execution, output, spend and teardown evidence remain pending.
