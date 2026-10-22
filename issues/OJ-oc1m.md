@@ -8,8 +8,8 @@ labels: [contest, external-integration, owner-gated]
 parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
-updated_at: 2026-10-22T13:59:47Z
-content_hash: "sha256:2d4c8559395b9cb5f60d44527247f9e5257dc6a3b9c74afb03d9cef0a107b89a"
+updated_at: 2026-10-22T14:09:31Z
+content_hash: "sha256:c4ff4ea5bc6fd07dbd4c6f93179e2b376d8a9e6a35b3b6b1703fed821cfd2858"
 blocks: [OJ-oain, OJ-xodm]
 follows: [OJ-g2xx, OJ-rrw1]
 was_blocked_by: [OJ-rrw1]
@@ -434,3 +434,6 @@ status: new
 - [ ] AC1: live SDK execution readiness still unproven.
 - [ ] AC2-8: live job/output/spend and teardown proof remains pending fresh owner authorization.
 Honesty check for this bounded source-preparation turn: Q1-6 no test/gate changes, faked fixtures, golden updates, relaxations, hardcoded demo-success path or zero-run-green claim (checked clean main/epic, real source hash and decode). Q7-12 no unrun inspection claim, replay-as-live proof, concealed material blocker, cited stderr suppression, closure or requirement rewrite (checked command output; source remains only a candidate). Q13 no worker tracker access/closure; Q14 positive media, negative multi-cut/occluded-person and no-claim criteria supplied; Q15 actual media re-probed/decoded and sheet visually checked; Q16 no refusal-only closure (initial download blocker followed by real public-mirror source); Q17 same-source agent agreement not independent corroboration; Q18 no score/denominator claimed. Q19 metadata alone cannot prove speech completeness or public actor consent; those were explicitly excluded. Q20 strongest evidence is actual re-decodable candidate with hash above. Prior-session audit not attempted; this is not a global system certification.
+
+### 2026-10-22T14:09:31Z speed
+Fresh authorization 2026-10-22: user explicitly confirmed one Tears of Steel Jay C1 H3 render, maximum3 Colab CU, actual-photo plus crop, automatic shutdown. Live Colab Resources before any new connection:54.85 CU available,0active sessions,0/hour. G4 selectable; selected while disconnected. Frozen C1 workflow hash1bf97e171b9e947160d5992c12d6286eca5905570f42993d9639acf0b938e129 and both reference hashes independently match. Offline bundle prep assigned /root/tos_c1_bundle under work/recast-engines/tears-of-steel-jay-c1-20261022/. No new runtime started yet. Do not treat prior render authorizations as reusable, do not submit >1prompt, do not use synthetic ref, public Comfy exposure, paid Comfy API or publish. This H3 render alone is not automatically live Comfy SDK-adapter proof; leave full story acceptance pending actual evidence.
