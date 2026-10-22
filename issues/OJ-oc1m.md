@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
 updated_at: 2026-10-22T03:13:52Z
-content_hash: "sha256:7ca7c43f185425e0787555ef0f46696c490b0caba1f1aa97ba0c1adb457ded7d"
+content_hash: "sha256:006ac68a1ad45bd3114c21eae386d6e15bb71977ea2c608048ea79eb00786b63"
 blocks: [OJ-oain]
 follows: [OJ-g2xx]
 ---
@@ -84,3 +84,6 @@ No-cost path checkpoint: owner confirmed no funds. A real local official-SDK exe
 
 ### 2026-10-19T00:19:35Z speed
 Official free-credit signup was submitted with owner authorization. Typeform returned You're in, with credits on the way if the submission made the first 200. After a wait and refresh, Comfy still showed 0 credits, 0 spend, and no deployments, so no replacement API key was created and no payment occurred. Sanitized signup and post-signup evidence committed at 81bc6cc on story/OJ-oc1m; full tests remain 105 passed, 1 warning.
+
+### 2026-10-22T03:13:52Z speed
+Owner-directed queue checkpoint 2026-10-22: released the stale dev-OJ-oc1m claim only because pvg loop next reported the story stalled. This is NOT acceptance or completion. Existing branch/worktree/evidence remain untouched. Strict live Developer Platform AC remains unmet: the prior local official-SDK smoke was core-node only, while credits/API key/deployment/asset-bridge decisions remain owner-gated and no external spend is authorized. A local offline C1 preset story now precedes this story so queue work can continue without GPU/provider spend.
