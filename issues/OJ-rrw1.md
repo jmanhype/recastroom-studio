@@ -9,9 +9,8 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T04:07:15Z
-content_hash: "sha256:04e7e8196ace8a5a6a4def854829f9597bd37c6a6fabc88a0b5347f683c0193d"
+content_hash: "sha256:2f3649c43b7fc721928ac3f03bd236d135308e36bf6d5e6ceb6656f831bb51d8"
 follows: [OJ-g2xx]
-assignee: dev-OJ-rrw1
 ---
 
 ## Description
@@ -498,6 +497,7 @@ Acceptance coverage: 8/8 ACs mapped below; Python line coverage was not measured
 - 2026-10-22T04:03:48Z dep_removed: no_longer_blocks OJ-oc1m
 - 2026-10-22T04:03:48Z dep_removed: no_longer_blocks OJ-xodm
 - 2026-10-22T04:07:15Z status: closed -> open (reopened)
+- 2026-10-22T04:07:15Z released by speed
 
 ## Links
 - Parent: [[OJ-fglb]]
