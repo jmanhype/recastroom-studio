@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T04:07:15Z
-content_hash: "sha256:2f3649c43b7fc721928ac3f03bd236d135308e36bf6d5e6ceb6656f831bb51d8"
+content_hash: "sha256:827f0465224a8a801ba71ec11c9649b04433f13ff3965f23c8df6600a7dd9f8b"
 follows: [OJ-g2xx]
 ---
 
@@ -669,3 +669,6 @@ status: accepted
 
 ### proof
 - [x] AC #1 through AC #8 verified, including truthful recipe-aware C1 preflight and exact retained geometry.
+
+### 2026-10-22T04:07:15Z speed
+EXPECTED: provenance references resolve to actual Git objects. DELIVERED: earlier rework proof and delivery messages supplied full SHA suffixes that do not resolve, though seven-character prefixes matched. Actual code20f0b0ff2ecb712b691a5b748c1206d63add6352 and evidence8fac58564a2bb700099dfb6db1d7021915849858 were independently checked. GAP: audit references needed correction before merge; no source behavior defect. FIX: documentation-only9c9c737e319b22647bf041552052fc83ee4dbaa7 corrects identifiers and clarifies explicit changed-source gates PASS2 existing warnings. Re-review the exact documentation revision and unchanged executable tree.
