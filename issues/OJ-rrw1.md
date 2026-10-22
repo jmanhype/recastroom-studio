@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T03:43:22Z
-content_hash: "sha256:acb27580423c058c0075833eb8c5ca2b923ae72bd232073c1be2909b1fa251f1"
+content_hash: "sha256:2e3cf80a7a50a401711b649554ae25d3068932c642a7c9e575a24be7a7c2fddf"
 blocks: [OJ-oc1m, OJ-xodm]
 follows: [OJ-g2xx]
 ---
@@ -456,3 +456,29 @@ status: delivered
 ### proof
 - [x] AC1-AC8 have recorded implementation and offline verification evidence.
 
+
+### 2026-10-22T03:43:22Z speed
+## PM Decision
+REJECTED [2026-10-21]: C1 preparation mostly meets the graph/routing/default/offline evidence, but the public API preflight is untruthful for an accepted valid C1 geometry.
+
+EXPECTED: AC #6 requires truthful C1 behavior (and the delivery requirements forbid fabricated behavior claims). A complete 158-frame CFR24/audio source is a supported C1 window and must not be described as padded or trimmed.
+DELIVERED: Focused no-mock API check at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 returned HTTP 200 with public scene warning "clip will be padded or trimmed to the 17n+5 H3 grid; verify the exact frame window" while the persisted C1 graph retained [fps=24,start_f=0,end_f=158].
+GAP: The implementation preserves the exact supported window, but /api/prepare publicly asserts the opposite. Existing tests verify the persisted graph but not absence/replacement of this false C1 preflight message.
+FIX: Make the C1 public scene geometry message preset/exact-window-aware: say the complete 17n+5 window was retained (or omit the legacy pad/trim warning) for accepted geometry, while unsupported geometry remains explicit. Add a real no-mock API regression using a valid 158-frame source that asserts both persisted end_f=158 and the corrected/absent public warning. Preserve legacy semantics.
+
+DISCOVERED_BUG:
+  title: C1 public preflight falsely says a valid complete window will be padded or trimmed
+  context: A real C1 API preparation of a 158-frame CFR24 source with audio succeeds and persists end_f=158, but the shared scene report returned by /api/prepare still claims padding/trimming.
+  affected_files: app/main.py, src/openjutsu/scene.py, tests/test_c1_recipe.py
+  discovered_during: OJ-rrw1
+
+## nd_contract
+status: rejected
+
+### evidence
+- Reviewed commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 and focused real /api/prepare check above.
+- Coordinator evidence: 119 passed/0 skipped, exact keeper static-graph parity, UI invalidation, template/keeper hashes; whole gates remain disclosed FAIL, not green.
+
+### proof
+- [ ] AC #6: truthful C1 API/public preflight behavior remains unproven for supported 158-frame geometry.
+- [x] AC #1-#5 and #7-#8 were substantiated by committed tests, hashes, coordinator graph proof, and focused review.
