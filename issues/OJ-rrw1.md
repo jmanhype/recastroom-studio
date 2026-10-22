@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T03:59:16Z
-content_hash: "sha256:b67a0822ca10113e92634927ea04fbd2c75623f540ea064f93ba4b202d99c6ca"
+content_hash: "sha256:457e35a01843092e4b7f36e2461ebecd15eee36bf8033044fcc975d434b4928e"
 blocks: [OJ-oc1m, OJ-xodm]
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
@@ -198,6 +198,18 @@ status: new
 ## Notes
 PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
 Post-commit verification at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4: PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q completed synchronously: 119 passed, 1 disclosed warning in 27.00s; no background work remains.
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-21.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## Implementation Evidence (DELIVERED)
 
 PROOF:
