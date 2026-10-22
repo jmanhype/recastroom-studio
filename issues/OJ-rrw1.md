@@ -9,7 +9,7 @@ parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
 updated_at: 2026-10-22T04:11:58Z
-content_hash: "sha256:ab2c6246c3bf38be5bbddae3952e9d5b8055ea9127904133e9ab755baeaa295c"
+content_hash: "sha256:65b731b0eb71870a1f14e11bd953f5eb2eb8b6d061daa9b48b3e2f8f9ae8d541"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
 closed_at: 2026-10-22T04:09:00Z
@@ -815,3 +815,28 @@ status: accepted
 ### proof
 - [x] AC #1 through AC #8 remain verified on the unchanged executable tree.
 - [x] Provenance references resolve to actual Git objects and whole-repository gate debt is not represented as green.
+
+### 2026-10-22T04:11:58Z speed
+## Local integration receipt
+Accepted story 9c9c737e319b22647bf041552052fc83ee4dbaa7 merged locally into epic/OJ-fglb at caf24a9f82f557a4bb1f999ac7aa83cb306a74ae.
+Main remains d9c8e805c4a1e56b7860a5087c57ceb9e0ee37fd; no remote/push/publication.
+The remote-only pvg merge helper stopped on absent origin. A guarded clean-tree
+local fallback succeeded with command-scoped --no-autostash; no setting changed.
+Post-merge full suite: 121 passed, 1 existing Starlette/httpx warning, 0 skipped
+in26.50s. Accepted source/test/workflow/proof tree equals merged epic tree.
+Log: work/reviews/OJ-rrw1/epic-merged-pytest.log.
+Report: work/reviews/OJ-rrw1/COORDINATOR_REVIEW.md.
+Whole-repository metric debt remains disclosed, not green. No real render,
+GPU/video credit spend, public demo, or submission was performed. Owner gates
+remain unclaimed. Retained worktrees/evidence were not deleted.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Independent PM acceptance and locally verified merge caf24a9f82f557a4bb1f999ac7aa83cb306a74ae.
+- Full post-merge test log and unchanged frozen keeper/template hashes.
+
+### proof
+- [x] AC1-AC8 accepted; exact corrected object IDs and local integration verified.
+
