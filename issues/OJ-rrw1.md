@@ -8,8 +8,8 @@ labels: [contest, local, integration, walking-skeleton, accepted]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T04:03:49Z
-content_hash: "sha256:a316831c48c781680a0b70852c1a47fe3d0c2e4a340400888285c889fe8b21ff"
+updated_at: 2026-10-22T04:04:21Z
+content_hash: "sha256:4ab4fc5ee7c4fa7f69a0b975b4917f94b304b8fd7ae4e153a9456ffc59294354"
 follows: [OJ-g2xx]
 assignee: dev-OJ-rrw1
 closed_at: 2026-10-22T04:03:48Z
@@ -652,3 +652,21 @@ status: delivered
 - [x] AC #7: unknown preset still fails closed before writes.
 - [x] AC #8: deterministic offline proof expanded to 121 passing tests with no skips.
 
+
+### 2026-10-22T04:04:21Z speed
+## PM Decision
+ACCEPTED [2026-10-21]: Evidence at delivered HEAD 8fac585e83a1fa38f3a351af06082bd9a74cdcbd (code 20f0b0f6881c64be86664d8cd97f22c8954aa921) meets all eight authoritative ACs.
+
+The prior AC #6 rejection is closed. The real 158-frame API regression proves legacy keeps the pad/trim warning, C1 omits it, and the persisted C1 graph ends at frame 158. Metadata rejection now occurs before -show_frames, and frame verification has a 15-second fail-closed timeout. Coordinator full-suite evidence is 121 passed, 0 skipped, one disclosed existing Starlette/httpx warning; whole-repository gates remain FAIL as disclosed, not green.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Reviewed delivered HEAD 8fac585e83a1fa38f3a351af06082bd9a74cdcbd in detached review worktree.
+- pvg story verify-delivery passed 9/9 before acceptance.
+- Focused rework checks: test_api_scene_warning_is_recipe_aware 1 passed; real-metadata/unit-injected frame timeout returned timeout=15 and deterministic ValueError.
+- Coordinator log bc0f7006f88edde339765b4850f707a925d5a30fcb6385f84ffcca9e85b65641: 121 passed, 1 existing warning in 26.31s, 0 skips.
+
+### proof
+- [x] AC #1 through AC #8 verified, including truthful recipe-aware C1 preflight and exact retained geometry.
