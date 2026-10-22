@@ -8,8 +8,8 @@ labels: [contest, local, integration, walking-skeleton, delivered]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T03:28:47Z
-content_hash: "sha256:95206dd7d7e20d32177817f25e9e3d82b81d0d718300ca564418c6b8236c72b4"
+updated_at: 2026-10-22T03:29:48Z
+content_hash: "sha256:e2989db4d8cb8f6a133b0061b80c39b99a97c107a6fb71ab0bd134c9bcb0b4e3"
 blocks: [OJ-oc1m, OJ-xodm]
 assignee: dev-OJ-rrw1
 follows: [OJ-g2xx]
@@ -198,7 +198,55 @@ status: new
 ## Notes
 PROOF: Implementation commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4 on story/OJ-rrw1. Nine files changed, 390 insertions and 9 deletions. Full test suite: 119 passed, 0 failures, 0 skipped, one disclosed Starlette deprecation. pvg gates --changed d9c8e80: PASS, one controls complexity warning. pvg story verify-tdd --base d9c8e80: PASS, one commit checked, no unauthorized test edits. Whole-repository gates remain FAIL as detailed below; no claim of global gate success. No line-coverage measurement available. Acceptance coverage: 8/8 mapped to concrete tests and hash evidence.
 Post-commit verification at 40aa30b772f4cbf9f475318bbd6e787e25cb1af4: PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q completed synchronously: 119 passed, 1 disclosed warning in 27.00s; no background work remains.
+## Implementation Evidence (DELIVERED)
 
+PROOF:
+
+### CI/Test Results
+Commands run:
+- `PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q`: 119 passed, 1 disclosed warning in 27.00s.
+- `PYTHONPATH=src $ROOT/.venv/bin/python -m pytest -q tests/test_c1_recipe.py tests/test_workflow.py tests/test_app_e2e.py tests/test_frontend_regression.py`: 23 passed, 1 warning.
+- `$ROOT/.venv/bin/python -m pip check`: No broken requirements found.
+- `git diff --check`: exit 0.
+- `pvg verify src/openjutsu/workflow.py src/openjutsu/pipeline.py src/openjutsu/cli.py app/main.py app/web/index.html app/web/studio.js tests/test_c1_recipe.py workflows/README.md docs/evidence/OJ-rrw1/PROOF.md --format=text`: PASSED, 6 files, 0 issues.
+- `pvg gates --changed d9c8e80`: PASS, 1 controls complexity warning, 0 skipped.
+- `pvg story verify-tdd --base d9c8e80`: PASS, no unauthorized test edits.
+- `pvg gates`: FAIL, 16 historical-evidence duplication blocks and 11 complexity warnings; details in docs/evidence/OJ-rrw1/PROOF.md.
+Summary: 119 passed, 0 failed, 0 skipped; pip check clean; scoped gates pass, whole-repository gates fail as disclosed.
+Coverage: 8/8 acceptance criteria; line coverage not measured (package unavailable).
+
+### Commit
+- Branch: story/OJ-rrw1
+- SHA: 40aa30b772f4cbf9f475318bbd6e787e25cb1af4
+- Evidence: docs/evidence/OJ-rrw1/PROOF.md
+
+### AC Verification
+- [x] AC #1: default legacy preserved, original template hash unchanged, full legacy tests pass.
+- [x] AC #2: complete sanitized graph-delta comparison, copied graph, parameterized runtime values.
+- [x] AC #3: C1 reference2 required in graph/pipeline/API/CLI; legacy optional.
+- [x] AC #4: exact timed-audio and latent-lock links asserted, including actual API persisted graph.
+- [x] AC #5: real 124/141/158-frame sources preserved; unsupported windows/fps/no-audio rejected before job writes.
+- [x] AC #6: real no-mock API and CLI preparation; public manifest preset/basenames; UI selector and epoch invalidation.
+- [x] AC #7: unknown preset fails before job write; API before upload write.
+- [x] AC #8: 14 new offline cases, 119 total; synthetic media only; template and keeper hashes independently verified.
+
+LEARNINGS:
+- Actual decoded frames avoid inherited 141-frame truncation; exact CFR24 17n+5 windows only.
+- C1 node requirements must branch before legacy-only Head Swap access.
+
+OBSERVATIONS:
+- No inference, GPU, network, credentials, downloads, push, or submission.
+- Existing Starlette/httpx deprecation warning and whole-repository metric failures disclosed, not suppressed.
+- Vault Claude unavailable; no tracker body repair attempted.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Commit 40aa30b772f4cbf9f475318bbd6e787e25cb1af4; 119 passed; exact commands above.
+
+### proof
+- [x] AC #1 through AC #8 mapped above and in committed evidence.
 
 ## nd_contract
 status: delivered
