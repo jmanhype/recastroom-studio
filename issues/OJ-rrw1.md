@@ -1,17 +1,18 @@
 ---
 id: OJ-rrw1
 title: "Add opt-in C1 recipe selection"
-status: open
+status: in_progress
 priority: 1
 type: task
 labels: [contest, local, integration, walking-skeleton, rejected]
 parent: OJ-fglb
 created_at: 2026-10-22T03:15:29Z
 created_by: speed
-updated_at: 2026-10-22T03:43:22Z
-content_hash: "sha256:8492000696d96c63f45c327b4db964675551fb2cff46f246fa8e5c683ecb8ba7"
+updated_at: 2026-10-22T03:44:27Z
+content_hash: "sha256:44b3824ebb21acdce75f99e47389b1f6171bc87e70f7d7e121abf14a27836a7d"
 blocks: [OJ-oc1m, OJ-xodm]
 follows: [OJ-g2xx]
+assignee: dev-OJ-rrw1
 ---
 
 ## Description
@@ -406,6 +407,8 @@ Acceptance coverage: 8/8 ACs mapped below; Python line coverage was not measured
 - 2026-10-22T03:28:46Z status: in_progress -> in_progress
 - 2026-10-22T03:43:22Z status: in_progress -> open
 - 2026-10-22T03:43:22Z released by speed
+- 2026-10-22T03:44:27Z status: open -> in_progress
+- 2026-10-22T03:44:27Z claimed by dev-OJ-rrw1
 
 ## Links
 - Parent: [[OJ-fglb]]
