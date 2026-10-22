@@ -9,11 +9,12 @@ parent: OJ-fglb
 created_at: 2026-10-18T20:09:03Z
 created_by: speed
 updated_at: 2026-10-18T20:30:00Z
-content_hash: "sha256:0c60a87e1e6620753f033ef8b1035de5b3fb0c596d2e415b79cf25640393383d"
+content_hash: "sha256:91ee479951fe54410209b0cf343b7e6feced9dab8cd8e58d3d17bfca296b8ccc"
 assignee: dev-OJ-g2xx
 closed_at: 2026-10-18T20:30:00Z
 close_reason: "Independent PM approved commit 38bd79c4f449f42d64a171793fe8cf7572530eb2; all five ACs verified, manifest/test/scope checks passed, and only the four documented owner-gated submission blockers remain."
 led_to: [OJ-oc1m]
+blocks: [OJ-xodm]
 ---
 
 ## Description
@@ -242,9 +243,11 @@ status: delivered
 - 2026-10-18T20:22:09Z status: in_progress -> in_progress
 - 2026-10-18T20:22:43Z status: in_progress -> in_progress
 - 2026-10-18T20:30:00Z status: in_progress -> closed
+- 2026-10-22T03:20:42Z dep_added: blocks OJ-xodm
 
 ## Links
 - Parent: [[OJ-fglb]]
+- Blocks: [[OJ-xodm]]
 - Led to: [[OJ-oc1m]]
 
 ## Comments
