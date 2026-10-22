@@ -1,7 +1,7 @@
 ---
 id: OJ-oc1m
 title: "Prove live Comfy Developer Platform execution"
-status: in_progress
+status: open
 priority: 0
 type: task
 labels: [contest, external-integration, owner-gated]
@@ -9,11 +9,10 @@ parent: OJ-fglb
 created_at: 2026-10-18T20:09:04Z
 created_by: speed
 updated_at: 2026-10-22T13:34:25Z
-content_hash: "sha256:1b0d1628bee75c9ac6da2c71273f096c516e0013ad29fe6c8ae96a710c92f1f9"
+content_hash: "sha256:69ea2816d45cc343f4c20b0ba99ae0aee278126a6f53d94b0abe1e9dde8e2d2a"
 blocks: [OJ-oain, OJ-xodm]
 follows: [OJ-g2xx, OJ-rrw1]
 was_blocked_by: [OJ-rrw1]
-assignee: dev-OJ-oc1m
 ---
 
 ## Description
@@ -350,6 +349,8 @@ status: new
 - 2026-10-22T12:16:00Z released by speed
 - 2026-10-22T13:17:59Z status: open -> in_progress
 - 2026-10-22T13:17:59Z claimed by dev-OJ-oc1m
+- 2026-10-22T13:34:25Z status: in_progress -> open
+- 2026-10-22T13:34:25Z released by speed
 
 ## Links
 - Parent: [[OJ-fglb]]
