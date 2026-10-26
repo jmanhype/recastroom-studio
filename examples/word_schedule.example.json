@@ -1,0 +1,14 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.0,
+      "text": "Open source recasting",
+      "words": [
+        {"start": 0.0, "end": 0.28, "word": "Open"},
+        {"start": 0.28, "end": 0.58, "word": "source"},
+        {"start": 0.58, "end": 1.0, "word": "recasting"}
+      ]
+    }
+  ]
+}

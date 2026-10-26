@@ -1,0 +1,82 @@
+{
+  "schema_version": "openjutsu.story-validation.v1",
+  "story": "OJ-v983",
+  "audited_commit": "80821d7e73bb0116e7ab70daab7718d309939d55",
+  "commands": [
+    {
+      "command": "pvg gates app src scripts tools",
+      "exit_code": 0,
+      "result": "GATES: PASS (9 warn, 0 skipped); verify_manifest CCN 26; evidence.py 303 non-blank lines; manifest_verifier.py 174 non-blank lines"
+    },
+    {
+      "command": "../../../.venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "result": "31 passed, 1 warning in 9.11s; Starlette httpx deprecation warning"
+    },
+    {
+      "command": "../../../.venv/bin/python -m pip check",
+      "exit_code": 0,
+      "result": "No broken requirements found."
+    },
+    {
+      "command": "pvg verify src/openjutsu/evidence.py src/openjutsu/manifest_verifier.py docs/evidence/OJ-v983-quality-gate",
+      "exit_code": 0,
+      "result": "VERIFY: PASSED (2 source files scanned, 0 issues; evidence documents contain no source candidates)"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "no whitespace errors"
+    },
+    {
+      "command": "PYTHONPATH=src ../../../.venv/bin/python tools/verify_keeper_evidence.py docs/evidence/slate/manifest.json",
+      "exit_code": 0,
+      "result": "PASS; keeper_count=11; artifact_count=48; manifest_sha256=ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33"
+    },
+    {
+      "command": "PYTHONPATH=src ../../../.venv/bin/python tools/final_submission_gate.py --commit 80821d7e73bb0116e7ab70daab7718d309939d55 --demo <approved-demo-v1> --output work/OJ-v983-final-gate-80821d7e",
+      "exit_code": 2,
+      "result": "expected owner blockers only; 11 PASS / 0 FAIL / 8 OWNER_BLOCKED; release_audit.errors=[]; embedded pytest 31 passed; embedded pip check passed"
+    }
+  ],
+  "final_gate": {
+    "commit": "80821d7e73bb0116e7ab70daab7718d309939d55",
+    "exit_code": 2,
+    "matrix_counts": {
+      "PASS": 11,
+      "FAIL": 0,
+      "OWNER_BLOCKED": 8
+    },
+    "release_audit_errors": [],
+    "embedded_tests_exit_code": 0,
+    "embedded_tests_summary": "31 passed, 1 warning in 9.26s",
+    "embedded_pip_check_exit_code": 0,
+    "public_package_sha256": "8af36258ef8ae5bf18a7bfcb655bd5d030200053720efa6b351924dbd29bd4d8",
+    "demo_sha256": "7cbe824a3e7dc4ff515c23fe1672630e938e2520e9b7c3686c87fa90a4db089d"
+  },
+  "acceptance_criteria": [
+    {
+      "ac": 1,
+      "status": "PASS",
+      "evidence": "quality gate exits 0; former CCN-74 verify_manifest is CCN 26 and both source files are below the 400 non-blank-line threshold"
+    },
+    {
+      "ac": 2,
+      "status": "PASS",
+      "evidence": "openjutsu.evidence.verify_manifest signature remains the public entry point; all four existing evidence tamper/fail-closed tests pass"
+    },
+    {
+      "ac": 3,
+      "status": "PASS",
+      "evidence": "full pytest, pip check, pvg verify, git diff --check, keeper verifier, and final submission gate reran on commit 80821d7"
+    },
+    {
+      "ac": 4,
+      "status": "PASS",
+      "evidence": "fresh final-gate artifact records 11 PASS / 0 FAIL / 8 OWNER_BLOCKED with empty release-audit errors"
+    }
+  ],
+  "network_operations": false,
+  "published": false,
+  "submitted": false
+}

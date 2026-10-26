@@ -1,0 +1,29 @@
+{
+  "job_id": "85b97f14514e",
+  "backend": "dry_run",
+  "inference_spend": 0,
+  "status_gets": 4,
+  "status_response_codes": [
+    200,
+    200,
+    200,
+    200
+  ],
+  "http_500_count": 0,
+  "expected_run404_count": 1,
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "viewport": [
+    1440,
+    1000
+  ],
+  "download_sha256": "1bed0cdb094306a27abe251e73748616f75e7881b527761bdabb7c3d3edf5970",
+  "download_matches_final": true,
+  "app_main_sha256": "ace2ab9e2a658fdb60e9f75594a53271f8adc3f40b53430ecfce9e8649b24aa1",
+  "tab_closed_before_server_stop": true,
+  "remaining_iab_tabs": [
+    "http://127.0.0.1:8893/"
+  ],
+  "server_pid": 28235,
+  "server_exit": 143,
+  "viewport_override_reset": true
+}

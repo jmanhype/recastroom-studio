@@ -1,0 +1,9 @@
+ace2ab9e2a658fdb60e9f75594a53271f8adc3f40b53430ecfce9e8649b24aa1  app/main.py
+abc494685fe1f4f32debd526a301f6a602dd0e789b364045343f10511ff39d70  tests/test_status_atomic.py
+eb99d61418f1670d76e858487ac0197f1921a4c70ccbfff170d9dd7d2185bc74  docs/evidence/status-atomic/OJ-p8rd/REPORT.md
+31f1128733e5cf5441edd44c30c63782ba2aaaad494c925f3af3a1ced3acbecb  docs/evidence/status-atomic/OJ-p8rd/focused-1.txt
+ef870ddda33d5a8e604103163a7988eb89f98a740203b9f9d7b98b3872aea0b8  docs/evidence/status-atomic/OJ-p8rd/focused-2.txt
+8e5b1379c2c0c1ad719cf0f963f4e10a6bb956bcc43b3b0cc0e3d48111754e6d  docs/evidence/status-atomic/OJ-p8rd/focused-3.txt
+3ae558b323126e74a7edaae2d2d677e90b2f434ce1cf08718a88157291b40dc1  docs/evidence/status-atomic/OJ-p8rd/full-suite.txt
+ae944eb0e9cd37c32ec732d0e02b795491e7625484d0b5c144546e5337206434  docs/evidence/status-atomic/OJ-p8rd/legacy-control.txt
+0de2e18158b96435eeea64db4aa8434e2b2d1c1ffcee3ce7c31c9cf2c6680916  docs/evidence/status-atomic/OJ-p8rd/verify.py

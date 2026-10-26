@@ -1,0 +1,124 @@
+{
+  "schema": "comfy-build/1",
+  "id": null,
+  "name": "openjutsu-h3-dogfood-candidate",
+  "description": "Offline candidate only: pinned recorded refs and current public asset metadata; no prior-byte proof, no runnable-build or license claim.",
+  "syncedRevision": null,
+  "definition": {
+    "schema": "distribution-definition/0",
+    "baseComfyVersion": "9fe7ef764d0452dcc9dcb925efd076d4e68eece1",
+    "models": [
+      {
+        "type": "diffusion_models",
+        "filename": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "sha256": "9255f52b6677845ad238f20dfaafa94727053694127ab7f255c048f0f9365779",
+        "sourceUri": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/e5eb578a89295337b8ff433a035929ce0279e0b6/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors"
+      },
+      {
+        "type": "text_encoders",
+        "filename": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "sha256": "35a88d51044231fe332301d7a62aa81e3f2cba62febeb446e2c1e3e0ef76f2c6",
+        "sourceUri": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/e5eb578a89295337b8ff433a035929ce0279e0b6/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      },
+      {
+        "type": "vae",
+        "filename": "minimax_h3_video_vae_fp16.safetensors",
+        "sha256": "7c1f131492e7eddacaac9069a61b81bdd39de5cc96561e677c5eab1cdce5e522",
+        "sourceUri": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/e5eb578a89295337b8ff433a035929ce0279e0b6/vae/minimax_h3_video_vae_fp16.safetensors"
+      },
+      {
+        "type": "vae",
+        "filename": "minimax_h3_audio_vae_fp32.safetensors",
+        "sha256": "8e505d95dd1561d47abd43d4238fd40d9bb1ae9e147ed0a4cba778d76ae4db48",
+        "sourceUri": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/e5eb578a89295337b8ff433a035929ce0279e0b6/vae/minimax_h3_audio_vae_fp32.safetensors"
+      },
+      {
+        "type": "loras/experimental",
+        "filename": "minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors",
+        "sha256": "693f41129785f31a820d32100b698cdcc42182c27c291f37f47d1ca5f38f5c20",
+        "sourceUri": "https://huggingface.co/drbaph/MiniMax-H3-Turbo-Lora-ComfyUI/resolve/bb2bc497cbaca89dadd0bcf1856eed4f8275be20/experimental/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors"
+      },
+      {
+        "type": "loras",
+        "filename": "minimax_h3_character_swap_v1.1_ref2va_fro.safetensors",
+        "sha256": "ab21167bed71db99ac09527ad1f26f5f3517687ebf2e1f1bd5e91cc0bdf9b9c3",
+        "sourceUri": "https://huggingface.co/Alissonerdx/Minimax-H3-ComfyUI/resolve/37d7d8b302ec4168ff30467c900c588db253cad9/loras/minimax_h3_character_swap_v1.1_ref2va_fro.safetensors"
+      },
+      {
+        "type": "checkpoints",
+        "filename": "sam3.1_multiplex_fp16.safetensors",
+        "sha256": "9ba99c92703c2e8b4f47de2d34a539bb8e18923049e238b780d70dbe6368eb03",
+        "sourceUri": "https://huggingface.co/Comfy-Org/sam3.1/resolve/7bb8374780a725b4353ed31f3a9395c9742b5621/checkpoints/sam3.1_multiplex_fp16.safetensors"
+      },
+      {
+        "type": "RMBG/BiRefNet",
+        "filename": "birefnet.py",
+        "sha256": "a9566611aa07a6fbb68ddb6ac8e19e62c879a428fbfc2f44efa53d233f2e302f",
+        "sourceUri": "https://huggingface.co/1038lab/BiRefNet/resolve/4d000788a9698c7f8d67c8c6ce2b40c768f5b909/birefnet.py"
+      },
+      {
+        "type": "RMBG/BiRefNet",
+        "filename": "BiRefNet_config.py",
+        "sha256": "e7b8c2a74f6cea6a59553d517f71d47f2c1d90e670a13416af17c25fe2f3dc52",
+        "sourceUri": "https://huggingface.co/1038lab/BiRefNet/resolve/4d000788a9698c7f8d67c8c6ce2b40c768f5b909/BiRefNet_config.py"
+      },
+      {
+        "type": "RMBG/BiRefNet",
+        "filename": "BiRefNet-general.safetensors",
+        "sha256": "77277264c0e8c74149d3ff2fade4fd8176965b7108f3c5fc3b8c9c811edb4519",
+        "sourceUri": "https://huggingface.co/1038lab/BiRefNet/resolve/4d000788a9698c7f8d67c8c6ce2b40c768f5b909/BiRefNet-general.safetensors"
+      },
+      {
+        "type": "RMBG/BiRefNet",
+        "filename": "config.json",
+        "sha256": "966a1f0165b072d2d1309756e71907750e535ba5c3790d8cd0e69713ff3a56cd",
+        "sourceUri": "https://huggingface.co/1038lab/BiRefNet/resolve/4d000788a9698c7f8d67c8c6ce2b40c768f5b909/config.json"
+      },
+      {
+        "type": "opencv_face",
+        "filename": "face_detection_yunet_2023mar.onnx",
+        "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+        "sourceUri": "https://github.com/opencv/opencv_zoo/raw/47534e27c9851bb1128ccc0102f1145e27f23f98/models/face_detection_yunet/face_detection_yunet_2023mar.onnx"
+      },
+      {
+        "type": "opencv_face",
+        "filename": "face_recognition_sface_2021dec.onnx",
+        "sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79",
+        "sourceUri": "https://github.com/opencv/opencv_zoo/raw/47534e27c9851bb1128ccc0102f1145e27f23f98/models/face_recognition_sface/face_recognition_sface_2021dec.onnx"
+      }
+    ],
+    "customNodes": [
+      {
+        "name": "ComfyUI-BFSNodes",
+        "repository": "https://github.com/alisson-anjos/ComfyUI-BFSNodes",
+        "gitRef": "de5c7215840097d68e29b6b4903663698319065a"
+      },
+      {
+        "name": "ComfyUI-KJNodes",
+        "repository": "https://github.com/kijai/ComfyUI-KJNodes",
+        "gitRef": "37a6c45a07bb06cc392431ddbbc741e691c467f4"
+      },
+      {
+        "name": "ComfyUI-RMBG",
+        "repository": "https://github.com/1038lab/ComfyUI-RMBG",
+        "gitRef": "a66a5e641a54988d80ed6aad18946081c85f309e"
+      },
+      {
+        "name": "ComfyUI-VideoHelperSuite",
+        "repository": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
+        "gitRef": "4d907bee61e92c2e65af3bd6383a4e4d356126d1"
+      },
+      {
+        "name": "ComfyUI-SolAttn_triton",
+        "repository": "https://github.com/kijai/ComfyUI-SolAttn_triton",
+        "gitRef": "26d816ebd4f1e43a2c6e4d4759be3137f10a7a73"
+      },
+      {
+        "name": "ComfyUI-H3-ExactAudioLock",
+        "repository": "https://github.com/badgids/ComfyUI-H3-ExactAudioLock",
+        "gitRef": "559196913108ca9bb58abf6f1a3d06be369532e9"
+      }
+    ],
+    "pipDependencies": ""
+  }
+}

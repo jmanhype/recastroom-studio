@@ -1,0 +1,2 @@
+$ node --check app/web/studio.js
+exit 0 (syntax check produced no output)

@@ -1,0 +1,152 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+___________ test_exports_preserve_speech_layout_and_loudness[mono-1] ___________
+
+tmp_path = PosixPath('<TEMP_PATH>')
+layout = 'mono', count = 1
+
+    @pytest.mark.parametrize("layout,count", [("mono", 1), ("stereo", 2), ("5.1", 6)])
+    def test_exports_preserve_speech_layout_and_loudness(tmp_path, layout, count):
+        source = tmp_path / "source.mp4"
+        final = tmp_path / "final.mp4"
+        comparison = tmp_path / "comparison.mp4"
+        make_speech_source(source, layout)
+        restore_source_audio(source, source, final)
+        make_side_by_side(source, final, comparison, width=160, height=96)
+        source_audio = next(s for s in probe(source)["streams"] if s["codec_type"] == "audio")
+        assert source_audio["channels"] == count
+        assert source_audio["channel_layout"] == layout
+        original = pcm(source)
+        metrics = {"source_layout": layout, "source_channels": count, "outputs": {}}
+        for output in (final, comparison):
+            audio = next(s for s in probe(output)["streams"] if s["codec_type"] == "audio")
+>           assert audio["channels"] == count
+E           assert 6 == 1
+
+tests/test_media_audio.py:76: AssertionError
+__________ test_exports_preserve_speech_layout_and_loudness[stereo-2] __________
+
+tmp_path = PosixPath('<TEMP_PATH>')
+layout = 'stereo', count = 2
+
+    @pytest.mark.parametrize("layout,count", [("mono", 1), ("stereo", 2), ("5.1", 6)])
+    def test_exports_preserve_speech_layout_and_loudness(tmp_path, layout, count):
+        source = tmp_path / "source.mp4"
+        final = tmp_path / "final.mp4"
+        comparison = tmp_path / "comparison.mp4"
+        make_speech_source(source, layout)
+        restore_source_audio(source, source, final)
+        make_side_by_side(source, final, comparison, width=160, height=96)
+        source_audio = next(s for s in probe(source)["streams"] if s["codec_type"] == "audio")
+        assert source_audio["channels"] == count
+        assert source_audio["channel_layout"] == layout
+        original = pcm(source)
+        metrics = {"source_layout": layout, "source_channels": count, "outputs": {}}
+        for output in (final, comparison):
+            audio = next(s for s in probe(output)["streams"] if s["codec_type"] == "audio")
+>           assert audio["channels"] == count
+E           assert 6 == 2
+
+tests/test_media_audio.py:76: AssertionError
+___________ test_exports_preserve_speech_layout_and_loudness[5.1-6] ____________
+
+tmp_path = PosixPath('<TEMP_PATH>')
+layout = '5.1', count = 6
+
+    @pytest.mark.parametrize("layout,count", [("mono", 1), ("stereo", 2), ("5.1", 6)])
+    def test_exports_preserve_speech_layout_and_loudness(tmp_path, layout, count):
+        source = tmp_path / "source.mp4"
+        final = tmp_path / "final.mp4"
+        comparison = tmp_path / "comparison.mp4"
+>       make_speech_source(source, layout)
+
+tests/test_media_audio.py:66:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_media_audio.py:52: in make_speech_source
+    subprocess.run([
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', ...],), kwargs = {}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', 'color=c=navy:s=160x96:r=24:d=2', '-i', '<REPO>/tests/fixtures/export_speech.wav', '-filter_complex', '[1:a]asplit=2[full][low];[low]lowpass=f=120[lo];[full][lo]join=inputs=2:channel_layout=5.1:map=0.0-FL|0.0-FR|0.0-FC|1.0-LFE|0.0-BL|0.0-BR[speech]', '-map', '0:v:0', '-map', '[speech]', '-t', '2', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '<TEMP_PATH>']' returned non-zero exit status 234.
+
+/opt/homebrew/Cellar/python@3.11/3.11.11/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py:571: CalledProcessError
+----------------------------- Captured stderr call -----------------------------
+[aac @ 0x7a12815c00] Input contains (near) NaN/+-Inf
+[aost#0:1/aac @ 0x7a1304c300] [enc:aac @ 0x7a13409260] Error submitting audio frame to the encoder
+[aost#0:1/aac @ 0x7a1304c300] [enc:aac @ 0x7a13409260] Error encoding a frame: Invalid argument
+[aost#0:1/aac @ 0x7a1304c300] Task finished with error code: -22 (Invalid argument)
+[aost#0:1/aac @ 0x7a1304c300] Terminating thread with return code -22 (Invalid argument)
+=========================== short test summary info ============================
+FAILED tests/test_media_audio.py::test_exports_preserve_speech_layout_and_loudness[mono-1]
+FAILED tests/test_media_audio.py::test_exports_preserve_speech_layout_and_loudness[stereo-2]
+FAILED tests/test_media_audio.py::test_exports_preserve_speech_layout_and_loudness[5.1-6]
+3 failed in 1.57s

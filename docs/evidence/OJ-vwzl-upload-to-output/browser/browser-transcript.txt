@@ -1,0 +1,80 @@
+✓ Openjutsu Studio
+  http://127.0.0.1:8915/
+- heading "Attestation-gated MiniMax H3 recasting" [level=1, ref=e1]
+- button "Source clip *" [ref=e2]: No file chosen
+- button "Primary performer reference *" [ref=e3]: No file chosen
+- button "Optional second reference" [ref=e4]: No file chosen
+- button "Whisper word-timing JSON" [ref=e5]: No file chosen
+- textbox "Replacement identity description" [ref=e6]
+- spinbutton "Seed" [ref=e7]: 49
+- checkbox "I own this clip or have explicit permission to modify it, and I have consent for every identifiable person/reference likeness." [checked=false, ref=e9]
+- button "Prepare workflow" [ref=e8]
+✓ Done
+✓ Done
+✓ Done
+✓ Done
+✓ Done
+✓ Done
+true
+✓ Done
+job_id
+{
+  "job_id": "d71901bce6a6",
+  "scene": {
+    "path": "synthetic_source.mp4",
+    "duration_seconds": 2.041667,
+    "width": 640,
+    "height": 240,
+    "fps": 24,
+    "has_audio": true,
+    "audio_channels": 1,
+    "risks": [],
+    "warnings": [
+      "manual shot review required: eyes visible, mouth visible, one target speaker, stable camera"
+    ],
+    "recommended": true
+  },
+  "manifest": {
+    "job_id": "d71901bce6a6",
+    "source": "synthetic_source.mp4",
+    "reference_1": "synthetic_reference.png",
+    "reference_2": null,
+    "rights_attested": true,
+    "word_schedule_path": "word_timings.json",
+    "workflow_path": "workflow.json",
+    "prompt_path": "prompt.txt",
+    "seed": 50
+  },
+  "workflow_url": "/api/jobs/d71901bce6a6/workflow",
+  "prompt_url": "/api/jobs/d71901bce6a6/prompt"
+}
+"clicked"
+✓ Done
+{
+  "job_id": "d71901bce6a6",
+  "state": "complete",
+  "message": "Deterministic dry-run generation complete",
+  "artifacts": {
+    "generated": "generated.mp4",
+    "final": "final.mp4",
+    "side_by_side": "source_vs_final.mp4"
+  },
+  "backend": "dry_run",
+  "uploads": {
+    "source": "synthetic_source.mp4",
+    "reference_1": "synthetic_reference.png",
+    "reference_2": null
+  },
+  "prompt_id": "dry-run-efe3804bcb568ee7"
+}
+
+Download review artifacts:
+generated  final  side_by_side
+1
+1
+1
+[44737.3] POST http://127.0.0.1:8915/api/prepare (Fetch) 200
+[44737.4] POST http://127.0.0.1:8915/api/jobs/d71901bce6a6/run (Fetch) 200
+[44737.5] GET http://127.0.0.1:8915/api/jobs/d71901bce6a6/status (Fetch) 200
+✓ Screenshot saved to <output-dir>/app-complete.png
+✓ Browser closed

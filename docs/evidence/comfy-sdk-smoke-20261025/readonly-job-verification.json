@@ -1,0 +1,28 @@
+{
+  "job_id": "f871824b-55d5-4629-b178-949104e9415b",
+  "output_count": 1,
+  "status": "succeeded",
+  "workflow": {
+    "smoke_empty": {
+      "class_type": "EmptyImage",
+      "inputs": {
+        "batch_size": 1,
+        "color": 16777215,
+        "height": 64,
+        "width": 64
+      }
+    },
+    "smoke_save": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "filename_prefix": "recastroom_sdk_smoke",
+        "images": [
+          "smoke_empty",
+          0
+        ]
+      }
+    }
+  },
+  "workflow_format": "api",
+  "workflow_sha256": "ec9615286e08292d3d9606174b477c8847296dc3be7161a246d402e077e797ca"
+}

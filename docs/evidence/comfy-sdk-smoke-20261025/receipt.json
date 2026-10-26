@@ -1,0 +1,34 @@
+{
+  "attempt": 2,
+  "bound": {
+    "graph_nodes": 2,
+    "model_inference": false,
+    "submissions": 1,
+    "uploaded_assets": 0,
+    "workflow_sha256": "ec9615286e08292d3d9606174b477c8847296dc3be7161a246d402e077e797ca",
+    "workflow_wait_timeout_seconds": 180
+  },
+  "client_info": "recastroom-studio-smoke",
+  "client_repr": "Comfy(base_url='https://cloud.comfy.org', authenticated=True)",
+  "elapsed_seconds": 5.075,
+  "final_status": "succeeded",
+  "finished_at_utc": "2026-10-25T17:50:55.906865+00:00",
+  "initial_status": "queued",
+  "job_id": "f871824b-55d5-4629-b178-949104e9415b",
+  "ok": true,
+  "output_count": 1,
+  "outputs": [
+    {
+      "content_type": "image/png",
+      "downloaded_bytes": 420,
+      "id": "1ba2a928-b9da-4599-9c71-efc34cd873a8",
+      "name": "recastroom_sdk_smoke_00001_.png",
+      "node_id": "smoke_save",
+      "reported_size_bytes": 420,
+      "sha256": "ee1b9d9bd39411706e6f5d60f64e23089426ecc390d1c746f8b3acf89cfba60d",
+      "type": "image"
+    }
+  ],
+  "schema_version": "recastroom.live-sdk-smoke.v1",
+  "started_at_utc": "2026-10-25T17:50:50.832013+00:00"
+}

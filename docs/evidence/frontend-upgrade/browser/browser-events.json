@@ -1,0 +1,163 @@
+[
+  {
+    "focus": "<a class=\"brand\" href=\"/\" aria-label=\"Openjutsu Studio home\"><span class=\"brand-mark\" aria-hidden=\"true\">O/</span> OPENJUTSU <span>STUDIO</span></a>"
+  },
+  {
+    "focus": "source"
+  },
+  {
+    "focus": "reference_1"
+  },
+  {
+    "focus": "reference_2"
+  },
+  {
+    "focus": "<summary>Timing &amp; creative controls</summary>"
+  },
+  {
+    "focus": "words"
+  },
+  {
+    "focus": "identity"
+  },
+  {
+    "focus": "seed"
+  },
+  {
+    "focus": "rights",
+    "outline": "rgb(216, 199, 145) solid 2px",
+    "rights": false,
+    "submitDisabled": true
+  },
+  {
+    "focus": "submit",
+    "outline": "rgb(216, 199, 145) solid 2px",
+    "submitDisabled": false
+  },
+  {
+    "focus": "reset"
+  },
+  {
+    "focus": "Workflow JSON",
+    "outline": "rgb(216, 199, 145) solid 2px"
+  },
+  {
+    "focus": "Prompt"
+  },
+  {
+    "focus": "run",
+    "outline": "rgb(216, 199, 145) solid 2px"
+  },
+  {
+    "output": "Deterministic dry-run generation complete \u00b7 Dry run: no AI inference. Output copies the source.",
+    "phase": "post-active-sample-already-complete",
+    "runDisabled": false,
+    "stage": "COMPLETE",
+    "note": "Real DOWNLOADING was observed in CUA AX output earlier; this later DOM sample is COMPLETE, not active-state proof."
+  },
+  {
+    "download": "<browser-downloads>/34b7d2ac2f9a-final.mp4"
+  },
+  {
+    "downloads": [
+      "http://127.0.0.1:8894/api/jobs/34b7d2ac2f9a/artifacts/generated",
+      "http://127.0.0.1:8894/api/jobs/34b7d2ac2f9a/artifacts/final",
+      "http://127.0.0.1:8894/api/jobs/34b7d2ac2f9a/artifacts/side_by_side"
+    ],
+    "focus": "Download Final with audio",
+    "height": 1000,
+    "outline": "rgb(216, 199, 145) solid 2px",
+    "overflow": false,
+    "phase": "desktop-complete",
+    "videos": [
+      {
+        "duration": 2.048,
+        "height": 240,
+        "id": "final-preview",
+        "readyState": 4,
+        "width": 640
+      },
+      {
+        "duration": 2.048,
+        "height": 384,
+        "id": "comparison-preview",
+        "readyState": 4,
+        "width": 1920
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "focus": "Download Side-by-side review"
+  },
+  {
+    "focus": "final-preview"
+  },
+  {
+    "focus": "final-preview"
+  },
+  {
+    "height": 844,
+    "phase": "mobile-complete",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "error": "Could not prepare: Expecting property name enclosed in double quotes: line 1 column 3 (char 2) Check your media and timing JSON, then prepare again.",
+    "phase": "prepare-error",
+    "reviewHidden": true,
+    "runDisabled": true,
+    "stage": "PREPARATION STOPPED"
+  },
+  {
+    "error": "Could not prepare: Expecting property name enclosed in double quotes: line 1 column 3 (char 2) Check your media and timing JSON, then prepare again.",
+    "phase": "prepare-error-settled",
+    "reviewHidden": true,
+    "runDisabled": true,
+    "stage": "PREPARATION STOPPED"
+  },
+  {
+    "error": "Run stopped: [Errno 2] No such file or directory: '<private-evidence>/app-data/uploads/5ead8146d6ad/synthetic_source.mp4' Check backend configuration, then retry the run or reset.",
+    "phase": "terminal-error-missing-isolated-source",
+    "reviewHidden": true,
+    "runDisabled": false,
+    "stage": "ERROR"
+  },
+  {
+    "error": "Status unavailable: Server response unreadable (500). Check the connection and retry. The server job may still be running. Check status again; do not submit a duplicate run.",
+    "phase": "real-retry-status-race-500",
+    "retryVisible": true,
+    "runDisabled": true,
+    "stage": "SUBMITTING"
+  },
+  {
+    "links": 3,
+    "phase": "status-retry-recovered",
+    "reviewHidden": false,
+    "stage": "COMPLETE"
+  },
+  {
+    "artifactCount": 0,
+    "error": "Run confirmation unavailable: Job not found Check status first in case the request reached the server. If no job exists, prepare a new job.",
+    "phase": "stale-job-isolated-directory-held",
+    "retryVisible": true,
+    "runDisabled": true
+  },
+  {
+    "artifacts": 0,
+    "output": "Explicit isolated QA unknown-state fixture; not provider progress \u00b7 Dry run: no AI inference. Output copies the source.",
+    "phase": "explicit-unknown-status-fixture",
+    "runDisabled": true,
+    "stage": "AWAITING_OPERATOR_TEST_FIXTURE"
+  },
+  {
+    "focus": "source",
+    "phase": "reset-keyboard",
+    "refValue": "",
+    "resultHidden": true,
+    "reviewHidden": true,
+    "rights": false,
+    "sourceValue": "",
+    "wordsValue": ""
+  }
+]

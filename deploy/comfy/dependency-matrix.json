@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "recorded_runtime": {
+    "source": "frontend-evidence/comfy-deployment-20261018/comfy-packaging-inventory.json",
+    "os": "linux",
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "comfyui": "0.41.0",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "dependency_lock_recorded": false
+  },
+  "provider_base_images": [
+    {
+      "id": "cuda130-py312",
+      "default": true,
+      "python": "3.12",
+      "torch": "2.12.1",
+      "cuda": "13.0",
+      "python_matches_recorded": false,
+      "torch_matches_recorded": false,
+      "cuda_matches_recorded": true
+    },
+    {
+      "id": "cuda130-py313",
+      "default": false,
+      "python": "3.13",
+      "torch": "2.12.1",
+      "cuda": "13.0",
+      "python_matches_recorded": true,
+      "torch_matches_recorded": false,
+      "cuda_matches_recorded": true
+    },
+    {
+      "id": "cuda128-py311",
+      "default": false,
+      "python": "3.11",
+      "torch": "2.8.0",
+      "cuda": "12.8",
+      "python_matches_recorded": false,
+      "torch_matches_recorded": false,
+      "cuda_matches_recorded": false
+    }
+  ],
+  "selection": {
+    "selected_base_image": null,
+    "immutable_supported_selection_justified": false,
+    "decision": "fail_closed",
+    "reason": "No catalog base image exactly matches the recorded Python/Torch/CUDA environment, and no real image build/import test has been performed."
+  },
+  "dependency_analysis": {
+    "root_repo_modified": false,
+    "global_tools_modified": false,
+    "packages_installed": false,
+    "recorded_resolution_preview": {
+      "tool": "uv pip compile --no-build",
+      "target": "Linux Python 3.12 x86_64",
+      "exit_code": 1,
+      "result": "groundingdino-py==0.4.0 has no usable wheels under the no-source-build policy",
+      "source": "work/comfy-package-20261018/resolve-result.json",
+      "interpretation": "This proves that no-build resolution fails for the preview target; it does not prove source-build incompatibility or runtime compatibility."
+    },
+    "blockers": [
+      "No complete Python lock was recorded for the dogfood environment.",
+      "groundingdino-py requires a source distribution under the tested no-build policy.",
+      "The recorded ComfyUI-BFSNodes commit a93cea17a9f4315110f9c66a29935829e956a9cc is no longer fetchable from upstream by bare Git SHA; its exact parent and public commit patch remain reproducible source evidence but do not make the customNodes gitRef runnable.",
+      "ComfyUI-RMBG dynamically imports every Python module under its repository and suppresses individual load failures, so requirements alone do not prove complete import closure.",
+      "BFS Shot Planner dynamically imports insightface, onnxruntime, cv2, urllib.request, and Comfy SAM code depending on availability.",
+      "ffmpeg/moviepy/OpenCV/timm/insightface resolved versions were not recorded.",
+      "The workflow contains graph keys absent from captured object-info schemas, including BFSShotRepack.ref_image.",
+      "No actual supported-base-image build, custom-node import, or GPU import test was run."
+    ]
+  }
+}

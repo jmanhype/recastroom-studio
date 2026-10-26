@@ -1,0 +1,78 @@
+<!-- SPDX-License-Identifier: MIT -->
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RecastRoom Studio · Sound lab</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/sound-lab.css">
+<main class="sound-page">
+  <header class="masthead">
+    <a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a>
+    <span class="edition">SOUND DESIGN LAB</span>
+  </header>
+
+  <section class="sound-intro" aria-labelledby="sound-heading">
+    <p class="eyebrow">CONTEST DEMO / AUDIO IDENTITY</p>
+    <h1 id="sound-heading">A sound system, not a voice swap.</h1>
+    <p class="sound-lede">This lab auditions the deterministic cue family for the two-minute RecastRoom demo: one brand pulse, one soft UI tick family, one signature reveal, and one bed that resolves under the call to action. It does not replace Drama&nbsp;3 Voice&nbsp;A narration.</p>
+    <p id="sound-status" class="sound-status" role="status">Ready · audio starts only after you press play</p>
+    <noscript><p class="sound-error">JavaScript is required to audition the Tone.js presets. The cue sheet below remains readable.</p></noscript>
+  </section>
+
+  <section class="keeper-preview" aria-labelledby="keeper-heading">
+    <div class="section-heading">
+      <h2 id="keeper-heading">Frozen keeper video</h2>
+      <span>V6B · 16:9 MASTER</span>
+    </div>
+    <video id="keeper-video" controls playsinline preload="metadata" src="/media/recastroom-public-hero-16x9.mp4" aria-label="RecastRoom v6b public hero video"></video>
+    <p class="hint">This public hero is a metadata-clean stream copy of the accepted 16:9 v6b master. Playing it stops the Tone.js sketch so the two audio systems never overlap.</p>
+  </section>
+
+  <section class="sound-console" aria-labelledby="console-heading">
+    <div class="section-heading">
+      <h2 id="console-heading">Audition console</h2>
+      <span>96 BPM · 12.8S SKETCH</span>
+    </div>
+
+    <div class="transport">
+      <button id="play-sketch" type="button">Play full sketch</button>
+      <button id="stop-sound" type="button" disabled>Stop</button>
+      <label for="master-volume">Master</label>
+      <input id="master-volume" type="range" min="-24" max="0" step="1" value="-7" aria-describedby="volume-help">
+      <span id="volume-help">−7 dB · peaks limited at −1 dBTP</span>
+    </div>
+
+    <div class="preset-grid" aria-label="Individual cue auditions">
+      <button type="button" data-audition="pulse"><strong>Brand pulse</strong><span>Low, calm, two-beat identity</span></button>
+      <button type="button" data-audition="tick"><strong>UI tick</strong><span>Three soft interface ticks</span></button>
+      <button type="button" data-audition="reveal"><strong>Signature reveal</strong><span>Filtered rise and resolve</span></button>
+      <button type="button" data-audition="bed"><strong>CTA bed</strong><span>Eight-second resolving bed</span></button>
+    </div>
+  </section>
+
+  <section class="cue-sheet" aria-labelledby="cue-heading">
+    <div class="section-heading">
+      <h2 id="cue-heading">Cue sheet</h2>
+      <span>TONE.JS 15.1.22 · LOCAL MIT ASSET</span>
+    </div>
+    <div class="cue-table" role="table" aria-label="Deterministic sound sketch">
+      <div role="row"><span role="columnheader">Time</span><span role="columnheader">Cue</span><span role="columnheader">Purpose</span></div>
+      <div role="row" data-cue-row="pulse"><span role="cell">0.00s</span><span role="cell">Brand pulse</span><span role="cell">Establish the RecastRoom heartbeat</span></div>
+      <div role="row" data-cue-row="tick"><span role="cell">2.00s</span><span role="cell">UI tick family</span><span role="cell">Physical, quiet confirmation</span></div>
+      <div role="row" data-cue-row="reveal"><span role="cell">5.00s</span><span role="cell">Signature reveal</span><span role="cell">Source-to-recast payoff</span></div>
+      <div role="row" data-cue-row="bed-open"><span role="cell">8.00s</span><span role="cell">Bed open</span><span role="cell">Move from proof to product</span></div>
+      <div role="row" data-cue-row="bed-hold"><span role="cell">9.60s</span><span role="cell">Bed hold</span><span role="cell">Keep motion without competing with voice</span></div>
+      <div role="row" data-cue-row="bed-resolve"><span role="cell">11.20s</span><span role="cell">CTA resolve</span><span role="cell">Settle as the call to action lands</span></div>
+    </div>
+    <p class="hint">The sketch is deliberately sparse. In the final demo these cues sit at least 6&nbsp;dB under narration, and repeated interface sounds use alternate takes rather than one mechanical click.</p>
+  </section>
+
+  <footer>
+    <span>RECASTROOM / DETERMINISTIC SOUND EXPERIMENTS</span>
+    <span><a href="/">Return to the studio</a></span>
+  </footer>
+</main>
+<script src="/vendor/tone-15.1.22.js"></script>
+<script src="/sound-lab.js" defer></script>
+</html>

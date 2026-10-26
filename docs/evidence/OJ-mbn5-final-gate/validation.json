@@ -1,0 +1,19 @@
+{
+  "story": "OJ-mbn5",
+  "network_operations": false,
+  "published": false,
+  "submitted": false,
+  "validation": [
+    {"command": "python -m pytest -q", "exit_code": 0, "result": "31 passed, 1 warning in 9.27s; Starlette httpx deprecation"},
+    {"command": "python -m pip check", "exit_code": 0, "result": "No broken requirements found."},
+    {"command": "pvg verify tools/final_submission_gate.py tests/test_final_submission_gate.py docs/FINAL_SUBMISSION_PACKET.md docs/evidence/OJ-mbn5-final-gate", "exit_code": 0, "result": "VERIFY: PASSED (2 files scanned, 0 issues); verifier scans source, not semantic document correctness"},
+    {"command": "git diff --check", "exit_code": 0, "result": "no output"},
+    {"command": "credential/local-user-path pattern scan on all changed source/docs/evidence", "exit_code": 1, "result": "0 matches; ripgrep expected no-match exit"},
+    {"command": "python tools/selftest_keeper_evidence.py docs/evidence/slate/manifest.json --report work/keeper-selftest.txt", "exit_code": 0, "result": "11 keepers, 48 artifacts; controlled byte mutation rejected, committed pack unchanged"},
+    {"command": "python tools/final_submission_gate.py --commit fb1e745 --demo <approved-demo-v1> --output work/final-gate-v2", "exit_code": 1, "result": "FAIL-CLOSED; exact results, package hash, demo probe and extracted-package full pytest/pip-check output in gate.json"}
+  ],
+  "external_provenance_document_hashes": {
+    "openjutsu_planb/RELEASE_RECEIPTS.md": "772a6c2eaad8375cb63586f744890faf1dff62accc0f57a96d87f4a5e36dc102",
+    "openjutsu_planb/demo_v1/openjutsu_demo_v1.html": "7237379d7ffe254fd8b3cfb8e8a8d19b6fc26b6f003b4501e9fb0cafdc502c20"
+  }
+}

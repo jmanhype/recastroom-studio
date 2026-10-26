@@ -1,0 +1,299 @@
+{
+  "algorithm": "sha256",
+  "screenshot_count": 47,
+  "dimensions_source": "macOS sips pixelWidth/pixelHeight",
+  "screenshots": [
+    {
+      "file": "screenshots/brand.jpg",
+      "sha256": "58cd3f0556f5a1c0f4b3c368c53d79a63cff44afd626012997a3ecb23111a670",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/consent.jpg",
+      "sha256": "b839185f7bc49fde47b75e92fd1448174849c013e8edf7eb9cad484465d3cdc0",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/creative-summary.jpg",
+      "sha256": "781fc88aa45d2030a9106e8d8cbe3d624b6e9fe3a1202132246c6f7e61dedc20",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/health-recovered.jpg",
+      "sha256": "4c4e7afa71df1f53e408f093561079472fc704a247f195c5ee2491ff42b4866d",
+      "pixelWidth": 1280,
+      "pixelHeight": 720
+    },
+    {
+      "file": "screenshots/health-retry-focus.jpg",
+      "sha256": "0c1646be044704401fa81b63b4b51fb9069a7fa740bbccc1bda781c9206b42f1",
+      "pixelWidth": 1280,
+      "pixelHeight": 720
+    },
+    {
+      "file": "screenshots/identity.jpg",
+      "sha256": "0fe3e22df1824c2d9e76f32db8b13879b9e7bb15b75b25dfeb74cd071a144812",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-01.jpg",
+      "sha256": "2ffecc763c4e66f3f7506f8119ddc6a3aaefe69eb170392cb93eb22e41e12c4a",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-02.jpg",
+      "sha256": "03a91302807bf139522fd67d8f48905be4879605b6898ccbf404b42747d98858",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-03.jpg",
+      "sha256": "3ad5f9ceaf39f49db65e047da8aaf29e45330bbe858cbcd7bf92319eb05a4cf7",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-04.jpg",
+      "sha256": "5129ae12136771e68cf24a0028d4ef082bd1e4daf4b81c3563aa42488a829982",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-05.jpg",
+      "sha256": "ad712fef65c665a75c8c58236548c38afa4b15b33f69daa19eb5a8dbfcb5bf94",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-06.jpg",
+      "sha256": "f68eb20a7962be0760b7564b80ca359c28955cfa421d02efba0fd5d1012aef84",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-07.jpg",
+      "sha256": "1e12bc5137be47d3842676c06e372bab40bfbac53b3a9b1df11733f60dbed733",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-08.jpg",
+      "sha256": "24c505575b70f09a268ed53c786dcbf136f2b5eca5cd90305daa8ec71009504f",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-09.jpg",
+      "sha256": "13df7baa9f7063797915b68f44cdcf02ddeee98dc225d83bd5fee2d3deba4863",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-10.jpg",
+      "sha256": "5d640e075085f63816f8f67dc00c2f17f9e348ab8919467465957ce88bb59bdc",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-11.jpg",
+      "sha256": "b470e0687ad3b7999dc0c0237eb2615f9937f80a9551e464b384349b41c3682a",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-12.jpg",
+      "sha256": "992bbe57438755d0cb140e5cc84571e3e23c2d94a0caa8437264b7f28c08e267",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-13.jpg",
+      "sha256": "cd464f21891f75aa103602ed1fc075be3975c285608b8c8b214589c1ed4b87a8",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-14.jpg",
+      "sha256": "d2228256ab32adff87031ce2d7bcf37ef12813710a6927c3d40027fb7c517b0f",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-15.jpg",
+      "sha256": "129600646e642f9ebce4bb61a7841b3d1c9365803ac789f16f45238f7d4bbcf2",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-16.jpg",
+      "sha256": "1eee4567c165cc7e32d1f984be1c6ceb19dfa14ff17fb7a6d495535379244552",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-focus-17.jpg",
+      "sha256": "00d91e2822eeede326aeb9e9b4895eb99c6407c7bed44eb1f18d76fe13459f4d",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-menu-pip.jpg",
+      "sha256": "4797b7d36918912dda8042ddb5afbce7b44943270d078ee5c62957792d9dae5d",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-menu-speed.jpg",
+      "sha256": "db50870819d05c6d243610f57f2d1014d5df280970fa97ac5ac5fb857f45fc41",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/media-menu.jpg",
+      "sha256": "7e9e6b8a2e36183200c5332de829fa1525d5b574ce69fb39bd5f936d4419a322",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/prepare.jpg",
+      "sha256": "cbec90130e7c02c3ddf4fb8d122e878d6bf16469350657321f1314c4e0f18fb0",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/prompt-link.jpg",
+      "sha256": "467f0742e12d4f6dfb2023db27577a2c4ca6e723a349b4b659651f14027e51b3",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/reference-1.jpg",
+      "sha256": "db7616650e656d511ec841a7881118a92523649f0684b6f35b5e69e05953d202",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/reference-2.jpg",
+      "sha256": "67a45cb4be8c391a6a858c7a322c6d7e6de99d7571ae829e4594baa8943d2dc3",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/reset-activated.jpg",
+      "sha256": "b3f85aba2577edbca980517a6b92ce2ea83df0df1f35ac368c33032b8545325b",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/reset.jpg",
+      "sha256": "eb382abbf9b2afebb850f673cd41f46348d9cb92f01bf56d6d78dc819e44e9b5",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/retry-complete.jpg",
+      "sha256": "284d493c5d36950c2dad4a594164228ce9f077f7a930fea24cc7e05d0833aed4",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/retry-success.jpg",
+      "sha256": "697d5222e543da8bd9ebb705235d5dbde9c8673dd9abb22ecb5b33e65f4dd420",
+      "pixelWidth": 1344,
+      "pixelHeight": 835
+    },
+    {
+      "file": "screenshots/run.jpg",
+      "sha256": "b416436b9815dac0c0abd8b49cf2c6a3dd142f15d8e46f3181a4b9af03e14cbe",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/seed.jpg",
+      "sha256": "1a6ba0e3ba204cb90385a237f738b4cb201b6574b7a8022c276f1aa740ddc10d",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/source-media-01.jpg",
+      "sha256": "7676f78766659fbc2a56a5dd8a15a1a73ea73de8dad479715a164ab28218ac78",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/source-media-02.jpg",
+      "sha256": "a290234b2b15bdadd404519158413b74530258a31b6f21fd4f2abef724e2a366",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/source-media-03.jpg",
+      "sha256": "4ea08b76179e61fe3bb104dbe723ceb2f32921c5d9bcccb196753c41cf7ab339",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/source-media-04.jpg",
+      "sha256": "04311ec16b3320525cd0c5374ed081562c083958a7b81e5a154a776c3b6d6d84",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/source-media-05.jpg",
+      "sha256": "42eab498e961e7ff214177c8403ce1535ad3eeb260d5d8adeef762531729ec68",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/source-media-06.jpg",
+      "sha256": "94a8ea6019b6d6f50ff4d17819db15589e0ab1571cb75f8132c286a9d57c73a8",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/source-media-07.jpg",
+      "sha256": "b53abe95ea401b8a7fba0722975d87104cd91e0eb5365062b8f616ea0de1b173",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/source.jpg",
+      "sha256": "eb67948244c56d48f5d86e2412d4acfcf5ce712de352bce14088774a7c7a71e9",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/status-recovery-focus.jpg",
+      "sha256": "155941d4e878c89867347ef7dc52c84b66df5474284e1e41659f582485872592",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/words.jpg",
+      "sha256": "9267d44f37295f7ece2a39b495a09807a39fd13ab5d7716c09095cf6dd4c2d90",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    },
+    {
+      "file": "screenshots/workflow-link.jpg",
+      "sha256": "f680f7a28845ca6e566c01333a32af34c7e6b81ccdc931c930dc4535b4e5e4f1",
+      "pixelWidth": 1440,
+      "pixelHeight": 1000
+    }
+  ],
+  "text_evidence": [
+    {
+      "file": "FOLLOWUP.md",
+      "sha256": "fe82567ad42f8813c687448d582c7eb7db8892ab6fa4cca50987e4da401c1a6d"
+    },
+    {
+      "file": "events.json",
+      "sha256": "bce34056962e185f6916941e63887d89ff6994eee921de90db2aa42f0dd2957c"
+    }
+  ]
+}

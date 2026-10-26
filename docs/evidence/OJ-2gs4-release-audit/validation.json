@@ -1,0 +1,87 @@
+{
+  "schema_version": "openjutsu.story-validation.v1",
+  "story": "OJ-2gs4",
+  "audited_commit": "7381af42a00936305b20b74f5ded1febf5f94805",
+  "source_tree": "c94b81691ab3f0aa5af319ca97d9ebaf38e0836c",
+  "target_test_sha256": "cef3da5202d539891a8fabbf7db7bc3e17c2bd9f04a6338820baec18c3f3d626",
+  "commands": [
+    {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "summary": "31 passed, 1 warning in 9.08s; Starlette httpx deprecation warning"
+    },
+    {
+      "command": "python -m pip check",
+      "exit_code": 0,
+      "summary": "No broken requirements found."
+    },
+    {
+      "command": "pvg verify tests/test_local_trial.py docs/evidence/OJ-2gs4-release-audit",
+      "exit_code": 0,
+      "summary": "VERIFY: PASSED (1 files scanned, 0 issues)"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "summary": "no whitespace errors"
+    },
+    {
+      "command": "python scripts/local_trial.py --host 127.0.0.1 --port 8890 --output-dir work/OJ-2gs4-local-trial",
+      "exit_code": 0,
+      "summary": "dry-run backend; job ecbc04d8b2fb reached complete; exposure scan PASS with zero findings"
+    },
+    {
+      "command": "python tools/final_submission_gate.py --commit HEAD --demo <approved-demo-v1> --output work/OJ-2gs4-final-gate",
+      "exit_code": 2,
+      "summary": "expected owner-gated result; release audit PASS with zero errors"
+    },
+    {
+      "command": "credential and local-user-path regex scan",
+      "exit_code": 0,
+      "summary": "zero matches in target test, final-gate report, loopback receipt, and loopback scan report"
+    }
+  ],
+  "loopback": {
+    "schema_version": "openjutsu.local-trial.v1",
+    "generated_at_utc": "2026-10-17T21:40:38.913910+00:00",
+    "job_id": "ecbc04d8b2fb",
+    "terminal_state": "complete",
+    "backend": "dry_run",
+    "public_url": null,
+    "credential_environment_forwarded": false,
+    "gpu_or_cloud_backend_selected": false,
+    "exposure_scan_status": "PASS",
+    "exposure_scan_findings": 0
+  },
+  "final_gate": {
+    "release_audit_status": "PASS",
+    "release_audit_errors": [],
+    "release_audit_counts": {
+      "tracked_files": 141,
+      "text_files": 98,
+      "binary_files": 43,
+      "probed_media_files": 43
+    },
+    "filtered_content_sha256": "51c213437a2669ea58b7dffcd18f5513fd72cfe357f14eb549a44f773ef3b284",
+    "public_package_sha256": "3faede7ccf6a7de02c15c62b126ffaf6d92d079ec564d62465a225a1aa351217",
+    "public_package_bytes": 83398293,
+    "embedded_tests_exit_code": 0,
+    "embedded_tests_summary": "31 passed, 1 warning in 9.24s",
+    "embedded_pip_check_exit_code": 0,
+    "exit_code": 2,
+    "eligible_to_submit": false,
+    "matrix_counts": {
+      "PASS": 11,
+      "FAIL": 0,
+      "OWNER_BLOCKED": 8
+    }
+  },
+  "artifact_hashes": {
+    "final-gate/gate.json": "cd1819a588cbf00c8cdb8d0e89afa403d2e854962e128fd2de6ab18fbb604a85",
+    "local-trial/receipt.json": "e578548ae87c1d7f1408d30b238eb2ae4952dfb43dc84210060fcaa394100d70",
+    "local-trial/secret-scan.json": "bd8d926c7541673062e949911e988db271b153540a0ed682540f6886d738e365"
+  },
+  "network_operations": false,
+  "published": false,
+  "submitted": false
+}

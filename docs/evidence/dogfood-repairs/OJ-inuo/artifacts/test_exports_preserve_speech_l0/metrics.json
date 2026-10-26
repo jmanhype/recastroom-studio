@@ -1,0 +1,42 @@
+{
+  "source_layout": "mono",
+  "source_channels": 1,
+  "outputs": {
+    "final.mp4": {
+      "layout": "mono",
+      "channels": 1,
+      "sha256": "4cc9995c94282abae81fac867cd59118351cf995fa5bee528a119402a8ce4a74",
+      "channel_metrics": [
+        {
+          "channel": 0,
+          "samples": 96256,
+          "source_peak": 0.49407073855400085,
+          "output_peak": 0.49407145380973816,
+          "source_rms": 0.07966002536700914,
+          "output_rms": 0.07965993882201039,
+          "rms_delta_db": -9.436611558882897e-06,
+          "zero_lag_correlation": 0.999999359787236,
+          "gain": 0.9999982733584665
+        }
+      ]
+    },
+    "comparison.mp4": {
+      "layout": "mono",
+      "channels": 1,
+      "sha256": "05e6ba537da6411fcb8f80433980140b4d528bce8c57590444f033e2aad13677",
+      "channel_metrics": [
+        {
+          "channel": 0,
+          "samples": 96256,
+          "source_peak": 0.49407073855400085,
+          "output_peak": 0.49407145380973816,
+          "source_rms": 0.07966002536700914,
+          "output_rms": 0.07965993882201039,
+          "rms_delta_db": -9.436611558882897e-06,
+          "zero_lag_correlation": 0.999999359787236,
+          "gain": 0.9999982733584665
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "portraitMeasures": [
+    {
+      "images": [
+        {
+          "box": [
+            472,
+            198
+          ],
+          "container": [
+            472,
+            198
+          ],
+          "fit": "contain",
+          "id": "reference_1-preview",
+          "min": [
+            "0px",
+            "0px"
+          ],
+          "natural": [
+            1086,
+            1448
+          ]
+        },
+        {
+          "box": [
+            472,
+            198
+          ],
+          "container": [
+            472,
+            198
+          ],
+          "fit": "contain",
+          "id": "reference_2-preview",
+          "min": [
+            "0px",
+            "0px"
+          ],
+          "natural": [
+            1152,
+            768
+          ]
+        }
+      ],
+      "overflow": false,
+      "rights": false,
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "images": [
+        {
+          "box": [
+            165,
+            148
+          ],
+          "container": [
+            165,
+            148
+          ],
+          "fit": "contain",
+          "id": "reference_1-preview",
+          "min": [
+            "0px",
+            "0px"
+          ],
+          "natural": [
+            1086,
+            1448
+          ]
+        },
+        {
+          "box": [
+            165,
+            148
+          ],
+          "container": [
+            165,
+            148
+          ],
+          "fit": "contain",
+          "id": "reference_2-preview",
+          "min": [
+            "0px",
+            "0px"
+          ],
+          "natural": [
+            1152,
+            768
+          ]
+        }
+      ],
+      "overflow": false,
+      "rights": false,
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "images": [
+        {
+          "box": [
+            165,
+            148
+          ],
+          "container": [
+            165,
+            148
+          ],
+          "fit": "contain",
+          "id": "reference_1-preview",
+          "natural": [
+            1152,
+            768
+          ]
+        },
+        {
+          "box": [
+            165,
+            148
+          ],
+          "container": [
+            165,
+            148
+          ],
+          "fit": "contain",
+          "id": "reference_2-preview",
+          "natural": [
+            1086,
+            1448
+          ]
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "images": [
+        {
+          "box": [
+            472,
+            198
+          ],
+          "container": [
+            472,
+            198
+          ],
+          "fit": "contain",
+          "id": "reference_1-preview",
+          "natural": [
+            1152,
+            768
+          ]
+        },
+        {
+          "box": [
+            472,
+            198
+          ],
+          "container": [
+            472,
+            198
+          ],
+          "fit": "contain",
+          "id": "reference_2-preview",
+          "natural": [
+            1086,
+            1448
+          ]
+        }
+      ],
+      "viewport": [
+        1440,
+        1000
+      ]
+    }
+  ],
+  "focusProof": [
+    {
+      "id": "",
+      "outline": "rgb(216, 199, 145) solid 2px",
+      "tag": "SUMMARY",
+      "text": "Timing & creative controls",
+      "visible": true
+    },
+    {
+      "id": "words",
+      "outline": "rgb(216, 199, 145) solid 2px",
+      "tag": "INPUT",
+      "visible": true
+    },
+    {
+      "id": "identity",
+      "outline": "rgb(216, 199, 145) solid 2px",
+      "tag": "TEXTAREA",
+      "visible": true
+    },
+    {
+      "id": "seed",
+      "outline": "rgb(216, 199, 145) solid 2px",
+      "tag": "INPUT",
+      "visible": true
+    },
+    {
+      "id": "rights",
+      "outline": "rgb(216, 199, 145) solid 2px",
+      "tag": "INPUT",
+      "visible": true
+    },
+    {
+      "id": "reset",
+      "outline": "rgb(216, 199, 145) solid 2px",
+      "tag": "BUTTON",
+      "visible": true
+    }
+  ]
+}

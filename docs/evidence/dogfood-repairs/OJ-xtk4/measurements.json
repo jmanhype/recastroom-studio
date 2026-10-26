@@ -1,0 +1,398 @@
+{
+  "common_tile": [
+    960,
+    384
+  ],
+  "cases": {
+    "3-2": {
+      "source_input": {
+        "width": 576,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "3:2"
+      },
+      "final_input": {
+        "width": 576,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "3:2"
+      },
+      "paired_output": {
+        "width": 1920,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "5:1"
+      },
+      "expected_content_width_px": [
+        576,
+        576
+      ],
+      "source_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "red",
+        "center_rgb": [
+          252,
+          0,
+          0
+        ],
+        "left_padding_px": 192,
+        "right_padding_px": 192,
+        "decoded_content_width_px": 576,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "final_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "green",
+        "center_rgb": [
+          0,
+          127,
+          0
+        ],
+        "left_padding_px": 192,
+        "right_padding_px": 192,
+        "decoded_content_width_px": 576,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "9-16-portrait": {
+      "source_input": {
+        "width": 216,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16"
+      },
+      "final_input": {
+        "width": 216,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16"
+      },
+      "paired_output": {
+        "width": 1920,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "5:1"
+      },
+      "expected_content_width_px": [
+        216,
+        216
+      ],
+      "source_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "red",
+        "center_rgb": [
+          252,
+          0,
+          0
+        ],
+        "left_padding_px": 372,
+        "right_padding_px": 372,
+        "decoded_content_width_px": 216,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "final_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "green",
+        "center_rgb": [
+          0,
+          127,
+          0
+        ],
+        "left_padding_px": 372,
+        "right_padding_px": 372,
+        "decoded_content_width_px": 216,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "16-9": {
+      "source_input": {
+        "width": 640,
+        "height": 360,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9"
+      },
+      "final_input": {
+        "width": 640,
+        "height": 360,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9"
+      },
+      "paired_output": {
+        "width": 1920,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "5:1"
+      },
+      "expected_content_width_px": [
+        682,
+        682
+      ],
+      "source_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "red",
+        "center_rgb": [
+          252,
+          0,
+          0
+        ],
+        "left_padding_px": 138,
+        "right_padding_px": 140,
+        "decoded_content_width_px": 682,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "final_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "green",
+        "center_rgb": [
+          0,
+          127,
+          0
+        ],
+        "left_padding_px": 138,
+        "right_padding_px": 140,
+        "decoded_content_width_px": 682,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "mixed-3-2-9-16": {
+      "source_input": {
+        "width": 576,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "3:2"
+      },
+      "final_input": {
+        "width": 216,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16"
+      },
+      "paired_output": {
+        "width": 1920,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "5:1"
+      },
+      "expected_content_width_px": [
+        576,
+        216
+      ],
+      "source_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "red",
+        "center_rgb": [
+          252,
+          0,
+          0
+        ],
+        "left_padding_px": 192,
+        "right_padding_px": 192,
+        "decoded_content_width_px": 576,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "final_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "green",
+        "center_rgb": [
+          0,
+          127,
+          0
+        ],
+        "left_padding_px": 372,
+        "right_padding_px": 372,
+        "decoded_content_width_px": 216,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "non-square-sar-3-2-dar": {
+      "source_input": {
+        "width": 288,
+        "height": 384,
+        "sample_aspect_ratio": "2:1",
+        "display_aspect_ratio": "3:2"
+      },
+      "final_input": {
+        "width": 576,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "3:2"
+      },
+      "paired_output": {
+        "width": 1920,
+        "height": 384,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "5:1"
+      },
+      "expected_content_width_px": [
+        576,
+        576
+      ],
+      "source_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "red",
+        "center_rgb": [
+          252,
+          0,
+          0
+        ],
+        "left_padding_px": 192,
+        "right_padding_px": 192,
+        "decoded_content_width_px": 576,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "final_tile": {
+        "tile": [
+          960,
+          384
+        ],
+        "color": "green",
+        "center_rgb": [
+          0,
+          127,
+          0
+        ],
+        "left_padding_px": 192,
+        "right_padding_px": 192,
+        "decoded_content_width_px": 576,
+        "edge_samples": {
+          "tile_x_5_rgb": [
+            0,
+            0,
+            0
+          ],
+          "tile_x_955_rgb": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  }
+}

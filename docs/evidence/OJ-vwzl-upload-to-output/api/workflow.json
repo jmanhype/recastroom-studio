@@ -1,0 +1,458 @@
+{
+  "29": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "3": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "2": {
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "22": {
+    "inputs": {
+      "av_latent": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "LTXVSeparateAVLatent",
+    "_meta": {
+      "title": "Separate AV Latent"
+    }
+  },
+  "45": {
+    "inputs": {
+      "samples": [
+        "22",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "85": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "1031": {
+    "inputs": {
+      "resize_type": "scale total pixels",
+      "scale_method": "lanczos",
+      "input": [
+        "1022",
+        0
+      ],
+      "resize_type.megapixels": 0.3
+    },
+    "class_type": "ResizeImageMaskNode",
+    "_meta": {
+      "title": "Resize Image/Mask"
+    }
+  },
+  "64": {
+    "inputs": {
+      "lora_name": "experimental/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors",
+      "strength_model": 1.0,
+      "model": [
+        "1192",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Turbo LoRA"
+    }
+  },
+  "9": {
+    "inputs": {
+      "shift_video": 12,
+      "shift_audio": 3,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3SigmaShift",
+    "_meta": {
+      "title": "ModelSamplingMiniMaxH3"
+    }
+  },
+  "58": {
+    "inputs": {
+      "attention": "comfy kitchen attention",
+      "model": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "ModelAttentionBackend",
+    "_meta": {
+      "title": "ModelAttentionBackend"
+    }
+  },
+  "1037": {
+    "inputs": {
+      "shot": [
+        "1189",
+        0
+      ]
+    },
+    "class_type": "BFSShotUnpack",
+    "_meta": {
+      "title": "BFS Shot Unpack"
+    }
+  },
+  "1022": {
+    "inputs": {
+      "model": "BiRefNet-general",
+      "sensitivity": 0,
+      "mask_blur": 0,
+      "mask_offset": false,
+      "invert_output": false,
+      "refine_foreground": "Color",
+      "unload_model": "#808080",
+      "background": "Alpha",
+      "background_color": "#222222",
+      "image": [
+        "1037",
+        1
+      ]
+    },
+    "class_type": "BiRefNetRMBG",
+    "_meta": {
+      "title": "BiRefNet (RMBG)"
+    }
+  },
+  "181": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 8,
+      "denoise": 1,
+      "model": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "11": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "64",
+        0
+      ],
+      "positive": [
+        "1177",
+        0
+      ],
+      "negative": [
+        "1177",
+        0
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG Guider"
+    }
+  },
+  "13": {
+    "inputs": {
+      "noise_seed": 50
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "14": {
+    "inputs": {
+      "noise": [
+        "13",
+        0
+      ],
+      "guider": [
+        "11",
+        0
+      ],
+      "sampler": [
+        "15",
+        0
+      ],
+      "sigmas": [
+        "181",
+        0
+      ],
+      "latent_image": [
+        "1177",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "1111": {
+    "inputs": {
+      "crossfade": 4,
+      "comparison": true,
+      "label": "",
+      "comparison_height": 1024,
+      "edge_hardness": 0,
+      "match_colors": 0,
+      "match_region": "around the subject (swap)",
+      "seamless_edges": false,
+      "paste_new_outline": true,
+      "comparison_mask": true,
+      "images": [
+        "45",
+        0
+      ],
+      "shots": [
+        "1038",
+        0
+      ],
+      "audio": [
+        "1189",
+        5
+      ],
+      "timeline": [
+        "1189",
+        7
+      ]
+    },
+    "class_type": "BFSShotJoin",
+    "_meta": {
+      "title": "BFS Shot Join"
+    }
+  },
+  "1109": {
+    "inputs": {
+      "bit_depth": "auto",
+      "color_space": "sRGB",
+      "codec": "auto",
+      "images": [
+        "1111",
+        3
+      ],
+      "fps": [
+        "1111",
+        2
+      ],
+      "audio": [
+        "1111",
+        1
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "Create Video"
+    }
+  },
+  "1038": {
+    "inputs": {
+      "shot": [
+        "1037",
+        10
+      ],
+      "ref_image": [
+        "1031",
+        0
+      ]
+    },
+    "class_type": "BFSShotRepack",
+    "_meta": {
+      "title": "BFS Shot Repack"
+    }
+  },
+  "15": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "751": {
+    "inputs": {
+      "loop_count": 0,
+      "filename_prefix": "openjutsu/186c06e80582",
+      "format": "video/h264-mp4",
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "1111",
+        0
+      ],
+      "frame_rate": [
+        "1189",
+        2
+      ],
+      "audio": [
+        "1189",
+        5
+      ],
+      "pix_fmt": "yuv420p",
+      "crf": 14,
+      "save_metadata": true,
+      "trim_to_audio": false
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine \ud83c\udfa5\ud83c\udd65\ud83c\udd57\ud83c\udd62"
+    }
+  },
+  "1177": {
+    "inputs": {
+      "guide_mode": "aligned guide (Add Guide)",
+      "use_ref_2": false,
+      "ref_image_size": "match",
+      "with_audio": true,
+      "inpaint": "per shot (planner)",
+      "source_blur": "off",
+      "source_blur_strength": 1.0,
+      "shot": [
+        "1038",
+        0
+      ],
+      "clip": [
+        "1",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "audio_vae": [
+        "29",
+        0
+      ],
+      "vlm": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "BFSShotH3ConditioningSimple",
+    "_meta": {
+      "title": "BFS Shot H3 Conditioning"
+    }
+  },
+  "1152": {
+    "inputs": {
+      "value": "body_swap:\nsubject_definitions:\nSynthetic fixture performer\n\nsummary:\n[video generation + reference + source audio] Replace only the selected target performer in the guide video with the authorized replacement performer while preserving the source performance and exact word schedule.\n\ndetailed_description:\nThe replacement performer takes the exact place of the selected target performer. Preserve the source performer's posture, hands, arms, shoulders, head rotation, eye direction, eyelid aperture, mouth aperture, lip shapes, speech timing, and facial expression.\nUse the source audio and the guide mouth as joint authority. Match jaw opening, lip rounding, labiodental contact, tongue-tip motion, chin movement, and micro-closures. Do not genericize speech into simple mouth ovals.\n\nExact word/frame schedule:\n- frames 1-5 / 0.000-0.200s: silent pause; lips stay relaxed and closed.\n- frames 6-14 / 0.200-0.550s: \"rights\" \u2014 active source-matched articulation.\n- frames 17-24 / 0.650-0.950s: \"clean\" \u2014 active source-matched articulation.\n\nIntegrate the replacement performer into the source's practical lighting and color temperature. Preserve the original room, props, camera, framing, background, and non-target people exactly. Prevent identity drift, hair-color drift, clothing changes, texture crawling, face flicker, invented gestures, extra speech, and temporal flicker.\n\nforbidden:\n- unlicensed celebrity or public-figure likeness\n- deceased performer recreation\n- invented speech\n- invented camera movement\n- target-person bleeding into another person\n- caramel or otherwise incorrect hair-color drift\n\nThe result is real, photographic, and source-aligned."
+    },
+    "class_type": "PrimitiveStringMultiline",
+    "_meta": {
+      "title": "Ref Details"
+    }
+  },
+  "586": {
+    "inputs": {
+      "lora_name": "loras/minimax_h3_character_swap_v1.0_ref2va_r64_gl.safetensors",
+      "strength_model": 1.0,
+      "model": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Character Swap (Guide Latent)"
+    }
+  },
+  "1110": {
+    "inputs": {
+      "filename_prefix": "openjutsu/186c06e80582_compare",
+      "format": "auto",
+      "codec": "auto",
+      "video": [
+        "1109",
+        0
+      ],
+      "format.codec": "auto"
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "Compare"
+    }
+  },
+  "1192": {
+    "inputs": {
+      "lora_name": "loras/minimax_h3_head_swap_v1.0_r32.safetensors",
+      "strength_model": 0.35,
+      "model": [
+        "586",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "Head Swap (Guide Latent)"
+    }
+  },
+  "1": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP"
+    }
+  },
+  "1189": {
+    "inputs": {
+      "plan": "{\"video\":\"synthetic_source.mp4\",\"fps\":24,\"grid\":\"H3 (17n+5)\",\"mode\":\"single\",\"max_s\":15,\"min_s\":5,\"sensitivity\":0.5,\"max_parts\":1,\"max_total_s\":0,\"start_s\":0,\"end_s\":0,\"start_f\":0,\"end_f\":141,\"track\":null,\"bounds\":[],\"segs\":[{\"enabled\":true,\"ref\":\"\",\"ref2\":\"\",\"prompt\":\"\",\"chain\":\"history\",\"chain_frame\":\"first\",\"chain_history\":17,\"crop\":false,\"inpaint\":false,\"paste\":false,\"paste_text\":\"\",\"strength\":1,\"mask\":{},\"target\":\"\"}],\"global_ref\":\"synthetic_reference.png\",\"global_ref2\":\"\",\"global_prompt\":\"\",\"mask_video\":\"\",\"megapixels\":0.384,\"multiple\":32,\"detector\":\"content\",\"run\":\"auto\",\"auto_continue\":true,\"skip_fill\":\"original\",\"audio_mode\":\"auto\",\"mask_cfg\":{\"threshold\":0.2,\"max_objects\":4,\"invert\":false,\"fill_holes\":true,\"temporal_expand\":2,\"blockify\":32,\"padding\":0.25,\"expand\":32,\"feather\":12,\"paste\":\"mask\"},\"vlm_cfg\":{\"enabled\":false,\"frames\":3,\"max_tokens\":4096,\"auto_segment\":true,\"auto_shot\":false,\"instruction\":\"\",\"describe_preset\":\"short\",\"describe_custom\":\"short description\",\"fit_prompt\":true,\"temperature\":1,\"seed\":10},\"cast\":{\"0\":{\"ref\":\"\",\"ignore\":true},\"1\":{\"ref\":\"\"},\"2\":{\"ignore\":true},\"3\":{\"ref\":\"\"}},\"cast_assign\":false,\"cast_split\":false,\"cast_only\":false,\"filters\":{\"person\":false,\"min_person_area\":0,\"max_persons\":0,\"face\":false,\"skip_dark\":false,\"dark_level\":0.06,\"skip_static\":false,\"static_level\":0.004,\"min_frames\":0,\"samples\":6}}",
+      "prompt": [
+        "1152",
+        0
+      ],
+      "vlm": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "BFSShotPlanner",
+    "_meta": {
+      "title": "BFS Shot Planner"
+    }
+  }
+}

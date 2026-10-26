@@ -1,0 +1,2 @@
+$ rg -n --pcre2 -i <private-path-and-credential-pattern> <changed docs/evidence files>
+0 matches; exit status 1 is ripgrep expected no-match status

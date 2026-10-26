@@ -1,0 +1,20 @@
+Provenance: extracted from raw browser evidence outside this repository.
+Original files: reduced-motion-computed-ax.txt and reduced-motion-live-ax.txt
+Original SHA-256:
+  a95dadfb1a8a7d54d7e3b59c9949e6855117626a12ff28ed0bf3643c55fc42c6  reduced-motion-computed-ax.txt
+  9c71d8e294055bc4352f5e9cb3cd0402636823a167bbbead05fe96a37ad4abce  reduced-motion-live-ax.txt
+
+Selected line evidence (indentation normalized; original line numbers retained):
+
+reduced-motion-computed-ax.txt:
+  311: CSS property name: animation-duration CSS property value: 0s
+  329: CSS property name: animation-name CSS property value: none
+  429: CSS property name: scroll-behavior CSS property value: auto
+  447: CSS property name: transition-duration CSS property value: 0s
+  453: CSS property name: transition-property CSS property value: none
+  533-535: Emulate CSS media feature prefers-reduced-motion, Value: prefers-reduced-motion: reduce
+
+reduced-motion-live-ax.txt:
+  140-143: selected element is <body>
+  348-364: active universal rule supplies animation:none, transition:none, and scroll-behavior:auto
+  779-781: Emulate CSS media feature prefers-reduced-motion, Value: prefers-reduced-motion: reduce

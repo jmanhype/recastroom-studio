@@ -1,0 +1,76 @@
+<!-- SPDX-License-Identifier: MIT -->
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RecastRoom Studio</title>
+<link rel="stylesheet" href="/styles.css">
+<main>
+  <header class="masthead"><a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a><span class="edition">PERFORMANCE / REIMAGINED</span></header>
+  <div class="intro"><div><p class="eyebrow">OPEN CREATIVE STUDIO</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Keep the performance. Shape the identity.<br>An attestation-gated workspace for MiniMax H3.</p><p id="backend" class="backend" role="status">Backend unknown · checking connection</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div></div>
+  <section class="studio-shell" aria-labelledby="workflow-heading">
+    <div class="section-heading"><h2 id="workflow-heading">Workflow studio</h2><span>PRODUCTION / ADVANCED / CONCEPT</span></div>
+    <p class="hint">RecastRoom is built around interchangeable Comfy workflows. The Recast Room is the production flagship; concept lanes are visible without being misrepresented as ready.</p>
+    <div id="workflow-catalog" class="workflow-catalog" aria-live="polite"></div>
+    <p id="workflow-note" class="workflow-note" role="status">Recast Room selected.</p>
+  </section>
+  <section class="readiness-shell" aria-labelledby="readiness-heading">
+    <div class="section-heading"><h2 id="readiness-heading">Readiness</h2><span>LIVE DEPENDENCIES</span></div>
+    <dl id="readiness" class="readiness-strip" aria-live="polite">
+      <div data-readiness="source"><dt>Source</dt><dd>Not selected</dd></div>
+      <div data-readiness="reference"><dt>Primary reference</dt><dd>Missing</dd></div>
+      <div data-readiness="rights"><dt>Attestation</dt><dd>Operator representation required</dd></div>
+      <div data-readiness="workflow"><dt>Workflow</dt><dd>Checking</dd></div>
+      <div data-readiness="renderer"><dt>Renderer</dt><dd>Checking</dd></div>
+      <div data-readiness="execution"><dt>Execution</dt><dd>Checking</dd></div>
+    </dl>
+  </section>
+  <ol class="steps" aria-label="Workflow"><li data-step="upload" aria-current="step"><span>01</span> Select media</li><li data-step="prepare"><span>02</span> Prepare</li><li data-step="run"><span>03</span> Run</li><li data-step="review"><span>04</span> Review</li></ol>
+  <form id="form">
+    <div class="workspace"><section class="media-column" aria-labelledby="source-heading"><div class="section-heading"><h2 id="source-heading">The original</h2><span>01 / SOURCE</span></div>
+    <div class="screen"><video id="source-preview" controls playsinline preload="metadata" hidden aria-label="Source clip preview"></video><div id="source-empty" class="empty"><span class="frame-mark" aria-hidden="true"></span><h3>Every scene starts here.</h3><p>Select a clip to inspect your original performance.<br>Nothing is uploaded until you prepare.</p></div></div>
+    <label for="source">Source clip *</label>
+    <input id="source" name="source" type="file" accept="video/mp4,video/quicktime,.mkv" required>
+    <p id="source-note" class="hint">MP4, MOV or MKV. Some formats may not preview in your browser.</p>
+    <details id="archive-panel" class="archive-panel">
+      <summary>Find Archive.org footage</summary>
+      <label for="archive-query">Search key-free public video collections</label>
+      <div class="archive-search"><input id="archive-query" type="search" placeholder="driving, telephone, classroom" maxlength="160"><button id="archive-search" type="button">Search</button></div>
+      <p id="archive-note" class="hint">Discovery metadata does not bypass the operator attestation gate or establish legal clearance. Check the item page before import.</p>
+      <ul id="archive-results" aria-live="polite"></ul>
+    </details>
+    <div class="section-heading references-heading"><h2>The new cast</h2><span>02 / REFERENCES</span></div><div class="references"><div>
+    <div class="reference-screen"><img id="reference_1-preview" hidden alt="Primary performer reference"><span id="reference_1-empty">01 <small>Primary likeness</small></span></div>
+    <label for="reference_1">Primary performer reference *</label>
+    <input id="reference_1" name="reference_1" type="file" accept="image/png,image/jpeg" required>
+    </div><div><div class="reference-screen"><img id="reference_2-preview" hidden alt="Second performer reference"><span id="reference_2-empty">02 <small>Additional perspective</small></span></div>
+    <label for="reference_2">Optional second reference</label>
+    <input id="reference_2" name="reference_2" type="file" accept="image/png,image/jpeg">
+    </div></div></section><aside class="direction" aria-labelledby="direction-heading"><p class="eyebrow">THE DIRECTION</p><h2 id="direction-heading">Make it intentional.</h2><p class="hint">Your source carries the motion and dialogue. References guide the replacement likeness.</p>
+    <details id="advanced"><summary>Timing &amp; creative controls</summary>
+    <label for="words">Whisper word-timing JSON</label>
+    <input id="words" name="words" type="file" accept="application/json">
+
+    <label for="identity">Replacement identity description</label>
+    <textarea id="identity" name="identity" placeholder="Optional: describe the authorized replacement performer in neutral terms."></textarea>
+
+    <label for="seed">Seed</label>
+    <input id="seed" name="seed" type="number" value="49" min="0" step="1">
+    <label for="workflow">Custom C1-compatible Recast workflow JSON</label>
+    <input id="workflow" name="workflow" type="file" accept="application/json,.json">
+    <p class="hint">Optional. The graph must use the Recast Room node contract so source routing, exact audio, review, and the recorded operator attestation remain enforceable.</p>
+    </details><div class="rights-block"><p class="eyebrow">PERMISSION BEFORE PRODUCTION</p>
+    <label class="consent" for="rights">
+      <input id="rights" name="rights_attested" type="checkbox" required>
+      <span>I represent that I own this clip or have explicit permission to modify it, and that I have required consent for every identifiable person/reference likeness.</span>
+    </label>
+    </div><button id="submit" type="submit" disabled aria-describedby="prepare-help">Prepare workflow <span aria-hidden="true">↗</span></button><p id="prepare-help" class="hint">Select a source and primary reference, then confirm permission.</p><button id="reset" type="button" class="text-button">Reset workspace</button><p class="fine-print">Reset clears this workspace, not uploaded files or an already queued server job.</p></aside></div>
+  </form>
+  <section id="result" class="result" hidden aria-labelledby="result-heading">
+    <div class="section-heading"><h2 id="result-heading">Production desk</h2><span id="job-label"></span></div><div class="production"><div><p id="stage" class="eyebrow">PREPARING</p><p id="output" role="status" aria-live="polite"></p><p id="error" role="alert" hidden></p><div id="prepared-links" class="links"></div></div><div><button id="run" type="button" disabled aria-describedby="run-help">Run prepared workflow</button><p id="run-help" class="hint">Preparation must finish before running.</p><button id="retry-status" class="text-button" type="button" hidden>Check job status again</button></div></div>
+    <div id="review" hidden><div class="section-heading"><h2>Watch the difference.</h2><span>SOURCE / RESULT</span></div><p class="hint">Compare the original above with the final below, or play the paired review. Review quality yourself; no automated score is provided.</p><div class="review-grid"><figure><video id="final-preview" controls playsinline preload="metadata" aria-label="Final result"></video><figcaption>Final · original audio restored</figcaption></figure><figure><video id="comparison-preview" controls playsinline preload="metadata" aria-label="Side-by-side source and result"></video><figcaption>Source / final · paired review</figcaption></figure></div><div id="downloads" class="links"></div></div>
+  </section>
+  <footer><span>RECASTROOM / INDEPENDENT TOOLS FOR MOVING IMAGES</span><span>Responsibility is part of the craft. <a href="/sound-lab.html">Sound lab</a></span></footer>
+</main>
+<script src="/studio.js" defer></script>
+</html>

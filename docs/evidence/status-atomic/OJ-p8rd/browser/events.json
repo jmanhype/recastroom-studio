@@ -1,0 +1,67 @@
+[
+  {
+    "label": "intentional-terminal-error",
+    "focus": {
+      "error": "Run stopped: [Errno 2] No such file or directory: '<private-evidence>/app-data/uploads/85b97f14514e/synthetic_source.mp4' Check backend configuration, then retry the run or reset.",
+      "focusVisible": false,
+      "id": "",
+      "outline": "rgb(238, 238, 230) none 3px",
+      "stage": "ERROR",
+      "tag": "BODY",
+      "text": "\n  O/ OPENJUTSU STUDIOPERFORMANCE / REIMAGINED\n  THE RECASTING ROOMA new face.The same moment.Keep the performance. Shap"
+    },
+    "ax": "Browser tab: 7, Title: \"Openjutsu Studio\", URL: \"http://127.0.0.1:8894/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 0 AXWebArea Openjutsu Studio, URL: 127.0.0.1:8894/"
+  },
+  {
+    "label": "retry-running",
+    "focus": {
+      "error": null,
+      "focusVisible": false,
+      "id": "",
+      "outline": "rgb(238, 238, 230) none 3px",
+      "stage": "DOWNLOADING",
+      "tag": "BODY",
+      "text": "\n  O/ OPENJUTSU STUDIOPERFORMANCE / REIMAGINED\n  THE RECASTING ROOMA new face.The same moment.Keep the performance. Shap"
+    },
+    "ax": "Browser tab: 7, Title: \"Openjutsu Studio\", URL: \"http://127.0.0.1:8894/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 0 AXWebArea Openjutsu Studio, URL: 127.0.0.1:8894/"
+  },
+  {
+    "label": "retry-complete",
+    "focus": {
+      "error": null,
+      "focusVisible": false,
+      "id": "",
+      "outline": "rgb(238, 238, 230) none 3px",
+      "stage": "COMPLETE",
+      "tag": "BODY",
+      "text": "\n  O/ OPENJUTSU STUDIOPERFORMANCE / REIMAGINED\n  THE RECASTING ROOMA new face.The same moment.Keep the performance. Shap"
+    },
+    "ax": "Browser tab: 7, Title: \"Openjutsu Studio\", URL: \"http://127.0.0.1:8894/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 0 AXWebArea Openjutsu Studio, URL: 127.0.0.1:8894/"
+  },
+  {
+    "label": "status-recovery-focus",
+    "focus": {
+      "error": "Run confirmation unavailable: Job not found Check status first in case the request reached the server. If no job exists, prepare a new job.",
+      "focusVisible": true,
+      "id": "retry-status",
+      "outline": "rgb(216, 199, 145) solid 2px",
+      "stage": "SUBMITTING",
+      "tag": "BUTTON",
+      "text": "Check job status again"
+    },
+    "ax": "Browser tab: 7, Title: \"Openjutsu Studio\", URL: \"http://127.0.0.1:8894/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 99 button Check job status again, ID: retry-status"
+  },
+  {
+    "label": "status-recovered",
+    "focus": {
+      "error": null,
+      "focusVisible": false,
+      "id": "",
+      "outline": "rgb(238, 238, 230) none 3px",
+      "stage": "COMPLETE",
+      "tag": "BODY",
+      "text": "\n  O/ OPENJUTSU STUDIOPERFORMANCE / REIMAGINED\n  THE RECASTING ROOMA new face.The same moment.Keep the performance. Shap"
+    },
+    "ax": "Browser tab: 7, Title: \"Openjutsu Studio\", URL: \"http://127.0.0.1:8894/\".\nThere has been no change in the accessibility tree.\nThe focused UI element is 0 AXWebArea Openjutsu Studio, URL: 127.0.0.1:8894/"
+  }
+]

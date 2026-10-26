@@ -1,0 +1,177 @@
+{
+  "schema_version": "openjutsu.final-gate.v1",
+  "commit": "2089e1dd828460b3bedf9a8e37bd7b244e57fc3b",
+  "source_tree": "2babd7ad4caee9a6e7933c2ca09af114e1072485",
+  "published": false,
+  "submitted": false,
+  "matrix": [
+    {
+      "requirement": "No credentials/private development artifacts; license/header audit",
+      "status": "PASS",
+      "evidence": "gate.json:release_audit"
+    },
+    {
+      "requirement": "Reproducible public package",
+      "status": "PASS",
+      "evidence": "gate.json:archive and filtered_content_sha256"
+    },
+    {
+      "requirement": "Synthetic keeper artifacts",
+      "status": "PASS",
+      "evidence": "gate.json:keepers; docs/evidence/slate/manifest.json"
+    },
+    {
+      "requirement": "Working UI, CLI, timing, rights, workflow mutation, local dry-run upload-to-output",
+      "status": "PASS",
+      "evidence": "gate.json:tests"
+    },
+    {
+      "requirement": "Installed dependency consistency",
+      "status": "PASS",
+      "evidence": "gate.json:pip_check"
+    },
+    {
+      "requirement": "OSS MIT license",
+      "status": "PASS",
+      "evidence": "LICENSE sha256=cb8ae2027fe6590f93812475b0808fc8aa08166a2ed82c74f2d4be2979ca4e90"
+    },
+    {
+      "requirement": "Setup instructions",
+      "status": "PASS",
+      "evidence": "docs/QUICKSTART.md sha256=64e91fc7f1ace3f5eecb0dd4004b8cfe35c92eb5f88fda3ddfa166b3de7536ce"
+    },
+    {
+      "requirement": "Comfy API-format workflow",
+      "status": "PASS",
+      "evidence": "workflows/openjutsu_h3_lipsync_local.json sha256=07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244"
+    },
+    {
+      "requirement": "Screenshots",
+      "status": "PASS",
+      "evidence": "docs/images/app-landing.png sha256=a467420def1f4894985475d0ee5dcac17e759ad4013067ea53fcfaeb523e95ca"
+    },
+    {
+      "requirement": "API examples",
+      "status": "PASS",
+      "evidence": "docs/API_EXAMPLES.md sha256=edbf60a30b765c1418d1d35edca894c6d43abea23362dce034275d62ac030152"
+    },
+    {
+      "requirement": "Official Comfy Developer Platform live SDK smoke",
+      "status": "PASS",
+      "evidence": "gate.json:live_sdk_smoke"
+    },
+    {
+      "requirement": "Demo at most 120 seconds; resolution/container/audio",
+      "status": "PASS",
+      "evidence": "gate.json:demo"
+    },
+    {
+      "requirement": "Public GitHub repository and release tag",
+      "status": "OWNER_BLOCKED",
+      "evidence": "docs/CONTEST.md: unchecked public repository; docs/RELEASE.md: unpublished"
+    },
+    {
+      "requirement": "Public demo link and final repository URL card",
+      "status": "OWNER_BLOCKED",
+      "evidence": "docs/CONTEST.md: final repo URL card pending publication"
+    },
+    {
+      "requirement": "Public social post with #OpenSourceHiggsfield",
+      "status": "OWNER_BLOCKED",
+      "evidence": "docs/FINAL_SUBMISSION_PACKET.md: unpublished social draft"
+    },
+    {
+      "requirement": "Typeform submission before deadline",
+      "status": "OWNER_BLOCKED",
+      "evidence": "docs/SUBMISSION_CHECKLIST.md: unchecked Typeform"
+    },
+    {
+      "requirement": "Optional deployed link",
+      "status": "OWNER_BLOCKED",
+      "evidence": "docs/evidence/OJ-2t3g-local-trial/receipt.json: public_url=null; optional, not an eligibility requirement"
+    },
+    {
+      "requirement": "Exact demo rights/consent and third-party model licenses",
+      "status": "OWNER_BLOCKED",
+      "evidence": "docs/evidence/OJ-mbn5-final-gate/demo-provenance.md: bounded provenance, owner clearance outstanding"
+    },
+    {
+      "requirement": "Clean environment install and fresh checkout launch",
+      "status": "OWNER_BLOCKED",
+      "evidence": "docs/RELEASE.md: owner must rerun on final public commit; this gate reuses installed environment"
+    }
+  ],
+  "excluded": [
+    ".paivot",
+    ".vault",
+    "tools/build_keeper_evidence.py",
+    "tools/initialize_contest_backlog.py"
+  ],
+  "release_audit": {
+    "errors": [],
+    "counts": {
+      "tracked_files": 497,
+      "text_files": 268,
+      "binary_files": 229,
+      "probed_media_files": 227
+    }
+  },
+  "filtered_content_sha256": "df8cca04b52119c1597ca162468797d71c87703deb0c3e3f6d811a977465797b",
+  "archive": {
+    "file": "public-package.zip",
+    "sha256": "738f3aebdc60b34ff8b9473081145bfe35cc1007652cac7a9c24f0051b3c353f",
+    "bytes": 118341939
+  },
+  "keepers": {
+    "count": 11,
+    "artifacts": 48,
+    "sha256": "ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33"
+  },
+  "tests": {
+    "command": [
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "exit_code": 0,
+    "output": "........................................................................ [ 59%]\n.................................................                        [100%]\n=============================== warnings summary ===============================\n../../../.venv/lib/python3.11/site-packages/fastapi/testclient.py:1\n  <checkout>/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n121 passed, 1 warning in 24.85s\n"
+  },
+  "pip_check": {
+    "command": [
+      "-m",
+      "pip",
+      "check"
+    ],
+    "exit_code": 0,
+    "output": "No broken requirements found.\n"
+  },
+  "live_sdk_smoke": {
+    "job_id": "f871824b-55d5-4629-b178-949104e9415b",
+    "status": "succeeded",
+    "elapsed_seconds": 5.075,
+    "workflow_sha256": "ec9615286e08292d3d9606174b477c8847296dc3be7161a246d402e077e797ca",
+    "output_sha256": "ee1b9d9bd39411706e6f5d60f64e23089426ecc390d1c746f8b3acf89cfba60d"
+  },
+  "demo": {
+    "sha256": "a14b3eb287e3daf0ed4dd27e238048c1725c087c0b48cf8ffb301758e637f13f",
+    "bytes": 19889641,
+    "duration_seconds": 108.052,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "video": {
+      "codec_name": "h264",
+      "width": 1152,
+      "height": 768,
+      "r_frame_rate": "24/1"
+    },
+    "audio": [
+      {
+        "codec_name": "aac",
+        "channels": 2,
+        "sample_rate": "48000"
+      }
+    ],
+    "provenance": "docs/evidence/OJ-mbn5-final-gate/demo-provenance.md"
+  },
+  "exit_code": 2,
+  "eligible_to_submit": false
+}

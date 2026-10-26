@@ -1,0 +1,38 @@
+{
+  "schema_version": "openjutsu.focus-sequence-final.v1",
+  "method": "Real Tab-key traversal in local Chrome; screenshots retain the visible focus outline at each step.",
+  "controls": [
+    {"step": 0, "control": "Openjutsu Studio brand link", "evidence": "native-focus/brand-link-focus.jpg"},
+    {"step": 1, "control": "Source video container", "evidence": "focus/01-source-video.jpg"},
+    {"steps": "2-7", "control": "Source native controls: play, volume, mute, fullscreen, overflow menu, timeline", "evidence": "native-focus/source-control-bars2-sheet.jpg"},
+    {"step": 8, "control": "Source file input", "evidence": "focus/08-66-button-source-clip-*-synthetic_source.mp4.jpg"},
+    {"step": 9, "control": "Primary reference input", "evidence": "focus/09-73-button-primary-performer-reference-*-synthetic_reference.png.jpg"},
+    {"step": 10, "control": "Optional second-reference input", "evidence": "focus/10-77-button-optional-second-reference-no-file-chosen.jpg"},
+    {"step": 11, "control": "Timing and creative details summary", "evidence": "focus/11-84-disclosure-triangle-timing-creative-controls.jpg"},
+    {"step": 12, "control": "Whisper word-timing input", "evidence": "focus/12-87-button-whisper-word-timing-json-word_timings.json.jpg"},
+    {"step": 13, "control": "Replacement identity textarea", "evidence": "focus/13-89-text-entry-area-(settable)-replacement-identity-description-placeholder-optional-describe-the-authorized-replacement.jpg"},
+    {"step": 14, "control": "Seed number input", "evidence": "focus/14-unknown.jpg"},
+    {"step": 15, "control": "Rights consent checkbox", "evidence": "focus/15-unknown.jpg"},
+    {"step": 16, "control": "Prepare a new job button", "evidence": "focus/16-unknown.jpg"},
+    {"step": 17, "control": "Reset workspace button", "evidence": "focus/17-unknown.jpg"},
+    {"step": 18, "control": "Workflow JSON link", "evidence": "focus/18-unknown.jpg"},
+    {"step": 19, "control": "Prompt link", "evidence": "focus/19-unknown.jpg"},
+    {"step": 20, "control": "Run prepared workflow button", "evidence": "focus/20-unknown.jpg"},
+    {"step": 21, "control": "Final result video container", "evidence": "focus/21-unknown.jpg"},
+    {"steps": "22-27", "control": "Final native controls: play, volume, mute, fullscreen, overflow menu, timeline", "evidence": "native-focus/final-control-bars2-sheet.jpg"},
+    {"step": 28, "control": "Side-by-side review video container", "evidence": "focus/28-unknown.jpg"},
+    {"steps": "29-34", "control": "Comparison native controls: play, volume, mute, fullscreen, overflow menu, timeline", "evidence": "native-focus/comparison-control-bars2-sheet.jpg"},
+    {"step": 35, "control": "Download generated clip link", "evidence": "focus/35-unknown.jpg"},
+    {"step": 36, "control": "Download final-with-audio link", "evidence": "focus/36-unknown.jpg"},
+    {"step": 37, "control": "Download side-by-side review link", "evidence": "focus/37-unknown.jpg"},
+    {"conditional": true, "control": "Legacy disconnected-state Check connection again button", "evidence": "health-retry-focus.jpg"}
+  ],
+  "style_probe": {
+    "selector": "a.brand:focus-visible",
+    "computed_outline": "rgb(216, 199, 145) solid 2px"
+  },
+  "sheet_index": [
+    {"evidence": "non-native-focus-sheet-1.jpg", "steps": "8-15"},
+    {"evidence": "non-native-focus-sheet-2.jpg", "steps": "16-20 and 35-37"}
+  ]
+}

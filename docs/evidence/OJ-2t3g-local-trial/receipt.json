@@ -1,0 +1,226 @@
+{
+  "backend": "dry_run",
+  "base_url": "http://127.0.0.1:8890",
+  "binding": {
+    "host": "127.0.0.1",
+    "scope": "loopback-only"
+  },
+  "credential_environment_forwarded": false,
+  "exposure_report": "secret-scan.json",
+  "fixture_hashes": {
+    "reference": "0f5f0bc67819583b824c3e2d9900225e89cf9b0223108a1b472e444da8b9e79a",
+    "source": "6fecc6baff45fa6bc210e3864d15a99e663f7215f97b5a3c8f4fc7d91c51165f",
+    "words": "7943902959ac0aba6b775857a964bbdef11bc89e354847ccf5ab02bfe9439d5f"
+  },
+  "generated_at_utc": "2026-10-17T21:04:54.755084+00:00",
+  "gpu_or_cloud_backend_selected": false,
+  "job_id": "2e0c7c137ef8",
+  "probes": [
+    {
+      "body": {
+        "backend": "dry_run",
+        "ok": true,
+        "workflow": "openjutsu_h3_lipsync_local.json",
+        "workflow_exists": true
+      },
+      "checks": [
+        "status_code == 200",
+        "backend == dry_run",
+        "workflow_exists == true"
+      ],
+      "content_type": "application/json",
+      "method": "GET",
+      "path": "/api/health",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "contains_rights_gate": true,
+        "text_sha256": "418c05b2d3734c6c92431acada4d51aecea90bbfb6ab15cf0cd86382910d2ab9"
+      },
+      "checks": [
+        "status_code == 200",
+        "html content type",
+        "rights_attested control present"
+      ],
+      "content_type": "text/html; charset=utf-8",
+      "method": "GET",
+      "path": "/",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "detail": "Rights attestation is required."
+      },
+      "checks": [],
+      "content_type": "application/json",
+      "method": "POST",
+      "path": "/api/prepare",
+      "status_code": 422
+    },
+    {
+      "body": {
+        "job_id": "2e0c7c137ef8",
+        "manifest": {
+          "job_id": "2e0c7c137ef8",
+          "prompt_path": "prompt.txt",
+          "reference_1": "synthetic_reference.png",
+          "reference_2": null,
+          "rights_attested": true,
+          "seed": 50,
+          "source": "synthetic_source.mp4",
+          "word_schedule_path": "word_timings.json",
+          "workflow_path": "workflow.json"
+        },
+        "prompt_url": "/api/jobs/2e0c7c137ef8/prompt",
+        "scene": {
+          "audio_channels": 1,
+          "duration_seconds": 2.041667,
+          "fps": 24.0,
+          "has_audio": true,
+          "height": 240,
+          "path": "synthetic_source.mp4",
+          "recommended": true,
+          "risks": [],
+          "warnings": [
+            "manual shot review required: eyes visible, mouth visible, one target speaker, stable camera"
+          ],
+          "width": 640
+        },
+        "workflow_url": "/api/jobs/2e0c7c137ef8/workflow"
+      },
+      "checks": [],
+      "content_type": "application/json",
+      "method": "POST",
+      "path": "/api/prepare",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "job_id": "2e0c7c137ef8",
+        "state": "queued"
+      },
+      "checks": [
+        "status_code == 200",
+        "state == queued"
+      ],
+      "content_type": "application/json",
+      "method": "POST",
+      "path": "/api/jobs/2e0c7c137ef8/run",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {},
+        "backend": "dry_run",
+        "job_id": "2e0c7c137ef8",
+        "message": "Copying deterministic fixture output",
+        "prompt_id": "dry-run-350da377ae2184fc",
+        "state": "downloading",
+        "uploads": {
+          "reference_1": "synthetic_reference.png",
+          "reference_2": null,
+          "source": "synthetic_source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/2e0c7c137ef8/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {},
+        "backend": "dry_run",
+        "job_id": "2e0c7c137ef8",
+        "message": "Copying deterministic fixture output",
+        "prompt_id": "dry-run-350da377ae2184fc",
+        "state": "downloading",
+        "uploads": {
+          "reference_1": "synthetic_reference.png",
+          "reference_2": null,
+          "source": "synthetic_source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/2e0c7c137ef8/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {},
+        "backend": "dry_run",
+        "job_id": "2e0c7c137ef8",
+        "message": "Copying deterministic fixture output",
+        "prompt_id": "dry-run-350da377ae2184fc",
+        "state": "downloading",
+        "uploads": {
+          "reference_1": "synthetic_reference.png",
+          "reference_2": null,
+          "source": "synthetic_source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/2e0c7c137ef8/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {},
+        "backend": "dry_run",
+        "job_id": "2e0c7c137ef8",
+        "message": "Copying deterministic fixture output",
+        "prompt_id": "dry-run-350da377ae2184fc",
+        "state": "downloading",
+        "uploads": {
+          "reference_1": "synthetic_reference.png",
+          "reference_2": null,
+          "source": "synthetic_source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/2e0c7c137ef8/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {
+          "final": "final.mp4",
+          "generated": "generated.mp4",
+          "side_by_side": "source_vs_final.mp4"
+        },
+        "backend": "dry_run",
+        "job_id": "2e0c7c137ef8",
+        "message": "Deterministic dry-run generation complete",
+        "prompt_id": "dry-run-350da377ae2184fc",
+        "state": "complete",
+        "uploads": {
+          "reference_1": "synthetic_reference.png",
+          "reference_2": null,
+          "source": "synthetic_source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/2e0c7c137ef8/status",
+      "status_code": 200
+    }
+  ],
+  "public_url": null,
+  "schema_version": "openjutsu.local-trial.v1",
+  "terminal_status": {
+    "artifacts": {
+      "final": "final.mp4",
+      "generated": "generated.mp4",
+      "side_by_side": "source_vs_final.mp4"
+    },
+    "backend": "dry_run",
+    "job_id": "2e0c7c137ef8",
+    "message": "Deterministic dry-run generation complete",
+    "prompt_id": "dry-run-350da377ae2184fc",
+    "state": "complete",
+    "uploads": {
+      "reference_1": "synthetic_reference.png",
+      "reference_2": null,
+      "source": "synthetic_source.mp4"
+    }
+  }
+}

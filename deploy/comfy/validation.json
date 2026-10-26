@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "scope": "offline comfy-cli syntax and upload-plan validation only",
+  "working_directory": "operator-approved temporary directory outside the repository",
+  "tool": "comfy-cli 1.22.0 via uvx --offline --python 3.12",
+  "validate": {
+    "command": "uvx --offline --python 3.12 --from comfy-cli==1.22.0 comfy --json build validate <owned-deploy-comfy-directory>",
+    "exit_code": 0,
+    "ok": true,
+    "remote": false,
+    "model_count": 13,
+    "folder_case_checked": false
+  },
+  "push_dry_run": {
+    "command": "uvx --offline --python 3.12 --from comfy-cli==1.22.0 comfy --json build push <owned-deploy-comfy-directory> --dry-run",
+    "exit_code": 0,
+    "ok": true,
+    "created": false,
+    "dry_run": true,
+    "upload_count": 0,
+    "upload_bytes": 0,
+    "uploaded": 0,
+    "deduped": 0,
+    "folder_case_checked": false
+  },
+  "interpretation": {
+    "runnable_build_proven": false,
+    "hosted_compatibility_proven": false,
+    "model_weights_downloaded": false,
+    "custom_nodes_fetched": false,
+    "dynamic_imports_executed": false,
+    "reason": "The offline CLI parser accepted the distribution definition and reported a no-upload plan; it did not check folder casing, resolve the now-unreachable BFS Git ref, download assets, execute nodes, or test a provider base image."
+  }
+}

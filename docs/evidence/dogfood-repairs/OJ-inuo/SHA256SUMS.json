@@ -1,0 +1,20 @@
+{
+  "artifacts/test_exports_preserve_speech_l0/comparison.mp4": "05e6ba537da6411fcb8f80433980140b4d528bce8c57590444f033e2aad13677",
+  "artifacts/test_exports_preserve_speech_l0/final.mp4": "4cc9995c94282abae81fac867cd59118351cf995fa5bee528a119402a8ce4a74",
+  "artifacts/test_exports_preserve_speech_l0/metrics.json": "b6c504dd3933f12197d2e8c19da51550cd5ae367c61b34abe5ead00f8d42321c",
+  "artifacts/test_exports_preserve_speech_l0/source.mp4": "a6fff581c4a99df3a600c3b744c7369715fbefd3ddd426b3a8654bb5dff0c470",
+  "artifacts/test_exports_preserve_speech_l1/comparison.mp4": "dcb8633164af3b8d2cd39e4139f9aa32d7de5ed4c512456a087117524e417b4b",
+  "artifacts/test_exports_preserve_speech_l1/final.mp4": "75586a4d91b22b1d5d6794c5ade368f4bf61aef5f247de933188b5a284e56026",
+  "artifacts/test_exports_preserve_speech_l1/metrics.json": "c748cf708468a55853b25cb7569f0fc4d76d26e2d1377f391445edef804fb1de",
+  "artifacts/test_exports_preserve_speech_l1/source.mp4": "f49488def3d24151aed9e9afcd7604eec860195c41a5cdcf708bc4d965807627",
+  "artifacts/test_exports_preserve_speech_l2/comparison.mp4": "89669a3efea787aaf5bf4840e097fa50563db4fc4ef31f5243560300b3293b4b",
+  "artifacts/test_exports_preserve_speech_l2/final.mp4": "d5cec022601a99762fc60b3140dcdc9f52323b8bc58d09762efafd1b86318c06",
+  "artifacts/test_exports_preserve_speech_l2/metrics.json": "8793eb726373c365f02ebd4efdc63591096bc7866a8af4ef7165fea45d44d8ea",
+  "artifacts/test_exports_preserve_speech_l2/source.mp4": "7c9cda41e1d65a11e43b252ba697a3320987ef31022d87ea1987bd2afc6966a0",
+  "full.txt": "661804e08072246fc6ce44241c69a756eb19e15fa59c97dab0a59c302909c480",
+  "green.txt": "eba270425b3073a265e33c6001596d953613f75ca281b08d8e6bb474a1b770ef",
+  "initial-fixture-error.txt": "ad6df41e7678344edb24eb6ae6765aa58b9fb6890e59e682ef41abd86efcb838",
+  "red.txt": "4f772833139266460fa9ff033252c5f16e34fd1d500711602d6b990ab3d2f449",
+  "source-probes.json": "f725c544bbbeaf058fd1da133681abdf90135066367c4e1dc037a6a6d6a46fb7",
+  "../../../../tests/fixtures/export_speech.wav": "407e544c5382a957f4fe475f80a0dc3817b845d48d8ed25ad1da20ad955f190f"
+}

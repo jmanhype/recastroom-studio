@@ -1,0 +1,212 @@
+.FFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_ test_make_side_by_side_scale_fits_and_pads_without_stretching[source_size0-final_size0-576-576] _
+
+tmp_path = PosixPath('/private/var/folders/7q/tx7m0tg12m5cgq7k8z8q2dzw0000gn/T/pytest-of-speed/pytest-61/test_make_side_by_side_scale_f0')
+source_size = (576, 384), final_size = (576, 384), source_content_width = 576
+final_content_width = 576
+
+    @pytest.mark.parametrize(
+        ("source_size", "final_size", "source_content_width", "final_content_width"),
+        [
+            ((576, 384), (576, 384), 576, 576),
+            ((216, 384), (216, 384), 216, 216),
+            ((640, 360), (640, 360), 682, 682),
+            ((576, 384), (216, 384), 576, 216),
+        ],
+    )
+    def test_make_side_by_side_scale_fits_and_pads_without_stretching(
+        tmp_path: Path,
+        source_size: tuple[int, int],
+        final_size: tuple[int, int],
+        source_content_width: int,
+        final_content_width: int,
+    ) -> None:
+        source = tmp_path / "source.mp4"
+        final = tmp_path / "final.mp4"
+        destination = tmp_path / "paired.mp4"
+    
+        _make_solid_video(source, size=source_size, color="red", frequency=440)
+        _make_solid_video(final, size=final_size, color="green", frequency=660)
+        _assert_geometry(source, *source_size)
+        _assert_geometry(final, *final_size)
+    
+        make_side_by_side(source, final, destination)
+    
+        _assert_geometry(destination, 1920, 384)
+        frame = _decoded_rgb_frame(destination, 1920, 384)
+>       _assert_centered_tile(frame, tile_index=0, content_width=source_content_width, color="red")
+
+tests/test_media.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_media.py:154: in _assert_centered_tile
+    _assert_color(pixel(5), (0, 0, 0))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = (252, 0, 0), expected = (0, 0, 0)
+
+    def _assert_color(actual: tuple[int, int, int], expected: tuple[int, int, int]) -> None:
+>       assert max(abs(actual[channel] - expected[channel]) for channel in range(3)) <= 16
+E       assert 252 <= 16
+E        +  where 252 = max(<generator object _assert_color.<locals>.<genexpr> at 0x1072d7c40>)
+
+tests/test_media.py:134: AssertionError
+_ test_make_side_by_side_scale_fits_and_pads_without_stretching[source_size1-final_size1-216-216] _
+
+tmp_path = PosixPath('/private/var/folders/7q/tx7m0tg12m5cgq7k8z8q2dzw0000gn/T/pytest-of-speed/pytest-61/test_make_side_by_side_scale_f1')
+source_size = (216, 384), final_size = (216, 384), source_content_width = 216
+final_content_width = 216
+
+    @pytest.mark.parametrize(
+        ("source_size", "final_size", "source_content_width", "final_content_width"),
+        [
+            ((576, 384), (576, 384), 576, 576),
+            ((216, 384), (216, 384), 216, 216),
+            ((640, 360), (640, 360), 682, 682),
+            ((576, 384), (216, 384), 576, 216),
+        ],
+    )
+    def test_make_side_by_side_scale_fits_and_pads_without_stretching(
+        tmp_path: Path,
+        source_size: tuple[int, int],
+        final_size: tuple[int, int],
+        source_content_width: int,
+        final_content_width: int,
+    ) -> None:
+        source = tmp_path / "source.mp4"
+        final = tmp_path / "final.mp4"
+        destination = tmp_path / "paired.mp4"
+    
+        _make_solid_video(source, size=source_size, color="red", frequency=440)
+        _make_solid_video(final, size=final_size, color="green", frequency=660)
+        _assert_geometry(source, *source_size)
+        _assert_geometry(final, *final_size)
+    
+        make_side_by_side(source, final, destination)
+    
+        _assert_geometry(destination, 1920, 384)
+        frame = _decoded_rgb_frame(destination, 1920, 384)
+>       _assert_centered_tile(frame, tile_index=0, content_width=source_content_width, color="red")
+
+tests/test_media.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_media.py:154: in _assert_centered_tile
+    _assert_color(pixel(5), (0, 0, 0))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = (252, 0, 0), expected = (0, 0, 0)
+
+    def _assert_color(actual: tuple[int, int, int], expected: tuple[int, int, int]) -> None:
+>       assert max(abs(actual[channel] - expected[channel]) for channel in range(3)) <= 16
+E       assert 252 <= 16
+E        +  where 252 = max(<generator object _assert_color.<locals>.<genexpr> at 0x107391e40>)
+
+tests/test_media.py:134: AssertionError
+_ test_make_side_by_side_scale_fits_and_pads_without_stretching[source_size2-final_size2-682-682] _
+
+tmp_path = PosixPath('/private/var/folders/7q/tx7m0tg12m5cgq7k8z8q2dzw0000gn/T/pytest-of-speed/pytest-61/test_make_side_by_side_scale_f2')
+source_size = (640, 360), final_size = (640, 360), source_content_width = 682
+final_content_width = 682
+
+    @pytest.mark.parametrize(
+        ("source_size", "final_size", "source_content_width", "final_content_width"),
+        [
+            ((576, 384), (576, 384), 576, 576),
+            ((216, 384), (216, 384), 216, 216),
+            ((640, 360), (640, 360), 682, 682),
+            ((576, 384), (216, 384), 576, 216),
+        ],
+    )
+    def test_make_side_by_side_scale_fits_and_pads_without_stretching(
+        tmp_path: Path,
+        source_size: tuple[int, int],
+        final_size: tuple[int, int],
+        source_content_width: int,
+        final_content_width: int,
+    ) -> None:
+        source = tmp_path / "source.mp4"
+        final = tmp_path / "final.mp4"
+        destination = tmp_path / "paired.mp4"
+    
+        _make_solid_video(source, size=source_size, color="red", frequency=440)
+        _make_solid_video(final, size=final_size, color="green", frequency=660)
+        _assert_geometry(source, *source_size)
+        _assert_geometry(final, *final_size)
+    
+        make_side_by_side(source, final, destination)
+    
+        _assert_geometry(destination, 1920, 384)
+        frame = _decoded_rgb_frame(destination, 1920, 384)
+>       _assert_centered_tile(frame, tile_index=0, content_width=source_content_width, color="red")
+
+tests/test_media.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_media.py:154: in _assert_centered_tile
+    _assert_color(pixel(5), (0, 0, 0))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = (252, 0, 0), expected = (0, 0, 0)
+
+    def _assert_color(actual: tuple[int, int, int], expected: tuple[int, int, int]) -> None:
+>       assert max(abs(actual[channel] - expected[channel]) for channel in range(3)) <= 16
+E       assert 252 <= 16
+E        +  where 252 = max(<generator object _assert_color.<locals>.<genexpr> at 0x107392b40>)
+
+tests/test_media.py:134: AssertionError
+_ test_make_side_by_side_scale_fits_and_pads_without_stretching[source_size3-final_size3-576-216] _
+
+tmp_path = PosixPath('/private/var/folders/7q/tx7m0tg12m5cgq7k8z8q2dzw0000gn/T/pytest-of-speed/pytest-61/test_make_side_by_side_scale_f3')
+source_size = (576, 384), final_size = (216, 384), source_content_width = 576
+final_content_width = 216
+
+    @pytest.mark.parametrize(
+        ("source_size", "final_size", "source_content_width", "final_content_width"),
+        [
+            ((576, 384), (576, 384), 576, 576),
+            ((216, 384), (216, 384), 216, 216),
+            ((640, 360), (640, 360), 682, 682),
+            ((576, 384), (216, 384), 576, 216),
+        ],
+    )
+    def test_make_side_by_side_scale_fits_and_pads_without_stretching(
+        tmp_path: Path,
+        source_size: tuple[int, int],
+        final_size: tuple[int, int],
+        source_content_width: int,
+        final_content_width: int,
+    ) -> None:
+        source = tmp_path / "source.mp4"
+        final = tmp_path / "final.mp4"
+        destination = tmp_path / "paired.mp4"
+    
+        _make_solid_video(source, size=source_size, color="red", frequency=440)
+        _make_solid_video(final, size=final_size, color="green", frequency=660)
+        _assert_geometry(source, *source_size)
+        _assert_geometry(final, *final_size)
+    
+        make_side_by_side(source, final, destination)
+    
+        _assert_geometry(destination, 1920, 384)
+        frame = _decoded_rgb_frame(destination, 1920, 384)
+>       _assert_centered_tile(frame, tile_index=0, content_width=source_content_width, color="red")
+
+tests/test_media.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_media.py:154: in _assert_centered_tile
+    _assert_color(pixel(5), (0, 0, 0))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = (252, 0, 0), expected = (0, 0, 0)
+
+    def _assert_color(actual: tuple[int, int, int], expected: tuple[int, int, int]) -> None:
+>       assert max(abs(actual[channel] - expected[channel]) for channel in range(3)) <= 16
+E       assert 252 <= 16
+E        +  where 252 = max(<generator object _assert_color.<locals>.<genexpr> at 0x107393740>)
+
+tests/test_media.py:134: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_media.py::test_make_side_by_side_scale_fits_and_pads_without_stretching[source_size0-final_size0-576-576]
+FAILED tests/test_media.py::test_make_side_by_side_scale_fits_and_pads_without_stretching[source_size1-final_size1-216-216]
+FAILED tests/test_media.py::test_make_side_by_side_scale_fits_and_pads_without_stretching[source_size2-final_size2-682-682]
+FAILED tests/test_media.py::test_make_side_by_side_scale_fits_and_pads_without_stretching[source_size3-final_size3-576-216]
+4 failed, 1 passed in 1.44s

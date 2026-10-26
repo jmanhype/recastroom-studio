@@ -1,0 +1,5 @@
+.......                                                                  [100%]
+7 passed in 12.83s
+make_side_by_side statement coverage: 4/4 = 100.00%
+executed statement lines: [166, 167, 169, 174]
+uncovered statement lines: []

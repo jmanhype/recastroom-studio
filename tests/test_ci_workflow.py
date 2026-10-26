@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+from __future__ import annotations
+
+import re
+from pathlib import Path
+
+
+REPO = Path(__file__).resolve().parents[1]
+WORKFLOW = REPO / ".github/workflows/ci.yml"
+
+
+def test_ci_is_pinned_fast_and_reproducible():
+    text = WORKFLOW.read_text(encoding="utf-8")
+    assert "name: CI" in text
+    assert "branches: [main]" in text
+    assert "pull_request:" in text
+    assert "workflow_dispatch:" in text
+    assert "cancel-in-progress: true" in text
+    assert "contents: read" in text
+    assert "timeout-minutes: 20" in text
+    assert "runs-on: ubuntu-24.04" in text
+    assert 'python-version: ["3.11", "3.12"]' in text
+    assert "apt-get" not in text
+    assert "@ffmpeg-installer/ffmpeg@1.1.0" in text
+    assert "@ffprobe-installer/ffprobe@2.1.2" in text
+    assert "python -m compileall -q app scripts src tests tools" in text
+    assert "node --check app/web/landing.js" in text
+    assert "node --check app/web/sound-lab.js" in text
+    assert "node --check app/web/studio.js" in text
+    assert "python -m pytest -q" in text
+
+    uses = re.findall(r"uses: ([^ ]+) #", text)
+    assert uses == [
+        "actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+        "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+    ]

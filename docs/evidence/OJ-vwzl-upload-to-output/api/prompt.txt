@@ -1,0 +1,27 @@
+body_swap:
+subject_definitions:
+Synthetic fixture performer
+
+summary:
+[video generation + reference + source audio] Replace only the selected target performer in the guide video with the authorized replacement performer while preserving the source performance and exact word schedule.
+
+detailed_description:
+The replacement performer takes the exact place of the selected target performer. Preserve the source performer's posture, hands, arms, shoulders, head rotation, eye direction, eyelid aperture, mouth aperture, lip shapes, speech timing, and facial expression.
+Use the source audio and the guide mouth as joint authority. Match jaw opening, lip rounding, labiodental contact, tongue-tip motion, chin movement, and micro-closures. Do not genericize speech into simple mouth ovals.
+
+Exact word/frame schedule:
+- frames 1-5 / 0.000-0.200s: silent pause; lips stay relaxed and closed.
+- frames 6-14 / 0.200-0.550s: "rights" — active source-matched articulation.
+- frames 17-24 / 0.650-0.950s: "clean" — active source-matched articulation.
+
+Integrate the replacement performer into the source's practical lighting and color temperature. Preserve the original room, props, camera, framing, background, and non-target people exactly. Prevent identity drift, hair-color drift, clothing changes, texture crawling, face flicker, invented gestures, extra speech, and temporal flicker.
+
+forbidden:
+- unlicensed celebrity or public-figure likeness
+- deceased performer recreation
+- invented speech
+- invented camera movement
+- target-person bleeding into another person
+- caramel or otherwise incorrect hair-color drift
+
+The result is real, photographic, and source-aligned.

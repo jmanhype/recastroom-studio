@@ -1,0 +1,84 @@
+{
+  "scope": "Real local app and browser; labelled loopback protocol fixture, not ComfyUI or AI inference",
+  "fixture": {
+    "ready_payload": {
+      "system": {
+        "os": "protocol-fixture-NOT-COMFY"
+      },
+      "devices": []
+    },
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/system_stats",
+        "status": 503,
+        "mode": "offline"
+      },
+      {
+        "method": "GET",
+        "path": "/system_stats",
+        "status": 200,
+        "mode": "ready"
+      },
+      {
+        "method": "GET",
+        "path": "/system_stats",
+        "status": 503,
+        "mode": "offline"
+      }
+    ]
+  },
+  "app_requests": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/styles.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/studio.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/prepare",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200
+    }
+  ],
+  "final_dom": {
+    "healthRetryVisible": true,
+    "job": "JOB / d79e57214aa7",
+    "message": "No run request was sent. Prepared files and permissions are preserved.",
+    "prepareDisabled": false,
+    "reference": "C:\\fakepath\\synthetic_reference.png",
+    "rightsChecked": true,
+    "runDisabled": true,
+    "source": "C:\\fakepath\\synthetic_source.mp4",
+    "stage": "RUN BLOCKED",
+    "statusRetryVisible": false
+  },
+  "server_status_file_exists": false,
+  "generation_or_upload_posts_to_fixture": 0,
+  "run_posts_to_app": 0,
+  "note": "Synthetic fixtures used only for no-GPU UI QA. No real media or prepared production jobs changed."
+}

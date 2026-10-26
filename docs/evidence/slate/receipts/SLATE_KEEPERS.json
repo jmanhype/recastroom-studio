@@ -1,0 +1,446 @@
+{
+  "status": "human_approved",
+  "keeper_count": 11,
+  "rejected_optional_variant": {
+    "slug": "era_anime_plate_a",
+    "reason": "H3 core converted the anime reference to a photoreal human; use a dedicated anime/style LoRA or post-style pass if anime is mandatory."
+  },
+  "keepers": [
+    {
+      "slug": "seed50_jay_plate_a",
+      "title": "Core Jay Swap \u00b7 Seed 50",
+      "final": "work/openjutsu_planb/slate_keepers/seed50_jay_plate_a.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/seed50_jay_plate_a_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/seed50_jay_plate_a_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/seed50_jay_plate_a_qwen.md",
+      "score": 9,
+      "note": "Approved core identity keeper; exact pause repair.",
+      "sha256": "0824d823953f6e3e05923f3d1086b232fb32e3a253eabd7f274b4a123f7f75bb",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 2,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "469"
+          }
+        ],
+        "format": {
+          "duration": "10.000000",
+          "size": "3986971"
+        }
+      }
+    },
+    {
+      "slug": "era_1985_plate_a",
+      "title": "Era Restyle \u00b7 1985",
+      "final": "work/openjutsu_planb/slate_keepers/era_1985_plate_a.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/era_1985_plate_a_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/era_1985_plate_a_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/era_1985_plate_a_qwen.md",
+      "score": 8,
+      "note": "Keeper; optional blink/grain polish.",
+      "sha256": "f8e4668798068e38481faab4967890e43219dca165c90a1206ee665da8969ab9",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "433"
+          }
+        ],
+        "format": {
+          "duration": "10.041667",
+          "size": "6376592"
+        }
+      }
+    },
+    {
+      "slug": "era_noir_plate_a_fullbw",
+      "title": "Era Restyle \u00b7 Noir",
+      "final": "work/openjutsu_planb/slate_keepers/era_noir_plate_a_fullbw.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/era_noir_plate_a_fullbw_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/era_noir_plate_a_fullbw_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/era_noir_plate_a_fullbw_qwen.md",
+      "score": 9,
+      "note": "Full-frame monochrome repair; no color seam.",
+      "sha256": "8762cd5234591c10162817c1dfe33028b17d30bc79b5e1738fefd309b2a760c0",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "433"
+          }
+        ],
+        "format": {
+          "duration": "10.041667",
+          "size": "8838871"
+        }
+      }
+    },
+    {
+      "slug": "fanwipe_man_plate_a",
+      "title": "Fan-Wipe \u00b7 Gentleman",
+      "final": "work/openjutsu_planb/slate_keepers/fanwipe_man_plate_a.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/fanwipe_man_plate_a_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/fanwipe_man_plate_a_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/fanwipe_man_plate_a_qwen.md",
+      "score": 9,
+      "note": "Strong mature-identity keeper.",
+      "sha256": "6c2d30afda6ed96047e6bd3787d58d6e1fe1804a9bc715e5e3d147b981f04939",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "433"
+          }
+        ],
+        "format": {
+          "duration": "10.041667",
+          "size": "6586680"
+        }
+      }
+    },
+    {
+      "slug": "fanwipe_young_plate_a",
+      "title": "Fan-Wipe \u00b7 Younger Woman",
+      "final": "work/openjutsu_planb/slate_keepers/fanwipe_young_plate_a.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/fanwipe_young_plate_a_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/fanwipe_young_plate_a_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/fanwipe_young_plate_a_qwen.md",
+      "score": 9,
+      "note": "Stable copper-curl identity keeper.",
+      "sha256": "8a64ec53ce473c76339bfd696b88954cb2e3d7ad607951104337657d6836758f",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "433"
+          }
+        ],
+        "format": {
+          "duration": "10.041667",
+          "size": "5910421"
+        }
+      }
+    },
+    {
+      "slug": "impossible_robot_mechanical_mouth",
+      "title": "Impossible Casting \u00b7 Robot",
+      "final": "work/openjutsu_planb/slate_keepers/impossible_robot_mechanical_mouth.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/impossible_robot_mechanical_mouth_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/impossible_robot_mechanical_mouth_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/impossible_robot_mechanical_mouth_qwen.md",
+      "score": 8,
+      "note": "Mechanical-mouth repair removed all pink human oral tissue.",
+      "sha256": "1b951b8adfee5f4b78cf79e33f4d355e942ca0ede2a6b7fcef0b491c28999949",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 2,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "433"
+          }
+        ],
+        "format": {
+          "duration": "10.041667",
+          "size": "6921384"
+        }
+      }
+    },
+    {
+      "slug": "hotel_jay_repair_seed51",
+      "title": "Hotel Lobby \u00b7 Jay Sings",
+      "final": "work/openjutsu_planb/slate_keepers/hotel_jay_repair_seed51.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/hotel_jay_repair_seed51_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/hotel_jay_repair_seed51_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/hotel_jay_repair_seed51_qwen.md",
+      "score": 9,
+      "note": "Identity morph eliminated; Jay holds for full song.",
+      "sha256": "a01b43fa6b46b71b08a5e86cecfcd68fc7deefa1b0e4a5b7125c70b30456f7cc",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "431"
+          }
+        ],
+        "format": {
+          "duration": "10.000000",
+          "size": "7877400"
+        }
+      }
+    },
+    {
+      "slug": "object_jay",
+      "title": "Object Swap \u00b7 Jay + Mug",
+      "final": "work/openjutsu_planb/slate_keepers/object_jay.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/object_jay_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/object_jay_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/object_jay_qwen.md",
+      "score": 9,
+      "note": "Mug remains large, centered, and unoccluded.",
+      "sha256": "421cad9d44eac72783902fd075da1465c154cab12dd9db18c80984815a685f40",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "431"
+          }
+        ],
+        "format": {
+          "duration": "10.000000",
+          "size": "7054700"
+        }
+      }
+    },
+    {
+      "slug": "twoperson_jay_trimmed_hostrestored",
+      "title": "Swap Only One \u00b7 Jay Guest",
+      "final": "work/openjutsu_planb/slate_keepers/twoperson_jay_trimmed_hostrestored.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/twoperson_jay_trimmed_hostrestored_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/twoperson_jay_trimmed_hostrestored_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/twoperson_jay_trimmed_hostrestored_qwen.md",
+      "score": 9,
+      "note": "Original host restored; only right guest is Jay.",
+      "sha256": "1c4c2b0c3a577f6ebbc73792c48badee437c9fa28cd804945bf19d18a0507966",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "140"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "252"
+          }
+        ],
+        "format": {
+          "duration": "5.833333",
+          "size": "2988800"
+        }
+      }
+    },
+    {
+      "slug": "lenspush_jay_repair_seed51",
+      "title": "Lens-Push \u00b7 Jay",
+      "final": "work/openjutsu_planb/slate_keepers/lenspush_jay_repair_seed51.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/lenspush_jay_repair_seed51_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/lenspush_jay_repair_seed51_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/lenspush_jay_repair_seed51_qwen.md",
+      "score": 9,
+      "note": "Forward gaze and excited mouth repaired; card timing preserved.",
+      "sha256": "8d59b4a5776c3b2890ab2ebd0ab8c9d5f61779a86ac584271ca54a2da1a3e198",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "431"
+          }
+        ],
+        "format": {
+          "duration": "10.000000",
+          "size": "7116683"
+        }
+      }
+    },
+    {
+      "slug": "cameramove_jay_stretch",
+      "title": "Camera-Move \u00b7 Orbit Stretch",
+      "final": "work/openjutsu_planb/slate_keepers/cameramove_jay_stretch.mp4",
+      "compare_480p": "work/openjutsu_planb/slate_keepers/cameramove_jay_stretch_compare_480p.mp4",
+      "contact": "work/openjutsu_planb/slate_keepers/cameramove_jay_stretch_contact.jpg",
+      "qwen": "work/openjutsu_planb/slate_keepers/cameramove_jay_stretch_qwen.md",
+      "score": 8,
+      "note": "Real orbit parallax survives with Jay stable.",
+      "sha256": "117827432b5f4ba34719aecdc8608ee1225de48c36498fc6d503803759f53e62",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "44100",
+            "channels": 1,
+            "avg_frame_rate": "0/0",
+            "nb_frames": "431"
+          }
+        ],
+        "format": {
+          "duration": "10.000000",
+          "size": "6426838"
+        }
+      }
+    }
+  ],
+  "human_approval": {
+    "approved_at_utc": "2026-10-17T04:33:32+00:00",
+    "approved_by": "operator/Jay",
+    "operator_verdict": "Done and perfect",
+    "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+    "rejected_optional_variant": "Era Anime remains rejected; the core H3 graph produced a photoreal conversion."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "commitUnderTest": "1649a937fd8685076abf522158f4783ea830edfe",
+  "endpoint": "http://127.0.0.1:8894",
+  "jobId": "c2a3a70973ec",
+  "beforeConsent": {
+    "prepareDisabled": true,
+    "rights": false
+  },
+  "observedStates": [
+    "PREPARING",
+    "DOWNLOADING",
+    "COMPLETE"
+  ],
+  "backendDisclosure": "DRY RUN · No AI inference · source-copy preview",
+  "completeStatus": "Deterministic dry-run generation complete · Dry run: no AI inference. Output copies the source.",
+  "artifactLinks": {
+    "generated": "/api/jobs/c2a3a70973ec/artifacts/generated",
+    "final": "/api/jobs/c2a3a70973ec/artifacts/final",
+    "side_by_side": "/api/jobs/c2a3a70973ec/artifacts/side_by_side"
+  },
+  "downloadAndServerSha256": {
+    "generated": "63d824b104058844e32170a1b7867d2e638b42d93ccf7454c97e20334960084b",
+    "final": "440d747cbce09daf89cf97d35238675824876be4ecb307c65cb135bf286e095a",
+    "side_by_side": "b434e04989a6bd99646d21136832d399fd76a94daee2b48f55f3977d26915369"
+  },
+  "resetEvidence": {
+    "prepareDisabled": true,
+    "refValue": "",
+    "reviewHidden": true,
+    "rights": false,
+    "sourceValue": ""
+  },
+  "timingNote": "Observation timestamps include tool turn gaps; they are not backend latency."
+}

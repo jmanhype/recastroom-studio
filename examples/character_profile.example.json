@@ -1,0 +1,12 @@
+{
+  "name": "Authorized replacement performer",
+  "identity_description": "<Subject 1> is the replacement performer shown in <Picture 1>. <Picture 2> reinforces the same facial geometry, hair, skin tone, body proportions, and wardrobe.",
+  "preserve_statement": "Preserve the source performer's posture, hands, arms, shoulders, head rotation, eye direction, eyelid aperture, mouth aperture, lip shapes, speech timing, and facial expression.",
+  "forbidden": [
+    "unlicensed celebrity or public-figure likeness",
+    "deceased performer recreation",
+    "invented speech",
+    "invented camera movement",
+    "target-person bleeding into another person"
+  ]
+}

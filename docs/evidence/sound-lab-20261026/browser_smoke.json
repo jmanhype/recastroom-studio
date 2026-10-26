@@ -1,0 +1,37 @@
+{
+  "route": "http://127.0.0.1:8895/sound-lab.html",
+  "browser": "ChatGPT in-app browser",
+  "interaction": {
+    "clicked": "#play-sketch",
+    "status_after_completion": "Sketch finished · local Tone.js 15.1.22",
+    "individual_cue_retest": {
+      "clicked": "[data-audition=pulse]",
+      "status": "Auditioning pulse cue",
+      "play_remained_enabled": true,
+      "preset_remained_enabled": true,
+      "console_errors_or_warnings": 0
+    },
+    "console_errors_or_warnings": 0
+  },
+  "responsive": {
+    "desktop_viewport": "1440x1100",
+    "mobile_viewport": "390x844",
+    "mobile_horizontal_overflow_px": 0
+  },
+  "assets": {
+    "desktop_screenshot": "work/evidence/sound-lab-20261026/iab-desktop.png",
+    "desktop_sha256": "e16ffe875d681f7294306395c946ea3ae470e2f1bd7cb2918d4f37f62231925d",
+    "mobile_screenshot": "work/evidence/sound-lab-20261026/iab-mobile.png",
+    "mobile_sha256": "eda7d919097878536fef9a01ac706e52028b9b8e837b09a5be48a3e6375950d"
+  },
+  "boundary": "The browser completed the 12.8-second Tone.js sketch through its scheduled end. This was an interface/runtime audition, not an EBU R128 measurement of the generated signal."
+  ,
+  "with_video": {
+    "hosted_route": "https://fill-counseling-carlo-survivor.trycloudflare.com/sound-lab.html",
+    "video_ready_state": 4,
+    "video_duration_seconds": 23.8,
+    "video_resolution": "1920x1080",
+    "video_sha256": "83b810dd404113d045ac01e76e3a802353eaa9d481a5bc032c5000ddeb0350b3",
+    "screenshot": "hosted-with-video.png"
+  }
+}

@@ -1,0 +1,27 @@
+# Keeper evidence fail-closed verification
+
+## Immutable pack passes
+
+```text
+$ python tools/verify_keeper_evidence.py docs/evidence/slate/manifest.json
+PASS: docs/evidence/slate/manifest.json
+keeper_count=11
+artifact_count=48
+manifest_sha256=ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33
+```
+
+## Controlled one-byte mutation fails
+
+The mutation is performed only in a temporary full copy. The committed evidence pack remains unchanged.
+
+```text
+$ python tools/verify_keeper_evidence.py <temporary-copy>/slate/manifest.json
+FAIL: <temporary-copy>/slate/manifest.json
+keeper[cameramove_jay_stretch].artifacts[3].sha256 changed
+controlled_mutation_target=keepers/cameramove_jay_stretch/cameramove_jay_stretch_qwen.md
+controlled_mutation=byte[-2] XOR 0x01
+original_sha256=853edbf8b0a37fa46e7aec03bdc6302fdee5791189cfcef2a4482159288c6882
+mutated_sha256=2df22b65b3ae39a29b6f011fdaca263428bcc0afb9cf66923e93f6afdde9f5e8
+temporary_copy_deleted=true
+committed_pack_sha256_unchanged=true
+```

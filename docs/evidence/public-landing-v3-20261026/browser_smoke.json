@@ -1,0 +1,37 @@
+{
+  "local_route": "http://127.0.0.1:8895/landing.html",
+  "hosted_route": "https://fill-counseling-carlo-survivor.trycloudflare.com/landing.html",
+  "browser": "ChatGPT in-app browser",
+  "desktop": {
+    "viewport_width": 1280,
+    "horizontal_overflow_px": 0,
+    "tagline_client_width": 680,
+    "tagline_scroll_width": 680,
+    "feature_cards": 6,
+    "revealed_feature_cards": 6
+  },
+  "mobile": {
+    "viewport_width": 390,
+    "horizontal_overflow_before_repair_px": 334,
+    "horizontal_overflow_after_repair_px": 0,
+    "repair": "Preserve whitespace between animated tagline words so normal line wrapping remains available"
+  },
+  "hero_video": {
+    "ready_state": 4,
+    "duration_seconds": 23.8,
+    "resolution": "1920x1080",
+    "sha256_original_v6b_master": "83b810dd404113d045ac01e76e3a802353eaa9d481a5bc032c5000ddeb0350b3",
+    "sha256_public_stream_copy": "2cabf3066c5bfe9fcdfc5ee760ea94519b87b8a1f96f268f4fe464e48bd08b88"
+  },
+  "console_errors_or_warnings": 0,
+  "hosted_critical_assets_http_200": [
+    "/landing.html",
+    "/landing.css",
+    "/landing.js",
+    "/legal.html",
+    "/favicon.svg",
+    "/fonts/manrope-latin-400-800.woff2",
+    "/images/recastroom-landing-social.jpg",
+    "/media/recastroom-public-hero-16x9.mp4"
+  ]
+}

@@ -1,0 +1,126 @@
+# Quickstart
+
+This is the reviewer-facing path from a clean source checkout or unpacked release
+archive. It does not use credentials or a GPU. Generation is a separate step and
+requires a local ComfyUI runtime.
+
+## 0. Prerequisites
+
+- Python 3.10 or newer
+- Git for a source checkout
+- `ffmpeg` and `ffprobe`
+- optional local `whisper` for word timings
+
+## 1. Install
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install ".[dev]"
+python -m pip check
+python -m pytest -q
+recastroom --version
+```
+
+The expected CLI version for this release candidate is `0.1.1`.
+
+## 2. Confirm the bundled workflow
+
+```bash
+test -f workflows/openjutsu_h3_lipsync_local.json
+python -m json.tool workflows/openjutsu_h3_lipsync_local.json >/dev/null
+```
+
+## 3. Start the app
+
+```bash
+export RECASTROOM_COMFY_URL="http://127.0.0.1:8188"
+export RECASTROOM_WORKFLOW="$PWD/workflows/openjutsu_h3_lipsync_local.json"
+uvicorn app.main:app --reload --port 8768
+```
+
+Open `http://127.0.0.1:8768`.
+
+The app's prepare stage is fully local. Generation requires a ComfyUI runtime containing the models and custom nodes in `PIPELINE.md`.
+
+For a credential-free application smoke test, use:
+
+```bash
+export RECASTROOM_BACKEND=dry_run
+```
+
+This deterministic backend routes the prepared synthetic fixture through status,
+download, source-audio restoration, and side-by-side review paths. It does not
+claim model inference.
+
+In a second shell from the same checkout:
+
+```bash
+curl --fail http://127.0.0.1:8768/api/health
+curl --fail http://127.0.0.1:8768/ >/dev/null
+```
+
+The health response must include `"workflow_exists":true`. The app's prepare stage
+is fully local. Generation requires a ComfyUI runtime containing the models and
+custom nodes in `PIPELINE.md`.
+
+## 4. Inspect a clip
+
+```bash
+recastroom inspect source.mp4
+```
+
+Recommended input:
+
+- one target speaker,
+- 5–8 seconds,
+- 24 fps or easy to normalize,
+- visible eyes and mouth,
+- stable camera,
+- no hats or sunglasses,
+- no overlapping speakers.
+
+## 5. Word timings
+
+```bash
+recastroom words source.mp4 --json work/source.words.json
+```
+
+## 6. Prepare an H3 workflow
+
+```bash
+recastroom prepare \
+  --attest-rights \
+  --source source.mp4 \
+  --reference-1 reference-1.png \
+  --reference-2 reference-2.png \
+  --words work/source.words.json \
+  --output work/workflow.json
+```
+
+The generated `workflow.json` is in ComfyUI API format.
+
+## 7. Queue to local ComfyUI
+
+```bash
+export RECASTROOM_COMFY_URL="http://127.0.0.1:8188"
+recastroom run --attest-rights work/workflow.json
+```
+
+## 8. Official Comfy SDK mode
+
+Install and configure:
+
+```bash
+pip install comfy-sdk
+export COMFY_API_KEY="comfyui-..."
+export COMFY_BASE_URL="https://<your-deployment>"
+```
+
+The deployment must include the required custom nodes and models. The SDK adapter
+is in `src/openjutsu/comfy_sdk_runner.py`.
+
+Both values are mandatory for this Developer Platform deployment mode. If either
+is missing, job startup fails closed before network access with a JSON-serializable
+`ComfySdkConfigurationError` (`missing_comfy_api_key` or `missing_comfy_base_url`).

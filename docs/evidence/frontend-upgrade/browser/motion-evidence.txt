@@ -1,0 +1,41 @@
+286 row CSS property name: animation-composition CSS property value: replace
+288 container CSS property name: animation-composition
+292 row CSS property name: animation-delay CSS property value: 0s
+294 container CSS property name: animation-delay
+298 row CSS property name: animation-direction CSS property value: normal
+300 container CSS property name: animation-direction
+304 row CSS property name: animation-duration CSS property value: 0s
+306 container CSS property name: animation-duration
+310 row CSS property name: animation-fill-mode CSS property value: none
+312 container CSS property name: animation-fill-mode
+316 row CSS property name: animation-iteration-count CSS property value: 1
+318 container CSS property name: animation-iteration-count
+322 row CSS property name: animation-name CSS property value: none
+324 container CSS property name: animation-name
+328 row CSS property name: animation-play-state CSS property value: running
+330 container CSS property name: animation-play-state
+334 row CSS property name: animation-range-end CSS property value: normal
+336 container CSS property name: animation-range-end
+340 row CSS property name: animation-range-start CSS property value: normal
+342 container CSS property name: animation-range-start
+346 row CSS property name: animation-timeline CSS property value: auto
+348 container CSS property name: animation-timeline
+352 row CSS property name: animation-timing-function CSS property value: ease
+354 container CSS property name: animation-timing-function
+358 row CSS property name: animation-trigger CSS property value: none
+360 container CSS property name: animation-trigger
+394 row CSS property name: scroll-behavior CSS property value: auto
+396 container CSS property name: scroll-behavior
+400 row CSS property name: transition-behavior CSS property value: normal
+402 container CSS property name: transition-behavior
+406 row CSS property name: transition-delay CSS property value: 0s
+408 container CSS property name: transition-delay
+412 row CSS property name: transition-duration CSS property value: 0s
+414 container CSS property name: transition-duration
+418 row CSS property name: transition-property CSS property value: none
+420 container CSS property name: transition-property
+424 row CSS property name: transition-timing-function CSS property value: ease
+426 container CSS property name: transition-timing-function
+516 text Emulate CSS media feature prefers-reduced-motion Forces CSS prefers-reduced-motion media feature
+517 pop up button Emulate CSS media feature prefers-reduced-motion, Value: prefers-reduced-motion: reduce
+518 (selected) prefers-reduced-motion: reduce

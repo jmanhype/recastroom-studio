@@ -1,0 +1,25 @@
+INFO:     Started server process [44643]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8913 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59594 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "POST /api/prepare HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:59595 - "POST /api/prepare HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:59595 - "POST /api/prepare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/workflow HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/prompt HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "POST /api/jobs/186c06e80582/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/artifacts/generated HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/artifacts/final HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59595 - "GET /api/jobs/186c06e80582/artifacts/side_by_side HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44643]

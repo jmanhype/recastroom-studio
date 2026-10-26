@@ -1,0 +1,21 @@
+{
+  "desktop": {
+    "width": 1280,
+    "scrollWidth": 1280,
+    "overflow": 0,
+    "dryRunBadge": true,
+    "runtimeCards": 3,
+    "setupCards": 4,
+    "comparisonRows": 6,
+    "galleryVideos": 3,
+    "roadmapCards": 4
+  },
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390,
+    "overflow": 0,
+    "comparisonScrollWidth": 768,
+    "comparisonClientWidth": 356
+  },
+  "errors": []
+}

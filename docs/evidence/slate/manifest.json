@@ -1,0 +1,2014 @@
+{
+  "schema_version": "openjutsu.keeper-evidence.v1",
+  "generated_at_utc": "2026-10-17T16:38:04.077301+00:00",
+  "status": "human_approved",
+  "keeper_count": 11,
+  "intended_keeper_ids": [
+    "cameramove_jay_stretch",
+    "era_1985_plate_a",
+    "era_noir_plate_a_fullbw",
+    "fanwipe_man_plate_a",
+    "fanwipe_young_plate_a",
+    "hotel_jay_repair_seed51",
+    "impossible_robot_mechanical_mouth",
+    "lenspush_jay_repair_seed51",
+    "object_jay",
+    "seed50_jay_plate_a",
+    "twoperson_jay_trimmed_hostrestored"
+  ],
+  "source": {
+    "basis": "verified Plan B human-approved receipt and synthetic-asset provenance notes",
+    "keeper_receipt_sha256": "db598c5ec0848e2cdb7d34011dca8121aef575a6b88907661a11fbb5b916e3cc",
+    "import_policy": "derived approved evidence only; private film/TV experiments excluded"
+  },
+  "human_approval": {
+    "approved_at_utc": "2026-10-17T04:33:32+00:00",
+    "approved_by": "operator/Jay",
+    "operator_verdict": "Done and perfect",
+    "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+    "rejected_optional_variant": "Era Anime remains rejected; the core H3 graph produced a photoreal conversion."
+  },
+  "rejected_optional_variant": {
+    "slug": "era_anime_plate_a",
+    "reason": "H3 core converted the anime reference to a photoreal human; use a dedicated anime/style LoRA or post-style pass if anime is mandatory.",
+    "included": false
+  },
+  "provenance_receipts": [
+    {
+      "path": "receipts/SLATE_KEEPERS.json",
+      "bytes": 15066,
+      "sha256": "db598c5ec0848e2cdb7d34011dca8121aef575a6b88907661a11fbb5b916e3cc",
+      "source_sha256": "db598c5ec0848e2cdb7d34011dca8121aef575a6b88907661a11fbb5b916e3cc",
+      "role": "SLATE_KEEPERS.json",
+      "rights": {
+        "classification": "rights_clean_generated",
+        "private_ip": false,
+        "third_party_film_tv": false,
+        "provenance": {
+          "source_type": "project_generated_synthetic_or_operator_authorized",
+          "source_receipt": "receipts/SLATE_KEEPERS.json",
+          "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+          "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+        },
+        "consent": {
+          "status": "recorded",
+          "actor": "operator/Jay",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "verdict": "Done and perfect",
+          "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      }
+    },
+    {
+      "path": "receipts/HUMAN_APPROVAL.md",
+      "bytes": 527,
+      "sha256": "d8df32f3f6184b907d0a0d58896223c469feb6f444c2e53d06fce936858930d7",
+      "source_sha256": "d8df32f3f6184b907d0a0d58896223c469feb6f444c2e53d06fce936858930d7",
+      "role": "HUMAN_APPROVAL.md",
+      "rights": {
+        "classification": "rights_clean_generated",
+        "private_ip": false,
+        "third_party_film_tv": false,
+        "provenance": {
+          "source_type": "project_generated_synthetic_or_operator_authorized",
+          "source_receipt": "receipts/SLATE_KEEPERS.json",
+          "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+          "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+        },
+        "consent": {
+          "status": "recorded",
+          "actor": "operator/Jay",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "verdict": "Done and perfect",
+          "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      }
+    },
+    {
+      "path": "receipts/SLATE_ASSET_MANIFEST.md",
+      "bytes": 1701,
+      "sha256": "ece3c33eac586f3d890169d2539a37f70cfd0d1270f5f85eab55a7fea4a4f83c",
+      "source_sha256": "ece3c33eac586f3d890169d2539a37f70cfd0d1270f5f85eab55a7fea4a4f83c",
+      "role": "SLATE_ASSET_MANIFEST.md",
+      "rights": {
+        "classification": "rights_clean_generated",
+        "private_ip": false,
+        "third_party_film_tv": false,
+        "provenance": {
+          "source_type": "project_generated_synthetic_or_operator_authorized",
+          "source_receipt": "receipts/SLATE_KEEPERS.json",
+          "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+          "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+        },
+        "consent": {
+          "status": "recorded",
+          "actor": "operator/Jay",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "verdict": "Done and perfect",
+          "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      }
+    },
+    {
+      "path": "receipts/H3-SOURCE-NOTES.md",
+      "bytes": 2703,
+      "sha256": "a11b27f3df6a04eda26ba0f0a8b9dfe5165a1c3ebe250282946be8dfcf317527",
+      "source_sha256": "a11b27f3df6a04eda26ba0f0a8b9dfe5165a1c3ebe250282946be8dfcf317527",
+      "role": "H3-SOURCE-NOTES.md",
+      "rights": {
+        "classification": "rights_clean_generated",
+        "private_ip": false,
+        "third_party_film_tv": false,
+        "provenance": {
+          "source_type": "project_generated_synthetic_or_operator_authorized",
+          "source_receipt": "receipts/SLATE_KEEPERS.json",
+          "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+          "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+        },
+        "consent": {
+          "status": "recorded",
+          "actor": "operator/Jay",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "verdict": "Done and perfect",
+          "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      }
+    }
+  ],
+  "keepers": [
+    {
+      "slug": "seed50_jay_plate_a",
+      "title": "Core Jay Swap \u00b7 Seed 50",
+      "format_concept": {
+        "name": "Core identity swap",
+        "description": "Exact-pause Jay identity replacement on the synthetic Plate A source."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Plate A",
+        "identity_target": "operator-authorized Jay",
+        "seed": 50,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/seed50_jay_plate_a/seed50_jay_plate_a.mp4",
+        "postprocess": "Approved core identity keeper; exact pause repair."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 9,
+          "verdict": "keeper_candidate",
+          "report": "keepers/seed50_jay_plate_a/seed50_jay_plate_a_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/seed50_jay_plate_a/seed50_jay_plate_a.mp4",
+          "bytes": 3986935,
+          "sha256": "327bf432b4f76fa45e2887955ff57157e0a14fc8cd29f5cad3d2b9934b387137",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "48000",
+            "audio_channels": 2,
+            "duration": "10.000000",
+            "size": "3986935"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/seed50_jay_plate_a/seed50_jay_plate_a_compare_480p.mp4",
+          "bytes": 565137,
+          "sha256": "f031c51eb79dba93bd53f892b22fc27e35aa78e671b15ffbf73c23aa2f9e267d",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 426,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "48000",
+            "audio_channels": 2,
+            "duration": "10.000000",
+            "size": "565137"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/seed50_jay_plate_a/seed50_jay_plate_a_contact.jpg",
+          "bytes": 1258946,
+          "sha256": "4a0975eddf8ae8dc5bcc17223488c6c619d96998c5fa1e8f185deeebbfc5ce7f",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 3880,
+            "height": 1448
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/seed50_jay_plate_a/seed50_jay_plate_a_qwen.md",
+          "bytes": 2400,
+          "sha256": "c9a24aa39ee84c3e5c2d16cc13e4f7a9581b4f7e66395792453705135cec5382",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "era_1985_plate_a",
+      "title": "Era Restyle \u00b7 1985",
+      "format_concept": {
+        "name": "Era restyle",
+        "description": "Preserve performance and kitchen geometry while applying an analog 1985 styling target."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Plate A",
+        "identity_target": "project-generated synthetic 1985 target",
+        "seed": 50,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/era_1985_plate_a/era_1985_plate_a.mp4",
+        "postprocess": "Keeper; optional blink/grain polish."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 8,
+          "verdict": "keeper_candidate",
+          "report": "keepers/era_1985_plate_a/era_1985_plate_a_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/era_1985_plate_a/era_1985_plate_a.mp4",
+          "bytes": 6354086,
+          "sha256": "4c2caef4568fc48b9e8f0b5d89fa02dfc83b1aad0d38b552ce2419d441b0859b",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.041667",
+            "size": "6354086"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/era_1985_plate_a/era_1985_plate_a_compare_480p.mp4",
+          "bytes": 464923,
+          "sha256": "3107e854665423f86e4e3b96d309dbec0b5a47462928ee8b4acb2e4f76486cf5",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 540,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.053991",
+            "size": "464923"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/era_1985_plate_a/era_1985_plate_a_contact.jpg",
+          "bytes": 430563,
+          "sha256": "0fa65237d78bef5ce4265034b1fd84432a5e059737384732eda901e790f4d52b",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/era_1985_plate_a/era_1985_plate_a_qwen.md",
+          "bytes": 1812,
+          "sha256": "55e610c7d588a522732a3ac125d2bf4596762453386b36768c2f21e1246f3c41",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "era_noir_plate_a_fullbw",
+      "title": "Era Restyle \u00b7 Noir",
+      "format_concept": {
+        "name": "Era restyle",
+        "description": "Full-frame monochrome noir styling with readable speech and preserved gestures."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Plate A",
+        "identity_target": "project-generated synthetic noir target",
+        "seed": 50,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/era_noir_plate_a_fullbw/era_noir_plate_a_fullbw.mp4",
+        "postprocess": "Full-frame monochrome repair; no color seam."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 9,
+          "verdict": "keeper_candidate",
+          "report": "keepers/era_noir_plate_a_fullbw/era_noir_plate_a_fullbw_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/era_noir_plate_a_fullbw/era_noir_plate_a_fullbw.mp4",
+          "bytes": 8838835,
+          "sha256": "7c4b3da4bd3897e31d3c5e37c616d875e201d453b83bd4ef3f2a6c94b667404e",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.041667",
+            "size": "8838835"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/era_noir_plate_a_fullbw/era_noir_plate_a_fullbw_compare_480p.mp4",
+          "bytes": 504951,
+          "sha256": "36d8f25cf3ea66be52455623da48c5249e44b974666bba24aac67fd07dd79262",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 426,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "48000",
+            "audio_channels": 2,
+            "duration": "10.048000",
+            "size": "504951"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/era_noir_plate_a_fullbw/era_noir_plate_a_fullbw_contact.jpg",
+          "bytes": 333474,
+          "sha256": "26076870129dd6cda3bc51a2b895e8155e323cc8196f4b5023e9ec873652c3bc",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/era_noir_plate_a_fullbw/era_noir_plate_a_fullbw_qwen.md",
+          "bytes": 2272,
+          "sha256": "97c52be15623834a7426a717a393f9130dbdaef2b896b9971c5c9f03c3b7d846",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "fanwipe_man_plate_a",
+      "title": "Fan-Wipe \u00b7 Gentleman",
+      "format_concept": {
+        "name": "Fan wipe",
+        "description": "Stable mature synthetic identity timed for a clean fan-wipe segment."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Plate A",
+        "identity_target": "project-generated synthetic gentleman target",
+        "seed": 50,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/fanwipe_man_plate_a/fanwipe_man_plate_a.mp4",
+        "postprocess": "Strong mature-identity keeper."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 9,
+          "verdict": "keeper_candidate",
+          "report": "keepers/fanwipe_man_plate_a/fanwipe_man_plate_a_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/fanwipe_man_plate_a/fanwipe_man_plate_a.mp4",
+          "bytes": 6564219,
+          "sha256": "b811bf32aabb642ab74c1aa4ec2ae441b26232c1ce6a21ff704bc7ed9c27fe91",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.041667",
+            "size": "6564219"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/fanwipe_man_plate_a/fanwipe_man_plate_a_compare_480p.mp4",
+          "bytes": 453555,
+          "sha256": "50fe1f1c4dd30b8aec77effb4ae3c9864c73764d5e6f2cb07ca12f66e0f8d7f7",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 540,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.053991",
+            "size": "453555"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/fanwipe_man_plate_a/fanwipe_man_plate_a_contact.jpg",
+          "bytes": 433973,
+          "sha256": "5a941555b31de9ed36e28425de62aae4a3a6eeca6b80081083674e382b6ce763",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/fanwipe_man_plate_a/fanwipe_man_plate_a_qwen.md",
+          "bytes": 2636,
+          "sha256": "930bc09c1c785ac4547789cd8735596ba28c7e970585d09883427372edc29cf2",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "fanwipe_young_plate_a",
+      "title": "Fan-Wipe \u00b7 Younger Woman",
+      "format_concept": {
+        "name": "Fan wipe",
+        "description": "Stable younger synthetic identity timed for a clean fan-wipe segment."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Plate A",
+        "identity_target": "project-generated synthetic younger-woman target",
+        "seed": 50,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/fanwipe_young_plate_a/fanwipe_young_plate_a.mp4",
+        "postprocess": "Stable copper-curl identity keeper."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 9,
+          "verdict": "keeper_candidate",
+          "report": "keepers/fanwipe_young_plate_a/fanwipe_young_plate_a_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/fanwipe_young_plate_a/fanwipe_young_plate_a.mp4",
+          "bytes": 5887961,
+          "sha256": "4a4c463652d40f4f036026f501d5747db5dc8514c646a63cf84089f8a99894ae",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.041667",
+            "size": "5887961"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/fanwipe_young_plate_a/fanwipe_young_plate_a_compare_480p.mp4",
+          "bytes": 464075,
+          "sha256": "87c04905ef2f716c8f45f9dc7eaa10d1fe1a7d7e30fc6502212b9c1f7baaff50",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 540,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.053991",
+            "size": "464075"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/fanwipe_young_plate_a/fanwipe_young_plate_a_contact.jpg",
+          "bytes": 422262,
+          "sha256": "8f8b6d8caeede98dd24074a28975ca518718a4fd3c57de33338db009783ceee2",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/fanwipe_young_plate_a/fanwipe_young_plate_a_qwen.md",
+          "bytes": 2247,
+          "sha256": "0d550acfe079a6dac16ca88dd353d85dedcb0eac669747395d45d1e855860910",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "impossible_robot_mechanical_mouth",
+      "title": "Impossible Casting \u00b7 Robot",
+      "format_concept": {
+        "name": "Impossible casting",
+        "description": "Replace the synthetic performer with a chrome robot and preserve mechanical speech."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Plate A",
+        "identity_target": "project-generated synthetic robot target",
+        "seed": 51,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.0,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/impossible_robot_mechanical_mouth/impossible_robot_mechanical_mouth.mp4",
+        "postprocess": "Mechanical-mouth repair removed all pink human oral tissue."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 8,
+          "verdict": "keeper_candidate",
+          "report": "keepers/impossible_robot_mechanical_mouth/impossible_robot_mechanical_mouth_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/impossible_robot_mechanical_mouth/impossible_robot_mechanical_mouth.mp4",
+          "bytes": 6921348,
+          "sha256": "1e4239d4738ed4524aecb301ab1c9ba1417a550b82df619fb267181d4e215698",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.041667",
+            "size": "6921348"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/impossible_robot_mechanical_mouth/impossible_robot_mechanical_mouth_compare_480p.mp4",
+          "bytes": 625431,
+          "sha256": "3dfa9760407c24bf1cfbd2dd800bb48e2e4411174c6ecaa3ca901d4ac03a1b27",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 426,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "241",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 2,
+            "duration": "10.041667",
+            "size": "625431"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/impossible_robot_mechanical_mouth/impossible_robot_mechanical_mouth_contact.jpg",
+          "bytes": 435064,
+          "sha256": "7ffb702b2dfb6a9b241c88fd80fd6a5b2bd97e694ab6cdb0f10348ec6b9074b6",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/impossible_robot_mechanical_mouth/impossible_robot_mechanical_mouth_qwen.md",
+          "bytes": 1971,
+          "sha256": "adc6f9d6672aab72bf56d9f4143d4ea39f2694291020c7c0e3e100c737a07ab4",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "hotel_jay_repair_seed51",
+      "title": "Hotel Lobby \u00b7 Jay Sings",
+      "format_concept": {
+        "name": "Singing performance swap",
+        "description": "Hold Jay identity through sustained notes, vibrato, breaths, and microphone staging."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Hotel Lobby plate",
+        "identity_target": "operator-authorized Jay",
+        "seed": 51,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.5,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/hotel_jay_repair_seed51/hotel_jay_repair_seed51.mp4",
+        "postprocess": "Identity morph eliminated; Jay holds for full song."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 9,
+          "verdict": "keeper_candidate",
+          "report": "keepers/hotel_jay_repair_seed51/hotel_jay_repair_seed51_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/hotel_jay_repair_seed51/hotel_jay_repair_seed51.mp4",
+          "bytes": 7852347,
+          "sha256": "aeadc793233b5742afa4649ea797660d39c689fe0110e7bbc5605b0872256152",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "10.000000",
+            "size": "7852347"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/hotel_jay_repair_seed51/hotel_jay_repair_seed51_compare_480p.mp4",
+          "bytes": 653407,
+          "sha256": "d15629d893022ed49d7fd813c0b2b7589e6ee60562428fb8d518425918dc622c",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 540,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "10.008005",
+            "size": "653407"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/hotel_jay_repair_seed51/hotel_jay_repair_seed51_contact.jpg",
+          "bytes": 330362,
+          "sha256": "e70f780c0a6e87e925d7eb58e73e493ec58a2ba6514e52d68958429fe1708ee0",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/hotel_jay_repair_seed51/hotel_jay_repair_seed51_qwen.md",
+          "bytes": 3405,
+          "sha256": "52a9ee45c55acc261968884bf16ac7189f3868b70d98410a8ca4e59962433c53",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "object_jay",
+      "title": "Object Swap \u00b7 Jay + Mug",
+      "format_concept": {
+        "name": "Object preservation",
+        "description": "Keep the plain mug visible and stable while replacing only the presenter."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Object Swap plate",
+        "identity_target": "operator-authorized Jay",
+        "seed": 50,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/object_jay/object_jay.mp4",
+        "postprocess": "Mug remains large, centered, and unoccluded."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 9,
+          "verdict": "keeper_candidate",
+          "report": "keepers/object_jay/object_jay_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/object_jay/object_jay.mp4",
+          "bytes": 7031129,
+          "sha256": "7eea285345dea4310190b9349b124b8b3d3da4d303805de6d56961f808c10a42",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "10.000000",
+            "size": "7031129"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/object_jay/object_jay_compare_480p.mp4",
+          "bytes": 601186,
+          "sha256": "3fbe38d79e7350c51c0a8f9923891ac767db9705954083128f248edc83e0949a",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 540,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "10.008005",
+            "size": "601186"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/object_jay/object_jay_contact.jpg",
+          "bytes": 447340,
+          "sha256": "3f95db2169890fafd059450416d9fd0d021cd5ab335d0d4042f513de03d1d894",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/object_jay/object_jay_qwen.md",
+          "bytes": 2554,
+          "sha256": "39deaccdd89dded1c3ea7e72bb799c8af9fa916f63cf247c26165fb1100ae4bf",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "twoperson_jay_trimmed_hostrestored",
+      "title": "Swap Only One \u00b7 Jay Guest",
+      "format_concept": {
+        "name": "Selective person swap",
+        "description": "Restore the untouched host and replace only the authorized right-hand guest."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic trimmed Swap-Only-One plate",
+        "identity_target": "operator-authorized Jay",
+        "seed": 50,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/twoperson_jay_trimmed_hostrestored/twoperson_jay_trimmed_hostrestored.mp4",
+        "postprocess": "Original host restored; only right guest is Jay."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 9,
+          "verdict": "keeper_candidate",
+          "report": "keepers/twoperson_jay_trimmed_hostrestored/twoperson_jay_trimmed_hostrestored_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/twoperson_jay_trimmed_hostrestored/twoperson_jay_trimmed_hostrestored.mp4",
+          "bytes": 2988764,
+          "sha256": "36df69d2ce95360e997819550e9693a610f0924759adcdadc5a2017f5afb5ee8",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "140",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "5.833333",
+            "size": "2988764"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/twoperson_jay_trimmed_hostrestored/twoperson_jay_trimmed_hostrestored_compare_480p.mp4",
+          "bytes": 378514,
+          "sha256": "7430625cf2571be959e876bb8ac02f278f403b381ccc9b388b612543fd21ed25",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 426,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "140",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "24000",
+            "audio_channels": 1,
+            "duration": "5.833333",
+            "size": "378514"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/twoperson_jay_trimmed_hostrestored/twoperson_jay_trimmed_hostrestored_contact.jpg",
+          "bytes": 422582,
+          "sha256": "77257d66f36f5c5ed90fb4edb869fc2111478e67570edd00d113aa0e8133c514",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/twoperson_jay_trimmed_hostrestored/twoperson_jay_trimmed_hostrestored_qwen.md",
+          "bytes": 1852,
+          "sha256": "4bbd74b44a49ccdc83a296fe469ed9762ecbd2b3b38d79a3edec81ea73890768",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "lenspush_jay_repair_seed51",
+      "title": "Lens-Push \u00b7 Jay",
+      "format_concept": {
+        "name": "Lens interaction",
+        "description": "Preserve camera-directed gaze and collector-card timing through the lens occlusion."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic Lens-Push plate",
+        "identity_target": "operator-authorized Jay",
+        "seed": 51,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/lenspush_jay_repair_seed51/lenspush_jay_repair_seed51.mp4",
+        "postprocess": "Forward gaze and excited mouth repaired; card timing preserved."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 9,
+          "verdict": "keeper_candidate",
+          "report": "keepers/lenspush_jay_repair_seed51/lenspush_jay_repair_seed51_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/lenspush_jay_repair_seed51/lenspush_jay_repair_seed51.mp4",
+          "bytes": 7092632,
+          "sha256": "174ccb855857ca425e72cb9f5b11ea1f1fbbd184f78a3c91637eb915e09fc2d9",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "10.000000",
+            "size": "7092632"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/lenspush_jay_repair_seed51/lenspush_jay_repair_seed51_compare_480p.mp4",
+          "bytes": 722306,
+          "sha256": "980bbb887d2eecea3faba316ddcb30ff872f7f73469789879ddae284f75803a0",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 540,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "10.008005",
+            "size": "722306"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/lenspush_jay_repair_seed51/lenspush_jay_repair_seed51_contact.jpg",
+          "bytes": 306360,
+          "sha256": "7459967cdfc98060b3fe38f4d51875348819b29c4c507c34e089e0cacf85f1b8",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/lenspush_jay_repair_seed51/lenspush_jay_repair_seed51_qwen.md",
+          "bytes": 2170,
+          "sha256": "35e4283f78825d5f5ef958951b445c75a574ad572c666eec9b4b56acfd6b38f1",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "cameramove_jay_stretch",
+      "title": "Camera-Move \u00b7 Orbit Stretch",
+      "format_concept": {
+        "name": "Camera-move preservation",
+        "description": "Maintain Jay identity and real orbit parallax during a quarter-camera move."
+      },
+      "workflow": {
+        "engine": "ComfyUI MiniMax H3 / Ref2VA with BFS conditioning",
+        "source_plate": "synthetic native orbit plate",
+        "identity_target": "operator-authorized Jay",
+        "seed": 50,
+        "steps": 8,
+        "character_lora_strength": 1.0,
+        "head_lora_strength": 0.35,
+        "with_audio": true,
+        "source_blur": "off",
+        "fps": 24,
+        "final_asset": "keepers/cameramove_jay_stretch/cameramove_jay_stretch.mp4",
+        "postprocess": "Real orbit parallax survives with Jay stable."
+      },
+      "qc": {
+        "machine": {
+          "method": "Qwen video review of included compare/contact evidence",
+          "score": 8,
+          "verdict": "keeper_candidate",
+          "report": "keepers/cameramove_jay_stretch/cameramove_jay_stretch_qwen.md"
+        },
+        "human": {
+          "status": "approved_for_demo_assembly",
+          "verdict": "Done and perfect",
+          "approved_at_utc": "2026-10-17T04:33:32+00:00",
+          "receipt": "receipts/HUMAN_APPROVAL.md"
+        }
+      },
+      "artifacts": [
+        {
+          "kind": "final",
+          "path": "keepers/cameramove_jay_stretch/cameramove_jay_stretch.mp4",
+          "bytes": 6403259,
+          "sha256": "ca4aa79f9f7a87a86a291adc5a8ae79aa34df648fc9d754161964a606dd45d78",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1152,
+            "height": 768,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "10.000000",
+            "size": "6403259"
+          }
+        },
+        {
+          "kind": "compare",
+          "path": "keepers/cameramove_jay_stretch/cameramove_jay_stretch_compare_480p.mp4",
+          "bytes": 677213,
+          "sha256": "88accaa0ccef3fb8bd1f5c16162c01ab99e59a8d4aeecf9c054884cf85bc27be",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "video",
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 540,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "240",
+            "audio_codec_name": "aac",
+            "audio_sample_rate": "44100",
+            "audio_channels": 1,
+            "duration": "10.008005",
+            "size": "677213"
+          }
+        },
+        {
+          "kind": "contact",
+          "path": "keepers/cameramove_jay_stretch/cameramove_jay_stretch_contact.jpg",
+          "bytes": 365191,
+          "sha256": "2f22e683c08567237b34a82184c349604a61682085b48572af54e825719b0b20",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          },
+          "probe": {
+            "media_type": "image",
+            "codec_name": "mjpeg",
+            "width": 2448,
+            "height": 724
+          }
+        },
+        {
+          "kind": "qwen_report",
+          "path": "keepers/cameramove_jay_stretch/cameramove_jay_stretch_qwen.md",
+          "bytes": 2842,
+          "sha256": "853edbf8b0a37fa46e7aec03bdc6302fdee5791189cfcef2a4482159288c6882",
+          "rights": {
+            "classification": "rights_clean_generated",
+            "private_ip": false,
+            "third_party_film_tv": false,
+            "provenance": {
+              "source_type": "project_generated_synthetic_or_operator_authorized",
+              "source_receipt": "receipts/SLATE_KEEPERS.json",
+              "generated_by": "Openjutsu Plan B MiniMax H3/ComfyUI synthetic pipeline",
+              "source_basis": "Project-generated synthetic plates/targets and operator-authorized Jay identity; no private film/TV material"
+            },
+            "consent": {
+              "status": "recorded",
+              "actor": "operator/Jay",
+              "approved_at_utc": "2026-10-17T04:33:32+00:00",
+              "verdict": "Done and perfect",
+              "scope": "all 11 keeper candidates on the hosted Openjutsu H3 Slate Review page",
+              "receipt": "receipts/HUMAN_APPROVAL.md"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

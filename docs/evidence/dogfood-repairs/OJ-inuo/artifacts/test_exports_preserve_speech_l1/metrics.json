@@ -1,0 +1,64 @@
+{
+  "source_layout": "stereo",
+  "source_channels": 2,
+  "outputs": {
+    "final.mp4": {
+      "layout": "stereo",
+      "channels": 2,
+      "sha256": "75586a4d91b22b1d5d6794c5ade368f4bf61aef5f247de933188b5a284e56026",
+      "channel_metrics": [
+        {
+          "channel": 0,
+          "samples": 96256,
+          "source_peak": 0.4939897656440735,
+          "output_peak": 0.4940952956676483,
+          "source_rms": 0.07963102229889146,
+          "output_rms": 0.07963044412141679,
+          "rms_delta_db": -6.30659235930144e-05,
+          "zero_lag_correlation": 0.9999993313460492,
+          "gain": 0.999992070644486
+        },
+        {
+          "channel": 1,
+          "samples": 96256,
+          "source_peak": 0.3701002299785614,
+          "output_peak": 0.37019914388656616,
+          "source_rms": 0.05974179155677181,
+          "output_rms": 0.05974177837065813,
+          "rms_delta_db": -1.917136025414648e-06,
+          "zero_lag_correlation": 0.9999990736944266,
+          "gain": 0.9999988529762138
+        }
+      ]
+    },
+    "comparison.mp4": {
+      "layout": "stereo",
+      "channels": 2,
+      "sha256": "dcb8633164af3b8d2cd39e4139f9aa32d7de5ed4c512456a087117524e417b4b",
+      "channel_metrics": [
+        {
+          "channel": 0,
+          "samples": 96256,
+          "source_peak": 0.4939897656440735,
+          "output_peak": 0.4940952956676483,
+          "source_rms": 0.07963102229889146,
+          "output_rms": 0.07963044412141679,
+          "rms_delta_db": -6.30659235930144e-05,
+          "zero_lag_correlation": 0.9999993313460492,
+          "gain": 0.999992070644486
+        },
+        {
+          "channel": 1,
+          "samples": 96256,
+          "source_peak": 0.3701002299785614,
+          "output_peak": 0.37019914388656616,
+          "source_rms": 0.05974179155677181,
+          "output_rms": 0.05974177837065813,
+          "rms_delta_db": -1.917136025414648e-06,
+          "zero_lag_correlation": 0.9999990736944266,
+          "gain": 0.9999988529762138
+        }
+      ]
+    }
+  }
+}

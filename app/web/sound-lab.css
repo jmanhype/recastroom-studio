@@ -1,0 +1,37 @@
+/* SPDX-License-Identifier: MIT */
+.sound-page{display:grid;gap:2rem}
+.sound-intro{display:grid;gap:1rem;max-width:72ch;padding-top:2.5rem}
+.sound-intro h1{margin:0;font-size:clamp(2.2rem,5vw,4.3rem);line-height:1.05;letter-spacing:-.05em;font-weight:400}
+.sound-lede{margin:0;color:var(--muted);font-size:.95rem;line-height:1.7}
+.sound-status{margin:0;color:var(--accent);font:.78rem/1.5 Menlo,Consolas,monospace;letter-spacing:.08em}
+.sound-error{color:#f1c2ac}
+.keeper-preview{display:grid;gap:.85rem;padding:1.25rem;background:var(--panel);border-top:2px solid var(--accent)}
+.keeper-preview video{width:100%;aspect-ratio:16/9;background:#10110f;border:1px solid var(--line);display:block}
+.sound-console,.cue-sheet{padding:1.25rem;background:var(--panel);border-top:2px solid var(--accent)}
+.transport{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;align-items:center;margin-bottom:1rem}
+.transport label{margin:0;font-size:.75rem;color:var(--muted)}
+.transport input[type="range"]{width:100%;min-height:32px;accent-color:var(--accent)}
+.transport span:last-child{grid-column:1/-1;font-size:.7rem;color:var(--muted)}
+.preset-grid{display:grid;grid-template-columns:1fr;gap:.75rem}
+.preset-grid button{display:grid;gap:.45rem;justify-items:start;min-height:88px;text-align:left;background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.preset-grid strong{font-weight:400;font-size:1rem}
+.preset-grid span{color:var(--muted);font-size:.76rem;line-height:1.45}
+.preset-grid button:hover:not(:disabled),.preset-grid button[data-active]{border-color:var(--accent);background:#22241f}
+.cue-table{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.cue-table>div{display:grid;grid-template-columns:4.5rem 10rem minmax(0,1fr);gap:.5rem;background:var(--bg);padding:.75rem}
+.cue-table [role="columnheader"]{color:var(--muted);font:.66rem/1.4 Menlo,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase}
+.cue-table span{min-width:0;font-size:.78rem;line-height:1.5;color:var(--muted)}
+.cue-table [role="cell"]:first-child{color:var(--accent);font-family:Menlo,Consolas,monospace}
+.cue-table [role="row"][data-active]{background:#22241f}
+.cue-sheet .hint{margin:1rem 0 0}
+.sound-page footer{margin-top:1rem}
+@media(min-width:768px){
+  .sound-intro{padding-top:4rem}
+  .keeper-preview{padding:1.5rem}
+  .transport{grid-template-columns:auto auto minmax(12rem,.4fr) auto;gap:1rem}
+  .transport span:last-child{grid-column:auto}
+  .preset-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sound-console,.cue-sheet{padding:1.5rem}
+}
+@media(min-width:1024px){.preset-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.preset-grid button{transition:none!important}}

@@ -1,0 +1,82 @@
+{
+  "production_source_commit": "2b22504",
+  "endpoint": "http://127.0.0.1:8894/",
+  "backend": "dry_run",
+  "gpu_or_inference_spend": 0,
+  "browser_app": "Codex In-app Browser",
+  "codex_version": "26.623.101652",
+  "iab_engine_version": "not exposed by selected CUA API; not inferred",
+  "motion_browser": "Google Chrome 155.0.8059.80 (installed app plist)",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "motion_viewport": "Chrome device toolbar Responsive width 855, visible height 1520",
+  "job_id": "34b7d2ac2f9a",
+  "fixture_hashes": {
+    "word_timings.json": "7943902959ac0aba6b775857a964bbdef11bc89e354847ccf5ab02bfe9439d5f",
+    "synthetic_source.mp4": "6fecc6baff45fa6bc210e3864d15a99e663f7215f97b5a3c8f4fc7d91c51165f",
+    "synthetic_reference.png": "0f5f0bc67819583b824c3e2d9900225e89cf9b0223108a1b472e444da8b9e79a"
+  },
+  "artifacts": {
+    "generated.mp4": "6fecc6baff45fa6bc210e3864d15a99e663f7215f97b5a3c8f4fc7d91c51165f",
+    "final.mp4": "1bed0cdb094306a27abe251e73748616f75e7881b527761bdabb7c3d3edf5970",
+    "source_vs_final.mp4": "3d5c132e059afe3888ce396a1e5ee122cd11d5ae7b3f775f47fa12a0931b765d"
+  },
+  "browser_download_sha256": "1bed0cdb094306a27abe251e73748616f75e7881b527761bdabb7c3d3edf5970",
+  "download_matches_persisted_final": true,
+  "screenshots": {
+    "desktop-complete.png": {
+      "width": 1344,
+      "height": 835,
+      "encoding": "jpeg",
+      "sha256": "69a31cf1947c5ed0489212a35201fc96622db1691a3c810311d6af26d5bceba2"
+    },
+    "mobile-complete.png": {
+      "width": 350,
+      "height": 1198,
+      "encoding": "jpeg",
+      "sha256": "d3c08831d1d745b05772707b914b7d0f4eb3455dbeabcc932d642371e1f5ab0d"
+    },
+    "missing-consent-focus.png": {
+      "width": 1440,
+      "height": 1000,
+      "encoding": "jpeg",
+      "sha256": "b839185f7bc49fde47b75e92fd1448174849c013e8edf7eb9cad484465d3cdc0"
+    },
+    "prepare-error.png": {
+      "width": 1344,
+      "height": 278,
+      "encoding": "jpeg",
+      "sha256": "5182fd94939fff8019dc3de1d497a8c6ae5d9e8c0475ca787117013ad2f426c9"
+    },
+    "status-race-500.png": {
+      "width": 1344,
+      "height": 322,
+      "encoding": "jpeg",
+      "sha256": "e86d8a2e14f1cfbd50f6f7423f23bfec228698df4b3fd1afd135f327522f8e8a"
+    },
+    "reduced-motion.png": {
+      "width": 3024,
+      "height": 1900,
+      "encoding": "jpeg",
+      "sha256": "1228790aa57e6d1bce37711d7b1b192f9b35205bd02aef9886d6adce7ea2f468"
+    }
+  },
+  "teardown": {
+    "server_pid": 379,
+    "server_exit": 143,
+    "port_8894_listening": false,
+    "approved_port_8893_listening_pid": 82602,
+    "chrome_motion_preference_restored": true,
+    "chrome_qa_tab_closed": true,
+    "iab_viewport_override_reset": true,
+    "iab_qa_tab_close": "Explicit close blocked by error-page URL policy; unmarked temporary tab left for normal turn cleanup"
+  }
+}

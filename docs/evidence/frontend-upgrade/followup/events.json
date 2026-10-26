@@ -1,0 +1,718 @@
+{
+  "purpose": "Sanitized keyboard, media-control, recovery, and dry-run HTTP follow-up evidence.",
+  "job_id": "85b97f14514e",
+  "environment": {
+    "request_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "user_agent_note": "Reduced Chrome UA token; it does not establish the exact Chromium patch or full engine version.",
+    "codex_app_version_from_prior_receipt": "26.623.101652",
+    "codex_app_version_note": "Earlier receipt only; not a new engine-version measurement."
+  },
+  "keyboard_events": [
+    {
+      "label": "brand",
+      "screenshot": "screenshots/brand.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "A",
+        "id": null,
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "2 link Description: Openjutsu Studio home, URL: 127.0.0.1:8894/",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "source",
+      "screenshot": "screenshots/source.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "INPUT",
+        "id": "source",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "31 button Source clip *, ID: source",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "reference-1",
+      "screenshot": "screenshots/reference-1.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "INPUT",
+        "id": "reference_1",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "40 button Primary performer reference *, ID: reference_1",
+      "ax_tree_changed": true
+    },
+    {
+      "label": "reference-2",
+      "screenshot": "screenshots/reference-2.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "INPUT",
+        "id": "reference_2",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "45 button Optional second reference, ID: reference_2",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "creative-summary",
+      "screenshot": "screenshots/creative-summary.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "SUMMARY",
+        "id": null,
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "51 button (collapsed) Timing & creative controls, Secondary Actions: Expand",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "words",
+      "screenshot": "screenshots/words.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "INPUT",
+        "id": "words",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "78 button Whisper word-timing JSON, ID: words",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "identity",
+      "screenshot": "screenshots/identity.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "TEXTAREA",
+        "id": "identity",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "80 text entry area (settable) Replacement identity description, ID: identity",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "seed",
+      "screenshot": "screenshots/seed.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "INPUT",
+        "id": "seed",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "82 stepper (settable, integer) Seed, Value: 49, ID: seed",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "consent",
+      "screenshot": "screenshots/consent.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "INPUT",
+        "id": "rights",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "55 checkbox (settable, integer) Value: 0, ID: rights, Description: I own this clip or have explicit permission to modify it, and I have consent for every identifiable person/reference likeness.",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "prepare",
+      "screenshot": "screenshots/prepare.jpg",
+      "stage": "PREPARING",
+      "focused_element": {
+        "tag": "BUTTON",
+        "id": "submit",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "57 button Prepare workflow ↗, ID: submit",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "reset",
+      "screenshot": "screenshots/reset.jpg",
+      "stage": "PREPARED",
+      "focused_element": {
+        "tag": "BUTTON",
+        "id": "reset",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "59 button Reset workspace, ID: reset",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "workflow-link",
+      "screenshot": "screenshots/workflow-link.jpg",
+      "stage": "PREPARED",
+      "focused_element": {
+        "tag": "A",
+        "id": null,
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "91 link Description: Workflow JSON, URL: 127.0.0.1:8894/api/jobs/85b97f14514e/workflow",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "prompt-link",
+      "screenshot": "screenshots/prompt-link.jpg",
+      "stage": "PREPARED",
+      "focused_element": {
+        "tag": "A",
+        "id": null,
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "92 link Description: Prompt, URL: 127.0.0.1:8894/api/jobs/85b97f14514e/prompt",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "run",
+      "screenshot": "screenshots/run.jpg",
+      "stage": "PREPARED",
+      "focused_element": {
+        "tag": "BUTTON",
+        "id": "run",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "93 button Run prepared workflow, ID: run",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "intentional-terminal-error",
+      "screenshot": null,
+      "stage": "ERROR",
+      "focused_element": {
+        "tag": "BODY",
+        "id": null,
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": "Run stopped: [Errno 2] No such file or directory: '<private-app-data>/uploads/85b97f14514e/synthetic_source.mp4' Check backend configuration, then retry the run or reset."
+      },
+      "ax_focused_element": "0 AXWebArea Openjutsu Studio, URL: 127.0.0.1:8894/",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "retry-running",
+      "screenshot": null,
+      "stage": "DOWNLOADING",
+      "focused_element": {
+        "tag": "BODY",
+        "id": null,
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "0 AXWebArea Openjutsu Studio, URL: 127.0.0.1:8894/",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "retry-complete",
+      "screenshot": "screenshots/retry-complete.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "BODY",
+        "id": null,
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "0 AXWebArea Openjutsu Studio, URL: 127.0.0.1:8894/",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-01",
+      "screenshot": "screenshots/media-focus-01.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "107 container Description: Final result, ID: final-preview",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-02",
+      "screenshot": "screenshots/media-focus-02.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "109 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-03",
+      "screenshot": "screenshots/media-focus-03.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "110 slider",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-04",
+      "screenshot": "screenshots/media-focus-04.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "111 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-05",
+      "screenshot": "screenshots/media-focus-05.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "112 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-06",
+      "screenshot": "screenshots/media-focus-06.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "113 pop up button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-07",
+      "screenshot": "screenshots/media-focus-07.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "114 slider video time scrubber",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-08",
+      "screenshot": "screenshots/media-focus-08.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "comparison-preview",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "117 container Description: Side-by-side source and result, ID: comparison-preview",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-09",
+      "screenshot": "screenshots/media-focus-09.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "comparison-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "119 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-10",
+      "screenshot": "screenshots/media-focus-10.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "comparison-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "120 slider",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-11",
+      "screenshot": "screenshots/media-focus-11.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "comparison-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "121 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-12",
+      "screenshot": "screenshots/media-focus-12.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "comparison-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "122 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-13",
+      "screenshot": "screenshots/media-focus-13.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "comparison-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "123 pop up button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-14",
+      "screenshot": "screenshots/media-focus-14.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "comparison-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "124 slider video time scrubber",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-15",
+      "screenshot": "screenshots/media-focus-15.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "A",
+        "id": null,
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "127 link Description: Download Generated clip, URL: 127.0.0.1:8894/api/jobs/85b97f14514e/artifacts/generated",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-16",
+      "screenshot": "screenshots/media-focus-16.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "A",
+        "id": null,
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "128 link Description: Download Final with audio, URL: 127.0.0.1:8894/api/jobs/85b97f14514e/artifacts/final",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-focus-17",
+      "screenshot": "screenshots/media-focus-17.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "A",
+        "id": null,
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "129 link Description: Download Side-by-side review, URL: 127.0.0.1:8894/api/jobs/85b97f14514e/artifacts/side_by_side",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "source-media-01",
+      "screenshot": "screenshots/source-media-01.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "source-preview",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "62 container Description: Source clip preview, ID: source-preview",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "source-media-02",
+      "screenshot": "screenshots/source-media-02.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "source-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "65 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "source-media-03",
+      "screenshot": "screenshots/source-media-03.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "source-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "66 slider",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "source-media-04",
+      "screenshot": "screenshots/source-media-04.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "source-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "67 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "source-media-05",
+      "screenshot": "screenshots/source-media-05.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "source-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "68 button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "source-media-06",
+      "screenshot": "screenshots/source-media-06.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "source-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "69 pop up button",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "source-media-07",
+      "screenshot": "screenshots/source-media-07.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "source-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "70 slider video time scrubber",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "status-recovery-focus",
+      "screenshot": "screenshots/status-recovery-focus.jpg",
+      "stage": "SUBMITTING",
+      "focused_element": {
+        "tag": "BUTTON",
+        "id": "retry-status",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": "Run confirmation unavailable: Job not found Check status first in case the request reached the server. If no job exists, prepare a new job."
+      },
+      "ax_focused_element": "99 button Check job status again, ID: retry-status",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "status-recovered",
+      "screenshot": null,
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "BODY",
+        "id": null,
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "0 AXWebArea Openjutsu Studio, URL: 127.0.0.1:8894/",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-menu",
+      "screenshot": "screenshots/media-menu.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "AX reported no accessibility-tree change",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-menu-speed",
+      "screenshot": "screenshots/media-menu-speed.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "AX reported no accessibility-tree change",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "media-menu-pip",
+      "screenshot": "screenshots/media-menu-pip.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "VIDEO",
+        "id": "final-preview",
+        "focusVisible": false,
+        "outline": "rgb(238, 238, 230) none 3px",
+        "dom_error": null
+      },
+      "ax_focused_element": "AX reported no accessibility-tree change",
+      "ax_tree_changed": false
+    },
+    {
+      "label": "reset-activated",
+      "screenshot": "screenshots/reset-activated.jpg",
+      "stage": "COMPLETE",
+      "focused_element": {
+        "tag": "INPUT",
+        "id": "source",
+        "focusVisible": true,
+        "outline": "rgb(216, 199, 145) solid 2px",
+        "dom_error": null
+      },
+      "ax_focused_element": "31 button Source clip *, ID: source",
+      "ax_tree_changed": true
+    }
+  ],
+  "health_probe": {
+    "before": {
+      "backend": "Backend unknown · connection unavailable",
+      "focusVisible": true,
+      "id": "health-retry",
+      "outline": "rgb(216, 199, 145) solid 2px"
+    },
+    "after": {
+      "backend": "DRY RUN · No AI inference · source-copy preview",
+      "retryHidden": true
+    },
+    "method": "Static file server returned real health404; replaced with real dry-run API on same loopback8895, Enter recovery succeeded",
+    "tabClosed": true
+  },
+  "parent_reported_process_status": {
+    "OJ-p8rd": "Independently accepted and merged to epic 7881cb0 (reported by parent; not independently queried here).",
+    "live_8893": "Restarted as PID 42810; /health and original-job status returned 200 (reported by parent; no browser/network action in this packaging task)."
+  },
+  "http_summary": {
+    "request_count": 21,
+    "response_codes": {
+      "200": 12,
+      "206": 8,
+      "404": 1
+    },
+    "job_status_get_count": 4,
+    "job_status_response_codes": [
+      200,
+      200,
+      200,
+      200
+    ],
+    "http_500_count": 0,
+    "intentional_missing_job_run_404_count": 1
+  },
+  "recovery_sequence": [
+    "Source removal exposed a terminal ERROR naming the isolated synthetic source path.",
+    "After restoration, retry traversed DOWNLOADING and then COMPLETE.",
+    "A later restored-job run returned an intentional 404; keyboard Check job status again recovered to COMPLETE.",
+    "Static-server /api/health returned 404; replacing it with the actual loopback API and pressing Enter recovered health."
+  ],
+  "evidence_limits": [
+    "Three event labels (intentional-terminal-error, retry-running, status-recovered) have event records but no exact-name screenshot; the HTTP/event sequence remains evidence, while visual confirmation is limited to COMPLETE screenshots.",
+    "Native video subcontrol focus movement is established by AX, but representative screenshots do not clearly show a visible focus ring on every shadow-DOM subcontrol. This is unresolved, not declared a failure or a WCAG pass.",
+    "The native video menu is visible in screenshots, while AX reported no tree change for those menu states.",
+    "Two fresh native-Chrome getApp attempts failed capture with ScreenCaptureKit error -3811, so no new reduced-motion check was performed. The earlier body-only CSS observation is insufficient because body is not the animated #result element.",
+    "Exact browser engine/Chromium patch and full WCAG conformance remain unproven; integrated full tests remain pending."
+  ]
+}

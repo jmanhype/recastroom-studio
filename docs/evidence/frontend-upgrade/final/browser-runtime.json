@@ -1,0 +1,48 @@
+{
+  "schema_version": "openjutsu.browser-runtime-final.v1",
+  "native_chrome": {
+    "engine": "Chromium",
+    "brand": "Google Chrome",
+    "full_version": "155.0.8059.80",
+    "high_entropy_source": "navigator.userAgentData.getHighEntropyValues(['fullVersionList','fullVersion'])",
+    "reduced_motion_proof_viewport": {
+      "devtools_responsive_width_css_px": 849,
+      "screenshot_raster": "2582x1900",
+      "devtools_height_field": "full-height (empty; placeholder showed 1632)"
+    },
+    "reduced_motion": {
+      "devtools_emulation": "prefers-reduced-motion: reduce",
+      "match_media_reduce": true,
+      "result_animation_name": "none",
+      "result_animation_duration": "0s",
+      "result_transition_duration": "0s"
+    }
+  },
+  "codex_iab": {
+    "browser_binding": "Codex In-app Browser",
+    "plugin_runtime": "26.1002.52244",
+    "viewport_css_px": "1280x720",
+    "screenshot_raster": "1280x720",
+    "device_pixel_ratio": 2,
+    "reduced_user_agent_token": "Chrome/155.0.0.0",
+    "exact_patch_note": "The IAB exposes only a reduced UA token; exact native Chrome patch evidence is recorded above."
+  },
+  "servers": {
+    "dry_run": {
+      "bind": "127.0.0.1:8894",
+      "backend": "dry_run",
+      "health_renderer_code": "local_dry_run",
+      "jobs": ["8f999d26dab4", "0a8128290f64"]
+    },
+    "legacy_offline": {
+      "bind": "127.0.0.1:8895",
+      "backend": "legacy",
+      "health_renderer_code": "renderer_unreachable"
+    }
+  },
+  "fixtures": {
+    "source_sha256": "6fecc6baff45fa6bc210e3864d15a99e663f7215f97b5a3c8f4fc7d91c51165f",
+    "reference_sha256": "0f5f0bc67819583b824c3e2d9900225e89cf9b0223108a1b472e444da8b9e79a",
+    "words_sha256": "7943902959ac0aba6b775857a964bbdef11bc89e354847ccf5ab02bfe9439d5f"
+  }
+}

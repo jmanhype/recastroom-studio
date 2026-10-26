@@ -1,0 +1,14 @@
+Verifying delivery proof for OJ-krar
+---
+[OK]   label:delivered
+[OK]   nd_contract:last_block
+[OK]   nd_contract:eof
+[FAIL] notes:implementation_evidence -- missing '## Implementation Evidence' heading
+[OK]   notes:ci_test_results
+[FAIL] notes:commands_run -- missing 'Commands run:' list
+[OK]   notes:summary
+[FAIL] notes:commit_sha -- missing commit SHA
+[FAIL] proof:ac_items -- missing AC verification (checklist or table)
+---
+Passed: 5, Failed: 4
+[FAIL] Delivery proof is incomplete; expect PM rejection until fixed.

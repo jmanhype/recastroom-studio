@@ -1,0 +1,27 @@
+{
+  "page": {
+    "http": 200
+  },
+  "health": {
+    "http": 200,
+    "ok": true,
+    "backend": "legacy",
+    "workflow_exists": true
+  },
+  "job_status": {
+    "http": 200,
+    "state": "complete"
+  },
+  "approved_artifacts_unchanged": {
+    "final.mp4": "f9091b391c96daf28697f46ba49263450112f70d1732fa26dcea73ccdadd2f98",
+    "source_vs_final.mp4": "b2f61d3c292e53846f62bed6460d2b0517cbee7fd91c4b5d2f477aec84da613d"
+  },
+  "preview_head": "7881cb0762ef53556995f036166bb6a85c95a899",
+  "preview_clean": true,
+  "live_pid": "49984",
+  "qa_ports_no_listener": {
+    "8894": true,
+    "8895": true
+  },
+  "gpu_api_inference_spend_this_repair": 0
+}
