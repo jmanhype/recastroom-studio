@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
-updated_at: 2026-10-27T08:54:27Z
-content_hash: "sha256:9f142ee2cf891d7928c2c93f0ae69af3f2c7a2ef08bead832d0a7ae9b2a7380f"
+updated_at: 2026-10-27T08:59:28Z
+content_hash: "sha256:cdeaeed32449530921f8a5f2b192798606f2698f5d85e584d21cfb9b51d0cbf9"
 blocks: [OJ-wfpy]
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5]
@@ -97,7 +97,7 @@ status: new
 
 
 ## Notes
-
+## nd_contract\nstatus: in_progress\n\n### evidence\n- 2026-10-27: resumed claimed story in story/OJ-0ij6 at base fdc9130; reading exact source/tests before edits.\n\n### proof\n- [ ] AC #1: pending.\n- [ ] AC #2: pending.\n- [ ] AC #3: pending.\n- [ ] AC #4: pending.\n- [ ] AC #5: pending.\n- [ ] AC #6: pending.
 
 ## History
 - 2026-10-27T08:50:21Z dep_added: blocks OJ-wfpy
