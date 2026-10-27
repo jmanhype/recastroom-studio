@@ -9,9 +9,10 @@ parent: OJ-mnrv
 created_at: 2026-10-27T08:48:10Z
 created_by: speed
 updated_at: 2026-10-27T08:52:37Z
-content_hash: "sha256:66232f5ce95f673c5a2d08bf98b0c455b5d46578efb4e4d44cae9072dbdac0ba"
+content_hash: "sha256:e71b9690f72563f00fce7d3c428924da39eed3e7bfbe3b9bdd892090dbf0da9a"
 closed_at: 2026-10-27T08:52:37Z
 close_reason: "Duplicate of canonical OJ-0ij6; concurrent late metadata creation only, not implemented or accepted. Preserve OJ-0ij6 for the reset fix."
+blocks: [OJ-wfpy]
 ---
 
 ## Description
@@ -100,8 +101,10 @@ status: new
 
 ## History
 - 2026-10-27T08:52:37Z status: open -> closed
+- 2026-10-27T08:53:01Z dep_added: blocks OJ-wfpy
 
 ## Links
 - Parent: [[OJ-mnrv]]
+- Blocks: [[OJ-wfpy]]
 
 ## Comments
