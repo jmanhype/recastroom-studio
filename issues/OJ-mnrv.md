@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T03:45:28Z
-content_hash: "sha256:f1c60bb8ab4633a2f4869e0b207da7459bcebe5a198657be3f5660f09828e932"
+updated_at: 2026-10-27T03:45:29Z
+content_hash: "sha256:bc662de1b588bdd8cc05948fc99bd42d6c38f194248bfe8134908f5571153c86"
 ---
 
 ## Description
@@ -42,6 +42,8 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 
 
 ## Notes
+Foundation children: OJ-6xh3 (store), OJ-5uq4 (connected app), OJ-wfpy (all-dependency E2E capstone). Old submission epic OJ-fglb preserved. Source-code commit/merge permission has been requested separately; no source work or loop rotation performed.
+
 ## nd_contract
 status: new
 
