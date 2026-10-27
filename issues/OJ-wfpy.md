@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T04:34:39Z
-content_hash: "sha256:e20b6ad7aad1f4621678c80f73cc609bea9be4236b1777e4cd366a9e0548a8ad"
+updated_at: 2026-10-27T04:42:27Z
+content_hash: "sha256:f0c557636e9c1d738034c828583084d6d06d60e8c118f0b8a814968ab87a15fd"
 blocked_by: [OJ-6xh3, OJ-5uq4]
 ---
 ## Description
@@ -22,8 +22,8 @@ A creator can save a project, reuse a character reference, prepare/review a labe
 NEW tests/test_foundation_e2e.py; NEW tools/foundation_trial.py; NEW docs/evidence/studio-foundation/README.md plus public-safe generated receipts/screenshots. Approximately 3-5 files, under 650 changed LOC. No production implementation edits; report missing functionality instead of fixing it in the capstone.
 
 ### Functional acceptance
-1. Start actual uvicorn on 127.0.0.1 with a temporary workspace, credentials removed and dry_run explicitly selected. Use real SQLite, filesystem, HTTP, generated test media and FFmpeg. No mock/stub replaces project, API, store, renderer-dry-run implementation or browser interactions.
-2. A user creates a project, saves a synthetic character version, prepares a source using that saved version, explicitly runs the existing labeled dry_run path, sees safe asset-ID previews plus comparison/download/configuration links and navigates back to the project's saved history. Do not imply AI inference or a new visual keeper.
+1. Start actual uvicorn on 127.0.0.1 with a temporary workspace wired as WorkspaceStore(SETTINGS.data_dir), credentials removed and dry_run explicitly selected. Use real SQLite, filesystem, HTTP, generated test media and FFmpeg. No mock/stub replaces project, API, store, renderer-dry-run implementation or browser interactions.
+2. A user creates a project, safely stages/saves a synthetic character version, prepares a source using that saved version, explicitly runs the existing labeled dry_run path, sees safe asset-ID previews plus comparison/download/configuration links and navigates back to the project's saved history. Do not imply AI inference or a new visual keeper.
 3. Stop and restart the actual application process, reopen the browser and prove project/character-version/prepared configuration persisted. Do not claim remote render recovery; verify no new run was submitted by reload and legacy/no-project flow still works.
 4. Repeat a version selection and form reset/project switch; old reference bytes, prepared hashes, existing protected evidence and historical links remain unchanged. Missing/conflicting input paths yield user-actionable errors rather than misleading completion.
 5. Capture public-safe screenshots/receipts from the actual browser and HTTP flow. Assert no secrets/absolute personal paths, zero creative-provider submissions, loopback binding and stopped owned processes. Do not publish media or open a tunnel.
@@ -35,12 +35,12 @@ PRODUCES:
 - docs/evidence/studio-foundation/README.md -> replayable exact commands/results and human-readable evidence index.
 CONSUMES:
 - OJ-6xh3: src/openjutsu/workspace_store.py -> WorkspaceStore(root: Path) and its persisted public record contract.
-  spec: WorkspaceStore(root: Path) -> WorkspaceStore; resolve_asset(asset_id: str) -> ResolvedAsset; get_character_version(character_id: str, version: int) -> CharacterVersionRecord; list_prepared_jobs(project_id: str) -> list[PreparedConfigRecord].
+  spec: WorkspaceStore(root: Path) -> WorkspaceStore; stage_asset(project_id: str, filename: str, content: BinaryIO, *, role: str, protected: bool = False) -> AssetRecord; resolve_asset(asset_id: str) -> ResolvedAsset; get_character_version(character_id: str, version: int) -> CharacterVersionRecord; list_prepared_jobs(project_id: str) -> list[PreparedConfigRecord].
   fields: ResolvedAsset(record: AssetRecord, path: Path) is server-only; AssetRecord and the other public records contain no absolute server path.
 - OJ-5uq4: app/project_api.py -> create_project_router(store: WorkspaceStore) -> APIRouter.
-  endpoint: POST/GET /api/projects; GET /api/projects/{project_id}; GET /api/projects/{project_id}/jobs; POST/GET /api/characters; GET /api/characters/{character_id}/versions/{version}; GET /api/assets/{asset_id}; project-aware POST /api/prepare.
+  endpoint: POST/GET /api/projects; GET /api/projects/{project_id}; GET /api/projects/{project_id}/jobs; POST /api/characters multipart project_id,name,description,reference_1,optional reference_2; GET /api/characters; GET /api/characters/{character_id}/versions/{version}; GET /api/assets/{asset_id}; project-aware POST /api/prepare.
 - OJ-5uq4: app/web/projects.js -> connected project/character selection, safe asset-ID previews, and saved-history UI.
-  source: browser module integrates with the existing form and request-isolation behavior without renderer changes.
+  source: app wiring uses WorkspaceStore(SETTINGS.data_dir) and safe multipart staging while retaining existing no-project SETTINGS.data_dir/uploads/<job_id> behavior; browser module integrates with the existing form and request-isolation behavior without renderer changes.
 - (existing): src/openjutsu/evidence.py -> verify_manifest(...) existing public keeper verifier.
   spec: verify_manifest(manifest_path: Path, *, probe_runner: Callable[[Path], dict[str, Any]] = default_ffprobe) -> VerificationResult; never weaken the gate.
 
