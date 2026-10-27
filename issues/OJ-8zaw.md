@@ -1,16 +1,18 @@
 ---
 id: OJ-8zaw
 title: "Redact prepared-job history config to a safe allowlist"
-status: open
+status: in_progress
 priority: 0
 type: bug
 labels: [studio, foundation, local, no-spend, security]
 parent: OJ-mnrv
 created_at: 2026-10-27T05:32:07Z
 created_by: speed
-updated_at: 2026-10-27T05:36:32Z
-content_hash: "sha256:b548f1f76dd1b02b11e4a935bc40c6e9717ec9a99f5cbde0141fb2c4809320f1"
+updated_at: 2026-10-27T05:37:47Z
+content_hash: "sha256:e110b6b6a436b88d43495d3d80c8bc2918deed9d8d908d656722d463f4155bac"
 blocks: [OJ-5uq4, OJ-wfpy]
+assignee: dev-OJ-8zaw
+follows: [OJ-6xh3]
 ---
 
 ## Description
@@ -115,9 +117,13 @@ status: new
 ## History
 - 2026-10-27T05:33:08Z dep_added: blocks OJ-5uq4
 - 2026-10-27T05:33:55Z dep_added: blocks OJ-wfpy
+- 2026-10-27T05:37:47Z status: open -> in_progress
+- 2026-10-27T05:37:47Z auto-follows: linked to predecessor OJ-6xh3
+- 2026-10-27T05:37:47Z claimed by dev-OJ-8zaw
 
 ## Links
 - Parent: [[OJ-mnrv]]
 - Blocks: [[OJ-5uq4]], [[OJ-wfpy]]
+- Follows: [[OJ-6xh3]]
 
 ## Comments
