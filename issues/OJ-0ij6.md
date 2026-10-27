@@ -1,18 +1,19 @@
 ---
 id: OJ-0ij6
 title: "Keep selected project hidden fields synchronized across form reset"
-status: in_progress
+status: closed
 priority: 0
 type: bug
 labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
-updated_at: 2026-10-27T09:23:02Z
-content_hash: "sha256:2b23d0b603d4957a0720cf9f54b937a0c242c913eb1f519b53d0a59d9708be7c"
-blocks: [OJ-wfpy]
+updated_at: 2026-10-27T09:29:41Z
+content_hash: "sha256:07b8540c67eafe324f93946d4396b9edd1e12ce9c19a268010736f4f6b1176b9"
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5, OJ-m439]
+closed_at: 2026-10-27T09:29:41Z
+close_reason: "Accepted: Independent review verified the exact two-file f45521d delivery, real-JS reset regressions across no-character/saved-character/no-project modes, FormData and no-run behavior, and separate real API/temp-SQLite preservation evidence. Required test/syntax/compile/verify/gate results and warnings are complete; browser capstone remains OJ-wfpy."
 ---
 
 ## Description
@@ -230,10 +231,11 @@ status: delivered
 - 2026-10-27T08:54:27Z claimed by dev-OJ-0ij6
 - 2026-10-27T09:19:53Z status: in_progress -> in_progress
 - 2026-10-27T09:19:53Z auto-follows: linked to predecessor OJ-m439
+- 2026-10-27T09:29:41Z status: in_progress -> closed
+- 2026-10-27T09:29:41Z dep_removed: no_longer_blocks OJ-wfpy
 
 ## Links
 - Parent: [[OJ-mnrv]]
-- Blocks: [[OJ-wfpy]]
 - Follows: [[OJ-r6n5]], [[OJ-m439]]
 
 ## Comments

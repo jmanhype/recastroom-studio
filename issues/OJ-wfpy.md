@@ -9,10 +9,10 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
 updated_at: 2026-10-27T08:34:23Z
-content_hash: "sha256:02c137128890b73d205074d62f2e53be9e3be5ff95fd542cc37db7abe0200e61"
-was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439]
+content_hash: "sha256:ea6818ea039b5c24a1b3e2e4c7bc209843977e74293c92690012db3620c853bf"
+was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4]
-blocked_by: [OJ-0ij6, OJ-r6n5]
+blocked_by: [OJ-r6n5]
 ---
 ## Description
 Exercise the completed foundation through the user's actual local browser and HTTP data flow. This capstone is E2E-only, blocked by every other child. It does not implement a missing store or API.
@@ -122,11 +122,12 @@ status: new
 - 2026-10-27T08:50:21Z dep_added: blocked_by OJ-m439
 - 2026-10-27T08:53:00Z dep_added: blocked_by OJ-r6n5
 - 2026-10-27T09:18:45Z dep_removed: was_blocked_by OJ-m439
+- 2026-10-27T09:29:41Z dep_removed: was_blocked_by OJ-0ij6
 
 ## Links
 - Parent: [[OJ-mnrv]]
-- Blocked by: [[OJ-0ij6]], [[OJ-r6n5]]
-- Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]], [[OJ-m439]]
+- Blocked by: [[OJ-r6n5]]
+- Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]], [[OJ-m439]], [[OJ-0ij6]]
 - Follows: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]]
 
 ## Comments
