@@ -1,17 +1,16 @@
 ---
 id: OJ-wfpy
 title: "E2e: return to a saved project with reusable character references in Studio"
-status: in_progress
+status: open
 priority: 1
 type: task
 labels: [studio, foundation, local, no-spend, capstone, e2e]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T07:31:04Z
-content_hash: "sha256:69d5f8076fdd73a86d1af70d4207d1f5924943ff63248d05dcae14a2556f80e7"
+updated_at: 2026-10-27T08:34:23Z
+content_hash: "sha256:1ab6b97a4420eacbb7d1c8f62bcd48c7830b15e4ae8edc34660a86c7970b5fb9"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4]
-assignee: dev-OJ-wfpy
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4]
 ---
 ## Description
@@ -116,6 +115,8 @@ status: new
 - 2026-10-27T07:31:04Z auto-follows: linked to predecessor OJ-8zaw
 - 2026-10-27T07:31:05Z auto-follows: linked to predecessor OJ-5uq4
 - 2026-10-27T07:31:05Z claimed by dev-OJ-wfpy
+- 2026-10-27T08:34:23Z status: in_progress -> open
+- 2026-10-27T08:34:23Z released by speed
 
 ## Links
 - Parent: [[OJ-mnrv]]
