@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T07:27:18Z
-content_hash: "sha256:b2b8932ec836f1bd431ccaa2c36aca8bd74b4b77be02b7e1763f23c3f0b19835"
+updated_at: 2026-10-27T07:30:26Z
+content_hash: "sha256:c5f36b569ab5b8529a4606bf64a4e7792d22c9c120e95f1f34a65d877d756a91"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
@@ -301,3 +301,6 @@ status: accepted
 
 ### 2026-10-27T07:27:18Z speed
 nd_contract status=accepted at 94c859474c66068824d4788cb07714ea356353ab; AC1-AC6 independently verified. This native comment supersedes stale delivered blocks in managed Notes ordering.
+
+### 2026-10-27T07:30:26Z speed
+PM decision read back closed+accepted and receipt paths/hashes verified by PM. Coordinator locally merged story branch into epic/OJ-mnrv without conflict; same documented pvg merge remote-epic incompatibility, no push/publication. Merged-code regression rerun underway. Capstone restart/dry-run/export proof remains pending; no new render inferred.
