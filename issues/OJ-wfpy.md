@@ -1,18 +1,19 @@
 ---
 id: OJ-wfpy
 title: "E2e: return to a saved project with reusable character references in Studio"
-status: open
+status: in_progress
 priority: 1
 type: task
 labels: [studio, foundation, local, no-spend, capstone, e2e]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T08:34:23Z
-content_hash: "sha256:ea6818ea039b5c24a1b3e2e4c7bc209843977e74293c92690012db3620c853bf"
+updated_at: 2026-10-27T09:33:15Z
+content_hash: "sha256:6029f5aa48e1afb196bbd5c3b46d13df0926862f7e07a72173a8064958250778"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
-follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4]
+follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 blocked_by: [OJ-r6n5]
+assignee: dev-OJ-wfpy
 ---
 ## Description
 Exercise the completed foundation through the user's actual local browser and HTTP data flow. This capstone is E2E-only, blocked by every other child. It does not implement a missing store or API.
@@ -123,12 +124,16 @@ status: new
 - 2026-10-27T08:53:00Z dep_added: blocked_by OJ-r6n5
 - 2026-10-27T09:18:45Z dep_removed: was_blocked_by OJ-m439
 - 2026-10-27T09:29:41Z dep_removed: was_blocked_by OJ-0ij6
+- 2026-10-27T09:33:15Z status: open -> in_progress
+- 2026-10-27T09:33:15Z auto-follows: linked to predecessor OJ-m439
+- 2026-10-27T09:33:15Z auto-follows: linked to predecessor OJ-0ij6
+- 2026-10-27T09:33:15Z claimed by dev-OJ-wfpy
 
 ## Links
 - Parent: [[OJ-mnrv]]
 - Blocked by: [[OJ-r6n5]]
 - Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]], [[OJ-m439]], [[OJ-0ij6]]
-- Follows: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]]
+- Follows: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]], [[OJ-m439]], [[OJ-0ij6]]
 
 ## Comments
 

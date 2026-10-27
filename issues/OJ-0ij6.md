@@ -9,11 +9,12 @@ parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
 updated_at: 2026-10-27T09:32:40Z
-content_hash: "sha256:ab83517564073fc0b65eabcbd4992f5992be3e43da30702bc1a88519d4c31647"
+content_hash: "sha256:d09740d92a609c08c731699a62ae5993290462f4b51e85b46887b5a8601da54e"
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5, OJ-m439]
 closed_at: 2026-10-27T09:29:41Z
 close_reason: "Accepted: Independent review verified the exact two-file f45521d delivery, real-JS reset regressions across no-character/saved-character/no-project modes, FormData and no-run behavior, and separate real API/temp-SQLite preservation evidence. Required test/syntax/compile/verify/gate results and warnings are complete; browser capstone remains OJ-wfpy."
+led_to: [OJ-wfpy]
 ---
 
 ## Description
@@ -249,6 +250,7 @@ status: delivered
 ## Links
 - Parent: [[OJ-mnrv]]
 - Follows: [[OJ-r6n5]], [[OJ-m439]]
+- Led to: [[OJ-wfpy]]
 
 ## Comments
 
