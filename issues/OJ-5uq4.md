@@ -4,11 +4,11 @@ title: "Connect saved projects to the existing studio flow"
 status: in_progress
 priority: 1
 type: feature
-labels: [studio, foundation, local, no-spend]
+labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T07:10:41Z
+updated_at: 2026-10-27T07:10:42Z
 content_hash: "sha256:e6b976ebc1956341b8f22742345821c5024c20cbacca006d6495c488eb94484f"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
