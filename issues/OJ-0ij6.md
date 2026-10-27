@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
 updated_at: 2026-10-27T09:19:53Z
-content_hash: "sha256:ddd0017f3528d5d1019865ea4937e849fa43d29db57f9a088805de74a08c43eb"
+content_hash: "sha256:8c8ba2ca47bd51ac41ee50c59ddb5a30d5cf9ff1b196da932ce4f1b60837e275"
 blocks: [OJ-wfpy]
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5, OJ-m439]
@@ -97,6 +97,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-27.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## Implementation Evidence (DELIVERED)
 
 ### CI/Test Results
