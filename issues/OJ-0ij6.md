@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
 updated_at: 2026-10-27T09:29:42Z
-content_hash: "sha256:07b8540c67eafe324f93946d4396b9edd1e12ce9c19a268010736f4f6b1176b9"
+content_hash: "sha256:58693c8637849b34e84e85811bb85f112ef514ac3d9d07a42784861756919196"
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5, OJ-m439]
 closed_at: 2026-10-27T09:29:41Z
@@ -98,6 +98,18 @@ status: new
 
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-27.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## Implementation Evidence
 
 ### CI/Test Results
