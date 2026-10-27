@@ -1,15 +1,17 @@
 ---
 id: OJ-r6n5
 title: "Keep selected project hidden fields synchronized across form reset"
-status: open
+status: closed
 priority: 0
 type: bug
 labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:48:10Z
 created_by: speed
-updated_at: 2026-10-27T08:48:10Z
-content_hash: "sha256:21203733c9606fda59d6a57433bf4109cf92f32be5d61862651179dfbed5bdf2"
+updated_at: 2026-10-27T08:52:37Z
+content_hash: "sha256:66232f5ce95f673c5a2d08bf98b0c455b5d46578efb4e4d44cae9072dbdac0ba"
+closed_at: 2026-10-27T08:52:37Z
+close_reason: "Duplicate of canonical OJ-0ij6; concurrent late metadata creation only, not implemented or accepted. Preserve OJ-0ij6 for the reset fix."
 ---
 
 ## Description
@@ -97,7 +99,7 @@ status: new
 
 
 ## History
-
+- 2026-10-27T08:52:37Z status: open -> closed
 
 ## Links
 - Parent: [[OJ-mnrv]]
