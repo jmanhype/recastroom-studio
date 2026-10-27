@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T04:27:25Z
-content_hash: "sha256:375448a729a1b959f4b96e63ae7409ddd83256a582c975375367ad3496f88194"
+updated_at: 2026-10-27T04:29:13Z
+content_hash: "sha256:806ac96f2a75d65213444c2c27298dd2e04133463882456fe33e0641ffd0146d"
 ---
 
 ## Description
@@ -96,6 +96,8 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 Foundation children: OJ-6xh3 (store), OJ-5uq4 (connected app), OJ-wfpy (all-dependency E2E capstone). Old submission epic OJ-fglb preserved. Source-code commit/merge permission has been requested separately; no source work or loop rotation performed.
 Owner authorization 2026-10-26: build the connected studio foundation using Paivot. Local source-code commits and merges only. No pushes, publication, credentials, provider/GPU jobs or GPU/API spending. Supersedes earlier pending-commit-approval sentence. Root preflight:126 passed,1 disclosed Starlette/httpx warning. Existing old submission epic and its issues remain unchanged.
 Dispatcher preflight: local-only source commits/merges explicitly authorized; foundation backlog structural repair is assigned to foundation_backlog_repair. Existing accepted architecture and full product scope preserved. Epic branch/worktree epic/OJ-mnrv/.claude/worktrees/epic-OJ-mnrv created from main c2a18a5 without switching main or touching pre-existing evidence. No developer dispatched before structural lint and independent Anchor approval. SQLite/temp filesystem/FFmpeg and root Python3.11.11 venv available. Use temporary Git transport guard for loop setup automatic remote sync; use pvg nd sync --no-push at manual sync boundaries. No source changes, no provider/GPU calls.
+User explicitly redirected work: "Ok let’s build the foundation now using Paivot. Local commits and merges only, no pushes or GPU spending." Existing OJ-fglb loop has no in-progress work and is stale from2026-10-18. Switching its execution scope to OJ-mnrv preserves OJ-fglb and all child issue states; this is owner-directed scope change, not autonomous abandonment.
+
 ## nd_contract
 status: new
 
