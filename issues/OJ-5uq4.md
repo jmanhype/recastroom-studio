@@ -1,7 +1,7 @@
 ---
 id: OJ-5uq4
 title: "Connect saved projects to the existing studio flow"
-status: in_progress
+status: closed
 priority: 1
 type: feature
 labels: [studio, foundation, local, no-spend, delivered]
@@ -9,11 +9,12 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T07:25:45Z
-content_hash: "sha256:16b4436f920c93039ba5ceea53606f319163b0d106cf43aeafe199b1319f7909"
-blocks: [OJ-wfpy]
+content_hash: "sha256:873a85969f3b9c54a60b1b7990fedb39698a6334f6c19f4cbdd1216fe8882ca5"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
+closed_at: 2026-10-27T07:25:45Z
+close_reason: "Accepted: six ACs independently verified at 94c8594; API/store safety, frontend epoch state, browser artifacts, legacy behavior, and cleanup evidence are sufficient."
 ---
 ## Description
 Connect saved projects and reusable character versions to the existing browser prepare/review path using the store delivered by OJ-6xh3. Do not create an unrelated demo UI or new renderer.
@@ -255,10 +256,11 @@ status: delivered
 - 2026-10-27T06:36:01Z status: open -> in_progress
 - 2026-10-27T06:36:02Z claimed by dev-OJ-5uq4
 - 2026-10-27T07:10:42Z status: in_progress -> in_progress
+- 2026-10-27T07:25:45Z status: in_progress -> closed
+- 2026-10-27T07:25:45Z dep_removed: no_longer_blocks OJ-wfpy
 
 ## Links
 - Parent: [[OJ-mnrv]]
-- Blocks: [[OJ-wfpy]]
 - Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]]
 - Follows: [[OJ-6xh3]], [[OJ-8zaw]]
 
