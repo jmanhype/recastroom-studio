@@ -1,0 +1,69 @@
+---
+id: OJ-wfpy
+title: "E2e: return to a saved project and reuse character references in Studio"
+status: open
+priority: 1
+type: task
+labels: [studio, foundation, local, no-spend, capstone, e2e]
+parent: OJ-mnrv
+created_at: 2026-10-27T03:45:29Z
+created_by: speed
+updated_at: 2026-10-27T03:45:29Z
+content_hash: "sha256:d790e8ff57f5e850302c3fe5ac4c96349fc2b651e36e80fcd5df09adb63c6c58"
+---
+
+## Description
+## Description
+Exercise the completed foundation through the user's actual local browser and HTTP data flow. This capstone is E2E-only, blocked by every other child. It does not implement a missing store or API.
+
+## USER INTENT
+A creator can save a project, reuse a character reference, prepare/review a labeled local dry-run result, restart the app and return to the same project/history without scripts, hidden inference or media loss.
+
+## Ownership / DIFF BUDGET
+NEW tests/test_foundation_e2e.py; NEW tools/foundation_trial.py; NEW docs/evidence/studio-foundation/README.md plus public-safe generated receipts/screenshots. Approximately 3-5 files, under 650 changed LOC. No production implementation edits; report missing functionality instead of fixing it in the capstone.
+
+## Acceptance Criteria
+1. Start actual uvicorn on 127.0.0.1 with a temporary workspace, credentials removed and dry_run explicitly selected. Use real SQLite, filesystem, HTTP, generated test media and FFmpeg. No mock/stub replaces project, API, store, renderer-dry-run implementation or browser interactions.
+2. A user creates a project, saves a synthetic character version, prepares a source using that saved version, explicitly runs the existing labeled dry_run path, sees comparison/download/configuration links and navigates back to the project's saved history. Do not imply AI inference or a new visual keeper.
+3. Stop and restart the actual application process, reopen the browser and prove project/character-version/prepared configuration persisted. Do not claim remote render recovery; verify no new run was submitted by reload and legacy/no-project flow still works.
+4. Repeat a version selection and form reset/project switch; old reference bytes, prepared hashes, existing protected evidence and historical links remain unchanged. Missing/conflicting input paths yield user-actionable errors rather than misleading completion.
+5. Capture public-safe screenshots/receipts from the actual browser and HTTP flow. Assert no secrets/absolute personal paths, zero creative-provider submissions, loopback binding and stopped owned processes. Do not publish media or open a tunnel.
+6. On merged accepted code run the full test suite, compileall, JS syntax checks, pvg gates and the existing keeper verifier. Report actual results, warnings, hashes, ownership and tri-state failures distinctly; a missing API dependency is a failure, not a skipped pass.
+
+PRODUCES:
+- tests/test_foundation_e2e.py -> real local foundation user-journey E2E tests only.
+- tools/foundation_trial.py -> run_trial(*, temp_root: Path, evidence_root: Path) -> dict[str, Any], owning loopback server/browser cleanup and redacted receipts.
+- docs/evidence/studio-foundation/README.md -> replayable exact commands/results and human-readable evidence index.
+CONSUMES:
+- OJ-6xh3: src/openjutsu/workspace_store.py -> WorkspaceStore(root: Path) and its persisted public record contract.
+- OJ-5uq4: app/project_api.py -> create_project_router(store: WorkspaceStore) -> APIRouter, the specified project/character/job endpoints and project-aware /api/prepare.
+- OJ-5uq4: app/web/projects.js -> connected project/character selection and saved-history UI.
+- (existing) src/openjutsu/evidence.py -> verify_manifest(...) existing public keeper verifier; use current exact signature after source verification, never weaken the gate.
+
+## Testing requirements
+E2E tests ONLY. No new unit/integration tests in this capstone and no mocks of any kind. Real local infrastructure and data flows; use sanctioned computer-use/browser tooling for actual interactive evidence. All existing unit/integration suites must still be rerun at the integrated boundary. Read current helper/API signatures before writing the trial. No paid credentials, provider inference or public hosting.
+
+## Context and hard boundaries
+Brownfield RecastRoom at main c2a18a5; current Python/FastAPI/browser app is the base, not a rewrite. Architecture: ../ntm-recastroom-superapp-architecture-20261026/SUPER_APP_BLUEPRINT.md. This epic covers M0 only; scenes, multi-person engines, effects and camera remain later milestones, not rejected scope.
+No provider credentials, paid API/GPU/Colab jobs, network collection, push, public deployment, publication or X actions. Use synthetic/temp fixtures for tests; never commit private footage, actual photos, keys, generated keeper media or absolute personal paths. Preserve the pre-existing untracked docs/evidence/recastroom-hook-v6b-keeper/ directory.
+Keep existing attestation behavior, C1 graph, source-audio restoration, status and comparison semantics unchanged. Do not market attestation as verified rights. Do not rename or mix C1 and the older BFS/Head0.35 pipeline. New project history is not a claim of renderer recovery, visual QC, generic casting or model inference.
+Mandatory skills for execution: developer and codebase-memory; PM review uses pm_acceptor. Use pvg story claim/deliver and append nd_contract evidence; no direct vault edits. No source commit/merge until the operator authorizes it for this foundation. Developer delivers, independent PM accepts. Follow current repo/global instructions, public type annotations, apply_patch and scope ownership.
+Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src .venv/bin/python -m pytest -q =>126 passed,1 existing Starlette/httpx warning; do not suppress tests/warnings or confuse historical results with a new run. Every delivery includes exact LEARNINGS: and OBSERVATIONS: sections, commands/results, artifact paths and hashes where relevant.
+
+
+## Acceptance Criteria
+
+
+## Design
+
+
+## Notes
+
+
+## History
+
+
+## Links
+- Parent: [[OJ-mnrv]]
+
+## Comments
