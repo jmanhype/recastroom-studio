@@ -4,7 +4,7 @@ title: "Persist the connected workspace record store"
 status: closed
 priority: 1
 type: task
-labels: [studio, foundation, local, no-spend, delivered]
+labels: [studio, foundation, local, no-spend, delivered, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
