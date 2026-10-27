@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T07:10:42Z
-content_hash: "sha256:05745583413bf18af22546c6df8c23d429ce83419d65d353adbebd09214d7d80"
+updated_at: 2026-10-27T07:11:28Z
+content_hash: "sha256:e3ba0e6bdc7e48bc0497b76ea24eafdf69b2897f0e1712b4165b6f4971e9ec05"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
@@ -71,7 +71,24 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## Implementation Evidence
+Authoritative summary: the detailed evidence above was produced from local commit 94c859474c66068824d4788cb07714ea356353ab. Focused tests passed 5/5; full pytest passed 183/183 with the one disclosed baseline warning; compileall, both node --check commands, pvg verify, and pvg gates passed. Real rendered CUA evidence covered saved-reference prepare, reload/reset persistence, project isolation, and a delayed-response race; receipt SHA-256 is 7c9399fe02ca51355f3070ba2ea8957db0c62d2b4927f41a8eaaebc4b0867355.
 
+## nd_contract
+status: delivered
+
+### evidence
+- Commit: 94c859474c66068824d4788cb07714ea356353ab on story/OJ-5uq4.
+- Commands and outputs, browser IDs/receipt hashes, wiring lines, and limitations are recorded in the Implementation Evidence block above.
+- Worktree is clean; no push, merge, acceptance, provider spend, GPU job, or publication occurred.
+
+### proof
+- [x] AC #1: Real API/store wiring, saved-reference prepare, actual C1 filenames/seed, isolated history, and path safety PASS.
+- [x] AC #2: Project/character/history UI, safe previews, reload restoration, real stale-race protection, and no autorun PASS.
+- [x] AC #3: Cross-project reuse and reset preservation PASS.
+- [x] AC #4: Legacy upload-only behavior and existing routes remain green with no new provider/verification claim PASS.
+- [x] AC #5: Actionable errors, recorded-ID asset resolution, and browser-visible race safety PASS.
+- [x] AC #6: Accessibility/reduced-motion contracts, existing suites, JS syntax, and synthetic-only inputs PASS.
 
 ## nd_contract
 status: delivered
