@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
 updated_at: 2026-10-27T10:24:28Z
-content_hash: "sha256:62fa2edaa0fb5784990feee9d1799abd8e523a3634a0650aacffb74c70ecc5be"
+content_hash: "sha256:cc393dfbe72db8d102fcce8497bd749eb426801ae8266b658bf996afbc0b1e8f"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -241,3 +241,41 @@ status: delivered
 
 ### proof
 - [x] AC #1 through AC #6 verified with real HTTP, SQLite, filesystem, FFmpeg, uvicorn restart, and separate rendered-browser evidence.
+
+### 2026-10-27T10:24:28Z speed
+## PM Decision
+REJECTED [2026-10-27]: The real-process and browser evidence is substantively strong, but the declared human-readable evidence index is not accurate for two committed artifacts.
+
+EXPECTED: `docs/evidence/studio-foundation/README.md` is a declared capstone deliverable providing a replayable exact command/result and human-readable evidence index.
+DELIVERED: README lines 66-67 name `browser-server-cycle-1.log` and `browser-server-cycle-2.log`; neither path exists. The actual committed logs are `docs/evidence/studio-foundation/browser-cycle-1.log` and `docs/evidence/studio-foundation/browser-cycle-2.log`, with the same SHA-256 values shown in the README.
+GAP: The evidence index points readers to nonexistent paths. The underlying receipts name the correct files, but the required README index itself is not exact and would misdirect independent verification.
+FIX: In a scoped documentation-only rework commit, rename the two README table entries to the actual `browser-cycle-1.log` and `browser-cycle-2.log` paths (do not rename artifacts or change production/test code). Re-run `pvg story verify-delivery OJ-wfpy`; no behavioral test rerun is required for this documentation-only correction unless the rework touches anything else.
+
+### Independent review evidence
+- Live story preflight passed 9/9 at commit `709ceb5ee3c47541b584196fb96a78554881c75b` on clean `story/OJ-wfpy`.
+- Verified capstone-only diff from authorized upstream `0a26d26888ab94ef2145fcad856de7067d6f8ff4`: 19 files, 2,688 insertions; authored files are 455 + 272 + 41 + 78 = 846 lines; no production path changed.
+- Verified receipt hashes: HTTP `2c408c2cce4b58972bd018efe3f8c19064d4d806af8d0e767e162c3c35c31746`; browser `2b5d171974e7277e24e9b3f43b7bcd2fadc0788fa2653d5ec0f8305cf95c8377`; workspace `567061e7a4bd0f0075a555f1cc6206ef7a6285d7ae83cfaf1b855bf8780f6c0c`; slate manifest `ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33`.
+- Independently parsed all three receipts, matched all eight JPEG byte counts/hashes, visually inspected focused screenshots, confirmed synthetic test-pattern media, and found no `/Users/`, credential token, or non-loopback URL. HTTP receipt records 36 real requests including two explicit run requests; port 18765 and all four recorded server PIDs are now absent.
+
+LEARNINGS:
+- Validate declared evidence indices against `git ls-files`, not only against embedded receipt metadata: receipts can be correct while a hand-written README path drifts.
+- The functional journey can be independently corroborated without another full test run when commit-bound receipts, logs, hashes, screenshots, and cleanup state agree.
+
+OBSERVATIONS:
+- No stubs, TODO markers, mocks, skips, warning suppression, production edits, secrets, provider/GPU spend, checkout, merge, or push were found in the capstone-only delta.
+- The approximate 650-line budget is exceeded by 128 authored lines (846 total), explained by the reusable 272-line runtime helper; generated JSON/logs/JPEG account for the remainder and are public-safe. This overrun is not the rejection reason.
+
+## nd_contract
+status: rejected
+
+### evidence
+- PM independently reviewed live OJ-wfpy notes and capstone-only diff at `709ceb5`.
+- README evidence-index path mismatch independently reproduced against the retained worktree and git file inventory.
+
+### proof
+- [ ] AC #5 (partial): screenshots/receipts are public-safe and substantively verified, but the declared README evidence index names two nonexistent artifact paths.
+- [x] AC #1: strict allowlisted dry-run child environment, actual loopback uvicorn/SQLite/FFmpeg/HTTP evidence reviewed.
+- [x] AC #2: saved project/version/reference, explicit dry-run, safe preview/download/history evidence reviewed.
+- [x] AC #3: two-cycle restart persistence/no-autorun evidence reviewed.
+- [x] AC #4: nonmutation and actionable 422/404 evidence reviewed.
+- [ ] AC #6 (partial): reported command results and hashes are complete, but final human-readable evidence index accuracy fails the deliverable bar.
