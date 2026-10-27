@@ -9,13 +9,13 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T08:16:37Z
-content_hash: "sha256:3b622c14a5974e21d83db83891933afabc2b31fbdba5956082ad7df6454fccdf"
+content_hash: "sha256:b17eb65e848d3907e0ac5c90d4f927c089a8a7542d6eff70dc4a4d87b298b6c9"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
 closed_at: 2026-10-27T07:25:45Z
 close_reason: "Accepted: six ACs independently verified at 94c8594; API/store safety, frontend epoch state, browser artifacts, legacy behavior, and cleanup evidence are sufficient."
-led_to: [OJ-wfpy]
+led_to: [OJ-wfpy, OJ-m439]
 ---
 ## Description
 Connect saved projects and reusable character versions to the existing browser prepare/review path using the store delivered by OJ-6xh3. Do not create an unrelated demo UI or new renderer.
@@ -284,7 +284,7 @@ status: delivered
 - Parent: [[OJ-mnrv]]
 - Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]]
 - Follows: [[OJ-6xh3]], [[OJ-8zaw]]
-- Led to: [[OJ-wfpy]]
+- Led to: [[OJ-wfpy]], [[OJ-m439]]
 
 ## Comments
 
