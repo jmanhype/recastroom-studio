@@ -9,8 +9,9 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T03:45:28Z
-content_hash: "sha256:33b11897a21063a153197405748145f1872564cb09178230340962f90fdcdbf2"
+content_hash: "sha256:39d541c284d3dcf33a42b4c7d0ae04c5b4d44a06ae16222d72b859d10ed222b1"
 blocked_by: [OJ-6xh3]
+blocks: [OJ-wfpy]
 ---
 
 ## Description
@@ -76,9 +77,11 @@ status: new
 
 ## History
 - 2026-10-27T03:45:28Z dep_added: blocked_by OJ-6xh3
+- 2026-10-27T03:45:29Z dep_added: blocks OJ-wfpy
 
 ## Links
 - Parent: [[OJ-mnrv]]
+- Blocks: [[OJ-wfpy]]
 - Blocked by: [[OJ-6xh3]]
 
 ## Comments
