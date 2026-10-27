@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T03:45:28Z
-content_hash: "sha256:14e303a785248d200b85326daa0702e6c5806fc1eda3e4eb00760c715b3479cd"
+content_hash: "sha256:33b11897a21063a153197405748145f1872564cb09178230340962f90fdcdbf2"
 blocked_by: [OJ-6xh3]
 ---
 
@@ -64,6 +64,14 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 
 
 ## Notes
+## nd_contract
+status: new
+
+### evidence
+- Created from the operator-approved connected-studio architecture; no implementation or execution claim.
+
+### proof
+- [ ] The story's explicit acceptance criteria are independently verified before acceptance.
 
 
 ## History
