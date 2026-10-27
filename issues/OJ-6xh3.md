@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T05:14:10Z
-content_hash: "sha256:49f7127fcffac00d195688a26c69f852fe640fdd6b0a556dca42c3148b436aa1"
+updated_at: 2026-10-27T05:14:47Z
+content_hash: "sha256:1fd7a8bc8d5280f08b645691a7673849c17b7852f2d926dc8fb5405728945265"
 blocks: [OJ-5uq4, OJ-wfpy]
 assignee: dev-OJ-6xh3
 ---
@@ -71,6 +71,14 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+### AC Verification
+[x] AC #1: SQLite reopen and transaction failure — PASS
+[x] AC #2: safe registration/staging and duplicate ownership — PASS
+[x] AC #3: append-only and reusable character versions — PASS
+[x] AC #4: real prepared-job fingerprints/config and legacy readability — PASS
+[x] AC #5: private-path resolution and public projection integrity — PASS
+[x] AC #6: full baseline suite and scope preservation — PASS
+
 ## nd_contract
 status: delivered
 
