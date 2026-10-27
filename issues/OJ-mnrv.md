@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T04:39:24Z
-content_hash: "sha256:3113f5eb158251d115101bd78edcf99171ffab6a649a823a4fb620c08fa7bfc3"
+updated_at: 2026-10-27T04:42:46Z
+content_hash: "sha256:033ca4cba0b8d96dad35697722eb3a101c221ed580eb494ff6ca104ccdea3eb1"
 ---
 ## Description
 Implement the first connected studio foundation: saved projects, protected asset references, reusable versioned character bundles and inspectable prepared-job history connected to the existing prepare/review flow.
@@ -40,6 +40,13 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 Foundation children: OJ-6xh3 (store), OJ-5uq4 (connected app), OJ-wfpy (all-dependency E2E capstone). Old submission epic OJ-fglb preserved. Operator authorization now permits local source commits/merges only after story gates; no push or loop rotation is authorized.
 Owner authorization 2026-10-26: build the connected studio foundation using Paivot. Local source-code commits and merges only. No pushes, publication, credentials, provider/GPU jobs or GPU/API spending. Supersedes earlier pending-commit-approval sentence. Root preflight:126 passed,1 disclosed Starlette/httpx warning. Existing old submission epic and its issues remain unchanged.
 Dispatcher preflight: local-only source commits/merges explicitly authorized; foundation backlog structural repair is assigned to foundation_backlog_repair. Existing accepted architecture and full product scope preserved. Epic branch/worktree epic/OJ-mnrv/.claude/worktrees/epic-OJ-mnrv created from main c2a18a5 without switching main or touching pre-existing evidence. No developer dispatched before structural lint and independent Anchor approval. SQLite/temp filesystem/FFmpeg and root Python3.11.11 venv available. Use temporary Git transport guard for loop setup automatic remote sync; use pvg nd sync --no-push at manual sync boundaries. No source changes, no provider/GPU calls.
+ANCHOR ROUND 1 ADDRESSED — upload staging/interface gap:
+
+- OJ-6xh3 now produces the server-only staging API `stage_asset(project_id: str, filename: str, content: BinaryIO, *, role: str, protected: bool = False) -> AssetRecord`; it validates a single-component filename, consumes binary content, writes only beneath server-generated `root/uploads/<staging_id>/<safe_filename>`, and returns a safe `AssetRecord` without exposing the destination. `register_asset` remains the explicit import path and `resolve_asset` remains the safe lookup.
+- OJ-5uq4 now requires `app/main.py` to construct `WorkspaceStore(SETTINGS.data_dir)`, pass it to `create_project_router(store)`, and stage character multipart bytes through `stage_asset`; existing no-project uploads remain at `SETTINGS.data_dir/uploads/<job_id>`. Requests accept no caller path/root and responses serialize no server path.
+- OJ-wfpy now exercises the actual configured-root wiring and safe multipart staging in the restart journey.
+- Verification after the repair: `pvg lint --backlog --epic OJ-mnrv --json` => `[]`; `pvg nd doctor` => all 29 issues valid; `pvg nd dep cycles` => none.
+
 ## ANCHOR REVIEW (backlog_review)
 REVIEW_RESULT: REJECTED
 
