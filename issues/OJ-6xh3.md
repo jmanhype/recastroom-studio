@@ -1,6 +1,6 @@
 ---
 id: OJ-6xh3
-title: "Persist connected projects, protected asset references and character versions"
+title: "Persist the connected workspace record store"
 status: open
 priority: 1
 type: task
