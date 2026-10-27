@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T08:16:37Z
-content_hash: "sha256:b17eb65e848d3907e0ac5c90d4f927c089a8a7542d6eff70dc4a4d87b298b6c9"
+updated_at: 2026-10-27T09:38:35Z
+content_hash: "sha256:2ba51e8b6e99df5142f441be98ce03621e89330f59926d245133ce9cdc94a80e"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
@@ -314,3 +314,6 @@ nd_contract status=accepted at 94c859474c66068824d4788cb07714ea356353ab; AC1-AC6
 
 ### 2026-10-27T07:30:26Z speed
 PM decision read back closed+accepted and receipt paths/hashes verified by PM. Coordinator locally merged story branch into epic/OJ-mnrv without conflict; same documented pvg merge remote-epic incompatibility, no push/publication. Merged-code regression rerun underway. Capstone restart/dry-run/export proof remains pending; no new render inferred.
+
+### 2026-10-27T09:38:35Z speed
+Coordinator serializer reconciliation only; no new acceptance decision. The independent PM accepted and closed commit94c859474c66068824d4788cb07714ea356353ab; closed+accepted state and detailed PM evidence remain unchanged. Older delivered blocks are historical.\n\n## nd_contract\nstatus: accepted\n\n### evidence\n- Independent PM acceptance of94c859474c66068824d4788cb07714ea356353ab remains recorded; source was merged locally asfdc9130 and fresh integrated tests passed183withone disclosed baseline warning.\n\n### proof\n- [x] Existing independent PM acceptance and local integration evidence preserved; this comment only reconciles authoritative contract ordering.
