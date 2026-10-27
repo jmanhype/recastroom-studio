@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T03:45:27Z
-content_hash: "sha256:b08583d94fac2b90a319e71cc996467bdc6d5d0c52cd4bca2eb83c72e7c35ca9"
+updated_at: 2026-10-27T03:45:28Z
+content_hash: "sha256:f1c60bb8ab4633a2f4869e0b207da7459bcebe5a198657be3f5660f09828e932"
 ---
 
 ## Description
@@ -42,6 +42,14 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 
 
 ## Notes
+## nd_contract
+status: new
+
+### evidence
+- Created from the operator-approved connected-studio architecture; no implementation or execution claim.
+
+### proof
+- [ ] The story's explicit acceptance criteria are independently verified before acceptance.
 
 
 ## History
