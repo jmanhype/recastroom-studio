@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T05:22:51Z
-content_hash: "sha256:c3182ad9cfdb8035a5e4d97662264cad10459b36bfbed55f5c30902101598a2c"
+updated_at: 2026-10-27T05:23:11Z
+content_hash: "sha256:1f6aabe6b07821035b33583d37832fba37c2e766197211efaa36db260dc57e63"
 assignee: dev-OJ-6xh3
 closed_at: 2026-10-27T05:22:51Z
 close_reason: "Accepted: independent commit/path/API/security review and targeted transaction probe verify all six ACs; disclosed file_loc warning remains an explicit observation, not a blanket waiver."
@@ -292,3 +292,23 @@ status: delivered
 - [x] AC #4: real prepared-job fingerprints/config and legacy readability — PASS
 - [x] AC #5: private-path resolution and public projection integrity — PASS
 - [x] AC #6: full baseline suite and scope preservation — PASS
+
+### 2026-10-27T05:23:11Z speed
+PM authoritative contract correction (managed Notes contracts serialize accepted closeout before review/history blocks):
+
+## nd_contract
+status: accepted
+
+### evidence
+- Independent review at commit c38e41a191269c7e015fbc975e7b82df105fabfb against base c2a18a5f4b8c66e4c1309607d342db13c0bef4c6.
+- Delivery preflight 9/9 PASS; exact two-file hashes match delivery; public signatures match contract; targeted temp-SQLite rollback count probe PASS; pvg verify 2 files/0 issues.
+- All six functional ACs independently reviewed PASS. Touched gates PASS with one real new file_loc warning (520>400); base gate inventory independently measured at 13 warnings. Acceptance records but does not blanket-waive that warning. stdlib trace remains line coverage only.
+- Story status verified closed with accepted label and acceptance close reason on 2026-10-27T05:22:51Z.
+
+### proof
+- [x] AC #1: persistence/reopen and injected transaction rollback verified, including explicit unchanged row count.
+- [x] AC #2: safe upload/import roots, regular files, traversal/symlink rejection, unchanged originals, generated staging, safe names, duplicates, and public projection verified.
+- [x] AC #3: append-only versions, prior-reference immutability, and cross-project pinned reuse verified.
+- [x] AC #4: real prepared artifacts/fingerprints/seed/config and legacy empty-project history verified.
+- [x] AC #5: server-only resolved path, protected-byte recheck, malformed/unsafe path failure, and no-path AssetRecord projection verified.
+- [x] AC #6: exact two-file scope, no keeper/graph change, and exact-commit full-suite/gate evidence verified.
