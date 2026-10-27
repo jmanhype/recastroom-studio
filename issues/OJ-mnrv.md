@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T04:43:32Z
-content_hash: "sha256:a142f0f645ff1f29edb92767ce5881b93a2674b9b5c49aebc972c8db59f53f9f"
+updated_at: 2026-10-27T05:27:17Z
+content_hash: "sha256:e4ea6234b520a9a2ace34d91518fb7521a7b78383fb047cf0cd68cb11b815eb0"
 ---
 ## Description
 Implement the first connected studio foundation: saved projects, protected asset references, reusable versioned character bundles and inspectable prepared-job history connected to the existing prepare/review flow.
@@ -143,3 +143,6 @@ status: new
 
 ## Links
 ## Comments
+
+### 2026-10-27T05:27:17Z speed
+Integration boundary: accepted OJ-6xh3 locally merged as a3bc898. Coordinator independently reran credential-stripped full pytest from integration worktree: 130 passed,1 disclosed Starlette/httpx warning in24.42s; compileall PASS and both source/test hashes matched delivery. New finding: public PreparedConfigRecord.config contains full workflow JSON instead of safe allowlist. SrPM bug triage requested before UI history exposure. Main remains c2a18a5; no pushes/GPU/render/provider work.
