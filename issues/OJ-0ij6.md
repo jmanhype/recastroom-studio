@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
-updated_at: 2026-10-27T09:19:53Z
-content_hash: "sha256:8c8ba2ca47bd51ac41ee50c59ddb5a30d5cf9ff1b196da932ce4f1b60837e275"
+updated_at: 2026-10-27T09:22:09Z
+content_hash: "sha256:64542159dcbd331797061ac11728da8d2e30f7f157a104a971a71c702c2095c5"
 blocks: [OJ-wfpy]
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5, OJ-m439]
@@ -97,6 +97,51 @@ status: new
 
 
 ## Notes
+## Implementation Evidence
+
+### CI/Test Results
+Commands run:
+- Focused pytest: 4 passed, 1 known warning.
+- Full pytest: 185 passed, 1 known warning.
+- Node syntax check: PASS.
+- Python compileall: PASS.
+- pvg verify: PASS, 2 files / 0 issues.
+- pvg gates: PASS, 1 disclosed managed complexity warning / 0 skipped.
+
+Summary: AC regressions and real API/store preservation pass; the only test warning is the known Starlette/httpx deprecation.
+Commit SHA: f45521def3fc9a811759c6fbedee35d2b62cbde2
+
+### AC Verification
+| AC # | Requirement | Status |
+|---|---|---|
+| 1 | Real-JS no-character reset preserves/synchronizes project A | PASS |
+| 2 | Real-JS saved-character reset clears transient selection and preserves project A | PASS |
+| 3 | FormData projects project A with uploads and request log has no run | PASS |
+| 4 | Real API/store records and artifacts survive reset | PASS |
+| 5 | Upload-only/no-project behavior remains empty/unrecorded | PASS |
+| 6 | Required tests and touched gates pass with warning disclosed | PASS |
+
+LEARNINGS:
+- Native form reset clears hidden inputs before the projects reset listener runs, so synchronization must be unconditional after transient character cleanup.
+
+OBSERVATIONS:
+- The known Starlette/httpx warning and managed renderHistory complexity warning remain disclosed; gates pass.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Commit SHA: f45521def3fc9a811759c6fbedee35d2b62cbde2
+- Focused 4 passed / 1 known warning; full 185 passed / 1 known warning; syntax and compileall PASS.
+- pvg verify PASS; pvg gates PASS with one disclosed managed warning.
+
+### proof
+- [x] AC #1: PASS
+- [x] AC #2: PASS
+- [x] AC #3: PASS
+- [x] AC #4: PASS
+- [x] AC #5: PASS
+- [x] AC #6: PASS
 
 
 ## nd_contract
