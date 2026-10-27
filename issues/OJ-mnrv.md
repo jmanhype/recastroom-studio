@@ -4,10 +4,10 @@ title: "Build RecastRoom connected studio foundation"
 status: closed
 priority: 1
 type: epic
-labels: [studio, foundation, local, no-spend]
+labels: [studio, foundation, local, no-spend, accepted]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T10:36:33Z
+updated_at: 2026-10-27T10:36:34Z
 content_hash: "sha256:25d7c591247cc906a0ddc26fd3826c7f509f204be772816e6cf3bdfebc7ca930"
 closed_at: 2026-10-27T10:36:33Z
 close_reason: "All stories accepted"
