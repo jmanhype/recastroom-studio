@@ -1,16 +1,17 @@
 ---
 id: OJ-6xh3
 title: "Persist the connected workspace record store"
-status: open
+status: in_progress
 priority: 1
 type: task
 labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T04:42:27Z
-content_hash: "sha256:44ed9c57252035c5a4cac78cba3c251d050884d30ff9c6dbd8975311174e82db"
+updated_at: 2026-10-27T04:44:08Z
+content_hash: "sha256:6f2784c3123bb8c9e08d8684b6bca7e14d3872cfe28d2280217276229a7f9799"
 blocks: [OJ-5uq4, OJ-wfpy]
+assignee: dev-OJ-6xh3
 ---
 ## Description
 Add the authoritative local workspace store and safe reference import required by the connected M0 path. This is an infrastructure task feeding the user-visible path in the next child.
@@ -111,6 +112,8 @@ status: new
 ## History
 - 2026-10-27T03:45:28Z dep_added: blocks OJ-5uq4
 - 2026-10-27T03:45:29Z dep_added: blocks OJ-wfpy
+- 2026-10-27T04:44:08Z status: open -> in_progress
+- 2026-10-27T04:44:08Z claimed by dev-OJ-6xh3
 
 ## Links
 - Parent: [[OJ-mnrv]]
