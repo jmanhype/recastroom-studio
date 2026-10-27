@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, security, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T05:32:07Z
 created_by: speed
-updated_at: 2026-10-27T05:45:33Z
-content_hash: "sha256:c1411dafa9a0756e7cb9befeeb4d4124b0d0e7325488b62d5c1cb5783092b0fd"
+updated_at: 2026-10-27T05:46:16Z
+content_hash: "sha256:2b782d2c6f4bbb52aa19b8143859a77d4077c792c0352fbc1515cc12e049c137"
 assignee: dev-OJ-8zaw
 follows: [OJ-6xh3]
 closed_at: 2026-10-27T05:45:32Z
@@ -229,3 +229,44 @@ status: delivered
 - [x] AC5: 52 focused, 178 full tests passed, warnings disclosed.
 - [x] AC6: exactly two assigned source files.
 
+
+### 2026-10-27T05:46:16Z speed
+### PM Acceptance Review
+
+REVIEW_RESULT: ACCEPTED
+
+Independent evidence review at commit cdd6adc0aa1cbbe364764f29ef06c5cf59f4fe56 (base a3bc898d11387828ead58e7ad5dff02523d4fead):
+
+- Delivery proof verification: `pvg story verify-delivery OJ-8zaw` => Passed 9, Failed 0.
+- Exact scope: `git diff --name-status a3bc898..cdd6adc` => only `src/openjutsu/workspace_store.py` and `tests/test_workspace_store.py`.
+- File hashes independently match delivery evidence: `d92e805cafc1811d3c9034d2f7828035af1248f83573abdb761a82c5155f87c1` and `713cd59c9b612fcdddcb771fbd9efc799afb695b077606a023e5e7b8d43521bb`.
+- Source review confirms `_workflow_config` selects exactly the six safe fields and `_safe_config`/`_config_filenames` enforce exact output shape, non-bool integer seed/steps, boolean audio, literal auto mode, one/two basename-only filenames, and seed consistency before SQL persistence.
+- Read review confirms `_prepared` decodes through the same validation; malformed/full historical rows raise `ValidationError`, are not returned as public config, and are not migrated.
+- Test review confirms real `prepare_workflow(..., workflow_template=...)` custom graphs, real SQLite inspection/reopen, nested synthetic credential/path/map/list sentinels, prompt-sentinel exclusion, full-graph rejection, malformed shape/type coverage, and workflow/prompt/source/reference byte-and-hash invariance.
+- Developer verification evidence records focused 52 passed, full 178 passed, compileall/verify/gates pass, one disclosed existing Starlette warning, and the remaining disclosed `workspace_store.py` file_loc warning. No warning was suppressed.
+- No source/test edit, checkout, merge, push, provider/network/GPU/credential action, or actual private media access was performed during PM review.
+
+### AC Verification
+
+| AC # | Requirement | Status |
+|------|-------------|--------|
+| 1 | Exact six-key validated config on write | PASS |
+| 2 | Real custom graph sentinels absent from SQLite and record | PASS |
+| 3 | Safe reopen and rejection of historical full graph | PASS |
+| 4 | All artifact bytes and provenance SHA256 unchanged | PASS |
+| 5 | 52 focused and 178 full tests pass; compileall/verify/gates pass | PASS |
+| 6 | Exactly two assigned files changed | PASS |
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM independently reviewed story evidence, delivered source/tests, exact two-file diff, file hashes, delivery-proof gate (9/9), and tracked warning disclosures at cdd6adc0aa1cbbe364764f29ef06c5cf59f4fe56.
+
+### proof
+- [x] AC #1: exact validated six-key config on write and read.
+- [x] AC #2: real custom-workflow/SQLite record excludes synthetic sentinels.
+- [x] AC #3: reopen is safe and malformed/full historical graph rows fail closed without migration.
+- [x] AC #4: job/source/reference artifact bytes and recorded SHA-256 provenance remain unchanged.
+- [x] AC #5: recorded focused/full/compileall/verify/gate evidence passes with warnings disclosed, not suppressed.
+- [x] AC #6: delivery changes exactly the two assigned files.
