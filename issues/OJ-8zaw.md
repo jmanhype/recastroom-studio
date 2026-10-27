@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, security]
 parent: OJ-mnrv
 created_at: 2026-10-27T05:32:07Z
 created_by: speed
-updated_at: 2026-10-27T05:37:47Z
-content_hash: "sha256:e110b6b6a436b88d43495d3d80c8bc2918deed9d8d908d656722d463f4155bac"
+updated_at: 2026-10-27T05:41:50Z
+content_hash: "sha256:83c4a6936186f5f8c163a9feb4e1aed64f2b23df38f962646f3a1fd770561939"
 blocks: [OJ-5uq4, OJ-wfpy]
 assignee: dev-OJ-8zaw
 follows: [OJ-6xh3]
@@ -113,6 +113,56 @@ status: new
 ## Design
 
 ## Notes
+## Implementation Evidence
+PROOF:
+### CI/Test Results
+Commands run:
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest -q tests/test_workspace_store.py
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest -q
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m compileall -q src/openjutsu/workspace_store.py tests/test_workspace_store.py
+- pvg verify src/openjutsu/workspace_store.py tests/test_workspace_store.py --format=text
+- pvg gates src/openjutsu/workspace_store.py tests/test_workspace_store.py --format text
+- git diff --check
+- shasum -a 256 src/openjutsu/workspace_store.py tests/test_workspace_store.py
+Summary: all commands exit 0. Focused 52 passed in 0.35s; full 178 passed in 24.05s, zero failures/skips, 1 disclosed existing StarletteDeprecationWarning. Compileall pass. VERIFY PASSED: 2 files, 0 issues. Touched GATES PASS: 1 warn, 0 skipped. Coverage percentage not measured; real filesystem/SQLite/custom preparation/reopen behavior directly asserted.
+Commit SHA: cdd6adc0aa1cbbe364764f29ef06c5cf59f4fe56
+Branch: story/OJ-8zaw
+File hashes:
+- src/openjutsu/workspace_store.py SHA256 d92e805cafc1811d3c9034d2f7828035af1248f83573abdb761a82c5155f87c1
+- tests/test_workspace_store.py SHA256 713cd59c9b612fcdddcb771fbd9efc799afb695b077606a023e5e7b8d43521bb
+### AC checklist
+- [x] AC #1: _workflow_config selects six fields; _safe_config validates exact output, nonbool ints, seed consistency, bool audio and basename-only filenames. Existing raw-graph equality assertion replaced by stronger exact config assertion.
+- [x] AC #2: test_custom_graph_history_is_safe_and_artifacts_are_unchanged prepares real custom graphs with all requested synthetic sentinels nested in graph and planner; direct SQLite SELECT and returned config equal exact safe object, contain no sentinels.
+- [x] AC #3: reopen equals original record; legacy full graphs explicitly raise ValidationError with no migration; missing keys, invalid types/shapes/JSON and extras covered on reads.
+- [x] AC #4: custom graph test snapshots every job artifact plus source, both refs and template; bytes and artifact inventory unchanged; workflow/prompt/source/reference SHA256 comparisons pass with one and two references.
+- [x] AC #5: focused/full/compileall/verify/touched gates pass; no mocks, skips, filters or weakened assertions. Existing warning disclosed below.
+- [x] AC #6: git commit changes exactly assigned two files. OJ-6xh3 history not modified; no pipeline, API, fixtures, graph, migration, provider, network or media edits.
+LEARNINGS:
+- Configure workflow stores selected settings across planner JSON and three nodes; projection must validate types rather than recursively redact.
+- Rejecting historical graph rows closes the public read leak without rewriting historical data.
+- Graph tool inventory had zero indexed projects; bounded direct reads verified store -> pipeline -> configure_workflow relationships.
+OBSERVATIONS:
+- Existing StarletteDeprecationWarning at fastapi/testclient.py:1: Using httpx with starlette.testclient is deprecated; install httpx2 instead. No dependencies changed or warnings suppressed.
+- Existing file_loc gate category remains: workspace_store.py now 565 nonblank lines > 400. Initial new complexity warning removed through bounded validation helper extraction; final touched gates only have file_loc warning.
+- pvg notes search unavailable because configured Claude vault missing; not a code/test failure. No raw vault edits.
+- No push, acceptance, close or merge performed.
+DISCOVERED_BUG:
+  title: Existing Starlette TestClient httpx deprecation
+  context: Full suite passes 178 tests with the known single warning at fastapi/testclient.py:1; dependency remediation outside exact two-file security scope.
+  affected_files: installed fastapi/testclient.py and dependency configuration
+  discovered_during: OJ-8zaw
+## nd_contract
+status: delivered
+### evidence
+- cdd6adc0aa1cbbe364764f29ef06c5cf59f4fe56: focused 52 passed; full 178 passed, 1 disclosed warning; compileall/verify/gates exit 0.
+### proof
+- [x] AC #1: exact validated six-key config.
+- [x] AC #2: custom workflow sentinel exclusion in real SQLite.
+- [x] AC #3: reopen safe, historical graph rejected.
+- [x] AC #4: artifact bytes and provenance hashes unchanged.
+- [x] AC #5: full verification passed, warnings disclosed.
+- [x] AC #6: exactly two source files changed.
+
 
 ## History
 - 2026-10-27T05:33:08Z dep_added: blocks OJ-5uq4
