@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T08:54:27Z
-content_hash: "sha256:da8978d6ca6b0b03ee8c4f228ce809f266dd089302b9ad9713eecb4462b1b147"
+updated_at: 2026-10-27T09:34:02Z
+content_hash: "sha256:7b65cfe2fc0d33e2c24cd81879e34da77c7cb9c11e1931ee4a4dc217bf62eea3"
 ---
 ## Description
 Implement the first connected studio foundation: saved projects, protected asset references, reusable versioned character bundles and inspectable prepared-job history connected to the existing prepare/review flow.
@@ -159,3 +159,6 @@ Accepted UI story locally merged as fdc9130. Coordinator reran credential-stripp
 
 ### 2026-10-27T08:54:27Z speed
 Production Anchor GAPS_FOUND mapped to canonical P0s OJ-0ij6(reset) and OJ-m439(uploadcollision). Prior metadatawriters interrupted; pgrep found no pvg/nd processes. Late duplicate OJ-r6n5 closed explicitly as duplicate, NOTimplemented/accepted; capstone dependency includesclosedduplicate to satisfystructural siblinggate. Lint now0errors/4cosmetic duplicate-managed-heading reviewflags oncanonical descriptions. Investigatedbodies: single substantive ACset plusempty native headings; clear scope/contracts, no conflictingcriteria. Preservedasmetadataadvisories (not claimed lintclean). Queuewave selectedbothP0s; disjoint2fileworkers proceeding. No sourcebugwaiver.
+
+### 2026-10-27T09:34:02Z speed
+BothAnchorP0sacceptedandlocallymerged; currentepic0a26d26. Coordinatorcombinedfreshpytest186passed,1existingStarlettewarning,25.04s. Capstonecanonicalbranchpreserves84d52ce+3dcb225; newlyclaimedfreshfinisherauthorizedtomergeacceptedupstreamintosourcebranchthencompleteactualbrowser/restart/exportproof. No productionfixesleftidentified; finalmilestonegate stillpending. No pushes/GPUspend.
