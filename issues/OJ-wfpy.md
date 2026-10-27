@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
 updated_at: 2026-10-27T04:26:02Z
-content_hash: "sha256:72ea2f8fde6c06299a9868237ec43e19cab80415ee75a1b4edf99d1c8633dd0c"
+content_hash: "sha256:f028f59bb53d3ec4cbfa95789c96b365887ffa2187db488fc616c29f59c4afb0"
 blocked_by: [OJ-6xh3, OJ-5uq4]
 ---
 
@@ -132,6 +132,16 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 
 
 ## Notes
+## nd_contract
+status: new
+
+### evidence
+- 2026-10-26 SrPM mechanical repair through pvg issues/pvg nd only; baseline pvg lint --backlog --epic OJ-mnrv --json reported 6 errors and 8 review findings.
+- Repaired managed-heading duplication, exact MANDATORY SKILLS shape, typed cross-story signatures, safe asset resolution/upload-root contracts, observable outcomes, combined titles, and the operator's local-only commit authorization.
+
+### proof
+- [ ] Implementation proof remains pending for this story's substantive acceptance criteria.
+
 ## nd_contract
 status: new
 
