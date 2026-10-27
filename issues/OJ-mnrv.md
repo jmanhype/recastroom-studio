@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T05:27:17Z
-content_hash: "sha256:e4ea6234b520a9a2ace34d91518fb7521a7b78383fb047cf0cd68cb11b815eb0"
+updated_at: 2026-10-27T05:36:48Z
+content_hash: "sha256:40961e471441a7cc8b475b64c191085df1ccd38aa7f9044113d6374ae1f9f904"
 ---
 ## Description
 Implement the first connected studio foundation: saved projects, protected asset references, reusable versioned character bundles and inspectable prepared-job history connected to the existing prepare/review flow.
@@ -46,6 +46,13 @@ ANCHOR ROUND 1 ADDRESSED — upload staging/interface gap:
 - OJ-5uq4 now requires `app/main.py` to construct `WorkspaceStore(SETTINGS.data_dir)`, pass it to `create_project_router(store)`, and stage character multipart bytes through `stage_asset`; existing no-project uploads remain at `SETTINGS.data_dir/uploads/<job_id>`. Requests accept no caller path/root and responses serialize no server path.
 - OJ-wfpy now exercises the actual configured-root wiring and safe multipart staging in the restart journey.
 - Verification after the repair: `pvg lint --backlog --epic OJ-mnrv --json` => `[]`; `pvg nd doctor` => all 29 issues valid; `pvg nd dep cycles` => none.
+### 2026-10-27 foundation config bug triage receipt
+FINDING CONFIRMED at integration HEAD a3bc898d11387828ead58e7ad5dff02523d4fead: workspace_store._prepared_artifacts returns payloads['workflow.json'] verbatim as config (src/openjutsu/workspace_store.py:497-513), record_prepared_job persists/returns it (lines 318-343), and _prepared returns it on read/reopen (lines 561-568). app/main.py:81-128 accepts an uploaded custom workflow and src/openjutsu/pipeline.py:31-86 emits it unchanged. A credential-stripped real temp probe used only synthetic nested sentinel key/path/list/map values and confirmed recorded_config_equals_full_workflow=true, sentinel_key_exposed=true, sentinel_path_exposed=true, reopened_config_exposed=true. No actual key/private media/provider/GPU/network/push was used.
+
+ROUTING: Created one P0 bug child OJ-8zaw "Redact prepared-job history config to a safe allowlist" under OJ-mnrv. Exact two-file budget is src/openjutsu/workspace_store.py + tests/test_workspace_store.py. AC requires an exact six-key basename/type-safe config allowlist, real temp-SQLite custom-graph adversarial nested-value regression, fresh-store reopen, and unchanged workflow/prompt/source/reference bytes and hashes with no suppression. OJ-5uq4 now depends on OJ-8zaw. pvg lint additionally required the OJ-wfpy capstone to be directly sibling-blocked by OJ-8zaw, so that dependency was added; OJ-wfpy still also waits on OJ-5uq4. OJ-6xh3 remains accepted as historical evidence.
+
+VERIFICATION: pvg nd doctor => All 30 issues passed validation; pvg nd dep cycles => none; pvg lint --backlog --epic OJ-mnrv --json => []. Queue selection/claim/dispatch intentionally remains with the root pvg loop. No source/test edit, commit, merge, push, credential, provider, GPU, or publication was performed by this triage.
+
 ## ANCHOR REVIEW (backlog_review)
 REVIEW_RESULT: APPROVED
 
