@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T04:26:01Z
-content_hash: "sha256:5777f009fade538bf0a437fd30116274844cface4a09b4a07d01f01d94cbaa89"
+updated_at: 2026-10-27T04:26:02Z
+content_hash: "sha256:bb724b8fcccc04dfe7f6370dce94490c6f41841f344d5ced121ce2680afd2f47"
 ---
 
 ## Description
@@ -95,6 +95,15 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 Foundation children: OJ-6xh3 (store), OJ-5uq4 (connected app), OJ-wfpy (all-dependency E2E capstone). Old submission epic OJ-fglb preserved. Source-code commit/merge permission has been requested separately; no source work or loop rotation performed.
 Owner authorization 2026-10-26: build the connected studio foundation using Paivot. Local source-code commits and merges only. No pushes, publication, credentials, provider/GPU jobs or GPU/API spending. Supersedes earlier pending-commit-approval sentence. Root preflight:126 passed,1 disclosed Starlette/httpx warning. Existing old submission epic and its issues remain unchanged.
 Dispatcher preflight: local-only source commits/merges explicitly authorized; foundation backlog structural repair is assigned to foundation_backlog_repair. Existing accepted architecture and full product scope preserved. Epic branch/worktree epic/OJ-mnrv/.claude/worktrees/epic-OJ-mnrv created from main c2a18a5 without switching main or touching pre-existing evidence. No developer dispatched before structural lint and independent Anchor approval. SQLite/temp filesystem/FFmpeg and root Python3.11.11 venv available. Use temporary Git transport guard for loop setup automatic remote sync; use pvg nd sync --no-push at manual sync boundaries. No source changes, no provider/GPU calls.
+## nd_contract
+status: new
+
+### evidence
+- 2026-10-26 SrPM mechanical repair through pvg issues/pvg nd only; baseline pvg lint --backlog --epic OJ-mnrv --json reported 6 errors and 8 review findings.
+- Repaired managed-heading duplication, exact MANDATORY SKILLS shape, typed cross-story signatures, safe asset resolution/upload-root contracts, observable outcomes, combined titles, and the operator's local-only commit authorization.
+
+### proof
+- [ ] Implementation proof remains pending for this story's substantive acceptance criteria.
 
 ## nd_contract
 status: new
