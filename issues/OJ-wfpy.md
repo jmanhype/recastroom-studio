@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e, rejected]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:24:28Z
-content_hash: "sha256:cc393dfbe72db8d102fcce8497bd749eb426801ae8266b658bf996afbc0b1e8f"
+updated_at: 2026-10-27T10:24:29Z
+content_hash: "sha256:13890f0c740382d0f20c21f7948c1385e95110512cb9c7ef4d7ec9662ddbb4ad"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -66,6 +66,16 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+
+
+## nd_contract
+status: rejected
+
+### evidence
+- PM rejection applied via pvg story reject on 2026-10-27.
+
+### proof
+- [ ] Story requires another developer delivery before it can be accepted.
 
 
 ## nd_contract
