@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, security, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T05:32:07Z
 created_by: speed
-updated_at: 2026-10-27T05:41:50Z
-content_hash: "sha256:971e2b402b1f5ea5d66285ce240d06bb2242b585f3fe57389946c5c4b7afd983"
+updated_at: 2026-10-27T05:42:16Z
+content_hash: "sha256:d619126de61ed2f99b6d87ebeb1f8bf29c4ff6b8fc72e9be9aaa4b8f371f9129"
 blocks: [OJ-5uq4, OJ-wfpy]
 assignee: dev-OJ-8zaw
 follows: [OJ-6xh3]
@@ -190,3 +190,29 @@ status: delivered
 - Follows: [[OJ-6xh3]]
 
 ## Comments
+
+### 2026-10-27T05:42:16Z speed
+### AC Verification
+| AC # | Requirement | Status |
+|------|-------------|--------|
+| 1 | Exact six-key validated config on write | PASS |
+| 2 | Real custom graph sentinels absent from SQLite and record | PASS |
+| 3 | Safe reopen and rejection of historical full graph | PASS |
+| 4 | All artifact bytes and provenance SHA256 unchanged | PASS |
+| 5 | 52 focused and 178 full tests pass; compileall/verify/gates pass | PASS |
+| 6 | Exactly two assigned files changed | PASS |
+
+## nd_contract
+status: delivered
+
+### evidence
+- Commit cdd6adc0aa1cbbe364764f29ef06c5cf59f4fe56; full Implementation Evidence and exact commands in notes above.
+
+### proof
+- [x] AC1: exact six-key validated config.
+- [x] AC2: SQLite custom workflow sentinels excluded.
+- [x] AC3: safe reopen, historical graph rejected.
+- [x] AC4: artifact bytes and hashes unchanged.
+- [x] AC5: 52 focused, 178 full tests passed, warnings disclosed.
+- [x] AC6: exactly two assigned source files.
+
