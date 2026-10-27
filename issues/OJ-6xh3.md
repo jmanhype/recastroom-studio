@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T05:12:07Z
-content_hash: "sha256:1655f6e0dbf3746e4362bc3e078e195f6db8fb4c7a26e07be7bbb8c2ddbd6c6d"
+updated_at: 2026-10-27T05:12:34Z
+content_hash: "sha256:b860e25a003b4a71ea3b6db8835435696713b37c396e3e54591001583c95855b"
 blocks: [OJ-5uq4, OJ-wfpy]
 assignee: dev-OJ-6xh3
 ---
@@ -71,7 +71,21 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## nd_contract
+status: delivered
 
+### evidence
+- Commit SHA: c38e41a191269c7e015fbc975e7b82df105fabfb
+- Commands run: focused pytest => 4 passed; full pytest => 130 passed, 1 supplied warning; compileall => PASS; pvg verify => PASS, 0 issues; touched gates => PASS, 1 disclosed file_loc warning; scoped app/src/scripts/tools gates => PASS, 14 warnings (13 baseline + new file_loc).
+- Summary: real temp SQLite persistence/reopen, safe upload/import boundaries, protected staging/resolution, append-only versions, pinned prepared history, legacy history, transaction rollback, and macOS /tmp normalization are implemented and tested.
+
+### proof
+- [x] AC #1: SQLite reopen and transaction failure — PASS
+- [x] AC #2: safe registration/staging and duplicate ownership — PASS
+- [x] AC #3: append-only and reusable character versions — PASS
+- [x] AC #4: real prepared-job fingerprints/config and legacy readability — PASS
+- [x] AC #5: private-path resolution and public projection integrity — PASS
+- [x] AC #6: full baseline suite and scope preservation — PASS
 
 ## nd_contract
 status: delivered
