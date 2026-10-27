@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e, rejected]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:26:55Z
-content_hash: "sha256:18de9fbf6f15dbf7c5c430848674d1884d9469eb1c92c8d7d0c85e05417b3564"
+updated_at: 2026-10-27T10:29:16Z
+content_hash: "sha256:5a08b639fb76f4bcdbd5f0fda00a4bc54121d4557b1c9164c8697e535b1fdfb6"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -67,7 +67,47 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## Implementation Evidence (REWORK DELIVERED)
 
+### CI/Test Results
+Commands run:
+- git diff --name-only 709ceb5..66ddca0
+- git diff --check
+- test -f docs/evidence/studio-foundation/browser-cycle-1.log && test -f docs/evidence/studio-foundation/browser-cycle-2.log
+- shasum -a 256 docs/evidence/studio-foundation/browser-cycle-1.log docs/evidence/studio-foundation/browser-cycle-2.log
+- pvg verify docs/evidence/studio-foundation/README.md --format=text
+
+Summary: documentation-only correction PASS. The sole changed path is docs/evidence/studio-foundation/README.md. Commit 66ddca0 changes exactly two README table rows from nonexistent browser-server-cycle-*.log names to the actual committed browser-cycle-*.log paths. Both files exist and their SHA-256 values remain 6e510dd70c1f95613d783afbe581ae87f522f5af51b4ba96db1ff1614b4cc8a0 and 231c5f5791c0e77dded9617976bd926dea6c3a19674a13d0f17582e035dc8968. git diff --check PASS; README pvg verify PASS (0 scannable source files by design). No code, test, artifact, receipt, production, or other file changed, so behavioral reruns were not run per the PM's explicit documentation-only rework instruction.
+
+Commit SHA: 66ddca0
+
+### AC Verification
+| AC # | Requirement | Code Location | Test Location | Status |
+|---|---|---|---|---|
+| 1 | Prior real-process foundation proof remains unchanged | Retained commits through 709ceb5 | Prior evidence in this story | PASS |
+| 2 | Prior saved-reference/dry-run/browser journey remains unchanged | Retained commits through 709ceb5 | Prior evidence in this story | PASS |
+| 3 | Prior restart persistence proof remains unchanged | Retained commits through 709ceb5 | Prior evidence in this story | PASS |
+| 4 | Prior nonmutation/error-path proof remains unchanged | Retained commits through 709ceb5 | Prior evidence in this story | PASS |
+| 5 | Human-readable evidence index now names actual public-safe artifacts | docs/evidence/studio-foundation/README.md:66-67 | Path/hash verification above; a225746 artifacts unchanged | PASS |
+| 6 | Documentation-only correction is commit-bound, scoped, and preserves prior gate results | Commit 66ddca0; prior gate evidence | git diff/path/hash outputs above | PASS |
+
+LEARNINGS:
+- A hand-written evidence index must be checked against the actual file inventory, not only the generated receipts whose embedded metadata is correct.
+- The PM correctly scoped this as documentation-only: renaming the index rows to existing artifacts preserves all underlying evidence and avoids unnecessary behavioral reruns.
+
+OBSERVATIONS:
+- The two log artifacts and all receipts/screenshots were not renamed or modified.
+- No push, acceptance, story merge, provider/GPU spend, or external action occurred.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Prior substantive delivery: 709ceb5. Documentation-only rework: 66ddca0.
+- Correct README rows and artifact hashes verified above; worktree is clean.
+
+### proof
+- [x] AC #1 through AC #6 pass with the corrected evidence index; AC #5/AC #6 documentation defect from PM rejection is resolved without changing behavior.
 
 ## nd_contract
 status: rejected
