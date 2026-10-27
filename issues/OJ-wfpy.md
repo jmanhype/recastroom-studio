@@ -4,7 +4,7 @@ title: "E2e: return to a saved project with reusable character references in Stu
 status: closed
 priority: 1
 type: task
-labels: [studio, foundation, local, no-spend, capstone, e2e, delivered, accepted]
+labels: [studio, foundation, local, no-spend, capstone, e2e, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
