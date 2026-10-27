@@ -4,11 +4,11 @@ title: "Persist the connected workspace record store"
 status: in_progress
 priority: 1
 type: task
-labels: [studio, foundation, local, no-spend]
+labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T05:12:06Z
+updated_at: 2026-10-27T05:12:07Z
 content_hash: "sha256:781e4f1b1b8472220d5a0f0f67a8dbcd0bff882f7ad0fee27bd9ee66a4bf8c6c"
 blocks: [OJ-5uq4, OJ-wfpy]
 assignee: dev-OJ-6xh3
