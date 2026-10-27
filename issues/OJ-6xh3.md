@@ -9,11 +9,11 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T05:25:57Z
-content_hash: "sha256:370dbe2c3e3f562e615700a9a1acd54d67c8d36b78d5890cd59852293f773956"
+content_hash: "sha256:fefa7e3e8ff0d52d0a2b7f8d122a768d210c437066285138d56bdb20cc1f054c"
 assignee: dev-OJ-6xh3
 closed_at: 2026-10-27T05:22:51Z
 close_reason: "Accepted: independent commit/path/API/security review and targeted transaction probe verify all six ACs; disclosed file_loc warning remains an explicit observation, not a blanket waiver."
-led_to: [OJ-8zaw, OJ-5uq4]
+led_to: [OJ-8zaw, OJ-5uq4, OJ-wfpy]
 ---
 ## Description
 Add the authoritative local workspace store and safe reference import required by the connected M0 path. This is an infrastructure task feeding the user-visible path in the next child.
@@ -272,7 +272,7 @@ status: new
 
 ## Links
 - Parent: [[OJ-mnrv]]
-- Led to: [[OJ-8zaw]], [[OJ-5uq4]]
+- Led to: [[OJ-8zaw]], [[OJ-5uq4]], [[OJ-wfpy]]
 
 ## Comments
 

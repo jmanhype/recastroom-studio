@@ -9,12 +9,12 @@ parent: OJ-mnrv
 created_at: 2026-10-27T05:32:07Z
 created_by: speed
 updated_at: 2026-10-27T05:47:23Z
-content_hash: "sha256:0848230d3197f0d59806d1104b2c6cfa3f0d518845aa17ddd4c4eb47da4d5626"
+content_hash: "sha256:5acd53f07b9d04d9d0773fa2cfb9766b90efd0bc5c53605c8b091d3a77fbb725"
 assignee: dev-OJ-8zaw
 follows: [OJ-6xh3]
 closed_at: 2026-10-27T05:45:32Z
 close_reason: "Accepted: independent review at cdd6adc0aa1cbbe364764f29ef06c5cf59f4fe56 confirms the exact two-file scope, validated six-key write/read projection, real custom-graph SQLite sentinel exclusion, fail-closed historical full-graph reads without migration, preserved custom workflow support, and artifact/hash invariance; disclosed baseline warnings remain accounted for."
-led_to: [OJ-5uq4]
+led_to: [OJ-5uq4, OJ-wfpy]
 ---
 
 ## Description
@@ -202,7 +202,7 @@ status: delivered
 ## Links
 - Parent: [[OJ-mnrv]]
 - Follows: [[OJ-6xh3]]
-- Led to: [[OJ-5uq4]]
+- Led to: [[OJ-5uq4]], [[OJ-wfpy]]
 
 ## Comments
 
