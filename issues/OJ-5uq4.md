@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T09:38:35Z
-content_hash: "sha256:2ba51e8b6e99df5142f441be98ce03621e89330f59926d245133ce9cdc94a80e"
+updated_at: 2026-10-27T09:38:56Z
+content_hash: "sha256:6e44ef51e0630f83cead145427a2938918eda66f7e983607bc566ddb59195014"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
@@ -317,3 +317,16 @@ PM decision read back closed+accepted and receipt paths/hashes verified by PM. C
 
 ### 2026-10-27T09:38:35Z speed
 Coordinator serializer reconciliation only; no new acceptance decision. The independent PM accepted and closed commit94c859474c66068824d4788cb07714ea356353ab; closed+accepted state and detailed PM evidence remain unchanged. Older delivered blocks are historical.\n\n## nd_contract\nstatus: accepted\n\n### evidence\n- Independent PM acceptance of94c859474c66068824d4788cb07714ea356353ab remains recorded; source was merged locally asfdc9130 and fresh integrated tests passed183withone disclosed baseline warning.\n\n### proof\n- [x] Existing independent PM acceptance and local integration evidence preserved; this comment only reconciles authoritative contract ordering.
+
+### 2026-10-27T09:38:56Z speed
+Coordinator correction: the preceding newline-escaped reconciliation comment is superseded. Independent PM acceptance was already present on readback. No new review, closure, or acceptance decision is being made.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Existing independent PM acceptance of commit 94c859474c66068824d4788cb07714ea356353ab and its detailed AC proof remain authoritative.
+- Operational state remains closed with accepted label; coordinator reconciliation does not change scope or verdict.
+
+### proof
+- [x] Preserve the existing PM decision, source history, and prior verification; only correct the malformed coordinator comment formatting.
