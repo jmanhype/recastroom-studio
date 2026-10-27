@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
-updated_at: 2026-10-27T08:59:28Z
-content_hash: "sha256:cdeaeed32449530921f8a5f2b192798606f2698f5d85e584d21cfb9b51d0cbf9"
+updated_at: 2026-10-27T09:19:52Z
+content_hash: "sha256:4ff715ec17d97395942e427f3892f44e4944bb6a346b2b8cf67242cf34a81185"
 blocks: [OJ-wfpy]
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5]
@@ -97,6 +97,73 @@ status: new
 
 
 ## Notes
+## Implementation Evidence (DELIVERED)
+
+### CI/Test Results
+Commands run:
+- Baseline before edits: `env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest -q tests/test_project_frontend.py`
+- Base regression probe with the new Node VM harness against `fdc9130:app/web/projects.js`: before hidden project `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`; after reset hidden project empty while UI project stayed `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`; `/run` request list `[]`.
+- Focused: `env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest -q tests/test_project_frontend.py`
+- Full: `env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m pytest -q`
+- JS syntax: `/opt/homebrew/opt/node@22/bin/node --check app/web/projects.js`
+- Python compile: `env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src /Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/.venv/bin/python -m compileall -q app/web/projects.js tests/test_project_frontend.py`
+- Touched verify: `pvg verify app/web/projects.js tests/test_project_frontend.py --format=text`
+- Touched gates: `pvg gates app/web/projects.js tests/test_project_frontend.py --format text`
+
+Summary:
+- Baseline focused: 2 passed, 1 known Starlette/httpx deprecation warning.
+- Final focused: 4 passed, 1 known Starlette/httpx deprecation warning.
+- Full suite: 185 passed, 1 known Starlette/httpx deprecation warning (baseline expectation was 183 passed).
+- JS syntax PASS; compileall PASS.
+- `pvg verify`: `VERIFY: PASSED (2 files scanned, 0 issues)`.
+- `pvg gates`: `GATES: PASS (1 warn, 0 skipped)`; disclosed pre-existing complexity warning `renderHistory 19>15` at `app/web/projects.js:127`.
+- The real-JS Node VM/Fake DOM/Fake fetch/Fake localStorage harness is frontend unit proof only. Record preservation uses the real FastAPI app, real `WorkspaceStore`, temporary SQLite/workspace, and synthetic media fixtures; neither store nor API is mocked in that case.
+
+Commit SHA: `f45521def3fc9a811759c6fbedee35d2b62cbde2`
+
+Hashes:
+- `app/web/projects.js`: `b68fe9ff202c617c81daeec9864eef5817cb81132be5b4b9e35cb2c2a7a2b3b9`
+- `tests/test_project_frontend.py`: `e61f62b56414c71976af263020d2e43bc10180056408b89b2f8b0202871ae84f`
+
+Diff budget: 2 files, 187 insertions / 2 deletions (189 changed LOC, under 200).
+
+### AC Verification
+| AC # | Requirement | Code Location | Test Location | Status |
+|---|---|---|---|---|
+| 1 | Real JS VM, project A/no character keeps UI project A, state project A, hidden project A, and empty character fields after reset | `app/web/projects.js:303-305` | `tests/test_project_frontend.py:22-119,239-266` | PASS |
+| 2 | Real JS VM with saved character clears transient character/reference selection, restores upload usability, and preserves/synchronizes project A | `app/web/projects.js:303-306` | `tests/test_project_frontend.py:54-76,87-108,239-266` | PASS |
+| 3 | Reset no-character FormData carries `project_id=A` plus uploaded source/primary reference, no character fields, and request log has no `/run` | `app/web/projects.js:303-305` | `tests/test_project_frontend.py:100-107,259-266` | PASS |
+| 4 | Real API/store records, immutable character, protected bytes, history, artifacts, and job status are byte/equivalent-preserved around frontend reset | `app/web/projects.js:303-306` | `tests/test_project_frontend.py:269-315` | PASS |
+| 5 | Upload-only/no-project mode keeps project and character hidden fields empty and invents no history | `app/web/projects.js:303-305` | `tests/test_project_frontend.py:27,242-266` | PASS |
+| 6 | Focused/full tests, syntax, compileall, verify, and touched gates pass; known warning disclosed | `app/web/projects.js`, `tests/test_project_frontend.py` | Commands and summaries above | PASS |
+
+LEARNINGS:
+- The failure is exactly an early-return path: native reset cleared hidden inputs, but selected project state survived only in the visible select and `ProjectsUI`.
+- Executing the real script in Node VM caught the desynchronization that static source assertions missed; retaining before/after snapshots also documents the visible/hidden split.
+- Node `process.argv` for `node -e script arg1 arg2` exposes the source path at `argv[1]` and mode at `argv[2]`; this differs from the more familiar script-file argv layout.
+- Frontend reset itself is non-mutating; exact real API/store snapshots before and after it are sufficient to prove persistence without launching a browser or running a job.
+
+OBSERVATIONS:
+- The known Starlette/httpx deprecation warning remains and is not suppressed.
+- `pvg gates` reports the managed pre-existing `renderHistory` complexity warning but passes. No broad UI refactor was made outside this bug's two-file budget.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Commit `f45521def3fc9a811759c6fbedee35d2b62cbde2` on `story/OJ-0ij6`.
+- Focused 4 passed / 1 known warning; full 185 passed / 1 known warning; JS syntax and compileall PASS.
+- `pvg verify` PASS; `pvg gates` PASS with one disclosed managed complexity warning.
+
+### proof
+- [x] AC #1: Real-JS no-character reset synchronizes project A across UI, state, and hidden field.
+- [x] AC #2: Real-JS saved-character reset clears transient character/reference state while preserving project A.
+- [x] AC #3: Reset FormData projects `project_id=A`, accepts uploaded source/reference, omits character fields, and logs no `/run`.
+- [x] AC #4: Real API/store project, immutable character, protected bytes, history, artifacts, and job status are unchanged.
+- [x] AC #5: No-project mode remains upload-only with empty hidden IDs and no invented history.
+- [x] AC #6: Required focused/full/syntax/compile/verify/gate checks passed with the known warning disclosed.
+
+
 ## nd_contract\nstatus: in_progress\n\n### evidence\n- 2026-10-27: resumed claimed story in story/OJ-0ij6 at base fdc9130; reading exact source/tests before edits.\n\n### proof\n- [ ] AC #1: pending.\n- [ ] AC #2: pending.\n- [ ] AC #3: pending.\n- [ ] AC #4: pending.\n- [ ] AC #5: pending.\n- [ ] AC #6: pending.
 
 ## History
