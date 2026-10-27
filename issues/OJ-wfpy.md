@@ -9,9 +9,9 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
 updated_at: 2026-10-27T04:42:27Z
-content_hash: "sha256:f4782672ada06e42375b38cfca7c963424003171f214a90a13be3844fa89cd35"
-blocked_by: [OJ-5uq4, OJ-8zaw]
-was_blocked_by: [OJ-6xh3]
+content_hash: "sha256:5e7bbaa8a7b0e4bb6611114119634660311a9c785175063f64572d58e1598c1b"
+blocked_by: [OJ-5uq4]
+was_blocked_by: [OJ-6xh3, OJ-8zaw]
 ---
 ## Description
 Exercise the completed foundation through the user's actual local browser and HTTP data flow. This capstone is E2E-only, blocked by every other child. It does not implement a missing store or API.
@@ -108,10 +108,11 @@ status: new
 - 2026-10-27T03:45:29Z dep_added: blocked_by OJ-5uq4
 - 2026-10-27T05:22:51Z dep_removed: was_blocked_by OJ-6xh3
 - 2026-10-27T05:33:55Z dep_added: blocked_by OJ-8zaw
+- 2026-10-27T05:45:32Z dep_removed: was_blocked_by OJ-8zaw
 
 ## Links
 - Parent: [[OJ-mnrv]]
-- Blocked by: [[OJ-5uq4]], [[OJ-8zaw]]
-- Was blocked by: [[OJ-6xh3]]
+- Blocked by: [[OJ-5uq4]]
+- Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]]
 
 ## Comments

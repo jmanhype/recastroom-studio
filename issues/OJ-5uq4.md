@@ -9,10 +9,9 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T04:42:27Z
-content_hash: "sha256:a48852e116839f35d73f7ebef736acbb7e59bd13220075b29b51263435169dc6"
+content_hash: "sha256:d03f34ccb4921a882f44f06146c7c0c7b453221a4a8bb624115b18946abb8384"
 blocks: [OJ-wfpy]
-was_blocked_by: [OJ-6xh3]
-blocked_by: [OJ-8zaw]
+was_blocked_by: [OJ-6xh3, OJ-8zaw]
 ---
 ## Description
 Connect saved projects and reusable character versions to the existing browser prepare/review path using the store delivered by OJ-6xh3. Do not create an unrelated demo UI or new renderer.
@@ -113,11 +112,11 @@ status: new
 - 2026-10-27T03:45:29Z dep_added: blocks OJ-wfpy
 - 2026-10-27T05:22:51Z dep_removed: was_blocked_by OJ-6xh3
 - 2026-10-27T05:33:08Z dep_added: blocked_by OJ-8zaw
+- 2026-10-27T05:45:32Z dep_removed: was_blocked_by OJ-8zaw
 
 ## Links
 - Parent: [[OJ-mnrv]]
 - Blocks: [[OJ-wfpy]]
-- Blocked by: [[OJ-8zaw]]
-- Was blocked by: [[OJ-6xh3]]
+- Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]]
 
 ## Comments

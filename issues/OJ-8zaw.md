@@ -1,18 +1,19 @@
 ---
 id: OJ-8zaw
 title: "Redact prepared-job history config to a safe allowlist"
-status: in_progress
+status: closed
 priority: 0
 type: bug
 labels: [studio, foundation, local, no-spend, security, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T05:32:07Z
 created_by: speed
-updated_at: 2026-10-27T05:42:16Z
-content_hash: "sha256:d619126de61ed2f99b6d87ebeb1f8bf29c4ff6b8fc72e9be9aaa4b8f371f9129"
-blocks: [OJ-5uq4, OJ-wfpy]
+updated_at: 2026-10-27T05:45:32Z
+content_hash: "sha256:1058b63bebd5cf192cbf8971ec9136abb5bb095b2c4693aace4d93464621d15e"
 assignee: dev-OJ-8zaw
 follows: [OJ-6xh3]
+closed_at: 2026-10-27T05:45:32Z
+close_reason: "Accepted: independent review at cdd6adc0aa1cbbe364764f29ef06c5cf59f4fe56 confirms the exact two-file scope, validated six-key write/read projection, real custom-graph SQLite sentinel exclusion, fail-closed historical full-graph reads without migration, preserved custom workflow support, and artifact/hash invariance; disclosed baseline warnings remain accounted for."
 ---
 
 ## Description
@@ -183,10 +184,12 @@ status: delivered
 - 2026-10-27T05:37:47Z auto-follows: linked to predecessor OJ-6xh3
 - 2026-10-27T05:37:47Z claimed by dev-OJ-8zaw
 - 2026-10-27T05:41:50Z status: in_progress -> in_progress
+- 2026-10-27T05:45:32Z status: in_progress -> closed
+- 2026-10-27T05:45:32Z dep_removed: no_longer_blocks OJ-5uq4
+- 2026-10-27T05:45:32Z dep_removed: no_longer_blocks OJ-wfpy
 
 ## Links
 - Parent: [[OJ-mnrv]]
-- Blocks: [[OJ-5uq4]], [[OJ-wfpy]]
 - Follows: [[OJ-6xh3]]
 
 ## Comments
