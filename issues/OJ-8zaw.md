@@ -4,7 +4,7 @@ title: "Redact prepared-job history config to a safe allowlist"
 status: closed
 priority: 0
 type: bug
-labels: [studio, foundation, local, no-spend, security, delivered, accepted]
+labels: [studio, foundation, local, no-spend, security, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T05:32:07Z
 created_by: speed
