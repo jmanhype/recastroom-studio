@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
 updated_at: 2026-10-27T10:29:16Z
-content_hash: "sha256:d11311f659cc1bf59fcd742e989328e1393b06b2afc3d57a691f166f6b6ec4f3"
+content_hash: "sha256:e1c26213e9a42f5b2f712d7ab2b2c0149af96ef980960289a6e2bc7c9fd4e2eb"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -67,6 +67,18 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+
+
+## nd_contract
+status: delivered
+
+### evidence
+- Transitioned via pvg story deliver on 2026-10-27.
+
+### proof
+- [ ] Developer evidence block must remain authoritative above this contract.
+
+
 ## Implementation Evidence (REWORK DELIVERED)
 
 ### CI/Test Results
