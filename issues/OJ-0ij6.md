@@ -9,7 +9,8 @@ parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
 updated_at: 2026-10-27T08:47:01Z
-content_hash: "sha256:21203733c9606fda59d6a57433bf4109cf92f32be5d61862651179dfbed5bdf2"
+content_hash: "sha256:2eb5b030a26eb6662b7956b240a80e0fd8bda52cc9b6ece53121bb82f1999911"
+blocks: [OJ-wfpy]
 ---
 
 ## Description
@@ -97,9 +98,10 @@ status: new
 
 
 ## History
-
+- 2026-10-27T08:50:21Z dep_added: blocks OJ-wfpy
 
 ## Links
 - Parent: [[OJ-mnrv]]
+- Blocks: [[OJ-wfpy]]
 
 ## Comments
