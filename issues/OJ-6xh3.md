@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T05:13:04Z
-content_hash: "sha256:5ee35556603b22fa047b57f49cbb1820bec8fcd33e481f78f43abfe62ad835ae"
+updated_at: 2026-10-27T05:14:10Z
+content_hash: "sha256:49f7127fcffac00d195688a26c69f852fe640fdd6b0a556dca42c3148b436aa1"
 blocks: [OJ-5uq4, OJ-wfpy]
 assignee: dev-OJ-6xh3
 ---
@@ -221,3 +221,22 @@ status: new
 - Blocks: [[OJ-5uq4]], [[OJ-wfpy]]
 
 ## Comments
+
+### 2026-10-27T05:14:10Z speed
+Delivery-contract correction (managed Notes contracts serialize before historical contract blocks):
+
+## nd_contract
+status: delivered
+
+### evidence
+- Commit SHA: c38e41a191269c7e015fbc975e7b82df105fabfb
+- Commands run: focused pytest => 4 passed; full pytest => 130 passed, 1 supplied warning; compileall => PASS; pvg verify => PASS; touched gates => PASS/1 warn; scoped gates => PASS/14 warns.
+- Summary: real SQLite persistence/reopen, safe paths/staging, protected resolution, append-only versions, prepared/legacy history, transaction rollback, and macOS /tmp normalization verified.
+
+### proof
+- [x] AC #1: SQLite reopen and transaction failure — PASS
+- [x] AC #2: safe registration/staging and duplicate ownership — PASS
+- [x] AC #3: append-only and reusable character versions — PASS
+- [x] AC #4: real prepared-job fingerprints/config and legacy readability — PASS
+- [x] AC #5: private-path resolution and public projection integrity — PASS
+- [x] AC #6: full baseline suite and scope preservation — PASS
