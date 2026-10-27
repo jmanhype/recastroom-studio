@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T07:25:46Z
-content_hash: "sha256:873a85969f3b9c54a60b1b7990fedb39698a6334f6c19f4cbdd1216fe8882ca5"
+content_hash: "sha256:2bdab965d6c94133d9ff515e76538ab8f949221b6138358e3219e68e33c7dba8"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
@@ -72,6 +72,18 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-27.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Decision
 ACCEPTED [2026-10-27]: Independent evidence-based review meets OJ-5uq4's six functional ACs.
 
