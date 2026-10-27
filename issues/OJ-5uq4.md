@@ -1,17 +1,19 @@
 ---
 id: OJ-5uq4
 title: "Connect saved projects to the existing studio flow"
-status: open
+status: in_progress
 priority: 1
 type: feature
 labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T04:42:27Z
-content_hash: "sha256:d03f34ccb4921a882f44f06146c7c0c7b453221a4a8bb624115b18946abb8384"
+updated_at: 2026-10-27T05:47:29Z
+content_hash: "sha256:dcb7684e66ca1bce9e6b344bcf4d6f9bcd3408816d7cee8f5aaff20b1f7ad3df"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
+assignee: dev-OJ-5uq4
+follows: [OJ-6xh3, OJ-8zaw]
 ---
 ## Description
 Connect saved projects and reusable character versions to the existing browser prepare/review path using the store delivered by OJ-6xh3. Do not create an unrelated demo UI or new renderer.
@@ -113,10 +115,15 @@ status: new
 - 2026-10-27T05:22:51Z dep_removed: was_blocked_by OJ-6xh3
 - 2026-10-27T05:33:08Z dep_added: blocked_by OJ-8zaw
 - 2026-10-27T05:45:32Z dep_removed: was_blocked_by OJ-8zaw
+- 2026-10-27T05:47:29Z status: open -> in_progress
+- 2026-10-27T05:47:29Z auto-follows: linked to predecessor OJ-6xh3
+- 2026-10-27T05:47:29Z auto-follows: linked to predecessor OJ-8zaw
+- 2026-10-27T05:47:29Z claimed by dev-OJ-5uq4
 
 ## Links
 - Parent: [[OJ-mnrv]]
 - Blocks: [[OJ-wfpy]]
 - Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]]
+- Follows: [[OJ-6xh3]], [[OJ-8zaw]]
 
 ## Comments
