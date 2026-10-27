@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:08:39Z
-content_hash: "sha256:f90444823dfe685a2c0ad1c474c85c2831531eefac74ab951255b6f83eb31b0f"
+updated_at: 2026-10-27T10:09:43Z
+content_hash: "sha256:9f0ad62905c20a74c7e68de999e7b9e5899fded51332f4104254201c6f868a17"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -222,3 +222,21 @@ status: new
 
 ### 2026-10-27T08:34:23Z speed
 Developer explicitly HOLDed pending upstream Anchor P0 fixes, not delivered. Preserved local commits84d52ce and3dcb225, focused actualHTTP/SQLite/uvicorn-restart E2E1pass, compileall/verify/gatesPASS advisoryonly. Partialbrowser stoppedbeforeprepare/run; ownIABclosed,uvicornPID21597stopped/18971closed. Removedcleanworktree, releasedclaim while newbugdependencies are triaged; branch/artifacts remain. Finishactualbrowser/fullgateproof onlyafteracceptedupstreamfixes.
+
+### 2026-10-27T10:09:43Z speed
+## Implementation Evidence
+
+### CI/Test Results
+Commands run: See the authoritative Implementation Evidence block in Notes and docs/evidence/studio-foundation/README.md.
+Summary: focused E2E 1 passed in 2.10s; HTTP replay job b703393027e7 PASS; full suite 187 passed with 1 known StarletteDeprecationWarning in 27.18s; compileall PASS; projects.js and studio.js node --check PASS; pvg verify PASS; pvg gates PASS with 2 advisory warnings; keeper verifier PASS for 11 keepers/48 artifacts. Actual CUA restart journey and cleanup are captured in browser-receipt.json.
+Commit SHA: 709ceb5
+
+## nd_contract
+status: delivered
+
+### evidence
+- Final local story branch commit: 709ceb5.
+- Public-safe evidence paths and SHA-256 hashes are recorded in Notes and docs/evidence/studio-foundation/README.md.
+
+### proof
+- [x] AC #1 through AC #6 verified with real HTTP, SQLite, filesystem, FFmpeg, uvicorn restart, and separate rendered-browser evidence.
