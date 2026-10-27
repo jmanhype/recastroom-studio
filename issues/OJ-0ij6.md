@@ -1,16 +1,18 @@
 ---
 id: OJ-0ij6
 title: "Keep selected project hidden fields synchronized across form reset"
-status: open
+status: in_progress
 priority: 0
 type: bug
 labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
-updated_at: 2026-10-27T08:47:01Z
-content_hash: "sha256:2eb5b030a26eb6662b7956b240a80e0fd8bda52cc9b6ece53121bb82f1999911"
+updated_at: 2026-10-27T08:54:27Z
+content_hash: "sha256:9f142ee2cf891d7928c2c93f0ae69af3f2c7a2ef08bead832d0a7ae9b2a7380f"
 blocks: [OJ-wfpy]
+assignee: dev-OJ-0ij6
+follows: [OJ-r6n5]
 ---
 
 ## Description
@@ -99,9 +101,13 @@ status: new
 
 ## History
 - 2026-10-27T08:50:21Z dep_added: blocks OJ-wfpy
+- 2026-10-27T08:54:27Z status: open -> in_progress
+- 2026-10-27T08:54:27Z auto-follows: linked to predecessor OJ-r6n5
+- 2026-10-27T08:54:27Z claimed by dev-OJ-0ij6
 
 ## Links
 - Parent: [[OJ-mnrv]]
 - Blocks: [[OJ-wfpy]]
+- Follows: [[OJ-r6n5]]
 
 ## Comments
