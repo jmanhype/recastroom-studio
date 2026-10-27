@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
-updated_at: 2026-10-27T09:22:09Z
-content_hash: "sha256:64542159dcbd331797061ac11728da8d2e30f7f157a104a971a71c702c2095c5"
+updated_at: 2026-10-27T09:23:02Z
+content_hash: "sha256:2b23d0b603d4957a0720cf9f54b937a0c242c913eb1f519b53d0a59d9708be7c"
 blocks: [OJ-wfpy]
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5, OJ-m439]
@@ -237,3 +237,22 @@ status: delivered
 - Follows: [[OJ-r6n5]], [[OJ-m439]]
 
 ## Comments
+
+### 2026-10-27T09:23:02Z speed
+## nd_contract
+status: delivered
+
+### evidence
+- Commit SHA: f45521def3fc9a811759c6fbedee35d2b62cbde2
+- Focused pytest 4 passed / 1 known warning; full pytest 185 passed / 1 known warning.
+- Node syntax, Python compileall, pvg verify, and pvg gates PASS; the managed complexity warning is disclosed.
+- Detailed evidence is in the Implementation Evidence note on this story.
+
+### proof
+- [x] AC #1: PASS
+- [x] AC #2: PASS
+- [x] AC #3: PASS
+- [x] AC #4: PASS
+- [x] AC #5: PASS
+- [x] AC #6: PASS
+
