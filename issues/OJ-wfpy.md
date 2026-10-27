@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:36:33Z
-content_hash: "sha256:5cd86f65a1cca0c67d2438bff31772cbd3b010287a57b3b5f079d735435d3f06"
+updated_at: 2026-10-27T10:38:13Z
+content_hash: "sha256:239efb0234b83ef8a277e21490b5ec7758b70db2d865901c902f21ebe9a6e692"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -426,3 +426,18 @@ status: delivered
 
 ### proof
 - [x] PM's AC #5/AC #6 evidence-index path defect is fixed without changing code, tests, artifacts, or prior behavioral proof.
+
+### 2026-10-27T10:38:13Z speed
+## PM Accepted Contract
+
+Final post-transition readback for OJ-wfpy at 66ddca0.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Story is closed with label accepted; epic OJ-mnrv is closed/accepted.
+- Full resumed PM ladder passed after the README-only correction; all non-README proof is identical to 709ceb5.
+
+### proof
+- [x] AC #1 through AC #6 verified and accepted.
