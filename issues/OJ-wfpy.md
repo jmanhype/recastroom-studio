@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T09:33:15Z
-content_hash: "sha256:6029f5aa48e1afb196bbd5c3b46d13df0926862f7e07a72173a8064958250778"
+updated_at: 2026-10-27T10:08:30Z
+content_hash: "sha256:c4c6b118299b0d2c9abb285608c92de0831c6a0216fa4245cc0d82f305bffa74"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 blocked_by: [OJ-r6n5]
@@ -67,6 +67,75 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## Implementation Evidence (DELIVERED)
+
+### CI/Test Results
+Commands run:
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src "$APP/.venv/bin/python" -m pytest -q tests/test_foundation_e2e.py
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src "$APP/.venv/bin/python" tools/foundation_trial.py --temp-root /tmp/oj-wfpy-http-receipt --evidence-root docs/evidence/studio-foundation
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src "$APP/.venv/bin/python" -m pytest -q
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src "$APP/.venv/bin/python" -m compileall -q .
+- /opt/homebrew/opt/node@22/bin/node --check app/web/projects.js
+- /opt/homebrew/opt/node@22/bin/node --check app/web/studio.js
+- pvg verify tools/foundation_trial.py tools/foundation_runtime.py tests/test_foundation_e2e.py docs/evidence/studio-foundation/README.md --include-tests --format=text
+- pvg gates tools/foundation_trial.py tools/foundation_runtime.py tests/test_foundation_e2e.py docs/evidence/studio-foundation/README.md
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH="$APP/src" "$APP/.venv/bin/python" "$APP/tools/verify_keeper_evidence.py" "$APP/docs/evidence/slate/manifest.json"
+
+Summary: focused E2E PASS (1 passed in 2.10s); replay PASS (job b703393027e7); full suite PASS (187 passed, 1 known StarletteDeprecationWarning, 27.18s); compileall PASS; both node --check commands PASS; pvg verify PASS (3 files scanned, 0 issues); pvg gates PASS (2 advisory warnings, 0 skipped); keeper verifier PASS (11 keepers, 48 artifacts). Actual CUA journey completed in a rendered visible=false IAB tab using two owned uvicorn cycles and the same temporary SQLite workspace; final owned-browser-tab count was 0 and the 127.0.0.1:18765 listener count was 0.
+
+Commit SHA: 709ceb5 (story/OJ-wfpy; includes authorized no-conflict epic merge c57dd92, collision proof e964b3b, evidence a225746, and evidence README f4880e2/709ceb5).
+
+Evidence artifacts:
+- docs/evidence/studio-foundation/http-receipt.json — SHA-256 2c408c2cce4b58972bd018efe3f8c19064d4d806af8d0e767e162c3c35c31746
+- docs/evidence/studio-foundation/browser-receipt.json — SHA-256 2b5d171974e7277e24e9b3f43b7bcd2fadc0788fa2653d5ec0f8305cf95c8377
+- docs/evidence/studio-foundation/browser-workspace-receipt.json — SHA-256 567061e7a4bd0f0075a555f1cc6206ef7a6285d7ae83cfaf1b855bf8780f6c0c
+- docs/evidence/studio-foundation/README.md — exact command/hash index and cleanup proof
+
+### AC Verification
+| AC # | Requirement | Code Location | Test Location | Status |
+|---|---|---|---|---|
+| 1 | Actual loopback uvicorn, strict dry-run child env, real SQLite/filesystem/HTTP/FFmpeg/media | tools/foundation_runtime.py:41-101,168-223; tools/foundation_trial.py:62-119 | tests/test_foundation_e2e.py:11-42; http-receipt.json | PASS |
+| 2 | Project, protected saved version, saved-reference prepare, explicit dry-run, safe previews/config/downloads/history | tools/foundation_trial.py:121-291 | tests/test_foundation_e2e.py:17-38; browser-receipt.json journey/screenshots 01-04 | PASS |
+| 3 | Actual stop/restart/reopen persistence without automatic run; legacy/no-project flow remains real | tools/foundation_trial.py:293-374 | tests/test_foundation_e2e.py:24-40; browser-receipt.json restart; screenshots 04-05 | PASS |
+| 4 | Version reselection/reset/project switch preserve old bytes/hashes/history; missing/conflict/duplicate inputs are actionable nonmutations | tools/foundation_trial.py:137-216,375-424 | tests/test_foundation_e2e.py:26-34; browser-workspace-receipt.json; screenshots 05-08 | PASS |
+| 5 | Public-safe browser+HTTP receipts/screenshots, no secrets/user paths/provider submissions/tunnel, loopback and stopped owned processes | tools/foundation_runtime.py:39-59,212-223,265-274; docs/evidence/studio-foundation/README.md | tests/test_foundation_e2e.py:36-42; public-safe scan and cleanup evidence | PASS |
+| 6 | Full suite, compileall, JS checks, pvg verify/gates, keeper verifier, actual warnings/hashes/results | docs/evidence/studio-foundation/README.md:49-78 | command outputs above | PASS |
+
+### pvg verify
+VERIFY: PASSED (3 files scanned, 0 issues)
+
+### Keeper verifier
+PASS: canonical docs/evidence/slate/manifest.json; keeper_count=11; artifact_count=48; manifest_sha256=ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33
+
+LEARNINGS:
+- Keep replayable HTTP proof and agent-operated rendered-browser proof separate; the Python helper can prove process/data persistence, but only the CUA receipt can claim actual browser interactions.
+- A 320x180 one-second synthetic source is useful as an intentional nonrecommended preflight control, while a 640x360 two-second source unlocks the existing explicit Run button without changing production behavior.
+- Pre-restart byte comparison must separately explain workspace.sqlite3: every protected media/config hash stayed unchanged, while the database changed exactly to add the expected post-restart uploaded-reference history.
+- The strict child environment belongs in shared runtime code so both server cycles reuse the same allowlist, loopback binding, FFmpeg pinning, SQLite reader, redaction, and stop path.
+- The upstream accepted collision/reset merges integrated without production conflicts; extending only owned E2E evidence kept the capstone boundary clean.
+
+OBSERVATIONS:
+- The full suite retains the known third-party StarletteDeprecationWarning from fastapi.testclient; all 187 tests ran and passed.
+- pvg gates reports advisory warnings for run_trial complexity 21 and 423 nonblank lines; the four-file owned diff is 778 lines because the reusable runtime helper extraction is 272 lines. No production/API/store/frontend/pipeline/workflow/verifier/fixtures files were edited by this story after the authorized epic merge.
+- The first CUA label-triggered file chooser timed out and reset the CUA kernel; one documented retry using the actual input plus filechooser event succeeded. Two exact-text waits missed longer concatenated UI messages; fresh DOM state captured the actual visible messages. ResourceTiming was not used.
+- An initial direct replay invocation with only PYTHONPATH=src failed to import local tools; the successful replay uses PYTHONPATH=src:.. A nonexistent docs/evidence/studio-fudio shell typo also returned a file error but did not affect artifacts or checks.
+- No creative provider, GPU, Colab, external destination, push, publication, or tunnel was used. Owned browser/server cleanup completed.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Authorized no-conflict epic merge: c57dd92. Tested collision/nonmutation extension: e964b3b. Captured evidence: a225746. Final evidence/docs: 709ceb5.
+- Full gate outputs, artifact hashes, exact paths, cleanup counts, screenshots, browser/HTTP receipts, and job IDs are recorded above and under docs/evidence/studio-foundation/.
+
+### proof
+- [x] AC #1: actual loopback uvicorn/SQLite/filesystem/HTTP/FFmpeg journey with strict dry-run child environment.
+- [x] AC #2: project + protected version + saved-reference prepare + explicit dry-run + safe previews/downloads/history.
+- [x] AC #3: actual stop/restart/reopen persistence and no automatic run; real legacy flow exercised.
+- [x] AC #4: selection/reset/switch nonmutation and actionable 422/404 failures with no misleading job state.
+- [x] AC #5: public-safe actual browser/HTTP receipts and zero secret/provider/tunnel exposure with loopback cleanup.
+- [x] AC #6: all mandatory suites/checks/gates/keeper verifier run with results, warning, hashes, and ownership reported.
+
 ## nd_contract
 status: new
 
