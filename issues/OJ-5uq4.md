@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T07:30:26Z
-content_hash: "sha256:fc11de7466db09bf25ea96e2d3ebb31397343ea5ead17eb5b3a5e0b58fae9f9f"
+updated_at: 2026-10-27T08:16:37Z
+content_hash: "sha256:3b622c14a5974e21d83db83891933afabc2b31fbdba5956082ad7df6454fccdf"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
@@ -73,7 +73,15 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## nd_contract
+status: accepted
 
+### evidence
+- Mechanical serialization repair only: confirmed closed+accepted OJ-5uq4 and preserved the detailed independent PM verdict/history/AC evidence at commit 94c859474c66068824d4788cb07714ea356353ab.
+- This append makes the last Notes nd_contract accepted after older delivered/new blocks; it does not reopen, re-review, reinterpret, or alter source/status/history.
+
+### proof
+- [x] OJ-5uq4 remains closed with the accepted label and the detailed PM acceptance remains authoritative.
 
 ## nd_contract
 status: accepted
