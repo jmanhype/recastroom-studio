@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T03:45:29Z
-content_hash: "sha256:bc662de1b588bdd8cc05948fc99bd42d6c38f194248bfe8134908f5571153c86"
+updated_at: 2026-10-27T04:20:55Z
+content_hash: "sha256:57e6f067b8c0721f0a4b141567212f5d4d4f94780e6e6bf0bc42d2d2be46b41b"
 ---
 
 ## Description
@@ -43,6 +43,7 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 
 ## Notes
 Foundation children: OJ-6xh3 (store), OJ-5uq4 (connected app), OJ-wfpy (all-dependency E2E capstone). Old submission epic OJ-fglb preserved. Source-code commit/merge permission has been requested separately; no source work or loop rotation performed.
+Owner authorization 2026-10-26: build the connected studio foundation using Paivot. Local source-code commits and merges only. No pushes, publication, credentials, provider/GPU jobs or GPU/API spending. Supersedes earlier pending-commit-approval sentence. Root preflight:126 passed,1 disclosed Starlette/httpx warning. Existing old submission epic and its issues remain unchanged.
 
 ## nd_contract
 status: new
