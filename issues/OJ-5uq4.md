@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T07:11:28Z
-content_hash: "sha256:e3ba0e6bdc7e48bc0497b76ea24eafdf69b2897f0e1712b4165b6f4971e9ec05"
+updated_at: 2026-10-27T07:12:52Z
+content_hash: "sha256:43d1e61387819e1ad3e6c8e5f693fa534208274a2dda3d43cf571acfc501348a"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
@@ -197,6 +197,18 @@ status: new
 
 ### proof
 - [ ] The story's explicit acceptance criteria are independently verified before acceptance.
+
+## nd_contract
+status: delivered
+
+### evidence
+- Final native recovery contract for OJ-5uq4; earlier stale status-new blocks predate this delivery and remain append-only history.
+- Commit 94c859474c66068824d4788cb07714ea356353ab on story/OJ-5uq4; worktree clean.
+- Full pytest 183 passed with one disclosed baseline warning; focused 5 passed; compileall/node checks, pvg verify, and pvg gates passed.
+- Rendered CUA receipt 7c9399fe02ca51355f3070ba2ea8957db0c62d2b4927f41a8eaaebc4b0867355 covers saved-reference prepare, reload/reset, project isolation, and delayed-response race safety.
+
+### proof
+- [x] AC #1 through AC #6 are verified in the detailed Implementation Evidence and AC Verification table above.
 
 ## History
 - 2026-10-27T03:45:28Z dep_added: blocked_by OJ-6xh3
