@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:29:16Z
-content_hash: "sha256:e1c26213e9a42f5b2f712d7ab2b2c0149af96ef980960289a6e2bc7c9fd4e2eb"
+updated_at: 2026-10-27T10:29:34Z
+content_hash: "sha256:694feb3a4e7db3fb577d658a53901ee65df5f94f0ceb062f4c9c3016af85611c"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -345,3 +345,21 @@ status: rejected
 - [x] AC #3: two-cycle restart persistence/no-autorun evidence reviewed.
 - [x] AC #4: nonmutation and actionable 422/404 evidence reviewed.
 - [ ] AC #6 (partial): reported command results and hashes are complete, but final human-readable evidence index accuracy fails the deliverable bar.
+
+### 2026-10-27T10:29:34Z speed
+## Implementation Evidence
+
+### CI/Test Results
+Commands run: git diff --name-only 709ceb5..66ddca0; git diff --check; test -f both browser-cycle logs; shasum -a 256 both browser-cycle logs; pvg verify docs/evidence/studio-foundation/README.md --format=text.
+Summary: documentation-only correction PASS. Sole changed file is docs/evidence/studio-foundation/README.md; exact two-row rename now points to existing browser-cycle-1.log/browser-cycle-2.log with hashes 6e510dd70c1f95613d783afbe581ae87f522f5af51b4ba96db1ff1614b4cc8a0 and 231c5f5791c0e77dded9617976bd926dea6c3a19674a13d0f17582e035dc8968. No behavioral rerun was required or run after the PM's explicit documentation-only waiver.
+Commit SHA: 66ddca0
+
+## nd_contract
+status: delivered
+
+### evidence
+- Substantive prior delivery remains bound at 709ceb5; scoped README correction is 66ddca0.
+- Both indexed log paths exist and hashes match. Worktree is clean.
+
+### proof
+- [x] PM's AC #5/AC #6 evidence-index path defect is fixed without changing code, tests, artifacts, or prior behavioral proof.
