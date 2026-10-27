@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T07:26:49Z
-content_hash: "sha256:5b773881976c967ffeb9c3bed26621c3b6d78f31f796406e367b51a0ee03d0a9"
+updated_at: 2026-10-27T07:27:18Z
+content_hash: "sha256:b2b8932ec836f1bd431ccaa2c36aca8bd74b4b77be02b7e1763f23c3f0b19835"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
@@ -298,3 +298,6 @@ status: accepted
 - [x] AC #4 upload-only and existing route compatibility with no provider/verification claim.
 - [x] AC #5 actionable invalid/conflict/missing/integrity errors and browser-visible race safety.
 - [x] AC #6 accessibility/reduced-motion, existing suites, JS syntax, and synthetic-only inputs.
+
+### 2026-10-27T07:27:18Z speed
+nd_contract status=accepted at 94c859474c66068824d4788cb07714ea356353ab; AC1-AC6 independently verified. This native comment supersedes stale delivered blocks in managed Notes ordering.
