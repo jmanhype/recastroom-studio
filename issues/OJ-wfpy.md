@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:35:39Z
-content_hash: "sha256:27db461156f3b0b8085d2d03e53397b5a5bb9fb1ebb1a7229dd00d56cf4c420c"
+updated_at: 2026-10-27T10:36:33Z
+content_hash: "sha256:5cd86f65a1cca0c67d2438bff31772cbd3b010287a57b3b5f079d735435d3f06"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -69,7 +69,18 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## PM Final Acceptance Readback
+Confirmed after native transition: OJ-wfpy is closed with label accepted at 66ddca0. All epic children are closed.
 
+## nd_contract
+status: accepted
+
+### evidence
+- pvg story accept transition landed on 2026-10-27T10:35:39Z.
+- Final deterministic review passed all capstone ACs; corrected README paths/hashes and unchanged non-README proof were independently verified.
+
+### proof
+- [x] AC #1 through AC #6 accepted at 66ddca0.
 
 ## nd_contract
 status: accepted
