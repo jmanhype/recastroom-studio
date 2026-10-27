@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T04:33:59Z
-content_hash: "sha256:c8c756b3a950d91572a941299b03cb5279ccc971163546ef9d3fabca7036d219"
+updated_at: 2026-10-27T04:34:39Z
+content_hash: "sha256:e20b6ad7aad1f4621678c80f73cc609bea9be4236b1777e4cd366a9e0548a8ad"
 blocked_by: [OJ-6xh3, OJ-5uq4]
 ---
 ## Description
@@ -64,6 +64,16 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## nd_contract
+status: new
+
+### evidence
+- 2026-10-26 final SrPM mechanical repair: normalized the four owned bodies through pvg issues/nd, including supported pvg nd edit lifecycle; pvg lint --backlog --epic OJ-mnrv --json => [].
+- pvg nd doctor => All 29 issues passed validation; pvg nd dep cycles => none; pvg nd sync --no-push => up to date (bcae4548).
+
+### proof
+- [ ] Substantive implementation and story-specific acceptance evidence remain pending for developers.
+
 ## nd_contract
 status: new
 
