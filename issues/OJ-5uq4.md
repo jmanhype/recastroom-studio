@@ -9,7 +9,8 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T03:45:28Z
-content_hash: "sha256:2108b88ae71aeed61650b9ec2a522465e3ebc8e757057e9be3a01583bad131f2"
+content_hash: "sha256:14e303a785248d200b85326daa0702e6c5806fc1eda3e4eb00760c715b3479cd"
+blocked_by: [OJ-6xh3]
 ---
 
 ## Description
@@ -66,9 +67,10 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 
 
 ## History
-
+- 2026-10-27T03:45:28Z dep_added: blocked_by OJ-6xh3
 
 ## Links
 - Parent: [[OJ-mnrv]]
+- Blocked by: [[OJ-6xh3]]
 
 ## Comments

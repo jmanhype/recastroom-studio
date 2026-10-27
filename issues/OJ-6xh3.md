@@ -9,7 +9,8 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T03:45:28Z
-content_hash: "sha256:1fc456abce2c4a94891d7d90cd8e959d87144e33686e1093cdee902960b7b911"
+content_hash: "sha256:6a14b133025f6cfedf9e7a67c3b3e8463f0490fbed0b2d772fe6196367ee6c87"
+blocks: [OJ-5uq4]
 ---
 
 ## Description
@@ -69,9 +70,10 @@ status: new
 
 
 ## History
-
+- 2026-10-27T03:45:28Z dep_added: blocks OJ-5uq4
 
 ## Links
 - Parent: [[OJ-mnrv]]
+- Blocks: [[OJ-5uq4]]
 
 ## Comments
