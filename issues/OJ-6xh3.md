@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T05:22:51Z
-content_hash: "sha256:9e9afde3888876fa90d1cdc92cfd94ded1c95ccb4f14dcc8660e31482b9aba48"
+content_hash: "sha256:c3182ad9cfdb8035a5e4d97662264cad10459b36bfbed55f5c30902101598a2c"
 assignee: dev-OJ-6xh3
 closed_at: 2026-10-27T05:22:51Z
 close_reason: "Accepted: independent commit/path/API/security review and targeted transaction probe verify all six ACs; disclosed file_loc warning remains an explicit observation, not a blanket waiver."
@@ -79,6 +79,18 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 [x] AC #4: real prepared-job fingerprints/config and legacy readability — PASS
 [x] AC #5: private-path resolution and public projection integrity — PASS
 [x] AC #6: full baseline suite and scope preservation — PASS
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-27.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Independent Review
 REVIEWED [2026-10-27]: Accepted. Independent inspection was against story commit c38e41a191269c7e015fbc975e7b82df105fabfb from base c2a18a5f4b8c66e4c1309607d342db13c0bef4c6; no branch checkout or source/test edit was made.
 
