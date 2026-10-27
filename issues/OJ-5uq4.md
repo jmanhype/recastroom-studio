@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T06:37:22Z
-content_hash: "sha256:a281338eb5e2e4eb1d3c5631de8e26050cf3b26e83cc84c3ae84395df336e719"
+updated_at: 2026-10-27T07:10:33Z
+content_hash: "sha256:c596604683b9bfca906639527a34b808b16d1871c9690c9b557d42894bf7d79d"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
@@ -71,6 +71,66 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## Implementation Evidence (DELIVERED)
+
+### CI/Test Results
+Commands run:
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src "$APP/.venv/bin/python" -m pytest -q tests/test_projects_api.py tests/test_project_frontend.py
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src "$APP/.venv/bin/python" -m pytest -q
+- env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src "$APP/.venv/bin/python" -m compileall -q app src tests/test_projects_api.py tests/test_project_frontend.py
+- /opt/homebrew/opt/node@22/bin/node --check app/web/projects.js
+- /opt/homebrew/opt/node@22/bin/node --check app/web/studio.js
+- pvg verify app/project_api.py app/main.py app/web/projects.js app/web/studio.js app/web/index.html app/web/styles.css tests/test_projects_api.py tests/test_project_frontend.py --format=text
+- pvg gates --changed de71be6 --format text
+
+Summary: focused tests PASS (5 passed, 1 disclosed pre-existing Starlette/httpx warning); full suite PASS (183 passed, same 1 warning); compileall PASS; both JS syntax checks PASS; pvg verify PASS (6 files scanned, 0 issues); pvg gates PASS (0 block, 0 skipped, 5 nonblocking warnings). Gate warnings are _prepare_reference_selection CCN 15, prepare CCN 22, projects.js renderHistory CCN 19, studio.js anonymous CCN 26, and app/main.py 474 non-blank LOC. The original prepare CCN 36>30 blocker was fixed by extracting _prepare_reference_selection before the final full-suite run.
+
+Coverage: not measured; the required virtualenv has no coverage module and external installs are prohibited. No coverage percentage is claimed.
+
+### Browser / CUA Evidence
+- Sanctioned path: rendered ChatGPT IAB through mcp__cua_repl.js and its returned Playwright/DOM APIs. IAB visible=true is unsupported in a subagent; CUA rendering worked with the tab background-visible.
+- Final-commit loopback dry-run journey used only synthetic_source.mp4 and synthetic_reference.png: project 753f1971a18541c6a26be0c2baa78f30, character char_aac1c2f392700c1bf7f3611b v1, job 625b10e80e50, seed 49, reference synthetic_reference.png. Project/character creation, protected preview, saved-reference prepare without reference re-upload, history links, and no automatic run were visibly verified. Browser console errors/warnings: none.
+- Reload/reset journey: reload restored Browser Recovery Project and its selected character/history; reset cleared transient form selection while preserving saved project, library, and job b063fbc63e2a.
+- Real race evidence: a 1.5-second delayed history response for project 62e8eb75061a49f5973572229e38fecf (job b063fbc63e2a) was immediately superseded by selecting project 6c23841ce91343e2b3a3c253a7f573e4. At about 100 ms and again after the delayed response completed, Project B visibly remained "No prepared configuration links yet." This is rendered browser evidence, not a source-string assertion.
+- Browser receipt SHA-256: 7c9399fe02ca51355f3070ba2ea8957db0c62d2b4927f41a8eaaebc4b0867355. Final journey screenshot SHA-256: ac52a27c7a9bb2936230ce7f84e3a198144fa30afe3d5d1d9c10087f64ad16b3. Race screenshot SHA-256: 63a4d0a2797aac1a96c4558f9e2e9955f73731eadb382bca0e1866e991d1a8c6.
+- All three owned IAB tabs and loopback servers were closed/stopped; no listeners remained on ports 8896-8898.
+
+### Commit
+Commit SHA: 94c859474c66068824d4788cb07714ea356353ab
+Branch: story/OJ-5uq4
+Base: de71be6
+Diff: exactly the 8 owned files; 1124 insertions, 20 deletions. Worktree clean after commit.
+
+### Wiring
+- app/main.py:47-67 constructs WorkspaceStore(SETTINGS.data_dir), keeps it synchronized for project routes, and app/main.py:542 mounts create_project_router.
+- app/main.py:138-171 validates saved/upload reference selection; app/main.py:174-266 prepares and records project history without changing run routes.
+- app/project_api.py:89-195 exposes the project, character, asset, and safe history endpoints using only public WorkspaceStore methods.
+- app/web/projects.js:156-222 guards history responses by request epoch and restores saved selections; app/web/studio.js:57-122 and 264-303 integrate saved-reference readiness, reset, and prepare events.
+
+### AC Verification
+| AC # | Requirement | Status |
+|---|---|---|
+| 1 | Real API root wiring, safe multipart staging, saved-version prepare without re-upload, actual C1 filenames/seed, isolated history, no path leakage | PASS — tests/test_projects_api.py:52-124 and app/project_api.py:89-195 |
+| 2 | Project selector, character library/version, safe previews, history links, reload restoration, stale-response race guard, no autorun | PASS — app/web/index.html:28-69, app/web/projects.js:65-222, browser journey above |
+| 3 | Cross-project pinned-version reuse without inherited jobs; reset preserves versions/config/files/server jobs | PASS — tests/test_projects_api.py:83-116, app/web/projects.js:290-307, browser reset journey |
+| 4 | Legacy upload-only and existing prepare/run/status/artifact/workflow/prompt behavior unchanged; no automatic/provider/consistency claims | PASS — tests/test_projects_api.py:210-244 plus full 183-test suite; browser run remained uninvoked |
+| 5 | Actionable invalid/conflict/missing/integrity errors; only recorded asset IDs resolve; real browser-visible race safety | PASS — tests/test_projects_api.py:127-207, app/project_api.py:35-82, app/main.py:138-171, rendered race evidence above |
+| 6 | Focus/keyboard/reduced-motion usability, existing suites green, JS syntax, synthetic source inputs only | PASS — app/web/styles.css:3,7,40-58 and tests/test_project_frontend.py:40-130; full/JS gates above |
+
+LEARNINGS:
+- The store-first boundary held: every HTTP action uses public WorkspaceStore methods, and responses serialize records rather than ResolvedAsset.path.
+- Restricting store synchronization middleware to /api/projects, /api/characters, and /api/assets preserved legacy health/catalog/prepare behavior while still supporting isolated TestClient roots.
+- A real stale-response test required a deliberately delayed first project history response; requestEpoch rejection was then observed in rendered browser state, not inferred from source text.
+- pvg gates caught a genuine prepare-complexity blocker that focused/full behavior tests missed. Extracting validation was behavior-preserving and moved the gate from FAIL to PASS.
+- CUA subagent IAB visibility is constrained, but rendered background tabs, accessibility snapshots, screenshots, and console logs still provide usable browser evidence.
+
+OBSERVATIONS:
+- CUA ResourceTiming capture was not available in this rendered tab: the first supported evaluate failed because performance was undefined, and the second returned no entries. No third attempt was made; race proof relies on visible state at both checkpoints plus the screenshot.
+- The app server logged automatic favicon.ico 404 requests during browser journeys. Browser console error/warning output was empty and no story-owned route changed; no favicon fix was attempted outside ownership.
+- The temporary race-only proxy printed stack traces when relaying those favicon 404s. It was test harness noise, not an application request in the race path, and the proxy was stopped during cleanup.
+- pvg notes search reported vault "Claude" unavailable, matching dispatch guidance; no vault repair was attempted.
+- pvg verify reported six scannable files although eight explicit paths were supplied because HTML/CSS/test-only paths are outside its current scanners.
+
 ## nd_contract
 status: new
 
