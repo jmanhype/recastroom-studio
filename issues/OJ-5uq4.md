@@ -1,18 +1,17 @@
 ---
 id: OJ-5uq4
 title: "Connect saved projects to the existing studio flow"
-status: in_progress
+status: open
 priority: 1
 type: feature
 labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T06:28:22Z
-content_hash: "sha256:dc33ced86249e39df08f2f1ddcb9c8ff612cefac691accafdb3a92723f0de317"
+updated_at: 2026-10-27T06:36:01Z
+content_hash: "sha256:c717f9663559df778e79ac9816e371ca20c93c89784bc04a7315f7cd53453cc9"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
-assignee: dev-OJ-5uq4
 follows: [OJ-6xh3, OJ-8zaw]
 ---
 ## Description
@@ -119,6 +118,8 @@ status: new
 - 2026-10-27T05:47:29Z auto-follows: linked to predecessor OJ-6xh3
 - 2026-10-27T05:47:29Z auto-follows: linked to predecessor OJ-8zaw
 - 2026-10-27T05:47:29Z claimed by dev-OJ-5uq4
+- 2026-10-27T06:36:01Z status: in_progress -> open
+- 2026-10-27T06:36:01Z released by speed
 
 ## Links
 - Parent: [[OJ-mnrv]]
