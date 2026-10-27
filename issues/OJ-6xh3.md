@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T05:23:11Z
-content_hash: "sha256:1f6aabe6b07821035b33583d37832fba37c2e766197211efaa36db260dc57e63"
+updated_at: 2026-10-27T05:25:57Z
+content_hash: "sha256:457eb43ed2dfae9a86a4d239c459e046f647fdf17424bafb4702287777f9c95b"
 assignee: dev-OJ-6xh3
 closed_at: 2026-10-27T05:22:51Z
 close_reason: "Accepted: independent commit/path/API/security review and targeted transaction probe verify all six ACs; disclosed file_loc warning remains an explicit observation, not a blanket waiver."
@@ -312,3 +312,6 @@ status: accepted
 - [x] AC #4: real prepared artifacts/fingerprints/seed/config and legacy empty-project history verified.
 - [x] AC #5: server-only resolved path, protected-byte recheck, malformed/unsafe path failure, and no-path AssetRecord projection verified.
 - [x] AC #6: exact two-file scope, no keeper/graph change, and exact-commit full-suite/gate evidence verified.
+
+### 2026-10-27T05:25:57Z speed
+Local-only merge exception: independently verified closed+accepted at c38e41a. pvg story merge failed first at blocked transport, then at missing remote epic/OJ-mnrv ref; it requires a published epic and is incompatible with the owner no-push restriction. With local epic clean and both branches verified descended from c2a18a5, coordinator merged story/OJ-6xh3 locally using git merge --no-ff. No source conflict or push. Local acceptance remains PM-owned.
