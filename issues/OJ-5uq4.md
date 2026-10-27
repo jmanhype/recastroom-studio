@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T07:25:46Z
-content_hash: "sha256:2bdab965d6c94133d9ff515e76538ab8f949221b6138358e3219e68e33c7dba8"
+updated_at: 2026-10-27T07:26:49Z
+content_hash: "sha256:5b773881976c967ffeb9c3bed26621c3b6d78f31f796406e367b51a0ee03d0a9"
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
 assignee: dev-OJ-5uq4
@@ -283,3 +283,18 @@ Worker /root/dev_oj_5uq4 ended with empty final before any source commit or deli
 
 ### 2026-10-27T06:37:22Z speed
 Recovery artifact2e33c57 preserved exact8paths; independent fresh recovery verification focused5pass/full183pass,1baselinewarning; owned uvicorn8895 stopped. Removed failed worktree via pvg, released then pvg loop next selected story, atomically reclaimed and recreated canonical worktree. Fresh GLM high-effort worker now finishing browser verification/rework from committed artifacts; failed worker not resumed. No deliver/accept/merge yet.
+
+### 2026-10-27T07:26:49Z speed
+## nd_contract
+status: accepted
+
+### evidence
+- Authoritative PM closeout for OJ-5uq4 at commit 94c859474c66068824d4788cb07714ea356353ab. The detailed PM Decision, LEARNINGS, and OBSERVATIONS in Notes plus this native comment supersede the older delivered contracts caused by managed Notes ordering. Story status is closed with label accepted.
+
+### proof
+- [x] AC #1 API/store wiring, safe staging/projections, saved-reference prepare, actual C1 inputs, isolated history, and legacy destination.
+- [x] AC #2 project/character/history UI, safe previews, reload restoration, epoch race protection, and no autorun.
+- [x] AC #3 cross-project pinned-version reuse and reset preservation.
+- [x] AC #4 upload-only and existing route compatibility with no provider/verification claim.
+- [x] AC #5 actionable invalid/conflict/missing/integrity errors and browser-visible race safety.
+- [x] AC #6 accessibility/reduced-motion, existing suites, JS syntax, and synthetic-only inputs.
