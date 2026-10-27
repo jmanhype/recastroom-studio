@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, security, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T05:32:07Z
 created_by: speed
-updated_at: 2026-10-27T05:46:16Z
-content_hash: "sha256:2b782d2c6f4bbb52aa19b8143859a77d4077c792c0352fbc1515cc12e049c137"
+updated_at: 2026-10-27T05:47:23Z
+content_hash: "sha256:f95bb3c16e1a5bd21c78df48e4e58f76465229a56fc0f757f23baba791c8f625"
 assignee: dev-OJ-8zaw
 follows: [OJ-6xh3]
 closed_at: 2026-10-27T05:45:32Z
@@ -270,3 +270,6 @@ status: accepted
 - [x] AC #4: job/source/reference artifact bytes and recorded SHA-256 provenance remain unchanged.
 - [x] AC #5: recorded focused/full/compileall/verify/gate evidence passes with warnings disclosed, not suppressed.
 - [x] AC #6: delivery changes exactly the two assigned files.
+
+### 2026-10-27T05:47:23Z speed
+PM acceptance read back closed+accepted; locally merged with no conflicts into epic/OJ-mnrv. Same documented pvg story merge local-only incompatibility as OJ-6xh3 (missing remote epic ref); no branch publication/push. Integration regression rerun underway.
