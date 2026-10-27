@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T06:36:01Z
-content_hash: "sha256:3409a15e5836a149c9c8cd75034dfc51966a84c2aa027c26f965b026a1687da8"
+updated_at: 2026-10-27T06:37:22Z
+content_hash: "sha256:a281338eb5e2e4eb1d3c5631de8e26050cf3b26e83cc84c3ae84395df336e719"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
@@ -134,3 +134,6 @@ status: new
 
 ### 2026-10-27T06:28:22Z speed
 Worker /root/dev_oj_5uq4 ended with empty final before any source commit or delivered label. Do not treat progress reports as completion. Fresh bounded recovery agent is preserving only the eight owned source/test artifacts into a local WIP commit and reporting tests without code edits; failed worktree will then be removed/recreated and a fresh developer will finish verification/rework. No acceptance or merge; no push/GPU spending.
+
+### 2026-10-27T06:37:22Z speed
+Recovery artifact2e33c57 preserved exact8paths; independent fresh recovery verification focused5pass/full183pass,1baselinewarning; owned uvicorn8895 stopped. Removed failed worktree via pvg, released then pvg loop next selected story, atomically reclaimed and recreated canonical worktree. Fresh GLM high-effort worker now finishing browser verification/rework from committed artifacts; failed worker not resumed. No deliver/accept/merge yet.
