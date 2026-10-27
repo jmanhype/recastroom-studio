@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
-updated_at: 2026-10-27T09:30:57Z
-content_hash: "sha256:16d979dc84a6e3b5b93f96734eaad4abcb17b89960d8e5666410fabdcbb3983d"
+updated_at: 2026-10-27T09:32:40Z
+content_hash: "sha256:ab83517564073fc0b65eabcbd4992f5992be3e43da30702bc1a88519d4c31647"
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5, OJ-m439]
 closed_at: 2026-10-27T09:29:41Z
@@ -298,3 +298,6 @@ status: accepted
 - [x] AC #4: real API/temp-SQLite/filesystem records, protected bytes, history, artifacts, and status are unchanged.
 - [x] AC #5: no-project reset remains upload-only with empty hidden IDs and no invented history.
 - [x] AC #6: required focused/full/syntax/compile/verify/gate evidence passes with warnings disclosed.
+
+### 2026-10-27T09:32:40Z speed
+Readbackclosed+accepted; locallymergedtoepicusingdocumentedno-pushfallback. Disjointchangesmergedcleanlywithacceptedcollisionguard. Combinedregressionrerun underway; capstonewilltestactualbrowserreset+collisiononintegratedcode.
