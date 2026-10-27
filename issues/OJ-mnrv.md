@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T04:34:39Z
-content_hash: "sha256:45f609c2f37a5529242ed4bebf3bc57967674d9d28070791b4de2ee83f07bf20"
+updated_at: 2026-10-27T04:39:24Z
+content_hash: "sha256:3113f5eb158251d115101bd78edcf99171ffab6a649a823a4fb620c08fa7bfc3"
 ---
 ## Description
 Implement the first connected studio foundation: saved projects, protected asset references, reusable versioned character bundles and inspectable prepared-job history connected to the existing prepare/review flow.
@@ -40,6 +40,36 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 Foundation children: OJ-6xh3 (store), OJ-5uq4 (connected app), OJ-wfpy (all-dependency E2E capstone). Old submission epic OJ-fglb preserved. Operator authorization now permits local source commits/merges only after story gates; no push or loop rotation is authorized.
 Owner authorization 2026-10-26: build the connected studio foundation using Paivot. Local source-code commits and merges only. No pushes, publication, credentials, provider/GPU jobs or GPU/API spending. Supersedes earlier pending-commit-approval sentence. Root preflight:126 passed,1 disclosed Starlette/httpx warning. Existing old submission epic and its issues remain unchanged.
 Dispatcher preflight: local-only source commits/merges explicitly authorized; foundation backlog structural repair is assigned to foundation_backlog_repair. Existing accepted architecture and full product scope preserved. Epic branch/worktree epic/OJ-mnrv/.claude/worktrees/epic-OJ-mnrv created from main c2a18a5 without switching main or touching pre-existing evidence. No developer dispatched before structural lint and independent Anchor approval. SQLite/temp filesystem/FFmpeg and root Python3.11.11 venv available. Use temporary Git transport guard for loop setup automatic remote sync; use pvg nd sync --no-push at manual sync boundaries. No source changes, no provider/GPU calls.
+## ANCHOR REVIEW (backlog_review)
+REVIEW_RESULT: REJECTED
+
+### Round
+1 of 3
+
+### Gaps
+1. ISSUE: OJ-6xh3 -> OJ-5uq4 upload staging/interface is not executable as written. OJ-6xh3 permits asset registration only from an explicit regular file beneath its own `root/uploads` or `root/imports`, but its exact public contract exposes only `register_asset(project_id, path: Path, ...)` and `resolve_asset(asset_id)`; it exposes no safe server-only staging method or upload-root accessor. OJ-5uq4 nevertheless requires `POST /api/characters` multipart uploads while producing `create_project_router(store: WorkspaceStore) -> APIRouter` and instructs the consumer to call only the listed typed public methods. Current brownfield preparation writes uploads itself under `SETTINGS.data_dir/uploads/<job_id>` (`app/main.py` lines 96-113), so a router holding only `store` cannot place a new multipart reference inside the store's permitted root without guessing a private root, accepting a caller path, or rewriting the producer API.
+   RULE: A producer that restricts mutation/import to server-controlled roots must also publish the exact root-construction and safe staging API required by its consumer; consumers may not guess private internals or widen ownership.
+   SCOPE: Sweep the OJ-mnrv producer/consumer boundary: OJ-6xh3's public interface/tests, OJ-5uq4's router contract, and OJ-5uq4's `app/main.py` wiring.
+   Impact: The sole connected API story cannot implement its required character upload path without an unauthorized interface change, making the vertical slice execution-breaking.
+   Fix: Amend OJ-6xh3 and OJ-5uq4 consistently—for example add `stage_upload(project_id, source: IO[bytes] | bytes, filename: str, role: str, *, protected: bool = False) -> AssetRecord` (or a server-only staged-path API plus `register_asset`), specify exact store-root construction/wiring in `app/main.py`, keep returned paths server-only, and add the exact signature to both PRODUCES/CONSUMES and tests.
+
+### Positive scope checks
+- The three-child dependency chain is coherent: OJ-6xh3 blocks OJ-5uq4, and both block OJ-wfpy; `pvg nd dep cycles` found none.
+- M0 remains a bounded brownfield slice rather than a rewrite: SQLite workspace state, immutable media, existing job artifacts, current Python/FastAPI/browser app, and legacy readers align with `SUPER_APP_BLUEPRINT.md` lines 76-96 and the M0 boundary at line 222.
+- The backlog explicitly preserves the no-project flow, C1 lineage, attestation/status/review semantics, keepers, and local-only/no-spend boundary; broader scene/engine/hosting work remains later-milestone scope consistent with `SUPER_APP_BLUEPRINT.md` lines 216-228 and `IMPLEMENTATION_HANDOFF.md` lines 16-18, 38-52.
+- OJ-5uq4 correctly describes a one-performer primary/optional-secondary reference bundle and explicitly rejects two-person recasting semantics.
+- OJ-wfpy is a positive, all-dependency local user-path capstone: actual loopback uvicorn, SQLite/filesystem/HTTP/browser/FFmpeg, explicit dry-run, restart/reopen, no mocks, public-safe evidence, and legacy-flow regression.
+- Safe asset-ID resolution is otherwise well specified: opaque IDs, recorded relative location, regular-file/symlink/traversal/integrity checks, safe public records, and server-only `ResolvedAsset.path`.
+
+### Evidence
+- `pvg lint --backlog --epic OJ-mnrv --json` => `[]` (exit 0), so this rejection is judgment-based, not a mechanical lint failure.
+- `pvg settings design.machinery` => `off`; machinery gates/RTM were therefore not required. The separately reported zero-tagged-requirement RTM was not treated as coverage proof.
+- Vault gap searches against the live nd root returned no matching walking-skeleton/integration/testing pattern notes; the default `Claude` vault lookup was not used.
+- `pvg issues show OJ-mnrv/OJ-6xh3/OJ-5uq4/OJ-wfpy` and `pvg nd show ...` were reviewed; `pvg nd dep tree OJ-mnrv` and `pvg nd dep cycles` were run.
+- Exact current consumed signatures verified: `PreparedJob.to_json` and `prepare_workflow(...)` at `src/openjutsu/pipeline.py` lines 15-43; `verify_manifest(...)` at `src/openjutsu/evidence.py` lines 240-244; existing epoch/request isolation and prepare/run/review behavior at `app/web/studio.js` lines 7-11, 274-289, and 292-355.
+- Relevant architecture excerpts reviewed: `SUPER_APP_BLUEPRINT.md` lines 76-96 and 216-228; `IMPLEMENTATION_HANDOFF.md` lines 12-18 and 38-52.
+- Bounded review only: no full test rerun, provider/GPU call, source edit, issue acceptance/closure, push, credential use, or publication.
+
 ## nd_contract
 status: new
 
