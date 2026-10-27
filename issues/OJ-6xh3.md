@@ -1,17 +1,18 @@
 ---
 id: OJ-6xh3
 title: "Persist the connected workspace record store"
-status: in_progress
+status: closed
 priority: 1
 type: task
 labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T05:22:47Z
-content_hash: "sha256:f12b8d96852d799a654063dc31cc36d6866e0471f54b1f56f2a1ed5561f417ad"
-blocks: [OJ-5uq4, OJ-wfpy]
+updated_at: 2026-10-27T05:22:51Z
+content_hash: "sha256:9e9afde3888876fa90d1cdc92cfd94ded1c95ccb4f14dcc8660e31482b9aba48"
 assignee: dev-OJ-6xh3
+closed_at: 2026-10-27T05:22:51Z
+close_reason: "Accepted: independent commit/path/API/security review and targeted transaction probe verify all six ACs; disclosed file_loc warning remains an explicit observation, not a blanket waiver."
 ---
 ## Description
 Add the authoritative local workspace store and safe reference import required by the connected M0 path. This is an infrastructure task feeding the user-visible path in the next child.
@@ -252,10 +253,12 @@ status: new
 - 2026-10-27T04:44:08Z claimed by dev-OJ-6xh3
 - 2026-10-27T05:12:06Z status: in_progress -> in_progress
 - 2026-10-27T05:13:04Z status: in_progress -> in_progress
+- 2026-10-27T05:22:51Z status: in_progress -> closed
+- 2026-10-27T05:22:51Z dep_removed: no_longer_blocks OJ-5uq4
+- 2026-10-27T05:22:51Z dep_removed: no_longer_blocks OJ-wfpy
 
 ## Links
 - Parent: [[OJ-mnrv]]
-- Blocks: [[OJ-5uq4]], [[OJ-wfpy]]
 
 ## Comments
 
