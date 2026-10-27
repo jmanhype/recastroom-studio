@@ -1,6 +1,6 @@
 ---
 id: OJ-wfpy
-title: "E2e: return to a saved project and reuse character references in Studio"
+title: "E2e: return to a saved project with reusable character references in Studio"
 status: open
 priority: 1
 type: task
