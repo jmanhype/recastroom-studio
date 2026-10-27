@@ -1,19 +1,18 @@
 ---
 id: OJ-wfpy
 title: "E2e: return to a saved project with reusable character references in Studio"
-status: in_progress
+status: open
 priority: 1
 type: task
 labels: [studio, foundation, local, no-spend, capstone, e2e, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:09:43Z
-content_hash: "sha256:9f0ad62905c20a74c7e68de999e7b9e5899fded51332f4104254201c6f868a17"
+updated_at: 2026-10-27T10:24:28Z
+content_hash: "sha256:62fa2edaa0fb5784990feee9d1799abd8e523a3634a0650aacffb74c70ecc5be"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
-assignee: dev-OJ-wfpy
 ---
 ## Description
 Exercise the completed foundation through the user's actual local browser and HTTP data flow. This capstone is E2E-only, blocked by every other child. It does not implement a missing store or API.
@@ -211,6 +210,8 @@ status: new
 - 2026-10-27T09:33:15Z claimed by dev-OJ-wfpy
 - 2026-10-27T10:08:39Z status: in_progress -> in_progress
 - 2026-10-27T10:08:39Z auto-follows: linked to predecessor OJ-r6n5
+- 2026-10-27T10:24:28Z status: in_progress -> open
+- 2026-10-27T10:24:28Z released by speed
 
 ## Links
 - Parent: [[OJ-mnrv]]
