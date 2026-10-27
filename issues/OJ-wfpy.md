@@ -8,10 +8,10 @@ labels: [studio, foundation, local, no-spend, capstone, e2e]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:08:30Z
-content_hash: "sha256:c4c6b118299b0d2c9abb285608c92de0831c6a0216fa4245cc0d82f305bffa74"
+updated_at: 2026-10-27T10:08:39Z
+content_hash: "sha256:48de54f90a051dfce0f3a9ec6c620936fbfa860c78f97effecfceb0ff2f00bed"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
-follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
+follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
 assignee: dev-OJ-wfpy
 ---
@@ -197,12 +197,14 @@ status: new
 - 2026-10-27T09:33:15Z auto-follows: linked to predecessor OJ-m439
 - 2026-10-27T09:33:15Z auto-follows: linked to predecessor OJ-0ij6
 - 2026-10-27T09:33:15Z claimed by dev-OJ-wfpy
+- 2026-10-27T10:08:39Z status: in_progress -> in_progress
+- 2026-10-27T10:08:39Z auto-follows: linked to predecessor OJ-r6n5
 
 ## Links
 - Parent: [[OJ-mnrv]]
 - Blocked by: [[OJ-r6n5]]
 - Was blocked by: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]], [[OJ-m439]], [[OJ-0ij6]]
-- Follows: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]], [[OJ-m439]], [[OJ-0ij6]]
+- Follows: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]], [[OJ-m439]], [[OJ-0ij6]], [[OJ-r6n5]]
 
 ## Comments
 
