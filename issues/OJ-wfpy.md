@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
 updated_at: 2026-10-27T10:35:39Z
-content_hash: "sha256:567bfb5d73b8b93b1fc452b0d40c380c648c768b38d0aa94586f654e86027100"
+content_hash: "sha256:27db461156f3b0b8085d2d03e53397b5a5bb9fb1ebb1a7229dd00d56cf4c420c"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -69,6 +69,18 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+
+
+## nd_contract
+status: accepted
+
+### evidence
+- PM closeout applied via pvg story accept on 2026-10-27.
+
+### proof
+- [x] Story closed after accepted label was applied.
+
+
 ## PM Decision
 ACCEPTED [2026-10-27]: Resumed evidence-based re-review confirms the prior rejection is fully closed and all six capstone criteria pass at 66ddca0.
 
