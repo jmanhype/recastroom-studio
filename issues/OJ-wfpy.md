@@ -9,7 +9,7 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
 updated_at: 2026-10-27T08:34:23Z
-content_hash: "sha256:1ab6b97a4420eacbb7d1c8f62bcd48c7830b15e4ae8edc34660a86c7970b5fb9"
+content_hash: "sha256:5b39144a430328b4b630b901950815cf3ca550a0836f9d1202e22628253318f8"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4]
 ---
@@ -124,3 +124,6 @@ status: new
 - Follows: [[OJ-6xh3]], [[OJ-8zaw]], [[OJ-5uq4]]
 
 ## Comments
+
+### 2026-10-27T08:34:23Z speed
+Developer explicitly HOLDed pending upstream Anchor P0 fixes, not delivered. Preserved local commits84d52ce and3dcb225, focused actualHTTP/SQLite/uvicorn-restart E2E1pass, compileall/verify/gatesPASS advisoryonly. Partialbrowser stoppedbeforeprepare/run; ownIABclosed,uvicornPID21597stopped/18971closed. Removedcleanworktree, releasedclaim while newbugdependencies are triaged; branch/artifacts remain. Finishactualbrowser/fullgateproof onlyafteracceptedupstreamfixes.
