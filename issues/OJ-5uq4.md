@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T04:34:39Z
-content_hash: "sha256:ed33e61a31afc7d9cc5983c721297185b2a96c3aeb759f0e5f8969b548957f81"
+updated_at: 2026-10-27T04:42:27Z
+content_hash: "sha256:268284401dd34a294a980821d435f900d3efe6f1f4659630924675b2b2f70cf1"
 blocked_by: [OJ-6xh3]
 blocks: [OJ-wfpy]
 ---
@@ -23,11 +23,11 @@ A creator can choose a saved project and character version, upload a source, pre
 NEW app/project_api.py, NEW app/web/projects.js; additive edits app/main.py, app/web/index.html, app/web/studio.js and app/web/styles.css (all verified at main c2a18a5); NEW tests/test_projects_api.py and tests/test_project_frontend.py. Approximately 8-9 files, under 1100 changed LOC including tests. Consumer must not rewrite workspace_store.py's API without separate review.
 
 ## API/UI contract
-Add same-app /api/projects POST/GET and /api/projects/{project_id} GET; /api/projects/{project_id}/jobs GET; /api/characters POST multipart name,description,reference_1 and optional reference_2; /api/characters GET; /api/characters/{character_id}/versions/{version} GET; and /api/assets/{asset_id} GET. The asset endpoint streams a preview through WorkspaceStore.resolve_asset(asset_id) using only the recorded opaque server-generated ID, never a caller filesystem path; it returns actionable 404/409/422 errors and exposes no server path. Responses use the store's safe projections.
+Add same-app /api/projects POST/GET and /api/projects/{project_id} GET; /api/projects/{project_id}/jobs GET; /api/characters POST multipart project_id,name,description,reference_1 and optional reference_2; /api/characters GET; /api/characters/{character_id}/versions/{version} GET; and /api/assets/{asset_id} GET. Character multipart reference files are staged by WorkspaceStore.stage_asset(project_id, safe_filename, BinaryIO content, role=...); the asset endpoint streams a preview through WorkspaceStore.resolve_asset(asset_id) using only the recorded opaque server-generated ID, never a caller filesystem path. app/main.py wires WorkspaceStore(SETTINGS.data_dir) into create_project_router(store), while preserving the existing no-project destination SETTINGS.data_dir/uploads/<job_id>. Requests accept no filesystem path/root and responses expose no server path; actionable 404/409/422 errors are returned. Responses use the store's safe projections.
 Existing /api/prepare gains optional project_id,character_id,character_version. Preserve old upload-only clients. A saved version supplies the same one-performer primary/secondary references that already exist; it does NOT represent two-person recasting. If saved-character selection and uploaded references conflict, return an explicit 422 rather than silently substitute. Validation occurs before queuing/generation and missing saved assets fail clearly. Preserve source upload, seed, words, custom-workflow and current attestation semantics. After successful preparation, record the actual prepared job/configuration link in the selected project. Do not submit inference or change configure_workflow.
 
 ### Functional acceptance
-1. Real API tests create/list/reopen a project, upload a synthetic reference bundle, prepare with its saved version without re-uploading references, and obtain a saved job/configuration link. Verify the actual emitted workflow uses the selected filenames and seed with current C1 constants unchanged.
+1. Real API tests create/list/reopen a project, safely stage a synthetic multipart reference bundle through the public store API, prepare with its saved version without re-uploading references, and obtain a saved job/configuration link. They also verify WorkspaceStore(SETTINGS.data_dir) router wiring and compatibility with the existing no-project SETTINGS.data_dir/uploads/<job_id> destination. Verify the actual emitted workflow uses the selected filenames and seed with current C1 constants unchanged.
 2. The existing page displays a usable project selector, character library/version choice, safe asset-ID previews, and prepared job links that participate in the existing form. Reload restores the chosen project and server-backed history; switching projects cannot show a stale response as the new project's job.
 3. A second project can reuse the pinned character version without inheriting unrelated jobs. Creating a new version or resetting the form leaves prior versions, prepared configuration, original files and running server jobs intact.
 4. Legacy no-project upload clients and existing prepare/run/status/artifact/workflow/prompt routes retain their accepted behavior. No automatic run on import, selection, reload or preparation; no new provider, queue or consent-verification claim.
@@ -37,12 +37,12 @@ Existing /api/prepare gains optional project_id,character_id,character_version. 
 PRODUCES:
 - app/project_api.py -> create_project_router(store: WorkspaceStore) -> APIRouter with the endpoint contract above.
 - app/web/projects.js -> project/reference selection, safe previews, and server-backed history integrated with the existing form.
-- app/main.py -> additive project router wiring and optional project/character-aware prepare flow, not renderer changes.
+- app/main.py -> additive WorkspaceStore(SETTINGS.data_dir) construction, create_project_router(store) wiring, and optional project/character-aware prepare flow, not renderer changes.
 - tests/test_projects_api.py -> real store/API contract coverage.
 - tests/test_project_frontend.py -> browser/form integration, safe-preview, and stale-state regression coverage.
 CONSUMES:
 - OJ-6xh3: src/openjutsu/workspace_store.py -> WorkspaceStore(root: Path).
-  spec: create_project(name: str) -> ProjectRecord; list_projects() -> list[ProjectRecord]; get_project(project_id: str) -> ProjectRecord; register_asset(project_id: str, path: Path, role: str, *, protected: bool = False) -> AssetRecord; resolve_asset(asset_id: str) -> ResolvedAsset; create_character_version(name: str, reference_asset_ids: list[str], description: str = "") -> CharacterVersionRecord; get_character_version(character_id: str, version: int) -> CharacterVersionRecord; list_character_versions() -> list[CharacterVersionRecord]; record_prepared_job(project_id: str, job_id: str, job_dir: Path, character_version: tuple[str, int] | None = None) -> PreparedConfigRecord; list_prepared_jobs(project_id: str) -> list[PreparedConfigRecord].
+  spec: create_project(name: str) -> ProjectRecord; list_projects() -> list[ProjectRecord]; get_project(project_id: str) -> ProjectRecord; register_asset(project_id: str, path: Path, role: str, *, protected: bool = False) -> AssetRecord; stage_asset(project_id: str, filename: str, content: BinaryIO, *, role: str, protected: bool = False) -> AssetRecord; resolve_asset(asset_id: str) -> ResolvedAsset; create_character_version(name: str, reference_asset_ids: list[str], description: str = "") -> CharacterVersionRecord; get_character_version(character_id: str, version: int) -> CharacterVersionRecord; list_character_versions() -> list[CharacterVersionRecord]; record_prepared_job(project_id: str, job_id: str, job_dir: Path, character_version: tuple[str, int] | None = None) -> PreparedConfigRecord; list_prepared_jobs(project_id: str) -> list[PreparedConfigRecord].
   fields: ProjectRecord(project_id,name,created_at,updated_at); AssetRecord(asset_id,project_id,role,filename,media_type,size_bytes,sha256,protected,created_at); CharacterVersionRecord(character_id,version,name,description,reference_asset_ids,created_at); PreparedConfigRecord(project_id,job_id,character_id,character_version,seed,workflow_sha256,prompt_sha256,source_sha256,reference_sha256s,config,created_at); ResolvedAsset(record,path). Call only these typed public methods, not private SQL internals or caller paths.
 - (existing): src/openjutsu/pipeline.py -> prepare_workflow(...) -> tuple[PreparedJob, dict[str, Any]].
   spec: prepare_workflow(settings: Settings, *, job_id: str, source: str | Path, reference_1: str | Path, reference_2: str | Path | None, words_path: str | Path | None, rights_attested: bool, identity_description: str | None = None, seed: int = 49, workflow_template: str | Path | None = None) -> tuple[PreparedJob, dict[str, Any]] with current attestation and C1 behavior.
@@ -55,7 +55,7 @@ CONSUMES:
 - pm_acceptor — performs independent evidence-based acceptance; implementation cannot self-accept.
 
 ## Testing requirements
-Real temp store plus FastAPI/TestClient integration, deterministic form/browser regression and existing no-project regression suites. No mocked store and no paid backend. Run focused tests, full pytest, Python compileall, node --check for changed JS, and pvg gates. Preserve the disclosed existing warning rather than weaken assertions.
+Real temp store plus FastAPI/TestClient integration, safe multipart staging/root-wiring checks, deterministic form/browser regression and existing no-project regression suites. No mocked store and no paid backend. Run focused tests, full pytest, Python compileall, node --check for changed JS, and pvg gates. Preserve the disclosed existing warning rather than weaken assertions.
 
 ## Context and hard boundaries
 Brownfield RecastRoom at main c2a18a5; current Python/FastAPI/browser app is the base, not a rewrite. Architecture: ../ntm-recastroom-superapp-architecture-20261026/SUPER_APP_BLUEPRINT.md. This epic covers M0 only; scenes, multi-person engines, effects and camera remain later milestones, not rejected scope.
