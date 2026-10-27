@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T05:14:47Z
-content_hash: "sha256:1fd7a8bc8d5280f08b645691a7673849c17b7852f2d926dc8fb5405728945265"
+updated_at: 2026-10-27T05:22:47Z
+content_hash: "sha256:f12b8d96852d799a654063dc31cc36d6866e0471f54b1f56f2a1ed5561f417ad"
 blocks: [OJ-5uq4, OJ-wfpy]
 assignee: dev-OJ-6xh3
 ---
@@ -78,6 +78,35 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 [x] AC #4: real prepared-job fingerprints/config and legacy readability — PASS
 [x] AC #5: private-path resolution and public projection integrity — PASS
 [x] AC #6: full baseline suite and scope preservation — PASS
+## PM Independent Review
+REVIEWED [2026-10-27]: Accepted. Independent inspection was against story commit c38e41a191269c7e015fbc975e7b82df105fabfb from base c2a18a5f4b8c66e4c1309607d342db13c0bef4c6; no branch checkout or source/test edit was made.
+
+Evidence:
+- `pvg story verify-delivery OJ-6xh3` => PASS 9/9.
+- Exact diff => only `src/openjutsu/workspace_store.py` (568 physical lines; SHA-256 536bab6e4d003184ba61c587a23120fb64e961742e707cfacbf08f6d2db6154c) and `tests/test_workspace_store.py` (184 lines; SHA-256 393b3dc40d360504e5eeebb269ead59c037c62f0cf5b38feec76a78f5309360c); 752 insertions.
+- Runtime signature introspection confirmed every required public record field and all listed WorkspaceStore method signatures, including keyword-only role/protected arguments and `ResolvedAsset(record, path)`.
+- Static review confirmed permitted upload/import roots, traversal/symlink/regular-file checks, stable byte hashing, generated staging IDs and single-component names, protected resolve rechecks, append-only character versions, jobs-root/artifact validation, real artifact fingerprints, and safe no-path `AssetRecord` projection.
+- Because the existing transaction test did not directly count the failed asset row, I ran one targeted sanitized temp-SQLite probe: injected `BEFORE INSERT` trigger raised `ValidationError`; asset count remained 1 before, after, and after reopen. This resolves that concrete evidence doubt.
+- `pvg verify ... --include-tests --format text` independently => PASS, 2 files, 0 issues.
+- Touched `pvg gates` independently => PASS with exactly 1 warning: `workspace_store.py file_loc 520>400`. Base `app src scripts tools` gates at c2a18a5 independently => PASS with 13 pre-existing complexity warnings, confirming the delivery's warning accounting rather than hiding it.
+- I did not rerun the full 130-test suite: developer exact-commit evidence was complete and no remaining doubt justified it. The recorded stdlib trace 413/413 is accepted only as line-execution evidence, not branch coverage.
+
+AC verdicts:
+- AC #1 PASS: schema/transactions plus real reopen and the targeted rollback count probe.
+- AC #2 PASS: explicit regular upload/import files only; traversal/symlink/escape/malformed IDs rejected; bytes/mtime unchanged; staging is generated and path-safe; duplicate ownership preserved.
+- AC #3 PASS: normalized identity versioning is append-only, old references remain immutable, and another project reuses the pinned version.
+- AC #4 PASS: hashes/seed/config come from real `prepare_workflow` job artifacts; legacy empty-project history remains readable; no verdict/renderer claim is introduced.
+- AC #5 PASS: recorded locations and protected hashes are rechecked; `ResolvedAsset.path` remains server-only; public records carry no server path.
+- AC #6 PASS: exact two-file scope, no keeper/graph change, and complete exact-commit suite/gate evidence.
+
+LEARNINGS:
+- A passing persistence test can omit the explicit zero-new-row assertion even when rollback is correct; an independent targeted count probe is cheaper than rejecting or rerunning the suite.
+- Compare touched gates against the exact base gate inventory so a new warning is neither mislabeled as baseline nor silently waived.
+
+OBSERVATIONS:
+- [WARN] The new 520>400 file_loc warning is real and remains unresolved. Acceptance is not a blanket warning waiver: it is justified here by the warned-not-blocking project setting, the exact cohesive public contract, and the explained 752-vs-~700 investigative overrun. Revisit decomposition before adding more responsibility to this module.
+- [COVERAGE] `coverage` is absent and the developer's 100% stdlib trace result is line coverage only; no branch-coverage claim was accepted.
+- [BASELINE] The one Starlette/httpx test warning and 13 base complexity warnings were disclosed; I independently confirmed the 13-warning base inventory. Future stories must not treat this acceptance as permission to add further warnings without review.
 
 ## nd_contract
 status: delivered
