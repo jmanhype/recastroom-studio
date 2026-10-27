@@ -1,6 +1,6 @@
 ---
 id: OJ-5uq4
-title: "Connect saved projects and character references to the existing studio flow"
+title: "Connect saved projects to the existing studio flow"
 status: open
 priority: 1
 type: feature
