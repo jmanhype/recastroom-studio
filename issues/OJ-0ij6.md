@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
-updated_at: 2026-10-27T09:29:42Z
-content_hash: "sha256:58693c8637849b34e84e85811bb85f112ef514ac3d9d07a42784861756919196"
+updated_at: 2026-10-27T09:30:57Z
+content_hash: "sha256:16d979dc84a6e3b5b93f96734eaad4abcb17b89960d8e5666410fabdcbb3983d"
 assignee: dev-OJ-0ij6
 follows: [OJ-r6n5, OJ-m439]
 closed_at: 2026-10-27T09:29:41Z
@@ -270,3 +270,31 @@ status: delivered
 - [x] AC #5: PASS
 - [x] AC #6: PASS
 
+
+### 2026-10-27T09:30:57Z speed
+## PM Decision
+ACCEPTED [2026-10-27]: Evidence-based review passed.
+
+Reviewed exact two-file diff at f45521def3fc9a811759c6fbedee35d2b62cbde2 from base fdc9130: only app/web/projects.js and tests/test_project_frontend.py changed (187 insertions / 2 deletions). Verified source clears a selected transient character conditionally and unconditionally resynchronizes hidden fields. Inspected the real loaded-JS Node VM harness across no-character, saved-character, and no-project modes, including before/after UI/state/hidden-field assertions, FormData, and no-/run request assertions; its deterministic DOM/fetch/localStorage seams are frontend-unit seams, not infrastructure claims. Separately inspected the real FastAPI/TestClient plus WorkspaceStore/temp-SQLite/filesystem preservation regression. No skip/xfail/filterwarnings suppression or mock replacing the API/store was found. Delivery proof records focused 4 passed / 1 known warning, full 185 passed / 1 known warning, syntax/compileall/verify/gates PASS, and one disclosed managed renderHistory advisory. No concrete doubt justified a test rerun under pm_acceptor rules.
+
+Hashes reviewed:
+- app/web/projects.js b68fe9ff202c617c81daeec9864eef5817cb81132be5b4b9e35cb2c2a7a2b3b9
+- tests/test_project_frontend.py e61f62b56414c71976af263020d2e43bc10180056408b89b2f8b0202871ae84f
+
+Browser/end-to-end certification remains correctly pending in OJ-wfpy and was not demanded here.
+
+## nd_contract
+status: accepted
+
+### evidence
+- pvg story verify-delivery OJ-0ij6: 9 passed / 0 failed.
+- pvg story accept OJ-0ij6 completed; native readback showed closed + accepted.
+- Exact two-file scope, hashes, real-JS tests, real API/store preservation, warnings, and proof were independently inspected.
+
+### proof
+- [x] AC #1: no-character real-JS reset preserves visible/state/hidden project A and clears character fields.
+- [x] AC #2: saved-character real-JS reset clears transient character/reference state while preserving/synchronizing project A.
+- [x] AC #3: FormData carries project A plus uploads, omits character fields, and logs no /run request.
+- [x] AC #4: real API/temp-SQLite/filesystem records, protected bytes, history, artifacts, and status are unchanged.
+- [x] AC #5: no-project reset remains upload-only with empty hidden IDs and no invented history.
+- [x] AC #6: required focused/full/syntax/compile/verify/gate evidence passes with warnings disclosed.
