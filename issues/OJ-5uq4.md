@@ -1,7 +1,7 @@
 ---
 id: OJ-5uq4
 title: "Connect saved projects to the existing studio flow"
-status: open
+status: in_progress
 priority: 1
 type: feature
 labels: [studio, foundation, local, no-spend]
@@ -9,10 +9,11 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
 updated_at: 2026-10-27T06:36:01Z
-content_hash: "sha256:c717f9663559df778e79ac9816e371ca20c93c89784bc04a7315f7cd53453cc9"
+content_hash: "sha256:3409a15e5836a149c9c8cd75034dfc51966a84c2aa027c26f965b026a1687da8"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
+assignee: dev-OJ-5uq4
 ---
 ## Description
 Connect saved projects and reusable character versions to the existing browser prepare/review path using the store delivered by OJ-6xh3. Do not create an unrelated demo UI or new renderer.
@@ -120,6 +121,8 @@ status: new
 - 2026-10-27T05:47:29Z claimed by dev-OJ-5uq4
 - 2026-10-27T06:36:01Z status: in_progress -> open
 - 2026-10-27T06:36:01Z released by speed
+- 2026-10-27T06:36:01Z status: open -> in_progress
+- 2026-10-27T06:36:02Z claimed by dev-OJ-5uq4
 
 ## Links
 - Parent: [[OJ-mnrv]]
