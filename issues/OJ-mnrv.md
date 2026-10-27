@@ -7,11 +7,12 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T04:26:02Z
-content_hash: "sha256:bb724b8fcccc04dfe7f6370dce94490c6f41841f344d5ced121ce2680afd2f47"
+updated_at: 2026-10-27T04:27:25Z
+content_hash: "sha256:375448a729a1b959f4b96e63ae7409ddd83256a582c975375367ad3496f88194"
 ---
 
 ## Description
+TEMP_DESCRIPTION_PROBE
 
 ## Description
 Implement the first connected studio foundation: saved projects, protected asset references, reusable versioned character bundles and inspectable prepared-job history connected to the existing prepare/review flow.
