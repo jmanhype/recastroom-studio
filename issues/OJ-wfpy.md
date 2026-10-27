@@ -1,7 +1,7 @@
 ---
 id: OJ-wfpy
 title: "E2e: return to a saved project with reusable character references in Studio"
-status: in_progress
+status: closed
 priority: 1
 type: task
 labels: [studio, foundation, local, no-spend, capstone, e2e, delivered]
@@ -9,11 +9,13 @@ parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
 updated_at: 2026-10-27T10:35:39Z
-content_hash: "sha256:38eeeac95b820fe844474873fef174c41d9b809e9b53dd43b2fe64b1f4688b46"
+content_hash: "sha256:567bfb5d73b8b93b1fc452b0d40c380c648c768b38d0aa94586f654e86027100"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
 assignee: dev-OJ-wfpy
+closed_at: 2026-10-27T10:35:39Z
+close_reason: "Accepted: documentation-only rework at 66ddca0 closes the evidence-index path defect; all non-README proof is unchanged and all capstone ACs pass."
 ---
 ## Description
 Exercise the completed foundation through the user's actual local browser and HTTP data flow. This capstone is E2E-only, blocked by every other child. It does not implement a missing store or API.
@@ -315,6 +317,7 @@ status: new
 - 2026-10-27T10:26:55Z status: open -> in_progress
 - 2026-10-27T10:26:55Z claimed by dev-OJ-wfpy
 - 2026-10-27T10:29:16Z status: in_progress -> in_progress
+- 2026-10-27T10:35:39Z status: in_progress -> closed
 
 ## Links
 - Parent: [[OJ-mnrv]]
