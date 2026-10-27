@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:28Z
 created_by: speed
-updated_at: 2026-10-27T07:12:52Z
-content_hash: "sha256:43d1e61387819e1ad3e6c8e5f693fa534208274a2dda3d43cf571acfc501348a"
+updated_at: 2026-10-27T07:25:45Z
+content_hash: "sha256:16b4436f920c93039ba5ceea53606f319163b0d106cf43aeafe199b1319f7909"
 blocks: [OJ-wfpy]
 was_blocked_by: [OJ-6xh3, OJ-8zaw]
 follows: [OJ-6xh3, OJ-8zaw]
@@ -71,6 +71,36 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## PM Decision
+ACCEPTED [2026-10-27]: Independent evidence-based review meets OJ-5uq4's six functional ACs.
+
+### evidence
+- `pvg story verify-delivery OJ-5uq4` passed 9/9. Reviewed delivery commit `94c859474c66068824d4788cb07714ea356353ab` on clean retained worktree `story/OJ-5uq4`; `git diff --shortstat de71be6..94c8594` is exactly 8 owned files, 1124 insertions, 20 deletions. No checkout, source edit, merge, push, provider call, or spending occurred.
+- Static review found no stub/TODO implementation markers. OpenAPI exposed `/api/projects` GET/POST, `/api/projects/{project_id}` GET, `/api/projects/{project_id}/jobs` GET, `/api/characters` GET/POST, `/api/characters/{character_id}/versions/{version}` GET, and `/api/assets/{asset_id}` GET. `app/main.py:47-67` constructs `WorkspaceStore(SETTINGS.data_dir)` and follows SETTINGS root changes for project routes; `app/main.py:542` mounts the router.
+- Verified saved-reference validation occurs before upload/job writes (`app/main.py:138-205`), including conflict, malformed/missing project/character, protected-asset integrity, and no-reference failures. Successful saved-reference prepare resolves only public `WorkspaceStore` records, uses actual filenames/seed in `prepare_workflow`, and records project history (`app/main.py:207-266`). Asset responses never serialize `ResolvedAsset.path`; unknown media types are forced to octet-stream attachments (`app/project_api.py:181-195`). Prepared history uses the upstream six-key safe metadata allowlist, not a raw graph (`src/openjutsu/workspace_store.py:516-546`).
+- Frontend state review verified `requestEpoch` rejection around project/history responses, persisted project/character restoration, safe 32-hex asset IDs, server-backed history links, upload-vs-saved selection switching, prepared-history refresh, and reset preservation (`app/web/projects.js:7-15,65-222,224-307`). The existing studio form consumes hidden project/character fields, saved-reference readiness, selection/reset events, strips empty selections, and keeps run explicitly manual (`app/web/studio.js:55-136,264-305,339-375`).
+- Developer test proof was complete and internally consistent, so tests were not rerun: focused 5/5, full 183/183 with the one disclosed baseline Starlette/httpx warning, compileall PASS, both JS checks PASS, pvg verify PASS, and gates PASS with five explained advisory warnings. The 1124-line diff is only 24 over the approximately-1100 budget and is accounted for by real API/UI/test coverage.
+- Independently located and byte-hashed the generated browser evidence: receipt `/tmp/oj-5uq4_browser_receipt.md` = `7c9399fe02ca51355f3070ba2ea8957db0c62d2b4927f41a8eaaebc4b0867355`; final screenshot `/tmp/oj-5uq4-final-browser-proof.png` = `ac52a27c7a9bb2936230ce7f84e3a198144fa30afe3d5d1d9c10087f64ad16b3`; race screenshot `/tmp/oj-5uq4-browser-race-proof.png` = `63a4d0a2797aac1a96c4558f9e2e9955f73731eadb382bca0e1866e991d1a8c6`; reload/reset screenshot `/tmp/oj-5uq4-browser-proof.png` = `8ffd094c11b632aef2022a43a72650c61bc7d639fa7b35d280f5c5ef9b1e63b9`.
+- Visually inspected all three screenshots. The final view shows the saved project/character, protected reference preview, prepared history, saved-reference readiness, PREPARED job, and an uninvoked run path. The race view shows selected project B with no prepared configuration links. The reset view shows transient character/source selection cleared while project, saved versions, and job history remain. The frontend was identical between the race-evidence precursor and final commit; only `app/main.py` changed in the final complexity refactor.
+- Cleanup check found no listener on ports 8896-8898. Main checkout retained only the preexisting untracked `docs/evidence/recastroom-hook-v6b-keeper/` directory; no production render changed.
+
+### proof
+- [x] AC #1: Real project/character/asset APIs, SETTINGS-root wiring, synthetic multipart staging, saved-reference prepare without re-upload, actual C1 filenames/seed, isolated history, legacy upload destination, and path-safe projections are implemented and evidenced.
+- [x] AC #2: Project/character selectors, safe previews, server-backed history, reload restoration, request-epoch stale-response protection, and manual-only run behavior are implemented and visibly evidenced.
+- [x] AC #3: Another project can pin the same character version without inheriting jobs; reset clears transient selection while preserving saved project/library/history/files/server jobs.
+- [x] AC #4: Upload-only prepare remains unrecorded and existing routes/semantics remain green; no inference, provider, queue, or verification claim was added.
+- [x] AC #5: Invalid IDs, saved/upload conflicts, missing assets, changed protected bytes, and browser-visible stale races produce actionable behavior; asset access is recorded-ID-only with no path/credential leakage.
+- [x] AC #6: Keyboard/focus/reduced-motion styles remain, existing suites/JS syntax pass, and browser evidence uses only synthetic fixtures.
+
+LEARNINGS:
+- Capstone API seam: `WorkspaceStore(SETTINGS.data_dir)` is the singleton store; project/character/asset middleware resynchronizes it to the configured root. `POST /api/prepare` accepts optional `project_id`, `character_id`, and `character_version`, resolves saved references server-side, then calls the unchanged `prepare_workflow` and `record_prepared_job`. Legacy callers can omit all three and remain upload-only.
+- Capstone frontend seam: element IDs are `project-select`, `project-name`, `create-project`, `character-select`, `character-references`, `character-reference-1/2`, `character-name`, `character-description`, `create-character`, `project-history`, plus hidden form fields `project-id-input`, `character-id-input`, `character-version-input`. Events are DOM `projects:selection-change`, `projects:prepared`, and `studio:reset`; `ProjectsUI.getReferenceState()` and `StudioUI` remain read-only integration seams.
+
+OBSERVATIONS:
+- CUA ResourceTiming was unavailable as disclosed. Two rendered-state checkpoints plus the race screenshot are sufficient visible proof that the delayed project-A response did not paint as project B.
+- The CUA screenshot files contain JPEG bytes despite `.png` suffixes; hashes match the receipt and visual rendering was independently successful, so this naming mismatch does not invalidate evidence.
+- The five pvg advisories (complexity and main-module LOC) are nonblocking and explained; the 474-line `app/main.py` remains a candidate for extraction in later owned scope, not a reason to reopen this AC-complete story.
+
 ## Implementation Evidence
 Authoritative summary: the detailed evidence above was produced from local commit 94c859474c66068824d4788cb07714ea356353ab. Focused tests passed 5/5; full pytest passed 183/183 with the one disclosed baseline warning; compileall, both node --check commands, pvg verify, and pvg gates passed. Real rendered CUA evidence covered saved-reference prepare, reload/reset persistence, project isolation, and a delayed-response race; receipt SHA-256 is 7c9399fe02ca51355f3070ba2ea8957db0c62d2b4927f41a8eaaebc4b0867355.
 
