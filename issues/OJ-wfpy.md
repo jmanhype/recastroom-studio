@@ -8,8 +8,8 @@ labels: [studio, foundation, local, no-spend, capstone, e2e, delivered]
 parent: OJ-mnrv
 created_at: 2026-10-27T03:45:29Z
 created_by: speed
-updated_at: 2026-10-27T10:29:34Z
-content_hash: "sha256:694feb3a4e7db3fb577d658a53901ee65df5f94f0ceb062f4c9c3016af85611c"
+updated_at: 2026-10-27T10:35:39Z
+content_hash: "sha256:38eeeac95b820fe844474873fef174c41d9b809e9b53dd43b2fe64b1f4688b46"
 was_blocked_by: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6]
 follows: [OJ-6xh3, OJ-8zaw, OJ-5uq4, OJ-m439, OJ-0ij6, OJ-r6n5]
 blocked_by: [OJ-r6n5]
@@ -67,7 +67,44 @@ Fresh root baseline: env -i PATH=/opt/homebrew/bin:/usr/bin:/bin PYTHONPATH=src 
 ## Design
 
 ## Notes
+## PM Decision
+ACCEPTED [2026-10-27]: Resumed evidence-based re-review confirms the prior rejection is fully closed and all six capstone criteria pass at 66ddca0.
 
+### Rejection closure
+- The only rework delta from 709ceb5 to 66ddca0 is docs/evidence/studio-foundation/README.md, exactly two table rows changed.
+- README lines 66-67 now name the actual committed browser-cycle-1.log and browser-cycle-2.log artifacts.
+- Independently verified hashes: browser-cycle-1.log 6e510dd70c1f95613d783afbe581ae87f522f5af51b4ba96db1ff1614b4cc8a0; browser-cycle-2.log 231c5f5791c0e77dded9617976bd926dea6c3a19674a13d0f17582e035dc8968.
+- The stale browser-server-cycle-* names are absent from the evidence directory.
+- `git diff --exit-code 709ceb5..66ddca0 -- . ':!docs/evidence/studio-foundation/README.md'` proves every code/test/receipt/log/screenshot path is unchanged from the previously reviewed substantive delivery.
+
+### AC verification
+- [x] AC #1: strict allowlisted dry-run child environment, real loopback uvicorn/SQLite/filesystem/FFmpeg/HTTP process flow, and owned cleanup verified from unchanged code/evidence.
+- [x] AC #2: saved project, two protected references, saved-version prepare, explicit dry-run, safe previews/downloads/history, and separate rendered-browser evidence verified.
+- [x] AC #3: two actual server cycles, fresh browser reopen, persisted project/version/config/history, no automatic run, and legacy flow verified.
+- [x] AC #4: version/reset/project-switch preservation and actionable 422/404 failures with nonmutation verified.
+- [x] AC #5: all receipts/screenshots remain public-safe, loopback-only, credential-free, synthetic-media evidence; corrected README now indexes every declared artifact by its actual path/hash.
+- [x] AC #6: complete commit-bound commands/results/warnings/hashes remain valid; deterministic pvg verify PASS and gates PASS with two owned advisories; README correction is scoped and commit-bound.
+
+LEARNINGS:
+- Cross-check a hand-written evidence index against the actual git inventory and generated receipt metadata; this catches filename drift even when underlying hashes are correct.
+- If a documentation-only correction is proven byte-identical outside the edited doc, prior behavioral proof remains valid and a behavioral rerun adds no new signal.
+
+OBSERVATIONS:
+- Fresh pvg verify: PASSED, 3 files scanned, 0 issues. Fresh pvg gates: PASS, 2 warn, 0 skipped, for the already-reported run_trial complexity 21 and 423-nonblank-line advisories.
+- No behavioral test rerun was run because the rework changed only two README rows and every non-README path is identical to 709ceb5.
+- Receipt hashes independently reverified: HTTP 2c408c2cce4b58972bd018efe3f8c19064d4d806af8d0e767e162c3c35c31746; browser 2b5d171974e7277e24e9b3f43b7bcd2fadc0788fa2653d5ec0f8305cf95c8377; workspace 567061e7a4bd0f0075a555f1cc6206ef7a6285d7ae83cfaf1b855bf8780f6c0c; slate manifest ada599a6e327b83e3b426bece75887f2b1d3a1aa1180047bbf6edd24e8659d33.
+- All eight JPEG byte counts/hashes match; text/binary evidence contains no /Users path, credential token, or non-loopback URL. No listener remains on 127.0.0.1:18765 and all recorded uvicorn PIDs are absent.
+- No source edit, checkout, merge, push, provider/GPU activity, or spend occurred during PM review.
+
+## nd_contract
+status: accepted
+
+### evidence
+- Reviewed live delivered notes and full capstone delta at 66ddca0.
+- Prior substantive proof at 709ceb5 is unchanged outside the corrected README; delivery preflight passed 9/9 before review.
+
+### proof
+- [x] AC #1 through AC #6 independently verified, including closure of the prior evidence-index rejection.
 
 ## nd_contract
 status: delivered
