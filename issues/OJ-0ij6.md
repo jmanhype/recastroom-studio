@@ -4,7 +4,7 @@ title: "Keep selected project hidden fields synchronized across form reset"
 status: closed
 priority: 0
 type: bug
-labels: [studio, foundation, local, no-spend, delivered]
+labels: [studio, foundation, local, no-spend, delivered, accepted]
 parent: OJ-mnrv
 created_at: 2026-10-27T08:47:01Z
 created_by: speed
