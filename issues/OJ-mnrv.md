@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T04:42:46Z
-content_hash: "sha256:033ca4cba0b8d96dad35697722eb3a101c221ed580eb494ff6ca104ccdea3eb1"
+updated_at: 2026-10-27T04:43:32Z
+content_hash: "sha256:a142f0f645ff1f29edb92767ce5881b93a2674b9b5c49aebc972c8db59f53f9f"
 ---
 ## Description
 Implement the first connected studio foundation: saved projects, protected asset references, reusable versioned character bundles and inspectable prepared-job history connected to the existing prepare/review flow.
@@ -46,6 +46,24 @@ ANCHOR ROUND 1 ADDRESSED — upload staging/interface gap:
 - OJ-5uq4 now requires `app/main.py` to construct `WorkspaceStore(SETTINGS.data_dir)`, pass it to `create_project_router(store)`, and stage character multipart bytes through `stage_asset`; existing no-project uploads remain at `SETTINGS.data_dir/uploads/<job_id>`. Requests accept no caller path/root and responses serialize no server path.
 - OJ-wfpy now exercises the actual configured-root wiring and safe multipart staging in the restart journey.
 - Verification after the repair: `pvg lint --backlog --epic OJ-mnrv --json` => `[]`; `pvg nd doctor` => all 29 issues valid; `pvg nd dep cycles` => none.
+## ANCHOR REVIEW (backlog_review)
+REVIEW_RESULT: APPROVED
+
+### Round
+2 of 3
+
+### Prior-gap recheck
+- RESOLVED: The round-1 upload staging/interface blocker is closed at the backlog-contract level.
+- OJ-6xh3 now publishes the exact server-only API `stage_asset(project_id: str, filename: str, content: BinaryIO, *, role: str, protected: bool = False) -> AssetRecord`, requires a validated project and single-component filename, writes only beneath server-generated `root/uploads/<staging_id>/<safe_filename>`, rejects path-bearing names, accepts no caller `Path`, and returns only the safe `AssetRecord` without exposing the destination.
+- OJ-5uq4 consumes that exact signature for multipart character references, requires `app/main.py` to construct `WorkspaceStore(SETTINGS.data_dir)` and pass it to `create_project_router(store)`, preserves the existing no-project `SETTINGS.data_dir/uploads/<job_id>` destination, accepts no filesystem path/root from requests, and serializes no server path.
+- Both producer and consumer now carry matching typed PRODUCES/CONSUMES contracts and explicit staged-upload/root-wiring test requirements. The round-1 general rule is therefore addressed across the producer, consumer, and app wiring boundary rather than only patched in one story.
+- No remaining gap from the round-1 rejection. Implementation, tests, and delivery evidence remain pending for the normal story/PM workflow; that is not a new backlog-review finding.
+
+### Evidence
+- `pvg lint --backlog --epic OJ-mnrv --json` => `[]`.
+- Re-read the prior round-1 verdict from live `OJ-mnrv` and current live `OJ-6xh3`/`OJ-5uq4` interface, acceptance, PRODUCES/CONSUMES, wiring, and testing sections.
+- `pvg nd dep cycles` => no dependency cycles.
+- Bounded round-2 recheck only: no unrelated product/architecture rediscovery, source edit, provider/GPU call, credential use, push, issue acceptance/closure, or full test rerun.
 
 ## ANCHOR REVIEW (backlog_review)
 REVIEW_RESULT: REJECTED
