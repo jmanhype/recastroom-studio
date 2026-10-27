@@ -7,8 +7,8 @@ type: epic
 labels: [studio, foundation, local, no-spend]
 created_at: 2026-10-27T03:45:27Z
 created_by: speed
-updated_at: 2026-10-27T05:36:48Z
-content_hash: "sha256:40961e471441a7cc8b475b64c191085df1ccd38aa7f9044113d6374ae1f9f904"
+updated_at: 2026-10-27T07:33:35Z
+content_hash: "sha256:86cb00315e722c3c04d7f71ecd9e5c44b8660c1808a3bf112d844bbdfc616413"
 ---
 ## Description
 Implement the first connected studio foundation: saved projects, protected asset references, reusable versioned character bundles and inspectable prepared-job history connected to the existing prepare/review flow.
@@ -153,3 +153,6 @@ status: new
 
 ### 2026-10-27T05:27:17Z speed
 Integration boundary: accepted OJ-6xh3 locally merged as a3bc898. Coordinator independently reran credential-stripped full pytest from integration worktree: 130 passed,1 disclosed Starlette/httpx warning in24.42s; compileall PASS and both source/test hashes matched delivery. New finding: public PreparedConfigRecord.config contains full workflow JSON instead of safe allowlist. SrPM bug triage requested before UI history exposure. Main remains c2a18a5; no pushes/GPU/render/provider work.
+
+### 2026-10-27T07:33:35Z speed
+Accepted UI story locally merged as fdc9130. Coordinator reran credential-stripped full merged suite:183passed,1existingStarlettewarning,25.02s; independently viewed final actual browser screenshot. All3implementation stories (store,safe-configfix,connectedUI) accepted. Capstone OJ-wfpy now claimed for realserverrestart/dry-run/review/export/browser evidence only; no engine changes or spending.
