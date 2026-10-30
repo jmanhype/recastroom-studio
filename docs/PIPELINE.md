@@ -69,7 +69,7 @@ models/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors
 models/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
 models/vae/minimax_h3_video_vae_fp16.safetensors
 models/vae/minimax_h3_audio_vae_fp32.safetensors
-models/loras/experimental/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors
+models/loras/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors
 models/loras/minimax_h3_character_swap_v1.1_ref2va_fro.safetensors
 models/checkpoints/sam3.1_multiplex_fp16.safetensors
 ```

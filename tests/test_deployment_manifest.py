@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEPLOY = ROOT / "deploy" / "comfy"
 WORKFLOW = ROOT / "workflows" / "recastroom_h3_workflow.json"
-WORKFLOW_SHA256 = "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244"
+WORKFLOW_SHA256 = "79fa70d6b9d3e13852e179cff6f9a3aa36637a8543c600c36517be1b4a2d1a58"
 
 
 def load_json(path: Path):
@@ -255,6 +255,16 @@ def test_build_spec_exactly_matches_asset_manifest() -> None:
         "source": "local",
         "localPath": "openjutsu_assets",
     }
+
+    turbo_lora = next(
+        item
+        for item in definition["models"]
+        if item["filename"] == "minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors"
+    )
+    workflow = load_json(ROOT / "workflows/recastroom_h3_workflow.json")
+    requested_lora = workflow["64"]["inputs"]["lora_name"]
+    assert turbo_lora["type"] == "loras"
+    assert requested_lora == turbo_lora["filename"]
 
 
 def test_candidate_fails_closed_and_discloses_pending_sdk_bridge() -> None:
