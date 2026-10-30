@@ -90,7 +90,7 @@ async def _worker_lifespan(_app: FastAPI):
         app.state.worker_error = app.state.worker_error or None
 
 
-app = FastAPI(title="RecastRoom Studio", version="0.1.1", lifespan=_worker_lifespan)
+app = FastAPI(title="RecastRoom Studio", version="0.3.4", lifespan=_worker_lifespan)
 app.state.workspace_store = PROJECT_STORE
 
 
@@ -251,7 +251,7 @@ async def prepare(
     character_version: int = Form(0),
 ) -> JSONResponse:
     if not rights_attested:
-        raise HTTPException(status_code=422, detail="Operator attestation is required.")
+        raise HTTPException(status_code=422, detail="Permission declaration is required.")
     if not source.filename:
         raise HTTPException(status_code=422, detail="A source clip is required.")
 
@@ -392,7 +392,7 @@ def _managed_projection(job_id: str) -> dict | None:
 
 def _require_recorded_attestation(manifest: dict, backend: str) -> None:
     if not manifest.get("rights_attested"):
-        raise RuntimeError(f"{backend} execution requires a recorded operator attestation")
+        raise RuntimeError(f"{backend} execution requires a recorded permission declaration")
 
 
 def _set_status(job_id: str, **values: object) -> None:
@@ -458,7 +458,7 @@ def _run_dry_run_job(job_id: str) -> None:
             job_dir = _job_dir(job_id)
             manifest = json.loads((job_dir / "job.json").read_text(encoding="utf-8"))
             workflow = json.loads((job_dir / "workflow.json").read_text(encoding="utf-8"))
-            _require_recorded_attestation(manifest, "Dry-run")
+            _require_recorded_attestation(manifest, "Preview")
 
             plan = json.loads(workflow["1189"]["inputs"]["plan"])
             source = Path(manifest["source"])
@@ -516,7 +516,7 @@ def _run_legacy_job(job_id: str) -> None:
             job_dir = _job_dir(job_id)
             manifest = json.loads((job_dir / "job.json").read_text(encoding="utf-8"))
             workflow = json.loads((job_dir / "workflow.json").read_text(encoding="utf-8"))
-            _require_recorded_attestation(manifest, "Legacy ComfyUI")
+            _require_recorded_attestation(manifest, "ComfyUI")
             runner = ComfyLegacyRunner(SETTINGS.comfy_url)
             _set_status(job_id, state="uploading", message="Uploading source and references")
 
@@ -562,7 +562,7 @@ def _run_sdk_job(job_id: str) -> None:
             job_dir = _job_dir(job_id)
             manifest = json.loads((job_dir / "job.json").read_text(encoding="utf-8"))
             workflow = json.loads((job_dir / "workflow.json").read_text(encoding="utf-8"))
-            _require_recorded_attestation(manifest, "Official Comfy SDK")
+            _require_recorded_attestation(manifest, "Hosted Comfy")
             _set_status(job_id, state="generating", message="Submitting official Comfy SDK job")
             runner = ComfySdkRunner(api_key=SETTINGS.comfy_api_key)
             saved = runner.run_workflow(

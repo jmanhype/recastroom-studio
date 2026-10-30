@@ -504,7 +504,7 @@ def test_managed_window_fps_audio_and_word_offset_are_explicit_not_defaulted(tmp
             words_path=words, rights_attested=True, window=window, source_has_audio=False,
             with_audio=True, seed=1, workflow_template=template,
         )
-    with pytest.raises(ValueError, match="operator attestation"):
+    with pytest.raises(ValueError, match="permission declaration"):
         prepare_managed_workflow(
             load_settings({"RECASTROOM_DATA_DIR": str(tmp_path / "jobs")}), job_id="no-rights",
             source=SOURCE_FIXTURE, reference_1=REFERENCE_FIXTURE, reference_2=None,
@@ -596,7 +596,7 @@ def test_connected_http_api_and_vanilla_ui_resolve_without_enqueue(tmp_path: Pat
             assert "rights_attested: $('m1-rights').checked" in script.text
             assert "manifest.graph.resolved_semantic_sha256" in script.text
             assert "manifest.graph.resolved_sha256" not in script.text
-            assert "frozen references" in script.text and "overflowWrap" in script.text
+            assert "saved references" in script.text and "overflowWrap" in script.text
             subprocess.run(["node", "--check", str(ROOT / "app/web/m1.js")], check=True, capture_output=True, text=True)
     finally:
         server.stop()

@@ -4,30 +4,33 @@
 Same take. New lead.
 ```
 
-RecastRoom Studio changes the on-screen performer in a clip you have permission
-to edit, while preserving the original performance, camera, scene, and dialogue.
-It runs MiniMax H3 through ComfyUI on your own machine.
+RecastRoom Studio helps you prepare and review a one-person MiniMax H3 recast
+for a clip you have permission to edit. The workflow keeps the source take and
+dialogue schedule attached and restores source audio in the review output; final
+identity, scene, and motion quality still require human review. The default
+launcher starts in a no-GPU preview mode, while generation requires a connected
+ComfyUI or hosted Comfy deployment.
 
 [![RecastRoom public hero: same take, new lead](media/recastroom-hero-poster.jpg)](media/recastroom-public-hero-16x9.mp4)
 
 ## See it work
 
-These previews autoplay on GitHub. No click is required.
+Inline animated previews:
 
 | Studio walkthrough | Result preview |
 |---|---|
 | ![RecastRoom studio walkthrough](media/previews/user-journey-16x9.webp) | ![RecastRoom result preview](media/previews/result-teaser-16x9.webp) |
 
-The studio walkthrough shows the normal user path:
+The current studio tour shows the guided path:
 
-1. inspect the source,
-2. add references and word timing,
+1. finish the four-choice setup,
+2. inspect the source and add the primary reference,
 3. record permission,
-4. prepare the workflow,
-5. review the prepared job.
+4. prepare and run the no-GPU preview,
+5. review the paired result and downloads.
 
-The result preview shows the finished user outcome: the source performance stays
-in place while the lead changes.
+The result preview shows a recorded example. A new production still needs your
+manual review before publication.
 
 Full-length version: [`recastroom-user-journey-8s-16x9.mp4`](media/recastroom-user-journey-8s-16x9.mp4)
 
@@ -44,37 +47,42 @@ local app that people can run, inspect, fork, and improve.
 RecastRoom Studio helps you:
 
 1. review an original clip you own or have permission to edit,
-2. check clip quality before spending render time,
+2. probe duration, dimensions, frame rate, and audio before connecting a renderer,
 3. add the new lead and dialogue timing,
 4. prepare the RecastRoom MiniMax H3 job,
 5. run locally or through a compatible Comfy setup,
 6. keep the original dialogue,
 7. compare the before and after result.
 
-The studio presents a focused workflow catalog. **Recast Room** is the production path; cinematic camera, re-shoot, and VFX lanes are labeled as concept work rather than production features.
+The guided workspace exposes the available path: one-person continuous dialogue
+recast. Advanced project tools remain available for scene, take, review, and
+export history.
 
-The bundled workflow preserves:
+The bundled workflow is designed to keep these signals attached:
 
 - the original performance,
 - camera and background,
 - dialogue timing,
 - the new performer’s identity,
-- a frame-by-frame before/after review.
+- a paired source/final review.
+
+Attachment does not guarantee output quality. RecastRoom deliberately provides
+review media instead of claiming an automated quality score.
 
 Exact model files and settings are documented in [`MODELS.md`](MODELS.md).
 
 ## The production workspace
 
-RecastRoom opens directly into one workspace for reviewing the original clip,
-adding the new lead, confirming permission, preparing the job, running it, and
-checking the result.
+After a one-time setup, RecastRoom opens into one workspace for reviewing the
+original clip, adding the new lead, confirming permission, preparing the job,
+and checking a result.
 
 The public overview, sound-design review tool, and legal notes are support
 pages linked from the app footer. They are not separate products or separate
 user journeys.
 
-The public hero is a metadata-clean stream copy of the frozen demonstration master.
-Its specifications and hash are recorded in [`media/README.md`](media/README.md).
+The public media kit records the specification and SHA-256 hash for each
+downloadable video and poster in [`media/README.md`](media/README.md).
 
 ## Production scope
 
@@ -85,26 +93,30 @@ suite.
 Included:
 
 - one studio workspace
-- local ComfyUI rendering
-- optional hosted Comfy connection
-- automatic dialogue timing
+- a no-GPU preview path
+- connection to your local ComfyUI renderer
+- hosted Comfy connector for compatible deployments
+- Whisper-compatible dialogue timing
 - a permission checkpoint
-- clip checks and before/after review
+- media checks and paired before/after review
 - public overview and local review tools
 - automated application, API, workflow, and browser tests
 
 CI runs on Python 3.11 and 3.12 and executes the full test suite.
 Detailed release status is recorded in [`docs/RELEASE_STATUS.md`](docs/RELEASE_STATUS.md).
 
+Out of the box, `./run.sh` starts in preview mode: it can inspect media, prepare
+a job, copy the source, and produce review files without a GPU or model
+credentials. Preview output is not an H3 recast. Set `RECASTROOM_BACKEND=legacy`
+to submit to ComfyUI. Hosted mode additionally requires a compatible deployment
+containing the RecastRoom bridge and models, API credentials, and explicit
+bridge configuration.
+
 ## User interface
 
-| Choose the workflow | Check readiness | Prepared job |
+| Guided workspace | Check readiness | Prepared job |
 |---|---|---|
-| ![RecastRoom Studio workflow catalog](docs/images/app-landing-v2.png) | ![RecastRoom readiness strip](docs/images/readiness-visual.png) | ![RecastRoom prepared job result](docs/images/app-prepared-job.png) |
-
-Older full walkthrough contact sheet: [`docs/images/app-walkthrough.jpg`](docs/images/app-walkthrough.jpg)
-
-Demo storyboard: [`docs/images/demo-v1-contact.jpg`](docs/images/demo-v1-contact.jpg)
+| ![RecastRoom guided workspace](docs/images/app-workspace.png) | ![RecastRoom readiness strip](docs/images/readiness-visual.png) | ![RecastRoom completed preview](docs/images/app-prepared-job.png) |
 
 ## Downloadable media
 
@@ -116,7 +128,7 @@ Demo storyboard: [`docs/images/demo-v1-contact.jpg`](docs/images/demo-v1-contact
 
 [![RecastRoom vertical hero](media/posters/hero-9x16.webp)](media/recastroom-hero-9x16.mp4)
 
-### Source-versus-recast proof
+### Source-versus-recast comparison
 
 [![Source versus recast proof](media/posters/proof-9x16.webp)](media/recastroom-proof-9x16.mp4)
 
@@ -162,6 +174,7 @@ python -m pip install ".[dev]"
 
 export RECASTROOM_COMFY_URL="http://127.0.0.1:8188"
 export RECASTROOM_WORKFLOW="workflows/recastroom_h3_workflow.json"
+export RECASTROOM_BACKEND=dry_run
 
 uvicorn app.main:app --reload --port 8768
 ```
@@ -172,8 +185,13 @@ Open:
 http://127.0.0.1:8768
 ```
 
-The app opens directly into that workspace. Public overview and legal notes are
-linked in the footer.
+After first-run setup, the app opens into that workspace. Public overview and
+legal notes are linked in the footer.
+
+On first launch, a four-step setup wizard records your connection preference,
+guidance level, and review mode. It can be skipped and reopened later. It does
+not change server settings or store credentials; the readiness bar shows the
+connection the server is actually using.
 
 ## Repository guide
 
@@ -243,7 +261,7 @@ original clip
   -> new lead reference
   -> permission confirmation
   -> RecastRoom MiniMax H3 workflow
-  -> local or hosted Comfy rendering
+  -> configured Comfy service
   -> original dialogue restored
   -> before/after review and job summary
 ```
@@ -261,7 +279,7 @@ The UI requires permission confirmation before a job can start. The repository m
 - clips of deceased performers without estate consent,
 - non-consensual sexual, political, harassing, or deceptive media.
 
-See [`RIGHTS.md`](RIGHTS.md) and [`examples/RIGHTS_ATTESTATION.md`](examples/RIGHTS_ATTESTATION.md).
+See [`RIGHTS.md`](RIGHTS.md) and [`examples/PERMISSION_DECLARATION.md`](examples/PERMISSION_DECLARATION.md).
 
 ## Troubleshooting
 

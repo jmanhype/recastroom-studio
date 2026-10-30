@@ -56,24 +56,24 @@ def check_legacy_renderer(
     except requests.Timeout:
         return _legacy_not_ready(
             "renderer_timeout",
-            "The legacy renderer did not respond in time. Restore the connection, then check it again.",
+            "ComfyUI did not respond in time. Restore the connection, then check it again.",
         )
     except requests.RequestException:
         return _legacy_not_ready(
             "renderer_unreachable",
-            "The legacy renderer is unreachable. Start or reconnect it, then check the connection again.",
+            "ComfyUI is unreachable. Start or reconnect it, then check the connection again.",
         )
 
     status = response.status_code
     if 300 <= status < 400:
         return _legacy_not_ready(
             "renderer_redirect",
-            "The legacy renderer returned a redirect instead of system statistics. Correct its configured address, then check again.",
+            "ComfyUI returned a redirect instead of system information. Correct its configured address, then check it again.",
         )
     if not 200 <= status < 300:
         return _legacy_not_ready(
             "renderer_http_error",
-            f"The legacy renderer returned HTTP {status}. Restore it, then check the connection again.",
+            f"ComfyUI returned HTTP {status}. Restore it, then check the connection again.",
         )
 
     try:
@@ -81,20 +81,20 @@ def check_legacy_renderer(
     except ValueError:
         return _legacy_not_ready(
             "renderer_malformed_response",
-            "The legacy renderer returned unreadable system statistics. Restore or update it, then check again.",
+            "ComfyUI returned unreadable system information. Restore or update it, then check it again.",
         )
 
     if not isinstance(payload, dict):
         return _legacy_not_ready(
             "renderer_schema_mismatch",
-            "The endpoint did not return a ComfyUI system statistics object. Verify the configured renderer, then check again.",
+            "The endpoint did not return ComfyUI system information. Verify the configured connection, then check it again.",
         )
     system = payload.get("system")
     devices = payload.get("devices")
     if not isinstance(system, dict) or not isinstance(devices, list):
         return _legacy_not_ready(
             "renderer_schema_mismatch",
-            "The endpoint did not return the expected ComfyUI system and device fields. Verify the configured renderer, then check again.",
+            "The endpoint did not return the expected ComfyUI system and device fields. Verify the configured connection, then check it again.",
         )
 
     return RendererReadiness(
@@ -102,7 +102,7 @@ def check_legacy_renderer(
         ready=True,
         checked=True,
         code="renderer_reachable",
-        message="Legacy renderer reachable. This does not verify models, GPU availability, cost, or generation success.",
+        message="ComfyUI is reachable. This does not verify models, GPU availability, cost, or generation success.",
     )
 
 
@@ -129,7 +129,7 @@ def renderer_readiness(
             ready=True,
             checked=True,
             code="local_dry_run",
-            message="Dry run is local only and performs no AI inference or renderer connection.",
+            message="Preview mode is local only and performs no AI inference or renderer connection.",
         )
     if backend == "sdk":
         return RendererReadiness(
@@ -137,7 +137,7 @@ def renderer_readiness(
             ready=False,
             checked=False,
             code="sdk_unchecked",
-            message="Official Comfy SDK reachability is not checked by this local health endpoint.",
+        message="Hosted Comfy reachability is not checked by this local health endpoint.",
         )
     return RendererReadiness(
         backend=backend,

@@ -474,15 +474,16 @@ def test_production_view_explicit_cpu_authorization_and_honest_preview_boundary(
     subprocess.run(["node", "--check", str(ROOT / "app/web/m1.js")], check=True,
                    capture_output=True, text=True)
     assert "/api/projects/${encodeURIComponent(workspace.projectId)}/attempts" in script
-    assert "mode: 'dry_run'" in script and "CPU dry_run" in script
-    assert "OWNER_BLOCKED" in script and "client_request_id: authorizedRequestKey" in script
+    assert "mode: 'dry_run'" in script and "Local preview" in script
+    assert "Live rendering requires separate setup" in script
+    assert "client_request_id: authorizedRequestKey" in script
     assert "authorizedRequestKey = `m1-${resolvedOperation.fingerprint}`" in script
     assert "cannot enqueue another attempt" in script
     for state in ("prepared", "ready", "submitted", "running", "cancel_requested",
                   "provider_confirmed_cancelled"):
         assert state in script
     assert "no refund is claimed" in script
-    assert "Browser playback is not provided" in script
+    assert "protected project storage" in script
     assert "Request reconciliation" in script and "/reconcile`" in script
     assert "Select attempt controls" in script
     assert "/run" not in script and "URL.createObjectURL" not in script

@@ -51,13 +51,13 @@
   }
   const isLegacy = (payload = health) => payload?.backend === 'legacy';
   const runConnectionReady = (payload = health) => Boolean(payload?.ok) && (!isLegacy(payload) || payload.renderer_ready === true);
-  const rendererMessage = (payload = health) => payload?.renderer?.message || 'The legacy renderer is not verified. Check the connection again.';
+    const rendererMessage = (payload = health) => payload?.renderer?.message || 'The ComfyUI connection is not verified. Check it again.';
   function readinessStates() {
     const hasSource = Boolean($('source').files.length);
     const savedReferences = window.ProjectsUI?.getReferenceState?.();
     const hasReference = Boolean($('reference_1').files.length || savedReferences?.ready);
     const hasRights = $('rights').checked;
-    const customGraph = Boolean($('workflow').files.length);
+    const customWorkflow = Boolean($('workflow').files.length);
     const connectionReady = Boolean(health?.ok && runConnectionReady(health));
     return {
       source: busy
@@ -76,34 +76,34 @@
         ? { state: 'ok', label: 'Permission recorded' }
         : { state: 'blocked', label: 'Permission required' },
       workflow: busy
-        ? { state: 'checking', label: 'Validating graph' }
+        ? { state: 'checking', label: 'Validating workflow' }
         : !health
           ? { state: 'unknown', label: 'Checking' }
           : !health.workflow_exists
-            ? { state: 'blocked', label: 'Graph missing' }
-            : customGraph
-              ? { state: 'pending', label: 'Custom graph pending validation' }
-              : { state: 'ok', label: 'Bundled graph ready' },
+            ? { state: 'blocked', label: 'Workflow missing' }
+            : customWorkflow
+              ? { state: 'pending', label: 'Custom workflow pending validation' }
+              : { state: 'ok', label: 'Bundled workflow ready' },
       renderer: !health
         ? { state: 'unknown', label: 'Checking' }
         : health.backend === 'dry_run'
-          ? { state: 'ok', label: 'Dry-run runner ready' }
+          ? { state: 'ok', label: 'Preview runner ready' }
           : isLegacy() && health.renderer_ready === true
             ? { state: 'ok', label: 'Renderer reachable' }
             : isLegacy()
-              ? { state: 'blocked', label: 'Renderer disconnected' }
-              : { state: 'pending', label: 'SDK configured · reachability unchecked' },
+              ? { state: 'blocked', label: 'ComfyUI disconnected' }
+              : { state: 'pending', label: 'Hosted Comfy configured · reachability unchecked' },
       execution: !health
         ? { state: 'unknown', label: 'Checking' }
         : health.backend === 'dry_run'
-          ? { state: 'ok', label: 'Dry run · no AI inference' }
+          ? { state: 'ok', label: 'Preview · no AI inference' }
           : job && !recommended
             ? { state: 'blocked', label: 'Blocked by preflight' }
             : !connectionReady
-              ? { state: 'blocked', label: 'Blocked until renderer answers' }
+              ? { state: 'blocked', label: 'Blocked until ComfyUI answers' }
               : job
                 ? { state: 'ok', label: 'H3 run ready' }
-                : { state: 'pending', label: 'H3 backend configured' },
+                : { state: 'pending', label: 'Hosted Comfy configured' },
     };
   }
   function updateReadiness() {
@@ -123,16 +123,16 @@
     $('submit').disabled = !ready || busy || !health?.ok || !health?.workflow_exists;
     $('submit').textContent = busy ? 'Working…' : job ? 'Prepare a new job ↗' : 'Prepare workflow ↗';
     $('prepare-help').textContent = busy ? 'Wait for this request, or reset to start over.' : !health?.ok
-      ? 'Backend not verified. Check the connection before preparing.' : !health.workflow_exists
-      ? 'The server workflow is missing. Ask the operator to restore it.' : !ready
+      ? 'Connection not verified. Check it before preparing.' : !health.workflow_exists
+      ? 'The server workflow is missing. Restore the repository workflow.' : !ready
       ? 'Select a source and primary reference, then confirm permission.' : 'Ready for preflight. Your media will upload when you prepare.';
     $('run').disabled = !job || !recommended || busy || running || !health?.ok || (isLegacy() && health.renderer_ready !== true);
     $('run-help').textContent = running ? 'A run may be in progress. Check status before submitting again.' : !job
       ? 'Preparation must finish before running.' : !recommended ? 'Source preflight did not recommend this clip. Choose another source and prepare again.'
-      : !health?.ok ? 'Backend unknown. Check the connection before running.' : isLegacy() && health.renderer_ready === undefined
-      ? 'Checking the renderer connection before running…' : isLegacy() && health.renderer_ready !== true
+      : !health?.ok ? 'Connection unknown. Check it before running.' : isLegacy() && health.renderer_ready === undefined
+      ? 'Checking the ComfyUI connection before running…' : isLegacy() && health.renderer_ready !== true
       ? `${rendererMessage()} Prepared files and permissions are preserved.` : health.backend === 'dry_run'
-      ? 'Dry run only: copies source media. No AI inference or recasting.' : 'Runs the configured backend. Remote execution may incur provider charges.';
+      ? 'Preview only: copies source media. No AI inference or recasting.' : 'Runs the configured service. Hosted execution may incur provider charges.';
     updateReadiness();
   }
   function clearVideo(id) { const video = $(id); video.pause(); video.removeAttribute('src'); video.load(); }
@@ -322,7 +322,7 @@
   }
   async function checkHealth() {
     const version = ++healthVersion;
-    health = null; controls(); $('backend').textContent = 'Backend unknown · checking connection';
+    health = null; controls(); $('backend').textContent = 'Connection unknown · checking';
     try {
       const response = await fetch('/api/health');
       if (!response.ok) throw new Error('unavailable');
@@ -330,27 +330,28 @@
       if (version !== healthVersion) return;
       health = payload;
       $('backend').textContent = payload.ok ? payload.backend === 'dry_run'
-        ? 'DRY RUN · No AI inference · source-copy preview'
+        ? 'PREVIEW · No AI inference · source-copy output'
         : isLegacy(payload) ? payload.renderer_ready === true
-          ? 'Backend: legacy · renderer reachable · model, cost and location not verified'
-          : `Backend: legacy · renderer disconnected · ${publicMessage(payload.renderer)}`
-        : `Backend: ${String(payload.backend || 'unknown')} · SDK reachability unchecked · cost and location not verified` : 'Backend unavailable';
-    } catch (_) { if (version !== healthVersion) return; $('backend').textContent = 'Backend unknown · connection unavailable'; }
+          ? 'ComfyUI connected · model, cost, and location not verified'
+          : `ComfyUI disconnected · ${publicMessage(payload.renderer)}`
+        : 'Hosted Comfy configured · reachability unchecked · cost and location not verified'
+        : 'Connection unavailable';
+    } catch (_) { if (version !== healthVersion) return; $('backend').textContent = 'Connection unavailable'; }
     $('health-retry').hidden = Boolean(health?.ok && runConnectionReady(health)); controls();
     return health;
   }
   form.addEventListener('input', (event) => {
     if (event.target.closest('#archive-panel')) return;
     invalidate();
-    // A changed media selection needs a new, manual attestation.
+    // A changed media selection needs a new, manual permission confirmation.
     if (['source', 'reference_1', 'reference_2'].includes(event.target.id)) {
       $('rights').checked = false; preview(event.target.id); controls();
     }
     if (event.target.id === 'workflow') {
       $('rights').checked = false; controls();
       $('workflow-note').textContent = event.target.files.length
-        ? `Custom graph selected: ${event.target.files[0].name}. It must pass server validation.`
-        : 'Custom graph cleared. The production Recast Room graph will be used.';
+        ? `Custom workflow selected: ${event.target.files[0].name}. It must pass server validation.`
+        : 'Custom workflow cleared. The bundled RecastRoom workflow will be used.';
     }
   });
   document.addEventListener('projects:selection-change', () => {
@@ -405,7 +406,7 @@
       $('error').hidden = true;
       $('stage').textContent = String(status.state || 'unknown').toUpperCase();
       $('output').textContent = String(status.message || 'Waiting for a server update.');
-      if (status.backend === 'dry_run') $('output').append(' · Dry run: no AI inference. Output copies the source.');
+      if (status.backend === 'dry_run') $('output').textContent = 'Preview complete · no AI inference or recasting · output copies the source.';
       if (status.state === 'complete') {
         running = false; busy = false; $('review').hidden = false; $('downloads').replaceChildren();
         const names = { generated: 'Generated clip', final: 'Final with audio', side_by_side: 'Side-by-side review' };
@@ -419,7 +420,7 @@
         setStep('review'); controls();
       } else if (status.state === 'error') {
         busy = false; running = false;
-        showError(`Run stopped: ${errorText(status.error?.message || status.message)} Check backend configuration, then retry the run or reset.`); controls();
+        showError(`Run stopped: ${errorText(status.error?.message || status.message)} Check the configured service, then retry the run or reset.`); controls();
       } else { timer = setTimeout(() => poll(version, id), 1500); }
     } catch (error) {
       if (!isCurrent(version, id)) return;
@@ -433,7 +434,7 @@
     const version = epoch, id = job; busy = true;
     $('error').hidden = true; $('review').hidden = true; $('downloads').replaceChildren();
     clearVideo('final-preview'); clearVideo('comparison-preview');
-    $('stage').textContent = 'CHECKING'; $('output').textContent = 'Checking the configured renderer before submission…'; controls();
+    $('stage').textContent = 'CHECKING'; $('output').textContent = 'Checking the configured ComfyUI connection before submission…'; controls();
     try {
       const verifiedHealth = await checkHealth();
       if (!isCurrent(version, id)) return;
@@ -441,7 +442,7 @@
         throw new APIError(rendererMessage(verifiedHealth), 503, verifiedHealth?.renderer, true, true);
       }
       running = true;
-      $('stage').textContent = 'SUBMITTING'; $('output').textContent = 'Requesting a run from the configured backend…'; controls();
+      $('stage').textContent = 'SUBMITTING'; $('output').textContent = 'Requesting a run from the configured service…'; controls();
       await request(`/api/jobs/${id}/run`, { method: 'POST' });
       if (!isCurrent(version, id)) return;
       await poll(version, id);
@@ -452,7 +453,7 @@
         running = false;
         const detail = error.detail && typeof error.detail === 'object' ? error.detail : null;
         if (detail?.code || detail?.message) health = { ...health, renderer_ready: false, renderer: detail };
-        $('backend').textContent = `Backend: legacy · renderer disconnected · ${publicMessage(detail)}`;
+        $('backend').textContent = `ComfyUI disconnected · ${publicMessage(detail)}`;
         $('stage').textContent = 'RUN BLOCKED';
         $('output').textContent = error.beforeRequest
           ? 'No run request was sent. Prepared files and permissions are preserved.'

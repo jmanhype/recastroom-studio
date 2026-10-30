@@ -102,7 +102,7 @@ def test_dry_run_backend_completes_upload_to_review_artifacts(tmp_path, monkeypa
                 data={"identity": "Synthetic fixture performer", "seed": "50"},
             )
             assert missing.status_code == 422
-            assert missing.json()["detail"] == "Operator attestation is required."
+            assert missing.json()["detail"] == "Permission declaration is required."
             assert not (tmp_path / "jobs").exists()
 
             invalid = client.post(
@@ -250,9 +250,9 @@ def test_sdk_backend_without_credentials_fails_closed_in_status(tmp_path, monkey
 @pytest.mark.parametrize(
     ("backend", "backend_label", "message"),
     [
-        ("dry_run", "dry_run", "Dry-run execution requires a recorded operator attestation"),
-        ("legacy", "legacy", "Legacy ComfyUI execution requires a recorded operator attestation"),
-        ("sdk", "sdk", "Official Comfy SDK execution requires a recorded operator attestation"),
+        ("dry_run", "dry_run", "Preview execution requires a recorded permission declaration"),
+        ("legacy", "legacy", "ComfyUI execution requires a recorded permission declaration"),
+        ("sdk", "sdk", "Hosted Comfy execution requires a recorded permission declaration"),
     ],
 )
 def test_tampered_attestation_blocks_every_backend(

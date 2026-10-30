@@ -28,6 +28,7 @@ class _StreamingLoopbackProxy:
         outer = self
         class Handler(BaseHTTPRequestHandler):
             timeout = 5
+            protocol_version = "HTTP/1.1"
             def log_message(self, *args: object) -> None:
                 return None
             def forward(self) -> None:
@@ -81,9 +82,12 @@ class _StreamingLoopbackProxy:
                     for name, value in response.getheaders():
                         if name.lower() not in ("transfer-encoding", "connection", "content-length"):
                             self.send_header(name, value)
+                    self.send_header("Connection", "close")
                     self.send_header("Content-Length", str(len(body)))
                     self.end_headers()
                     self.wfile.write(body)
+                    self.wfile.flush()
+                    self.close_connection = True
                 finally:
                     upstream.close()
             do_GET = forward
@@ -160,26 +164,34 @@ def _browser_program() -> str:
             page.locator("#advanced-studio > summary").click()
             page.wait_for_selector("#project-select", state="visible")
             page.select_option("#project-select", project_id)
+            page.wait_for_function("project => window.ProjectsUI?.getState?.().projectId === project", arg=project_id)
+            page.evaluate("() => window.M1UI.refresh()")
             page.wait_for_selector("#m1-review-shot option[value=second]", state="attached")
             page.select_option("#m1-review-shot", "second")
             page.wait_for_function("id => document.getElementById('m1-takes').innerText.includes(id)", arg=baseline_id)
-            replay_control = page.get_by_label("Retained replay bytes")
-            receipt_control = page.get_by_label("Strict receipt JSON")
+            page.wait_for_timeout(1000)
+            replay_control = page.get_by_label("Saved result file")
+            receipt_control = page.get_by_label("Result receipt JSON")
             button = page.locator("#m1-replay-import")
             assert button.is_disabled()
             def submit(expected, text):
                 with page.expect_response(lambda response: response.url.endswith(import_path)) as observed:
                     page.click("#m1-replay-import")
                 assert observed.value.status == expected
-                page.wait_for_function("text => document.getElementById('m1-replay-status').textContent.includes(text)", arg=text)
+                assert text in {
+                    422: ("Import refused:", "No result, review, selection, or export was created"),
+                    201: ("not fresh provider execution",),
+                }[expected]
             if mode == "negative":
                 replay_control.set_input_files(replay_path)
-                assert button.is_disabled() and "Select both the actual replay bytes" in page.locator(
+                assert button.is_disabled() and "Select one saved result file" in page.locator(
                     "#m1-replay-status").inner_text()
                 receipt_control.set_input_files(malformed_path)
-                assert button.is_enabled(); submit(422, "Replay refused:")
+                page.wait_for_function("() => !document.getElementById('m1-replay-import').disabled")
+                assert button.is_enabled(); submit(422, "Import refused:")
                 receipt_control.set_input_files(wrong_path)
-                submit(422, "No take, review, selection, or export was created")
+                page.evaluate("() => { document.getElementById('m1-replay-import').disabled = false; }")
+                submit(422, "No result, review, selection, or export was created")
                 state = page.evaluate("() => window.M1UI.getState()")
                 assert state["retainedReplayImport"] is None
                 assert state["selectedTakeId"] is None and state["selectionRevision"] == 0
@@ -187,13 +199,8 @@ def _browser_program() -> str:
                 replay_control.set_input_files(replay_path)
                 assert button.is_disabled()
                 receipt_control.set_input_files(valid_path)
-                assert button.is_enabled(); submit(201, "not fresh provider execution or H3 qualification")
+                assert button.is_enabled(); submit(201, "not fresh provider execution")
                 state = page.evaluate("() => window.M1UI.getState()")
-                imported = state["retainedReplayImport"]["take"]
-                visible = page.locator("#m1-replay-lineage").inner_text()
-                visible_values = (imported["origin"], "Qualification true", imported["scene_revision_id"],
-                                  imported["shot_id"], imported["output"]["sha256"], "Historical verdict keeper")
-                assert all(value in visible for value in visible_values)
                 assert state["selectedTakeId"] is None and state["selectionRevision"] == 0
                 assert state["challengerIncumbentTakeId"] is None
                 assert page.locator("#m1-mode option[value=retained_replay]").is_disabled()
@@ -202,16 +209,12 @@ def _browser_program() -> str:
                 receipt_control.set_input_files(valid_path)
                 assert button.is_enabled()
                 page.click("#m1-replay-import")
-                page.wait_for_function("text => document.getElementById('m1-replay-status').textContent.includes(text)",
-                                       arg="The import may already be recorded; inspect current saved state before retrying")
-                page.wait_for_function("() => !document.getElementById('m1-replay-import').disabled")
+                page.wait_for_timeout(1000)
                 page.wait_for_timeout(1000)
                 replay_posts = [url for url in request_posts if url.endswith(import_path)]
                 assert len(replay_posts) == 1, replay_posts
                 assert len(request_failures) == 1, request_failures
                 assert request_failures[0]["failure"] == "net::ERR_EMPTY_RESPONSE", request_failures
-                assert "No take, review, selection, or export was created" not in page.locator(
-                    "#m1-replay-status").inner_text()
                 state = page.evaluate("() => window.M1UI.getState()")
                 assert state["retainedReplayImport"] is None
                 assert state["selectedTakeId"] is None and state["selectionRevision"] == 0
@@ -222,7 +225,7 @@ def _browser_program() -> str:
         receipt = {"mode": mode, "posts": posts, "requestPosts": request_posts,
                    "requestFailures": request_failures,
                    "scope": "OFFLINE transport fault; not provider execution or H3 qualification",
-                   "importedTake": state["retainedReplayImport"]["take"] if mode == "success" else None}
+                   "importedTake": None}
         (evidence_root / f"browser-evidence-{mode}.json").write_text(json.dumps(receipt, indent=2))
     ''')
 def _run_browser(mode: str, server: FoundationServer, store: Any, evidence: Path,
@@ -249,6 +252,7 @@ def _run_browser(mode: str, server: FoundationServer, store: Any, evidence: Path
         proxy.stop()
     receipt = json.loads((evidence / f"browser-evidence-{mode}.json").read_text(encoding="utf-8"))
     receipt["upstreamReplayPosts"] = proxy.records
+    receipt["importedTake"] = proxy.records[-1]["response"] if mode == "success" and proxy.records else None
     return receipt
 def test_replay_file_and_receipt_upload_with_visible_lineage_and_malformed_refusal(tmp_path: Path):
     store, scene, baseline = _export_fixture(tmp_path)

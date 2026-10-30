@@ -164,9 +164,10 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "REQUIRED · 4 STEPS" in home.text
     assert "Where should recasts run?" in home.text
     assert ">ComfyUI</strong>" in home.text
-    assert "Comfy API · SDK" in home.text
-    assert "RunPod Serverless" in home.text
-    assert "secrets stay outside the browser" in home.text
+    assert "Hosted Comfy API" in home.text
+    assert "Local preview" in home.text
+    assert "RunPod" not in home.text
+    assert "does not change server settings or store credentials" in home.text
     assert "Solo or review handoff?" in home.text
     assert "Reviewer name" in home.text
     assert 'id="walkthrough-skip"' in home.text
@@ -174,7 +175,7 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "Open the studio" in home.text
     assert parser.elements["show-walkthrough"]["tag"] == "button"
     assert "Primary reference" in home.text
-    assert "Renderer" in home.text
+    assert "ComfyUI" in home.text
     assert "Custom RecastRoom-compatible workflow JSON" in home.text
     assert "Future concepts stay on the roadmap" in home.text
     assert parser.elements["source-preview"]["controls"] is not None
@@ -187,8 +188,8 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "$('rights').checked = false" in js
     assert "!ready || busy || !health?.ok || !health?.workflow_exists" in js
     assert "!job || !recommended || busy || running || !health?.ok" in js
-    assert "Dry run only: copies source media. No AI inference or recasting." in js
-    assert "Dry run: no AI inference. Output copies the source." in js
+    assert "Preview only: copies source media. No AI inference or recasting." in js
+    assert "Preview complete · no AI inference or recasting · output copies the source." in js
     assert "status.state === 'complete'" in js
     assert "if (!status.artifacts?.[key]) continue" in js
     assert "status.state === 'error'" in js
@@ -250,16 +251,13 @@ def test_landing_leads_with_workflow_and_scopes_audio_proof(studio):
         assert legacy_audio_claim not in landing.text
 
     assert "Keep the performance, camera, timing, and original dialogue" in home.text
-    assert "Discovery metadata does not bypass the operator attestation gate." in home.text
+    assert "Discovery metadata does not bypass the permission checkpoint." in home.text
     assert "From original shot to final export" in landing.text
-    assert "selected take, edit map, and export evidence" in landing.text
-    assert "Historical 23.8-second demo · stream-copy evidence is keeper-specific" in landing.text
-    assert "RecastRoom freezes the edit map, preserves take history, and makes export checks repeatable." in landing.text
+    assert "Advanced project tools record source cuts, take selections, and export checks" in landing.text
+    assert "23.8-second public example" in landing.text
     assert "Shot / take / export" in landing.text
-    assert "Historical keeper · PCM max delta 0" in landing.text
-    assert "Historical keeper audio" in landing.text
-    assert "edited exports use a codec-aware edit map" in landing.text
-    assert "edited exports validate a codec-aware edit map" in landing.text
+    assert "review output restores the original source audio" in landing.text
+    assert "advanced exports follow the selected audio policy" in landing.text
     assert "Source and likeness permissions" in landing.text
     assert "cannot prove legal clearance" in landing.text
 
@@ -282,7 +280,7 @@ def test_real_dry_run_flow_requires_consent_and_serves_only_completed_artifacts(
     missing_consent = prepare_request(client, rights_attested="false")
     invalid_consent = prepare_request(client, rights_attested="not-a-boolean")
     assert missing_consent.status_code == 422
-    assert missing_consent.json()["detail"] == "Operator attestation is required."
+    assert missing_consent.json()["detail"] == "Permission declaration is required."
     assert invalid_consent.status_code == 422
     assert not (tmp_path / "uploads").exists()
     assert not (tmp_path / "jobs").exists()

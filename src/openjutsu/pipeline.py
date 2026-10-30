@@ -115,7 +115,7 @@ def prepare_managed_workflow(
 ) -> ManagedWorkflowPreparation:
     """Prepare an explicitly qualified managed window without legacy defaults."""
     if not rights_attested:
-        raise ValueError("operator attestation is required")
+        raise ValueError("permission declaration is required")
     if not isinstance(window, WindowMap):
         raise ValueError("managed preparation requires a typed qualified WindowMap")
     if not isinstance(workflow_template, dict):
@@ -199,7 +199,7 @@ def prepare_workflow(
     workflow_template: str | Path | None = None,
 ) -> tuple[PreparedJob, dict[str, Any]]:
     if not rights_attested:
-        raise ValueError("operator attestation is required")
+        raise ValueError("permission declaration is required")
     job_dir = settings.data_dir / "jobs" / job_id
     job_dir.mkdir(parents=True, exist_ok=True)
 

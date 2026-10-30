@@ -42,46 +42,46 @@
     const list = $('m1-scenes').closest('.projects-grid');
     $('m1-scenes-heading').closest('section').querySelector('.hint').textContent =
       'Inspect and confirm exact original cuts, then review one pinned non-inference operation. Resolution never queues cost or generates media.';
-    section.innerHTML = `<h3 id="m1-resolve-heading">Read-only recipe resolution</h3>
-      <label for="m1-profile">Pinned profile</label><select id="m1-profile"></select>
-      <label for="m1-scene-select">Scene revision</label><select id="m1-scene-select"></select>
+    section.innerHTML = `<h3 id="m1-resolve-heading">Read-only settings review</h3>
+      <label for="m1-profile">Saved workflow profile</label><select id="m1-profile"></select>
+      <label for="m1-scene-select">Scene version</label><select id="m1-scene-select"></select>
       <label for="m1-shot-select">Original shot</label><select id="m1-shot-select"></select>
       <label for="m1-seed">Seed</label>
       <input id="m1-seed" type="number" min="0" step="1" value="117">
-      <label for="m1-rights"><input id="m1-rights" type="checkbox"> I have the rights needed for this resolution</label>
-      <button id="m1-resolve" type="button">Inspect effective operation</button>
+      <label for="m1-rights"><input id="m1-rights" type="checkbox"> I have permission for this source and reference</label>
+      <button id="m1-resolve" type="button">Inspect prepared settings</button>
       <label for="m1-word-timing">Optional original-source word timing JSON</label>
       <input id="m1-word-timing" type="file" accept=".json,application/json">
       <button id="m1-word-clear" type="button">Clear word timing</button>
       <p id="m1-word-status" role="status">No word timing selected.</p>
-      <p id="m1-resolve-note" class="hint" role="status">Resolution is read-only, never queues cost, and never starts generation.</p>
+      <p id="m1-resolve-note" class="hint" role="status">This review is read-only, never queues cost, and never starts generation.</p>
 	    <dl id="m1-resolve-output" class="readiness-strip"></dl>
-      <h3 id="m1-production-heading">Production authorization</h3>
+      <h3 id="m1-production-heading">Preview authorization</h3>
       <label for="m1-mode">Execution mode</label>
       <select id="m1-mode">
-        <option value="dry_run" selected>CPU dry_run · offline non-inference</option>
-        <option value="retained_replay" disabled>Retained replay · import below, no execution</option>
-        <option value="comfy" disabled>Comfy · OWNER_BLOCKED</option>
-        <option value="sdk" disabled>SDK · OWNER_BLOCKED</option>
+        <option value="dry_run" selected>Local preview · offline non-inference</option>
+        <option value="retained_replay" disabled>Saved result · import below, no execution</option>
+        <option value="comfy" disabled>ComfyUI · separate setup required</option>
+        <option value="sdk" disabled>Hosted Comfy · separate setup required</option>
       </select>
-      <label for="m1-authorize-rights"><input id="m1-authorize-rights" type="checkbox"> I explicitly authorize this one CPU dry-run attempt</label>
-      <button id="m1-authorize" type="button" disabled>Authorize one CPU dry attempt</button>
+      <label for="m1-authorize-rights"><input id="m1-authorize-rights" type="checkbox"> I explicitly authorize this one local preview attempt</label>
+      <button id="m1-authorize" type="button" disabled>Authorize one preview</button>
       <label for="m1-incumbent-select">Same-shot incumbent take</label>
       <select id="m1-incumbent-select"></select>
-      <label for="m1-challenger-rights"><input id="m1-challenger-rights" type="checkbox"> I explicitly authorize this one CPU dry-run challenger</label>
-      <button id="m1-challenger-authorize" type="button" disabled>Authorize one CPU challenger</button>
+      <label for="m1-challenger-rights"><input id="m1-challenger-rights" type="checkbox"> I explicitly authorize one alternate preview</label>
+      <button id="m1-challenger-authorize" type="button" disabled>Authorize one alternate preview</button>
       <p id="m1-challenger-note" class="hint" role="status">Resolve a shot, then select one qualified take attached to that exact shot.</p>
       <button id="m1-cancel" type="button" disabled>Record cancellation request</button>
       <button id="m1-reconcile" type="button" disabled>Request reconciliation</button>
       <p id="m1-production-note" class="hint" role="status">Resolve an operation first. Authorization is the only submission boundary.</p>
       <ul id="m1-attempts" aria-live="polite"></ul>
-      <h3 id="m1-retained-heading">Retained replay import</h3>
-      <label for="m1-replay-file">Retained replay bytes</label>
+      <h3 id="m1-retained-heading">Saved result import</h3>
+      <label for="m1-replay-file">Saved result file</label>
       <input id="m1-replay-file" type="file" accept="video/*,.nut">
-      <label for="m1-replay-receipt">Strict receipt JSON</label>
+      <label for="m1-replay-receipt">Result receipt JSON</label>
       <input id="m1-replay-receipt" type="file" accept="application/json,.json">
-      <button id="m1-replay-import" type="button" disabled>Import retained replay</button>
-      <p id="m1-replay-status" class="hint" role="status">Select the actual replay bytes and exactly one strict JSON receipt; import never queues execution.</p>
+      <button id="m1-replay-import" type="button" disabled>Import saved result</button>
+      <p id="m1-replay-status" class="hint" role="status">Select one saved result file and its matching JSON receipt; import never queues execution.</p>
       <p id="m1-replay-lineage" class="hint" aria-live="polite"></p>
       <h3 id="m1-review-heading">Review and reversible selection</h3>
       <label for="m1-review-shot">Review shot</label><select id="m1-review-shot"></select>
@@ -89,20 +89,20 @@
       <video id="m1-comparison-preview" controls playsinline preload="metadata" aria-label="Aligned source and candidate comparison"></video>
       <p id="m1-comparison-caption" class="hint">No candidate selected.</p>
       <label for="m1-review-verdict">Human review</label>
-      <select id="m1-review-verdict"><option value="keeper">Keeper</option><option value="needs_review">Needs review</option><option value="reject">Reject</option></select>
+      <select id="m1-review-verdict"><option value="keeper">Accept</option><option value="needs_review">Needs review</option><option value="reject">Reject</option></select>
       <label for="m1-review-note">Review note</label>
       <input id="m1-review-note" type="text" maxlength="4000" placeholder="Required human review note">
       <button id="m1-review-append" type="button">Append review</button>
       <button id="m1-deselect" type="button">Deselect current take</button>
-      <button id="m1-selection-refresh" type="button">Reset local CAS token</button>
+      <button id="m1-selection-refresh" type="button">Refresh selection state</button>
       <p id="m1-review-note-status" class="hint" role="status">Reviews append history; selection is explicit and reversible.</p>
-      <h3 id="m1-export-heading">Frozen trim/order export</h3>
+      <h3 id="m1-export-heading">Fixed edit export</h3>
       <div id="m1-export-list" aria-live="polite"></div>
       <button id="m1-export-add" type="button">Add explicit edit item</button>
       <label for="m1-audio-policy">Audio policy</label>
-      <select id="m1-audio-policy"><option value="source_edit_map">source_edit_map</option><option value="mute">mute</option><option value="source_stream_copy">source_stream_copy</option></select>
-      <button id="m1-create-edit" type="button" disabled>Create frozen edit revision</button>
-      <button id="m1-export" type="button" disabled>Export actual bytes</button>
+      <select id="m1-audio-policy"><option value="source_edit_map">Follow the edit</option><option value="mute">Mute</option><option value="source_stream_copy">Copy original stream</option></select>
+      <button id="m1-create-edit" type="button" disabled>Create fixed edit version</button>
+      <button id="m1-export" type="button" disabled>Export result</button>
       <a id="m1-export-download" href="#" download hidden>Download export bytes</a>
       <p id="m1-export-status" class="hint" role="status">Select explicit takes and source ranges; edits may trim, repeat, omit, or reorder.</p>`;
     list.append(section);
@@ -209,7 +209,7 @@
     renderExport();
     renderRetainedReplay();
     $('m1-source-note').textContent = notice;
-    $('m1-cut-note').textContent = 'Ranges are zero-based half-open frames and must cover every original frame once. Use pass-through for frames you do not want recast.';
+    $('m1-cut-note').textContent = 'Use frame ranges that cover every original frame exactly once. Use pass-through for frames you do not want recast.';
     setBusy(false);
   }
   function renderScenes() {
@@ -261,7 +261,7 @@
     const eligible = eligibleIncumbentTakes();
     select.replaceChildren(new Option('Select one exact-shot incumbent', ''));
     eligible.forEach((take) => select.append(new Option(
-      `${take.id} · ${take.origin} · attempt ${take.attempt_id}`, take.id,
+      `${take.id} · ${{dry_run: 'Local preview', retained_replay: 'Saved result'}[take.origin] || take.origin} · result ${take.attempt_id}`, take.id,
     )));
     if (!selectedIncumbentTake()) challengerIncumbentTakeId = null;
     select.value = challengerIncumbentTakeId || '';
@@ -282,7 +282,8 @@
     attempts.forEach((attempt) => {
       const item = document.createElement('li');
       const heading = document.createElement('strong');
-      heading.textContent = `${attempt.mode} · ${attempt.state}`;
+      const modeLabel = {dry_run: 'Local preview', retained_replay: 'Saved result'}[attempt.mode] || attempt.mode;
+      heading.textContent = `${modeLabel} · ${attempt.state}`;
       const detail = document.createElement('small');
       const cancelState = {
         prepared: 'Queued prevention: cancellation prevents submission.',
@@ -294,7 +295,7 @@
         reconcile_needed: 'Paused unknown outcome; reconciliation is required before any conclusion or retry.',
         cancel_requested: 'Pending/unsupported CPU cancellation; no refund is claimed.',
         provider_confirmed_cancelled: 'Provider-confirmed cancellation; no refund is claimed.',
-        completed: 'Completed CPU dry run and registered immutable take.',
+        completed: 'Completed local preview and saved the result.',
         failed: 'Failed; protected evidence and terminal state are retained.',
       }[attempt.state] || 'Waiting for the sole worker.';
       detail.textContent = `${cancelState} Attempt ${attempt.id}`;
@@ -309,7 +310,7 @@
     });
     const current = currentAttempt();
     if (current?.state === 'completed') {
-      $('m1-production-note').textContent = 'Canonical CPU output remains protected NUT. Browser playback is not provided; use the immutable take/output record for review.';
+      $('m1-production-note').textContent = 'The preview file remains in protected project storage. Use the saved result record for review.';
     }
   }
 
@@ -332,7 +333,7 @@
     }
     if (!takes.length) {
       const empty = document.createElement('li');
-      empty.textContent = 'No retained or dry-run candidates for this exact shot.';
+      empty.textContent = 'No saved or preview candidates for this exact shot.';
       list.append(empty);
       renderChallenger();
       return;
@@ -341,17 +342,18 @@
       if (take.scene_revision_id !== scene.id || take.shot_id !== shot.id) return;
       const item = document.createElement('li');
       const heading = document.createElement('strong');
-      heading.textContent = `${take.origin} · ${take.qualified ? 'qualified' : 'unqualified'}`;
+      const originLabel = {dry_run: 'Local preview', replay: 'Saved result'}[take.origin] || take.origin;
+      heading.textContent = `${originLabel} · ${take.qualified ? 'review ready' : 'needs review'}`;
       const detail = document.createElement('small');
       detail.textContent = `${take.id} · output ${take.output.sha256.slice(0, 18)}…`;
-      const canonical = element('a', {href: `/api/assets/${encodeURIComponent(take.output.asset_id)}`, textContent: 'Canonical bytes'});
+      const canonical = element('a', {href: `/api/assets/${encodeURIComponent(take.output.asset_id)}`, textContent: 'Original saved file'});
       canonical.target = '_blank';
       const compare = element('button', {type: 'button', textContent: 'Compare synchronized'});
       const choose = element('button', {type: 'button', textContent: 'Select candidate'});
       compare.addEventListener('click', () => {
         selectedTakeId = take.id;
         $('m1-comparison-preview').src = `/api/projects/${encodeURIComponent(scene.project_id)}/takes/${encodeURIComponent(take.id)}/comparison`;
-        $('m1-comparison-caption').textContent = `Server-rendered derivative: original frames ${shot.source_range.start}-${shot.source_range.end} | candidate ${take.origin}; canonical bytes and hashes are unchanged.`;
+        $('m1-comparison-caption').textContent = `Comparison video: original frames ${shot.source_range.start}-${shot.source_range.end} | saved result files remain unchanged.`;
       });
       choose.addEventListener('click', () => selectCandidate(take.id));
       item.append(heading, detail, canonical, compare, choose);
@@ -425,13 +427,16 @@
   function renderRetainedReplay() {
     const take = retainedReplayImport?.take;
     const verdict = retainedReplayImport?.receipt?.historical_verdict;
+    const origin = take
+      ? ({dry_run: 'Local preview', retained_replay: 'Saved result'}[take.origin] || take.origin)
+      : '';
     $('m1-replay-lineage').textContent = take ? [
-      `Origin ${take.origin}`,
-      `Qualification ${take.qualified ? 'true' : 'false'}`,
-      `Scene revision ${take.scene_revision_id}`,
+      `Origin ${origin}`,
+      `Review ${take.qualified ? 'ready' : 'needed'}`,
+      `Scene version ${take.scene_revision_id}`,
       `Shot ${take.shot_id}`,
-      `Immutable output SHA-256 ${take.output.sha256}`,
-      `Historical verdict ${verdict ?? 'not present'}`,
+      `Saved output SHA-256 ${take.output.sha256}`,
+      `Recorded review ${verdict === 'keeper' ? 'accepted' : verdict ?? 'not present'}`,
     ].join(' · ') : '';
   }
   function retainedReplaySelectionChanged() {
@@ -439,8 +444,8 @@
     renderRetainedReplay();
     const complete = $('m1-replay-file').files.length && $('m1-replay-receipt').files.length;
     $('m1-replay-status').textContent = complete
-      ? 'Both retained files selected. Import validates the strict receipt and byte lineage before creating one take.'
-      : 'Select both the actual replay bytes and exactly one strict JSON receipt.';
+      ? 'Both saved files selected. Import validates the receipt and exact result before creating one result.'
+      : 'Select one saved result file and its matching JSON receipt.';
     setBusy(false);
   }
   function setExportTakeOptions(shotSelect, takeSelect, preserveSelection = false) {
@@ -628,16 +633,16 @@
     const output = $('m1-resolve-output');
     output.replaceChildren();
     if (!resolvedOperation) {
-      output.append(element('div', {}, [element('dt', {}, [document.createTextNode('Operation')]),
-        element('dd', {}, [document.createTextNode('Not resolved')])]));
+      output.append(element('div', {}, [element('dt', {}, [document.createTextNode('Settings')]),
+        element('dd', {}, [document.createTextNode('Not reviewed')])]));
       return;
     }
     const manifest = JSON.parse(resolvedOperation.canonical_json);
     const referenceHashes = manifest.character.reference_hashes.join(' + ');
     for (const [label, value, compactValue] of [
       ['Fingerprint', resolvedOperation.fingerprint, summaryValue(resolvedOperation.fingerprint)],
-      ['Graph', manifest.graph.resolved_semantic_sha256, summaryValue(manifest.graph.resolved_semantic_sha256)],
-      ['References', referenceHashes, `${manifest.character.reference_hashes.length} frozen references`],
+      ['Workflow', manifest.graph.resolved_semantic_sha256, summaryValue(manifest.graph.resolved_semantic_sha256)],
+      ['References', referenceHashes, `${manifest.character.reference_hashes.length} saved references`],
       ['Audio', manifest.audio_policy],
     ]) {
       const detail = element('dd', {title: value}, [document.createTextNode(compactValue ?? value)]);
@@ -760,7 +765,7 @@
     if (!workspace.projectId || !replayFile || !receiptFile) return;
     const version = ++requestEpoch;
     setBusy(true);
-    $('m1-replay-status').textContent = 'Validating retained bytes and strict receipt lineage…';
+      $('m1-replay-status').textContent = 'Validating the saved result and receipt…';
     let submitted = false;
     try {
       const receiptText = await receiptFile.text();
@@ -779,17 +784,17 @@
       renderReview();
       renderExport();
       renderRetainedReplay();
-      $('m1-replay-status').textContent = `Retained replay ${payload.id} imported. This is offline retained proof, not fresh provider execution or H3 qualification.`;
+      $('m1-replay-status').textContent = `Saved result imported. This is offline retained proof, not fresh provider execution.`;
     } catch (error) {
       if (!isCurrent(version)) return;
       if (!submitted) {
         retainedReplayImport = null;
         renderRetainedReplay();
-        $('m1-replay-status').textContent = `Import not submitted: unable to read the strict receipt locally (${error.message}). The selected replay file remains selected.`;
+        $('m1-replay-status').textContent = `Import not submitted: unable to read the receipt locally (${error.message}). The selected result remains selected.`;
       } else if (error?.[responseFacts]?.status === 422 && error[responseFacts].decoded) {
         retainedReplayImport = null;
         renderRetainedReplay();
-        $('m1-replay-status').textContent = `Replay refused: ${error.message}. No take, review, selection, or export was created.`;
+        $('m1-replay-status').textContent = `Import refused: ${error.message}. No result, review, selection, or export was created.`;
       } else {
         retainedReplayImport = null;
         renderRetainedReplay();
@@ -853,7 +858,7 @@
       if (!isCurrent(version)) return;
       scenes = [payload, ...scenes];
       renderScenes();
-      $('m1-cut-note').textContent = `Confirmed immutable revision ${payload.revision}.`;
+      $('m1-cut-note').textContent = `Confirmed fixed scene version ${payload.revision}.`;
     } catch (error) {
       if (!isCurrent(version)) return;
       $('m1-cut-note').textContent = `Could not confirm cuts: ${error.message}`;
@@ -889,12 +894,12 @@
     const seed = Number(seedText);
     if (!workspace.projectId || !workspace.characterId || !workspace.characterVersion
         || !references.ready || seedText.trim() === '' || !Number.isSafeInteger(seed) || seed < 0) {
-      $('m1-resolve-note').textContent = 'Select this project, one original render shot, and one saved immutable character version.';
+      $('m1-resolve-note').textContent = 'Select this project, one original shot, and one saved performer version.';
       return;
     }
     const version = ++requestEpoch;
     setBusy(true);
-    $('m1-resolve-note').textContent = 'Freezing effective read-only inputs…';
+    $('m1-resolve-note').textContent = 'Collecting read-only inputs…';
     try {
       if (wordTimingError) throw new Error('Clear or replace the refused word timing file.');
       if (wordTiming) validateWordTiming(wordTiming);
@@ -919,7 +924,7 @@
       challengerIncumbentTakeId = challengerAttemptId = challengerRequestKey = null;
       renderResolution();
       renderReview();
-      $('m1-resolve-note').textContent = 'Frozen effective operation resolved. No execution attempt, submission, renderer connection, or spending was created.';
+      $('m1-resolve-note').textContent = 'Prepared settings resolved. No execution attempt, submission, renderer connection, or spending was created.';
     } catch (error) {
       if (!isCurrent(version)) return;
       resolvedOperation = null;
@@ -957,7 +962,7 @@
   }
   $('m1-mode').addEventListener('change', () => {
     if ($('m1-mode').value !== 'dry_run') {
-      $('m1-production-note').textContent = 'OWNER_BLOCKED: live/renderer modes require separate owner qualification.';
+      $('m1-production-note').textContent = 'Live rendering requires separate setup and authorization.';
     }
     setBusy(false);
   });
@@ -975,7 +980,7 @@
     authorizedRequestKey = `m1-${resolvedOperation.fingerprint}`;
     const version = ++attemptEpoch;
     setBusy(true);
-    $('m1-production-note').textContent = 'Recording one explicit CPU dry authorization…';
+    $('m1-production-note').textContent = 'Recording one explicit preview authorization…';
     try {
       const payload = await requestJSON(
         `/api/projects/${encodeURIComponent(workspace.projectId)}/attempts`,
@@ -993,7 +998,7 @@
       if (!isAttemptCurrent(version)) return;
       authorizedAttemptId = payload.id;
       await refreshAttempts();
-      $('m1-production-note').textContent = 'Explicit authorization recorded. The lifetime-fenced worker owns submission and recovery.';
+      $('m1-production-note').textContent = 'Preview authorization recorded. The background worker owns submission and recovery.';
     } catch (error) {
       if (!isAttemptCurrent(version)) return;
       $('m1-production-note').textContent = `Authorization response unavailable: ${error.message}. Retry uses the same key and cannot enqueue another attempt.`;
@@ -1009,7 +1014,7 @@
     challengerRequestKey = `m1-challenge-${resolvedOperation.fingerprint}-${incumbent.attempt_id}`;
     const version = ++attemptEpoch;
     setBusy(true);
-    $('m1-challenger-note').textContent = 'Recording one explicit same-shot CPU challenger…';
+    $('m1-challenger-note').textContent = 'Recording one alternate preview for this shot…';
     try {
       const payload = await requestJSON(
         `/api/projects/${encodeURIComponent(workspace.projectId)}/attempts`,
@@ -1028,7 +1033,7 @@
       challengerAttemptId = payload.id;
       authorizedAttemptId = payload.id;
       await refreshAttempts();
-      $('m1-challenger-note').textContent = 'Explicit same-shot challenger recorded. Retry uses the same key and cannot enqueue another attempt.';
+      $('m1-challenger-note').textContent = 'Alternate preview recorded. Retry uses the same request key and cannot enqueue another attempt.';
     } catch (error) {
       if (!isAttemptCurrent(version)) return;
       $('m1-challenger-note').textContent = `Challenger response unavailable: ${error.message}. Retry uses the same key and cannot enqueue another attempt.`;
@@ -1095,7 +1100,8 @@
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({verdict: $('m1-review-verdict').value, note: attributedNote}),
       });
-      $('m1-review-note-status').textContent = `Human review ${payload.verdict} appended as ${payload.id}; no automatic keeper or selection was made.`;
+      const verdictLabel = {keeper: 'accepted', needs_review: 'needs review', reject: 'rejected'}[payload.verdict] || payload.verdict;
+      $('m1-review-note-status').textContent = `Human review ${verdictLabel} and appended as ${payload.id}; no automatic selection was made.`;
     } catch (error) {
       $('m1-review-note-status').textContent = `Review append failed: ${error.message}`;
     }
@@ -1103,7 +1109,7 @@
   $('m1-deselect').addEventListener('click', () => selectCandidate(null));
   $('m1-selection-refresh').addEventListener('click', () => {
     selectionRevision = 0;
-    $('m1-review-note-status').textContent = 'Local CAS token reset to expected revision 1; server history is unchanged.';
+      $('m1-review-note-status').textContent = 'Selection state refreshed; server history is unchanged.';
   });
   $('m1-export-add').addEventListener('click', () => {
     const scene = selectedScene();
@@ -1117,7 +1123,7 @@
     if (!scene || workspace.projectId !== scene.project_id) return;
     const version = ++requestEpoch;
     setBusy(true);
-    $('m1-export-status').textContent = 'Freezing explicit edit items…';
+    $('m1-export-status').textContent = 'Saving the explicit edit list…';
     try {
       const items = collectedEditItems();
       const payload = await requestJSON(`/api/projects/${encodeURIComponent(scene.project_id)}/edit-revisions`, {
@@ -1134,7 +1140,7 @@
       editRevision = payload;
       exportRecord = null;
       $('m1-export-download').hidden = true;
-      $('m1-export-status').textContent = `Frozen edit revision ${payload.id}; selection changes cannot mutate it.`;
+      $('m1-export-status').textContent = `Fixed edit version ${payload.id}; later selections cannot change it.`;
     } catch (error) {
       if (!isCurrent(version)) return;
       editRevision = null;
@@ -1147,7 +1153,7 @@
     if (!editRevision) return;
     const version = ++requestEpoch;
     setBusy(true);
-    $('m1-export-status').textContent = 'Assembling and measuring protected export bytes…';
+      $('m1-export-status').textContent = 'Assembling and checking the protected export…';
     try {
       const payload = await requestJSON(`/edit-revisions/${encodeURIComponent(editRevision.id)}/exports`, {method: 'POST'});
       if (!isCurrent(version)) return;
@@ -1155,8 +1161,8 @@
       const download = $('m1-export-download');
       download.href = `/exports/${encodeURIComponent(payload.id)}/artifact`;
       download.hidden = false;
-      download.textContent = `Download ${payload.sha256.slice(0, 18)}… bytes`;
-      $('m1-export-status').textContent = `Export completed with ${payload.sha256} authority hash.`;
+      download.textContent = `Download result`;
+      $('m1-export-status').textContent = `Export completed with SHA-256 ${payload.sha256}.`;
     } catch (error) {
       if (isCurrent(version)) $('m1-export-status').textContent = `Export refused: ${error.message}`;
     } finally {

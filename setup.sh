@@ -16,12 +16,12 @@ if command -v uv >/dev/null 2>&1; then
   echo "Using uv for the local Python environment."
   [ -d .venv ] || uv venv -p "${RECASTROOM_PYTHON:-3.11}" .venv
   uv pip install -p .venv --upgrade pip
-  uv pip install -p .venv -e ".[dev]"
+  uv pip install -p .venv --refresh ".[dev]"
 else
   echo "uv not found; falling back to python3 -m venv and pip."
   [ -d .venv ] || python3 -m venv .venv
   .venv/bin/python -m pip install --upgrade pip
-  .venv/bin/python -m pip install ".[dev]"
+  .venv/bin/python -m pip install --upgrade ".[dev]"
 fi
 .venv/bin/python -m json.tool workflows/recastroom_h3_workflow.json >/dev/null
 

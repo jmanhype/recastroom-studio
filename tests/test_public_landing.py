@@ -66,11 +66,12 @@ def test_public_landing_page_has_conversion_structure_and_local_assets(studio):
     html = page.text
     assert "Keep the performance." in html
     assert "Change the lead." in html
-    assert 'class="primary" href="/">Start a dry run</a>' in html
+    assert 'class="primary" href="/">Open the studio</a>' in html
     assert "Source and likeness permissions" in html
-    assert "Historical 23.8-second demo · stream-copy evidence is keeper-specific" in html
+    assert "23.8-second public example" in html
     assert all(old not in html for old in ("Start a rights aware dry run", "23.8 second proof", "No attestation, no render"))
-    assert "Deterministic dry run · no GPU · no API key · no inference" in html
+    assert "Default preview · Generation needs ComfyUI" in html
+    assert "The default launcher starts here" in html
     assert 'src="/media/recastroom-public-hero-16x9.mp4"' in html
     assert 'poster="/media/recastroom-hero-poster.jpg"' in html
     assert 'id="hero-heading"' in html
@@ -90,12 +91,18 @@ def test_public_landing_page_has_conversion_structure_and_local_assets(studio):
     assert "/media/gallery-core-recast.mp4" in html
     assert "/media/gallery-style-lane.mp4" in html
     assert "/media/gallery-two-person.mp4" in html
-    assert "Multi-person selection is a roadmap engine" in html
+    assert "Multi-person selection remains a roadmap feature" in html
     assert "Broad, but not generic" in html
-    assert "Know the execution boundary before you spend" in html
+    assert "Know the cost boundary before you spend" in html
     assert "The first run tells you what is missing" in html
-    assert "What RecastRoom optimizes for" in html
-    assert "Original decoded audio restored" in html
+    assert "What this version does" in html
+    assert "Original source audio is restored for review output" in html
+    assert "What this version does" in html
+    for unsupported_claim in (
+        "Overall QC 9/10", "Approved example", "Dry run", "RunPod", "Broad generic studio",
+        "Frame sheets, probes", "hashes stay beside",
+    ):
+        assert unsupported_claim not in html
 
     for story in ("source", "reference", "rights", "render", "audio", "review"):
         assert f'data-story="{story}"' in html

@@ -15,18 +15,18 @@
   <section class="sound-intro" aria-labelledby="sound-heading">
     <p class="eyebrow">CONTEST DEMO / AUDIO IDENTITY</p>
     <h1 id="sound-heading">A sound system, not a voice swap.</h1>
-    <p class="sound-lede">This lab auditions the deterministic cue family for the two-minute RecastRoom demo: one brand pulse, one soft UI tick family, one signature reveal, and one bed that resolves under the call to action. It does not replace Drama&nbsp;3 Voice&nbsp;A narration.</p>
-    <p id="sound-status" class="sound-status" role="status">Ready · audio starts only after you press play</p>
+    <p class="sound-lede">Audition the local demo cue family: one brand pulse, soft interface ticks, a signature reveal, and a bed that resolves under the call to action. This page is a sound sketch, not a voice generator.</p>
+    <p id="sound-status" class="sound-status" role="status">Ready · audio engine loads after you press play</p>
     <noscript><p class="sound-error">JavaScript is required to audition the Tone.js presets. The cue sheet below remains readable.</p></noscript>
   </section>
 
-  <section class="keeper-preview" aria-labelledby="keeper-heading">
+  <section class="reference-preview" aria-labelledby="reference-heading">
     <div class="section-heading">
-      <h2 id="keeper-heading">Frozen keeper video</h2>
-      <span>V6B · 16:9 MASTER</span>
+      <h2 id="reference-heading">Reference video</h2>
+      <span>16:9 · 23.8 SECONDS</span>
     </div>
-    <video id="keeper-video" controls playsinline preload="metadata" src="/media/recastroom-public-hero-16x9.mp4" aria-label="RecastRoom v6b public hero video"></video>
-    <p class="hint">This public hero is a metadata-clean stream copy of the accepted 16:9 v6b master. Playing it stops the Tone.js sketch so the two audio systems never overlap.</p>
+    <video id="reference-video" controls playsinline preload="metadata" src="/media/recastroom-public-hero-16x9.mp4" aria-label="RecastRoom public example video"></video>
+    <p class="hint">The public example keeps its original audio. Playing it stops the local sound sketch so the two audio systems do not overlap.</p>
   </section>
 
   <section class="sound-console" aria-labelledby="console-heading">
@@ -65,7 +65,7 @@
       <div role="row" data-cue-row="bed-hold"><span role="cell">9.60s</span><span role="cell">Bed hold</span><span role="cell">Keep motion without competing with voice</span></div>
       <div role="row" data-cue-row="bed-resolve"><span role="cell">11.20s</span><span role="cell">CTA resolve</span><span role="cell">Settle as the call to action lands</span></div>
     </div>
-    <p class="hint">The sketch is deliberately sparse. In the final demo these cues sit at least 6&nbsp;dB under narration, and repeated interface sounds use alternate takes rather than one mechanical click.</p>
+    <p class="hint">The sketch is deliberately sparse so it can sit underneath narration. Repeated interface sounds use alternate timing rather than one mechanical click.</p>
   </section>
 
   <footer>
@@ -73,6 +73,5 @@
     <span><a href="/">Return to the studio</a></span>
   </footer>
 </main>
-<script src="/vendor/tone-15.1.22.js"></script>
 <script src="/sound-lab.js" defer></script>
 </html>

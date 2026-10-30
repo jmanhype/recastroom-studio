@@ -19,6 +19,7 @@ outputs/
 .whisper-models/
 
 # Paivot runtime state (managed by pvg)
+.vault/
 .vault/issues/
 .vault/.nd.yaml
 .vault/.piv-loop-state.json

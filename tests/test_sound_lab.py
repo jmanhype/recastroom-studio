@@ -58,15 +58,17 @@ def test_sound_lab_is_local_accessible_and_truthful(studio):
         assert f'id="{control}"' in html
     for cue in ("pulse", "tick", "reveal", "bed"):
         assert f'data-audition="{cue}"' in html
-    assert 'id="keeper-video"' in html
+    assert 'id="reference-video"' in html
     assert 'src="/media/recastroom-public-hero-16x9.mp4"' in html
-    assert "does not replace Drama&nbsp;3 Voice&nbsp;A narration" in html
+    assert "not a voice generator" in html
     assert "96 BPM · 12.8S SKETCH" in html
     assert "TONE.JS 15.1.22 · LOCAL MIT ASSET" in html
-    assert 'src="/vendor/tone-15.1.22.js"' in html
+    assert 'src="/vendor/tone-15.1.22.js"' not in html
+    assert "audio engine loads after you press play" in html
     assert not re.search(r"https?://", html)
 
     js = script.text
+    assert "script.src = '/vendor/tone-15.1.22.js'" in js
     assert "await Tone.start();" in js
     assert "Tone.getTransport()" in js
     assert "new Tone.Limiter(-1)" in js

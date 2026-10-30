@@ -329,7 +329,7 @@ def test_ui_distinguishes_proven_legacy_guard_from_unknown_503():
     assert "detail.code.startsWith('renderer_')" in source
     assert "if (error.provesNoSubmission)" in source
     assert "$('health-retry').hidden = false;" in source
-    assert "renderer disconnected" in source
+    assert "ComfyUI disconnected" in source
     assert "No run request was sent." in source
     assert "Run not submitted:" in source
     assert "The server refused the run before queueing or uploading." in source

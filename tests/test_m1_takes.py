@@ -858,7 +858,7 @@ def test_real_browser_comparison_review_selection_and_conflict(tmp_path):
                 page.fill("#m1-review-note", "real synchronized browser review")
                 page.get_by_role("button", name="Append review").click()
                 page.get_by_role("button", name="Select candidate").last.click()
-                page.get_by_role("button", name="Reset local CAS token").click()
+                page.get_by_role("button", name="Refresh selection state").click()
                 page.get_by_role("button", name="Select candidate").last.click()
                 page.wait_for_function(
                     "() => document.getElementById('m1-review-note-status').textContent.includes('Selection conflict visible')"

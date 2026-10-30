@@ -5,7 +5,10 @@ import argparse
 import json
 from pathlib import Path
 import subprocess
+import sys
 import uuid
+
+import requests
 
 from openjutsu import __version__
 from openjutsu.comfy_legacy import ComfyLegacyRunner
@@ -136,5 +139,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     try:
         return int(args.handler(args))
+    except requests.RequestException as error:
+        print(f"ComfyUI connection failed: {error}", file=sys.stderr)
+        print(
+            "Start ComfyUI and confirm RECASTROOM_COMFY_URL points to it before running a workflow.",
+            file=sys.stderr,
+        )
+        return 2
     except KeyboardInterrupt:
         return 130

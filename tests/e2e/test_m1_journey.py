@@ -105,7 +105,7 @@ def _browser_program() -> str:
                     row.locator('input').nth(2).fill(end)
                     row.locator('select').select_option(kind)
                 page.click('#m1-confirm')
-                page.wait_for_function("() => document.getElementById('m1-cut-note').textContent.includes('Confirmed immutable revision 1')")
+                page.wait_for_function("() => document.getElementById('m1-cut-note').textContent.includes('Confirmed fixed scene version 1')")
                 evidence['initialState'] = state(page)
                 assert evidence['initialState']['m1']['sourceTiming']['frame_count'] == 24
                 assert evidence['initialState']['m1']['scenes'][0]['shots'] == [
@@ -286,7 +286,7 @@ def _browser_program() -> str:
                         uploaded = {'status': response.value.status, 'body': response.value.json()}
                         assert uploaded['status'] == 201, uploaded
                         page.wait_for_function("() => document.getElementById('m1-replay-status').textContent.includes('imported')")
-                        assert 'historical' in page.locator('#m1-replay-lineage').inner_text().lower()
+                        assert 'recorded review' in page.locator('#m1-replay-lineage').inner_text().lower()
                         replay_takes[shot_id] = uploaded['body']
                         uploads[shot_id] = {'receipt': receipt, 'response': uploaded}
                 page.evaluate('async () => { await window.M1UI.refresh(); }')
@@ -300,7 +300,7 @@ def _browser_program() -> str:
                     page.fill('#m1-review-note', f'human keeper review for {shot_id}')
                     page.select_option('#m1-review-verdict', 'keeper')
                     page.click('#m1-review-append')
-                    page.wait_for_function("() => document.getElementById('m1-review-note-status').textContent.includes('Human review keeper appended')")
+                    page.wait_for_function("() => document.getElementById('m1-review-note-status').textContent.includes('Human review accepted')")
                     page.get_by_role('button', name='Select candidate').last.click()
                     page.wait_for_function("() => document.getElementById('m1-review-note-status').textContent.includes('Durable selection revision')")
                     selection_revisions[shot_id] = page.evaluate('() => window.M1UI.getState().selectionRevision')
@@ -344,7 +344,7 @@ def _browser_program() -> str:
                 assert export_row('shot-c').locator('[data-export-field=take]').input_value() == ''
                 page.select_option('#m1-audio-policy', 'source_edit_map')
                 page.click('#m1-create-edit')
-                page.wait_for_function("() => document.getElementById('m1-export-status').textContent.includes('Frozen edit revision')")
+                page.wait_for_function("() => document.getElementById('m1-export-status').textContent.includes('Fixed edit version')")
                 page.click('#m1-export')
                 page.wait_for_function("() => document.getElementById('m1-export-status').textContent.includes('Export completed')")
                 with page.expect_download() as download_info:

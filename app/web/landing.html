@@ -5,16 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>RecastRoom Studio · Keep the performance and change the lead</title>
-  <meta name="description" content="RecastRoom Studio organizes original shots, takes, edits, and exports with review evidence and an open Comfy workflow.">
+  <meta name="description" content="Prepare and review MiniMax H3 performance recasts with source timing, original dialogue, and permission checkpoints.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="RecastRoom Studio · Keep the performance and change the lead">
-  <meta property="og:description" content="A studio for original shot selection, take review, edit preparation, and evidence-backed export.">
+  <meta property="og:description" content="Review the original shot, prepare the recast, and compare the result with timing and dialogue intact.">
   <meta property="og:image" content="/media/recastroom-hero-poster.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="RecastRoom Studio">
   <meta name="twitter:description" content="Keep the performance. Change the lead.">
   <meta name="twitter:image" content="/media/recastroom-hero-poster.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/landing.css">
   <script src="/landing.js" defer></script>
 </head>
@@ -29,7 +30,7 @@
         <a href="#proof">Proof</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a class="primary small" href="/">Start a dry run</a>
+      <a class="primary small" href="/">Open the studio</a>
     </nav>
   </header>
 
@@ -38,16 +39,16 @@
       <div class="hero-copy">
         <p class="eyebrow">MiniMax H3 · Comfy workspace</p>
         <h1 id="hero-heading">Keep the performance.<br>Change the lead.</h1>
-        <p class="hero-sub">RecastRoom keeps the original shot, selected take, edit map, and export evidence in one production workflow.</p>
-        <p class="dry-run-pill">Deterministic dry run · no GPU · no API key · no inference</p>
-        <a class="primary" href="/">Start a dry run</a>
-        <p class="proof-line">Historical 23.8-second demo · stream-copy evidence is keeper-specific</p>
+        <p class="hero-sub">Review the original shot, prepare the recast, and compare the result with timing and dialogue intact.</p>
+        <p class="mode-pill">Default preview · Generation needs ComfyUI</p>
+        <a class="primary" href="/">Open the studio</a>
+        <p class="proof-line">23.8-second public example</p>
       </div>
       <figure class="hero-media reveal">
         <video controls playsinline preload="metadata" poster="/media/recastroom-hero-poster.jpg" aria-label="RecastRoom Studio performance recast proof">
           <source src="/media/recastroom-public-hero-16x9.mp4" type="video/mp4">
         </video>
-        <figcaption>Accepted v6b keeper · source timing and original audio preserved</figcaption>
+        <figcaption>Public example · source timing and original audio</figcaption>
       </figure>
     </section>
 
@@ -62,8 +63,8 @@
       </div>
       <div class="argument-grid">
         <article><h3>One replacement destroys three things</h3><p>A new face can move the camera, stretch the timing, or invent speech that was never in the source.</p></article>
-        <article><h3>Identity is only one layer</h3><p>RecastRoom separates identity from performance, scene, and audio so one layer can change without pulling the others apart.</p></article>
-        <article><h3>The edit survives replacement</h3><p>RecastRoom freezes the edit map, preserves take history, and makes export checks repeatable.</p></article>
+        <article><h3>Identity is only one layer</h3><p>RecastRoom keeps identity, performance, scene, and audio as separate workflow inputs instead of blending them into one hidden prompt.</p></article>
+        <article><h3>The edit survives replacement</h3><p>Advanced project tools record source cuts, take selections, and export checks so review is repeatable.</p></article>
       </div>
     </section>
 
@@ -75,20 +76,20 @@
       <ol class="workflow-grid">
         <li><span>01</span><div><h3>Select the source you control</h3><p>Import a clip you own, license, or have explicit permission to modify. RecastRoom inspects the scene, timing, and audio before work starts.</p></div></li>
         <li><span>02</span><div><h3>Attach an authorized reference</h3><p>Add the replacement likeness and record the permission behind it. A second perspective is optional.</p></div></li>
-        <li><span>03</span><div><h3>Review the recast</h3><p>Prepare the MiniMax H3 workflow, inspect the prepared graph, then compare source and result frame by frame with the original audio restored.</p></div></li>
+        <li><span>03</span><div><h3>Review the recast</h3><p>Prepare the MiniMax H3 workflow, inspect it, then compare source and result frame by frame with the original audio restored.</p></div></li>
       </ol>
     </section>
 
     <section id="runtime" class="runtime reveal" aria-labelledby="runtime-heading">
       <div class="section-head">
         <p class="eyebrow">Runtime and cost</p>
-        <h2 id="runtime-heading">Know the execution boundary before you spend</h2>
+        <h2 id="runtime-heading">Know the cost boundary before you spend</h2>
       </div>
       <div class="runtime-grid">
         <article>
-          <span>Dry run</span>
+          <span>Preview run</span>
           <h3>No GPU required</h3>
-          <p>Validates the UI, API, operator attestation, routing, status path, and review artifacts by copying the source deterministically.</p>
+          <p>The default launcher starts here. It copies a source through preparation, status, download, and paired-review paths without generating a recast.</p>
           <dl>
             <div><dt>Provider charge</dt><dd>None</dd></div>
             <div><dt>Credentials</dt><dd>None</dd></div>
@@ -97,8 +98,8 @@
         </article>
         <article>
           <span>Local ComfyUI</span>
-          <h3>Your configured renderer</h3>
-          <p>Runs the prepared MiniMax H3 graph against a local ComfyUI endpoint after the app reports the renderer reachable.</p>
+          <h3>Your local ComfyUI</h3>
+          <p>Runs the prepared MiniMax H3 workflow against your configured ComfyUI endpoint after the app reports the connection ready.</p>
           <dl>
             <div><dt>Provider charge</dt><dd>No RecastRoom fee</dd></div>
             <div><dt>Credentials</dt><dd>Local endpoint only</dd></div>
@@ -106,17 +107,17 @@
           </dl>
         </article>
         <article>
-          <span>Official Comfy SDK</span>
-          <h3>Configured deployment</h3>
-          <p>Submits a prepared graph through the official SDK when the operator supplies a deployment and API credentials.</p>
+          <span>Hosted Comfy</span>
+          <h3>Your configured deployment</h3>
+          <p>Submits to a compatible hosted deployment that already contains the RecastRoom bridge, models, and your API credentials.</p>
           <dl>
             <div><dt>Provider charge</dt><dd>Deployment usage</dd></div>
-            <div><dt>Credentials</dt><dd>Owner configured</dd></div>
+            <div><dt>Credentials</dt><dd>You configure them</dd></div>
             <div><dt>Inference</dt><dd>Comfy deployment</dd></div>
           </dl>
         </article>
       </div>
-      <p class="runtime-note">The workspace discloses readiness without treating a configured backend as proof of output quality. A human still reviews the final media.</p>
+      <p class="runtime-note">The workspace shows connection status without treating a configured connection as proof of quality. You still review the final media.</p>
     </section>
 
     <section id="setup" class="setup reveal" aria-labelledby="setup-heading">
@@ -125,10 +126,10 @@
         <h2 id="setup-heading">The first run tells you what is missing</h2>
       </div>
       <div class="setup-grid">
-        <article><h3>Required locally</h3><p>Python, the package dependencies, FFmpeg, and the bundled Comfy API workflow.</p></article>
-        <article><h3>Always available</h3><p>The deterministic dry-run backend exercises the app path without a GPU or model credentials.</p></article>
-        <article><h3>Optional renderer</h3><p>Local ComfyUI readiness is reported explicitly before a generation can be submitted.</p></article>
-        <article><h3>Optional SDK</h3><p>Official SDK mode discloses missing credentials and never treats configuration as a live-execution receipt.</p></article>
+        <article><h3>Required locally</h3><p>Python, the package dependencies, FFmpeg, and the bundled Comfy workflow.</p></article>
+        <article><h3>Always available</h3><p>Preview mode exercises the app path without a GPU or model credentials.</p></article>
+        <article><h3>Optional local ComfyUI</h3><p>Connection readiness is reported before generation can be submitted.</p></article>
+        <article><h3>Optional hosted Comfy</h3><p>Hosted mode shows missing credentials or bridge configuration and never treats configuration as proof that a run happened.</p></article>
       </div>
     </section>
 
@@ -140,7 +141,7 @@
       <div class="feature-grid">
         <article class="feature-card reveal" data-story="source">
           <div class="visual" aria-hidden="true"><div class="source-stage"><span class="source-frame"></span><span class="source-scan"></span></div></div>
-          <h3>Source performance</h3><p>A scan marker reads the original take before identity work begins.</p>
+          <h3>Source performance</h3><p>The source is probed for duration, dimensions, frame rate, and audio before preparation.</p>
         </article>
         <article class="feature-card reveal" data-story="reference">
           <div class="visual" aria-hidden="true"><div class="reference-stage"><span class="reference-outline"></span><span class="reference-chip"></span></div></div>
@@ -152,15 +153,15 @@
         </article>
         <article class="feature-card reveal" data-story="render">
           <div class="visual" aria-hidden="true"><div class="render-stage"><span>Source</span><span>Mask</span><span>H3</span><span>Final</span><i class="render-pulse"></i></div></div>
-          <h3>MiniMax H3 graph</h3><p>The prepared Comfy workflow keeps source timing and word schedule attached.</p>
+          <h3>MiniMax H3 workflow</h3><p>The prepared Comfy workflow keeps source timing and dialogue schedule attached.</p>
         </article>
         <article class="feature-card reveal" data-story="audio">
-          <div class="visual" aria-hidden="true"><div class="audio-stage"><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><b>Historical keeper · PCM max delta 0</b></div></div>
-          <h3>Historical keeper audio</h3><p>The archived comparison records an unchanged source stream copy; edited exports use a codec-aware edit map.</p>
+          <div class="visual" aria-hidden="true"><div class="audio-stage"><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><b>Original audio kept</b></div></div>
+          <h3>Example audio</h3><p>The review output restores the original source audio; advanced exports follow the selected audio policy.</p>
         </article>
         <article class="feature-card reveal" data-story="review">
           <div class="visual" aria-hidden="true"><div class="review-stage"><span class="review-a">Source</span><span class="review-b">Final</span><span class="review-scan"></span></div></div>
-          <h3>Frame review</h3><p>Source and final frames stay synchronized under one comparison scan.</p>
+          <h3>Frame review</h3><p>A paired source/final video keeps both results aligned for playback and manual review.</p>
         </article>
       </div>
     </section>
@@ -168,42 +169,39 @@
     <section id="proof" class="proof reveal" aria-labelledby="proof-heading">
       <div class="section-head">
         <p class="eyebrow">Local proof</p>
-        <h2 id="proof-heading">Evidence ships with the render</h2>
+        <h2 id="proof-heading">Review files ship with the result</h2>
       </div>
       <dl class="proof-grid">
-        <div><dt>Historical stream-copy proof</dt><dd>The archived comparison records unchanged source stream-copy evidence; edited exports validate a codec-aware edit map.</dd></div>
-        <div><dt>Deterministic review</dt><dd>Frame sheets, probes, workflow JSON, and SHA 256 hashes stay beside the result.</dd></div>
-        <div><dt>Source aligned replacement</dt><dd>Timing, camera, scene, gesture, and dialogue remain tied to the source take.</dd></div>
-        <div><dt>Open workflow</dt><dd>The MiniMax H3 graph and application source are released under MIT terms.</dd></div>
+        <div><dt>Audio handling</dt><dd>The review output restores the original source audio; advanced exports follow the selected audio policy.</dd></div>
+        <div><dt>Repeatable review</dt><dd>Prepared workflow JSON, prompt, final video, paired review, and status record stay with each job.</dd></div>
+        <div><dt>Source-aligned workflow</dt><dd>The source clip and dialogue schedule stay attached; final quality still requires human review.</dd></div>
+        <div><dt>Open workflow</dt><dd>The MiniMax H3 workflow and application source are released under MIT terms.</dd></div>
       </dl>
     </section>
 
     <section id="gallery" class="gallery reveal" aria-labelledby="gallery-heading">
       <div class="section-head">
         <p class="eyebrow">Proof gallery</p>
-        <h2 id="gallery-heading">See the same take survive different directions</h2>
+      <h2 id="gallery-heading">See example comparisons</h2>
       </div>
       <div class="gallery-grid">
         <article>
           <video controls playsinline preload="metadata" src="/media/gallery-core-recast.mp4" aria-label="Core recast comparison: source on the left, Jay recast on the right"></video>
           <h3>Core recast</h3>
-          <p>Identity, locs, pause timing, gesture, and kitchen background hold across the replacement.</p>
-          <span>Overall QC 9/10</span>
+          <p>A one-person source-versus-recast comparison.</p>
         </article>
         <article>
           <video controls playsinline preload="metadata" src="/media/gallery-style-lane.mp4" aria-label="Noir style comparison: color source on the left, monochrome recast on the right"></video>
           <h3>Style lane</h3>
-          <p>A noir treatment changes the visual language without moving the camera or the performance.</p>
-          <span>Overall QC 9/10</span>
+          <p>A visual-style comparison built from source-aligned media.</p>
         </article>
         <article>
           <video controls playsinline preload="metadata" src="/media/gallery-two-person.mp4" aria-label="Two-person scene comparison with host preserved and speaker replaced"></video>
-          <h3>Two-person proof</h3>
-          <p>The non-target host stays fixed while the speaker, gesture, background, and timing remain aligned.</p>
-          <span>Overall QC 9/10</span>
+          <h3>Two-person example</h3>
+          <p>A roadmap two-person example; the current guided workflow does not expose arbitrary multi-person casting.</p>
         </article>
       </div>
-      <p class="gallery-note">These historical keeper comparisons retain their recorded evidence and hashes. Multi-person selection is a roadmap engine, not a claim that the current UI can replace arbitrary numbers of people.</p>
+      <p class="gallery-note">These are recorded examples, not automated quality scores. Multi-person selection remains a roadmap feature rather than a current guided-workflow control.</p>
     </section>
 
     <section id="roadmap" class="roadmap reveal" aria-labelledby="roadmap-heading">
@@ -212,28 +210,28 @@
         <h2 id="roadmap-heading">Broad, but not generic</h2>
       </div>
       <div class="roadmap-grid">
-        <article><span>Now</span><h3>One-person dialogue recast</h3><p>The production path: authorized reference, source conditioning, exact audio restoration, and evidence review.</p></article>
-        <article><span>Next</span><h3>Multi-person engine</h3><p>Separate target assignment, masks, consent records, and QC for each performer.</p></article>
-        <article><span>Later</span><h3>Scene and effect recipes</h3><p>Reusable looks and effect lanes that still inherit the source schedule and evidence manifest.</p></article>
-        <article><span>Later</span><h3>Take queue</h3><p>Take history, rerenders, and provenance across a production without hiding the underlying Comfy workflow.</p></article>
+        <article><span>Now</span><h3>One-person dialogue recast</h3><p>The focused path: permitted reference, source conditioning, original-audio restoration, and review.</p></article>
+        <article><span>Next</span><h3>Multi-person engine</h3><p>Separate target assignment, masks, permission records, and review for each performer.</p></article>
+        <article><span>Later</span><h3>Scene and effect recipes</h3><p>Reusable looks and effect lanes that still inherit the source schedule and review files.</p></article>
+        <article><span>Later</span><h3>Take queue</h3><p>Take history, rerenders, and job summaries without hiding the underlying Comfy workflow.</p></article>
       </div>
     </section>
 
     <section id="compare" class="compare reveal" aria-labelledby="compare-heading">
       <div class="section-head">
         <p class="eyebrow">Focused comparison</p>
-        <h2 id="compare-heading">What RecastRoom optimizes for</h2>
+        <h2 id="compare-heading">What this version does</h2>
       </div>
       <div class="compare-scroll" tabindex="0" role="group" aria-label="Scrollable comparison table">
         <table>
-          <thead><tr><th scope="col">Capability</th><th scope="col">Broad generic studio</th><th scope="col">RecastRoom</th></tr></thead>
+          <thead><tr><th scope="col">Need</th><th scope="col">RecastRoom behavior</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Focus</th><td>Many video tools and lanes</td><td>One continuous dialogue recast</td></tr>
-            <tr><th scope="row">Source audio</th><td>Varies by tool</td><td>Original decoded audio restored</td></tr>
-            <tr><th scope="row">Performance</th><td>Model-dependent</td><td>Source-aligned timing and gesture workflow</td></tr>
-            <tr><th scope="row">Workflow</th><td>Often app-hosted or hidden</td><td>Downloadable Comfy API JSON</td></tr>
-            <tr><th scope="row">Evidence</th><td>Varies</td><td>Probe, hashes, review artifacts, and manifests</td></tr>
-            <tr><th scope="row">Responsibility</th><td>Usually a policy notice</td><td>Recorded operator attestation checked across app backends</td></tr>
+            <tr><th scope="row">Focus</th><td>One person in one continuous dialogue shot</td></tr>
+            <tr><th scope="row">Source audio</th><td>Original source audio is restored for review output</td></tr>
+            <tr><th scope="row">Timing</th><td>Source clip and optional word schedule stay attached</td></tr>
+            <tr><th scope="row">Workflow</th><td>Prepared Comfy API JSON is downloadable</td></tr>
+            <tr><th scope="row">Review</th><td>Paired source/final video, prompt, downloads, and status; no automated score</td></tr>
+            <tr><th scope="row">Responsibility</th><td>Permission declaration required across app and CLI paths</td></tr>
           </tbody>
         </table>
       </div>
@@ -245,7 +243,7 @@
         <h2 id="rights-heading">Source and likeness permissions</h2>
       </div>
       <p>RecastRoom asks you to confirm source ownership, reference permission, and consent for every identifiable person before preparation. The gate is part of the workflow, not a footer warning.</p>
-      <p>The application cannot prove legal clearance for you. It records your operator attestation and keeps the production path closed until that declaration exists.</p>
+      <p>The application cannot prove legal clearance for you. It records your permission confirmation and keeps the production path closed until that declaration exists.</p>
     </section>
 
     <section id="faq" class="faq reveal" aria-labelledby="faq-heading">
@@ -254,20 +252,20 @@
         <h2 id="faq-heading">Questions before you run it</h2>
       </div>
       <div class="faq-list">
-        <details open><summary>Does RecastRoom recreate the voice?</summary><p>No. The source audio is conditioned into the workflow and restored into the final review output. Drama 3 narration is used for the project explainer, not for changing the performer’s voice.</p></details>
+        <details open><summary>Does RecastRoom recreate the voice?</summary><p>No. The source audio is conditioned into the workflow and restored into the final review output. RecastRoom does not synthesize a replacement voice.</p></details>
         <details><summary>Can I use any footage?</summary><p>No. Use a clip you own, license, or have explicit permission to modify. Public domain and openly licensed archives can work when their terms allow modification.</p></details>
         <details><summary>What counts as an authorized reference?</summary><p>An image or description representing a replacement likeness that you have permission to use for that purpose, together with consent from every identifiable person where required.</p></details>
-        <details><summary>What happens if you cannot make the attestation?</summary><p>The workspace blocks preparation until you record the operator attestation. A custom workflow cannot bypass that app gate, and all backend modes recheck the recorded manifest before execution.</p></details>
-        <details><summary>Does the output preserve exact audio?</summary><p>The archived proof records an unchanged source stream copy. An edited export follows its codec-aware edit map and validates the selected audio policy. Final published work still needs your own review.</p></details>
-        <details><summary>Can I bring my own Comfy graph?</summary><p>Yes. A compatible custom graph can be imported, but it must retain the routing, audio lock, operator attestation, and review contracts enforced by RecastRoom.</p></details>
-        <details><summary>Where is provenance recorded?</summary><p>Prepared manifests, workflow JSON, media probes, review artifacts, and hashes remain with each job and release package.</p></details>
+        <details><summary>What happens if you cannot confirm permission?</summary><p>The workspace blocks preparation until you record permission. A custom workflow cannot bypass that app gate, and every app mode rechecks the recorded job summary before a run.</p></details>
+        <details><summary>Does the output preserve exact audio?</summary><p>The review output restores the original source audio. An edited export follows the selected audio policy. Final published work still needs your own review.</p></details>
+        <details><summary>Can I bring my own Comfy workflow?</summary><p>Yes. A compatible custom workflow can be imported, but it must use the expected RecastRoom inputs for routing, audio restoration, permission, and review.</p></details>
+        <details><summary>Where is job history recorded?</summary><p>Prepared job summaries, workflow JSON, prompts, result videos, paired reviews, and status records remain with each job.</p></details>
         <details><summary>What should I check before publishing?</summary><p>Watch the full result with audio, compare synchronized frames, verify rights records, and confirm that the final media meets the platform and license requirements for your release.</p></details>
       </div>
     </section>
 
     <section class="final-cta reveal" aria-labelledby="final-heading">
-      <h2 id="final-heading">Start with a reviewed dry run</h2>
-      <p>Start with the dry run, inspect the prepared workflow, then connect your configured renderer.</p>
+      <h2 id="final-heading">Start with a reviewed preview</h2>
+      <p>Start with preview mode, inspect the prepared workflow, then connect ComfyUI.</p>
       <a class="primary" href="/">Start the workflow</a>
     </section>
   </main>

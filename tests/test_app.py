@@ -147,7 +147,7 @@ def test_reference_preview_images_can_shrink_inside_fixed_grid_boxes() -> None:
     assert declarations["object-fit"] == "contain"
 
 
-def test_archive_discovery_is_visible_but_never_bypasses_attestation_gate() -> None:
+def test_archive_discovery_is_visible_but_never_bypasses_permission_gate() -> None:
     client = TestClient(app)
 
     home = client.get("/")
@@ -158,7 +158,7 @@ def test_archive_discovery_is_visible_but_never_bypasses_attestation_gate() -> N
     assert "Find Archive.org footage" in home.text
     assert 'name="rights_attested"' in home.text
     assert "/api/archive/sources" in script.text
-    assert "Discovery metadata does not bypass the operator attestation gate" in home.text
+    assert "Discovery metadata does not bypass the permission checkpoint" in home.text
 
 
 def test_readiness_strip_discloses_dependencies_without_claiming_provider_quality() -> None:
@@ -172,16 +172,16 @@ def test_readiness_strip_discloses_dependencies_without_claiming_provider_qualit
     assert script.status_code == 200
     assert stylesheet.status_code == 200
     assert 'id="readiness"' in home.text
-    for label in ("Source", "Primary reference", "Attestation", "Workflow", "Renderer", "Execution"):
+    for label in ("Source", "Primary reference", "Permission", "Workflow", "ComfyUI", "Execution"):
         assert f">{label}<" in home.text
     assert "function readinessStates()" in script.text
     assert "function updateReadiness()" in script.text
     assert "updateReadiness();" in script.text
     assert "getReadiness: readinessStates" in script.text
-    assert "Dry run · no AI inference" in script.text
-    assert "SDK configured · reachability unchecked" in script.text
-    assert "Renderer disconnected" in script.text
-    assert "Custom graph pending validation" in script.text
+    assert "Preview · no AI inference" in script.text
+    assert "Hosted Comfy configured · reachability unchecked" in script.text
+    assert "ComfyUI disconnected" in script.text
+    assert "Custom workflow pending validation" in script.text
     assert ".readiness-strip" in stylesheet.text
     assert '.readiness-strip>div[data-state="ok"]' in stylesheet.text
     assert '.readiness-strip>div[data-state="blocked"]' in stylesheet.text

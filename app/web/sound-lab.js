@@ -7,7 +7,7 @@
   const playSketch = $('play-sketch');
   const stopSound = $('stop-sound');
   const volume = $('master-volume');
-  const keeperVideo = $('keeper-video');
+  const referenceVideo = $('reference-video');
   const presetButtons = Array.from(document.querySelectorAll('[data-audition]'));
   const cueRows = Array.from(document.querySelectorAll('[data-cue-row]'));
 
@@ -96,11 +96,19 @@
 
   async function ensureAudio() {
     if (built) return;
-    if (!window.Tone) throw new Error('The local Tone.js asset did not load.');
     if (starting) return;
     starting = true;
     setPlaying(false);
     setStatus('Starting browser audio…', 'starting');
+    if (!window.Tone) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = '/vendor/tone-15.1.22.js';
+        script.onload = resolve;
+        script.onerror = () => reject(new Error('The local Tone.js asset did not load.'));
+        document.head.append(script);
+      });
+    }
     await Tone.start();
     buildGraph();
     Tone.getTransport().bpm.value = 96;
@@ -135,7 +143,7 @@
   async function playCueSketch() {
     try {
       await ensureAudio();
-      keeperVideo.pause();
+      referenceVideo.pause();
       clearTransport();
       const transport = Tone.getTransport();
       scheduledIds = cues.map((cue) => transport.scheduleOnce((time) => {
@@ -160,7 +168,7 @@
   async function audition(id) {
     try {
       await ensureAudio();
-      keeperVideo.pause();
+      referenceVideo.pause();
       clearTransport();
       setActive(id === 'bed' ? 'bed-open' : id);
       const now = Tone.now();
@@ -188,15 +196,19 @@
   }
 
   playSketch.addEventListener('click', playCueSketch);
-  keeperVideo.addEventListener('play', () => {
-    clearTransport();
-    Tone.getDraw().cancel();
+  referenceVideo.addEventListener('play', () => {
+    if (built) {
+      clearTransport();
+      Tone.getDraw().cancel();
+    }
     setPlaying(false);
-    setStatus('Keeper video playing · Tone.js sketch stopped', 'ready');
+    setStatus('Reference video playing', 'ready');
   });
   stopSound.addEventListener('click', () => {
-    clearTransport();
-    Tone.getDraw().cancel();
+    if (built) {
+      clearTransport();
+      Tone.getDraw().cancel();
+    }
     setPlaying(false);
     setStatus('Stopped · cue positions reset', 'ready');
   });
@@ -205,7 +217,7 @@
     if (built) master.volume.rampTo(Number(volume.value), .05);
   });
 
-  if (!window.Tone) setStatus('Tone.js unavailable · check the local asset', 'error');
+  setStatus('Ready · audio engine loads after you press play');
 
   window.RecastSoundLab = Object.freeze({
     version: '1.0.0',

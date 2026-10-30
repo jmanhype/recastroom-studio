@@ -210,7 +210,7 @@ def test_scene_ui_is_offline_connected_and_preserves_stale_response_guards() -> 
     for element_id in ("m1-scenes-heading", "m1-source", "m1-upload", "m1-shot-list", "m1-confirm", "m1-scenes"):
         assert f'id="{element_id}"' in home.text
     assert home.text.index("/projects.js") < home.text.index("/m1.js") < home.text.index("/studio.js")
-    assert "does not resolve recipes, submit jobs, or generate media" in home.text and "read-only" in home.text
+    assert "does not submit jobs or generate media" in home.text and "read-only" in home.text
     assert "let requestEpoch = 0" in script.text and "const isCurrent = (version) => version === requestEpoch" in script.text
     assert "window.M1UI = Object.freeze({refresh" in script.text and "/api/projects/${encodeURIComponent(projectId)}/scenes" in script.text
     assert "projects:selection-change" in script.text and "projects:prepared" in script.text and "studio:reset" in script.text

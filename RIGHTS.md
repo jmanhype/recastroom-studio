@@ -1,4 +1,4 @@
-# Operator attestation and responsibility policy
+# Permission declaration and responsibility policy
 
 RecastRoom Studio is designed for source clips and reference likenesses that you own, license, or have explicit permission to modify.
 
@@ -30,4 +30,4 @@ Do not use RecastRoom Studio to create:
 - recreations of deceased performers without appropriate authorization,
 - unlicensed commercial media redistribution.
 
-The operator attestation is a user responsibility. RecastRoom Studio does not inspect media provenance, verify consent, validate model licensing, or prove legal clearance. Archive metadata is discovery evidence, not clearance.
+Your permission declaration is your responsibility. RecastRoom Studio does not inspect media provenance, verify consent, validate model licensing, or prove legal clearance. Archive metadata is discovery evidence, not clearance.

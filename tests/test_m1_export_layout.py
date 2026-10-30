@@ -230,11 +230,11 @@ def _browser_program() -> str:
                 page.screenshot(path=str(evidence_root / f"export-{width}.png"))
                 evidence["viewports"][str(width)] = layout
                 if width == 1440:
-                    page.get_by_role("button", name="Create frozen edit revision").click()
+                    page.get_by_role("button", name="Create fixed edit version").click()
                     page.wait_for_function(
-                        "() => document.getElementById('m1-export-status').textContent.includes('Frozen edit revision')"
+                        "() => document.getElementById('m1-export-status').textContent.includes('Fixed edit version')"
                     )
-                    page.get_by_role("button", name="Export actual bytes").click()
+                    page.get_by_role("button", name="Export result").click()
                     page.wait_for_function(
                         "() => document.getElementById('m1-export-status').textContent.includes('Export completed')"
                     )

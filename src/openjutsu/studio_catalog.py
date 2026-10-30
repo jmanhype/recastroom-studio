@@ -23,29 +23,29 @@ CARDS: tuple[WorkflowCard, ...] = (
         id="recast-room",
         name="Recast Room",
         status="Production",
-        summary="Same performance. New lead.",
+        summary="Prepare a source-aligned recast.",
         description=(
-            "Replace the selected performer while preserving the source take, camera, "
-            "scene, timing, and dialogue."
+            "Condition a one-person continuous dialogue shot on the source take and "
+            "new reference, then review the paired result manually."
         ),
         model="MiniMax H3 Ref2VA",
         available=True,
         action="Open workflow",
-        badges=("Character Swap v1.1", "SAM 3.1", "Exact audio lock"),
+        badges=("Character Swap v1.1", "SAM 3.1", "Source audio"),
     ),
     WorkflowCard(
         id="custom-recast",
-        name="Custom Recast Graph",
+        name="Custom Recast Workflow",
         status="Advanced",
         summary="Bring your own RecastRoom-compatible graph.",
         description=(
             "Import a RecastRoom-compatible Comfy API workflow and run it through "
-            "the same operator attestation gate, preflight, review, and artifact path."
+            "the same permission checkpoint, preflight, review, and artifact path."
         ),
-        model="Your MiniMax H3 graph",
+        model="Your MiniMax H3 workflow",
         available=True,
         action="Import JSON",
-        badges=("Comfy API format", "Pinned inputs", "Attestation gate"),
+        badges=("Comfy API format", "Pinned inputs", "Permission checkpoint"),
     ),
     WorkflowCard(
         id="multi-person-recast",

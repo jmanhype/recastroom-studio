@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RecastRoom Studio</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/styles.css">
 <main>
   <header class="masthead"><a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a><div class="masthead-actions"><span id="collab-status" class="edition" hidden></span><span class="edition">PERFORMANCE / REIMAGINED</span><button id="show-walkthrough" type="button" class="ghost-button">Setup</button></div></header>
@@ -17,7 +19,7 @@
     </div>
   </section>
   <details id="advanced-studio" class="advanced-drawer">
-    <summary>Advanced studio · graphs, projects, and original cuts</summary>
+    <summary>Advanced studio · projects, shots, and takes</summary>
     <div id="advanced-studio-panels">
       <section class="studio-shell advanced-panel" aria-labelledby="workflow-heading">
         <div class="section-heading"><h2 id="workflow-heading">Workflow studio</h2><span>READY IN THIS RELEASE</span></div>
@@ -29,13 +31,13 @@
   </details>
   <section class="readiness-shell" aria-labelledby="readiness-heading">
     <div class="section-heading"><h2 id="readiness-heading">Readiness</h2><span>LIVE DEPENDENCIES</span></div>
-    <div class="backend-row"><p id="backend" class="backend" role="status">Backend unknown · checking connection</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div>
+    <div class="backend-row"><p id="backend" class="backend" role="status">Connection unknown · checking</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div>
     <dl id="readiness" class="readiness-strip" aria-live="polite">
       <div data-readiness="source"><dt>Source</dt><dd>Not selected</dd></div>
       <div data-readiness="reference"><dt>Primary reference</dt><dd>Missing</dd></div>
-      <div data-readiness="rights"><dt>Attestation</dt><dd>Operator representation required</dd></div>
+      <div data-readiness="rights"><dt>Permission</dt><dd>Confirmation required</dd></div>
       <div data-readiness="workflow"><dt>Workflow</dt><dd>Checking</dd></div>
-      <div data-readiness="renderer"><dt>Renderer</dt><dd>Checking</dd></div>
+      <div data-readiness="renderer"><dt>ComfyUI</dt><dd>Checking</dd></div>
       <div data-readiness="execution"><dt>Execution</dt><dd>Checking</dd></div>
     </dl>
   </section>
@@ -83,14 +85,14 @@
   </section>
   <section class="projects-shell" aria-labelledby="m1-scenes-heading">
     <div class="section-heading"><h2 id="m1-scenes-heading">Scene setup</h2><span>ORIGINAL CUTS / OFFLINE</span></div>
-    <p class="hint">Inspect and confirm exact original source cuts. This M1 panel does not resolve recipes, submit jobs, or generate media.</p>
+    <p class="hint">Inspect and confirm exact original source cuts. This offline panel does not submit jobs or generate media.</p>
     <div class="projects-grid">
       <section aria-labelledby="m1-source-heading">
         <h3 id="m1-source-heading">Protected source</h3>
         <label for="m1-source">Project source video *</label>
         <input id="m1-source" type="file" accept="video/mp4,video/quicktime,.mkv">
         <button id="m1-upload" type="button">Upload and inspect source</button>
-        <p id="m1-source-note" class="hint" role="status">Select a saved project, then upload a CFR source.</p>
+        <p id="m1-source-note" class="hint" role="status">Select a saved project, then upload a constant-frame-rate source.</p>
         <dl id="m1-source-facts" class="readiness-strip" aria-live="polite">
           <div><dt>Frames</dt><dd>Not inspected</dd></div>
           <div><dt>Timebase</dt><dd>Not inspected</dd></div>
@@ -103,7 +105,7 @@
         <div id="m1-shot-list" aria-live="polite"></div>
         <button id="m1-add-shot" type="button">Add shot</button>
         <button id="m1-confirm" type="button">Confirm exact cuts</button>
-        <p id="m1-cut-note" class="hint" role="status">Ranges are zero-based half-open frames and must cover every original frame once. Use pass-through for frames you do not want recast.</p>
+        <p id="m1-cut-note" class="hint" role="status">Use frame ranges that cover every original frame exactly once. Use pass-through for frames you do not want recast.</p>
       </section>
       <section aria-labelledby="m1-history-heading">
         <h3 id="m1-history-heading">Confirmed scene revisions</h3>
@@ -126,7 +128,7 @@
       <summary>Find Archive.org footage</summary>
       <label for="archive-query">Search key-free public video collections</label>
       <div class="archive-search"><input id="archive-query" type="search" placeholder="driving, telephone, classroom" maxlength="160"><button id="archive-search" type="button">Search</button></div>
-      <p id="archive-note" class="hint">Discovery metadata does not bypass the operator attestation gate. Check the item page before import.</p>
+      <p id="archive-note" class="hint">Discovery metadata does not bypass the permission checkpoint. Check the item page before import.</p>
       <ul id="archive-results" aria-live="polite"></ul>
     </details>
     <div class="section-heading references-heading"><h2>The new cast</h2><span>02 / REFERENCES</span></div><div class="references"><div>
@@ -148,7 +150,7 @@
     <input id="seed" name="seed" type="number" value="49" min="0" step="1">
     <label for="workflow">Custom RecastRoom-compatible workflow JSON</label>
     <input id="workflow" name="workflow" type="file" accept="application/json,.json">
-    <p class="hint">Optional. The graph must use the Recast Room node contract so source routing, exact audio, review, and the recorded operator attestation remain enforceable.</p>
+      <p class="hint">Optional. A custom workflow must use the expected RecastRoom inputs so source routing, audio restoration, permission, and review remain enforceable.</p>
     </details><div class="rights-block"><p class="eyebrow">PRODUCTION CHECKPOINT</p>
     <label class="consent" for="rights">
       <input id="rights" name="rights_attested" type="checkbox" required>
@@ -174,25 +176,24 @@
       <section id="walkthrough-welcome" class="walkthrough-step" data-walkthrough-step="0">
         <p class="eyebrow">WELCOME</p>
         <h3>Four quick choices, then the studio opens.</h3>
-        <p class="hint">You will choose where work runs, how much guidance you want, and whether this is a solo or review-handoff workspace. This setup finishes once; you can reopen it later from the header.</p>
+        <p class="hint">You will choose your preferred connection, how much guidance you want, and whether this is a solo or review workspace. This setup finishes once; you can reopen it later from the header.</p>
       </section>
       <section id="walkthrough-connection" class="walkthrough-step" data-walkthrough-step="1" hidden>
         <p class="eyebrow">CONNECTION</p>
         <h3>Where should recasts run?</h3>
-        <div class="walkthrough-options" role="radiogroup" aria-label="Execution connection">
-          <label><input type="radio" name="walkthrough-connection" value="dry-run" checked><strong>Dry run</strong><span>Available now · no GPU, no API key, no inference.</span></label>
-          <label><input type="radio" name="walkthrough-connection" value="comfyui"><strong>ComfyUI</strong><span>Your ComfyUI server with the RecastRoom graph on this machine or another computer.</span></label>
-          <label><input type="radio" name="walkthrough-connection" value="comfy-sdk"><strong>Comfy API · SDK</strong><span>The official Comfy Developer Platform path through the Comfy SDK.</span></label>
-          <label><input type="radio" name="walkthrough-connection" value="runpod"><strong>RunPod Serverless</strong><span>A GPU endpoint that scales to zero and bills per second.</span></label>
+        <div class="walkthrough-options" role="radiogroup" aria-label="Connection preference">
+          <label><input type="radio" name="walkthrough-connection" value="preview" checked><strong>Local preview</strong><span>Available in the default launcher · no GPU, API key, or inference.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="comfyui"><strong>ComfyUI</strong><span>Your local ComfyUI server with the RecastRoom workflow.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="comfy-sdk"><strong>Hosted Comfy API</strong><span>A compatible deployment with the RecastRoom bridge and models.</span></label>
         </div>
-        <p class="hint">The server remains the authority on the active backend and secrets stay outside the browser. This choice records your intended connection path; dry run is the only path available without operator-configured infrastructure.</p>
+        <p class="hint">This saves a browser preference; it does not change server settings or store credentials. The readiness bar always shows the connection the server is actually using.</p>
       </section>
       <section id="walkthrough-studio" class="walkthrough-step" data-walkthrough-step="2" hidden>
         <p class="eyebrow">STUDIO</p>
         <h3>How much guidance do you want?</h3>
         <div class="walkthrough-options" role="radiogroup" aria-label="Studio guidance">
           <label><input type="radio" name="walkthrough-studio" value="guided" checked><strong>Guided studio</strong><span>Three-step quick start, readiness, and permission before production.</span></label>
-          <label><input type="radio" name="walkthrough-studio" value="advanced"><strong>Advanced studio</strong><span>Open the full project, cut, graph, and take desk.</span></label>
+          <label><input type="radio" name="walkthrough-studio" value="advanced"><strong>Advanced studio</strong><span>Open project, scene, take, and export tools.</span></label>
         </div>
       </section>
       <section id="walkthrough-collab" class="walkthrough-step" data-walkthrough-step="3" hidden>
@@ -200,7 +201,7 @@
         <h3>Solo or review handoff?</h3>
         <div class="walkthrough-options" role="radiogroup" aria-label="Collaboration mode">
           <label><input type="radio" name="walkthrough-collab" value="solo" checked><strong>Solo</strong><span>One creator reviews and selects takes.</span></label>
-          <label><input type="radio" name="walkthrough-collab" value="handoff"><strong>Review handoff</strong><span>A named reviewer appends local notes and verdicts to take history.</span></label>
+          <label><input type="radio" name="walkthrough-collab" value="handoff"><strong>Review handoff</strong><span>A named reviewer adds local notes and decisions to take history.</span></label>
         </div>
         <label for="walkthrough-reviewer">Reviewer name</label>
         <input id="walkthrough-reviewer" type="text" maxlength="80" autocomplete="nickname" placeholder="For example: J or Editor A">
