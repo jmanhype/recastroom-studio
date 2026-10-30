@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.4 — 2026-10-30
+
+- Added Henge-style setup skipping: **Skip setup** closes the welcome screen with defaults, while later **Skip** advances one step.
+
+## 0.3.3 — 2026-10-30
+
 ## 0.3.3 — 2026-10-30
 
 - Renamed the setup connection choices to match the familiar provider names: ComfyUI, Comfy API · SDK, and RunPod Serverless.

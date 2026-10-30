@@ -169,8 +169,9 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "secrets stay outside the browser" in home.text
     assert "Solo or review handoff?" in home.text
     assert "Reviewer name" in home.text
+    assert 'id="walkthrough-skip"' in home.text
+    assert ">Skip setup</button>" in home.text
     assert "Open the studio" in home.text
-    assert 'id="walkthrough-skip"' not in home.text
     assert parser.elements["show-walkthrough"]["tag"] == "button"
     assert "Primary reference" in home.text
     assert "Renderer" in home.text
@@ -205,6 +206,8 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "moveAdvancedPanels" in js
     assert "closeWalkthrough" in js
     assert "finishWalkthrough" in js
+    assert "skipWalkthrough" in js
+    assert "skipped: true" in js
     assert "SETUP_KEY = 'recastroom-setup-v1'" in js
     assert "COLLAB_KEY = 'recastroom-collab-v1'" in js
     assert "Required first-run setup cannot be dismissed by clicking the backdrop." in js

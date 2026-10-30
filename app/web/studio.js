@@ -240,6 +240,8 @@
       item.querySelector('span').textContent = index < step ? '✓' : String(index + 1);
     });
     $('walkthrough-back').hidden = step === 0;
+    $('walkthrough-skip').hidden = step === 4;
+    $('walkthrough-skip').textContent = step === 0 ? 'Skip setup' : 'Skip';
     $('walkthrough-next').hidden = step === 4;
     $('walkthrough-finish').hidden = step !== 4;
     $('walkthrough-next').textContent = step === 0 ? 'Start' : step === 3 ? 'Review setup' : 'Next';
@@ -261,6 +263,25 @@
     updateCollabStatus();
     closeWalkthrough();
     guideTo('source');
+  }
+  function skipWalkthrough() {
+    if (walkthroughStep === 0) {
+      const preferences = {
+        connection: selectedRadio('walkthrough-connection'),
+        studio: selectedRadio('walkthrough-studio'),
+        collab: selectedRadio('walkthrough-collab'),
+        reviewer: $('walkthrough-reviewer').value.trim(),
+        completedAt: new Date().toISOString(),
+        skipped: true,
+      };
+      try {
+        localStorage.setItem(SETUP_KEY, JSON.stringify(preferences));
+        localStorage.setItem(COLLAB_KEY, JSON.stringify({mode: preferences.collab, reviewer: preferences.reviewer}));
+      } catch (_) { /* Private mode still allows setup to be skipped for this page view. */ }
+      closeWalkthrough();
+      return;
+    }
+    setWalkthroughStep(Math.min(4, walkthroughStep + 1));
   }
   function guideTo(id) {
     if (!$('walkthrough').hidden) return;
@@ -448,6 +469,7 @@
   $('health-retry').addEventListener('click', checkHealth);
   $('show-walkthrough').addEventListener('click', openWalkthrough);
   $('hero-walkthrough').addEventListener('click', openWalkthrough);
+  $('walkthrough-skip').addEventListener('click', skipWalkthrough);
   $('walkthrough-back').addEventListener('click', () => setWalkthroughStep(Math.max(0, walkthroughStep - 1)));
   $('walkthrough-next').addEventListener('click', () => setWalkthroughStep(Math.min(4, walkthroughStep + 1)));
   $('walkthrough-finish').addEventListener('click', finishWalkthrough);
