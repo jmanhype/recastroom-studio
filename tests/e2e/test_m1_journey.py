@@ -42,6 +42,7 @@ def _browser_program() -> str:
             return page.evaluate('() => ({projects: window.ProjectsUI.getState(), m1: window.M1UI.getState()})')
 
         def select_workspace(page, project_id, character):
+            page.evaluate("() => { document.getElementById('advanced-studio').open = true; }")
             page.select_option('#project-select', project_id)
             page.wait_for_function("() => window.ProjectsUI?.getState?.().projectId")
             page.select_option('#character-select', character)

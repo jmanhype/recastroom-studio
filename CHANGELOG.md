@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 — 2026-10-30
+
+- Hardens the native E2E journey to reopen the Advanced Studio immediately before restored-workspace selection.
+
+## 0.3.0 — 2026-10-30
+
 ## 0.3.0 — 2026-10-30
 
 - Added a three-step guided walkthrough and persistent Start Guide entry point.
