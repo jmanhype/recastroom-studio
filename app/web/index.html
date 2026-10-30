@@ -181,11 +181,11 @@
         <h3>Where should recasts run?</h3>
         <div class="walkthrough-options" role="radiogroup" aria-label="Execution connection">
           <label><input type="radio" name="walkthrough-connection" value="dry-run" checked><strong>Dry run</strong><span>Available now · no GPU, no API key, no inference.</span></label>
-          <label><input type="radio" name="walkthrough-connection" value="comfyui"><strong>Local ComfyUI</strong><span>Use your own GPU and Henge-compatible graph.</span></label>
-          <label><input type="radio" name="walkthrough-connection" value="comfy-sdk"><strong>Comfy SDK</strong><span>Official Developer Platform connection.</span></label>
-          <label><input type="radio" name="walkthrough-connection" value="runpod"><strong>RunPod</strong><span>Scales a GPU worker to zero.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="comfyui"><strong>ComfyUI</strong><span>Your ComfyUI server with the RecastRoom graph on this machine or another computer.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="comfy-sdk"><strong>Comfy API · SDK</strong><span>The official Comfy Developer Platform path through the Comfy SDK.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="runpod"><strong>RunPod Serverless</strong><span>A GPU endpoint that scales to zero and bills per second.</span></label>
         </div>
-        <p class="hint">The server remains the authority on the active backend. This choice records your intended setup and changes the next action shown.</p>
+        <p class="hint">The server remains the authority on the active backend and secrets stay outside the browser. This choice records your intended connection path; dry run is the only path available without operator-configured infrastructure.</p>
       </section>
       <section id="walkthrough-studio" class="walkthrough-step" data-walkthrough-step="2" hidden>
         <p class="eyebrow">STUDIO</p>

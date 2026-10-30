@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.3 — 2026-10-30
+
+- Renamed the setup connection choices to match the familiar provider names: ComfyUI, Comfy API · SDK, and RunPod Serverless.
+- Clarified that provider secrets remain outside the browser and the server remains authoritative for the active backend.
+
+## 0.3.2 — 2026-10-30
+
 ## 0.3.2 — 2026-10-30
 
 - Added a required four-step first-run setup wizard covering connection, studio guidance, collaboration mode, and readiness.

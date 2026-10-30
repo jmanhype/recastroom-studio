@@ -163,9 +163,10 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert 'data-required="true"' in home.text
     assert "REQUIRED · 4 STEPS" in home.text
     assert "Where should recasts run?" in home.text
-    assert "Local ComfyUI" in home.text
-    assert "Comfy SDK" in home.text
-    assert "RunPod" in home.text
+    assert ">ComfyUI</strong>" in home.text
+    assert "Comfy API · SDK" in home.text
+    assert "RunPod Serverless" in home.text
+    assert "secrets stay outside the browser" in home.text
     assert "Solo or review handoff?" in home.text
     assert "Reviewer name" in home.text
     assert "Open the studio" in home.text
