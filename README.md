@@ -290,6 +290,7 @@ See [`RIGHTS.md`](RIGHTS.md) and [`examples/PERMISSION_DECLARATION.md`](examples
 | Dialogue timing fails | Confirm the CLI can read the file and that it contains audible speech |
 | Browser preview is blank | Use an MP4 or MOV preview; the server can still inspect other supported containers |
 | Hosted run reports missing credentials | Set `COMFY_API_KEY` and `COMFY_BASE_URL` for your hosted Comfy setup |
+| Hosted Build preflight fails | Run `./tools/comfy_api_preflight.sh`; it pins `comfy-cli 1.24.0` and includes the local asset bridge |
 
 ## Limitations
 

@@ -208,6 +208,12 @@
   }
   const SETUP_KEY = 'recastroom-setup-v1';
   const COLLAB_KEY = 'recastroom-collab-v1';
+  const RUNTIME_BACKENDS = { preview: 'dry_run', comfyui: 'legacy', 'comfy-sdk': 'sdk' };
+  const RUNTIME_COMMANDS = {
+    preview: 'RECASTROOM_BACKEND=dry_run ./run.sh',
+    comfyui: 'RECASTROOM_BACKEND=legacy RECASTROOM_COMFY_URL=http://127.0.0.1:8188 ./run.sh',
+    'comfy-sdk': 'RECASTROOM_BACKEND=sdk COMFY_API_KEY=<your-key> COMFY_BASE_URL=https://<deployment>.run.comfy.app COMFY_SDK_ASSET_BRIDGE=openjutsu-v1 ./run.sh',
+  };
   let walkthroughStep = 0;
   function selectedRadio(name) {
     return document.querySelector(`input[name="${name}"]:checked`)?.value || '';
@@ -219,6 +225,22 @@
     if (!saved || saved.mode === 'solo') { status.hidden = true; status.textContent = ''; return; }
     status.hidden = false;
     status.textContent = saved.reviewer ? `REVIEW HANDOFF · ${saved.reviewer}` : 'REVIEW HANDOFF';
+  }
+  function savedSetupPreference() {
+    try { return JSON.parse(localStorage.getItem(SETUP_KEY) || 'null'); } catch (_) { return null; }
+  }
+  function updateConnectionGuidance() {
+    const card = $('runtime-setup'), message = $('runtime-setup-message'), command = $('runtime-command');
+    const selected = savedSetupPreference()?.connection;
+    if (!health || !selected || !(selected in RUNTIME_BACKENDS) || health.backend === RUNTIME_BACKENDS[selected]) {
+      card.hidden = true;
+      message.textContent = '';
+      command.textContent = '';
+      return;
+    }
+    message.textContent = `Selected ${selected}, but the server is running ${health.backend}. Restart with the matching mode.`;
+    command.textContent = RUNTIME_COMMANDS[selected];
+    card.hidden = false;
   }
   function closeWalkthrough() {
     $('walkthrough').hidden = true;
@@ -261,6 +283,7 @@
     if (preferences.studio === 'advanced') $('advanced-studio').open = true;
     else $('advanced-studio').open = false;
     updateCollabStatus();
+    updateConnectionGuidance();
     closeWalkthrough();
     guideTo('source');
   }
@@ -278,6 +301,7 @@
         localStorage.setItem(SETUP_KEY, JSON.stringify(preferences));
         localStorage.setItem(COLLAB_KEY, JSON.stringify({mode: preferences.collab, reviewer: preferences.reviewer}));
       } catch (_) { /* Private mode still allows setup to be skipped for this page view. */ }
+      updateConnectionGuidance();
       closeWalkthrough();
       return;
     }
@@ -337,6 +361,7 @@
         : 'Hosted Comfy configured · reachability unchecked · cost and location not verified'
         : 'Connection unavailable';
     } catch (_) { if (version !== healthVersion) return; $('backend').textContent = 'Connection unavailable'; }
+    updateConnectionGuidance();
     $('health-retry').hidden = Boolean(health?.ok && runConnectionReady(health)); controls();
     return health;
   }
@@ -468,6 +493,15 @@
   });
   $('retry-status').addEventListener('click', () => { if (job) poll(epoch, job); });
   $('health-retry').addEventListener('click', checkHealth);
+  $('copy-runtime-command').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText($('runtime-command').textContent);
+      $('copy-runtime-command').textContent = 'Command copied';
+    } catch (_) {
+      $('copy-runtime-command').textContent = 'Copy failed · select command';
+    }
+    setTimeout(() => { $('copy-runtime-command').textContent = 'Copy launch command'; }, 1800);
+  });
   $('show-walkthrough').addEventListener('click', openWalkthrough);
   $('hero-walkthrough').addEventListener('click', openWalkthrough);
   $('walkthrough-skip').addEventListener('click', skipWalkthrough);

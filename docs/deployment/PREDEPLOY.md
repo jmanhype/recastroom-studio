@@ -119,12 +119,12 @@ base-image import test; and the now-unfetchable bare BFS Git ref.
 
 ## SDK asset bridge and finality
 
-The current SDK runner does not upload or bind source/reference assets. Node
-`1189.inputs.plan` embeds `video`, `global_ref`, and `global_ref2` filenames,
-and the SDK contract requires those files to pre-exist in the deployment input
-volume. A parallel story is developing the bridge under
-`custom_nodes/openjutsu_assets`. The build contents cannot be called final until
-that inclusion is resolved and reviewed.
+The SDK runner uploads source/reference bytes and binds them through the
+repository-owned bridge under `custom_nodes/openjutsu_assets`. The Build spec
+includes that bridge as a local custom-node upload, so the dry run plans one
+2,721-byte node package in addition to the public model links. Runtime
+compatibility still cannot be claimed until a real release/deployment executes
+the bridge and workflow.
 
 ## Verification boundary
 
@@ -136,14 +136,14 @@ Measured local checks:
 
 - `PYTHONPATH=src <root-repo>/.venv/bin/python -m pytest -q`:
   **75 passed, 1 pre-existing Starlette/httpx deprecation warning, 17.85s**.
-- From the operator-approved temporary directory outside the repository:
-  `uvx --offline --python 3.12 --from comfy-cli==1.22.0 comfy --json build validate <owned deploy/comfy directory>`:
-  exit 0, `ok=true`, `remote=false`, 13 model entries, and
+- From the repository root:
+  `uvx --from comfy-cli==1.24.0 comfy --json build validate deploy/comfy --custom-nodes-dir custom_nodes`:
+  exit 0, `ok=true`, `remote=false`, 13 model entries, seven custom nodes, and
   `folder_case_checked=false`.
-- From that same temporary directory:
-  `uvx --offline --python 3.12 --from comfy-cli==1.22.0 comfy --json build push <owned deploy/comfy directory> --dry-run`:
-  exit 0, `created=false`, `upload_count=0`, `upload_bytes=0`, `uploaded=0`,
-  `deduped=0`, and `folder_case_checked=false`.
+- From the same root:
+  `uvx --from comfy-cli==1.24.0 comfy --json build push deploy/comfy --dry-run --custom-nodes-dir custom_nodes`:
+  exit 0, `created=false`, `upload_count=1`, `upload_bytes=2721`,
+  `uploaded=0`, `deduped=0`, and `folder_case_checked=false`.
 
 Any Comfy CLI `build validate` or `push --dry-run` result is syntax/plan
 validation only. In particular, candidate validation leaves folder casing

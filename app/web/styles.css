@@ -14,6 +14,11 @@
 .quickstart-grid strong{font-weight:400;font-size:1rem;letter-spacing:-.015em}
 .quickstart-grid small{color:var(--muted);font-size:.78rem;line-height:1.45}
 .backend-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem}
+.runtime-card{display:grid;gap:.8rem;margin:1rem 0;padding:1rem;background:#191b18;border:1px solid var(--line);border-left:2px solid var(--accent)}
+.runtime-card p{margin:0}
+.runtime-card #runtime-setup-message{color:var(--ink);font-size:.86rem;line-height:1.5}
+#runtime-command{display:block;white-space:pre-wrap;overflow-wrap:anywhere;padding:.8rem;background:#10110f;border:1px solid var(--line);color:var(--ink);font:.76rem/1.6 Menlo,Consolas,monospace;user-select:all}
+#copy-runtime-command{justify-self:start;min-height:38px;padding:.55rem .8rem;font-size:.78rem}
 .advanced-drawer{margin:-.5rem 0 2rem;border-top:1px solid var(--line);padding-top:1rem}
 .advanced-drawer>summary{color:var(--muted);font-size:.8rem}
 .advanced-drawer>summary:hover{color:var(--ink)}

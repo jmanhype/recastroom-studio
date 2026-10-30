@@ -123,6 +123,14 @@ recastroom run --attest-rights work/workflow.json
 
 ## 8. Hosted Comfy mode
 
+Validate the repository-owned Build definition and confirm that the local asset
+bridge is packaged. The Comfy commands do not contact the builder or create a
+Build:
+
+```bash
+./tools/comfy_api_preflight.sh
+```
+
 Install and configure:
 
 ```bash
@@ -147,3 +155,24 @@ RECASTROOM_BACKEND=sdk ./run.sh
 Both values are mandatory for this Developer Platform deployment mode. If either
 is missing, job startup fails closed before network access with a JSON-serializable
 `ComfySdkConfigurationError` (`missing_comfy_api_key` or `missing_comfy_base_url`).
+
+To create the hosted environment itself, sign in to Comfy and use the current
+Build/Deploy CLI. `COMFY_CLOUD_API_KEY` is the CLI/workspace credential;
+`COMFY_API_KEY` remains the runtime SDK credential:
+
+```bash
+uvx --from comfy-cli==1.24.0 comfy cloud login
+uvx --from comfy-cli==1.24.0 comfy build push deploy/comfy \
+  --custom-nodes-dir custom_nodes
+uvx --from comfy-cli==1.24.0 comfy build release create deploy/comfy \
+  --target linux/nvidia --watch
+uvx --from comfy-cli==1.24.0 comfy deploy refs compute
+uvx --from comfy-cli==1.24.0 comfy deploy up deploy/comfy \
+  --gpu <gpu> --region <region> --min 0 --max 1 --no-editor
+```
+
+Stop the deployment when finished:
+
+```bash
+uvx --from comfy-cli==1.24.0 comfy deploy stop deploy/comfy
+```
