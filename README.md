@@ -66,7 +66,7 @@ The bundled local workflow uses the RecastRoom H3 performance-preserving graph:
 
 ## The production workspace
 
-The main route is `/`: one workspace for source inspection, references,
+RecastRoom opens directly into one workspace for source inspection, references,
 attestation, workflow preparation, execution, and review.
 
 The public overview, sound-design review tool, and legal notes are support
@@ -172,8 +172,8 @@ Open:
 http://127.0.0.1:8768
 ```
 
-The main workspace is at `/`. Public overview and legal notes are linked in the
-app footer.
+The app opens directly into that workspace. Public overview and legal notes are
+linked in the footer.
 
 ## Repository guide
 
