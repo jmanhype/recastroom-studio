@@ -60,7 +60,7 @@ CPU_CLIP_SHA256 = {
 OFFLINE_PIN = RecipePin(
     "offline-source-routing",
     "cpu-dryrun-v1",
-    "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+    "79fa70d6b9d3e13852e179cff6f9a3aa36637a8543c600c36517be1b4a2d1a58",
     "cpu_non_inference_routing_v1",
     "local_cpu_router-1",
     "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",

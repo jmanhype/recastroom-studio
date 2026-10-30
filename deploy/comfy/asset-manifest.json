@@ -18,7 +18,7 @@
   },
   "workflow": {
     "path": "workflows/recastroom_h3_workflow.json",
-    "sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+    "sha256": "79fa70d6b9d3e13852e179cff6f9a3aa36637a8543c600c36517be1b4a2d1a58",
     "node_count": 29,
     "unique_class_type_count": 26,
     "required_birefnet_variant": "BiRefNet-general"
@@ -182,7 +182,7 @@
       "repository": "drbaph/MiniMax-H3-Turbo-Lora-ComfyUI",
       "revision": "bb2bc497cbaca89dadd0bcf1856eed4f8275be20",
       "source_path": "experimental/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors",
-      "destination": "models/loras/experimental/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors",
+      "destination": "models/loras/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors",
       "sha256": "693f41129785f31a820d32100b698cdcc42182c27c291f37f47d1ca5f38f5c20",
       "bytes": 2285989092,
       "recorded_bytes": 2285989092,

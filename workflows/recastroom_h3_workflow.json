@@ -83,7 +83,7 @@
   },
   "64": {
     "inputs": {
-      "lora_name": "experimental/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors",
+      "lora_name": "minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors",
       "strength_model": 1.0,
       "model": [
         "586",

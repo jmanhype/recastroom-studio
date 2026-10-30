@@ -34,7 +34,7 @@ class WindowNotQualifiedError(WindowQualificationUnavailableError):
 _OFFLINE_PIN = (
     "offline-source-routing",
     "cpu-dryrun-v1",
-    "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+    "79fa70d6b9d3e13852e179cff6f9a3aa36637a8543c600c36517be1b4a2d1a58",
     "cpu_non_inference_routing_v1",
 )
 CPU_WINDOW_TABLE_VERSION = "openjutsu-cpu-routing-windows-v1-20261027"
