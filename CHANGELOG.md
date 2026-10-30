@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.7 — 2026-10-30
+
+- Pins the matching Homebrew x265 4.1 dependency required by the frozen FFmpeg 8.0.1 bottle.
+
+## 0.2.6 — 2026-10-30
+
 ## 0.2.6 — 2026-10-30
 
 - Removes the redundant libvpx relink step and cleans duplicate release headings.

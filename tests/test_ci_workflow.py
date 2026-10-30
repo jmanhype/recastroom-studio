@@ -25,8 +25,11 @@ def test_ci_is_pinned_fast_and_reproducible():
     assert "brew install recastroom/legacy/ffmpeg" in text
     assert "homebrew-core/5e8c24087d2a54c386f50dfa7bccd4a2d406b09a/Formula/f/ffmpeg.rb" in text
     assert "homebrew-core/86c2371386a5f0b8a81d890ba1a233a6153ded7c/Formula/lib/libvpx.rb" in text
+    assert "homebrew-core/ea07757ef4bcf86b5c31e7684f1e0c42b01691a2/Formula/x/x265.rb" in text
     assert "brew uninstall --ignore-dependencies libvpx" in text
     assert "brew install recastroom/legacy/libvpx" in text
+    assert "brew uninstall --ignore-dependencies x265" in text
+    assert "brew install recastroom/legacy/x265" in text
     assert "ffmpeg -version | grep -F 'ffmpeg version 8.0.1'" in text
     assert "ffprobe -version | grep -F 'ffprobe version 8.0.1'" in text
     assert "python -m compileall -q app scripts src tests tools" in text
