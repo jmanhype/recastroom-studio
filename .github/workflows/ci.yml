@@ -39,7 +39,6 @@ jobs:
           brew install recastroom/legacy/ffmpeg
           brew uninstall --ignore-dependencies libvpx
           brew install recastroom/legacy/libvpx
-          brew link --overwrite libvpx
           ffmpeg -version | grep -F 'ffmpeg version 8.0.1'
           ffprobe -version | grep -F 'ffprobe version 8.0.1'
       - name: Set up Python

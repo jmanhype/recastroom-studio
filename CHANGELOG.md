@@ -1,10 +1,12 @@
 # Changelog
 
+## 0.2.6 — 2026-10-30
+
+- Removes the redundant libvpx relink step and cleans duplicate release headings.
+
 ## 0.2.5 — 2026-10-30
 
 - Replaces CI’s transient core libvpx install with the pinned 1.15.2 formula before linking FFmpeg 8.0.1.
-
-## 0.2.4 — 2026-10-30
 
 ## 0.2.4 — 2026-10-30
 
@@ -12,11 +14,7 @@
 
 ## 0.2.3 — 2026-10-30
 
-## 0.2.3 — 2026-10-30
-
 - Pinned CI to the Homebrew FFmpeg 8.0.1_2 formula used by the frozen M1 evidence.
-
-## 0.2.2 — 2026-10-30
 
 ## 0.2.2 — 2026-10-30
 
@@ -25,11 +23,7 @@
 
 ## 0.2.1 — 2026-10-30
 
-## 0.2.1 — 2026-10-30
-
 - Included GitHub Actions’ `/usr/local/bin` FFmpeg location in the trusted media-tool path so CI uses the workflow-installed binaries.
-
-## 0.2.0 — 2026-10-30
 
 ## 0.2.0 — 2026-10-30
 
@@ -37,8 +31,6 @@
 - Added project/character persistence, protected reference bundles, safe prepared-job history, readiness and backend modes.
 - Added the deterministic sound-design review surface and public result gallery.
 - Preserved the operator attestation as a production declaration; RecastRoom still does not verify legal rights, ownership, consent, model licensing, or clearance.
-
-## 0.1.2 — 2026-10-26
 
 ## 0.1.2 — 2026-10-26
 
