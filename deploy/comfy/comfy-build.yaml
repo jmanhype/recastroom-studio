@@ -117,6 +117,11 @@
         "name": "ComfyUI-H3-ExactAudioLock",
         "repository": "https://github.com/badgids/ComfyUI-H3-ExactAudioLock",
         "gitRef": "559196913108ca9bb58abf6f1a3d06be369532e9"
+      },
+      {
+        "name": "openjutsu_assets",
+        "source": "local",
+        "localPath": "openjutsu_assets"
       }
     ],
     "pipDependencies": ""

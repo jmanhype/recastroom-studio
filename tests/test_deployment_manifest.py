@@ -241,13 +241,19 @@ def test_build_spec_exactly_matches_asset_manifest() -> None:
         assert manifest_by_id[matches[0]["id"]]["source_path"].endswith(item["filename"])
 
     custom_nodes = {item["name"]: item for item in definition["customNodes"]}
-    assert {name: item["gitRef"] for name, item in custom_nodes.items()} == {
+    assert {name: item.get("gitRef") for name, item in custom_nodes.items()} == {
         "ComfyUI-BFSNodes": "de5c7215840097d68e29b6b4903663698319065a",
         "ComfyUI-KJNodes": "37a6c45a07bb06cc392431ddbbc741e691c467f4",
         "ComfyUI-RMBG": "a66a5e641a54988d80ed6aad18946081c85f309e",
         "ComfyUI-VideoHelperSuite": "4d907bee61e92c2e65af3bd6383a4e4d356126d1",
         "ComfyUI-SolAttn_triton": "26d816ebd4f1e43a2c6e4d4759be3137f10a7a73",
         "ComfyUI-H3-ExactAudioLock": "559196913108ca9bb58abf6f1a3d06be369532e9",
+        "openjutsu_assets": None,
+    }
+    assert custom_nodes["openjutsu_assets"] == {
+        "name": "openjutsu_assets",
+        "source": "local",
+        "localPath": "openjutsu_assets",
     }
 
 
@@ -260,7 +266,7 @@ def test_candidate_fails_closed_and_discloses_pending_sdk_bridge() -> None:
     assert candidate["compatibility_status"] == "fail_closed_unknown"
     assert candidate["selected_base_image"] is None
     assert candidate["recorded_bfs_commit_fetchable_by_git_ref"] is False
-    assert candidate["sdk_asset_bridge_status"] == "pending_parallel_story"
+    assert candidate["sdk_asset_bridge_status"] == "included_in_build_spec"
     assert candidate["sdk_asset_bridge_required_for_final_build_contents"] is True
     assert manifest["closure"]["current_public_metadata_resolved"] is True
     assert manifest["closure"]["historical_byte_identity_proven"] is False
@@ -293,16 +299,17 @@ def test_cli_validation_receipt_cannot_be_promoted_to_runtime_proof() -> None:
     receipt = load_json(DEPLOY / "validation.json")
 
     assert receipt["validate"] == {
-        "command": "uvx --offline --python 3.12 --from comfy-cli==1.22.0 comfy --json build validate <owned-deploy-comfy-directory>",
+        "command": "uvx --from comfy-cli==1.24.0 comfy --json build validate deploy/comfy --custom-nodes-dir custom_nodes",
         "exit_code": 0,
         "ok": True,
         "remote": False,
         "model_count": 13,
+        "custom_node_count": 7,
         "folder_case_checked": False,
     }
     assert receipt["push_dry_run"]["exit_code"] == 0
     assert receipt["push_dry_run"]["created"] is False
-    assert receipt["push_dry_run"]["upload_count"] == 0
+    assert receipt["push_dry_run"]["upload_count"] == 1
     assert receipt["push_dry_run"]["uploaded"] == 0
     assert receipt["interpretation"]["runnable_build_proven"] is False
     assert receipt["interpretation"]["hosted_compatibility_proven"] is False

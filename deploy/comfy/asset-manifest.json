@@ -13,7 +13,7 @@
     "compatibility_status": "fail_closed_unknown",
     "selected_base_image": null,
     "recorded_bfs_commit_fetchable_by_git_ref": false,
-    "sdk_asset_bridge_status": "pending_parallel_story",
+    "sdk_asset_bridge_status": "included_in_build_spec",
     "sdk_asset_bridge_required_for_final_build_contents": true
   },
   "workflow": {

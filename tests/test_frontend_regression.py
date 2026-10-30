@@ -164,10 +164,11 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "REQUIRED · 4 STEPS" in home.text
     assert "Where should recasts run?" in home.text
     assert ">ComfyUI</strong>" in home.text
-    assert "Hosted Comfy API" in home.text
+    assert "Comfy API SDK" in home.text
     assert "Local preview" in home.text
     assert "RunPod" not in home.text
-    assert "does not change server settings or store credentials" in home.text
+    assert "Restart with the matching mode" in home.text
+    assert "This saves a preference" in home.text
     assert "Solo or review handoff?" in home.text
     assert "Reviewer name" in home.text
     assert 'id="walkthrough-skip"' in home.text
@@ -211,6 +212,11 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "skipped: true" in js
     assert "SETUP_KEY = 'recastroom-setup-v1'" in js
     assert "COLLAB_KEY = 'recastroom-collab-v1'" in js
+    assert "function updateConnectionGuidance()" in js
+    assert "RECASTROOM_BACKEND=sdk COMFY_API_KEY=<your-key>" in js
+    assert "COMFY_BASE_URL=https://<deployment>.run.comfy.app" in js
+    assert "COMFY_SDK_ASSET_BRIDGE=openjutsu-v1" in js
+    assert "copy-runtime-command" in js
     assert "Required first-run setup cannot be dismissed by clicking the backdrop." in js
     assert "if (!$('walkthrough').hidden) return;" in js
     assert "collab?.mode === 'handoff'" in m1_script.text

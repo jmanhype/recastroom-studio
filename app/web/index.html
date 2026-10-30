@@ -32,6 +32,14 @@
   <section class="readiness-shell" aria-labelledby="readiness-heading">
     <div class="section-heading"><h2 id="readiness-heading">Readiness</h2><span>LIVE DEPENDENCIES</span></div>
     <div class="backend-row"><p id="backend" class="backend" role="status">Connection unknown · checking</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div>
+    <div id="runtime-setup" class="runtime-card" hidden aria-labelledby="runtime-setup-heading">
+      <div>
+        <p id="runtime-setup-heading" class="eyebrow">RUNTIME ACTION</p>
+        <p id="runtime-setup-message">Restart with the matching mode.</p>
+      </div>
+      <code id="runtime-command"></code>
+      <button id="copy-runtime-command" type="button">Copy launch command</button>
+    </div>
     <dl id="readiness" class="readiness-strip" aria-live="polite">
       <div data-readiness="source"><dt>Source</dt><dd>Not selected</dd></div>
       <div data-readiness="reference"><dt>Primary reference</dt><dd>Missing</dd></div>
@@ -184,9 +192,9 @@
         <div class="walkthrough-options" role="radiogroup" aria-label="Connection preference">
           <label><input type="radio" name="walkthrough-connection" value="preview" checked><strong>Local preview</strong><span>Available in the default launcher · no GPU, API key, or inference.</span></label>
           <label><input type="radio" name="walkthrough-connection" value="comfyui"><strong>ComfyUI</strong><span>Your local ComfyUI server with the RecastRoom workflow.</span></label>
-          <label><input type="radio" name="walkthrough-connection" value="comfy-sdk"><strong>Hosted Comfy API</strong><span>A compatible deployment with the RecastRoom bridge and models.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="comfy-sdk"><strong>Comfy API SDK</strong><span>A compatible hosted deployment with the RecastRoom bridge and models.</span></label>
         </div>
-        <p class="hint">This saves a browser preference; it does not change server settings or store credentials. The readiness bar always shows the connection the server is actually using.</p>
+        <p class="hint">This saves a preference and shows the exact launch command when it does not match the active server. Restart with the matching mode; credentials stay in your shell, never this page.</p>
       </section>
       <section id="walkthrough-studio" class="walkthrough-step" data-walkthrough-step="2" hidden>
         <p class="eyebrow">STUDIO</p>
@@ -222,5 +230,5 @@
   </div>
   <script src="/projects.js?v=20261027d" defer></script>
   <script src="/m1.js?v=20261027" defer></script>
-  <script src="/studio.js?v=20261027" defer></script>
+  <script src="/studio.js?v=20261030" defer></script>
 </html>
