@@ -18,6 +18,7 @@ remote push is part of this path.
 | Model/license boundary | `MODELS.md` |
 | Copyright and AI-output notice | `NOTICE` |
 | Public media manifest | `media/README.md` |
+| Captioned user journey | `media/recastroom-user-journey-8s-16x9.mp4` |
 | Public media contact sheet | `docs/images/media-contact-sheet.jpg` |
 | Workflow diagram | `docs/images/workflow-diagram.png` |
 | Architecture diagram | `docs/images/architecture-diagram.png` |

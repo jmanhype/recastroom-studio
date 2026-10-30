@@ -8,27 +8,30 @@ RecastRoom Studio is an open-source creative workspace built around **MiniMax H3
 
 [![RecastRoom public hero: same take, new lead](media/recastroom-hero-poster.jpg)](media/recastroom-public-hero-16x9.mp4)
 
-## Repository layout
+## See it work
 
-![RecastRoom Studio repository map](docs/images/repository-map.svg)
+These previews autoplay on GitHub. No click is required.
 
-```text
-README.md              Product overview and quickstart
-RIGHTS.md              Source, likeness, and model rights policy
-MODELS.md              Bundled H3 workflow model roles and license boundary
-NOTICE                 Copyright, model redistribution, and AI-output notice
-setup.sh               Local environment setup
-run.sh                 Start the FastAPI studio on 127.0.0.1:8768
-app/                   FastAPI server and static web workspace
-src/openjutsu/         Python application package
-workflows/             Bundled RecastRoom H3 workflow
-media/                 Rights-clean public hero and comparison videos
-examples/              Input templates and rights attestation example
-scripts/               Local trial and CLI helpers
-tests/                 Application, API, workflow, and browser regression tests
-tools/                 Release and verification utilities
-docs/                  Architecture, deployment, and product documentation
-```
+| Studio walkthrough | Result preview |
+|---|---|
+| ![RecastRoom studio walkthrough](media/previews/user-journey-16x9.webp) | ![RecastRoom result preview](media/previews/result-teaser-16x9.webp) |
+
+The studio walkthrough shows the normal user path:
+
+1. inspect the source,
+2. add references and word timing,
+3. record permission,
+4. prepare the workflow,
+5. review the prepared job.
+
+The result preview shows the finished user outcome: the source performance stays
+in place while the lead changes.
+
+Full-length version: [`recastroom-user-journey-8s-16x9.mp4`](media/recastroom-user-journey-8s-16x9.mp4)
+
+### Vertical preview
+
+![RecastRoom source-versus-recast vertical preview](media/previews/source-vs-recast-9x16.webp)
 
 RecastRoom Studio is a practical answer to Comfy's **#OpenSourceHiggsfield**
 challenge: turn “put a different performer into this clip” into a reproducible
@@ -93,25 +96,23 @@ Included:
 CI runs on Python 3.11 and 3.12 and executes the full test suite.
 Detailed release status is recorded in [`docs/RELEASE_STATUS.md`](docs/RELEASE_STATUS.md).
 
-## Screenshots
+## User interface
 
-| App and readiness | Prepared job |
-|---|---|
-| ![RecastRoom Studio workflow catalog](docs/images/app-landing-v2.png) | ![RecastRoom prepared job result](docs/images/app-prepared-job.png) |
+| Workflow studio | Readiness | Prepared job |
+|---|---|---|
+| ![RecastRoom Studio workflow catalog](docs/images/app-landing-v2.png) | ![RecastRoom readiness strip](docs/images/readiness-visual.png) | ![RecastRoom prepared job result](docs/images/app-prepared-job.png) |
 
-Readiness detail: [`docs/images/readiness-visual.png`](docs/images/readiness-visual.png)
-
-Full walkthrough contact sheet: [`docs/images/app-walkthrough.jpg`](docs/images/app-walkthrough.jpg)
+Older full walkthrough contact sheet: [`docs/images/app-walkthrough.jpg`](docs/images/app-walkthrough.jpg)
 
 Demo storyboard: [`docs/images/demo-v1-contact.jpg`](docs/images/demo-v1-contact.jpg)
 
-## Media kit
+## Downloadable media
 
-### Showreel
+### Full-length showreel
 
 [![RecastRoom 24-second showreel](media/posters/showreel-16x9.webp)](media/recastroom-showreel-24s-16x9.mp4)
 
-### Vertical hero
+### Vertical result
 
 [![RecastRoom vertical hero](media/posters/hero-9x16.webp)](media/recastroom-hero-9x16.mp4)
 
@@ -119,7 +120,7 @@ Demo storyboard: [`docs/images/demo-v1-contact.jpg`](docs/images/demo-v1-contact
 
 [![Source versus recast proof](media/posters/proof-9x16.webp)](media/recastroom-proof-9x16.mp4)
 
-### Social teasers
+### Additional user previews
 
 | 16:9 | Vertical | Square |
 |---|---|---|
@@ -172,6 +173,28 @@ http://127.0.0.1:8768
 ```
 
 The public overview is at `/landing.html`; the sound-design review surface is at `/sound-lab.html`.
+
+## Repository guide
+
+![RecastRoom Studio repository map](docs/images/repository-map.svg)
+
+```text
+README.md              Product overview and quickstart
+RIGHTS.md              Source, likeness, and model rights policy
+MODELS.md              Bundled H3 workflow model roles and license boundary
+NOTICE                 Copyright, model redistribution, and AI-output notice
+setup.sh               Local environment setup
+run.sh                 Start the FastAPI studio on 127.0.0.1:8768
+app/                   FastAPI server and static web workspace
+src/openjutsu/         Python application package
+workflows/             Bundled RecastRoom H3 workflow
+media/                 Rights-clean public hero and comparison videos
+examples/              Input templates and rights attestation example
+scripts/               Local trial and CLI helpers
+tests/                 Application, API, workflow, and browser regression tests
+tools/                 Release and verification utilities
+docs/                  Architecture, deployment, and product documentation
+```
 
 ## CLI
 
