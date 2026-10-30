@@ -33,7 +33,12 @@ jobs:
           curl --fail --location --retry 5 --retry-all-errors \
             https://raw.githubusercontent.com/Homebrew/homebrew-core/5e8c24087d2a54c386f50dfa7bccd4a2d406b09a/Formula/f/ffmpeg.rb \
             -o "$tap_root/Formula/ffmpeg.rb"
+          curl --fail --location --retry 5 --retry-all-errors \
+            https://raw.githubusercontent.com/Homebrew/homebrew-core/86c2371386a5f0b8a81d890ba1a233a6153ded7c/Formula/lib/libvpx.rb \
+            -o "$tap_root/Formula/libvpx.rb"
           brew install recastroom/legacy/ffmpeg
+          brew install --force --ignore-dependencies recastroom/legacy/libvpx
+          brew link --overwrite libvpx
           ffmpeg -version | grep -F 'ffmpeg version 8.0.1'
           ffprobe -version | grep -F 'ffprobe version 8.0.1'
       - name: Set up Python

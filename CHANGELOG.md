@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.4 — 2026-10-30
+
+- Added the matching Homebrew libvpx 1.15.2 dependency so the pinned macOS FFmpeg 8.0.1 binary runs on current CI images.
+
+## 0.2.3 — 2026-10-30
+
 ## 0.2.3 — 2026-10-30
 
 - Pinned CI to the Homebrew FFmpeg 8.0.1_2 formula used by the frozen M1 evidence.
