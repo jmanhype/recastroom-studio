@@ -14,7 +14,12 @@ remote push is part of this path.
 | Public landing | `/landing.html` |
 | Sound-design review | `/sound-lab.html` |
 | Walkthrough | `docs/images/app-walkthrough.jpg` |
-| Rights policy | `docs/RIGHTS.md` |
+| Rights policy | `RIGHTS.md` |
+| Model/license boundary | `MODELS.md` |
+| Copyright and AI-output notice | `NOTICE` |
+| Public media manifest | `media/README.md` |
+| One-command setup | `setup.sh` |
+| Local studio launcher | `run.sh` |
 | Model/runtime requirements | `docs/PIPELINE.md` |
 | Eleven-keeper QC and rights evidence | `docs/KEEPER_EVIDENCE.md` |
 | Fail-closed verification transcript | `docs/evidence/slate-verification.md` |

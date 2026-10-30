@@ -1,0 +1,14 @@
+RecastRoom Studio
+Copyright 2026 Openjutsu Studio contributors
+
+The application code and workflow files in this repository are MIT-licensed.
+Model weights are not redistributed here. A self-hosted ComfyUI installation
+must download them separately from their upstream providers, and each model
+keeps its own license.
+
+RecastRoom drives an unmodified ComfyUI installation over its local HTTP API.
+It ships no ComfyUI server code and no custom node packs.
+
+Generated videos are AI-generated. Keep an AI-generated label on public outputs
+where required by the publishing platform. Rights for source footage, reference
+likenesses, and generated results remain the operator's responsibility.

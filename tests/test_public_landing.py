@@ -45,7 +45,7 @@ def test_public_landing_page_has_conversion_structure_and_local_assets(studio):
     script = client.get("/landing.js")
     legal = client.get("/legal.html")
     font = client.get("/fonts/manrope-latin-400-800.woff2")
-    social = client.get("/images/recastroom-landing-social.jpg")
+    social = client.get("/media/recastroom-hero-poster.jpg")
     video = client.get("/media/recastroom-public-hero-16x9.mp4")
     core_gallery = client.get("/media/gallery-core-recast.mp4")
     style_gallery = client.get("/media/gallery-style-lane.mp4")
@@ -72,7 +72,7 @@ def test_public_landing_page_has_conversion_structure_and_local_assets(studio):
     assert all(old not in html for old in ("Start a rights aware dry run", "23.8 second proof", "No attestation, no render"))
     assert "Deterministic dry run · no GPU · no API key · no inference" in html
     assert 'src="/media/recastroom-public-hero-16x9.mp4"' in html
-    assert 'poster="/images/recastroom-landing-social.jpg"' in html
+    assert 'poster="/media/recastroom-hero-poster.jpg"' in html
     assert 'id="hero-heading"' in html
     assert 'id="workflow"' in html
     assert 'id="runtime"' in html
@@ -126,7 +126,7 @@ def test_public_landing_assets_are_pinned(studio):
     _, client = studio
 
     font = client.get("/fonts/manrope-latin-400-800.woff2")
-    social = client.get("/images/recastroom-landing-social.jpg")
+    social = client.get("/media/recastroom-hero-poster.jpg")
     video = client.get("/media/recastroom-public-hero-16x9.mp4")
     core_gallery = client.get("/media/gallery-core-recast.mp4")
     style_gallery = client.get("/media/gallery-style-lane.mp4")

@@ -656,4 +656,5 @@ def job_prompt(job_id: str) -> FileResponse:
 
 app.include_router(create_project_router(PROJECT_STORE))
 app.include_router(create_m1_router(PROJECT_STORE, ffprobe=SETTINGS.ffprobe))
+app.mount("/media", StaticFiles(directory=ROOT / "media"), name="media")
 app.mount("/", StaticFiles(directory=ROOT / "app/web", html=True), name="web")

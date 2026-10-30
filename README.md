@@ -6,6 +6,28 @@ Same take. New lead.
 
 RecastRoom Studio is an open-source creative workspace built around **MiniMax H3 Ref2VA**, **ComfyUI**, interchangeable Comfy API workflows, and performance-preserving character replacement. Its supported app and CLI paths require a recorded operator attestation before generation; RecastRoom does **not** verify legal rights, ownership, consent, model licensing, or clearance.
 
+[![RecastRoom public hero: same take, new lead](media/recastroom-hero-poster.jpg)](media/recastroom-public-hero-16x9.mp4)
+
+## Repository layout
+
+```text
+README.md              Product overview and quickstart
+RIGHTS.md              Source, likeness, and model rights policy
+MODELS.md              Bundled H3 workflow model roles and license boundary
+NOTICE                 Copyright, model redistribution, and AI-output notice
+setup.sh               Local development bootstrap
+run.sh                 Start the FastAPI studio on 127.0.0.1:8768
+app/                   FastAPI server and static web workspace
+src/openjutsu/         Python application package
+workflows/             Bundled ComfyUI API graph and workflow documentation
+media/                 Rights-clean public hero and comparison videos
+examples/              Input templates and rights attestation example
+scripts/               Local trial and CLI helpers
+tests/                 Application, API, workflow, and browser regression tests
+tools/                 Release, evidence, and submission utilities
+docs/                  Architecture, deployment, research, and dated evidence
+```
+
 ## M1 local evidence snapshot — 2026-10-30 UTC
 
 The native three-shot browser journey was tested at `1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f`:
@@ -123,6 +145,15 @@ Demo storyboard: [`docs/images/demo-v1-contact.jpg`](docs/images/demo-v1-contact
 
 Install FFmpeg first. macOS users can run `brew install ffmpeg`; Ubuntu users can run `sudo apt-get install ffmpeg`.
 
+Fastest local path:
+
+```bash
+./setup.sh
+./run.sh
+```
+
+`run.sh` listens on `127.0.0.1:8768` by default; override it with `PORT=8897`.
+
 The reviewer-facing clean-checkout path is documented in
 [`docs/QUICKSTART.md`](docs/QUICKSTART.md). The local smoke gates and archive
 receipts are in [`docs/RELEASE.md`](docs/RELEASE.md). HTTP examples are in
@@ -212,7 +243,7 @@ The UI requires an operator attestation before a job can start. The repository m
 - clips of deceased performers without estate consent,
 - non-consensual sexual, political, harassing, or deceptive media.
 
-See `docs/RIGHTS.md` and `examples/RIGHTS_ATTESTATION.md`.
+See [`RIGHTS.md`](RIGHTS.md) and [`examples/RIGHTS_ATTESTATION.md`](examples/RIGHTS_ATTESTATION.md).
 
 ## Troubleshooting
 

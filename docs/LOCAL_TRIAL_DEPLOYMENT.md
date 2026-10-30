@@ -48,7 +48,7 @@ HTTP 422 before a job is created. A valid preparation records
 SDK execution recheck that manifest before generation; there is no unattested
 generation path through this application. Attestation is a legal representation
 by the uploader, not automated provenance proof. Reviewers must follow
-[`RIGHTS.md`](RIGHTS.md).
+[`RIGHTS.md`](../RIGHTS.md).
 
 ## Storage lifetime
 

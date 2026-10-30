@@ -97,7 +97,7 @@ def test_public_hero_video_is_served_from_the_package(studio):
     _, client = studio
 
     response = client.get("/media/recastroom-public-hero-16x9.mp4")
-    keeper = REPO / "app/web/media/recastroom-public-hero-16x9.mp4"
+    keeper = REPO / "media/recastroom-public-hero-16x9.mp4"
     assert response.status_code == 200
     assert response.headers["content-type"].startswith("video/mp4")
     assert response.content == keeper.read_bytes()
