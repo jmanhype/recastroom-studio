@@ -26,7 +26,10 @@ A fresh-environment install and loopback launch proof for source package
 [`evidence/clean-install-8a5f376/REPORT.md`](evidence/clean-install-8a5f376/REPORT.md).
 The owner must still repeat the check on the exact final public commit.
 
-The bounded one-job official Comfy Cloud SDK smoke is complete:
+The official Comfy API proof is a successful full RecastRoom C1 render through
+`ComfySdkRunner`:
+[`evidence/comfy-api-sdk-c1-20261030/README.md`](evidence/comfy-api-sdk-c1-20261030/README.md).
+The earlier no-model Cloud smoke remains preliminary transport evidence at
 [`evidence/comfy-sdk-smoke-20261025/REPORT.md`](evidence/comfy-sdk-smoke-20261025/REPORT.md).
 
 It extracts the selected Git commit, filters local control files, audits public

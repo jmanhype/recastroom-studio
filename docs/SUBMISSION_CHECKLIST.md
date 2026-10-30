@@ -34,7 +34,7 @@ Secondary wiki/prior-challenge rubrics are presentation aids only.
 ## Exact owner blockers
 
 - [x] Live Comfy Developer Platform SDK execution proof
-  ([`evidence/comfy-sdk-smoke-20261025/REPORT.md`](evidence/comfy-sdk-smoke-20261025/REPORT.md))
+  ([`evidence/comfy-api-sdk-c1-20261030/README.md`](evidence/comfy-api-sdk-c1-20261030/README.md))
 - [x] Clean install/launch and CI on the audited public history
 - [x] Public repository and public release tag
 - [ ] Final approved two-minute demo URL
