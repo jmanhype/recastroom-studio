@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.5 — 2026-10-30
+
+- Replaces CI’s transient core libvpx install with the pinned 1.15.2 formula before linking FFmpeg 8.0.1.
+
+## 0.2.4 — 2026-10-30
+
 ## 0.2.4 — 2026-10-30
 
 - Added the matching Homebrew libvpx 1.15.2 dependency so the pinned macOS FFmpeg 8.0.1 binary runs on current CI images.
