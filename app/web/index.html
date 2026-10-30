@@ -5,15 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RecastRoom Studio</title>
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/studio.css">
 <main>
+  <div class="topbar"><a class="topbar-brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM</a><div class="topbar-status"><p id="backend" class="backend" role="status">Backend unknown · checking connection</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div><button id="help-tour" type="button" class="topbar-help">Help &amp; tour</button></div>
   <header class="masthead"><a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a><span class="edition">PERFORMANCE / REIMAGINED</span></header>
-  <div class="intro"><div><p class="eyebrow">OPEN CREATIVE STUDIO</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Select the take, prepare the edit, and inspect the evidence.<br>From original shot to reviewed export.</p><p id="backend" class="backend" role="status">Backend unknown · checking connection</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div></div>
-  <section class="studio-shell" aria-labelledby="workflow-heading">
-    <div class="section-heading"><h2 id="workflow-heading">Workflow studio</h2><span>PRODUCTION / ADVANCED / CONCEPT</span></div>
-    <p class="hint">RecastRoom is built around interchangeable Comfy workflows. The Recast Room is the production flagship; concept lanes are visible without being misrepresented as ready.</p>
-    <div id="workflow-catalog" class="workflow-catalog" aria-live="polite"></div>
-    <p id="workflow-note" class="workflow-note" role="status">Recast Room selected.</p>
-  </section>
+  <div class="intro"><div><p class="eyebrow">OPEN CREATIVE STUDIO</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Select the take, prepare the edit, and inspect the evidence.<br>From original shot to reviewed export.</p></div></div>
   <section class="readiness-shell" aria-labelledby="readiness-heading">
     <div class="section-heading"><h2 id="readiness-heading">Readiness</h2><span>LIVE DEPENDENCIES</span></div>
     <dl id="readiness" class="readiness-strip" aria-live="polite">
@@ -24,6 +20,45 @@
       <div data-readiness="renderer"><dt>Renderer</dt><dd>Checking</dd></div>
       <div data-readiness="execution"><dt>Execution</dt><dd>Checking</dd></div>
     </dl>
+  </section>
+  <section class="projects-shell m1-band" aria-labelledby="m1-scenes-heading">
+    <div class="section-heading"><h2 id="m1-scenes-heading">Scene setup</h2><span>ORIGINAL CUTS / OFFLINE</span></div>
+    <p class="hint">Inspect and confirm exact original source cuts. This M1 panel does not resolve recipes, submit jobs, or generate media.</p>
+    <div class="projects-grid">
+      <section aria-labelledby="m1-source-heading">
+        <h3 id="m1-source-heading">Protected source</h3>
+        <label for="m1-source">Project source video *</label>
+        <input id="m1-source" type="file" accept="video/mp4,video/quicktime,.mkv">
+        <button id="m1-upload" type="button">Upload and inspect source</button>
+        <p id="m1-source-note" class="hint" role="status">Select a saved project, then upload a CFR source.</p>
+        <dl id="m1-source-facts" class="readiness-strip" aria-live="polite">
+          <div><dt>Frames</dt><dd>Not inspected</dd></div>
+          <div><dt>Timebase</dt><dd>Not inspected</dd></div>
+          <div><dt>Audio</dt><dd>Not inspected</dd></div>
+          <div><dt>Source hash</dt><dd>Not inspected</dd></div>
+        </dl>
+      </section>
+      <section aria-labelledby="m1-cuts-heading">
+        <h3 id="m1-cuts-heading">Original cut partition</h3>
+        <div id="m1-shot-list" aria-live="polite"></div>
+        <button id="m1-add-shot" type="button">Add shot</button>
+        <button id="m1-confirm" type="button">Confirm exact cuts</button>
+        <p id="m1-cut-note" class="hint" role="status">Ranges are zero-based half-open frames and must cover every original frame once. Use pass-through for frames you do not want recast.</p>
+      </section>
+      <section aria-labelledby="m1-history-heading">
+        <h3 id="m1-history-heading">Confirmed scene revisions</h3>
+        <ul id="m1-scenes" aria-live="polite"></ul>
+        <p class="hint">Reloading this list is read-only and never creates an attempt or submits work.</p>
+      </section>
+    </div>
+  </section>
+  <div class="studio-layout">
+  <div class="studio-rail">
+  <section class="studio-shell" aria-labelledby="workflow-heading">
+    <div class="section-heading"><h2 id="workflow-heading">Workflow studio</h2><span>PRODUCTION / ADVANCED / CONCEPT</span></div>
+    <p class="hint">RecastRoom is built around interchangeable Comfy workflows. The Recast Room is the production flagship; concept lanes are visible without being misrepresented as ready.</p>
+    <div id="workflow-catalog" class="workflow-catalog" aria-live="polite"></div>
+    <p id="workflow-note" class="workflow-note" role="status">Recast Room selected.</p>
   </section>
   <section class="projects-shell" aria-labelledby="projects-heading">
     <div class="section-heading"><h2 id="projects-heading">Saved projects</h2><span>REUSABLE REFERENCES / HISTORY</span></div>
@@ -67,37 +102,8 @@
       </section>
     </div>
   </section>
-  <section class="projects-shell" aria-labelledby="m1-scenes-heading">
-    <div class="section-heading"><h2 id="m1-scenes-heading">Scene setup</h2><span>ORIGINAL CUTS / OFFLINE</span></div>
-    <p class="hint">Inspect and confirm exact original source cuts. This M1 panel does not resolve recipes, submit jobs, or generate media.</p>
-    <div class="projects-grid">
-      <section aria-labelledby="m1-source-heading">
-        <h3 id="m1-source-heading">Protected source</h3>
-        <label for="m1-source">Project source video *</label>
-        <input id="m1-source" type="file" accept="video/mp4,video/quicktime,.mkv">
-        <button id="m1-upload" type="button">Upload and inspect source</button>
-        <p id="m1-source-note" class="hint" role="status">Select a saved project, then upload a CFR source.</p>
-        <dl id="m1-source-facts" class="readiness-strip" aria-live="polite">
-          <div><dt>Frames</dt><dd>Not inspected</dd></div>
-          <div><dt>Timebase</dt><dd>Not inspected</dd></div>
-          <div><dt>Audio</dt><dd>Not inspected</dd></div>
-          <div><dt>Source hash</dt><dd>Not inspected</dd></div>
-        </dl>
-      </section>
-      <section aria-labelledby="m1-cuts-heading">
-        <h3 id="m1-cuts-heading">Original cut partition</h3>
-        <div id="m1-shot-list" aria-live="polite"></div>
-        <button id="m1-add-shot" type="button">Add shot</button>
-        <button id="m1-confirm" type="button">Confirm exact cuts</button>
-        <p id="m1-cut-note" class="hint" role="status">Ranges are zero-based half-open frames and must cover every original frame once. Use pass-through for frames you do not want recast.</p>
-      </section>
-      <section aria-labelledby="m1-history-heading">
-        <h3 id="m1-history-heading">Confirmed scene revisions</h3>
-        <ul id="m1-scenes" aria-live="polite"></ul>
-        <p class="hint">Reloading this list is read-only and never creates an attempt or submits work.</p>
-      </section>
-    </div>
-  </section>
+  </div>
+  <div class="studio-flow">
   <ol class="steps" aria-label="Workflow"><li data-step="upload" aria-current="step"><span>01</span> Select media</li><li data-step="prepare"><span>02</span> Prepare</li><li data-step="run"><span>03</span> Run</li><li data-step="review"><span>04</span> Review</li></ol>
   <form id="form">
     <input type="hidden" id="project-id-input" name="project_id" value="">
@@ -146,9 +152,72 @@
     <div class="section-heading"><h2 id="result-heading">Production desk</h2><span id="job-label"></span></div><div class="production"><div><p id="stage" class="eyebrow">PREPARING</p><p id="output" role="status" aria-live="polite"></p><p id="error" role="alert" hidden></p><div id="prepared-links" class="links"></div></div><div><button id="run" type="button" disabled aria-describedby="run-help">Run prepared workflow</button><p id="run-help" class="hint">Preparation must finish before running.</p><button id="retry-status" class="text-button" type="button" hidden>Check job status again</button></div></div>
     <div id="review" hidden><div class="section-heading"><h2>Watch the difference.</h2><span>SOURCE / RESULT</span></div><p class="hint">Compare the original above with the final below, or play the paired review. Review quality yourself; no automated score is provided.</p><div class="review-grid"><figure><video id="final-preview" controls playsinline preload="metadata" aria-label="Final result"></video><figcaption>Final · original audio restored</figcaption></figure><figure><video id="comparison-preview" controls playsinline preload="metadata" aria-label="Side-by-side source and result"></video><figcaption>Source / final · paired review</figcaption></figure></div><div id="downloads" class="links"></div></div>
   </section>
+  </div>
+  </div>
   <footer><span>RECASTROOM / INDEPENDENT TOOLS FOR MOVING IMAGES</span><span>Review every export before publication. <a href="/sound-lab.html">Sound lab</a></span></footer>
 </main>
+  <div id="wizard" class="wizard" hidden>
+    <div class="wizard-card" role="dialog" aria-modal="true" aria-labelledby="wizard-title">
+      <header class="wizard-head">
+        <span class="wizard-mark" aria-hidden="true">R/</span>
+        <h2 id="wizard-title">Welcome to RecastRoom</h2>
+        <ul id="wizard-progress" class="wizard-progress" aria-hidden="true"><li></li><li></li><li></li><li></li></ul>
+      </header>
+      <div class="wizard-body">
+        <section id="wizard-welcome" class="wizard-pane">
+          <p class="wizard-lede">Same take. New lead. Three quick things: where videos are generated, a look around the studio, and you are working.</p>
+          <p class="hint">Every step can be skipped and changed later from the Help &amp; tour button in the top bar.</p>
+        </section>
+        <section id="wizard-connection" class="wizard-pane" hidden>
+          <p class="wizard-lede">Pick where the MiniMax H3 graph runs. The choice is saved on this studio's server and takes effect immediately.</p>
+          <div id="wizard-providers" class="provider-grid" role="group" aria-label="Generation backend"></div>
+          <label for="wizard-url">Renderer address</label>
+          <input id="wizard-url" type="url" placeholder="http://127.0.0.1:8188" autocomplete="off" spellcheck="false">
+          <label for="wizard-key">Comfy API key <small>· SDK backend only</small></label>
+          <input id="wizard-key" type="password" placeholder="comfyui-…" autocomplete="off">
+          <p id="wizard-lock-note" class="wizard-note" hidden></p>
+          <p id="wizard-connection-note" class="hint" role="status"></p>
+          <div class="wizard-actions">
+            <button id="wizard-test" type="button" class="text-button">Test connection</button>
+            <button id="wizard-save" type="button">Save and use</button>
+          </div>
+          <p id="wizard-test-result" class="wizard-callout" role="status" hidden></p>
+          <details class="wizard-gpu">
+            <summary>Where do I get a GPU renderer?</summary>
+            <p class="hint">The H3 graph needs an NVIDIA GPU. Options: run ComfyUI on your own GPU machine and point this studio at its address; use the official Comfy API with a key; or host ComfyUI on a cloud GPU (for example RunPod) and paste its address here. Dry run needs none of these and rehearses the full workflow locally with a source-copy preview.</p>
+          </details>
+        </section>
+        <section id="wizard-tour" class="wizard-pane" hidden>
+          <p class="wizard-lede">A one-minute walk through the studio desk: readiness, the original clip, the new cast, timing controls, the attestation checkpoint, and prepare to review.</p>
+          <button id="wizard-start-tour" type="button">Start the tour</button>
+        </section>
+        <section id="wizard-done" class="wizard-pane" hidden>
+          <p class="wizard-lede">All set. Select a clip and a reference, attest your rights, then prepare.</p>
+          <p class="hint">Reopen these steps any time from the Help &amp; tour button in the top bar.</p>
+          <button id="wizard-done-tour" type="button">Open the studio</button>
+        </section>
+      </div>
+      <footer class="wizard-foot">
+        <button id="wizard-back" type="button" class="text-button" hidden>Back</button>
+        <span></span>
+        <button id="wizard-skip" type="button" class="text-button">Skip setup</button>
+        <button id="wizard-next" type="button" class="primary">Start</button>
+      </footer>
+    </div>
+  </div>
+  <div id="tour-card" class="tour-card" hidden>
+    <p id="tour-count" class="tour-count"></p>
+    <h3 id="tour-title"></h3>
+    <p id="tour-body" class="hint"></p>
+    <div class="tour-foot">
+      <button id="tour-back" type="button" class="text-button" hidden>Back</button>
+      <span></span>
+      <button id="tour-exit" type="button" class="text-button">Exit</button>
+      <button id="tour-next" type="button" class="primary">Next</button>
+    </div>
+  </div>
   <script src="/projects.js?v=20261027d" defer></script>
   <script src="/m1.js?v=20261027" defer></script>
   <script src="/studio.js?v=20261027" defer></script>
+  <script src="/wizard.js?v=20261030" defer></script>
 </html>

@@ -35,9 +35,11 @@ from openjutsu.workspace_store import (
     WorkspaceStoreError,
 )
 from openjutsu.attempt_worker import _pending, cpu_adapters, run_once
+from openjutsu.connection_store import ConnectionFileError, merge_current
 
 from .project_api import create_project_router
 from .m1_api import create_m1_router
+from .settings_api import create_settings_router
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -105,6 +107,19 @@ def _workspace_store() -> WorkspaceStore:
         return PROJECT_STORE
 
 
+def current_settings():
+    """Launch settings with the saved browser connection overlaid.
+
+    Reads the module-level SETTINGS each call so tests that swap app.main.SETTINGS
+    stay in control. Environment variables win: merge_current never overrides a
+    locked field, and a missing or unusable connection file changes nothing.
+    """
+    try:
+        return merge_current(SETTINGS, SETTINGS.data_dir)
+    except ConnectionFileError:
+        return SETTINGS
+
+
 @app.middleware("http")
 async def synchronize_workspace_store(request: Request, call_next) -> Response:
     if request.url.path.startswith(("/api/projects", "/api/characters", "/api/assets", "/api/jobs")):
@@ -114,12 +129,13 @@ async def synchronize_workspace_store(request: Request, call_next) -> Response:
 
 @app.get("/api/health")
 def health() -> dict:
-    renderer = renderer_readiness(SETTINGS.backend, SETTINGS.comfy_url).as_dict()
+    settings = current_settings()
+    renderer = renderer_readiness(settings.backend, settings.comfy_url).as_dict()
     return {
         "ok": True,
         "workflow": SETTINGS.workflow.name,
         "workflow_exists": SETTINGS.workflow.is_file(),
-        "backend": SETTINGS.backend,
+        "backend": settings.backend,
         "renderer_ready": renderer["ready"],
         "renderer": renderer,
     }
@@ -294,7 +310,7 @@ async def prepare(
             else [saved["reference_1"], *([saved["reference_2"]] if "reference_2" in saved else [])]
         )
         job, workflow = prepare_workflow(
-            SETTINGS,
+            current_settings(),
             job_id=job_id,
             source=saved["source"],
             reference_1=reference_paths[0],
@@ -517,7 +533,7 @@ def _run_legacy_job(job_id: str) -> None:
             manifest = json.loads((job_dir / "job.json").read_text(encoding="utf-8"))
             workflow = json.loads((job_dir / "workflow.json").read_text(encoding="utf-8"))
             _require_recorded_attestation(manifest, "Legacy ComfyUI")
-            runner = ComfyLegacyRunner(SETTINGS.comfy_url)
+            runner = ComfyLegacyRunner(current_settings().comfy_url)
             _set_status(job_id, state="uploading", message="Uploading source and references")
 
             source_upload = runner.upload(manifest["source"])
@@ -564,7 +580,7 @@ def _run_sdk_job(job_id: str) -> None:
             workflow = json.loads((job_dir / "workflow.json").read_text(encoding="utf-8"))
             _require_recorded_attestation(manifest, "Official Comfy SDK")
             _set_status(job_id, state="generating", message="Submitting official Comfy SDK job")
-            runner = ComfySdkRunner(api_key=SETTINGS.comfy_api_key)
+            runner = ComfySdkRunner(api_key=current_settings().comfy_api_key)
             saved = runner.run_workflow(
                 workflow, job_dir / "sdk_outputs", source=manifest["source"],
                 reference_1=manifest["reference_1"], reference_2=manifest.get("reference_2"),
@@ -606,8 +622,9 @@ def run_job(job_id: str, background_tasks: BackgroundTasks, request: Request) ->
     current = JOB_STATUS.get(job_id, {}).get("state")
     if current in {"uploading", "generating", "downloading"}:
         raise HTTPException(status_code=409, detail=f"Job is already {current}")
-    if SETTINGS.backend == "legacy":
-        renderer = renderer_readiness(SETTINGS.backend, SETTINGS.comfy_url)
+    settings = current_settings()
+    if settings.backend == "legacy":
+        renderer = renderer_readiness(settings.backend, settings.comfy_url)
         if not renderer.ready:
             raise HTTPException(
                 status_code=503,
@@ -619,7 +636,7 @@ def run_job(job_id: str, background_tasks: BackgroundTasks, request: Request) ->
         "sdk": _run_sdk_job,
         "dry_run": _run_dry_run_job,
     }
-    background_tasks.add_task(runners[SETTINGS.backend], job_id)
+    background_tasks.add_task(runners[settings.backend], job_id)
     return JSONResponse({"job_id": job_id, "state": "queued"})
 
 
@@ -656,4 +673,11 @@ def job_prompt(job_id: str) -> FileResponse:
 
 app.include_router(create_project_router(PROJECT_STORE))
 app.include_router(create_m1_router(PROJECT_STORE, ffprobe=SETTINGS.ffprobe))
+app.include_router(
+    create_settings_router(
+        base_settings=lambda: SETTINGS,
+        data_dir=lambda: SETTINGS.data_dir,
+        active_jobs=lambda: JOB_STATUS,
+    )
+)
 app.mount("/", StaticFiles(directory=ROOT / "app/web", html=True), name="web")

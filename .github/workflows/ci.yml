@@ -63,5 +63,6 @@ jobs:
           node --check app/web/landing.js
           node --check app/web/sound-lab.js
           node --check app/web/studio.js
+          node --check app/web/wizard.js
       - name: Run tests
         run: python -m pytest -q

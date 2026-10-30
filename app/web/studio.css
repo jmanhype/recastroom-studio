@@ -1,0 +1,373 @@
+/* SPDX-License-Identifier: MIT */
+/* RecastRoom studio rework layer, loaded after styles.css on the workspace page only.
+   Unifies the workspace with the landing look (Manrope, near-black, rounded cards),
+   adds the sticky top bar, the rail/flow studio layout, the first-run wizard dialog
+   and the workspace tour spotlight. styles.css stays the untouched base layer. */
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-latin-400-800.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --bg: #0b0c0b;
+  --panel: #141614;
+  --panel-raised: #101210;
+  --line: #2a2d28;
+  --ink: #eeeee6;
+  --muted: #a6a89e;
+  --accent: #d8c791;
+  --accent-ink: #16150f;
+  --radius: 14px;
+  font-family: "Manrope", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+html { scroll-padding-top: 84px; }
+body { background: var(--bg); }
+
+/* Keep scrolled-to controls clear of the sticky top bar (browser scrolls and
+   Playwright-style hit tests both honor scroll margins). */
+input, select, textarea, button, summary, .archive-search { scroll-margin-top: 84px; }
+
+/* ---- Top bar ---- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 60px;
+  padding: 0.4rem 1.1rem;
+  margin: 0 -1.25rem;
+  background: rgba(11, 12, 11, 0.86);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.topbar-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar-status .backend {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topbar-help {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.topbar-help:hover { border-color: var(--accent); color: var(--accent); }
+
+/* The masthead brand moves into the top bar; the hero carries the identity now. */
+.masthead { display: none; }
+
+/* ---- Hero ---- */
+
+.intro { padding: 3.25rem 0 2rem; }
+.intro h1 { letter-spacing: -0.02em; }
+
+/* ---- Studio layout: reference rail + working flow ---- */
+
+.studio-layout {
+  display: grid;
+  grid-template-columns: minmax(340px, 4fr) 8fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding-bottom: 2rem;
+}
+
+.studio-layout > .studio-rail,
+.studio-layout > .studio-flow {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.studio-layout section,
+.studio-layout ol.steps {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 0;
+}
+
+.studio-layout .section-heading { margin-bottom: 0.75rem; }
+
+.readiness-shell {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* The flow column owns the numbered steps; make them a compact pill row. */
+ol.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+}
+
+ol.steps li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+ol.steps li[aria-current="step"] { color: var(--ink); }
+ol.steps li span {
+  color: var(--accent);
+  font: 700 0.85rem/1 "Manrope", monospace;
+}
+
+/* Primary actions across the desk */
+#submit,
+#run,
+button.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#submit:disabled,
+#run:disabled { opacity: 0.45; cursor: not-allowed; }
+
+#submit:not(:disabled):hover,
+#run:not(:disabled):hover,
+button.primary:hover { filter: brightness(1.06); }
+
+/* ---- First-run wizard dialog ---- */
+
+.wizard {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(11, 12, 11, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.wizard-card {
+  width: min(640px, 100%);
+  max-height: min(88vh, 860px);
+  display: flex;
+  flex-direction: column;
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+.wizard-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 1.35rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.wizard-head h2 { margin: 0; font-size: 1.05rem; font-weight: 800; }
+
+.wizard-mark {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.15em;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+.wizard-progress {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+.wizard-progress li { width: 22px; height: 4px; border-radius: 4px; background: var(--line); }
+.wizard-progress li.done { background: rgba(216, 199, 145, 0.5); }
+.wizard-progress li.current { background: var(--accent); }
+
+.wizard-body { padding: 1.35rem; overflow-y: auto; }
+.wizard-pane { display: grid; gap: 0.8rem; }
+.wizard-lede { margin: 0; font-size: 1.02rem; line-height: 1.55; }
+
+.wizard-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.wizard-foot span, .tour-foot span { flex: 1; }
+
+.wizard-actions { display: flex; align-items: center; gap: 0.75rem; }
+.wizard-actions button:last-child { background: var(--accent); color: var(--accent-ink); border: none; border-radius: 999px; padding: 0.55rem 1.1rem; font-weight: 800; cursor: pointer; }
+.wizard-actions button:first-child { border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 0.55rem 1.1rem; cursor: pointer; }
+
+.wizard-callout { margin: 0; padding: 0.7rem 0.9rem; border-radius: 10px; font-size: 0.92rem; }
+.wizard-callout.ok { background: rgba(216, 199, 145, 0.1); border: 1px solid rgba(216, 199, 145, 0.4); }
+.wizard-callout.error { background: rgba(255, 107, 107, 0.08); border: 1px solid rgba(255, 107, 107, 0.4); }
+
+.wizard-note { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+.wizard-gpu summary { cursor: pointer; color: var(--accent); }
+.wizard-gpu p { margin: 0.6rem 0 0; }
+
+/* Provider cards */
+.provider-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.provider-card {
+  display: grid;
+  gap: 0.3rem;
+  align-content: start;
+  text-align: left;
+  padding: 0.8rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.provider-card strong { font-size: 0.92rem; }
+.provider-card span { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+
+.provider-card.active {
+  border-color: var(--accent);
+  background: rgba(216, 199, 145, 0.07);
+  box-shadow: 0 0 0 3px rgba(216, 199, 145, 0.12);
+}
+
+.provider-card .in-use {
+  justify-self: start;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+}
+
+.provider-card:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ---- Workspace tour ---- */
+
+.tour-spot {
+  position: relative;
+  z-index: 94;
+  border-radius: 12px;
+  box-shadow: 0 0 0 9999px rgba(11, 12, 11, 0.72);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tour-card {
+  position: fixed;
+  z-index: 95;
+  width: min(340px, calc(100vw - 24px));
+  padding: 1rem 1.1rem;
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+.tour-card h3 { margin: 0.2rem 0 0.4rem; font-size: 1rem; }
+.tour-card .hint { margin: 0 0 0.8rem; }
+.tour-count { margin: 0; font: 700 0.7rem/1 "Manrope", monospace; letter-spacing: 0.12em; color: var(--accent); }
+.tour-foot { display: flex; align-items: center; gap: 0.6rem; }
+.tour-foot .primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* ---- Scene setup band: full-width M1 machinery below the studio grid ---- */
+
+.m1-band {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 0 0 2rem;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 1024px) {
+  .studio-layout { grid-template-columns: 1fr; }
+  .studio-flow { order: -1; }
+}
+
+@media (max-width: 700px) {
+  .provider-grid { grid-template-columns: 1fr; }
+  .topbar { flex-wrap: wrap; padding-bottom: 0.5rem; }
+  .topbar-status { order: 3; flex-basis: 100%; }
+  .intro { padding: 2rem 0 1.5rem; }
+  .wizard-card { border-radius: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wizard, .wizard-card, .tour-card, .provider-card { transition: none; animation: none; }
+}

@@ -36,6 +36,7 @@ def test_ci_is_pinned_fast_and_reproducible():
     assert "node --check app/web/landing.js" in text
     assert "node --check app/web/sound-lab.js" in text
     assert "node --check app/web/studio.js" in text
+    assert "node --check app/web/wizard.js" in text
     assert "python -m pytest -q" in text
 
     uses = re.findall(r"uses: ([^ ]+) #", text)
