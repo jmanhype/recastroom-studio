@@ -17,7 +17,7 @@ README.md              Product overview and quickstart
 RIGHTS.md              Source, likeness, and model rights policy
 MODELS.md              Bundled H3 workflow model roles and license boundary
 NOTICE                 Copyright, model redistribution, and AI-output notice
-setup.sh               Local development bootstrap
+setup.sh               Local environment setup
 run.sh                 Start the FastAPI studio on 127.0.0.1:8768
 app/                   FastAPI server and static web workspace
 src/openjutsu/         Python application package
@@ -26,27 +26,13 @@ media/                 Rights-clean public hero and comparison videos
 examples/              Input templates and rights attestation example
 scripts/               Local trial and CLI helpers
 tests/                 Application, API, workflow, and browser regression tests
-tools/                 Release, evidence, and submission utilities
-docs/                  Architecture, deployment, research, and dated evidence
+tools/                 Release and verification utilities
+docs/                  Architecture, deployment, and product documentation
 ```
 
-## M1 local evidence snapshot — 2026-10-30 UTC
-
-The native three-shot browser journey was tested at `1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f`:
-CPU dry-run and retained replay only, using `openjutsu-cpu-routing-windows-v1-20261027`.
-Managed worktree and ordinary source archive, each in inherited and strict `env -i`
-environments, ran `APP/.venv/bin/python -m pytest -q`: **393 passed, 1 known
-Starlette deprecation warning per profile**, exit 0, no skipped tests.
-The journey covers native upload/cuts, pending-attempt restart, selective challenger,
-review/selection, and an actual trimmed/reordered/audio-mapped download.
-See [dated receipts, exact commands, limits and hashes](docs/evidence/recastroom-m1/final-20261030/README.md).
-This is a dated offline test result, not milestone acceptance or deployment readiness.
-Live H3/provider lookup/cancellation qualification, deployment and publication remain
-**OWNER_BLOCKED**. The existing attestation control records a declaration, not legal clearance.
-
-Public-brand rationale and collision evidence: [`docs/BRANDING.md`](docs/BRANDING.md).
-
-It is a practical answer to Comfy's **#OpenSourceHiggsfield** challenge: turn the expensive “put a different performer into this clip” workflow into a reproducible app people can run, inspect, fork, and improve.
+RecastRoom Studio is a practical answer to Comfy's **#OpenSourceHiggsfield**
+challenge: turn “put a different performer into this clip” into a reproducible
+local app that people can run, inspect, fork, and improve.
 
 ## What it does
 
@@ -60,7 +46,7 @@ RecastRoom Studio helps you:
 6. restore the original dialogue,
 7. produce a source/final review artifact.
 
-The studio presents a workflow catalog. The **Recast Room** is the production flagship; cinematic camera, re-shoot, and VFX lanes are clearly labeled concepts rather than fake ready features.
+The studio presents a focused workflow catalog. **Recast Room** is the production path; cinematic camera, re-shoot, and VFX lanes are labeled as concept work rather than production features.
 
 The bundled local workflow uses the C1 V4 performance-preserving graph:
 
@@ -79,57 +65,33 @@ The bundled local workflow uses the C1 V4 performance-preserving graph:
 
 | Route | Purpose |
 |---|---|
-| `/landing.html` | Public overview with the accepted 23.8-second v6b proof in the hero |
+| `/landing.html` | Public overview with the 23.8-second hero video |
 | `/` | Production workspace: source, references, attestation, workflow, renderer, and review |
 | `/sound-lab.html` | Keeper-video review plus the local Tone.js cue family |
 | `/legal.html` | Local-demo privacy, terms, and rights responsibilities |
 
-The public hero is a metadata-clean stream copy of the accepted v6b master. Its video and audio packet MD5 values match the frozen source, while its distributable file hash is:
+The public hero is a metadata-clean stream copy of the frozen demonstration master.
+Its specifications and hash are recorded in [`media/README.md`](media/README.md).
 
-```text
-2cabf3066c5bfe9fcdfc5ee760ea94519b87b8a1f96f268f4fe464e48bd08b88
-```
+## Production scope
 
-## Status
+RecastRoom Studio is a local-first production preview for one-person,
+continuous-shot dialogue recasting. It is not a general-purpose hosted video
+suite.
 
-This repository is intentionally published as a working research application, not a polished commercial service.
+Included:
 
-The current milestone includes:
+- FastAPI studio and static web workspace
+- Local ComfyUI runner
+- Official Comfy SDK adapter
+- Whisper-compatible word timing
+- Rights attestation gate
+- Media preflight and review artifacts
+- Public landing, sound-design review, and legal surfaces
+- Automated application, API, workflow, and browser tests
 
-- key-free Archive.org source discovery with license metadata; metadata is discovery evidence, not legal clearance,
-- a Seriesmith-inspired live readiness strip for source, references, rights, workflow, renderer, and execution mode,
-- parameterized workflow builder,
-- Whisper timing parser,
-- media probe and pre-flight report,
-- recorded operator attestation handling,
-- local ComfyUI API runner,
-- FastAPI web UI,
-- review artifact helpers,
-- tests for prompt/timing/workflow mutation.
-
-The synthetic production milestone is complete:
-
-- Seed 50 Jay core swap: human-approved, Qwen overall `9/10`.
-- Eleven keeper candidates covering every approved format concept.
-- Actual browser-driven app walkthrough and prepared-job API response.
-- Demo v1: `108.052s`, `1152×768`, `−17.15 LUFS`, `−1.50 dBTP`.
-
-The current local package also includes:
-
-- the accepted v6b public landing surface,
-- a three-result proof gallery using synthetic keeper comparisons,
-- runtime and cost boundaries for dry run, local ComfyUI, and official SDK execution,
-- setup diagnostics and a focused comparison table on the public landing page,
-- honest roadmap cards for multi-person casting, scene/effect recipes, and take-level production state,
-- a purpose-built 9:16 evidence-timeline candidate,
-- the local Tone.js sound-design lab,
-- 126 automated tests.
-
-CI is defined in `.github/workflows/ci.yml` for Python 3.11 and 3.12. It installs FFmpeg, compiles Python sources, checks browser JavaScript, and runs the full test suite.
-
-The official Comfy SDK execution adapter is implemented and installs cleanly,
-but live hosted execution still requires a configured Comfy Developer Platform
-deployment and `COMFY_API_KEY`.
+CI runs on Python 3.11 and 3.12 and executes the full test suite.
+Detailed release status is recorded in [`docs/RELEASE_STATUS.md`](docs/RELEASE_STATUS.md).
 
 ## Screenshots
 
@@ -159,9 +121,9 @@ otherwise.
 
 `run.sh` listens on `127.0.0.1:8768` by default; override it with `PORT=8897`.
 
-The reviewer-facing clean-checkout path is documented in
-[`docs/QUICKSTART.md`](docs/QUICKSTART.md). The local smoke gates and archive
-receipts are in [`docs/RELEASE.md`](docs/RELEASE.md). HTTP examples are in
+Detailed setup, release verification, and HTTP examples are available in
+[`docs/QUICKSTART.md`](docs/QUICKSTART.md),
+[`docs/RELEASE.md`](docs/RELEASE.md), and
 [`docs/API_EXAMPLES.md`](docs/API_EXAMPLES.md).
 
 ```bash
@@ -185,9 +147,7 @@ The public overview is at `/landing.html`; the sound-design review surface is at
 
 ## CLI
 
-After installing the package, use the `recastroom` entry point. The Python
-module and bundled workflow filename retain the legacy `openjutsu` identifier
-for compatibility with validated receipts.
+After installing the package, use the `recastroom` entry point.
 
 Inspect a clip:
 
@@ -232,7 +192,7 @@ source clip
   -> C1-compatible MiniMax H3 workflow
   -> local ComfyUI or official Comfy SDK runner
   -> original-audio restoration
-  -> source/final review artifact and evidence manifest
+  -> source/final review artifact and provenance manifest
 ```
 
 The FastAPI app owns validation and job state. The web client reports readiness and review state without claiming an automated quality score. FFmpeg handles probing, remuxing, and review renders. The bundled workflow keeps identity, performance, scene, and audio as separate responsibilities.
@@ -270,16 +230,11 @@ See [`RIGHTS.md`](RIGHTS.md) and [`examples/RIGHTS_ATTESTATION.md`](examples/RIG
 
 ## Contest alignment
 
-RecastRoom Studio is being prepared for Comfy's #OpenSourceHiggsfield challenge
-as **one focused, performance-preserving MiniMax H3 recasting studio**: one
-owned or licensed continuous dialogue shot, authorized references, word-level
-timing, original-audio restoration, rights gating, and a reproducible Comfy
-workflow. It is not an attempt to recreate every feature of a broad commercial
-video platform.
-
-The current assessment and exact owner blockers are in
-[`docs/evidence/OJ-g2xx/REPORT.md`](docs/evidence/OJ-g2xx/REPORT.md); the
-contest-facing checklist is [`docs/SUBMISSION_CHECKLIST.md`](docs/SUBMISSION_CHECKLIST.md).
-MiniMax H3 Ref2VA remains the core model required for the H3 bonus path.
+RecastRoom Studio is built for Comfy's **#OpenSourceHiggsfield** challenge as
+one focused, performance-preserving MiniMax H3 recasting studio: one owned or
+licensed continuous dialogue shot, authorized references, word-level timing,
+original-audio restoration, rights gating, and a reproducible Comfy workflow.
+It is not an attempt to recreate every feature of a broad commercial video
+platform.
 
 The public demo must use owned, licensed, or original footage. The private film/TV experiments that informed the workflow will not be included in the repository.

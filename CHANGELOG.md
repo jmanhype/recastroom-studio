@@ -96,6 +96,11 @@
 
 ## Unreleased — public release candidate
 
+- Reorganized the repository around reviewer-first root documentation and public media.
+- Added root `RIGHTS.md`, `MODELS.md`, and `NOTICE` files.
+- Added one-command `setup.sh` and `run.sh` entry points.
+- Added a visual repository map and moved public videos to `media/`.
+- Moved detailed release status from the repository root to `docs/RELEASE_STATUS.md`.
 - Added reviewer-facing quickstart, API examples, and local release/archive instructions.
 - Added the console `openjutsu` CLI entry point.
 - Added fail-closed public-content and media-metadata audits.
