@@ -4,7 +4,9 @@
 Same take. New lead.
 ```
 
-RecastRoom Studio is an open-source creative workspace built around **MiniMax H3 Ref2VA**, **ComfyUI**, interchangeable Comfy API workflows, and performance-preserving character replacement. Its supported app and CLI paths require a recorded operator attestation before generation; RecastRoom does **not** verify legal rights, ownership, consent, model licensing, or clearance.
+RecastRoom Studio changes the on-screen performer in a clip you have permission
+to edit, while preserving the original performance, camera, scene, and dialogue.
+It runs MiniMax H3 through ComfyUI on your own machine.
 
 [![RecastRoom public hero: same take, new lead](media/recastroom-hero-poster.jpg)](media/recastroom-public-hero-16x9.mp4)
 
@@ -41,33 +43,31 @@ local app that people can run, inspect, fork, and improve.
 
 RecastRoom Studio helps you:
 
-1. inspect a source clip you own or are licensed to use,
-2. reject risky or low-quality shot candidates before GPU time is spent,
-3. transcribe word timings with Whisper,
-4. build an H3 character-swap prompt,
-5. run the production **Recast Room** workflow or import a RecastRoom-compatible Comfy API graph,
-6. restore the original dialogue,
-7. produce a source/final review artifact.
+1. review an original clip you own or have permission to edit,
+2. check clip quality before spending render time,
+3. add the new lead and dialogue timing,
+4. prepare the RecastRoom MiniMax H3 job,
+5. run locally or through a compatible Comfy setup,
+6. keep the original dialogue,
+7. compare the before and after result.
 
 The studio presents a focused workflow catalog. **Recast Room** is the production path; cinematic camera, re-shoot, and VFX lanes are labeled as concept work rather than production features.
 
-The bundled local workflow uses the RecastRoom H3 performance-preserving graph:
+The bundled workflow preserves:
 
-- MiniMax H3 Ref2VA
-- BFSShotH3ConditioningSimple
-- Character Swap LoRA v1.1 at `1.0`
-- Head Swap disabled
-- 8-step Turbo
-- `source_blur=head + hands (keep mouth)`
-- SAM 3.1 source segmentation
-- source-audio conditioning
-- MiniMax H3 Exact Audio Lock
-- exact word/frame schedule
+- the original performance,
+- camera and background,
+- dialogue timing,
+- the new performer’s identity,
+- a frame-by-frame before/after review.
+
+Exact model files and settings are documented in [`MODELS.md`](MODELS.md).
 
 ## The production workspace
 
-RecastRoom opens directly into one workspace for source inspection, references,
-attestation, workflow preparation, execution, and review.
+RecastRoom opens directly into one workspace for reviewing the original clip,
+adding the new lead, confirming permission, preparing the job, running it, and
+checking the result.
 
 The public overview, sound-design review tool, and legal notes are support
 pages linked from the app footer. They are not separate products or separate
@@ -84,21 +84,21 @@ suite.
 
 Included:
 
-- FastAPI studio and static web workspace
-- Local ComfyUI runner
-- Official Comfy SDK adapter
-- Whisper-compatible word timing
-- Rights attestation gate
-- Media preflight and review artifacts
-- Public overview and local review tools
-- Automated application, API, workflow, and browser tests
+- one studio workspace
+- local ComfyUI rendering
+- optional hosted Comfy connection
+- automatic dialogue timing
+- a permission checkpoint
+- clip checks and before/after review
+- public overview and local review tools
+- automated application, API, workflow, and browser tests
 
 CI runs on Python 3.11 and 3.12 and executes the full test suite.
 Detailed release status is recorded in [`docs/RELEASE_STATUS.md`](docs/RELEASE_STATUS.md).
 
 ## User interface
 
-| Workflow studio | Readiness | Prepared job |
+| Choose the workflow | Check readiness | Prepared job |
 |---|---|---|
 | ![RecastRoom Studio workflow catalog](docs/images/app-landing-v2.png) | ![RecastRoom readiness strip](docs/images/readiness-visual.png) | ![RecastRoom prepared job result](docs/images/app-prepared-job.png) |
 
@@ -150,7 +150,7 @@ otherwise.
 
 `run.sh` listens on `127.0.0.1:8768` by default; override it with `PORT=8897`.
 
-Detailed setup, release verification, and HTTP examples are available in
+Advanced setup, release verification, and HTTP examples are available in
 [`docs/QUICKSTART.md`](docs/QUICKSTART.md),
 [`docs/RELEASE.md`](docs/RELEASE.md), and
 [`docs/API_EXAMPLES.md`](docs/API_EXAMPLES.md).
@@ -182,15 +182,15 @@ linked in the footer.
 ```text
 README.md              Product overview and quickstart
 RIGHTS.md              Source, likeness, and model rights policy
-MODELS.md              Bundled H3 workflow model roles and license boundary
+MODELS.md              Model files, roles, and licenses
 NOTICE                 Copyright, model redistribution, and AI-output notice
 setup.sh               Local environment setup
 run.sh                 Start the FastAPI studio on 127.0.0.1:8768
 app/                   FastAPI server and static web workspace
 src/openjutsu/         Python application package
 workflows/             Bundled RecastRoom H3 workflow
-media/                 Rights-clean public hero and comparison videos
-examples/              Input templates and rights attestation example
+media/                 Public hero and comparison videos
+examples/              Input templates and permission example
 scripts/               Local trial and CLI helpers
 tests/                 Application, API, workflow, and browser regression tests
 tools/                 Release and verification utilities
@@ -232,19 +232,20 @@ Queue to a local ComfyUI API:
 recastroom run --attest-rights work/prepared.json
 ```
 
-The CLI also requires `--attest-rights` before queueing a workflow. This records your representation; it does not investigate ownership or prove consent.
+The CLI also requires `--attest-rights` before queueing a workflow. This records
+your permission confirmation; it does not investigate ownership or prove consent.
 
 ## Architecture
 
 ```text
-source clip
-  -> scene and timing preflight
-  -> authorized references
-  -> recorded operator attestation
-  -> RecastRoom-compatible MiniMax H3 workflow
-  -> local ComfyUI or official Comfy SDK runner
-  -> original-audio restoration
-  -> source/final review artifact and provenance manifest
+original clip
+  -> clip and timing check
+  -> new lead reference
+  -> permission confirmation
+  -> RecastRoom MiniMax H3 workflow
+  -> local or hosted Comfy rendering
+  -> original dialogue restored
+  -> before/after review and job summary
 ```
 
 The FastAPI app owns validation and job state. The web client reports readiness and review state without claiming an automated quality score. FFmpeg handles probing, remuxing, and review renders. The bundled workflow keeps identity, performance, scene, and audio as separate responsibilities.
@@ -253,7 +254,7 @@ The FastAPI app owns validation and job state. The web client reports readiness 
 
 RecastRoom Studio is for clips you own, clips you are licensed to use, or clips you have explicit permission to modify.
 
-The UI requires an operator attestation before a job can start. The repository must not ship:
+The UI requires permission confirmation before a job can start. The repository must not ship:
 
 - unlicensed film or television footage,
 - celebrity or public-figure likenesses without consent,
@@ -266,26 +267,26 @@ See [`RIGHTS.md`](RIGHTS.md) and [`examples/RIGHTS_ATTESTATION.md`](examples/RIG
 
 | Symptom | Fix |
 |---|---|
-| `Renderer disconnected` | Start ComfyUI and confirm `RECASTROOM_COMFY_URL` points to it |
-| Preparation returns 422 | Check that the source is a supported video and the rights box is checked |
-| Whisper timing fails | Confirm the CLI can read the file and that it contains audible speech |
-| Browser preview is blank | Use an MP4 or MOV preview; server preflight can still inspect other supported containers |
-| SDK run reports missing credentials | Set `COMFY_API_KEY` and `COMFY_BASE_URL` for the configured deployment |
+| Render connection unavailable | Start ComfyUI and confirm `RECASTROOM_COMFY_URL` points to it |
+| Preparation returns 422 | Check that the clip is supported and the permission box is checked |
+| Dialogue timing fails | Confirm the CLI can read the file and that it contains audible speech |
+| Browser preview is blank | Use an MP4 or MOV preview; the server can still inspect other supported containers |
+| Hosted run reports missing credentials | Set `COMFY_API_KEY` and `COMFY_BASE_URL` for your hosted Comfy setup |
 
 ## Limitations
 
-- RecastRoom does not prove legal clearance; it records your attestation.
-- The public demo path still requires rights-clear source footage and references.
-- Hosted Comfy SDK execution needs owner credentials and a configured deployment.
-- Visual and audio quality remain human review gates; no automated score replaces playback.
-- The current production graph is tuned for one-person continuous dialogue shots, not arbitrary multi-shot scenes.
+- RecastRoom does not prove legal clearance; it records your permission confirmation.
+- The public demo path still requires footage and references you are allowed to use.
+- Hosted rendering needs your credentials and configured deployment.
+- You approve the final video and audio; no automated score replaces playback.
+- The current workflow is tuned for one person in one continuous dialogue shot, not arbitrary multi-shot scenes.
 
 ## Contest alignment
 
 RecastRoom Studio is built for Comfy's **#OpenSourceHiggsfield** challenge as
-one focused, performance-preserving MiniMax H3 recasting studio: one owned or
-licensed continuous dialogue shot, authorized references, word-level timing,
-original-audio restoration, rights gating, and a reproducible Comfy workflow.
+one focused MiniMax H3 recasting studio: one permitted continuous dialogue shot,
+the new lead’s reference, dialogue timing, original-audio restoration, a
+permission checkpoint, and a reproducible Comfy workflow.
 It is not an attempt to recreate every feature of a broad commercial video
 platform.
 
