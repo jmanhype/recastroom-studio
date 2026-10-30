@@ -119,7 +119,7 @@ def test_module_cli_is_excluded_by_lifetime_flock_then_recovers_once(prepared, t
     store, operation = prepared
     attempt = store.authorize_attempt(operation, "module", M.DRY_RUN, None)
     environment = {
-        "PATH": "/opt/homebrew/bin:/usr/bin:/bin", "HOME": "/Users/speed",
+        "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin", "HOME": "/Users/speed",
         "TMPDIR": TMPDIR, "PYTHONPATH": f"{ROOT / 'src'}:{ROOT}",
         "GIT_ALLOW_PROTOCOL": "__recastroom_local_only__",
     }
@@ -172,7 +172,7 @@ def test_web_incumbent_owns_idle_lifetime_and_cli_takes_over_after_death(prepare
     store, operation = prepared
     server = FoundationServer(free_loopback_port(), store.root, tmp_path / "incumbent.log")
     environment = {
-        "PATH": "/opt/homebrew/bin:/usr/bin:/bin", "HOME": "/Users/speed",
+        "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin", "HOME": "/Users/speed",
         "TMPDIR": TMPDIR, "PYTHONPATH": f"{ROOT / 'src'}:{ROOT}",
         "GIT_ALLOW_PROTOCOL": "__recastroom_local_only__",
     }

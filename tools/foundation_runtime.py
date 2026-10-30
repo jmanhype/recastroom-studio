@@ -22,6 +22,7 @@ HOST = "127.0.0.1"
 LOOPBACK_ONLY = True
 TRUSTED_TOOL_DIRECTORIES = (
     Path("/opt/homebrew/bin"),
+    Path("/usr/local/bin"),
     Path("/usr/bin"),
     Path("/bin"),
 )

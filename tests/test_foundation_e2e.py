@@ -52,7 +52,7 @@ def test_foundation_server_uses_current_validated_venv(tmp_path: Path) -> None:
 
 def test_media_tools_resolve_and_preflight_from_trusted_path() -> None:
     assert TOOL_ENVIRONMENT == {"PATH": TRUSTED_TOOL_PATH}
-    assert TRUSTED_TOOL_PATH == "/opt/homebrew/bin:/usr/bin:/bin"
+    assert TRUSTED_TOOL_PATH == "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 
     for name, executable in (("ffmpeg", FFMPEG), ("ffprobe", FFPROBE)):
         expected = next(

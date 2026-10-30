@@ -326,6 +326,6 @@ def _browser(base_url: str, evidence: Path, project: str, timing: dict) -> None:
     '''))
     run = subprocess.run([BROWSER_PYTHON, str(script), base_url, str(evidence), project],
                          capture_output=True, text=True, timeout=100,
-                         env={"PATH": "/opt/homebrew/bin:/usr/bin:/bin", "HOME": str(evidence)})
+                         env={"PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin", "HOME": str(evidence)})
     (evidence / "browser.log").write_text(run.stdout + run.stderr)
     assert run.returncode == 0, run.stdout + run.stderr

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 — 2026-10-30
+
+- Included GitHub Actions’ `/usr/local/bin` FFmpeg location in the trusted media-tool path so CI uses the workflow-installed binaries.
+
+## 0.2.0 — 2026-10-30
+
 ## 0.2.0 — 2026-10-30
 
 - Added the M1 connected studio: original-shot projects, durable takes and replay receipts, selective challengers, editable export maps, and native browser export evidence.
