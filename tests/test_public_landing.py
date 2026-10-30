@@ -67,9 +67,9 @@ def test_public_landing_page_has_conversion_structure_and_local_assets(studio):
     assert "Keep the performance." in html
     assert "Change the lead." in html
     assert 'class="primary" href="/">Start a dry run</a>' in html
-    assert 'href="/">Start an attested dry run</a>' in html
-    assert "23.8 second proof" in html
-    assert "No attestation, no render" in html
+    assert "Source and likeness permissions" in html
+    assert "Historical 23.8-second demo · stream-copy evidence is keeper-specific" in html
+    assert all(old not in html for old in ("Start a rights aware dry run", "23.8 second proof", "No attestation, no render"))
     assert "Deterministic dry run · no GPU · no API key · no inference" in html
     assert 'src="/media/recastroom-public-hero-16x9.mp4"' in html
     assert 'poster="/images/recastroom-landing-social.jpg"' in html

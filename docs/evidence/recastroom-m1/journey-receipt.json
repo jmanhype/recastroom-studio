@@ -1,0 +1,227 @@
+{
+  "browserPhases": {
+    "challengeCancel": "phase3.json",
+    "cpuAttempts": "phase2.json",
+    "replayReviewExport": "phase4.json",
+    "source": "phase1.json"
+  },
+  "counts": {
+    "attempts": 3,
+    "edit_revisions": 1,
+    "exports": 1,
+    "qualified_replay_receipts": 2,
+    "reviews": 2,
+    "selection_events": 5,
+    "takes": 4
+  },
+  "cpuClips": [
+    {
+      "decoded_frames": 8,
+      "decoded_pts": 0,
+      "dry_run_output_sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+      "extracted_cpu_sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+      "h3_qualified": false,
+      "original_source_end_frame": 8,
+      "original_source_start_frame": 0,
+      "pad_left": 0,
+      "pad_right": 0,
+      "retained_replay_sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+      "shot_id": "shot-a",
+      "word_schedule_offset_frames": 0,
+      "word_schedule_sha256": "f5918d158faefa20e15081259a58299408607c60b90725e0cd521779930f8500"
+    },
+    {
+      "decoded_frames": 8,
+      "decoded_pts": 0,
+      "dry_run_output_sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+      "extracted_cpu_sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+      "h3_qualified": false,
+      "original_source_end_frame": 16,
+      "original_source_start_frame": 8,
+      "pad_left": 0,
+      "pad_right": 0,
+      "retained_replay_sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+      "shot_id": "shot-b",
+      "word_schedule_offset_frames": 8,
+      "word_schedule_sha256": "f5918d158faefa20e15081259a58299408607c60b90725e0cd521779930f8500"
+    }
+  ],
+  "download": {
+    "bytes": 49009,
+    "filename": "managed-edit-export.mp4",
+    "sha256": "56be1f84dbe22e1f944ea1d0017dd5d017268f70f684e7244f1d79947ef5f84b"
+  },
+  "export": {
+    "audio_comparison": {
+      "boundary_policy": "nearest_absolute_source_sample_half_up",
+      "channels": 1,
+      "content": {
+        "decoded_delay_samples": 0,
+        "expected_samples": 32000,
+        "maximum_absolute_error": 841,
+        "mean_absolute_error": 7.04978125,
+        "measured_samples": 32768,
+        "outlier_ratio": 3.125e-05
+      },
+      "delay_policy": "aac_priming_bounded_signed_pcm_alignment",
+      "maximum_delay_samples": 4096,
+      "output_codec": [
+        48000,
+        1,
+        "aac"
+      ],
+      "policy": "source_edit_map",
+      "reference_intervals": [
+        {
+          "item": 0,
+          "source_end_sample": 48000,
+          "source_start_sample": 32000
+        },
+        {
+          "item": 1,
+          "source_end_sample": 28000,
+          "source_start_sample": 20000
+        },
+        {
+          "item": 2,
+          "source_end_sample": 10000,
+          "source_start_sample": 2000
+        }
+      ],
+      "source_codec": "aac",
+      "source_sample_rate": 48000
+    },
+    "decode_check": [
+      {
+        "decoded_end": 24,
+        "decoded_start": 16,
+        "item": 0,
+        "source_frames": 24,
+        "source_pts": 0,
+        "source_timebase": {
+          "den": 24,
+          "num": 1
+        }
+      },
+      {
+        "candidate_frames": 8,
+        "candidate_pts": 0,
+        "candidate_timebase": {
+          "den": 24,
+          "num": 1
+        },
+        "decoded_end": 6,
+        "decoded_start": 2,
+        "item": 1,
+        "kind": "retained_replay"
+      },
+      {
+        "candidate_frames": 8,
+        "candidate_pts": 0,
+        "candidate_timebase": {
+          "den": 24,
+          "num": 1
+        },
+        "decoded_end": 5,
+        "decoded_start": 1,
+        "item": 2,
+        "kind": "retained_replay"
+      }
+    ],
+    "decoded_frames": 16,
+    "decoded_pts": 0,
+    "final_sha256": "56be1f84dbe22e1f944ea1d0017dd5d017268f70f684e7244f1d79947ef5f84b",
+    "pad_check": [
+      {
+        "padding_removed": 0,
+        "shot_id": "shot-b"
+      },
+      {
+        "padding_removed": 0,
+        "shot_id": "shot-a"
+      }
+    ],
+    "pixel_correspondence": {
+      "mean_absolute_error": 1.8529937065972222,
+      "outlier_ratio": 0.00025571469907407406
+    },
+    "placement_check": [
+      {
+        "item": 0,
+        "timeline_end": 8,
+        "timeline_start": 0
+      },
+      {
+        "item": 1,
+        "timeline_end": 12,
+        "timeline_start": 8
+      },
+      {
+        "item": 2,
+        "timeline_end": 16,
+        "timeline_start": 12
+      }
+    ],
+    "render_check": [
+      {
+        "candidate_frames": 8,
+        "candidate_pts": 0,
+        "candidate_timebase": {
+          "den": 24,
+          "num": 1
+        },
+        "decoded_end": 6,
+        "decoded_start": 2,
+        "item": 1,
+        "kind": "retained_replay"
+      },
+      {
+        "candidate_frames": 8,
+        "candidate_pts": 0,
+        "candidate_timebase": {
+          "den": 24,
+          "num": 1
+        },
+        "decoded_end": 5,
+        "decoded_start": 1,
+        "item": 2,
+        "kind": "retained_replay"
+      }
+    ],
+    "selected_sha256": [
+      "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+      "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154"
+    ],
+    "source_check": {
+      "frames": 24,
+      "hash": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64"
+    }
+  },
+  "fixture": {
+    "shots": [
+      "shot-a",
+      "shot-b",
+      "shot-c"
+    ],
+    "source_frames": 24,
+    "source_sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64"
+  },
+  "qualification": {
+    "cpu_non_inference": true,
+    "h3_qualified": false,
+    "live_h3_provider_qualification": "OWNER_BLOCKED"
+  },
+  "screenshots": [
+    "01-source-cuts.png",
+    "02-cpu-dry-runs.png",
+    "03-challenger-truthful-cancel.png",
+    "04-review-selection.png",
+    "05-export-download.png"
+  ],
+  "serverRestarts": {
+    "database_sha256_after_attempt_restart": "f848fafd849276410ca3e7183123d16110f825524d151db6893421017de916f9",
+    "database_sha256_after_initial_process": "a8d055731530ec3d7a1720e1eafb1787bf0099b59d1222721a77d18e08360e7b",
+    "database_sha256_after_read_restart": "a8d055731530ec3d7a1720e1eafb1787bf0099b59d1222721a77d18e08360e7b",
+    "processes": 4
+  }
+}

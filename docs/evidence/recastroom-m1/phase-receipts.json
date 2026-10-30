@@ -1,0 +1,1626 @@
+{
+  "phase1": {
+    "consoleErrors": [],
+    "initialState": {
+      "m1": {
+        "attempts": [],
+        "authorizedAttemptId": null,
+        "authorizedRequestKey": null,
+        "editRevision": null,
+        "exportRecord": null,
+        "exportTakes": {},
+        "profiles": [
+          {
+            "execution_mode": "dry_run",
+            "h3_qualified": false,
+            "non_inference": true,
+            "pin": {
+              "adapter_version": "local_cpu_router-1",
+              "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+              "profile_id": "cpu_non_inference_routing_v1",
+              "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+              "recipe_id": "offline-source-routing",
+              "version": "cpu-dryrun-v1"
+            },
+            "qualification_scope": "offline_cpu_routing_only"
+          }
+        ],
+        "requestEpoch": 8,
+        "resolvedOperation": null,
+        "scenes": [
+          {
+            "id": "scene_6e384d6b25f249ec833481318a87b053",
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "revision": 1,
+            "shots": [
+              {
+                "id": "shot-a",
+                "kind": "render",
+                "source_range": {
+                  "end": 8,
+                  "start": 0
+                }
+              },
+              {
+                "id": "shot-b",
+                "kind": "render",
+                "source_range": {
+                  "end": 16,
+                  "start": 8
+                }
+              },
+              {
+                "id": "shot-c",
+                "kind": "pass_through",
+                "source_range": {
+                  "end": 24,
+                  "start": 16
+                }
+              }
+            ],
+            "source": {
+              "asset_id": "b5ce0f1dfff5447a855adf92af707680",
+              "cfr": true,
+              "frame_count": 24,
+              "has_audio": true,
+              "sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+              "timebase": {
+                "den": 24,
+                "num": 1
+              }
+            }
+          }
+        ],
+        "selectedTakeId": null,
+        "selectionRevision": 0,
+        "sourceTiming": {
+          "asset_id": "b5ce0f1dfff5447a855adf92af707680",
+          "cfr": true,
+          "frame_count": 24,
+          "has_audio": true,
+          "sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+          "timebase": {
+            "den": 24,
+            "num": 1
+          }
+        },
+        "takes": []
+      },
+      "projects": {
+        "characterId": "char_e645ecb9373068f146fd0b28",
+        "characterVersion": 1,
+        "projectId": "09c5f333fcd349bbb5aa580f77424fd9",
+        "requestEpoch": 3
+      }
+    },
+    "mode": "phase1",
+    "nonLocalRequests": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "path": "/styles.css"
+      },
+      {
+        "method": "GET",
+        "path": "/projects.js?v=20261027d"
+      },
+      {
+        "method": "GET",
+        "path": "/m1.js?v=20261027"
+      },
+      {
+        "method": "GET",
+        "path": "/studio.js?v=20261027"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects"
+      },
+      {
+        "method": "GET",
+        "path": "/api/characters"
+      },
+      {
+        "method": "GET",
+        "path": "/api/workflows"
+      },
+      {
+        "method": "GET",
+        "path": "/api/health"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/jobs"
+      },
+      {
+        "method": "POST",
+        "path": "/api/characters"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/assets/542ec5619e5e4746baaa4bcf18ef6ac4"
+      },
+      {
+        "method": "GET",
+        "path": "/api/assets/55838b15733d46ff947e29f656dc2207"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/sources"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      }
+    ],
+    "resourceErrors": []
+  },
+  "phase2": {
+    "attemptsAfterDuplicateAuthorization": [
+      {
+        "challenger_of": null,
+        "client_request_id": "m1-e3cac84956d370b1adc2e081d32c011b03124a481c4b8f1de15a55fa8f4b3bf8",
+        "id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+        "mode": "dry_run",
+        "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+        "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+        "provider_id": "cpu-attempt-d7a7a6621cb74376bd636a6da692158b",
+        "revision": 7,
+        "state": "completed"
+      },
+      {
+        "challenger_of": null,
+        "client_request_id": "m1-11caa2dbf39987baca435497ec4bc452a9c09b3b867405691cac721a3b9ff6af",
+        "id": "attempt-712353be59ab44ba90350bc477219af4",
+        "mode": "dry_run",
+        "operation_id": "operation-6d777b9eb6c84314a29026ecc67d5ae4",
+        "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+        "provider_id": "cpu-attempt-712353be59ab44ba90350bc477219af4",
+        "revision": 7,
+        "state": "completed"
+      }
+    ],
+    "consoleErrors": [],
+    "mode": "phase2",
+    "nonLocalRequests": [],
+    "operations": {
+      "shot-a": {
+        "canonical_json": "{\"adapter\":{\"endpoint_fingerprint\":\"c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e\",\"version\":\"local_cpu_router-1\"},\"audio_policy\":\"source_edit_map\",\"character\":{\"reference_hashes\":[\"4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343\",\"0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072\"],\"version\":[\"char_e645ecb9373068f146fd0b28\",1]},\"effective_overrides\":{\"audio\":{\"gain_db\":0.0,\"mix_policy\":\"sum\",\"overflow_policy\":\"crop\",\"source_start_frame\":0},\"end_f\":8,\"fps_timebase\":{\"den\":24,\"num\":1},\"lora_model_strength\":1.0,\"pad_left\":0,\"pad_right\":0,\"scheduler_steps\":8,\"source_blur\":{\"effect\":\"blur\",\"mode\":\"head + hands (keep mouth)\",\"segmenter\":\"SAM 3.1\",\"strength\":1.0},\"start_f\":0,\"with_audio\":false,\"word_offset_frames\":0},\"graph\":{\"node_model_requirements\":[{\"node\":\"1\",\"requirement\":\"qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\",\"support\":\"not_evaluated_non_inference\"},{\"node\":\"586\",\"requirement\":\"minimax_h3_character_swap_v1.1_ref2va_fro.safetensors\",\"support\":\"not_evaluated_non_inference\"}],\"prepared_workflow_sha256\":\"7f9804ff686945f5664f3c719d7d3cc430753ee45064543f868c713e8c73e54f\",\"raw_sha256\":\"07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244\",\"resolved_semantic_sha256\":\"be1cc776af2bcca89e923bebb67b7e42c96abb6b784f97891dd2deb11c55b1ce\"},\"manifest_version\":1,\"prompt\":{\"sha256\":\"019b0c00b92d2d50846bff876a3554f961abbf14d006c0c1a6735f423f4dbff8\",\"word_schedule_sha256\":\"f5918d158faefa20e15081259a58299408607c60b90725e0cd521779930f8500\"},\"recipe\":{\"allowlist_version\":\"openjutsu-offline-routing-v1\",\"cpu_window_table_version\":\"openjutsu-cpu-routing-windows-v1-20261027\",\"execution_mode\":\"dry_run\",\"h3_qualified\":false,\"non_inference\":true,\"profile_id\":\"cpu_non_inference_routing_v1\",\"qualification_scope\":\"offline_cpu_routing_only\",\"recipe_id\":\"offline-source-routing\",\"version\":\"cpu-dryrun-v1\"},\"scene\":{\"scene_revision_id\":\"scene_6e384d6b25f249ec833481318a87b053\",\"shot_id\":\"shot-a\",\"source_range\":{\"end\":8,\"start\":0}},\"seed\":117,\"source\":{\"cfr\":true,\"frame_count\":24,\"has_audio\":true,\"original_pts\":{\"coordinate\":\"zero_based_half_open_source_frames\",\"first_frame\":0,\"formula\":\"frame_index * frame_period_seconds\",\"frame_period_seconds\":{\"den\":24,\"num\":1},\"source_to_render_frame_offset\":0},\"proxy_policy\":\"lossless_ffv1_extract\",\"proxy_sha256\":\"86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154\",\"sha256\":\"2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64\",\"timebase\":{\"den\":24,\"num\":1}},\"window\":{\"decoder_keep\":{\"end\":8,\"start\":0},\"expected_decoder_frames\":8,\"pad_left\":0,\"pad_right\":0,\"qualification_id\":\"qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-0-8\",\"render_range\":{\"end\":8,\"start\":0},\"render_timebase\":{\"den\":24,\"num\":1},\"source_range\":{\"end\":8,\"start\":0},\"source_timebase\":{\"den\":24,\"num\":1},\"timeline_range\":{\"end\":8,\"start\":0},\"timeline_timebase\":{\"den\":24,\"num\":1}}}\n",
+        "character_version": [
+          "char_e645ecb9373068f146fd0b28",
+          1
+        ],
+        "fingerprint": "e3cac84956d370b1adc2e081d32c011b03124a481c4b8f1de15a55fa8f4b3bf8",
+        "id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+        "managed_job_id": "managed-1962a8ad18c748919e9f7160926e611e",
+        "pin": {
+          "adapter_version": "local_cpu_router-1",
+          "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+          "profile_id": "cpu_non_inference_routing_v1",
+          "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+          "recipe_id": "offline-source-routing",
+          "version": "cpu-dryrun-v1"
+        },
+        "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+        "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+        "seed": 117,
+        "shot_id": "shot-a",
+        "window": {
+          "decoder_keep": {
+            "end": 8,
+            "start": 0
+          },
+          "expected_decoder_frames": 8,
+          "pad_left": 0,
+          "pad_right": 0,
+          "qualification_id": "qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-0-8",
+          "render_range": {
+            "end": 8,
+            "start": 0
+          },
+          "render_timebase": {
+            "den": 24,
+            "num": 1
+          },
+          "source_range": {
+            "end": 8,
+            "start": 0
+          },
+          "source_timebase": {
+            "den": 24,
+            "num": 1
+          },
+          "timeline_range": {
+            "end": 8,
+            "start": 0
+          },
+          "timeline_timebase": {
+            "den": 24,
+            "num": 1
+          }
+        }
+      },
+      "shot-b": {
+        "canonical_json": "{\"adapter\":{\"endpoint_fingerprint\":\"c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e\",\"version\":\"local_cpu_router-1\"},\"audio_policy\":\"source_edit_map\",\"character\":{\"reference_hashes\":[\"4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343\",\"0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072\"],\"version\":[\"char_e645ecb9373068f146fd0b28\",1]},\"effective_overrides\":{\"audio\":{\"gain_db\":0.0,\"mix_policy\":\"sum\",\"overflow_policy\":\"crop\",\"source_start_frame\":0},\"end_f\":8,\"fps_timebase\":{\"den\":24,\"num\":1},\"lora_model_strength\":1.0,\"pad_left\":0,\"pad_right\":0,\"scheduler_steps\":8,\"source_blur\":{\"effect\":\"blur\",\"mode\":\"head + hands (keep mouth)\",\"segmenter\":\"SAM 3.1\",\"strength\":1.0},\"start_f\":0,\"with_audio\":false,\"word_offset_frames\":8},\"graph\":{\"node_model_requirements\":[{\"node\":\"1\",\"requirement\":\"qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\",\"support\":\"not_evaluated_non_inference\"},{\"node\":\"586\",\"requirement\":\"minimax_h3_character_swap_v1.1_ref2va_fro.safetensors\",\"support\":\"not_evaluated_non_inference\"}],\"prepared_workflow_sha256\":\"7f9804ff686945f5664f3c719d7d3cc430753ee45064543f868c713e8c73e54f\",\"raw_sha256\":\"07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244\",\"resolved_semantic_sha256\":\"be1cc776af2bcca89e923bebb67b7e42c96abb6b784f97891dd2deb11c55b1ce\"},\"manifest_version\":1,\"prompt\":{\"sha256\":\"019b0c00b92d2d50846bff876a3554f961abbf14d006c0c1a6735f423f4dbff8\",\"word_schedule_sha256\":\"f5918d158faefa20e15081259a58299408607c60b90725e0cd521779930f8500\"},\"recipe\":{\"allowlist_version\":\"openjutsu-offline-routing-v1\",\"cpu_window_table_version\":\"openjutsu-cpu-routing-windows-v1-20261027\",\"execution_mode\":\"dry_run\",\"h3_qualified\":false,\"non_inference\":true,\"profile_id\":\"cpu_non_inference_routing_v1\",\"qualification_scope\":\"offline_cpu_routing_only\",\"recipe_id\":\"offline-source-routing\",\"version\":\"cpu-dryrun-v1\"},\"scene\":{\"scene_revision_id\":\"scene_6e384d6b25f249ec833481318a87b053\",\"shot_id\":\"shot-b\",\"source_range\":{\"end\":16,\"start\":8}},\"seed\":117,\"source\":{\"cfr\":true,\"frame_count\":24,\"has_audio\":true,\"original_pts\":{\"coordinate\":\"zero_based_half_open_source_frames\",\"first_frame\":8,\"formula\":\"frame_index * frame_period_seconds\",\"frame_period_seconds\":{\"den\":24,\"num\":1},\"source_to_render_frame_offset\":-8},\"proxy_policy\":\"lossless_ffv1_extract\",\"proxy_sha256\":\"ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c\",\"sha256\":\"2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64\",\"timebase\":{\"den\":24,\"num\":1}},\"window\":{\"decoder_keep\":{\"end\":8,\"start\":0},\"expected_decoder_frames\":8,\"pad_left\":0,\"pad_right\":0,\"qualification_id\":\"qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-8-16\",\"render_range\":{\"end\":8,\"start\":0},\"render_timebase\":{\"den\":24,\"num\":1},\"source_range\":{\"end\":16,\"start\":8},\"source_timebase\":{\"den\":24,\"num\":1},\"timeline_range\":{\"end\":16,\"start\":8},\"timeline_timebase\":{\"den\":24,\"num\":1}}}\n",
+        "character_version": [
+          "char_e645ecb9373068f146fd0b28",
+          1
+        ],
+        "fingerprint": "11caa2dbf39987baca435497ec4bc452a9c09b3b867405691cac721a3b9ff6af",
+        "id": "operation-6d777b9eb6c84314a29026ecc67d5ae4",
+        "managed_job_id": "managed-8227b03cb8fa4803a7f6a481cada6e65",
+        "pin": {
+          "adapter_version": "local_cpu_router-1",
+          "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+          "profile_id": "cpu_non_inference_routing_v1",
+          "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+          "recipe_id": "offline-source-routing",
+          "version": "cpu-dryrun-v1"
+        },
+        "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+        "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+        "seed": 117,
+        "shot_id": "shot-b",
+        "window": {
+          "decoder_keep": {
+            "end": 8,
+            "start": 0
+          },
+          "expected_decoder_frames": 8,
+          "pad_left": 0,
+          "pad_right": 0,
+          "qualification_id": "qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-8-16",
+          "render_range": {
+            "end": 8,
+            "start": 0
+          },
+          "render_timebase": {
+            "den": 24,
+            "num": 1
+          },
+          "source_range": {
+            "end": 16,
+            "start": 8
+          },
+          "source_timebase": {
+            "den": 24,
+            "num": 1
+          },
+          "timeline_range": {
+            "end": 16,
+            "start": 8
+          },
+          "timeline_timebase": {
+            "den": 24,
+            "num": 1
+          }
+        }
+      }
+    },
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "path": "/styles.css"
+      },
+      {
+        "method": "GET",
+        "path": "/projects.js?v=20261027d"
+      },
+      {
+        "method": "GET",
+        "path": "/m1.js?v=20261027"
+      },
+      {
+        "method": "GET",
+        "path": "/studio.js?v=20261027"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects"
+      },
+      {
+        "method": "GET",
+        "path": "/api/characters"
+      },
+      {
+        "method": "GET",
+        "path": "/api/workflows"
+      },
+      {
+        "method": "GET",
+        "path": "/api/health"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/jobs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/assets/542ec5619e5e4746baaa4bcf18ef6ac4"
+      },
+      {
+        "method": "GET",
+        "path": "/api/assets/55838b15733d46ff947e29f656dc2207"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/operations/resolve"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/operations/resolve"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/operations/resolve"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/operations/resolve"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      }
+    ],
+    "resourceErrors": [
+      {
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/operations/resolve",
+        "status": 422
+      },
+      {
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/operations/resolve",
+        "status": 422
+      }
+    ]
+  },
+  "phase3": {
+    "after": {
+      "takes": [
+        {
+          "attempt_id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+          "created_at": "2026-10-29T21:13:11.593983+00:00",
+          "frame_count": 8,
+          "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+          "origin": "dry_run",
+          "output_asset_id": "8997cf290b6f45ab8cc692ec3e8c4bb4",
+          "output_sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "qualified": 1,
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-a",
+          "take_id": "take-9d9a076a740b4cc0bd737216184f0767",
+          "timebase_den": 24,
+          "timebase_num": 1
+        },
+        {
+          "attempt_id": "attempt-712353be59ab44ba90350bc477219af4",
+          "created_at": "2026-10-29T21:13:12.347124+00:00",
+          "frame_count": 8,
+          "operation_id": "operation-6d777b9eb6c84314a29026ecc67d5ae4",
+          "origin": "dry_run",
+          "output_asset_id": "0768d21b79cf4b2bb8ee4c12c8f74ed2",
+          "output_sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "qualified": 1,
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-b",
+          "take_id": "take-d245f0ccd0aa4aa490d81b3231a9212d",
+          "timebase_den": 24,
+          "timebase_num": 1
+        }
+      ]
+    },
+    "before": {
+      "attempts": [
+        {
+          "attempt_id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+          "challenger_of": null,
+          "client_request_id": "m1-e3cac84956d370b1adc2e081d32c011b03124a481c4b8f1de15a55fa8f4b3bf8",
+          "created_at": "2026-10-29T21:13:11.095642+00:00",
+          "mode": "dry_run",
+          "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "provider_id": "cpu-attempt-d7a7a6621cb74376bd636a6da692158b",
+          "revision": 7,
+          "state": "completed"
+        },
+        {
+          "attempt_id": "attempt-712353be59ab44ba90350bc477219af4",
+          "challenger_of": null,
+          "client_request_id": "m1-11caa2dbf39987baca435497ec4bc452a9c09b3b867405691cac721a3b9ff6af",
+          "created_at": "2026-10-29T21:13:12.056569+00:00",
+          "mode": "dry_run",
+          "operation_id": "operation-6d777b9eb6c84314a29026ecc67d5ae4",
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "provider_id": "cpu-attempt-712353be59ab44ba90350bc477219af4",
+          "revision": 7,
+          "state": "completed"
+        }
+      ],
+      "takes": [
+        {
+          "attempt_id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+          "created_at": "2026-10-29T21:13:11.593983+00:00",
+          "frame_count": 8,
+          "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+          "origin": "dry_run",
+          "output_asset_id": "8997cf290b6f45ab8cc692ec3e8c4bb4",
+          "output_sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "qualified": 1,
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-a",
+          "take_id": "take-9d9a076a740b4cc0bd737216184f0767",
+          "timebase_den": 24,
+          "timebase_num": 1
+        },
+        {
+          "attempt_id": "attempt-712353be59ab44ba90350bc477219af4",
+          "created_at": "2026-10-29T21:13:12.347124+00:00",
+          "frame_count": 8,
+          "operation_id": "operation-6d777b9eb6c84314a29026ecc67d5ae4",
+          "origin": "dry_run",
+          "output_asset_id": "0768d21b79cf4b2bb8ee4c12c8f74ed2",
+          "output_sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "qualified": 1,
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-b",
+          "take_id": "take-d245f0ccd0aa4aa490d81b3231a9212d",
+          "timebase_den": 24,
+          "timebase_num": 1
+        }
+      ]
+    },
+    "cancellation": {
+      "body": {
+        "challenger_of": "attempt-d7a7a6621cb74376bd636a6da692158b",
+        "client_request_id": "m1-challenge-11caa2dbf39987baca435497",
+        "id": "attempt-1db2c138c51f4ba6bd13916fcc8ec8a2",
+        "mode": "dry_run",
+        "operation_id": "operation-5cac9712459b40019f5f65d6b2f0b8f5",
+        "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+        "provider_id": null,
+        "revision": 2,
+        "state": "provider_confirmed_cancelled"
+      },
+      "status": 200
+    },
+    "challenge": {
+      "body": {
+        "challenger_of": "attempt-d7a7a6621cb74376bd636a6da692158b",
+        "client_request_id": "m1-challenge-11caa2dbf39987baca435497",
+        "id": "attempt-1db2c138c51f4ba6bd13916fcc8ec8a2",
+        "mode": "dry_run",
+        "operation_id": "operation-5cac9712459b40019f5f65d6b2f0b8f5",
+        "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+        "provider_id": null,
+        "revision": 1,
+        "state": "prepared"
+      },
+      "status": 201
+    },
+    "consoleErrors": [],
+    "mode": "phase3",
+    "nonLocalRequests": [],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "path": "/styles.css"
+      },
+      {
+        "method": "GET",
+        "path": "/projects.js?v=20261027d"
+      },
+      {
+        "method": "GET",
+        "path": "/m1.js?v=20261027"
+      },
+      {
+        "method": "GET",
+        "path": "/studio.js?v=20261027"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects"
+      },
+      {
+        "method": "GET",
+        "path": "/api/characters"
+      },
+      {
+        "method": "GET",
+        "path": "/api/workflows"
+      },
+      {
+        "method": "GET",
+        "path": "/api/health"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/jobs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/assets/542ec5619e5e4746baaa4bcf18ef6ac4"
+      },
+      {
+        "method": "GET",
+        "path": "/api/assets/55838b15733d46ff947e29f656dc2207"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/operations/resolve"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts/attempt-1db2c138c51f4ba6bd13916fcc8ec8a2/cancel"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      }
+    ],
+    "resourceErrors": []
+  },
+  "phase4": {
+    "consoleErrors": [],
+    "download": {
+      "bytes": 49009,
+      "filename": "managed-edit-export.mp4",
+      "sha256": "56be1f84dbe22e1f944ea1d0017dd5d017268f70f684e7244f1d79947ef5f84b"
+    },
+    "finalState": {
+      "m1": {
+        "attempts": [
+          {
+            "challenger_of": null,
+            "client_request_id": "m1-e3cac84956d370b1adc2e081d32c011b03124a481c4b8f1de15a55fa8f4b3bf8",
+            "id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+            "mode": "dry_run",
+            "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "provider_id": "cpu-attempt-d7a7a6621cb74376bd636a6da692158b",
+            "revision": 7,
+            "state": "completed"
+          },
+          {
+            "challenger_of": null,
+            "client_request_id": "m1-11caa2dbf39987baca435497ec4bc452a9c09b3b867405691cac721a3b9ff6af",
+            "id": "attempt-712353be59ab44ba90350bc477219af4",
+            "mode": "dry_run",
+            "operation_id": "operation-6d777b9eb6c84314a29026ecc67d5ae4",
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "provider_id": "cpu-attempt-712353be59ab44ba90350bc477219af4",
+            "revision": 7,
+            "state": "completed"
+          },
+          {
+            "challenger_of": "attempt-d7a7a6621cb74376bd636a6da692158b",
+            "client_request_id": "m1-challenge-11caa2dbf39987baca435497",
+            "id": "attempt-1db2c138c51f4ba6bd13916fcc8ec8a2",
+            "mode": "dry_run",
+            "operation_id": "operation-5cac9712459b40019f5f65d6b2f0b8f5",
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "provider_id": null,
+            "revision": 2,
+            "state": "provider_confirmed_cancelled"
+          }
+        ],
+        "authorizedAttemptId": null,
+        "authorizedRequestKey": null,
+        "editRevision": {
+          "audio": "source_edit_map",
+          "id": "edit-3ace8f10bcd14996ae5df1a8aa77d499",
+          "items": [
+            {
+              "decoder_keep": null,
+              "shot_id": "shot-c",
+              "source_range": {
+                "end": 24,
+                "start": 16
+              },
+              "take_id": null,
+              "timeline_range": {
+                "end": 8,
+                "start": 0
+              }
+            },
+            {
+              "decoder_keep": {
+                "end": 6,
+                "start": 2
+              },
+              "shot_id": "shot-b",
+              "source_range": {
+                "end": 14,
+                "start": 10
+              },
+              "take_id": "take-c836ba0d899747679aacfd80f9b21853",
+              "timeline_range": {
+                "end": 12,
+                "start": 8
+              }
+            },
+            {
+              "decoder_keep": {
+                "end": 5,
+                "start": 1
+              },
+              "shot_id": "shot-a",
+              "source_range": {
+                "end": 5,
+                "start": 1
+              },
+              "take_id": "take-8203e456b39844bc90e64528f3e59d49",
+              "timeline_range": {
+                "end": 16,
+                "start": 12
+              }
+            }
+          ],
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "timebase": {
+            "den": 24,
+            "num": 1
+          }
+        },
+        "exportRecord": {
+          "asset_id": "84458511a16041db840a432c3fa4057f",
+          "checks_json": "{\"audio\":{\"boundary_policy\":\"nearest_absolute_source_sample_half_up\",\"channels\":1,\"content\":{\"decoded_delay_samples\":0,\"expected_samples\":32000,\"maximum_absolute_error\":841,\"mean_absolute_error\":7.04978125,\"measured_samples\":32768,\"outlier_ratio\":3.125e-05},\"delay_policy\":\"aac_priming_bounded_signed_pcm_alignment\",\"maximum_delay_samples\":4096,\"output_codec\":[48000,1,\"aac\"],\"policy\":\"source_edit_map\",\"reference_intervals\":[{\"item\":0,\"source_end_sample\":48000,\"source_start_sample\":32000},{\"item\":1,\"source_end_sample\":28000,\"source_start_sample\":20000},{\"item\":2,\"source_end_sample\":10000,\"source_start_sample\":2000}],\"source_codec\":\"aac\",\"source_sample_rate\":48000},\"authority\":[{\"decoder_keep\":{\"end\":6,\"start\":2},\"padding_removed\":0,\"qualification_id\":\"qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-8-16\",\"qualification_scope\":\"qualified_zero_pad_offline_cpu; not n_minus_one, nonzero_pad, general_h3, or promoted_historical_keeper\",\"raw_graph_sha256\":\"07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244\",\"recipe_id\":\"offline-source-routing\",\"recipe_version\":\"cpu-dryrun-v1\",\"shot_id\":\"shot-b\"},{\"decoder_keep\":{\"end\":5,\"start\":1},\"padding_removed\":0,\"qualification_id\":\"qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-0-8\",\"qualification_scope\":\"qualified_zero_pad_offline_cpu; not n_minus_one, nonzero_pad, general_h3, or promoted_historical_keeper\",\"raw_graph_sha256\":\"07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244\",\"recipe_id\":\"offline-source-routing\",\"recipe_version\":\"cpu-dryrun-v1\",\"shot_id\":\"shot-a\"}],\"edit_map\":{\"items\":[{\"decoder_keep\":null,\"input_sha256\":\"2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64\",\"kind\":\"pass_through\",\"shot_id\":\"shot-c\",\"source_range\":{\"end\":24,\"start\":16},\"take_id\":null,\"timeline_range\":{\"end\":8,\"start\":0}},{\"decoder_keep\":{\"end\":6,\"start\":2},\"input_sha256\":\"ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c\",\"kind\":\"retained_replay\",\"shot_id\":\"shot-b\",\"source_range\":{\"end\":14,\"start\":10},\"take_id\":\"take-c836ba0d899747679aacfd80f9b21853\",\"timeline_range\":{\"end\":12,\"start\":8}},{\"decoder_keep\":{\"end\":5,\"start\":1},\"input_sha256\":\"86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154\",\"kind\":\"retained_replay\",\"shot_id\":\"shot-a\",\"source_range\":{\"end\":5,\"start\":1},\"take_id\":\"take-8203e456b39844bc90e64528f3e59d49\",\"timeline_range\":{\"end\":16,\"start\":12}}],\"timebase\":{\"den\":24,\"num\":1}},\"ffmpeg\":{\"options\":{\"audio_codec\":\"aac\",\"raw_intermediate_pix_fmt\":\"bgr24\",\"timestamps\":\"reset_per_item_concat\",\"video_codec\":\"libx264\"},\"version\":\"ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers\"},\"integrity\":{\"output_sha256\":\"56be1f84dbe22e1f944ea1d0017dd5d017268f70f684e7244f1d79947ef5f84b\",\"selected_sha256\":[\"ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c\",\"86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154\"],\"source_sha256\":\"2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64\"},\"measurements\":{\"decoded\":[{\"decoded_end\":24,\"decoded_start\":16,\"item\":0,\"source_frames\":24,\"source_pts\":0,\"source_timebase\":{\"den\":24,\"num\":1}},{\"candidate_frames\":8,\"candidate_pts\":0,\"candidate_timebase\":{\"den\":24,\"num\":1},\"decoded_end\":6,\"decoded_start\":2,\"item\":1,\"kind\":\"retained_replay\"},{\"candidate_frames\":8,\"candidate_pts\":0,\"candidate_timebase\":{\"den\":24,\"num\":1},\"decoded_end\":5,\"decoded_start\":1,\"item\":2,\"kind\":\"retained_replay\"}],\"output_frames\":16,\"output_pts\":0,\"output_video_content\":{\"mean_absolute_error\":1.8529937065972222,\"outlier_ratio\":0.00025571469907407406},\"placement\":[{\"item\":0,\"timeline_end\":8,\"timeline_start\":0},{\"item\":1,\"timeline_end\":12,\"timeline_start\":8},{\"item\":2,\"timeline_end\":16,\"timeline_start\":12}]}}",
+          "id": "export-94c0f8acd436414884e8b50e39258b51",
+          "revision_id": "edit-3ace8f10bcd14996ae5df1a8aa77d499",
+          "sha256": "56be1f84dbe22e1f944ea1d0017dd5d017268f70f684e7244f1d79947ef5f84b",
+          "state": "completed"
+        },
+        "exportTakes": {
+          "shot-a": [
+            {
+              "attempt_id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+              "id": "take-9d9a076a740b4cc0bd737216184f0767",
+              "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+              "origin": "dry_run",
+              "output": {
+                "asset_id": "8997cf290b6f45ab8cc692ec3e8c4bb4",
+                "frame_count": 8,
+                "receipt": {
+                  "adapter_version": "local_cpu_router-1",
+                  "attempt_id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+                  "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+                  "provider_id": "cpu-attempt-d7a7a6621cb74376bd636a6da692158b",
+                  "receipt_asset_id": "c713475e025c47ccafde47abedd854f9",
+                  "receipt_sha256": "55b6d8972cb25f48acadd171a3490c9c2d8c4686dee778a94f795d89e8608029",
+                  "request_key": "m1-e3cac84956d370b1adc2e081d32c011b03124a481c4b8f1de15a55fa8f4b3bf8"
+                },
+                "sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+                "timebase": {
+                  "den": 24,
+                  "num": 1
+                }
+              },
+              "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+              "qualified": true,
+              "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+              "shot_id": "shot-a"
+            },
+            {
+              "attempt_id": null,
+              "id": "take-8203e456b39844bc90e64528f3e59d49",
+              "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+              "origin": "retained_replay",
+              "output": {
+                "asset_id": "0a8ddfa8859b4732add60b00998d6499",
+                "frame_count": 8,
+                "receipt": null,
+                "sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+                "timebase": {
+                  "den": 24,
+                  "num": 1
+                }
+              },
+              "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+              "qualified": true,
+              "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+              "shot_id": "shot-a"
+            }
+          ],
+          "shot-b": [
+            {
+              "attempt_id": "attempt-712353be59ab44ba90350bc477219af4",
+              "id": "take-d245f0ccd0aa4aa490d81b3231a9212d",
+              "operation_id": "operation-6d777b9eb6c84314a29026ecc67d5ae4",
+              "origin": "dry_run",
+              "output": {
+                "asset_id": "0768d21b79cf4b2bb8ee4c12c8f74ed2",
+                "frame_count": 8,
+                "receipt": {
+                  "adapter_version": "local_cpu_router-1",
+                  "attempt_id": "attempt-712353be59ab44ba90350bc477219af4",
+                  "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+                  "provider_id": "cpu-attempt-712353be59ab44ba90350bc477219af4",
+                  "receipt_asset_id": "3d5c073717af4879855343609f231aba",
+                  "receipt_sha256": "363f2a8f376d33c1e403d0ad3814d3c4de0dc016fd3fc60bb91d51210289c255",
+                  "request_key": "m1-11caa2dbf39987baca435497ec4bc452a9c09b3b867405691cac721a3b9ff6af"
+                },
+                "sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+                "timebase": {
+                  "den": 24,
+                  "num": 1
+                }
+              },
+              "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+              "qualified": true,
+              "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+              "shot_id": "shot-b"
+            },
+            {
+              "attempt_id": null,
+              "id": "take-c836ba0d899747679aacfd80f9b21853",
+              "operation_id": "operation-5cac9712459b40019f5f65d6b2f0b8f5",
+              "origin": "retained_replay",
+              "output": {
+                "asset_id": "5a9dc11e3fa74a889adfc28a283ced5a",
+                "frame_count": 8,
+                "receipt": null,
+                "sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+                "timebase": {
+                  "den": 24,
+                  "num": 1
+                }
+              },
+              "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+              "qualified": true,
+              "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+              "shot_id": "shot-b"
+            }
+          ],
+          "shot-c": []
+        },
+        "profiles": [
+          {
+            "execution_mode": "dry_run",
+            "h3_qualified": false,
+            "non_inference": true,
+            "pin": {
+              "adapter_version": "local_cpu_router-1",
+              "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+              "profile_id": "cpu_non_inference_routing_v1",
+              "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+              "recipe_id": "offline-source-routing",
+              "version": "cpu-dryrun-v1"
+            },
+            "qualification_scope": "offline_cpu_routing_only"
+          }
+        ],
+        "requestEpoch": 22,
+        "resolvedOperation": null,
+        "scenes": [
+          {
+            "id": "scene_6e384d6b25f249ec833481318a87b053",
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "revision": 1,
+            "shots": [
+              {
+                "id": "shot-a",
+                "kind": "render",
+                "source_range": {
+                  "end": 8,
+                  "start": 0
+                }
+              },
+              {
+                "id": "shot-b",
+                "kind": "render",
+                "source_range": {
+                  "end": 16,
+                  "start": 8
+                }
+              },
+              {
+                "id": "shot-c",
+                "kind": "pass_through",
+                "source_range": {
+                  "end": 24,
+                  "start": 16
+                }
+              }
+            ],
+            "source": {
+              "asset_id": "b5ce0f1dfff5447a855adf92af707680",
+              "cfr": true,
+              "frame_count": 24,
+              "has_audio": true,
+              "sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+              "timebase": {
+                "den": 24,
+                "num": 1
+              }
+            }
+          }
+        ],
+        "selectedTakeId": null,
+        "selectionRevision": 0,
+        "sourceTiming": null,
+        "takes": [
+          {
+            "attempt_id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+            "id": "take-9d9a076a740b4cc0bd737216184f0767",
+            "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+            "origin": "dry_run",
+            "output": {
+              "asset_id": "8997cf290b6f45ab8cc692ec3e8c4bb4",
+              "frame_count": 8,
+              "receipt": {
+                "adapter_version": "local_cpu_router-1",
+                "attempt_id": "attempt-d7a7a6621cb74376bd636a6da692158b",
+                "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+                "provider_id": "cpu-attempt-d7a7a6621cb74376bd636a6da692158b",
+                "receipt_asset_id": "c713475e025c47ccafde47abedd854f9",
+                "receipt_sha256": "55b6d8972cb25f48acadd171a3490c9c2d8c4686dee778a94f795d89e8608029",
+                "request_key": "m1-e3cac84956d370b1adc2e081d32c011b03124a481c4b8f1de15a55fa8f4b3bf8"
+              },
+              "sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+              "timebase": {
+                "den": 24,
+                "num": 1
+              }
+            },
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "qualified": true,
+            "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+            "shot_id": "shot-a"
+          },
+          {
+            "attempt_id": null,
+            "id": "take-8203e456b39844bc90e64528f3e59d49",
+            "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+            "origin": "retained_replay",
+            "output": {
+              "asset_id": "0a8ddfa8859b4732add60b00998d6499",
+              "frame_count": 8,
+              "receipt": null,
+              "sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+              "timebase": {
+                "den": 24,
+                "num": 1
+              }
+            },
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "qualified": true,
+            "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+            "shot_id": "shot-a"
+          }
+        ]
+      },
+      "projects": {
+        "characterId": "char_e645ecb9373068f146fd0b28",
+        "characterVersion": 1,
+        "projectId": "09c5f333fcd349bbb5aa580f77424fd9",
+        "requestEpoch": 2
+      }
+    },
+    "mode": "phase4",
+    "nonLocalRequests": [],
+    "replayTakes": {
+      "shot-a": {
+        "attempt_id": null,
+        "id": "take-8203e456b39844bc90e64528f3e59d49",
+        "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+        "origin": "retained_replay",
+        "output": {
+          "asset_id": "0a8ddfa8859b4732add60b00998d6499",
+          "frame_count": 8,
+          "receipt": null,
+          "sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+          "timebase": {
+            "den": 24,
+            "num": 1
+          }
+        },
+        "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+        "qualified": true,
+        "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+        "shot_id": "shot-a"
+      },
+      "shot-b": {
+        "attempt_id": null,
+        "id": "take-c836ba0d899747679aacfd80f9b21853",
+        "operation_id": "operation-5cac9712459b40019f5f65d6b2f0b8f5",
+        "origin": "retained_replay",
+        "output": {
+          "asset_id": "5a9dc11e3fa74a889adfc28a283ced5a",
+          "frame_count": 8,
+          "receipt": null,
+          "sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+          "timebase": {
+            "den": 24,
+            "num": 1
+          }
+        },
+        "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+        "qualified": true,
+        "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+        "shot_id": "shot-b"
+      }
+    },
+    "replayUploads": {
+      "shot-a": {
+        "receipt": {
+          "historical_verdict": "keeper",
+          "input_sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+          "output_sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+          "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+          "recipe_id": "offline-source-routing",
+          "recipe_version": "cpu-dryrun-v1",
+          "resolved_graph_sha256": "be1cc776af2bcca89e923bebb67b7e42c96abb6b784f97891dd2deb11c55b1ce",
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-a",
+          "source_sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+          "window": {
+            "decoder_keep": {
+              "end": 8,
+              "start": 0
+            },
+            "expected_decoder_frames": 8,
+            "pad_left": 0,
+            "pad_right": 0,
+            "qualification_id": "qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-0-8",
+            "render_range": {
+              "end": 8,
+              "start": 0
+            },
+            "render_timebase": {
+              "den": 24,
+              "num": 1
+            },
+            "source_range": {
+              "end": 8,
+              "start": 0
+            },
+            "source_timebase": {
+              "den": 24,
+              "num": 1
+            },
+            "timeline_range": {
+              "end": 8,
+              "start": 0
+            },
+            "timeline_timebase": {
+              "den": 24,
+              "num": 1
+            }
+          }
+        },
+        "response": {
+          "body": {
+            "attempt_id": null,
+            "id": "take-8203e456b39844bc90e64528f3e59d49",
+            "operation_id": "operation-2dc71f4feaaa4c409b09a46a2c9622ca",
+            "origin": "retained_replay",
+            "output": {
+              "asset_id": "0a8ddfa8859b4732add60b00998d6499",
+              "frame_count": 8,
+              "receipt": null,
+              "sha256": "86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154",
+              "timebase": {
+                "den": 24,
+                "num": 1
+              }
+            },
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "qualified": true,
+            "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+            "shot_id": "shot-a"
+          },
+          "status": 201
+        }
+      },
+      "shot-b": {
+        "receipt": {
+          "historical_verdict": "keeper",
+          "input_sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+          "output_sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+          "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+          "recipe_id": "offline-source-routing",
+          "recipe_version": "cpu-dryrun-v1",
+          "resolved_graph_sha256": "be1cc776af2bcca89e923bebb67b7e42c96abb6b784f97891dd2deb11c55b1ce",
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-b",
+          "source_sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+          "window": {
+            "decoder_keep": {
+              "end": 8,
+              "start": 0
+            },
+            "expected_decoder_frames": 8,
+            "pad_left": 0,
+            "pad_right": 0,
+            "qualification_id": "qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-8-16",
+            "render_range": {
+              "end": 8,
+              "start": 0
+            },
+            "render_timebase": {
+              "den": 24,
+              "num": 1
+            },
+            "source_range": {
+              "end": 16,
+              "start": 8
+            },
+            "source_timebase": {
+              "den": 24,
+              "num": 1
+            },
+            "timeline_range": {
+              "end": 16,
+              "start": 8
+            },
+            "timeline_timebase": {
+              "den": 24,
+              "num": 1
+            }
+          }
+        },
+        "response": {
+          "body": {
+            "attempt_id": null,
+            "id": "take-c836ba0d899747679aacfd80f9b21853",
+            "operation_id": "operation-5cac9712459b40019f5f65d6b2f0b8f5",
+            "origin": "retained_replay",
+            "output": {
+              "asset_id": "5a9dc11e3fa74a889adfc28a283ced5a",
+              "frame_count": 8,
+              "receipt": null,
+              "sha256": "ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c",
+              "timebase": {
+                "den": 24,
+                "num": 1
+              }
+            },
+            "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+            "qualified": true,
+            "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+            "shot_id": "shot-b"
+          },
+          "status": 201
+        }
+      }
+    },
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/"
+      },
+      {
+        "method": "GET",
+        "path": "/styles.css"
+      },
+      {
+        "method": "GET",
+        "path": "/projects.js?v=20261027d"
+      },
+      {
+        "method": "GET",
+        "path": "/m1.js?v=20261027"
+      },
+      {
+        "method": "GET",
+        "path": "/studio.js?v=20261027"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects"
+      },
+      {
+        "method": "GET",
+        "path": "/api/characters"
+      },
+      {
+        "method": "GET",
+        "path": "/api/workflows"
+      },
+      {
+        "method": "GET",
+        "path": "/api/health"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/jobs"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/assets/542ec5619e5e4746baaa4bcf18ef6ac4"
+      },
+      {
+        "method": "GET",
+        "path": "/api/assets/55838b15733d46ff947e29f656dc2207"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/replay-import"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/replay-import"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/takes/take-8203e456b39844bc90e64528f3e59d49/comparison"
+      },
+      {
+        "method": "POST",
+        "path": "/takes/take-8203e456b39844bc90e64528f3e59d49/reviews"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/shots/shot-a/selection"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/takes/take-c836ba0d899747679aacfd80f9b21853/comparison"
+      },
+      {
+        "method": "POST",
+        "path": "/takes/take-c836ba0d899747679aacfd80f9b21853/reviews"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/shots/shot-b/selection"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/shots/shot-a/selection"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/shots/shot-a/selection"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/shots/shot-a/selection"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/shots/shot-a/selection"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scenes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/recipes"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-a"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-b"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/takes?shot_id=shot-c"
+      },
+      {
+        "method": "POST",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/edit-revisions"
+      },
+      {
+        "method": "POST",
+        "path": "/edit-revisions/edit-3ace8f10bcd14996ae5df1a8aa77d499/exports"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      },
+      {
+        "method": "GET",
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/attempts"
+      }
+    ],
+    "resourceErrors": [
+      {
+        "path": "/api/projects/09c5f333fcd349bbb5aa580f77424fd9/scene-revisions/scene_6e384d6b25f249ec833481318a87b053/shots/shot-a/selection",
+        "status": 409
+      }
+    ],
+    "selectionRevisions": {
+      "shot-a": 1,
+      "shot-a-reselect-deselect-select": 4,
+      "shot-b": 1
+    },
+    "shotASelectionOperations": [
+      {
+        "body": {
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "revision": 2,
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-a",
+          "take_id": "take-8203e456b39844bc90e64528f3e59d49"
+        },
+        "status": 200
+      },
+      {
+        "body": {
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "revision": 3,
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-a",
+          "take_id": null
+        },
+        "status": 200
+      },
+      {
+        "body": {
+          "project_id": "09c5f333fcd349bbb5aa580f77424fd9",
+          "revision": 4,
+          "scene_revision_id": "scene_6e384d6b25f249ec833481318a87b053",
+          "shot_id": "shot-a",
+          "take_id": "take-8203e456b39844bc90e64528f3e59d49"
+        },
+        "status": 200
+      }
+    ]
+  }
+}

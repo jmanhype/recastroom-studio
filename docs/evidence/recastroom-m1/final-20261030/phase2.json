@@ -1,0 +1,413 @@
+{
+  "attemptsAfterDuplicateAuthorization": [
+    {
+      "challenger_of": null,
+      "client_request_id": "m1-e8d5e63cf17d57051b91199577884621620c040893558e661a5ca5643c7a7a8a",
+      "id": "attempt-93bae7b661cc4bdd949a3c3da196b8ec",
+      "mode": "dry_run",
+      "operation_id": "operation-173da95a66c342cf8c59eb73e6c65d9c",
+      "project_id": "8255b214f20a4be4b3418ba66edfb098",
+      "provider_id": null,
+      "revision": 1,
+      "state": "prepared"
+    },
+    {
+      "challenger_of": null,
+      "client_request_id": "m1-aaca1ed73ff1f619e3e0da7d0a3cc3ad5077c03295f94b1b79dc4e7453a37559",
+      "id": "attempt-19bb095fe4c54f4eb82a13db43bd6c2f",
+      "mode": "dry_run",
+      "operation_id": "operation-ba335f5572ff4097943568ac88bd8e7e",
+      "project_id": "8255b214f20a4be4b3418ba66edfb098",
+      "provider_id": null,
+      "revision": 1,
+      "state": "prepared"
+    }
+  ],
+  "consoleErrors": [],
+  "mode": "phase2",
+  "nonLocalRequests": [],
+  "operations": {
+    "shot-a": {
+      "canonical_json": "{\"adapter\":{\"endpoint_fingerprint\":\"c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e\",\"version\":\"local_cpu_router-1\"},\"audio_policy\":\"source_edit_map\",\"character\":{\"reference_hashes\":[\"4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343\",\"0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072\"],\"version\":[\"char_e645ecb9373068f146fd0b28\",1]},\"effective_overrides\":{\"audio\":{\"gain_db\":0.0,\"mix_policy\":\"sum\",\"overflow_policy\":\"crop\",\"source_start_frame\":0},\"end_f\":8,\"fps_timebase\":{\"den\":24,\"num\":1},\"lora_model_strength\":1.0,\"pad_left\":0,\"pad_right\":0,\"scheduler_steps\":8,\"source_blur\":{\"effect\":\"blur\",\"mode\":\"head + hands (keep mouth)\",\"segmenter\":\"SAM 3.1\",\"strength\":1.0},\"start_f\":0,\"with_audio\":false,\"word_offset_frames\":0},\"graph\":{\"node_model_requirements\":[{\"node\":\"1\",\"requirement\":\"qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\",\"support\":\"not_evaluated_non_inference\"},{\"node\":\"586\",\"requirement\":\"minimax_h3_character_swap_v1.1_ref2va_fro.safetensors\",\"support\":\"not_evaluated_non_inference\"}],\"prepared_workflow_sha256\":\"7f9804ff686945f5664f3c719d7d3cc430753ee45064543f868c713e8c73e54f\",\"raw_sha256\":\"07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244\",\"resolved_semantic_sha256\":\"be1cc776af2bcca89e923bebb67b7e42c96abb6b784f97891dd2deb11c55b1ce\"},\"manifest_version\":1,\"prompt\":{\"sha256\":\"019b0c00b92d2d50846bff876a3554f961abbf14d006c0c1a6735f423f4dbff8\",\"word_schedule_sha256\":\"f5918d158faefa20e15081259a58299408607c60b90725e0cd521779930f8500\"},\"recipe\":{\"allowlist_version\":\"openjutsu-offline-routing-v1\",\"cpu_window_table_version\":\"openjutsu-cpu-routing-windows-v1-20261027\",\"execution_mode\":\"dry_run\",\"h3_qualified\":false,\"non_inference\":true,\"profile_id\":\"cpu_non_inference_routing_v1\",\"qualification_scope\":\"offline_cpu_routing_only\",\"recipe_id\":\"offline-source-routing\",\"version\":\"cpu-dryrun-v1\"},\"scene\":{\"scene_revision_id\":\"scene_38862d608a69479a9073eb00754ba91e\",\"shot_id\":\"shot-a\",\"source_range\":{\"end\":8,\"start\":0}},\"seed\":117,\"source\":{\"cfr\":true,\"frame_count\":24,\"has_audio\":true,\"original_pts\":{\"coordinate\":\"zero_based_half_open_source_frames\",\"first_frame\":0,\"formula\":\"frame_index * frame_period_seconds\",\"frame_period_seconds\":{\"den\":24,\"num\":1},\"source_to_render_frame_offset\":0},\"proxy_policy\":\"lossless_ffv1_extract\",\"proxy_sha256\":\"86bd10e1717fcf37239df05ce42c1bd7bf68c00ecc9fb1e024dc345d4932d154\",\"sha256\":\"2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64\",\"timebase\":{\"den\":24,\"num\":1}},\"window\":{\"decoder_keep\":{\"end\":8,\"start\":0},\"expected_decoder_frames\":8,\"pad_left\":0,\"pad_right\":0,\"qualification_id\":\"qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-0-8\",\"render_range\":{\"end\":8,\"start\":0},\"render_timebase\":{\"den\":24,\"num\":1},\"source_range\":{\"end\":8,\"start\":0},\"source_timebase\":{\"den\":24,\"num\":1},\"timeline_range\":{\"end\":8,\"start\":0},\"timeline_timebase\":{\"den\":24,\"num\":1}},\"word_timing\":{\"clipped_word_count\":0,\"coordinate\":\"original_source_seconds\",\"original_word_count\":1,\"source_sha256\":\"2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64\",\"word_timing_sha256\":\"c45fe49bbd9d3e39c081039fc21ceff5764a850502a943c885e0282d83159516\"}}\n",
+      "character_version": [
+        "char_e645ecb9373068f146fd0b28",
+        1
+      ],
+      "fingerprint": "e8d5e63cf17d57051b91199577884621620c040893558e661a5ca5643c7a7a8a",
+      "id": "operation-173da95a66c342cf8c59eb73e6c65d9c",
+      "managed_job_id": "managed-a6e5288fae0843e99bdb443f1f8e2505",
+      "pin": {
+        "adapter_version": "local_cpu_router-1",
+        "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+        "profile_id": "cpu_non_inference_routing_v1",
+        "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+        "recipe_id": "offline-source-routing",
+        "version": "cpu-dryrun-v1"
+      },
+      "project_id": "8255b214f20a4be4b3418ba66edfb098",
+      "scene_revision_id": "scene_38862d608a69479a9073eb00754ba91e",
+      "seed": 117,
+      "shot_id": "shot-a",
+      "window": {
+        "decoder_keep": {
+          "end": 8,
+          "start": 0
+        },
+        "expected_decoder_frames": 8,
+        "pad_left": 0,
+        "pad_right": 0,
+        "qualification_id": "qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-0-8",
+        "render_range": {
+          "end": 8,
+          "start": 0
+        },
+        "render_timebase": {
+          "den": 24,
+          "num": 1
+        },
+        "source_range": {
+          "end": 8,
+          "start": 0
+        },
+        "source_timebase": {
+          "den": 24,
+          "num": 1
+        },
+        "timeline_range": {
+          "end": 8,
+          "start": 0
+        },
+        "timeline_timebase": {
+          "den": 24,
+          "num": 1
+        }
+      }
+    },
+    "shot-b": {
+      "canonical_json": "{\"adapter\":{\"endpoint_fingerprint\":\"c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e\",\"version\":\"local_cpu_router-1\"},\"audio_policy\":\"source_edit_map\",\"character\":{\"reference_hashes\":[\"4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343\",\"0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072\"],\"version\":[\"char_e645ecb9373068f146fd0b28\",1]},\"effective_overrides\":{\"audio\":{\"gain_db\":0.0,\"mix_policy\":\"sum\",\"overflow_policy\":\"crop\",\"source_start_frame\":0},\"end_f\":8,\"fps_timebase\":{\"den\":24,\"num\":1},\"lora_model_strength\":1.0,\"pad_left\":0,\"pad_right\":0,\"scheduler_steps\":8,\"source_blur\":{\"effect\":\"blur\",\"mode\":\"head + hands (keep mouth)\",\"segmenter\":\"SAM 3.1\",\"strength\":1.0},\"start_f\":0,\"with_audio\":false,\"word_offset_frames\":8},\"graph\":{\"node_model_requirements\":[{\"node\":\"1\",\"requirement\":\"qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\",\"support\":\"not_evaluated_non_inference\"},{\"node\":\"586\",\"requirement\":\"minimax_h3_character_swap_v1.1_ref2va_fro.safetensors\",\"support\":\"not_evaluated_non_inference\"}],\"prepared_workflow_sha256\":\"76051d1e4a568931dcd2a74c92437b4ae5aa260884c17ce546123ac790503133\",\"raw_sha256\":\"07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244\",\"resolved_semantic_sha256\":\"1139b60624192707e1605b8fab7759b0a35578174161199209b79c08ee7bb70c\"},\"manifest_version\":1,\"prompt\":{\"sha256\":\"ed6d16b92e6b9471e84532d0ace0313262646da51016d4bcc0861d69c413aa1e\",\"word_schedule_sha256\":\"b5b8778ef04843276c181caa1f7116225036d6f4af8ff702ee913031aef8b298\"},\"recipe\":{\"allowlist_version\":\"openjutsu-offline-routing-v1\",\"cpu_window_table_version\":\"openjutsu-cpu-routing-windows-v1-20261027\",\"execution_mode\":\"dry_run\",\"h3_qualified\":false,\"non_inference\":true,\"profile_id\":\"cpu_non_inference_routing_v1\",\"qualification_scope\":\"offline_cpu_routing_only\",\"recipe_id\":\"offline-source-routing\",\"version\":\"cpu-dryrun-v1\"},\"scene\":{\"scene_revision_id\":\"scene_38862d608a69479a9073eb00754ba91e\",\"shot_id\":\"shot-b\",\"source_range\":{\"end\":16,\"start\":8}},\"seed\":117,\"source\":{\"cfr\":true,\"frame_count\":24,\"has_audio\":true,\"original_pts\":{\"coordinate\":\"zero_based_half_open_source_frames\",\"first_frame\":8,\"formula\":\"frame_index * frame_period_seconds\",\"frame_period_seconds\":{\"den\":24,\"num\":1},\"source_to_render_frame_offset\":-8},\"proxy_policy\":\"lossless_ffv1_extract\",\"proxy_sha256\":\"ce1dc17d855b5d04aad9ac729d535fdc8b6e5f16a4d375e99d274d7216b2715c\",\"sha256\":\"2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64\",\"timebase\":{\"den\":24,\"num\":1}},\"window\":{\"decoder_keep\":{\"end\":8,\"start\":0},\"expected_decoder_frames\":8,\"pad_left\":0,\"pad_right\":0,\"qualification_id\":\"qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-8-16\",\"render_range\":{\"end\":8,\"start\":0},\"render_timebase\":{\"den\":24,\"num\":1},\"source_range\":{\"end\":16,\"start\":8},\"source_timebase\":{\"den\":24,\"num\":1},\"timeline_range\":{\"end\":16,\"start\":8},\"timeline_timebase\":{\"den\":24,\"num\":1}},\"word_timing\":{\"clipped_word_count\":1,\"coordinate\":\"original_source_seconds\",\"original_word_count\":1,\"source_sha256\":\"2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64\",\"word_timing_sha256\":\"c45fe49bbd9d3e39c081039fc21ceff5764a850502a943c885e0282d83159516\"}}\n",
+      "character_version": [
+        "char_e645ecb9373068f146fd0b28",
+        1
+      ],
+      "fingerprint": "aaca1ed73ff1f619e3e0da7d0a3cc3ad5077c03295f94b1b79dc4e7453a37559",
+      "id": "operation-ba335f5572ff4097943568ac88bd8e7e",
+      "managed_job_id": "managed-b03435ac4fd546da87f71e80231ae6dc",
+      "pin": {
+        "adapter_version": "local_cpu_router-1",
+        "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+        "profile_id": "cpu_non_inference_routing_v1",
+        "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+        "recipe_id": "offline-source-routing",
+        "version": "cpu-dryrun-v1"
+      },
+      "project_id": "8255b214f20a4be4b3418ba66edfb098",
+      "scene_revision_id": "scene_38862d608a69479a9073eb00754ba91e",
+      "seed": 117,
+      "shot_id": "shot-b",
+      "window": {
+        "decoder_keep": {
+          "end": 8,
+          "start": 0
+        },
+        "expected_decoder_frames": 8,
+        "pad_left": 0,
+        "pad_right": 0,
+        "qualification_id": "qual-cpu-openjutsu-cpu-routing-windows-v1-20261027-8-16",
+        "render_range": {
+          "end": 8,
+          "start": 0
+        },
+        "render_timebase": {
+          "den": 24,
+          "num": 1
+        },
+        "source_range": {
+          "end": 16,
+          "start": 8
+        },
+        "source_timebase": {
+          "den": 24,
+          "num": 1
+        },
+        "timeline_range": {
+          "end": 16,
+          "start": 8
+        },
+        "timeline_timebase": {
+          "den": 24,
+          "num": 1
+        }
+      }
+    }
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/",
+      "url": "http://127.0.0.1:57980/"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/styles.css",
+      "url": "http://127.0.0.1:57980/styles.css"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/projects.js",
+      "url": "http://127.0.0.1:57980/projects.js?v=20261027d"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/m1.js",
+      "url": "http://127.0.0.1:57980/m1.js?v=20261027"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/studio.js",
+      "url": "http://127.0.0.1:57980/studio.js?v=20261027"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects",
+      "url": "http://127.0.0.1:57980/api/projects"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/characters",
+      "url": "http://127.0.0.1:57980/api/characters"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/workflows",
+      "url": "http://127.0.0.1:57980/api/workflows"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/health",
+      "url": "http://127.0.0.1:57980/api/health"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/jobs",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/jobs"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-a"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-b"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-c"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/assets/409dc1a4436f441a98e6fff7cc8626e4",
+      "url": "http://127.0.0.1:57980/api/assets/409dc1a4436f441a98e6fff7cc8626e4"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/assets/8e01fff0a6e741cb812a071690ec15d0",
+      "url": "http://127.0.0.1:57980/api/assets/8e01fff0a6e741cb812a071690ec15d0"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-a"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-b"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-c"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-a"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-a"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-b"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/scene-revisions/scene_38862d608a69479a9073eb00754ba91e/takes?shot_id=shot-c"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57980",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts",
+      "url": "http://127.0.0.1:57980/api/projects/8255b214f20a4be4b3418ba66edfb098/attempts"
+    }
+  ],
+  "resourceErrors": [
+    {
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve",
+      "status": 422
+    },
+    {
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/operations/resolve",
+      "status": 422
+    }
+  ]
+}

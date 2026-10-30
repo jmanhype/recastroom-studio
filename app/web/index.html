@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/styles.css">
 <main>
   <header class="masthead"><a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a><span class="edition">PERFORMANCE / REIMAGINED</span></header>
-  <div class="intro"><div><p class="eyebrow">OPEN CREATIVE STUDIO</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Keep the performance. Shape the identity.<br>An attestation-gated workspace for MiniMax H3.</p><p id="backend" class="backend" role="status">Backend unknown · checking connection</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div></div>
+  <div class="intro"><div><p class="eyebrow">OPEN CREATIVE STUDIO</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Select the take, prepare the edit, and inspect the evidence.<br>From original shot to reviewed export.</p><p id="backend" class="backend" role="status">Backend unknown · checking connection</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div></div>
   <section class="studio-shell" aria-labelledby="workflow-heading">
     <div class="section-heading"><h2 id="workflow-heading">Workflow studio</h2><span>PRODUCTION / ADVANCED / CONCEPT</span></div>
     <p class="hint">RecastRoom is built around interchangeable Comfy workflows. The Recast Room is the production flagship; concept lanes are visible without being misrepresented as ready.</p>
@@ -25,8 +25,84 @@
       <div data-readiness="execution"><dt>Execution</dt><dd>Checking</dd></div>
     </dl>
   </section>
+  <section class="projects-shell" aria-labelledby="projects-heading">
+    <div class="section-heading"><h2 id="projects-heading">Saved projects</h2><span>REUSABLE REFERENCES / HISTORY</span></div>
+    <div class="projects-grid">
+      <section aria-labelledby="project-select-heading">
+        <h3 id="project-select-heading">Project</h3>
+        <label for="project-select">Saved project</label>
+        <select id="project-select" autocomplete="off">
+          <option value="">Upload-only · no saved history</option>
+        </select>
+        <label for="project-name">New project name</label>
+        <input id="project-name" type="text" maxlength="200" autocomplete="off" placeholder="For example: Synthetic tests">
+        <button id="create-project" type="button">Create project</button>
+        <p id="project-note" class="hint" role="status">Projects store reusable references and prepared configuration links.</p>
+      </section>
+      <section aria-labelledby="character-heading">
+        <h3 id="character-heading">Character library</h3>
+        <label for="character-select">Saved character version</label>
+        <select id="character-select" autocomplete="off">
+          <option value="">Upload references for this job</option>
+        </select>
+        <div id="character-references" class="reference-strip" aria-live="polite"></div>
+        <details id="character-editor">
+          <summary>Create a character version</summary>
+          <label for="character-name">Character name *</label>
+          <input id="character-name" type="text" maxlength="200" autocomplete="off">
+          <label for="character-reference-1">Primary reference *</label>
+          <input id="character-reference-1" type="file" accept="image/png,image/jpeg">
+          <label for="character-reference-2">Optional second reference</label>
+          <input id="character-reference-2" type="file" accept="image/png,image/jpeg">
+          <label for="character-description">Description</label>
+          <textarea id="character-description" maxlength="2000" placeholder="Optional notes for this immutable version."></textarea>
+          <button id="create-character" type="button">Save character version</button>
+        </details>
+        <p id="character-note" class="hint" role="status">A saved version is one performer. Upload-only mode remains available.</p>
+      </section>
+      <section aria-labelledby="history-heading">
+        <h3 id="history-heading">Prepared history</h3>
+        <ul id="project-history" aria-live="polite"></ul>
+        <p class="hint">History links configuration only. Selecting or reloading never starts a run.</p>
+      </section>
+    </div>
+  </section>
+  <section class="projects-shell" aria-labelledby="m1-scenes-heading">
+    <div class="section-heading"><h2 id="m1-scenes-heading">Scene setup</h2><span>ORIGINAL CUTS / OFFLINE</span></div>
+    <p class="hint">Inspect and confirm exact original source cuts. This M1 panel does not resolve recipes, submit jobs, or generate media.</p>
+    <div class="projects-grid">
+      <section aria-labelledby="m1-source-heading">
+        <h3 id="m1-source-heading">Protected source</h3>
+        <label for="m1-source">Project source video *</label>
+        <input id="m1-source" type="file" accept="video/mp4,video/quicktime,.mkv">
+        <button id="m1-upload" type="button">Upload and inspect source</button>
+        <p id="m1-source-note" class="hint" role="status">Select a saved project, then upload a CFR source.</p>
+        <dl id="m1-source-facts" class="readiness-strip" aria-live="polite">
+          <div><dt>Frames</dt><dd>Not inspected</dd></div>
+          <div><dt>Timebase</dt><dd>Not inspected</dd></div>
+          <div><dt>Audio</dt><dd>Not inspected</dd></div>
+          <div><dt>Source hash</dt><dd>Not inspected</dd></div>
+        </dl>
+      </section>
+      <section aria-labelledby="m1-cuts-heading">
+        <h3 id="m1-cuts-heading">Original cut partition</h3>
+        <div id="m1-shot-list" aria-live="polite"></div>
+        <button id="m1-add-shot" type="button">Add shot</button>
+        <button id="m1-confirm" type="button">Confirm exact cuts</button>
+        <p id="m1-cut-note" class="hint" role="status">Ranges are zero-based half-open frames and must cover every original frame once. Use pass-through for frames you do not want recast.</p>
+      </section>
+      <section aria-labelledby="m1-history-heading">
+        <h3 id="m1-history-heading">Confirmed scene revisions</h3>
+        <ul id="m1-scenes" aria-live="polite"></ul>
+        <p class="hint">Reloading this list is read-only and never creates an attempt or submits work.</p>
+      </section>
+    </div>
+  </section>
   <ol class="steps" aria-label="Workflow"><li data-step="upload" aria-current="step"><span>01</span> Select media</li><li data-step="prepare"><span>02</span> Prepare</li><li data-step="run"><span>03</span> Run</li><li data-step="review"><span>04</span> Review</li></ol>
   <form id="form">
+    <input type="hidden" id="project-id-input" name="project_id" value="">
+    <input type="hidden" id="character-id-input" name="character_id" value="">
+    <input type="hidden" id="character-version-input" name="character_version" value="">
     <div class="workspace"><section class="media-column" aria-labelledby="source-heading"><div class="section-heading"><h2 id="source-heading">The original</h2><span>01 / SOURCE</span></div>
     <div class="screen"><video id="source-preview" controls playsinline preload="metadata" hidden aria-label="Source clip preview"></video><div id="source-empty" class="empty"><span class="frame-mark" aria-hidden="true"></span><h3>Every scene starts here.</h3><p>Select a clip to inspect your original performance.<br>Nothing is uploaded until you prepare.</p></div></div>
     <label for="source">Source clip *</label>
@@ -36,7 +112,7 @@
       <summary>Find Archive.org footage</summary>
       <label for="archive-query">Search key-free public video collections</label>
       <div class="archive-search"><input id="archive-query" type="search" placeholder="driving, telephone, classroom" maxlength="160"><button id="archive-search" type="button">Search</button></div>
-      <p id="archive-note" class="hint">Discovery metadata does not bypass the operator attestation gate or establish legal clearance. Check the item page before import.</p>
+      <p id="archive-note" class="hint">Discovery metadata does not bypass the operator attestation gate. Check the item page before import.</p>
       <ul id="archive-results" aria-live="polite"></ul>
     </details>
     <div class="section-heading references-heading"><h2>The new cast</h2><span>02 / REFERENCES</span></div><div class="references"><div>
@@ -59,10 +135,10 @@
     <label for="workflow">Custom C1-compatible Recast workflow JSON</label>
     <input id="workflow" name="workflow" type="file" accept="application/json,.json">
     <p class="hint">Optional. The graph must use the Recast Room node contract so source routing, exact audio, review, and the recorded operator attestation remain enforceable.</p>
-    </details><div class="rights-block"><p class="eyebrow">PERMISSION BEFORE PRODUCTION</p>
+    </details><div class="rights-block"><p class="eyebrow">PRODUCTION CHECKPOINT</p>
     <label class="consent" for="rights">
       <input id="rights" name="rights_attested" type="checkbox" required>
-      <span>I represent that I own this clip or have explicit permission to modify it, and that I have required consent for every identifiable person/reference likeness.</span>
+      <span>I own this clip or have explicit permission to modify it, and I have consent for every identifiable person/reference likeness.</span>
     </label>
     </div><button id="submit" type="submit" disabled aria-describedby="prepare-help">Prepare workflow <span aria-hidden="true">↗</span></button><p id="prepare-help" class="hint">Select a source and primary reference, then confirm permission.</p><button id="reset" type="button" class="text-button">Reset workspace</button><p class="fine-print">Reset clears this workspace, not uploaded files or an already queued server job.</p></aside></div>
   </form>
@@ -70,7 +146,9 @@
     <div class="section-heading"><h2 id="result-heading">Production desk</h2><span id="job-label"></span></div><div class="production"><div><p id="stage" class="eyebrow">PREPARING</p><p id="output" role="status" aria-live="polite"></p><p id="error" role="alert" hidden></p><div id="prepared-links" class="links"></div></div><div><button id="run" type="button" disabled aria-describedby="run-help">Run prepared workflow</button><p id="run-help" class="hint">Preparation must finish before running.</p><button id="retry-status" class="text-button" type="button" hidden>Check job status again</button></div></div>
     <div id="review" hidden><div class="section-heading"><h2>Watch the difference.</h2><span>SOURCE / RESULT</span></div><p class="hint">Compare the original above with the final below, or play the paired review. Review quality yourself; no automated score is provided.</p><div class="review-grid"><figure><video id="final-preview" controls playsinline preload="metadata" aria-label="Final result"></video><figcaption>Final · original audio restored</figcaption></figure><figure><video id="comparison-preview" controls playsinline preload="metadata" aria-label="Side-by-side source and result"></video><figcaption>Source / final · paired review</figcaption></figure></div><div id="downloads" class="links"></div></div>
   </section>
-  <footer><span>RECASTROOM / INDEPENDENT TOOLS FOR MOVING IMAGES</span><span>Responsibility is part of the craft. <a href="/sound-lab.html">Sound lab</a></span></footer>
+  <footer><span>RECASTROOM / INDEPENDENT TOOLS FOR MOVING IMAGES</span><span>Review every export before publication. <a href="/sound-lab.html">Sound lab</a></span></footer>
 </main>
-<script src="/studio.js" defer></script>
+  <script src="/projects.js?v=20261027d" defer></script>
+  <script src="/m1.js?v=20261027" defer></script>
+  <script src="/studio.js?v=20261027" defer></script>
 </html>

@@ -1,0 +1,24 @@
+INFO:     Started server process [54087]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:60853 (Press CTRL+C to quit)
+INFO:     127.0.0.1:60858 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/characters/char_e9fc66d52c5e464ee75b46c8/versions/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/projects/05fbbba0100c457ba0a78b85373f88a0/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/jobs/b703393027e7/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/projects/008b531e6ac247fd963a460f5d79b0ef/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/characters/char_e9fc66d52c5e464ee75b46c8/versions/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "POST /api/prepare HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "POST /api/jobs/9dd6eeaa1b23/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/jobs/9dd6eeaa1b23/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/jobs/9dd6eeaa1b23/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/jobs/9dd6eeaa1b23/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/projects/05fbbba0100c457ba0a78b85373f88a0/jobs HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [54087]

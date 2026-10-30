@@ -1,0 +1,62 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_real_chrome_m1_journey_restart_worker_replay_review_and_export ______
+
+tmp_path = PosixPath('<TEMP_FOLDERS>/7q/tx7m0tg12m5cgq7k8z8q2dzw0000gn/T/pytest-of-speed/pytest-118/test_real_chrome_m1_journey_re0')
+
+    def test_real_chrome_m1_journey_restart_worker_replay_review_and_export(tmp_path: Path):
+        evidence = Path(os.environ.get("OJ_VQYG_EVIDENCE", str(tmp_path)))
+        evidence.mkdir(parents=True, exist_ok=True)
+        workspace = tmp_path / "workspace"
+        media = generate_media(tmp_path / "input")
+        server_one = FoundationServer(free_loopback_port(), workspace, evidence / "server-1.log"); server_one.start()
+        try: _run_browser("phase1", server_one.base_url, evidence, workspace, media["source"], media["primary"], media["secondary"])
+        finally: server_one.stop()
+        database = workspace / "workspace.sqlite3"
+        restart_one_hash = hashlib.sha256(database.read_bytes()).hexdigest()
+        restart_one_counts = _counts(database)
+
+        server_two = FoundationServer(free_loopback_port(), workspace, evidence / "server-2.log", test_lifespan="off"); server_two.start()
+        try:
+            restart_two_read_hash = hashlib.sha256(database.read_bytes()).hexdigest()
+            restart_two_read_counts = _counts(database)
+            _run_browser("phase2", server_two.base_url, evidence, workspace)
+        finally: server_two.stop()
+        restart_two_post_counts = _counts(database)
+
+        restart_three_read_counts = _counts(database)
+        server_three = FoundationServer(free_loopback_port(), workspace, evidence / "server-3.log"); server_three.start()
+        try:
+            restart_three_read_hash = hashlib.sha256(database.read_bytes()).hexdigest()
+            _run_browser("phase3", server_three.base_url, evidence, workspace)
+        finally: server_three.stop()
+
+        server_four = FoundationServer(free_loopback_port(), workspace, evidence / "server-4.log", test_lifespan="off"); server_four.start()
+        try: _run_browser("phase4", server_four.base_url, evidence, workspace, timeout=240)
+        finally: server_four.stop()
+
+        phase2 = json.loads((evidence / 'phase2.json').read_text())
+        fixture_store = WorkspaceStore(workspace)
+        operation = fixture_store.get_operation(phase2['operations']['shot-a']['project_id'], phase2['operations']['shot-a']['id'])
+        unknown = fixture_store.authorize_attempt(operation, 'explicit-offline-presentation', M.DRY_RUN, None)
+        with fixture_store.worker_lock('offline-presentation'):
+            fence = fixture_store.claim_attempt('offline-presentation')
+            assert fence is not None and fence.attempt_id == unknown.id
+            for before, after in ((S.PREPARED, S.READY), (S.READY, S.SUBMITTING), (S.SUBMITTING, S.RECONCILE_NEEDED)):
+                fixture_store.transition_attempt(fence, before, AttemptEvent(after.value, '{}'))
+        server_five = FoundationServer(free_loopback_port(), workspace, evidence / 'server-5.log', test_lifespan='off'); server_five.start()
+        try: _run_browser('safety', server_five.base_url, evidence, workspace)
+        finally: server_five.stop()
+        teardown = []
+        for server in (server_one, server_two, server_three, server_four, server_five):
+            assert server.process is None
+            with socket.socket() as client:
+                client.settimeout(1)
+>               assert client.connect_ex(('127.0.0.1', int(server.base_url.rsplit(':', 1)[1]))) != 0
+                                                       ^^^^^^^^^^^
+E               AttributeError: 'FoundationServer' object has no attribute 'port'
+
+tests/e2e/test_m1_journey.py:503: AttributeError
+=========================== short test summary info ============================
+FAILED tests/e2e/test_m1_journey.py::test_real_chrome_m1_journey_restart_worker_replay_review_and_export
+1 failed in 23.60s

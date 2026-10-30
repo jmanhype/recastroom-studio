@@ -1,0 +1,32 @@
+INFO:     Started server process [17235]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:57955 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57960 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57971 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57973 - "GET /projects.js?v=20261027d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57975 - "GET /studio.js?v=20261027 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57971 - "GET /styles.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57974 - "GET /m1.js?v=20261027 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57975 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57971 - "GET /api/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57973 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57974 - "GET /api/workflows HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57974 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57974 - "POST /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57974 - "GET /api/projects/8255b214f20a4be4b3418ba66edfb098/scenes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57973 - "GET /api/projects/8255b214f20a4be4b3418ba66edfb098/recipes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57971 - "GET /api/projects/8255b214f20a4be4b3418ba66edfb098/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57975 - "GET /api/projects/8255b214f20a4be4b3418ba66edfb098/scenes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57974 - "GET /api/projects/8255b214f20a4be4b3418ba66edfb098/recipes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57974 - "POST /api/characters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57974 - "GET /api/projects/8255b214f20a4be4b3418ba66edfb098/scenes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57975 - "GET /api/projects/8255b214f20a4be4b3418ba66edfb098/recipes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57971 - "GET /api/assets/409dc1a4436f441a98e6fff7cc8626e4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57973 - "GET /api/assets/8e01fff0a6e741cb812a071690ec15d0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57973 - "POST /api/projects/8255b214f20a4be4b3418ba66edfb098/sources HTTP/1.1" 201 Created
+INFO:     127.0.0.1:57973 - "POST /api/projects/8255b214f20a4be4b3418ba66edfb098/scenes HTTP/1.1" 201 Created
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [17235]

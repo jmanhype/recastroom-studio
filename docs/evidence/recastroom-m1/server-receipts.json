@@ -1,0 +1,52 @@
+{
+  "servers": {
+    "server-1": {
+      "expected_client_errors": 0,
+      "http_2xx": 2,
+      "loopback_only": false,
+      "process_finished": true,
+      "process_started": true,
+      "sha256": "336f3712dc4c911471fce2a9b08c33c36c7d3768b70bdd9f9af8bff6a57710f1",
+      "shutdown_complete": true,
+      "startup_complete": true,
+      "unexpected_5xx": 0,
+      "worker_lifespan": "auto"
+    },
+    "server-2": {
+      "expected_client_errors": 1,
+      "http_2xx": 2,
+      "loopback_only": false,
+      "process_finished": true,
+      "process_started": true,
+      "sha256": "c150e42cc6dc91a0f5e5e454f623e6646dda7ef4810df98bb2f79d9c10da6784",
+      "shutdown_complete": true,
+      "startup_complete": true,
+      "unexpected_5xx": 0,
+      "worker_lifespan": "auto"
+    },
+    "server-3": {
+      "expected_client_errors": 0,
+      "http_2xx": 2,
+      "loopback_only": false,
+      "process_finished": true,
+      "process_started": true,
+      "sha256": "0f4a5f442e479287becafeb46b2d8461e32daed602e262f33c786eb8f33627e7",
+      "shutdown_complete": false,
+      "startup_complete": false,
+      "unexpected_5xx": 0,
+      "worker_lifespan": "off"
+    },
+    "server-4": {
+      "expected_client_errors": 1,
+      "http_2xx": 2,
+      "loopback_only": false,
+      "process_finished": true,
+      "process_started": true,
+      "sha256": "ab64c493dd7ba1c5305baf8fc72f3bb53b13ed216b91efbbe85db75a51ff530b",
+      "shutdown_complete": true,
+      "startup_complete": true,
+      "unexpected_5xx": 0,
+      "worker_lifespan": "auto"
+    }
+  }
+}

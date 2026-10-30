@@ -1,0 +1,1441 @@
+{
+  "artifacts": {
+    "final": {
+      "bytes": 55590,
+      "content_type": "video/mp4",
+      "probe": {
+        "duration_seconds": 1.002,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "height": 180,
+            "width": 320
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "height": null,
+            "width": null
+          }
+        ]
+      },
+      "sha256": "6acf42e3e0ef4bf840919c39ba9cd9de46f7082047e068c7c7d712ab88aa89f6"
+    },
+    "generated": {
+      "bytes": 40472,
+      "content_type": "video/mp4",
+      "probe": {
+        "duration_seconds": 1.0,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "height": 180,
+            "width": 320
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "height": null,
+            "width": null
+          }
+        ]
+      },
+      "sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64"
+    },
+    "side_by_side": {
+      "bytes": 292760,
+      "content_type": "video/mp4",
+      "probe": {
+        "duration_seconds": 1.002,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "height": 384,
+            "width": 1920
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "height": null,
+            "width": null
+          }
+        ]
+      },
+      "sha256": "9bd1bf978afbf2afcabe3eaf638e6599a773303ddefe0ae08efbd2c5042307c2"
+    }
+  },
+  "backend": "dry_run",
+  "binding": {
+    "host": "127.0.0.1",
+    "loopback_only": true
+  },
+  "browser_automation": "not used by this HTTP replay",
+  "character": {
+    "character_id": "char_e9fc66d52c5e464ee75b46c8",
+    "created_at": "2026-10-27T09:57:57.973758+00:00",
+    "description": "Generated journey reference",
+    "name": "Synthetic Performer",
+    "reference_asset_ids": [
+      "10e0753184ce4717b391f36431cd4f86",
+      "cd92ea4bb9c444b2b31d966a343ce758"
+    ],
+    "version": 1
+  },
+  "generated_at_utc": "2026-10-27T09:57:57.549958+00:00",
+  "http_records": [
+    {
+      "body": {
+        "backend": "dry_run",
+        "ok": true,
+        "renderer": {
+          "backend": "dry_run",
+          "checked": true,
+          "code": "local_dry_run",
+          "message": "Dry run is local only and performs no AI inference or renderer connection.",
+          "ready": true
+        },
+        "renderer_ready": true,
+        "workflow": "openjutsu_h3_lipsync_local.json",
+        "workflow_exists": true
+      },
+      "method": "GET",
+      "path": "/api/health",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "bytes": 11395,
+        "text_sha256": "5a13317ce156ed16d4f1ef6b76456a9384d5763b2a0a02c60003261368bebfa9"
+      },
+      "method": "GET",
+      "path": "/",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "created_at": "2026-10-27T09:57:57.968386+00:00",
+        "name": "Foundation Journey",
+        "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+        "updated_at": "2026-10-27T09:57:57.968386+00:00"
+      },
+      "method": "POST",
+      "path": "/api/projects",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "character": {
+          "character_id": "char_e9fc66d52c5e464ee75b46c8",
+          "created_at": "2026-10-27T09:57:57.973758+00:00",
+          "description": "Generated journey reference",
+          "name": "Synthetic Performer",
+          "reference_asset_ids": [
+            "10e0753184ce4717b391f36431cd4f86",
+            "cd92ea4bb9c444b2b31d966a343ce758"
+          ],
+          "version": 1
+        },
+        "references": [
+          {
+            "asset_id": "10e0753184ce4717b391f36431cd4f86",
+            "created_at": "2026-10-27T09:57:57.972338+00:00",
+            "filename": "foundation-primary.png",
+            "media_type": "image/png",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "protected": true,
+            "role": "reference_1",
+            "sha256": "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",
+            "size_bytes": 473
+          },
+          {
+            "asset_id": "cd92ea4bb9c444b2b31d966a343ce758",
+            "created_at": "2026-10-27T09:57:57.973290+00:00",
+            "filename": "foundation-secondary.png",
+            "media_type": "image/png",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "protected": true,
+            "role": "reference_2",
+            "sha256": "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072",
+            "size_bytes": 473
+          }
+        ]
+      },
+      "method": "POST",
+      "path": "/api/characters",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "bytes": 473,
+        "text_sha256": "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343"
+      },
+      "method": "GET",
+      "path": "/api/assets/10e0753184ce4717b391f36431cd4f86",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "detail": "Choose an uploaded primary reference or a saved character version."
+      },
+      "method": "POST",
+      "path": "/api/prepare",
+      "status_code": 422
+    },
+    {
+      "body": {
+        "detail": "Choose either uploaded references or one saved character version, not both."
+      },
+      "method": "POST",
+      "path": "/api/prepare",
+      "status_code": 422
+    },
+    {
+      "body": {
+        "detail": "project not found"
+      },
+      "method": "POST",
+      "path": "/api/prepare",
+      "status_code": 404
+    },
+    {
+      "body": {
+        "detail": "Upload filename collision for foundation-primary.png: source and reference_1. Rename one of the uploads before preparing again."
+      },
+      "method": "POST",
+      "path": "/api/prepare",
+      "status_code": 422
+    },
+    {
+      "body": {
+        "job_id": "b703393027e7",
+        "manifest": {
+          "job_id": "b703393027e7",
+          "prompt_path": "prompt.txt",
+          "reference_1": "foundation-primary.png",
+          "reference_2": "foundation-secondary.png",
+          "rights_attested": true,
+          "seed": 117,
+          "source": "foundation-source.mp4",
+          "word_schedule_path": null,
+          "workflow_path": "workflow.json"
+        },
+        "prepared": {
+          "character_id": "char_e9fc66d52c5e464ee75b46c8",
+          "character_version": 1,
+          "config": {
+            "audio_mode": "auto",
+            "reference_names": [
+              "foundation-primary.png",
+              "foundation-secondary.png"
+            ],
+            "scheduler_steps": 8,
+            "seed": 117,
+            "video_name": "foundation-source.mp4",
+            "with_audio": true
+          },
+          "created_at": "2026-10-27T09:57:58.024430+00:00",
+          "job_id": "b703393027e7",
+          "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+          "prompt_sha256": "e581fa2da91d38eaa44cd8939572aff32ed3905ea32076a13fcb5996c4f8ce93",
+          "reference_sha256s": [
+            "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",
+            "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072"
+          ],
+          "seed": 117,
+          "source_sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+          "workflow_sha256": "9adcef7370e7442efe8ffab3d661c85cdd55e45c804ffff5da56845757869102"
+        },
+        "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+        "prompt_url": "/api/jobs/b703393027e7/prompt",
+        "scene": {
+          "audio_channels": 1,
+          "duration_seconds": 1.0,
+          "fps": 24.0,
+          "has_audio": true,
+          "height": 180,
+          "path": "foundation-source.mp4",
+          "recommended": false,
+          "risks": [
+            "clip is shorter than 2 seconds; H3 has little performance context",
+            "resolution is too low for reliable face and mouth conditioning"
+          ],
+          "warnings": [
+            "manual shot review required: eyes visible, mouth visible, one target speaker, stable camera"
+          ],
+          "width": 320
+        },
+        "workflow_url": "/api/jobs/b703393027e7/workflow"
+      },
+      "method": "POST",
+      "path": "/api/prepare",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "1": {
+          "_meta": {
+            "title": "Load CLIP"
+          },
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "device": "default",
+            "type": "minimax"
+          }
+        },
+        "1022": {
+          "_meta": {
+            "title": "BiRefNet (RMBG)"
+          },
+          "class_type": "BiRefNetRMBG",
+          "inputs": {
+            "background": "Alpha",
+            "background_color": "#222222",
+            "image": [
+              "1037",
+              1
+            ],
+            "invert_output": false,
+            "mask_blur": 0,
+            "mask_offset": false,
+            "model": "BiRefNet-general",
+            "refine_foreground": "Color",
+            "sensitivity": 0,
+            "unload_model": "#808080"
+          }
+        },
+        "1031": {
+          "_meta": {
+            "title": "Resize Image/Mask"
+          },
+          "class_type": "ResizeImageMaskNode",
+          "inputs": {
+            "input": [
+              "1022",
+              0
+            ],
+            "resize_type": "scale total pixels",
+            "resize_type.megapixels": 0.3,
+            "scale_method": "lanczos"
+          }
+        },
+        "1037": {
+          "_meta": {
+            "title": "BFS Shot Unpack"
+          },
+          "class_type": "BFSShotUnpack",
+          "inputs": {
+            "shot": [
+              "1189",
+              0
+            ]
+          }
+        },
+        "1038": {
+          "_meta": {
+            "title": "BFS Shot Repack"
+          },
+          "class_type": "BFSShotRepack",
+          "inputs": {
+            "refs": [
+              "1031",
+              0
+            ],
+            "shot": [
+              "1037",
+              10
+            ]
+          }
+        },
+        "11": {
+          "_meta": {
+            "title": "CFG Guider"
+          },
+          "class_type": "CFGGuider",
+          "inputs": {
+            "cfg": 1,
+            "model": [
+              "64",
+              0
+            ],
+            "negative": [
+              "1177",
+              0
+            ],
+            "positive": [
+              "1177",
+              0
+            ]
+          }
+        },
+        "1109": {
+          "_meta": {
+            "title": "Create Video"
+          },
+          "class_type": "CreateVideo",
+          "inputs": {
+            "audio": [
+              "1111",
+              1
+            ],
+            "bit_depth": "auto",
+            "codec": "auto",
+            "color_space": "sRGB",
+            "fps": [
+              "1111",
+              2
+            ],
+            "images": [
+              "1111",
+              3
+            ]
+          }
+        },
+        "1110": {
+          "_meta": {
+            "title": "Compare"
+          },
+          "class_type": "SaveVideo",
+          "inputs": {
+            "codec": "auto",
+            "filename_prefix": "openjutsu/b703393027e7_compare",
+            "format": "auto",
+            "format.codec": "auto",
+            "video": [
+              "1109",
+              0
+            ]
+          }
+        },
+        "1111": {
+          "_meta": {
+            "title": "BFS Shot Join"
+          },
+          "class_type": "BFSShotJoin",
+          "inputs": {
+            "audio": [
+              "1189",
+              5
+            ],
+            "comparison": true,
+            "comparison_height": 1024,
+            "comparison_mask": true,
+            "crossfade": 4,
+            "edge_hardness": 0,
+            "images": [
+              "45",
+              0
+            ],
+            "label": "",
+            "match_colors": 0,
+            "match_region": "around the subject (swap)",
+            "paste_new_outline": true,
+            "seamless_edges": false,
+            "shots": [
+              "1038",
+              0
+            ],
+            "timeline": [
+              "1189",
+              7
+            ]
+          }
+        },
+        "1152": {
+          "_meta": {
+            "title": "Ref Details"
+          },
+          "class_type": "PrimitiveStringMultiline",
+          "inputs": {
+            "value": "body_swap:\nsubject_definitions:\nSynthetic journey performer\n\nsummary:\n[video generation + reference + source audio] Replace only the selected target performer in the guide video with the authorized replacement performer while preserving the source performance and exact word schedule.\n\ndetailed_description:\nThe replacement performer takes the exact place of the selected target performer. Preserve the source performer's posture, hands, arms, shoulders, head rotation, eye direction, eyelid aperture, mouth aperture, lip shapes, speech timing, and facial expression.\nUse the source audio and the guide mouth as joint authority. Match jaw opening, lip rounding, labiodental contact, tongue-tip motion, chin movement, and micro-closures. Do not genericize speech into simple mouth ovals.\n\nExact word/frame schedule:\nNo speech detected. Keep the mouth relaxed and closed unless the source guide visibly articulates.\n\nIntegrate the replacement performer into the source's practical lighting and color temperature. Preserve the original room, props, camera, framing, background, and non-target people exactly. Prevent identity drift, hair-color drift, clothing changes, texture crawling, face flicker, invented gestures, extra speech, and temporal flicker.\n\nforbidden:\n- unlicensed celebrity or public-figure likeness\n- deceased performer recreation\n- invented speech\n- invented camera movement\n- target-person bleeding into another person\n- caramel or otherwise incorrect hair-color drift\n\nThe result is real, photographic, and source-aligned."
+          }
+        },
+        "1177": {
+          "_meta": {
+            "title": "BFS Shot H3 Conditioning"
+          },
+          "class_type": "BFSShotH3ConditioningSimple",
+          "inputs": {
+            "audio_vae": [
+              "29",
+              0
+            ],
+            "clip": [
+              "1",
+              0
+            ],
+            "guide_mode": "aligned guide (Add Guide)",
+            "inpaint": "per shot (planner)",
+            "ref_image_size": "match",
+            "shot": [
+              "1038",
+              0
+            ],
+            "source_blur": "head + hands (keep mouth)",
+            "source_blur_effect": "blur",
+            "source_blur_segmenter": "SAM 3.1",
+            "source_blur_strength": 1.0,
+            "vae": [
+              "3",
+              0
+            ],
+            "vlm": [
+              "85",
+              0
+            ],
+            "with_audio": true
+          }
+        },
+        "1189": {
+          "_meta": {
+            "title": "BFS Shot Planner"
+          },
+          "class_type": "BFSShotPlanner",
+          "inputs": {
+            "plan": "{\"video\":\"foundation-source.mp4\",\"fps\":24,\"grid\":\"H3 (17n+5)\",\"mode\":\"single\",\"max_s\":15,\"min_s\":5,\"sensitivity\":0.5,\"max_parts\":1,\"max_total_s\":0,\"start_s\":0,\"end_s\":0,\"start_f\":0,\"end_f\":141,\"track\":null,\"bounds\":[],\"segs\":[{\"enabled\":true,\"ref\":\"\",\"ref2\":\"\",\"prompt\":\"\",\"chain\":\"history\",\"chain_frame\":\"first\",\"chain_history\":17,\"crop\":false,\"inpaint\":false,\"paste\":false,\"paste_text\":\"\",\"strength\":1,\"mask\":{},\"target\":\"\"}],\"global_ref\":\"foundation-primary.png\",\"global_ref2\":\"foundation-secondary.png\",\"global_prompt\":\"\",\"mask_video\":\"\",\"megapixels\":0.384,\"multiple\":32,\"detector\":\"content\",\"run\":\"auto\",\"auto_continue\":true,\"skip_fill\":\"original\",\"audio_mode\":\"auto\",\"mask_cfg\":{\"threshold\":0.2,\"max_objects\":4,\"invert\":false,\"fill_holes\":true,\"temporal_expand\":2,\"blockify\":32,\"padding\":0.25,\"expand\":32,\"feather\":12,\"paste\":\"mask\"},\"vlm_cfg\":{\"enabled\":false,\"frames\":3,\"max_tokens\":4096,\"auto_segment\":true,\"auto_shot\":false,\"instruction\":\"\",\"describe_preset\":\"short\",\"describe_custom\":\"short description\",\"fit_prompt\":true,\"temperature\":1,\"seed\":10},\"cast\":{\"0\":{\"ref\":\"\",\"ignore\":true},\"1\":{\"ref\":\"\"},\"2\":{\"ignore\":true},\"3\":{\"ref\":\"\"}},\"cast_assign\":false,\"cast_split\":false,\"cast_only\":false,\"filters\":{\"person\":false,\"min_person_area\":0,\"max_persons\":0,\"face\":false,\"skip_dark\":false,\"dark_level\":0.06,\"skip_static\":false,\"static_level\":0.004,\"min_frames\":0,\"samples\":6}}",
+            "prompt": [
+              "1152",
+              0
+            ],
+            "vlm": [
+              "85",
+              0
+            ]
+          }
+        },
+        "13": {
+          "_meta": {
+            "title": "Seed"
+          },
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 117
+          }
+        },
+        "14": {
+          "_meta": {
+            "title": "SamplerCustomAdvanced"
+          },
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "guider": [
+              "11",
+              0
+            ],
+            "latent_image": [
+              "201",
+              0
+            ],
+            "noise": [
+              "13",
+              0
+            ],
+            "sampler": [
+              "15",
+              0
+            ],
+            "sigmas": [
+              "181",
+              0
+            ]
+          }
+        },
+        "15": {
+          "_meta": {
+            "title": "KSamplerSelect"
+          },
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "181": {
+          "_meta": {
+            "title": "BasicScheduler"
+          },
+          "class_type": "BasicScheduler",
+          "inputs": {
+            "denoise": 1,
+            "model": [
+              "64",
+              0
+            ],
+            "scheduler": "simple",
+            "steps": 8
+          }
+        },
+        "2": {
+          "_meta": {
+            "title": "Load Diffusion Model"
+          },
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "200": {
+          "_meta": {
+            "title": "Recast Room source audio"
+          },
+          "class_type": "MiniMaxH3TimedAudio",
+          "inputs": {
+            "audio": [
+              "1189",
+              5
+            ],
+            "gain_db": 0.0,
+            "label": "authorized source dialogue",
+            "start_frame": 0
+          }
+        },
+        "201": {
+          "_meta": {
+            "title": "Recast Room exact audio lock"
+          },
+          "class_type": "MiniMaxH3ExactAudioLock",
+          "inputs": {
+            "audio_vae": [
+              "29",
+              0
+            ],
+            "av_latent": [
+              "1177",
+              1
+            ],
+            "legacy_start_frame": 0,
+            "mix_policy": "sum",
+            "overflow_policy": "crop",
+            "timed_audios.timed_audio_0": [
+              "200",
+              0
+            ]
+          }
+        },
+        "22": {
+          "_meta": {
+            "title": "Separate AV Latent"
+          },
+          "class_type": "LTXVSeparateAVLatent",
+          "inputs": {
+            "av_latent": [
+              "14",
+              0
+            ]
+          }
+        },
+        "29": {
+          "_meta": {
+            "title": "Load VAE"
+          },
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+          }
+        },
+        "3": {
+          "_meta": {
+            "title": "Load VAE"
+          },
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+          }
+        },
+        "45": {
+          "_meta": {
+            "title": "VAE Decode"
+          },
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "22",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "58": {
+          "_meta": {
+            "title": "ModelAttentionBackend"
+          },
+          "class_type": "ModelAttentionBackend",
+          "inputs": {
+            "attention": "comfy kitchen attention",
+            "model": [
+              "9",
+              0
+            ]
+          }
+        },
+        "586": {
+          "_meta": {
+            "title": "Character Swap (Guide Latent)"
+          },
+          "class_type": "LoraLoaderModelOnly",
+          "inputs": {
+            "lora_name": "minimax_h3_character_swap_v1.1_ref2va_fro.safetensors",
+            "model": [
+              "58",
+              0
+            ],
+            "strength_model": 1.0
+          }
+        },
+        "64": {
+          "_meta": {
+            "title": "Turbo LoRA"
+          },
+          "class_type": "LoraLoaderModelOnly",
+          "inputs": {
+            "lora_name": "experimental/minimax_h3_dmd_ref2va_8step_turbo_pruned.safetensors",
+            "model": [
+              "586",
+              0
+            ],
+            "strength_model": 1.0
+          }
+        },
+        "751": {
+          "_meta": {
+            "title": "Video Combine \ud83c\udfa5\ud83c\udd65\ud83c\udd57\ud83c\udd62"
+          },
+          "class_type": "VHS_VideoCombine",
+          "inputs": {
+            "audio": [
+              "1189",
+              5
+            ],
+            "crf": 14,
+            "filename_prefix": "openjutsu/b703393027e7",
+            "format": "video/h264-mp4",
+            "frame_rate": [
+              "1189",
+              2
+            ],
+            "images": [
+              "1111",
+              0
+            ],
+            "loop_count": 0,
+            "pingpong": false,
+            "pix_fmt": "yuv420p",
+            "save_metadata": true,
+            "save_output": true,
+            "trim_to_audio": false
+          }
+        },
+        "85": {
+          "_meta": {
+            "title": "Load CLIP"
+          },
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "device": "default",
+            "type": "minimax"
+          }
+        },
+        "9": {
+          "_meta": {
+            "title": "ModelSamplingMiniMaxH3"
+          },
+          "class_type": "MiniMaxH3SigmaShift",
+          "inputs": {
+            "model": [
+              "2",
+              0
+            ],
+            "shift_audio": 3,
+            "shift_video": 12
+          }
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/workflow",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "bytes": 1541,
+        "text_sha256": "e581fa2da91d38eaa44cd8939572aff32ed3905ea32076a13fcb5996c4f8ce93"
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/prompt",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "job_id": "b703393027e7",
+        "state": "queued"
+      },
+      "method": "POST",
+      "path": "/api/jobs/b703393027e7/run",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {},
+        "backend": "dry_run",
+        "job_id": "b703393027e7",
+        "message": "Deterministic dry-run generation",
+        "prompt_id": "dry-run-9adcef7370e7442e",
+        "state": "generating",
+        "uploads": {
+          "reference_1": "foundation-primary.png",
+          "reference_2": "foundation-secondary.png",
+          "source": "foundation-source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {},
+        "backend": "dry_run",
+        "job_id": "b703393027e7",
+        "message": "Copying deterministic fixture output",
+        "prompt_id": "dry-run-9adcef7370e7442e",
+        "state": "downloading",
+        "uploads": {
+          "reference_1": "foundation-primary.png",
+          "reference_2": "foundation-secondary.png",
+          "source": "foundation-source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {
+          "final": "final.mp4",
+          "generated": "generated.mp4",
+          "side_by_side": "source_vs_final.mp4"
+        },
+        "backend": "dry_run",
+        "job_id": "b703393027e7",
+        "message": "Deterministic dry-run generation complete",
+        "prompt_id": "dry-run-9adcef7370e7442e",
+        "state": "complete",
+        "uploads": {
+          "reference_1": "foundation-primary.png",
+          "reference_2": "foundation-secondary.png",
+          "source": "foundation-source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "bytes": 40472,
+        "text_sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64"
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/artifacts/generated",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "bytes": 55590,
+        "text_sha256": "6acf42e3e0ef4bf840919c39ba9cd9de46f7082047e068c7c7d712ab88aa89f6"
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/artifacts/final",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "bytes": 292760,
+        "text_sha256": "9bd1bf978afbf2afcabe3eaf638e6599a773303ddefe0ae08efbd2c5042307c2"
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/artifacts/side_by_side",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "jobs": [
+          {
+            "character_id": "char_e9fc66d52c5e464ee75b46c8",
+            "character_version": 1,
+            "config": {
+              "audio_mode": "auto",
+              "reference_names": [
+                "foundation-primary.png",
+                "foundation-secondary.png"
+              ],
+              "scheduler_steps": 8,
+              "seed": 117,
+              "video_name": "foundation-source.mp4",
+              "with_audio": true
+            },
+            "created_at": "2026-10-27T09:57:58.024430+00:00",
+            "job_id": "b703393027e7",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "prompt_sha256": "e581fa2da91d38eaa44cd8939572aff32ed3905ea32076a13fcb5996c4f8ce93",
+            "prompt_url": "/api/jobs/b703393027e7/prompt",
+            "reference_sha256s": [
+              "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",
+              "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072"
+            ],
+            "seed": 117,
+            "source_sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+            "workflow_sha256": "9adcef7370e7442efe8ffab3d661c85cdd55e45c804ffff5da56845757869102",
+            "workflow_url": "/api/jobs/b703393027e7/workflow"
+          }
+        ],
+        "project_id": "05fbbba0100c457ba0a78b85373f88a0"
+      },
+      "method": "GET",
+      "path": "/api/projects/05fbbba0100c457ba0a78b85373f88a0/jobs",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "character": {
+          "character_id": "char_e9fc66d52c5e464ee75b46c8",
+          "created_at": "2026-10-27T09:57:57.973758+00:00",
+          "description": "Generated journey reference",
+          "name": "Synthetic Performer",
+          "reference_asset_ids": [
+            "10e0753184ce4717b391f36431cd4f86",
+            "cd92ea4bb9c444b2b31d966a343ce758"
+          ],
+          "version": 1
+        },
+        "references": [
+          {
+            "asset_id": "10e0753184ce4717b391f36431cd4f86",
+            "created_at": "2026-10-27T09:57:57.972338+00:00",
+            "filename": "foundation-primary.png",
+            "media_type": "image/png",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "protected": true,
+            "role": "reference_1",
+            "sha256": "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",
+            "size_bytes": 473
+          },
+          {
+            "asset_id": "cd92ea4bb9c444b2b31d966a343ce758",
+            "created_at": "2026-10-27T09:57:57.973290+00:00",
+            "filename": "foundation-secondary.png",
+            "media_type": "image/png",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "protected": true,
+            "role": "reference_2",
+            "sha256": "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072",
+            "size_bytes": 473
+          }
+        ]
+      },
+      "method": "GET",
+      "path": "/api/characters/char_e9fc66d52c5e464ee75b46c8/versions/1",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "backend": "dry_run",
+        "ok": true,
+        "renderer": {
+          "backend": "dry_run",
+          "checked": true,
+          "code": "local_dry_run",
+          "message": "Dry run is local only and performs no AI inference or renderer connection.",
+          "ready": true
+        },
+        "renderer_ready": true,
+        "workflow": "openjutsu_h3_lipsync_local.json",
+        "workflow_exists": true
+      },
+      "method": "GET",
+      "path": "/api/health",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "bytes": 11395,
+        "text_sha256": "5a13317ce156ed16d4f1ef6b76456a9384d5763b2a0a02c60003261368bebfa9"
+      },
+      "method": "GET",
+      "path": "/",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "projects": [
+          {
+            "created_at": "2026-10-27T09:57:57.968386+00:00",
+            "name": "Foundation Journey",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "updated_at": "2026-10-27T09:57:57.968386+00:00"
+          }
+        ]
+      },
+      "method": "GET",
+      "path": "/api/projects",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "character": {
+          "character_id": "char_e9fc66d52c5e464ee75b46c8",
+          "created_at": "2026-10-27T09:57:57.973758+00:00",
+          "description": "Generated journey reference",
+          "name": "Synthetic Performer",
+          "reference_asset_ids": [
+            "10e0753184ce4717b391f36431cd4f86",
+            "cd92ea4bb9c444b2b31d966a343ce758"
+          ],
+          "version": 1
+        },
+        "references": [
+          {
+            "asset_id": "10e0753184ce4717b391f36431cd4f86",
+            "created_at": "2026-10-27T09:57:57.972338+00:00",
+            "filename": "foundation-primary.png",
+            "media_type": "image/png",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "protected": true,
+            "role": "reference_1",
+            "sha256": "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",
+            "size_bytes": 473
+          },
+          {
+            "asset_id": "cd92ea4bb9c444b2b31d966a343ce758",
+            "created_at": "2026-10-27T09:57:57.973290+00:00",
+            "filename": "foundation-secondary.png",
+            "media_type": "image/png",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "protected": true,
+            "role": "reference_2",
+            "sha256": "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072",
+            "size_bytes": 473
+          }
+        ]
+      },
+      "method": "GET",
+      "path": "/api/characters/char_e9fc66d52c5e464ee75b46c8/versions/1",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "jobs": [
+          {
+            "character_id": "char_e9fc66d52c5e464ee75b46c8",
+            "character_version": 1,
+            "config": {
+              "audio_mode": "auto",
+              "reference_names": [
+                "foundation-primary.png",
+                "foundation-secondary.png"
+              ],
+              "scheduler_steps": 8,
+              "seed": 117,
+              "video_name": "foundation-source.mp4",
+              "with_audio": true
+            },
+            "created_at": "2026-10-27T09:57:58.024430+00:00",
+            "job_id": "b703393027e7",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "prompt_sha256": "e581fa2da91d38eaa44cd8939572aff32ed3905ea32076a13fcb5996c4f8ce93",
+            "prompt_url": "/api/jobs/b703393027e7/prompt",
+            "reference_sha256s": [
+              "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",
+              "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072"
+            ],
+            "seed": 117,
+            "source_sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+            "workflow_sha256": "9adcef7370e7442efe8ffab3d661c85cdd55e45c804ffff5da56845757869102",
+            "workflow_url": "/api/jobs/b703393027e7/workflow"
+          }
+        ],
+        "project_id": "05fbbba0100c457ba0a78b85373f88a0"
+      },
+      "method": "GET",
+      "path": "/api/projects/05fbbba0100c457ba0a78b85373f88a0/jobs",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {
+          "final": "final.mp4",
+          "generated": "generated.mp4",
+          "side_by_side": "source_vs_final.mp4"
+        },
+        "backend": "dry_run",
+        "job_id": "b703393027e7",
+        "message": "Deterministic dry-run generation complete",
+        "prompt_id": "dry-run-9adcef7370e7442e",
+        "state": "complete",
+        "uploads": {
+          "reference_1": "foundation-primary.png",
+          "reference_2": "foundation-secondary.png",
+          "source": "foundation-source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/b703393027e7/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "created_at": "2026-10-27T09:57:58.900908+00:00",
+        "name": "Adjacent Switch",
+        "project_id": "008b531e6ac247fd963a460f5d79b0ef",
+        "updated_at": "2026-10-27T09:57:58.900908+00:00"
+      },
+      "method": "POST",
+      "path": "/api/projects",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "jobs": [],
+        "project_id": "008b531e6ac247fd963a460f5d79b0ef"
+      },
+      "method": "GET",
+      "path": "/api/projects/008b531e6ac247fd963a460f5d79b0ef/jobs",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "character": {
+          "character_id": "char_e9fc66d52c5e464ee75b46c8",
+          "created_at": "2026-10-27T09:57:57.973758+00:00",
+          "description": "Generated journey reference",
+          "name": "Synthetic Performer",
+          "reference_asset_ids": [
+            "10e0753184ce4717b391f36431cd4f86",
+            "cd92ea4bb9c444b2b31d966a343ce758"
+          ],
+          "version": 1
+        },
+        "references": [
+          {
+            "asset_id": "10e0753184ce4717b391f36431cd4f86",
+            "created_at": "2026-10-27T09:57:57.972338+00:00",
+            "filename": "foundation-primary.png",
+            "media_type": "image/png",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "protected": true,
+            "role": "reference_1",
+            "sha256": "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",
+            "size_bytes": 473
+          },
+          {
+            "asset_id": "cd92ea4bb9c444b2b31d966a343ce758",
+            "created_at": "2026-10-27T09:57:57.973290+00:00",
+            "filename": "foundation-secondary.png",
+            "media_type": "image/png",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "protected": true,
+            "role": "reference_2",
+            "sha256": "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072",
+            "size_bytes": 473
+          }
+        ]
+      },
+      "method": "GET",
+      "path": "/api/characters/char_e9fc66d52c5e464ee75b46c8/versions/1",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "job_id": "9dd6eeaa1b23",
+        "manifest": {
+          "job_id": "9dd6eeaa1b23",
+          "prompt_path": "prompt.txt",
+          "reference_1": "foundation-primary.png",
+          "reference_2": null,
+          "rights_attested": true,
+          "seed": 118,
+          "source": "foundation-source.mp4",
+          "word_schedule_path": null,
+          "workflow_path": "workflow.json"
+        },
+        "prompt_url": "/api/jobs/9dd6eeaa1b23/prompt",
+        "scene": {
+          "audio_channels": 1,
+          "duration_seconds": 1.0,
+          "fps": 24.0,
+          "has_audio": true,
+          "height": 180,
+          "path": "foundation-source.mp4",
+          "recommended": false,
+          "risks": [
+            "clip is shorter than 2 seconds; H3 has little performance context",
+            "resolution is too low for reliable face and mouth conditioning"
+          ],
+          "warnings": [
+            "manual shot review required: eyes visible, mouth visible, one target speaker, stable camera"
+          ],
+          "width": 320
+        },
+        "workflow_url": "/api/jobs/9dd6eeaa1b23/workflow"
+      },
+      "method": "POST",
+      "path": "/api/prepare",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "job_id": "9dd6eeaa1b23",
+        "state": "queued"
+      },
+      "method": "POST",
+      "path": "/api/jobs/9dd6eeaa1b23/run",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {},
+        "backend": "dry_run",
+        "job_id": "9dd6eeaa1b23",
+        "message": "Deterministic dry-run generation",
+        "prompt_id": "dry-run-dc1d5a69537e2946",
+        "state": "generating",
+        "uploads": {
+          "reference_1": "foundation-primary.png",
+          "reference_2": null,
+          "source": "foundation-source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/9dd6eeaa1b23/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {},
+        "backend": "dry_run",
+        "job_id": "9dd6eeaa1b23",
+        "message": "Copying deterministic fixture output",
+        "prompt_id": "dry-run-dc1d5a69537e2946",
+        "state": "downloading",
+        "uploads": {
+          "reference_1": "foundation-primary.png",
+          "reference_2": null,
+          "source": "foundation-source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/9dd6eeaa1b23/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "artifacts": {
+          "final": "final.mp4",
+          "generated": "generated.mp4",
+          "side_by_side": "source_vs_final.mp4"
+        },
+        "backend": "dry_run",
+        "job_id": "9dd6eeaa1b23",
+        "message": "Deterministic dry-run generation complete",
+        "prompt_id": "dry-run-dc1d5a69537e2946",
+        "state": "complete",
+        "uploads": {
+          "reference_1": "foundation-primary.png",
+          "reference_2": null,
+          "source": "foundation-source.mp4"
+        }
+      },
+      "method": "GET",
+      "path": "/api/jobs/9dd6eeaa1b23/status",
+      "status_code": 200
+    },
+    {
+      "body": {
+        "jobs": [
+          {
+            "character_id": "char_e9fc66d52c5e464ee75b46c8",
+            "character_version": 1,
+            "config": {
+              "audio_mode": "auto",
+              "reference_names": [
+                "foundation-primary.png",
+                "foundation-secondary.png"
+              ],
+              "scheduler_steps": 8,
+              "seed": 117,
+              "video_name": "foundation-source.mp4",
+              "with_audio": true
+            },
+            "created_at": "2026-10-27T09:57:58.024430+00:00",
+            "job_id": "b703393027e7",
+            "project_id": "05fbbba0100c457ba0a78b85373f88a0",
+            "prompt_sha256": "e581fa2da91d38eaa44cd8939572aff32ed3905ea32076a13fcb5996c4f8ce93",
+            "prompt_url": "/api/jobs/b703393027e7/prompt",
+            "reference_sha256s": [
+              "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",
+              "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072"
+            ],
+            "seed": 117,
+            "source_sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+            "workflow_sha256": "9adcef7370e7442efe8ffab3d661c85cdd55e45c804ffff5da56845757869102",
+            "workflow_url": "/api/jobs/b703393027e7/workflow"
+          }
+        ],
+        "project_id": "05fbbba0100c457ba0a78b85373f88a0"
+      },
+      "method": "GET",
+      "path": "/api/projects/05fbbba0100c457ba0a78b85373f88a0/jobs",
+      "status_code": 200
+    }
+  ],
+  "job_id": "b703393027e7",
+  "legacy_upload_only": {
+    "completed": true,
+    "explicit_run": true,
+    "job_id": "9dd6eeaa1b23",
+    "unrecorded_from_project": true
+  },
+  "media": {
+    "primary": {
+      "bytes": 473,
+      "filename": "foundation-primary.png",
+      "probe": {
+        "duration_seconds": 0.0,
+        "format": "png_pipe",
+        "streams": [
+          {
+            "codec_name": "png",
+            "codec_type": "video",
+            "height": 160,
+            "width": 160
+          }
+        ]
+      },
+      "sha256": "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343"
+    },
+    "secondary": {
+      "bytes": 473,
+      "filename": "foundation-secondary.png",
+      "probe": {
+        "duration_seconds": 0.0,
+        "format": "png_pipe",
+        "streams": [
+          {
+            "codec_name": "png",
+            "codec_type": "video",
+            "height": 160,
+            "width": 160
+          }
+        ]
+      },
+      "sha256": "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072"
+    },
+    "source": {
+      "bytes": 40472,
+      "filename": "foundation-source.mp4",
+      "probe": {
+        "duration_seconds": 1.0,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "height": 180,
+            "width": 320
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "height": null,
+            "width": null
+          }
+        ]
+      },
+      "sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64"
+    }
+  },
+  "prepared_config": {
+    "audio_mode": "auto",
+    "reference_names": [
+      "foundation-primary.png",
+      "foundation-secondary.png"
+    ],
+    "scheduler_steps": 8,
+    "seed": 117,
+    "video_name": "foundation-source.mp4",
+    "with_audio": true
+  },
+  "project": {
+    "name": "Foundation Journey",
+    "project_id": "05fbbba0100c457ba0a78b85373f88a0"
+  },
+  "rejected_prepares": {
+    "created_job_directories": 0,
+    "duplicate_basename_actionable": true,
+    "missing_project": true,
+    "missing_saved_reference": true,
+    "saved_and_uploaded_conflict": true,
+    "workspace_after": {
+      "character_versions": 1,
+      "prepared_jobs": 0,
+      "projects": 1
+    },
+    "workspace_before": {
+      "character_versions": 1,
+      "prepared_jobs": 0,
+      "projects": 1
+    },
+    "workspace_unchanged": true
+  },
+  "restart": {
+    "character_version_preserved": true,
+    "history_preserved": true,
+    "no_new_run_submitted_by_read_load": true,
+    "pre_switch_file_hashes_unchanged": true,
+    "prepared_config_preserved": true,
+    "project_preserved": true,
+    "workspace_after_restart_reads": {
+      "character_versions": 1,
+      "prepared_jobs": 1,
+      "projects": 1
+    },
+    "workspace_before": {
+      "character_versions": 1,
+      "prepared_jobs": 1,
+      "projects": 1
+    },
+    "workspace_final": {
+      "character_versions": 1,
+      "prepared_jobs": 1,
+      "projects": 2
+    }
+  },
+  "schema_version": "openjutsu.studio-foundation-http-trial.v1",
+  "terminal_status": {
+    "artifacts": {
+      "final": "final.mp4",
+      "generated": "generated.mp4",
+      "side_by_side": "source_vs_final.mp4"
+    },
+    "backend": "dry_run",
+    "job_id": "b703393027e7",
+    "message": "Deterministic dry-run generation complete",
+    "prompt_id": "dry-run-9adcef7370e7442e",
+    "state": "complete",
+    "uploads": {
+      "reference_1": "foundation-primary.png",
+      "reference_2": "foundation-secondary.png",
+      "source": "foundation-source.mp4"
+    }
+  }
+}

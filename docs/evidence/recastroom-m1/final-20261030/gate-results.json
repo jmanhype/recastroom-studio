@@ -1,0 +1,66 @@
+{
+  "substance": {
+    "command": [
+      "pvg",
+      "verify",
+      "tests/e2e/test_m1_journey.py",
+      "--include-tests",
+      "--format=text"
+    ],
+    "exit": 0,
+    "sha256": "8e983fdf659ab9302fecd5fe3aef5632fa58337534e7e227bcc96d8870077a03"
+  },
+  "e2e": {
+    "command": [
+      "pvg",
+      "verify",
+      "tests/e2e/test_m1_journey.py",
+      "--include-tests",
+      "--check-e2e",
+      "--format=text"
+    ],
+    "exit": 0,
+    "sha256": "2ea5bc419b2cc10412001791306ce17be6e0f4e3aa4ae733dcb5ab9295bb93f3"
+  },
+  "no-mock": {
+    "command": [
+      "pvg",
+      "verify",
+      "tests/e2e/test_m1_journey.py",
+      "--check-mocks",
+      "--format=text"
+    ],
+    "exit": 0,
+    "sha256": "553f95f76705f2bb05822f113cf9a4e93e10bd6527981ce9cf3ff38c1297a396"
+  },
+  "gates": {
+    "command": [
+      "pvg",
+      "gates",
+      "tests/e2e/test_m1_journey.py"
+    ],
+    "exit": 0,
+    "sha256": "d853a3b56fbce078acd0f576de1f1978bca0bce527265b4a7b3d5ac89e13bd88"
+  },
+  "tdd": {
+    "command": [
+      "pvg",
+      "story",
+      "verify-tdd",
+      "--range",
+      "48f466a..HEAD"
+    ],
+    "exit": 0,
+    "sha256": "8581552f76d2005a369d2520f43b767863c54c75ed4cd82533865651e7557ecf"
+  },
+  "diff-check": {
+    "command": [
+      "git",
+      "diff",
+      "--check",
+      "48f466a..HEAD"
+    ],
+    "exit": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

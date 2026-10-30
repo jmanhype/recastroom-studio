@@ -1,0 +1,196 @@
+{
+  "schema_version": "openjutsu.studio-foundation-cua-trial.v1",
+  "generated_at_utc": "2026-10-27",
+  "proof_layer": "separate agent-operated rendered-browser journey",
+  "browser": {
+    "tool": "mcp__cua_repl.js with ChatGPT in-app browser",
+    "rendered": true,
+    "visible": false,
+    "driven_by_python_helper": false
+  },
+  "binding": {
+    "host": "127.0.0.1",
+    "port": 18765,
+    "loopback_only": true,
+    "backend": "dry_run",
+    "creative_provider_submissions": 0
+  },
+  "synthetic_media": {
+    "source_unrecommended": {
+      "filename": "source.mp4",
+      "sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+      "resolution": "320x180",
+      "duration_seconds": 1
+    },
+    "source_recommended": {
+      "filename": "source-recommended.mp4",
+      "sha256": "9fc609c11dcf5c09088ed0f4479942fad09a458ebbe1951c2df8861ca539a4db",
+      "resolution": "640x360",
+      "duration_seconds": 2
+    },
+    "reference_1": {
+      "filename": "reference-1.png",
+      "sha256": "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343"
+    },
+    "reference_2": {
+      "filename": "reference-2.png",
+      "sha256": "0cd734b612f4b224e015ce135237a013f1d186c574c60bc78da12d144705d072"
+    }
+  },
+  "journey": {
+    "project": "CUA Saved Journey",
+    "character_version": "Synthetic Browser Performer v1",
+    "protected_references": 2,
+    "safe_asset_previews": [
+      {
+        "asset_id": "85664dc4fbd54358a6c8151d2d79d116",
+        "rendered_size": "160x160"
+      },
+      {
+        "asset_id": "27d4fbd3ed7a4d7d91ad2d34661a2a9f",
+        "rendered_size": "160x160"
+      }
+    ],
+    "unrecommended_prepared_job": {
+      "job_id": "68f4daf82717",
+      "run_allowed": false,
+      "reason": "browser preflight correctly blocked the 320x180 one-second source"
+    },
+    "saved_reference_job": {
+      "job_id": "56d3c861389d",
+      "selected_character_version": 1,
+      "explicit_run_clicked": true,
+      "state": "complete",
+      "backend": "dry_run",
+      "final_video": "/api/jobs/56d3c861389d/artifacts/final",
+      "comparison_video": "/api/jobs/56d3c861389d/artifacts/side_by_side"
+    },
+    "restart": {
+      "uvicorn_cycles": 2,
+      "same_temp_workspace": true,
+      "fresh_browser_tab": true,
+      "project_restored": true,
+      "character_version_restored": true,
+      "history_restored": true,
+      "result_section_hidden": true,
+      "run_button_disabled": true,
+      "automatic_run_submitted": false
+    },
+    "duplicate_basename": {
+      "http_status": 422,
+      "actionable_message": true,
+      "runnable_job_created": false,
+      "history_count_before_and_after": 2
+    },
+    "no_character_reset_then_uploaded_reference": {
+      "job_id": "8e062027459e",
+      "selected_character": "Upload references for this job",
+      "visible_project": "CUA Saved Journey",
+      "recorded_in_project_history": true
+    },
+    "final_project_switch": {
+      "switched_to_upload_only_and_back": true,
+      "history_count_after_switch": 3,
+      "old_history_preserved": true
+    }
+  },
+  "downloads_from_browser": [
+    {
+      "label": "Generated clip",
+      "bytes": 199846,
+      "sha256": "9fc609c11dcf5c09088ed0f4479942fad09a458ebbe1951c2df8861ca539a4db"
+    },
+    {
+      "label": "Final with audio",
+      "bytes": 293195,
+      "sha256": "3808e3f5fe843d04412438300e4810b303cb65ae48bfb4ec745b42a798090751"
+    },
+    {
+      "label": "Side-by-side review",
+      "bytes": 702861,
+      "sha256": "db440cf48dc07d865593c3f91c3191597b9eb8abd2375e75523e96242d3a897b"
+    }
+  ],
+  "persistence": {
+    "counts_before_restart": {
+      "projects": 1,
+      "character_versions": 1,
+      "prepared_jobs": 2
+    },
+    "counts_after_browser_journey": {
+      "projects": 1,
+      "character_versions": 1,
+      "prepared_jobs": 3
+    },
+    "pre_restart_media_config_and_db_seed_files_preserved": true,
+    "workspace_database_changed_for_expected_new_history": true,
+    "detailed_receipt": "browser-workspace-receipt.json"
+  },
+  "screenshots": [
+    {
+      "filename": "browser-01-project-created.jpg",
+      "bytes": 237918,
+      "sha256": "bf3e6c96e404ec148fc36457dfbe4f66003dcb8d7fc86c0dc7533eb824ec6fe9"
+    },
+    {
+      "filename": "browser-02-saved-character-references.jpg",
+      "bytes": 265685,
+      "sha256": "2e019e97c4f14ef3604efa76c2e1731506478662f32018ab5b11753bce0760f5"
+    },
+    {
+      "filename": "browser-03-saved-reference-prepared.jpg",
+      "bytes": 317225,
+      "sha256": "a3ecbde2937ebfa3b57b4003fa1091344021fad6b00ac883feadd68cbd04caf3"
+    },
+    {
+      "filename": "browser-04-explicit-dry-run-review.jpg",
+      "bytes": 374245,
+      "sha256": "34842a53124405287d3477e5cb149ad77ec9c82102d1a9b0cd10d32d84fe8ac8"
+    },
+    {
+      "filename": "browser-05-restart-reopened.jpg",
+      "bytes": 255369,
+      "sha256": "d6857e15e8b04311934bf2eb82a40f0d7544ac58539d730f5e3d5216a12c5366"
+    },
+    {
+      "filename": "browser-06-duplicate-basename-422.jpg",
+      "bytes": 277461,
+      "sha256": "3ae4f30af61bfb4955728ff7db4db2e74506339bc87c6771cc1917bb074a7b9b"
+    },
+    {
+      "filename": "browser-07-no-character-uploaded-references-project-history.jpg",
+      "bytes": 294907,
+      "sha256": "d29a1000a896e1fe42b8f7732947b72cbbf49814cd74c552d0f9de667bbfa155"
+    },
+    {
+      "filename": "browser-08-project-switch-preserved-history.jpg",
+      "bytes": 272289,
+      "sha256": "8809e9ce2ae13197abcd5aed18291dfcea056db679cbd134585c8f30477047e7"
+    }
+  ],
+  "server_logs": [
+    {
+      "filename": "browser-cycle-1.log",
+      "sha256": "6e510dd70c1f95613d783afbe581ae87f522f5af51b4ba96db1ff1614b4cc8a0"
+    },
+    {
+      "filename": "browser-cycle-2.log",
+      "sha256": "231c5f5791c0e77dded9617976bd926dea6c3a19674a13d0f17582e035dc8968"
+    }
+  ],
+  "cleanup": {
+    "owned_browser_tabs_remaining": 0,
+    "owned_uvicorn_listeners_remaining": 0,
+    "final_listener_probe": "no listener on 127.0.0.1:18765"
+  },
+  "observations": [
+    "The first label-triggered file chooser timed out and reset the CUA kernel; one retry using the documented input/filechooser flow succeeded.",
+    "Two exact-text waits missed longer concatenated UI messages; subsequent DOM state inspection captured the actual visible messages. This was a locator mismatch, not an application failure.",
+    "ResourceTiming was not used or pursued."
+  ],
+  "public_safe_scan": {
+    "absolute_user_paths": false,
+    "credential_names": false,
+    "all_screenshots_jpeg_with_jpg_extension": true
+  }
+}

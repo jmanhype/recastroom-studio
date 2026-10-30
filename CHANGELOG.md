@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 — 2026-10-30
+
+- Added the M1 connected studio: original-shot projects, durable takes and replay receipts, selective challengers, editable export maps, and native browser export evidence.
+- Added project/character persistence, protected reference bundles, safe prepared-job history, readiness and backend modes.
+- Added the deterministic sound-design review surface and public result gallery.
+- Preserved the operator attestation as a production declaration; RecastRoom still does not verify legal rights, ownership, consent, model licensing, or clearance.
+
+## 0.1.2 — 2026-10-26
+
 ## 0.1.2 — 2026-10-26
 
 - Corrected public positioning: RecastRoom records an operator attestation but does not verify legal rights, ownership, consent, model licensing, or clearance.

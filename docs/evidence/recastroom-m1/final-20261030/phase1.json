@@ -1,0 +1,237 @@
+{
+  "consoleErrors": [],
+  "initialState": {
+    "m1": {
+      "attempts": [],
+      "authorizedAttemptId": null,
+      "authorizedRequestKey": null,
+      "challengerAttemptId": null,
+      "challengerIncumbentTakeId": null,
+      "challengerRequestKey": null,
+      "editRevision": null,
+      "exportRecord": null,
+      "exportTakes": {},
+      "profiles": [
+        {
+          "execution_mode": "dry_run",
+          "h3_qualified": false,
+          "non_inference": true,
+          "pin": {
+            "adapter_version": "local_cpu_router-1",
+            "endpoint_fingerprint": "c3f575f84b5c61336316eaca48172c7338476480f255322a84668c90cb5c7d7e",
+            "profile_id": "cpu_non_inference_routing_v1",
+            "raw_graph_sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
+            "recipe_id": "offline-source-routing",
+            "version": "cpu-dryrun-v1"
+          },
+          "qualification_scope": "offline_cpu_routing_only"
+        }
+      ],
+      "requestEpoch": 8,
+      "resolvedOperation": null,
+      "retainedReplayImport": null,
+      "scenes": [
+        {
+          "id": "scene_38862d608a69479a9073eb00754ba91e",
+          "project_id": "8255b214f20a4be4b3418ba66edfb098",
+          "revision": 1,
+          "shots": [
+            {
+              "id": "shot-a",
+              "kind": "render",
+              "source_range": {
+                "end": 8,
+                "start": 0
+              }
+            },
+            {
+              "id": "shot-b",
+              "kind": "render",
+              "source_range": {
+                "end": 16,
+                "start": 8
+              }
+            },
+            {
+              "id": "shot-c",
+              "kind": "pass_through",
+              "source_range": {
+                "end": 24,
+                "start": 16
+              }
+            }
+          ],
+          "source": {
+            "asset_id": "24bda105e5354f1f97df9640a4b5f203",
+            "cfr": true,
+            "frame_count": 24,
+            "has_audio": true,
+            "sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+            "timebase": {
+              "den": 24,
+              "num": 1
+            }
+          }
+        }
+      ],
+      "selectedTakeId": null,
+      "selectionRevision": 0,
+      "sourceTiming": {
+        "asset_id": "24bda105e5354f1f97df9640a4b5f203",
+        "cfr": true,
+        "frame_count": 24,
+        "has_audio": true,
+        "sha256": "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64",
+        "timebase": {
+          "den": 24,
+          "num": 1
+        }
+      },
+      "takes": [],
+      "wordTiming": null
+    },
+    "projects": {
+      "characterId": "char_e645ecb9373068f146fd0b28",
+      "characterVersion": 1,
+      "projectId": "8255b214f20a4be4b3418ba66edfb098",
+      "requestEpoch": 3
+    }
+  },
+  "mode": "phase1",
+  "nonLocalRequests": [],
+  "requests": [
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/",
+      "url": "http://127.0.0.1:57955/"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/styles.css",
+      "url": "http://127.0.0.1:57955/styles.css"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/projects.js",
+      "url": "http://127.0.0.1:57955/projects.js?v=20261027d"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/m1.js",
+      "url": "http://127.0.0.1:57955/m1.js?v=20261027"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/studio.js",
+      "url": "http://127.0.0.1:57955/studio.js?v=20261027"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects",
+      "url": "http://127.0.0.1:57955/api/projects"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/characters",
+      "url": "http://127.0.0.1:57955/api/characters"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/workflows",
+      "url": "http://127.0.0.1:57955/api/workflows"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/health",
+      "url": "http://127.0.0.1:57955/api/health"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects",
+      "url": "http://127.0.0.1:57955/api/projects"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/jobs",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/jobs"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/characters",
+      "url": "http://127.0.0.1:57955/api/characters"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/recipes"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/assets/409dc1a4436f441a98e6fff7cc8626e4",
+      "url": "http://127.0.0.1:57955/api/assets/409dc1a4436f441a98e6fff7cc8626e4"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/assets/8e01fff0a6e741cb812a071690ec15d0",
+      "url": "http://127.0.0.1:57955/api/assets/8e01fff0a6e741cb812a071690ec15d0"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/sources",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/sources"
+    },
+    {
+      "method": "POST",
+      "origin": "http://127.0.0.1:57955",
+      "path": "/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes",
+      "url": "http://127.0.0.1:57955/api/projects/8255b214f20a4be4b3418ba66edfb098/scenes"
+    }
+  ],
+  "resourceErrors": []
+}

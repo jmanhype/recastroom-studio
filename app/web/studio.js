@@ -54,7 +54,8 @@
   const rendererMessage = (payload = health) => payload?.renderer?.message || 'The legacy renderer is not verified. Check the connection again.';
   function readinessStates() {
     const hasSource = Boolean($('source').files.length);
-    const hasReference = Boolean($('reference_1').files.length);
+    const savedReferences = window.ProjectsUI?.getReferenceState?.();
+    const hasReference = Boolean($('reference_1').files.length || savedReferences?.ready);
     const hasRights = $('rights').checked;
     const customGraph = Boolean($('workflow').files.length);
     const connectionReady = Boolean(health?.ok && runConnectionReady(health));
@@ -69,7 +70,7 @@
               ? { state: 'warning', label: 'Preflight warning' }
               : { state: 'pending', label: 'Selected · preflight pending' },
       reference: hasReference
-        ? { state: 'pending', label: 'Selected' }
+        ? { state: 'pending', label: savedReferences?.ready ? 'Saved version selected' : 'Selected' }
         : { state: 'blocked', label: 'Missing' },
       rights: hasRights
         ? { state: 'ok', label: 'Permission recorded' }
@@ -116,7 +117,9 @@
     });
   }
   function controls() {
-    const ready = $('source').files.length && $('reference_1').files.length && $('rights').checked;
+    const savedReferences = window.ProjectsUI?.getReferenceState?.();
+    const ready = $('source').files.length
+      && ($('reference_1').files.length || Boolean(savedReferences?.ready)) && $('rights').checked;
     $('submit').disabled = !ready || busy || !health?.ok || !health?.workflow_exists;
     $('submit').textContent = busy ? 'Working…' : job ? 'Prepare a new job ↗' : 'Prepare workflow ↗';
     $('prepare-help').textContent = busy ? 'Wait for this request, or reset to start over.' : !health?.ok
@@ -258,6 +261,13 @@
         : 'Custom graph cleared. The production Recast Room graph will be used.';
     }
   });
+  document.addEventListener('projects:selection-change', () => {
+    // Do not abort startup catalog/health probes when no prepared result exists.
+    if (job || busy || running) invalidate();
+    // Saved and uploaded references are alternatives; either change needs fresh consent.
+    $('rights').checked = false;
+    preview('reference_1'); preview('reference_2'); controls();
+  });
   $('source-preview').addEventListener('error', () => { $('source-note').textContent = 'Browser preview unavailable for this file. Try an MP4, or let server preflight inspect it.'; });
   $('source-preview').addEventListener('loadedmetadata', () => { $('source-note').textContent = 'Preview ready. Inspect your source before preparing.'; });
   $('archive-search').addEventListener('click', () => { searchArchive(); });
@@ -265,6 +275,7 @@
   $('reset').addEventListener('click', () => {
     HTMLFormElement.prototype.reset.call(form); invalidate(); ['source', 'reference_1', 'reference_2'].forEach(preview);
     selectedWorkflow = 'recast-room'; selectWorkflow(selectedWorkflow, 'Recast Room selected.');
+    document.dispatchEvent(new CustomEvent('studio:reset'));
     $('source-note').textContent = 'MP4, MOV or MKV. Some formats may not preview in your browser.';
     $('source').focus();
   });
@@ -276,6 +287,10 @@
     $('job-label').textContent = 'PREFLIGHT'; $('output').textContent = 'Uploading your selections and inspecting the source…';
     setStep('prepare'); controls();
     const data = new FormData(form); data.set('rights_attested', String($('rights').checked));
+    for (const name of ['project_id', 'character_id', 'character_version', 'reference_2', 'words', 'workflow']) {
+      const value = data.get(name);
+      if (value === '' || (value instanceof File && !value.name)) data.delete(name);
+    }
     try {
       const payload = await request('/api/prepare', { method: 'POST', body: data });
       if (!isCurrent(version, null)) return;
@@ -285,6 +300,7 @@
       $('output').textContent = recommended ? 'Preflight recommends this source. Your workflow is prepared; nothing has been generated yet.' : 'Workflow prepared, but this source did not pass the recommendation check. Replace the clip before running.';
       addLink('prepared-links', `/api/jobs/${job}/workflow`, 'Workflow JSON');
       addLink('prepared-links', `/api/jobs/${job}/prompt`, 'Prompt'); setStep('run');
+      document.dispatchEvent(new CustomEvent('projects:prepared', {detail: payload}));
     } catch (error) { if (version === epoch) { $('stage').textContent = 'PREPARATION STOPPED'; $('output').textContent = 'No runnable job was prepared.'; showError(`Could not prepare: ${error.message} Check your media and timing JSON, then prepare again.`); } }
     finally { if (version === epoch) { busy = false; controls(); } }
   });

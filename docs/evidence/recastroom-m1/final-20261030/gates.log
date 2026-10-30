@@ -1,0 +1,3 @@
+[WARN] complexity tests/e2e/test_m1_journey.py test_real_chrome_m1_journey_restart_worker_replay_review_and_export 29>15  (CCN 29 at line 481)
+[WARN] file_loc tests/e2e/test_m1_journey.py 597>400  (597 non-blank lines)
+GATES: PASS (2 warn, 0 skipped)

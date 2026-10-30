@@ -1,0 +1,124 @@
+[
+  {
+    "profile": "managed-inherited",
+    "root": "<STORY_WORKTREE>",
+    "head": "1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f",
+    "command": [
+      "<APP>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "exit": 0,
+    "timeout_seconds": 900,
+    "removed_environment_names": [
+      "ANTHROPIC_API_KEY",
+      "ANTHROPIC_AUTH_TOKEN",
+      "LETTA_API_KEY",
+      "OPENAI_API_KEY",
+      "ZHIPU_API_KEY",
+      "QSTASH_TOKEN",
+      "QSTASH_CURRENT_SIGNING_KEY",
+      "QSTASH_NEXT_SIGNING_KEY",
+      "GLM_API_KEY"
+    ],
+    "strict_environment": null,
+    "summary": "393 passed, 1 warning in 180.91s (0:03:00)",
+    "log_sha256": "32b5ca5ab81a95102c4762c5ae3f770ddb9d20cab73605a373b7caf7282a2251",
+    "test_sha256": "109c403c025192832e2f5d0915894bec85d3c409992e27c9be7e94197d985b5b"
+  },
+  {
+    "profile": "managed-strict",
+    "root": "<STORY_WORKTREE>",
+    "head": "1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f",
+    "command": [
+      "/usr/bin/env",
+      "-i",
+      "PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+      "HOME=<EXTERNAL_EVIDENCE>/matrix/managed-strict-home",
+      "TMPDIR=<EXTERNAL_EVIDENCE>/matrix/managed-strict-tmp",
+      "PYTHONPATH=src",
+      "GIT_ALLOW_PROTOCOL=__recastroom_local_only__",
+      "OJ_VQYG_EVIDENCE=<EXTERNAL_EVIDENCE>/matrix/managed-strict-browser",
+      "<APP>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "exit": 0,
+    "timeout_seconds": 900,
+    "removed_environment_names": [],
+    "strict_environment": {
+      "PATH": "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+      "HOME": "<EXTERNAL_EVIDENCE>/matrix/managed-strict-home",
+      "TMPDIR": "<EXTERNAL_EVIDENCE>/matrix/managed-strict-tmp",
+      "PYTHONPATH": "src",
+      "GIT_ALLOW_PROTOCOL": "__recastroom_local_only__",
+      "OJ_VQYG_EVIDENCE": "<EXTERNAL_EVIDENCE>/matrix/managed-strict-browser"
+    },
+    "summary": "393 passed, 1 warning in 178.21s (0:02:58)",
+    "log_sha256": "4dbb55c8a95a16c379deaf0cdd12298c8fa51abbcf3e198bab5059fd251f43a1",
+    "test_sha256": "109c403c025192832e2f5d0915894bec85d3c409992e27c9be7e94197d985b5b"
+  },
+  {
+    "profile": "ordinary-inherited",
+    "root": "<EXTERNAL_EVIDENCE>/matrix/ordinary-archive",
+    "head": "1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f",
+    "command": [
+      "<APP>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "exit": 0,
+    "timeout_seconds": 900,
+    "removed_environment_names": [
+      "ANTHROPIC_API_KEY",
+      "ANTHROPIC_AUTH_TOKEN",
+      "LETTA_API_KEY",
+      "OPENAI_API_KEY",
+      "ZHIPU_API_KEY",
+      "QSTASH_TOKEN",
+      "QSTASH_CURRENT_SIGNING_KEY",
+      "QSTASH_NEXT_SIGNING_KEY",
+      "GLM_API_KEY"
+    ],
+    "strict_environment": null,
+    "summary": "393 passed, 1 warning in 176.83s (0:02:56)",
+    "log_sha256": "96820c54c91d7c4f59b5822f8e9cb839bc54a70cc72a5a0bddf12010b701c3b0",
+    "test_sha256": "109c403c025192832e2f5d0915894bec85d3c409992e27c9be7e94197d985b5b"
+  },
+  {
+    "profile": "ordinary-strict",
+    "root": "<EXTERNAL_EVIDENCE>/matrix/ordinary-archive",
+    "head": "1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f",
+    "command": [
+      "/usr/bin/env",
+      "-i",
+      "PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+      "HOME=<EXTERNAL_EVIDENCE>/matrix/ordinary-strict-home",
+      "TMPDIR=<EXTERNAL_EVIDENCE>/matrix/ordinary-strict-tmp",
+      "PYTHONPATH=src",
+      "GIT_ALLOW_PROTOCOL=__recastroom_local_only__",
+      "OJ_VQYG_EVIDENCE=<EXTERNAL_EVIDENCE>/matrix/ordinary-strict-browser",
+      "<APP>/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "exit": 0,
+    "timeout_seconds": 900,
+    "removed_environment_names": [],
+    "strict_environment": {
+      "PATH": "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+      "HOME": "<EXTERNAL_EVIDENCE>/matrix/ordinary-strict-home",
+      "TMPDIR": "<EXTERNAL_EVIDENCE>/matrix/ordinary-strict-tmp",
+      "PYTHONPATH": "src",
+      "GIT_ALLOW_PROTOCOL": "__recastroom_local_only__",
+      "OJ_VQYG_EVIDENCE": "<EXTERNAL_EVIDENCE>/matrix/ordinary-strict-browser"
+    },
+    "summary": "393 passed, 1 warning in 179.58s (0:02:59)",
+    "log_sha256": "0652d9993e15852540cd2d0a46cc39c100263f856614a8f07e99030002877d05",
+    "test_sha256": "109c403c025192832e2f5d0915894bec85d3c409992e27c9be7e94197d985b5b"
+  }
+]

@@ -164,7 +164,7 @@ def main() -> int:
         if errors:
             raise SystemExit("filtered release tree failed audit:\n" + "\n".join(errors))
         content_tree = content_tree_digest(staging)
-    write_deterministic_zip(staging, output, f"recastroom-studio-{release}")
+        write_deterministic_zip(staging, output, f"recastroom-studio-{release}")
 
     receipt = {
         "schema_version": "openjutsu.release-archive.v1",

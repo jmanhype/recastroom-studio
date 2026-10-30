@@ -6,6 +6,20 @@ Same take. New lead.
 
 RecastRoom Studio is an open-source creative workspace built around **MiniMax H3 Ref2VA**, **ComfyUI**, interchangeable Comfy API workflows, and performance-preserving character replacement. Its supported app and CLI paths require a recorded operator attestation before generation; RecastRoom does **not** verify legal rights, ownership, consent, model licensing, or clearance.
 
+## M1 local evidence snapshot — 2026-10-30 UTC
+
+The native three-shot browser journey was tested at `1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f`:
+CPU dry-run and retained replay only, using `openjutsu-cpu-routing-windows-v1-20261027`.
+Managed worktree and ordinary source archive, each in inherited and strict `env -i`
+environments, ran `APP/.venv/bin/python -m pytest -q`: **393 passed, 1 known
+Starlette deprecation warning per profile**, exit 0, no skipped tests.
+The journey covers native upload/cuts, pending-attempt restart, selective challenger,
+review/selection, and an actual trimmed/reordered/audio-mapped download.
+See [dated receipts, exact commands, limits and hashes](docs/evidence/recastroom-m1/final-20261030/README.md).
+This is a dated offline test result, not milestone acceptance or deployment readiness.
+Live H3/provider lookup/cancellation qualification, deployment and publication remain
+**OWNER_BLOCKED**. The existing attestation control records a declaration, not legal clearance.
+
 Public-brand rationale and collision evidence: [`docs/BRANDING.md`](docs/BRANDING.md).
 
 It is a practical answer to Comfy's **#OpenSourceHiggsfield** challenge: turn the expensive “put a different performer into this clip” workflow into a reproducible app people can run, inspect, fork, and improve.

@@ -1,0 +1,11 @@
+{
+  "command": "cd managed story worktree && APP/.venv/bin/python -m pytest -q tests/e2e/test_m1_journey.py",
+  "environment": "inherited host environment with isolated pytest TMPDIR and OJ_VQYG_EVIDENCE external evidence root",
+  "exit": 0,
+  "head": "6ccfa7ccd064628ff9edf2f72c40903688526fa1",
+  "known_browser_404": "favicon.ico only; no browser JavaScript page errors",
+  "log_sha256": "770bb991d80d2bbbefe7e41fa0bb67a4468c36d4f39860f1d0ec9b13a3c6f632",
+  "skipped": 0,
+  "source_sha256": "621da3125e9e21c745a233d70cc52111fd90172d10c7096c6c04e6a56cc6254d",
+  "summary": "1 passed in 19.09s"
+}

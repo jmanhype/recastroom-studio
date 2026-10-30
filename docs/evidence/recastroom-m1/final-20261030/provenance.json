@@ -1,0 +1,10 @@
+{
+  "tested_commit": "1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f",
+  "source_sha256": "109c403c025192832e2f5d0915894bec85d3c409992e27c9be7e94197d985b5b",
+  "raw_matrix_sha256": "1d81f481385cf7452aaf1f8dc526d8f28f582467a3cc55842d72c0f44cc8dee3",
+  "canonical_browser_profile": "managed-strict",
+  "profiles": 4,
+  "historical_attempts": "All 19 initial attempts retained externally unchanged; 17 failed/errored, 2 passed",
+  "current_focused_attempts": "1 PASS; 2 harness teardown AttributeError FAIL; 3 corrected PASS",
+  "redaction": "Workspace, evidence, home and temporary directory aliases replace local filesystem prefixes in public text; four whitespace-only traceback lines in focused-2.log were normalized for diff hygiene. Raw external logs remain unchanged."
+}

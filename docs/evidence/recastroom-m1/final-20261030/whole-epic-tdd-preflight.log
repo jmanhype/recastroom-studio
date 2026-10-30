@@ -1,0 +1,46 @@
+[hard-tdd] range cb91c0da6f65218a29d6d24f5a92ec3de9f35c44..HEAD: checked 63 commit(s), skipped 15 merge(s)
+[hard-tdd] FAIL: 22 commit(s) edited tests without a "tdd-red" or "[test-edit-authorized]" marker:
+  d5aadd733945 wip(OJ-2asm): preserve failing export diagnostics over budget
+      tests/test_m1_export.py
+  00b7a83a5b32 fix(OJ-c5nr): apply qualified CPU window authority
+      tests/test_m1_takes.py
+  5d2dbdb6a87e fix(OJ-c5nr): enforce nullable carriers and typed windows
+      tests/test_m1_takes.py
+  2b31432440ce fix(OJ-c5nr): verify replay timing and provenance subsets
+      tests/test_m1_takes.py
+  780b587d771d test(OJ-c5nr): broaden carrier and provenance invariants
+      tests/test_m1_takes.py
+  a8871faeefc4 feat(OJ-40ny): expose explicit reconciliation and saved attempt controls
+      tests/test_m1_worker.py
+  908186c45d1b fix(OJ-40ny): require observed completion before recovery download
+      tests/test_m1_worker.py
+  f0fd809ac311 fix(OJ-40ny): lazily retain worker lifetime and fence protocol recovery
+      tests/test_m1_worker.py
+  c57e52d9cf3e fix(OJ-40ny): enforce lifetime recovery and protocol neutrality
+      tests/test_m1_worker.py
+  1aa43e357d6c fix(OJ-40ny): hold one worker epoch across drained attempts
+      tests/test_m1_worker.py
+  ead0477a0434 test(OJ-ikgp): verify protected outcome guards and durable cancel watermark
+      tests/test_m1_attempt_protocol.py
+  e0deb309860e fix(OJ-ikgp): checkpoint known outcome and cancel consumption protocol
+      tests/test_m1_attempt_protocol.py
+  578454511255 fix(OJ-ikgp): require literal provider cancellation evidence
+      tests/test_m1_attempt_protocol.py
+  031e20564bd6 test(OJ-ikgp): harden cancellation integrity and live HTTP concurrency proof
+      tests/test_m1_attempt_protocol.py
+  4484dc1f6263 fix(OJ-b5fj): render bounded graph summaries
+      tests/test_m1_resolution.py
+  0fc31e5c4418 test(OJ-b5fj): isolate trusted preparation role tampering
+      tests/test_m1_resolution.py
+  8adb2094e3fb fix(OJ-b5fj): verify trusted preparation roles atomically
+      tests/test_m1_resolution.py
+  0490dd55d8eb fix(OJ-b5fj): atomically bind concrete preparation
+      tests/test_m1_resolution.py
+  8c7d0639f025 feat(OJ-b5fj): enforce finite CPU resolution contracts
+      tests/test_m1_resolution.py
+  164c82739e75 fix(OJ-b5fj): harden resolution boundary integrity
+      tests/test_m1_resolution.py
+  09aa3419c4b6 test(OJ-7oxv): resolve scene test tools portably
+      tests/test_m1_scenes.py
+  b6185a2cb003 fix(OJ-7oxv): enforce DTO and migration invariants
+      tests/test_m1_scenes.py

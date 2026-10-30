@@ -1,4 +1,22 @@
-# Openjutsu Studio status — 2026-10-16
+# RecastRoom Studio — local evidence snapshot, 2026-10-30 UTC
+
+M1 native browser proof at tested SHA `1ad5c82aaa027a1c1034ff7c7cec183d0d2cab6f`:
+`APP/.venv/bin/python -m pytest -q` returned **393 passed, 1 known Starlette
+deprecation warning**, exit 0 in each managed/ordinary inherited/strict environment.
+The pinned `openjutsu-cpu-routing-windows-v1-20261027` table qualifies only measured
+CPU routing here; CPU dry-run and retained replay remain non-inference/offline evidence.
+[Receipts and hashes](docs/evidence/recastroom-m1/final-20261030/README.md) distinguish
+real known-ID local recovery from the explicitly offline unknown-state presentation fixture.
+Independent PM/Anchor acceptance and the coordinator's actual post-merge gate remain separate.
+Whole-epic historical TDD preflight has 22 unmarked test-edit commits requiring Anchor
+applicability review; the scoped capstone authorization check passed. No history was rewritten.
+Live H3/provider qualification, deployment and publication remain **OWNER_BLOCKED**.
+
+---
+
+# Historical record — Openjutsu Studio status, 2026-10-16
+
+Everything below is preserved historical reporting, not a current readiness or legal-enforcement claim.
 
 ## Completed in this pass
 

@@ -18,6 +18,28 @@ SOURCE = REPO / "tests/fixtures/synthetic_source.mp4"
 REFERENCE = REPO / "tests/fixtures/synthetic_reference.png"
 WORDS = REPO / "tests/fixtures/word_timings.json"
 ARTIFACTS = ("generated", "final", "side_by_side")
+SCENE_UI_INVENTORY = (
+    "A rights-aware workspace for MiniMax H3.",
+    "PERMISSION BEFORE PRODUCTION",
+    "Consent is part of the craft.",
+    "RecastRoom Studio is a rights aware Comfy workspace for MiniMax H3 performance recasting. Keep the take, camera, timing, and exact source audio while an authorized reference becomes the new lead.",
+    "A rights aware MiniMax H3 recasting workspace with exact source audio restoration, frame by frame review, and an open Comfy workflow.",
+    "RecastRoom is a rights aware Comfy workspace. The source take stays intact while an authorized reference becomes the new lead.",
+    "Rights are a production state",
+    "Attestation gate",
+    "These are rights-clean keeper comparisons from the evidence corpus.",
+    "No attestation, no render",
+    "Run one rights aware proof",
+    "Start a rights aware dry run",
+)
+LEGACY_AUDIO_CLAIMS = (
+    "23.8 second proof · exact source audio restored · local deterministic review",
+    "Exact audio lock",
+    "The final render restores the original decoded audio",
+    "Exact audio restoration",
+    "The accepted proof restores the source dialogue",
+    "The accepted proof path restores the original decoded audio",
+)
 
 
 class ControlsParser(HTMLParser):
@@ -175,6 +197,36 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "@media(prefers-reduced-motion:reduce)" in css
     assert "animation:none!important" in css
     assert "transition:none!important" in css
+
+
+def test_landing_leads_with_workflow_and_scopes_audio_proof(studio):
+    _, client = studio
+
+    landing = client.get("/landing.html")
+    assert landing.status_code == 200
+    assert landing.headers["content-type"].startswith("text/html")
+
+    home = client.get("/")
+    assert home.status_code == 200
+    served_ui = home.text + landing.text
+    for promotional_copy in SCENE_UI_INVENTORY:
+        assert promotional_copy not in served_ui
+    for legacy_audio_claim in LEGACY_AUDIO_CLAIMS:
+        assert legacy_audio_claim not in landing.text
+
+    assert "From original shot to reviewed export." in home.text
+    assert "Discovery metadata does not bypass the operator attestation gate." in home.text
+    assert "From original shot to final export" in landing.text
+    assert "selected take, edit map, and export evidence" in landing.text
+    assert "Historical 23.8-second demo · stream-copy evidence is keeper-specific" in landing.text
+    assert "RecastRoom freezes the edit map, preserves take history, and makes export checks repeatable." in landing.text
+    assert "Shot / take / export" in landing.text
+    assert "Historical keeper · PCM max delta 0" in landing.text
+    assert "Historical keeper audio" in landing.text
+    assert "edited exports use a codec-aware edit map" in landing.text
+    assert "edited exports validate a codec-aware edit map" in landing.text
+    assert "Source and likeness permissions" in landing.text
+    assert "cannot prove legal clearance" in landing.text
 
 
 def test_real_dry_run_flow_requires_consent_and_serves_only_completed_artifacts(studio, tmp_path):
