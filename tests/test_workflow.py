@@ -61,11 +61,11 @@ def test_configure_workflow_mutates_known_nodes() -> None:
     assert result["201"]["inputs"]["legacy_start_frame"] == 0
 
 
-def test_bundled_workflow_is_c1_v4_contract() -> None:
+def test_bundled_workflow_is_recastroom_contract() -> None:
     from pathlib import Path
 
     workflow = load_workflow(
-        Path(__file__).resolve().parents[1] / "workflows/openjutsu_h3_lipsync_local.json"
+        Path(__file__).resolve().parents[1] / "workflows/recastroom_h3_workflow.json"
     )
     assert "1192" not in workflow
     assert workflow["586"]["inputs"]["lora_name"] == "minimax_h3_character_swap_v1.1_ref2va_fro.safetensors"

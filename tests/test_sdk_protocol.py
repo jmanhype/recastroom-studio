@@ -94,7 +94,7 @@ def protocol(tmp_path, monkeypatch):
     thread.start()
     monkeypatch.setenv("COMFY_BASE_URL", state.url)
     monkeypatch.setenv("COMFY_SDK_ASSET_BRIDGE", "openjutsu-v1")
-    state.workflow = json.loads((ROOT / "workflows/openjutsu_h3_lipsync_local.json").read_text())
+    state.workflow = json.loads((ROOT / "workflows/recastroom_h3_workflow.json").read_text())
     state.inputs = {}
     for name, suffix in (("source", ".mp4"), ("reference_1", ".png"), ("reference_2", ".png")):
         path = tmp_path / (name + suffix)

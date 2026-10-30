@@ -4,7 +4,7 @@ RecastRoom Studio does not redistribute model weights. The bundled ComfyUI API
 workflow expects a self-hosted ComfyUI installation with the following upstream
 assets already installed. Each model remains under its upstream license.
 
-| Pipeline role | Asset used by `workflows/openjutsu_h3_lipsync_local.json` | Notes |
+| Pipeline role | Asset used by `workflows/recastroom_h3_workflow.json` | Notes |
 |---|---|---|
 | Video generator | `minimax_h3_ref2va_pruned_int8_convrot.safetensors` | MiniMax H3 Ref2VA int8 ConvRot; core H3 model |
 | Text/vision encoder | `qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors` | Qwen3-VL 32B MiniMax-H3 text/vision loader |

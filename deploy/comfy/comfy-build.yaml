@@ -1,7 +1,7 @@
 {
   "schema": "comfy-build/1",
   "id": null,
-  "name": "openjutsu-h3-dogfood-candidate",
+  "name": "recastroom-h3-candidate",
   "description": "Offline candidate only: pinned recorded refs and current public asset metadata; no prior-byte proof, no runnable-build or license claim.",
   "syncedRevision": null,
   "definition": {

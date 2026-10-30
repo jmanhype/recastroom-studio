@@ -46,7 +46,7 @@ class RecipeIntegrityError(RecipeResolutionError):
 
 
 ALLOWLIST_VERSION = "openjutsu-offline-routing-v1"
-WORKFLOW_PATH = Path(__file__).resolve().parents[2] / "workflows/openjutsu_h3_lipsync_local.json"
+WORKFLOW_PATH = Path(__file__).resolve().parents[2] / "workflows/recastroom_h3_workflow.json"
 OFFLINE_SOURCE_SHA256 = "2208c20f765c67042f6969f4564a2f2603fe66bbb9548282a6dfae19d77c2f64"
 OFFLINE_REFERENCE_SHA256 = (
     "4d3b4ed2652ce453e10fb8dc6f44b317f76aae37659c7021ef44b87422a86343",

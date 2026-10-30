@@ -14,7 +14,7 @@ def test_health_reports_bundled_workflow_without_local_paths() -> None:
     assert response.status_code == 200
     payload = response.json()
     assert payload["ok"] is True
-    assert payload["workflow"] == "openjutsu_h3_lipsync_local.json"
+    assert payload["workflow"] == "recastroom_h3_workflow.json"
     assert payload["workflow_exists"] is True
     assert "/Users/" not in response.text
 

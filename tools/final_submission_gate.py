@@ -168,7 +168,7 @@ def assess(commit: str, demo: Path, output: Path) -> dict:
         report["pip_check"] = run_check([sys.executable, "-m", "pip", "check"], package)
         for item, key in (("Working UI, CLI, timing, rights, workflow mutation, local dry-run upload-to-output", "tests"), ("Installed dependency consistency", "pip_check")):
             rows.append(row(item, "PASS" if report[key]["exit_code"] == 0 else "FAIL", f"gate.json:{key}"))
-        for item, path in (("OSS MIT license", "LICENSE"), ("Setup instructions", "docs/QUICKSTART.md"), ("Comfy API-format workflow", "workflows/openjutsu_h3_lipsync_local.json"), ("Screenshots", "docs/images/app-landing.png"), ("API examples", "docs/API_EXAMPLES.md")):
+        for item, path in (("OSS MIT license", "LICENSE"), ("Setup instructions", "docs/QUICKSTART.md"), ("Comfy API-format workflow", "workflows/recastroom_h3_workflow.json"), ("Screenshots", "docs/images/app-landing.png"), ("API examples", "docs/API_EXAMPLES.md")):
             exists = (package / path).is_file()
             rows.append(row(item, "PASS" if exists else "FAIL", path + (" sha256=" + sha256(package / path) if exists else " missing")))
         try:

@@ -28,15 +28,15 @@ The expected CLI version for this release candidate is `0.1.1`.
 ## 2. Confirm the bundled workflow
 
 ```bash
-test -f workflows/openjutsu_h3_lipsync_local.json
-python -m json.tool workflows/openjutsu_h3_lipsync_local.json >/dev/null
+test -f workflows/recastroom_h3_workflow.json
+python -m json.tool workflows/recastroom_h3_workflow.json >/dev/null
 ```
 
 ## 3. Start the app
 
 ```bash
 export RECASTROOM_COMFY_URL="http://127.0.0.1:8188"
-export RECASTROOM_WORKFLOW="$PWD/workflows/openjutsu_h3_lipsync_local.json"
+export RECASTROOM_WORKFLOW="$PWD/workflows/recastroom_h3_workflow.json"
 uvicorn app.main:app --reload --port 8768
 ```
 

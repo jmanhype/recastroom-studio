@@ -1,6 +1,6 @@
 # Workflows
 
-## `openjutsu_h3_lipsync_local.json`
+## `recastroom_h3_workflow.json`
 
 ComfyUI API-format graph for a self-hosted runtime:
 

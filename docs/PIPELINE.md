@@ -1,6 +1,6 @@
 # Pipeline
 
-RecastRoom Studio currently uses a 29-node MiniMax H3 Ref2VA C1 V4 graph optimized for one-person dialogue replacement.
+RecastRoom Studio currently uses a 29-node MiniMax H3 Ref2VA graph optimized for one-person dialogue replacement.
 
 ## Conditioning
 

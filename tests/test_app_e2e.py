@@ -168,14 +168,14 @@ def test_dry_run_backend_completes_upload_to_review_artifacts(tmp_path, monkeypa
         main.JOB_LOCKS.update(original_locks)
 
 
-def test_custom_c1_compatible_workflow_replaces_default_template(tmp_path, monkeypatch):
+def test_custom_recastroom_compatible_workflow_replaces_default_template(tmp_path, monkeypatch):
     import app.main as main
 
     original_settings = main.SETTINGS
     original_status = main.JOB_STATUS.copy()
     original_locks = main.JOB_LOCKS.copy()
     configure_app(main, tmp_path, "dry_run")
-    custom = json.loads((REPO / "workflows/openjutsu_h3_lipsync_local.json").read_text())
+    custom = json.loads((REPO / "workflows/recastroom_h3_workflow.json").read_text())
     custom["586"]["inputs"]["lora_name"] = "operator_test_character_swap_v1.1.safetensors"
     try:
         with TestClient(main.app) as client:

@@ -68,7 +68,7 @@ by the uploader, not automated provenance proof. Reviewers must follow
 |---|---|---|
 | `RECASTROOM_BACKEND` | `dry_run` | Required safe backend; set automatically by the script. |
 | `RECASTROOM_DATA_DIR` | script-owned temporary directory | Isolates uploads/jobs and permits cleanup. Set automatically. |
-| `RECASTROOM_WORKFLOW` | optional | Overrides the bundled workflow path. Defaults to `workflows/openjutsu_h3_lipsync_local.json`. |
+| `RECASTROOM_WORKFLOW` | optional | Overrides the bundled workflow path. Defaults to `workflows/recastroom_h3_workflow.json`. |
 | `RECASTROOM_FFMPEG` | optional | Overrides the `ffmpeg` executable for dry-run media packaging. |
 | `RECASTROOM_FFPROBE` | optional | Overrides the `ffprobe` executable for preflight. |
 | `RECASTROOM_WHISPER` | optional | Overrides the Whisper executable; unused by the bundled fixture probe. |

@@ -37,7 +37,7 @@ CARDS: tuple[WorkflowCard, ...] = (
         id="custom-recast",
         name="Custom Recast Graph",
         status="Advanced",
-        summary="Bring your own C1-compatible graph.",
+        summary="Bring your own RecastRoom-compatible graph.",
         description=(
             "Import a RecastRoom-compatible Comfy API workflow and run it through "
             "the same operator attestation gate, preflight, review, and artifact path."

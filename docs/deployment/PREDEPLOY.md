@@ -1,4 +1,4 @@
-# Openjutsu H3 Comfy pre-deployment candidate — 2026-10-18
+# RecastRoom H3 Comfy pre-deployment candidate — 2026-10-18
 
 ## Result
 
@@ -16,7 +16,7 @@ Owned artifacts:
 - `tests/test_deployment_manifest.py`
 
 The workflow remains the repository file
-`workflows/openjutsu_h3_lipsync_local.json`, SHA-256
+`workflows/recastroom_h3_workflow.json`, SHA-256
 `06424abeb27ac5e7cf95e8fc3a0909c0d7c3e74d1c2b689f86a65719b72d7b21`.
 
 ## Pinned code and workflow

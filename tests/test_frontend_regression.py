@@ -175,7 +175,7 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert parser.elements["show-walkthrough"]["tag"] == "button"
     assert "Primary reference" in home.text
     assert "Renderer" in home.text
-    assert "Custom C1-compatible Recast workflow JSON" in home.text
+    assert "Custom RecastRoom-compatible workflow JSON" in home.text
     assert "Future concepts stay on the roadmap" in home.text
     assert parser.elements["source-preview"]["controls"] is not None
     assert parser.elements["final-preview"]["controls"] is not None
@@ -272,7 +272,7 @@ def test_real_dry_run_flow_requires_consent_and_serves_only_completed_artifacts(
     health_payload = health.json()
     assert {key: health_payload[key] for key in ("ok", "workflow", "workflow_exists", "backend")} == {
         "ok": True,
-        "workflow": "openjutsu_h3_lipsync_local.json",
+        "workflow": "recastroom_h3_workflow.json",
         "workflow_exists": True,
         "backend": "dry_run",
     }

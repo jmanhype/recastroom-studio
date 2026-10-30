@@ -153,7 +153,7 @@ def prepared_job(tmp_path: Path, job_id: str = "a123456789ab") -> Path:
 
 def assert_health_contract(payload: dict) -> None:
     assert payload["ok"] is True
-    assert payload["workflow"] == "openjutsu_h3_lipsync_local.json"
+    assert payload["workflow"] == "recastroom_h3_workflow.json"
     assert payload["workflow_exists"] is True
     assert payload["backend"] == "legacy"
 

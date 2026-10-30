@@ -54,7 +54,7 @@ def test_bridge_rejects_symlink_escape(monkeypatch, tmp_path):
 
 @pytest.mark.parametrize("plan", ["[]", "bad-json", '{}', '{"video": []}'])
 def test_invalid_planner_shape(plan):
-    workflow = json.loads((ROOT / "workflows/openjutsu_h3_lipsync_local.json").read_text())
+    workflow = json.loads((ROOT / "workflows/recastroom_h3_workflow.json").read_text())
     workflow["1189"]["inputs"]["plan"] = plan
     with pytest.raises(ValueError, match="Invalid SDK"):
         validate_inputs(workflow, "missing.mp4", "missing.png")

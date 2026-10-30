@@ -47,7 +47,7 @@ this release keeps internal technical identifiers unchanged:
 
 ```text
 Python module:       openjutsu
-workflow filename:   workflows/openjutsu_h3_lipsync_local.json
+workflow filename:   workflows/recastroom_h3_workflow.json
 SDK bridge ID:       openjutsu_assets
 legacy env prefix:   OPENJUTSU_*
 ```

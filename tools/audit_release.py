@@ -134,7 +134,7 @@ def check_media_metadata(files: list[Path], root: Path, errors: list[str]) -> in
 
 
 def check_workflow(root: Path, errors: list[str]) -> None:
-    workflow_path = root / "workflows/openjutsu_h3_lipsync_local.json"
+    workflow_path = root / "workflows/recastroom_h3_workflow.json"
     if not workflow_path.is_file():
         errors.append("bundled workflow is missing")
         return

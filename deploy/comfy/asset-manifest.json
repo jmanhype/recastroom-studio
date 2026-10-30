@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "manifest_id": "openjutsu-h3-c1-v4-comfy-20261023",
+  "manifest_id": "recastroom-h3-comfy-20261023",
   "metadata_generated_utc": "2026-10-23T23:00:00Z",
   "candidate": {
-    "name": "openjutsu-h3-dogfood-candidate",
+    "name": "recastroom-h3-candidate",
     "candidate_only": true,
     "runnable_deployment_proven": false,
     "remote_build_created": false,
@@ -17,7 +17,7 @@
     "sdk_asset_bridge_required_for_final_build_contents": true
   },
   "workflow": {
-    "path": "workflows/openjutsu_h3_lipsync_local.json",
+    "path": "workflows/recastroom_h3_workflow.json",
     "sha256": "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244",
     "node_count": 29,
     "unique_class_type_count": 26,

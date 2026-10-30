@@ -16,7 +16,7 @@ def make_release_tree(root: Path) -> None:
     workflow_dir.mkdir()
     plan = {"video": "source.mp4", "global_ref": "reference_1.png"}
     workflow = {"1189": {"inputs": {"plan": json.dumps(plan)}}}
-    (workflow_dir / "openjutsu_h3_lipsync_local.json").write_text(
+    (workflow_dir / "recastroom_h3_workflow.json").write_text(
         json.dumps(workflow), encoding="utf-8"
     )
 

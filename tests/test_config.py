@@ -7,7 +7,7 @@ from openjutsu.config import load_settings
 
 
 def test_default_workflow_prefers_repository_root(monkeypatch, tmp_path):
-    workflow = tmp_path / "workflows" / "openjutsu_h3_lipsync_local.json"
+    workflow = tmp_path / "workflows" / "recastroom_h3_workflow.json"
     workflow.parent.mkdir()
     workflow.write_text("{}\n")
     monkeypatch.chdir(tmp_path)

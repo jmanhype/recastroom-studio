@@ -21,7 +21,7 @@ setup.sh               Local environment setup
 run.sh                 Start the FastAPI studio on 127.0.0.1:8768
 app/                   FastAPI server and static web workspace
 src/openjutsu/         Python application package
-workflows/             Bundled ComfyUI API graph and workflow documentation
+workflows/             Bundled RecastRoom H3 workflow
 media/                 Rights-clean public hero and comparison videos
 examples/              Input templates and rights attestation example
 scripts/               Local trial and CLI helpers
@@ -42,13 +42,13 @@ RecastRoom Studio helps you:
 2. reject risky or low-quality shot candidates before GPU time is spent,
 3. transcribe word timings with Whisper,
 4. build an H3 character-swap prompt,
-5. run the production **Recast Room** workflow or import a C1-compatible Comfy API graph,
+5. run the production **Recast Room** workflow or import a RecastRoom-compatible Comfy API graph,
 6. restore the original dialogue,
 7. produce a source/final review artifact.
 
 The studio presents a focused workflow catalog. **Recast Room** is the production path; cinematic camera, re-shoot, and VFX lanes are labeled as concept work rather than production features.
 
-The bundled local workflow uses the C1 V4 performance-preserving graph:
+The bundled local workflow uses the RecastRoom H3 performance-preserving graph:
 
 - MiniMax H3 Ref2VA
 - BFSShotH3ConditioningSimple
@@ -132,7 +132,7 @@ source .venv/bin/activate
 python -m pip install ".[dev]"
 
 export RECASTROOM_COMFY_URL="http://127.0.0.1:8188"
-export RECASTROOM_WORKFLOW="workflows/openjutsu_h3_lipsync_local.json"
+export RECASTROOM_WORKFLOW="workflows/recastroom_h3_workflow.json"
 
 uvicorn app.main:app --reload --port 8768
 ```
@@ -189,7 +189,7 @@ source clip
   -> scene and timing preflight
   -> authorized references
   -> recorded operator attestation
-  -> C1-compatible MiniMax H3 workflow
+  -> RecastRoom-compatible MiniMax H3 workflow
   -> local ComfyUI or official Comfy SDK runner
   -> original-audio restoration
   -> source/final review artifact and provenance manifest

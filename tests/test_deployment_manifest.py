@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEPLOY = ROOT / "deploy" / "comfy"
-WORKFLOW = ROOT / "workflows" / "openjutsu_h3_lipsync_local.json"
+WORKFLOW = ROOT / "workflows" / "recastroom_h3_workflow.json"
 WORKFLOW_SHA256 = "07e9f399d2168c7142bdf79a15cd3ab4fa536b734f7c74f795ca26853e10c244"
 
 
@@ -21,7 +21,7 @@ def test_workflow_hash_and_birefnet_selection_are_unchanged() -> None:
 
     assert hashlib.sha256(WORKFLOW.read_bytes()).hexdigest() == WORKFLOW_SHA256
     assert manifest["workflow"] == {
-        "path": "workflows/openjutsu_h3_lipsync_local.json",
+        "path": "workflows/recastroom_h3_workflow.json",
         "sha256": WORKFLOW_SHA256,
         "node_count": 29,
         "unique_class_type_count": 26,

@@ -65,7 +65,7 @@ recastroom --version
 Then start the app with the bundled workflow and verify:
 
 ```bash
-export RECASTROOM_WORKFLOW="$PWD/workflows/openjutsu_h3_lipsync_local.json"
+export RECASTROOM_WORKFLOW="$PWD/workflows/recastroom_h3_workflow.json"
 uvicorn app.main:app --port 8768 &
 curl --fail http://127.0.0.1:8768/api/health
 curl --fail http://127.0.0.1:8768/ >/dev/null

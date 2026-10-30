@@ -4,7 +4,7 @@ Start from a checkout with the `docs/QUICKSTART.md` commands, then use the
 locally running app:
 
 ```bash
-export RECASTROOM_WORKFLOW="$PWD/workflows/openjutsu_h3_lipsync_local.json"
+export RECASTROOM_WORKFLOW="$PWD/workflows/recastroom_h3_workflow.json"
 uvicorn app.main:app --port 8768
 ```
 
@@ -17,7 +17,7 @@ curl --fail http://127.0.0.1:8768/api/health
 ```json
 {
   "ok": true,
-  "workflow": "openjutsu_h3_lipsync_local.json",
+  "workflow": "recastroom_h3_workflow.json",
   "workflow_exists": true,
   "backend": "legacy"
 }
@@ -89,7 +89,7 @@ and two download URLs:
 Omitting `rights_attested=true` returns HTTP 422. The API deliberately returns
 filenames rather than checkout-local absolute paths.
 
-To replace the bundled Recast Room template for one job, add a C1-compatible
+To replace the bundled Recast Room template for one job, add a RecastRoom-compatible
 Comfy API graph:
 
 ```bash

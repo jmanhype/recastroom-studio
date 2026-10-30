@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def _settings(root: Path) -> Settings:
     return Settings(comfy_url="http://127.0.0.1:1", backend="dry_run", data_dir=root,
-                    workflow=ROOT / "workflows/openjutsu_h3_lipsync_local.json", ffmpeg="ffmpeg",
+                    workflow=ROOT / "workflows/recastroom_h3_workflow.json", ffmpeg="ffmpeg",
                     ffprobe="ffprobe", whisper="whisper")
 
 

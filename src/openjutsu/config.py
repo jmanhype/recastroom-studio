@@ -36,7 +36,7 @@ def setting(source: dict[str, str], name: str, default: str | None = None) -> st
 def load_settings(env: dict[str, str] | None = None) -> Settings:
     source = env or os.environ
     package_root = Path(__file__).resolve().parents[2]
-    default_workflow = Path("workflows/openjutsu_h3_lipsync_local.json")
+    default_workflow = Path("workflows/recastroom_h3_workflow.json")
     # Editable checkouts and documented clean-checkout runs start from the
     # repository root. A normal wheel install cannot carry that root in
     # __file__, so prefer the checkout in the current directory when present.
