@@ -10,6 +10,8 @@ RecastRoom Studio is an open-source creative workspace built around **MiniMax H3
 
 ## Repository layout
 
+![RecastRoom Studio repository map](docs/images/repository-map.svg)
+
 ```text
 README.md              Product overview and quickstart
 RIGHTS.md              Source, likeness, and model rights policy

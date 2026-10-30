@@ -7,7 +7,7 @@ earlier independent public `SydFloyd/openjutsu` repository and names the actual
 production lane: the Recast Room.
 
 The complete decision, collision check, compatibility boundary, and publication
-rule are recorded in [`docs/BRANDING.md`](../../../BRANDING.md).
+rule are recorded in [`docs/BRANDING.md`](../../BRANDING.md).
 
 ## Collision evidence
 

@@ -145,7 +145,7 @@ executed workflow hash re-fetched and matched
 ```
 
 The full redacted job/output record and hash verification are in
-[`../comfy-sdk-smoke-20261025/REPORT.md`](../comfy-sdk-smoke-20261025/REPORT.md).
+[`comfy-sdk-smoke-20261025/REPORT.md`](comfy-sdk-smoke-20261025/REPORT.md).
 This clears the *SDK workflow-surface execution* blocker. It does not claim a
 full H3 deployment or model inference.
 
