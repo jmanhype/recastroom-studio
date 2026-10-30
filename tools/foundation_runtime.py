@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import socket
 import sqlite3
 import subprocess
@@ -106,27 +107,20 @@ def run_tool(arguments: list[str]) -> None:
 
 
 def generate_media(temp_root: Path) -> dict[str, Path]:
-    """Create new synthetic media rather than replaying committed fixtures."""
+    """Materialize the pinned synthetic media set for portable offline proofs."""
     media_root = temp_root / "input"
     media_root.mkdir(parents=True)
-    source = media_root / "foundation-source.mp4"
-    primary = media_root / "foundation-primary.png"
-    secondary = media_root / "foundation-secondary.png"
-    run_tool([
-        "ffmpeg", "-nostdin", "-y", "-f", "lavfi",
-        "-i", "testsrc2=size=320x180:rate=24", "-f", "lavfi",
-        "-i", "sine=frequency=440:sample_rate=48000", "-t", "1",
-        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", "-shortest",
-        "-movflags", "+faststart", str(source),
-    ])
-    run_tool([
-        "ffmpeg", "-nostdin", "-y", "-f", "lavfi",
-        "-i", "color=c=0x245c69:s=160x160:d=1", "-frames:v", "1", str(primary),
-    ])
-    run_tool([
-        "ffmpeg", "-nostdin", "-y", "-f", "lavfi",
-        "-i", "color=c=0x69243c:s=160x160:d=1", "-frames:v", "1", str(secondary),
-    ])
+    pinned_root = REPO / "tests" / "fixtures" / "m1"
+    source = pinned_root / "foundation-source.mp4"
+    primary = pinned_root / "foundation-primary.png"
+    secondary = pinned_root / "foundation-secondary.png"
+    for original in (source, primary, secondary):
+        if not original.is_file():
+            raise RuntimeError(f"pinned synthetic media fixture is missing: {original.name}")
+        shutil.copyfile(original, media_root / original.name)
+    source = media_root / source.name
+    primary = media_root / primary.name
+    secondary = media_root / secondary.name
     return {"source": source, "primary": primary, "secondary": secondary}
 
 

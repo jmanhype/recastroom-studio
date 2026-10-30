@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.8 — 2026-10-30
+
+- Added byte-pinned synthetic M1 media fixtures so CI and local tests exercise the same exact offline source/reference inputs.
+
+## 0.2.7 — 2026-10-30
+
 ## 0.2.7 — 2026-10-30
 
 - Pins the matching Homebrew x265 4.1 dependency required by the frozen FFmpeg 8.0.1 bottle.
