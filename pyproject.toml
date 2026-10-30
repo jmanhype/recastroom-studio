@@ -1,6 +1,6 @@
 [project]
 name = "recastroom-studio"
-version = "0.2.8"
+version = "0.2.9"
 description = "MiniMax H3 performance-preserving video recasting studio for ComfyUI"
 requires-python = ">=3.10"
 readme = "README.md"

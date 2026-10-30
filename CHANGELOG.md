@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.9 — 2026-10-30
+
+- Force-tracks the byte-pinned synthetic M1 source MP4 that the global media ignore rule omitted from v0.2.8.
+
+## 0.2.8 — 2026-10-30
+
 ## 0.2.8 — 2026-10-30
 
 - Added byte-pinned synthetic M1 media fixtures so CI and local tests exercise the same exact offline source/reference inputs.
