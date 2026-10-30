@@ -150,10 +150,19 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert 'id="workflow-catalog"' in home.text
     assert 'id="workflow-note"' in home.text
     assert 'id="readiness"' in home.text
+    assert 'id="quickstart"' in home.text
+    assert 'id="walkthrough"' in home.text
+    assert 'id="advanced-studio"' in home.text
+    assert "Start the 3-step guide" in home.text
+    assert "Choose the performance" in home.text
+    assert "Add the new lead" in home.text
+    assert "Record permission and prepare" in home.text
+    assert 'id="walkthrough" class="walkthrough" hidden role="dialog"' in home.text
+    assert parser.elements["show-walkthrough"]["tag"] == "button"
     assert "Primary reference" in home.text
     assert "Renderer" in home.text
     assert "Custom C1-compatible Recast workflow JSON" in home.text
-    assert "concept lanes are visible without being misrepresented as ready" in home.text
+    assert "Future concepts stay on the roadmap" in home.text
     assert parser.elements["source-preview"]["controls"] is not None
     assert parser.elements["final-preview"]["controls"] is not None
     assert "no automated score is provided" in home.text
@@ -179,7 +188,10 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "getReadiness: readinessStates" in js
     assert "updateReadiness();" in js
     assert "request('/api/workflows')" in js
-    assert "not a ready workflow in this release" in js
+    assert "filter((item) => item.available === true)" in js
+    assert "moveAdvancedPanels" in js
+    assert "closeWalkthrough" in js
+    assert "guideTo(button.dataset.guideTarget)" in js
     assert "selectedWorkflow = 'recast-room'" in js
     assert "$('advanced').open = true" in js
     for historical_mutation in (
@@ -214,7 +226,7 @@ def test_landing_leads_with_workflow_and_scopes_audio_proof(studio):
     for legacy_audio_claim in LEGACY_AUDIO_CLAIMS:
         assert legacy_audio_claim not in landing.text
 
-    assert "From original shot to reviewed export." in home.text
+    assert "Keep the performance, camera, timing, and original dialogue" in home.text
     assert "Discovery metadata does not bypass the operator attestation gate." in home.text
     assert "From original shot to final export" in landing.text
     assert "selected take, edit map, and export evidence" in landing.text

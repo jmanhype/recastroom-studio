@@ -1,0 +1,6 @@
+root=/Users/speed/Documents/Codex/2026-10-11/how-to-do-it-how-to/work/openjutsu-studio/work/public-m1-20261030/candidate
+tracked_files=636
+text_files=368
+binary_files=268
+probed_media_files=266
+PASS: release audit

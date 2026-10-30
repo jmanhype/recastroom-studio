@@ -844,6 +844,9 @@ def test_real_browser_comparison_review_selection_and_conflict(tmp_path):
                 posts = []
                 page.on("request", lambda request: posts.append(request.url) if request.method == "POST" else None)
                 page.goto(base_url)
+                page.wait_for_function("() => Boolean(window.StudioUI)")
+                page.locator("#advanced-studio > summary").click()
+                page.wait_for_selector("#project-select", state="visible")
                 page.select_option("#project-select", sys.argv[3])
                 page.wait_for_selector("#m1-review-shot option[value=second]", state="attached")
                 page.select_option("#m1-review-shot", "second")

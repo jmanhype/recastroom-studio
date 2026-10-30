@@ -167,7 +167,9 @@
   async function loadCatalog() {
     try {
       const payload = await request('/api/workflows');
-      const cards = payload.workflows || [];
+      // The default workspace shows only workflows that can run in this release.
+      // Future lanes remain documented in README/ROADMAP without cluttering setup.
+      const cards = (payload.workflows || []).filter((item) => item.available === true);
       $('workflow-catalog').replaceChildren(...cards.map((item) => {
         const card = document.createElement('button');
         card.type = 'button';
@@ -197,6 +199,27 @@
       $('workflow-catalog').replaceChildren();
       $('workflow-note').textContent = 'Workflow catalog unavailable. The Recast Room remains active.';
     }
+  }
+  function moveAdvancedPanels() {
+    const container = $('advanced-studio-panels');
+    const panels = document.querySelectorAll('.projects-shell');
+    if (!container || !panels.length) return;
+    container.append(...panels);
+  }
+  function closeWalkthrough() {
+    $('walkthrough').hidden = true;
+    $('show-walkthrough').focus();
+  }
+  function openWalkthrough() {
+    $('walkthrough').hidden = false;
+    $('walkthrough-start').focus();
+  }
+  function guideTo(id) {
+    closeWalkthrough();
+    const target = $(id);
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.focus({ preventScroll: true });
   }
   function addLink(container, href, label, filename) {
     const link = document.createElement('a'); link.href = href; link.textContent = label;
@@ -375,13 +398,29 @@
   });
   $('retry-status').addEventListener('click', () => { if (job) poll(epoch, job); });
   $('health-retry').addEventListener('click', checkHealth);
+  $('show-walkthrough').addEventListener('click', openWalkthrough);
+  $('hero-walkthrough').addEventListener('click', openWalkthrough);
+  $('walkthrough-skip').addEventListener('click', closeWalkthrough);
+  $('walkthrough-start').addEventListener('click', () => guideTo('source'));
+  document.querySelectorAll('[data-guide-target]').forEach((button) => {
+    button.addEventListener('click', () => guideTo(button.dataset.guideTarget));
+  });
+  $('walkthrough').addEventListener('click', (event) => {
+    if (event.target === $('walkthrough')) closeWalkthrough();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !$('walkthrough').hidden) closeWalkthrough();
+  });
   window.addEventListener('beforeunload', () => { controller.abort(); clearTimeout(timer); urls.forEach((url) => URL.revokeObjectURL(url)); });
   // Small, read-only seams for the dependent frontend regression story.
   window.StudioUI = Object.freeze({
     errorText,
     getReadiness: readinessStates,
     getState: () => ({ epoch, jobId: job, busy, running, recommended, backend: health?.backend || null, rendererReady: runConnectionReady() }),
+    closeWalkthrough,
+    openWalkthrough,
   });
+  moveAdvancedPanels();
   loadCatalog();
   checkHealth();
 })();

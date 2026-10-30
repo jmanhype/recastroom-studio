@@ -6,16 +6,30 @@
 <title>RecastRoom Studio</title>
 <link rel="stylesheet" href="/styles.css">
 <main>
-  <header class="masthead"><a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a><span class="edition">PERFORMANCE / REIMAGINED</span></header>
-  <div class="intro"><div><p class="eyebrow">OPEN CREATIVE STUDIO</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Select the take, prepare the edit, and inspect the evidence.<br>From original shot to reviewed export.</p><p id="backend" class="backend" role="status">Backend unknown · checking connection</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div></div>
-  <section class="studio-shell" aria-labelledby="workflow-heading">
-    <div class="section-heading"><h2 id="workflow-heading">Workflow studio</h2><span>PRODUCTION / ADVANCED / CONCEPT</span></div>
-    <p class="hint">RecastRoom is built around interchangeable Comfy workflows. The Recast Room is the production flagship; concept lanes are visible without being misrepresented as ready.</p>
+  <header class="masthead"><a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a><div class="masthead-actions"><span class="edition">PERFORMANCE / REIMAGINED</span><button id="show-walkthrough" type="button" class="ghost-button">Start guide</button></div></header>
+  <div class="intro"><div><p class="eyebrow">GUIDED VIDEO RECAST</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Keep the performance, camera, timing, and original dialogue while one performer becomes someone new.</p><button id="hero-walkthrough" type="button">Start the 3-step guide</button></div></div>
+  <section id="quickstart" class="quickstart" aria-labelledby="quickstart-heading">
+    <div class="section-heading"><h2 id="quickstart-heading">Start here</h2><span>THREE STEPS · NO GENERATION UNTIL YOU AUTHORIZE IT</span></div>
+    <div class="quickstart-grid">
+      <button type="button" data-guide-target="source"><span>01</span><strong>Choose the performance</strong><small>Select a short source clip with clear motion and dialogue.</small></button>
+      <button type="button" data-guide-target="reference_1"><span>02</span><strong>Add the new lead</strong><small>Choose one clear likeness reference; a second view is optional.</small></button>
+      <button type="button" data-guide-target="rights"><span>03</span><strong>Confirm and prepare</strong><small>Record permission, preflight the clip, and inspect the workflow.</small></button>
+    </div>
+  </section>
+  <details id="advanced-studio" class="advanced-drawer">
+    <summary>Advanced studio · graphs, projects, and original cuts</summary>
+    <div id="advanced-studio-panels">
+      <section class="studio-shell advanced-panel" aria-labelledby="workflow-heading">
+        <div class="section-heading"><h2 id="workflow-heading">Workflow studio</h2><span>READY IN THIS RELEASE</span></div>
+        <p class="hint">Only workflows that can run in this release appear here. Future concepts stay on the roadmap instead of cluttering setup.</p>
     <div id="workflow-catalog" class="workflow-catalog" aria-live="polite"></div>
     <p id="workflow-note" class="workflow-note" role="status">Recast Room selected.</p>
-  </section>
+      </section>
+    </div>
+  </details>
   <section class="readiness-shell" aria-labelledby="readiness-heading">
     <div class="section-heading"><h2 id="readiness-heading">Readiness</h2><span>LIVE DEPENDENCIES</span></div>
+    <div class="backend-row"><p id="backend" class="backend" role="status">Backend unknown · checking connection</p><button id="health-retry" type="button" class="text-button" hidden>Check connection again</button></div>
     <dl id="readiness" class="readiness-strip" aria-live="polite">
       <div data-readiness="source"><dt>Source</dt><dd>Not selected</dd></div>
       <div data-readiness="reference"><dt>Primary reference</dt><dd>Missing</dd></div>
@@ -148,6 +162,18 @@
   </section>
   <footer><span>RECASTROOM / INDEPENDENT TOOLS FOR MOVING IMAGES</span><span>Review every export before publication. <a href="/sound-lab.html">Sound lab</a></span></footer>
 </main>
+  <div id="walkthrough" class="walkthrough" hidden role="dialog" aria-modal="true" aria-labelledby="walkthrough-heading">
+    <div class="walkthrough-card">
+      <div class="section-heading"><h2 id="walkthrough-heading">Set up RecastRoom</h2><span>GUIDE · 3 STEPS</span></div>
+      <ol class="walkthrough-steps">
+        <li><strong>Choose a source performance</strong><span>A short clip with clear motion and audible dialogue works best.</span></li>
+        <li><strong>Add the replacement likeness</strong><span>Use one clear reference image. A second angle is optional.</span></li>
+        <li><strong>Record permission and prepare</strong><span>RecastRoom inspects the clip and builds the workflow. Nothing generates until you separately choose Run.</span></li>
+      </ol>
+      <p class="hint">The same guide is always available from the Start guide button in the header.</p>
+      <div class="walkthrough-actions"><button id="walkthrough-skip" type="button" class="ghost-button">Skip guide</button><button id="walkthrough-start" type="button">Start now</button></div>
+    </div>
+  </div>
   <script src="/projects.js?v=20261027d" defer></script>
   <script src="/m1.js?v=20261027" defer></script>
   <script src="/studio.js?v=20261027" defer></script>

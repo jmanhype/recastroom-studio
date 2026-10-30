@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — 2026-10-30
+
+- Added a three-step guided walkthrough and persistent Start Guide entry point.
+- Added a focused quick-start surface for source, likeness, permission, and preparation.
+- Moved projects, original-cut tools, and graph controls into the collapsed Advanced Studio drawer.
+- Removed unavailable concept workflows from the default workspace catalog; only release-ready workflows render.
+
+## 0.2.9 — 2026-10-30
+
 ## 0.2.9 — 2026-10-30
 
 - Force-tracks the byte-pinned synthetic M1 source MP4 that the global media ignore rule omitted from v0.2.8.

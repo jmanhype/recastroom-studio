@@ -72,6 +72,9 @@ def _browser_program() -> str:
             page.on('pageerror', lambda error: console_errors.append(str(error)))
             page.on('response', public_response)
             page.goto(base_url, wait_until='domcontentloaded')
+            page.wait_for_function("() => Boolean(window.StudioUI)")
+            page.locator('#advanced-studio > summary').click()
+            page.wait_for_selector('#project-select', state='visible')
             evidence = {'mode': mode, 'consoleErrors': console_errors}
 
             if mode == 'phase1':
