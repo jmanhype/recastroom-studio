@@ -154,6 +154,9 @@ Fastest local path:
 ./run.sh
 ```
 
+`setup.sh` uses **uv** when available and falls back to standard `venv` + `pip`
+otherwise.
+
 `run.sh` listens on `127.0.0.1:8768` by default; override it with `PORT=8897`.
 
 The reviewer-facing clean-checkout path is documented in

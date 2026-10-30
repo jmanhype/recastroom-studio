@@ -46,7 +46,7 @@
     <g filter="url(#shadow)">
       <rect x="80" y="370" width="500" height="112" rx="18" fill="#07100f" stroke="#2a423c"/>
       <text x="106" y="412" fill="#7df5cd" font-size="24" font-weight="700">setup.sh</text>
-      <text x="106" y="444" fill="#9eb0ae" font-size="17">Create .venv, install app + tests</text>
+      <text x="106" y="444" fill="#9eb0ae" font-size="17">uv-first setup, pip fallback</text>
     </g>
     <g filter="url(#shadow)">
       <rect x="620" y="370" width="500" height="112" rx="18" fill="#07100f" stroke="#2a423c"/>
