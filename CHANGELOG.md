@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.3 — 2026-10-30
+
+- Pinned CI to the Homebrew FFmpeg 8.0.1_2 formula used by the frozen M1 evidence.
+
+## 0.2.2 — 2026-10-30
+
 ## 0.2.2 — 2026-10-30
 
 - Made the browser proofs use the validated test interpreter and added Playwright to development dependencies.

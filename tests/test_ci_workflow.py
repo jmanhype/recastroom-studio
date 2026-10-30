@@ -21,7 +21,9 @@ def test_ci_is_pinned_fast_and_reproducible():
     assert "runs-on: macos-14" in text
     assert 'python-version: ["3.11", "3.12"]' in text
     assert "apt-get" not in text
-    assert "brew install ffmpeg" in text
+    assert "brew tap-new recastroom/legacy" in text
+    assert "brew install recastroom/legacy/ffmpeg" in text
+    assert "homebrew-core/5e8c24087d2a54c386f50dfa7bccd4a2d406b09a/Formula/f/ffmpeg.rb" in text
     assert "ffmpeg -version | grep -F 'ffmpeg version 8.0.1'" in text
     assert "ffprobe -version | grep -F 'ffprobe version 8.0.1'" in text
     assert "python -m compileall -q app scripts src tests tools" in text

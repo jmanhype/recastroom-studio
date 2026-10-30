@@ -27,7 +27,13 @@ jobs:
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
       - name: Install trusted FFmpeg tools
         run: |
-          brew install ffmpeg
+          brew tap-new recastroom/legacy
+          tap_root="$(brew --repository recastroom/legacy)"
+          mkdir -p "$tap_root/Formula"
+          curl --fail --location --retry 5 --retry-all-errors \
+            https://raw.githubusercontent.com/Homebrew/homebrew-core/5e8c24087d2a54c386f50dfa7bccd4a2d406b09a/Formula/f/ffmpeg.rb \
+            -o "$tap_root/Formula/ffmpeg.rb"
+          brew install recastroom/legacy/ffmpeg
           ffmpeg -version | grep -F 'ffmpeg version 8.0.1'
           ffprobe -version | grep -F 'ffprobe version 8.0.1'
       - name: Set up Python
