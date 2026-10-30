@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib, json, os, socket, sqlite3, subprocess
 from pathlib import Path
+import sys
 from textwrap import dedent
 from openjutsu.m1_types import Timebase, AttemptEvent, AttemptState as S, ExecutionMode as M, public_json
 from openjutsu.take_service import TakeService
@@ -11,7 +12,7 @@ from openjutsu.workspace_store import WorkspaceStore
 from tools.foundation_runtime import FFMPEG, FFPROBE, FoundationServer, free_loopback_port, generate_media
 
 
-BROWSER_PYTHON = Path("/opt/homebrew/opt/python@3.10/bin/python3.10")
+BROWSER_PYTHON = Path(sys.executable)
 
 
 def _browser_program() -> str:

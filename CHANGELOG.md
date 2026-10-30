@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.2 — 2026-10-30
+
+- Made the browser proofs use the validated test interpreter and added Playwright to development dependencies.
+- Moved CI to the same Homebrew FFmpeg 8.0.1 environment used by the frozen M1 media evidence.
+
+## 0.2.1 — 2026-10-30
+
 ## 0.2.1 — 2026-10-30
 
 - Included GitHub Actions’ `/usr/local/bin` FFmpeg location in the trusted media-tool path so CI uses the workflow-installed binaries.

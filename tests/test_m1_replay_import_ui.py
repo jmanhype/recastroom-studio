@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib, http.client, json, os, socket, subprocess, threading, traceback
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
+import sys
 from textwrap import dedent
 from typing import Any
 from urllib.parse import urlsplit
@@ -11,7 +12,7 @@ from openjutsu.m1_types import ReplayReceipt, ReviewVerdict
 from openjutsu.take_service import TakeService
 from test_m1_export import _export_fixture
 from tools.foundation_runtime import FoundationServer, free_loopback_port
-BROWSER_PYTHON = Path("/opt/homebrew/opt/python@3.10/bin/python3.10")
+BROWSER_PYTHON = Path(sys.executable)
 class _StreamingLoopbackProxy:
     """Forward native bytes to the real server; optionally drop one committed response."""
     def __init__(self, server: FoundationServer, store: Any, evidence: Path, project_id: str, *, fault: bool):

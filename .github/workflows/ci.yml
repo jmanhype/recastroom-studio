@@ -16,7 +16,7 @@ permissions:
 jobs:
   test:
     name: Python ${{ matrix.python-version }}
-    runs-on: ubuntu-24.04
+    runs-on: macos-14
     timeout-minutes: 20
     strategy:
       fail-fast: false
@@ -25,13 +25,11 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-      - name: Install static FFmpeg tools
+      - name: Install trusted FFmpeg tools
         run: |
-          npm install --no-save @ffmpeg-installer/ffmpeg@1.1.0 @ffprobe-installer/ffprobe@2.1.2
-          sudo ln -sf "$(node -p "require('@ffmpeg-installer/ffmpeg').path")" /usr/local/bin/ffmpeg
-          sudo ln -sf "$(node -p "require('@ffprobe-installer/ffprobe').path")" /usr/local/bin/ffprobe
-          ffmpeg -version
-          ffprobe -version
+          brew install ffmpeg
+          ffmpeg -version | grep -F 'ffmpeg version 8.0.1'
+          ffprobe -version | grep -F 'ffprobe version 8.0.1'
       - name: Set up Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json, os, sqlite3, subprocess, time
 from pathlib import Path
+import sys
 from textwrap import dedent
 
 import requests
@@ -11,7 +12,7 @@ from openjutsu.m1_types import ExecutionMode as M
 from test_m1_resolution import _resolve, _workspace
 from tools.foundation_runtime import FoundationServer, free_loopback_port
 
-BROWSER_PYTHON = Path("/opt/homebrew/opt/python@3.10/bin/python3.10")
+BROWSER_PYTHON = Path(sys.executable)
 
 
 def _browser_program() -> str:

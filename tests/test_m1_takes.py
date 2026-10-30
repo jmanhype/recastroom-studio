@@ -11,6 +11,7 @@ from dataclasses import replace
 from pathlib import Path
 import sqlite3
 import subprocess
+import sys
 from textwrap import dedent
 
 import pytest
@@ -866,7 +867,7 @@ def test_real_browser_comparison_review_selection_and_conflict(tmp_path):
                 browser.close()
         """)
         browser_result = subprocess.run(
-            ["/opt/homebrew/opt/python@3.10/bin/python3.10", "-", server.base_url,
+            [sys.executable, "-", server.base_url,
              str(evidence_root), operation.project_id],
             input=script, text=True, timeout=60, capture_output=True,
         )

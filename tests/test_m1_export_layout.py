@@ -7,13 +7,14 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 from textwrap import dedent
 
 from test_m1_export import _export_fixture
 from tools.foundation_runtime import FoundationServer, free_loopback_port
 
 
-BROWSER_PYTHON = Path("/opt/homebrew/opt/python@3.10/bin/python3.10")
+BROWSER_PYTHON = Path(sys.executable)
 
 
 def _browser_program() -> str:

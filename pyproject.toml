@@ -1,6 +1,6 @@
 [project]
 name = "recastroom-studio"
-version = "0.2.1"
+version = "0.2.2"
 description = "MiniMax H3 performance-preserving video recasting studio for ComfyUI"
 requires-python = ">=3.10"
 readme = "README.md"
@@ -19,6 +19,7 @@ recastroom = "openjutsu.cli:main"
 [project.optional-dependencies]
 dev = [
   "pytest>=8",
+  "playwright>=1.50",
 ]
 
 [build-system]

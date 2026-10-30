@@ -18,11 +18,12 @@ def test_ci_is_pinned_fast_and_reproducible():
     assert "cancel-in-progress: true" in text
     assert "contents: read" in text
     assert "timeout-minutes: 20" in text
-    assert "runs-on: ubuntu-24.04" in text
+    assert "runs-on: macos-14" in text
     assert 'python-version: ["3.11", "3.12"]' in text
     assert "apt-get" not in text
-    assert "@ffmpeg-installer/ffmpeg@1.1.0" in text
-    assert "@ffprobe-installer/ffprobe@2.1.2" in text
+    assert "brew install ffmpeg" in text
+    assert "ffmpeg -version | grep -F 'ffmpeg version 8.0.1'" in text
+    assert "ffprobe -version | grep -F 'ffprobe version 8.0.1'" in text
     assert "python -m compileall -q app scripts src tests tools" in text
     assert "node --check app/web/landing.js" in text
     assert "node --check app/web/sound-lab.js" in text

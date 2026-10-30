@@ -12,6 +12,7 @@ import math
 import os
 from pathlib import Path
 import subprocess
+import sys
 from textwrap import dedent
 
 import pytest
@@ -25,7 +26,7 @@ from test_m1_resolution import _workspace
 from tools.foundation_runtime import FoundationServer, free_loopback_port
 
 TOLERANCE = 1e-12  # seconds; no endpoint snapping or duration expansion
-BROWSER_PYTHON = "/opt/homebrew/opt/python@3.10/bin/python3.10"
+BROWSER_PYTHON = sys.executable
 
 
 def _timing(source_id: str = "source", digest: str = "a" * 64,
