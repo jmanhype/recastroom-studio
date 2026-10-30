@@ -107,15 +107,29 @@ Demo storyboard: [`docs/images/demo-v1-contact.jpg`](docs/images/demo-v1-contact
 
 ## Media kit
 
-| Asset | Purpose |
-|---|---|
-| [24-second showreel](media/recastroom-showreel-24s-16x9.mp4) | Hero plus proof-gallery overview |
-| [Six-second 16:9 teaser](media/recastroom-teaser-6s-16x9.mp4) | Fast social hook |
-| [Six-second vertical teaser](media/recastroom-teaser-6s-9x16.mp4) | Shorts, Reels, and TikTok hook |
-| [Source-versus-recast proof](media/recastroom-proof-9x16.mp4) | Direct before/after proof |
-| [Workflow diagram](docs/images/workflow-diagram.png) | Source-to-export pipeline |
-| [Architecture diagram](docs/images/architecture-diagram.png) | App/runtime/data boundaries |
-| [Media contact sheet](docs/images/media-contact-sheet.jpg) | One-page asset overview |
+### Showreel
+
+[![RecastRoom 24-second showreel](media/posters/showreel-16x9.webp)](media/recastroom-showreel-24s-16x9.mp4)
+
+### Vertical hero
+
+[![RecastRoom vertical hero](media/posters/hero-9x16.webp)](media/recastroom-hero-9x16.mp4)
+
+### Source-versus-recast proof
+
+[![Source versus recast proof](media/posters/proof-9x16.webp)](media/recastroom-proof-9x16.mp4)
+
+### Social teasers
+
+| 16:9 | Vertical | Square |
+|---|---|---|
+| [![16:9 teaser](media/posters/hero-16x9.webp)](media/recastroom-teaser-6s-16x9.mp4) | [![Vertical teaser](media/posters/hero-9x16.webp)](media/recastroom-teaser-6s-9x16.mp4) | [![Square teaser](media/posters/teaser-square.webp)](media/recastroom-teaser-6s-square.mp4) |
+
+### Diagrams
+
+| Workflow | Architecture | Media overview |
+|---|---|---|
+| [![Workflow diagram](docs/images/workflow-diagram.png)](docs/images/workflow-diagram.png) | [![Architecture diagram](docs/images/architecture-diagram.png)](docs/images/architecture-diagram.png) | [![Media contact sheet](docs/images/media-contact-sheet.jpg)](docs/images/media-contact-sheet.jpg) |
 
 The full inventory and hashes are in [`media/README.md`](media/README.md).
 

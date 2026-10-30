@@ -30,3 +30,8 @@ social posts. The app serves the top-level videos and poster at `/media/`.
 | `posters/teaser-square.png` | Square teaser poster | 1080×1080 PNG | `eb7119f580efc3768da00d4a9f958087372e57195fa6a6acf404547b7191afa9` |
 | `posters/core-recast.png` | Core comparison poster | 1280×426 PNG | `e23a22d5d8fd0c03039d924e8bee2962b28d71ffe1c11537051dcc9843241e97` |
 | `posters/social-preview.png` | Generic social preview | 1200×630 PNG | `fad1540dbecf9279a1a1dad80dd0460627ef9d458f912a2f37802f70402192c2` |
+| `posters/hero-16x9.webp` | Compressed 16:9 README poster | 960×540 WebP | `b0a5a212567dc94b90c0819269a5e3fec0c8909fb1944ca77c2cd9b810b0ba97` |
+| `posters/hero-9x16.webp` | Compressed vertical README poster | 540×960 WebP | `0fee9e690c1affeefdb01858cf176591f24242823a0405eef56ec997420c8610` |
+| `posters/showreel-16x9.webp` | Compressed showreel poster | 960×540 WebP | `521d104fda3d742aabb4a96db2d0a8aa815d40e6c3bdd41a4306ed1b83c234c2` |
+| `posters/proof-9x16.webp` | Compressed proof poster | 540×960 WebP | `3e0089bb66af1004105fc06fd86abe1f1937d8b0c7265eabfe965d5ba80d2ceb` |
+| `posters/teaser-square.webp` | Compressed square teaser poster | 720×720 WebP | `5fc9fa105bc648396340679a6966da9fcaf107764262b6e3ae339fe26a12e1dc` |
