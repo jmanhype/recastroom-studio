@@ -125,9 +125,11 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
 
     home = client.get("/")
     script = client.get("/studio.js")
+    m1_script = client.get("/m1.js")
     stylesheet = client.get("/styles.css")
     assert home.status_code == 200
     assert script.status_code == 200
+    assert m1_script.status_code == 200
     assert stylesheet.status_code == 200
     assert home.headers["content-type"].startswith("text/html")
     assert script.headers["content-type"].startswith(("application/javascript", "text/javascript"))
@@ -153,11 +155,21 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert 'id="quickstart"' in home.text
     assert 'id="walkthrough"' in home.text
     assert 'id="advanced-studio"' in home.text
-    assert "Start the 3-step guide" in home.text
+    assert "Set up studio" in home.text
     assert "Choose the performance" in home.text
     assert "Add the new lead" in home.text
-    assert "Record permission and prepare" in home.text
+    assert "Confirm and prepare" in home.text
     assert 'id="walkthrough" class="walkthrough" hidden role="dialog"' in home.text
+    assert 'data-required="true"' in home.text
+    assert "REQUIRED · 4 STEPS" in home.text
+    assert "Where should recasts run?" in home.text
+    assert "Local ComfyUI" in home.text
+    assert "Comfy SDK" in home.text
+    assert "RunPod" in home.text
+    assert "Solo or review handoff?" in home.text
+    assert "Reviewer name" in home.text
+    assert "Open the studio" in home.text
+    assert 'id="walkthrough-skip"' not in home.text
     assert parser.elements["show-walkthrough"]["tag"] == "button"
     assert "Primary reference" in home.text
     assert "Renderer" in home.text
@@ -191,6 +203,13 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "filter((item) => item.available === true)" in js
     assert "moveAdvancedPanels" in js
     assert "closeWalkthrough" in js
+    assert "finishWalkthrough" in js
+    assert "SETUP_KEY = 'recastroom-setup-v1'" in js
+    assert "COLLAB_KEY = 'recastroom-collab-v1'" in js
+    assert "Required first-run setup cannot be dismissed by clicking the backdrop." in js
+    assert "if (!$('walkthrough').hidden) return;" in js
+    assert "collab?.mode === 'handoff'" in m1_script.text
+    assert "attributedNote" in m1_script.text
     assert "guideTo(button.dataset.guideTarget)" in js
     assert "selectedWorkflow = 'recast-room'" in js
     assert "$('advanced').open = true" in js

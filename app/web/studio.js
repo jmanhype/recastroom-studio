@@ -206,16 +206,64 @@
     if (!container || !panels.length) return;
     container.append(...panels);
   }
+  const SETUP_KEY = 'recastroom-setup-v1';
+  const COLLAB_KEY = 'recastroom-collab-v1';
+  let walkthroughStep = 0;
+  function selectedRadio(name) {
+    return document.querySelector(`input[name="${name}"]:checked`)?.value || '';
+  }
+  function updateCollabStatus() {
+    let saved = null;
+    try { saved = JSON.parse(localStorage.getItem(COLLAB_KEY) || 'null'); } catch (_) { saved = null; }
+    const status = $('collab-status');
+    if (!saved || saved.mode === 'solo') { status.hidden = true; status.textContent = ''; return; }
+    status.hidden = false;
+    status.textContent = saved.reviewer ? `REVIEW HANDOFF · ${saved.reviewer}` : 'REVIEW HANDOFF';
+  }
   function closeWalkthrough() {
     $('walkthrough').hidden = true;
     $('show-walkthrough').focus();
   }
   function openWalkthrough() {
+    setWalkthroughStep(0);
     $('walkthrough').hidden = false;
-    $('walkthrough-start').focus();
+    $('walkthrough-next').focus();
+  }
+  function setWalkthroughStep(step) {
+    walkthroughStep = step;
+    document.querySelectorAll('[data-walkthrough-step]').forEach((panel) => {
+      panel.hidden = Number(panel.dataset.walkthroughStep) !== step;
+    });
+    document.querySelectorAll('#walkthrough-progress li').forEach((item, index) => {
+      item.classList.toggle('current', index === step);
+      item.classList.toggle('done', index < step);
+      item.querySelector('span').textContent = index < step ? '✓' : String(index + 1);
+    });
+    $('walkthrough-back').hidden = step === 0;
+    $('walkthrough-next').hidden = step === 4;
+    $('walkthrough-finish').hidden = step !== 4;
+    $('walkthrough-next').textContent = step === 0 ? 'Start' : step === 3 ? 'Review setup' : 'Next';
+  }
+  function finishWalkthrough() {
+    const preferences = {
+      connection: selectedRadio('walkthrough-connection'),
+      studio: selectedRadio('walkthrough-studio'),
+      collab: selectedRadio('walkthrough-collab'),
+      reviewer: $('walkthrough-reviewer').value.trim(),
+      completedAt: new Date().toISOString(),
+    };
+    try {
+      localStorage.setItem(SETUP_KEY, JSON.stringify(preferences));
+      localStorage.setItem(COLLAB_KEY, JSON.stringify({mode: preferences.collab, reviewer: preferences.reviewer}));
+    } catch (_) { /* Private mode still allows the current session setup. */ }
+    if (preferences.studio === 'advanced') $('advanced-studio').open = true;
+    else $('advanced-studio').open = false;
+    updateCollabStatus();
+    closeWalkthrough();
+    guideTo('source');
   }
   function guideTo(id) {
-    closeWalkthrough();
+    if (!$('walkthrough').hidden) return;
     const target = $(id);
     if (!target) return;
     target.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -400,16 +448,17 @@
   $('health-retry').addEventListener('click', checkHealth);
   $('show-walkthrough').addEventListener('click', openWalkthrough);
   $('hero-walkthrough').addEventListener('click', openWalkthrough);
-  $('walkthrough-skip').addEventListener('click', closeWalkthrough);
-  $('walkthrough-start').addEventListener('click', () => guideTo('source'));
+  $('walkthrough-back').addEventListener('click', () => setWalkthroughStep(Math.max(0, walkthroughStep - 1)));
+  $('walkthrough-next').addEventListener('click', () => setWalkthroughStep(Math.min(4, walkthroughStep + 1)));
+  $('walkthrough-finish').addEventListener('click', finishWalkthrough);
   document.querySelectorAll('[data-guide-target]').forEach((button) => {
     button.addEventListener('click', () => guideTo(button.dataset.guideTarget));
   });
   $('walkthrough').addEventListener('click', (event) => {
-    if (event.target === $('walkthrough')) closeWalkthrough();
+    // Required first-run setup cannot be dismissed by clicking the backdrop.
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !$('walkthrough').hidden) closeWalkthrough();
+    if (event.key === 'Escape' && !$('walkthrough').hidden) event.preventDefault();
   });
   window.addEventListener('beforeunload', () => { controller.abort(); clearTimeout(timer); urls.forEach((url) => URL.revokeObjectURL(url)); });
   // Small, read-only seams for the dependent frontend regression story.
@@ -418,9 +467,15 @@
     getReadiness: readinessStates,
     getState: () => ({ epoch, jobId: job, busy, running, recommended, backend: health?.backend || null, rendererReady: runConnectionReady() }),
     closeWalkthrough,
+    finishWalkthrough,
     openWalkthrough,
   });
   moveAdvancedPanels();
+  updateCollabStatus();
+  let completedSetup = null;
+  try { completedSetup = JSON.parse(localStorage.getItem(SETUP_KEY) || 'null'); } catch (_) { completedSetup = null; }
+  if (!completedSetup) openWalkthrough();
+  else if (completedSetup.studio === 'advanced') $('advanced-studio').open = true;
   loadCatalog();
   checkHealth();
 })();

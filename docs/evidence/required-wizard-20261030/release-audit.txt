@@ -1,0 +1,7 @@
+root=<package>
+tracked_files=644
+text_files=375
+binary_files=269
+probed_media_files=267
+FAIL: release audit
+FAIL: absolute user path: docs/evidence/required-wizard-20261030/release-audit.txt

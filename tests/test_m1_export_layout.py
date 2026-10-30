@@ -219,6 +219,7 @@ def _browser_program() -> str:
                 page.on("request", lambda request: request_url(request.url))
                 page.goto(base_url, wait_until="domcontentloaded")
                 page.wait_for_function("() => Boolean(window.StudioUI)")
+                page.evaluate("() => window.StudioUI.finishWalkthrough()")
                 page.locator("#advanced-studio > summary").click()
                 page.wait_for_selector("#project-select", state="visible")
                 prepare_rows(page)

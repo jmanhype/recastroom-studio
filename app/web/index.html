@@ -6,8 +6,8 @@
 <title>RecastRoom Studio</title>
 <link rel="stylesheet" href="/styles.css">
 <main>
-  <header class="masthead"><a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a><div class="masthead-actions"><span class="edition">PERFORMANCE / REIMAGINED</span><button id="show-walkthrough" type="button" class="ghost-button">Start guide</button></div></header>
-  <div class="intro"><div><p class="eyebrow">GUIDED VIDEO RECAST</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Keep the performance, camera, timing, and original dialogue while one performer becomes someone new.</p><button id="hero-walkthrough" type="button">Start the 3-step guide</button></div></div>
+  <header class="masthead"><a class="brand" href="/" aria-label="RecastRoom Studio home"><span class="brand-mark" aria-hidden="true">R/</span> RECASTROOM <span>STUDIO</span></a><div class="masthead-actions"><span id="collab-status" class="edition" hidden></span><span class="edition">PERFORMANCE / REIMAGINED</span><button id="show-walkthrough" type="button" class="ghost-button">Setup</button></div></header>
+  <div class="intro"><div><p class="eyebrow">GUIDED VIDEO RECAST</p><h1>Same take.<br>New lead.</h1></div><div class="intro-note"><p>Keep the performance, camera, timing, and original dialogue while one performer becomes someone new.</p><button id="hero-walkthrough" type="button">Set up studio</button></div></div>
   <section id="quickstart" class="quickstart" aria-labelledby="quickstart-heading">
     <div class="section-heading"><h2 id="quickstart-heading">Start here</h2><span>THREE STEPS · NO GENERATION UNTIL YOU AUTHORIZE IT</span></div>
     <div class="quickstart-grid">
@@ -162,16 +162,60 @@
   </section>
   <footer><span>RECASTROOM / INDEPENDENT TOOLS FOR MOVING IMAGES</span><span>Review every export before publication. <a href="/sound-lab.html">Sound lab</a></span></footer>
 </main>
-  <div id="walkthrough" class="walkthrough" hidden role="dialog" aria-modal="true" aria-labelledby="walkthrough-heading">
+  <div id="walkthrough" class="walkthrough" hidden role="dialog" aria-modal="true" aria-labelledby="walkthrough-heading" data-required="true">
     <div class="walkthrough-card">
-      <div class="section-heading"><h2 id="walkthrough-heading">Set up RecastRoom</h2><span>GUIDE · 3 STEPS</span></div>
-      <ol class="walkthrough-steps">
-        <li><strong>Choose a source performance</strong><span>A short clip with clear motion and audible dialogue works best.</span></li>
-        <li><strong>Add the replacement likeness</strong><span>Use one clear reference image. A second angle is optional.</span></li>
-        <li><strong>Record permission and prepare</strong><span>RecastRoom inspects the clip and builds the workflow. Nothing generates until you separately choose Run.</span></li>
+      <div class="section-heading"><h2 id="walkthrough-heading">Set up RecastRoom</h2><span>REQUIRED · 4 STEPS</span></div>
+      <ol id="walkthrough-progress" class="walkthrough-progress" aria-label="Setup steps">
+        <li><span></span>Connection</li>
+        <li><span></span>Studio</li>
+        <li><span></span>Collab</li>
+        <li><span></span>Ready</li>
       </ol>
-      <p class="hint">The same guide is always available from the Start guide button in the header.</p>
-      <div class="walkthrough-actions"><button id="walkthrough-skip" type="button" class="ghost-button">Skip guide</button><button id="walkthrough-start" type="button">Start now</button></div>
+      <section id="walkthrough-welcome" class="walkthrough-step" data-walkthrough-step="0">
+        <p class="eyebrow">WELCOME</p>
+        <h3>Four quick choices, then the studio opens.</h3>
+        <p class="hint">You will choose where work runs, how much guidance you want, and whether this is a solo or review-handoff workspace. This setup finishes once; you can reopen it later from the header.</p>
+      </section>
+      <section id="walkthrough-connection" class="walkthrough-step" data-walkthrough-step="1" hidden>
+        <p class="eyebrow">CONNECTION</p>
+        <h3>Where should recasts run?</h3>
+        <div class="walkthrough-options" role="radiogroup" aria-label="Execution connection">
+          <label><input type="radio" name="walkthrough-connection" value="dry-run" checked><strong>Dry run</strong><span>Available now · no GPU, no API key, no inference.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="comfyui"><strong>Local ComfyUI</strong><span>Use your own GPU and Henge-compatible graph.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="comfy-sdk"><strong>Comfy SDK</strong><span>Official Developer Platform connection.</span></label>
+          <label><input type="radio" name="walkthrough-connection" value="runpod"><strong>RunPod</strong><span>Scales a GPU worker to zero.</span></label>
+        </div>
+        <p class="hint">The server remains the authority on the active backend. This choice records your intended setup and changes the next action shown.</p>
+      </section>
+      <section id="walkthrough-studio" class="walkthrough-step" data-walkthrough-step="2" hidden>
+        <p class="eyebrow">STUDIO</p>
+        <h3>How much guidance do you want?</h3>
+        <div class="walkthrough-options" role="radiogroup" aria-label="Studio guidance">
+          <label><input type="radio" name="walkthrough-studio" value="guided" checked><strong>Guided studio</strong><span>Three-step quick start, readiness, and permission before production.</span></label>
+          <label><input type="radio" name="walkthrough-studio" value="advanced"><strong>Advanced studio</strong><span>Open the full project, cut, graph, and take desk.</span></label>
+        </div>
+      </section>
+      <section id="walkthrough-collab" class="walkthrough-step" data-walkthrough-step="3" hidden>
+        <p class="eyebrow">COLLAB</p>
+        <h3>Solo or review handoff?</h3>
+        <div class="walkthrough-options" role="radiogroup" aria-label="Collaboration mode">
+          <label><input type="radio" name="walkthrough-collab" value="solo" checked><strong>Solo</strong><span>One creator reviews and selects takes.</span></label>
+          <label><input type="radio" name="walkthrough-collab" value="handoff"><strong>Review handoff</strong><span>A named reviewer appends local notes and verdicts to take history.</span></label>
+        </div>
+        <label for="walkthrough-reviewer">Reviewer name</label>
+        <input id="walkthrough-reviewer" type="text" maxlength="80" autocomplete="nickname" placeholder="For example: J or Editor A">
+        <p class="hint">Review handoff is deliberately local-first: no realtime session, remote viewer, account, or media upload is created.</p>
+      </section>
+      <section id="walkthrough-done" class="walkthrough-step" data-walkthrough-step="4" hidden>
+        <p class="eyebrow">READY</p>
+        <h3>Add a guide clip and a likeness reference.</h3>
+        <p class="hint">Nothing generates until you separately authorize a run. You can reopen Setup from the header.</p>
+      </section>
+      <div class="walkthrough-actions">
+        <button id="walkthrough-back" type="button" class="ghost-button" hidden>Back</button>
+        <button id="walkthrough-next" type="button">Start</button>
+        <button id="walkthrough-finish" type="button" hidden>Open the studio</button>
+      </div>
     </div>
   </div>
   <script src="/projects.js?v=20261027d" defer></script>

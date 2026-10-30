@@ -1085,11 +1085,15 @@
       $('m1-review-note-status').textContent = 'Compare and select one candidate, then provide a human review note.';
       return;
     }
+    let collab = null;
+    try { collab = JSON.parse(localStorage.getItem('recastroom-collab-v1') || 'null'); } catch (_) { collab = null; }
+    const attributedNote = collab?.mode === 'handoff' && collab.reviewer
+      ? `${collab.reviewer}: ${note}`.slice(0, 4000) : note;
     try {
       const payload = await requestJSON('/takes/' + encodeURIComponent(take.id) + '/reviews', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({verdict: $('m1-review-verdict').value, note}),
+        body: JSON.stringify({verdict: $('m1-review-verdict').value, note: attributedNote}),
       });
       $('m1-review-note-status').textContent = `Human review ${payload.verdict} appended as ${payload.id}; no automatic keeper or selection was made.`;
     } catch (error) {

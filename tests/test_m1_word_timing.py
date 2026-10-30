@@ -283,6 +283,7 @@ def _browser(base_url: str, evidence: Path, project: str, timing: dict) -> None:
             page.on("pageerror", lambda error: errors.append(str(error)))
             page.goto(url, wait_until="domcontentloaded")
             page.wait_for_function("() => Boolean(window.StudioUI)")
+            page.evaluate("() => window.StudioUI.finishWalkthrough()")
             page.locator("#advanced-studio > summary").click()
             page.wait_for_selector("#project-select", state="visible")
             page.select_option("#project-select", project)

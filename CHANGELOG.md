@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.2 — 2026-10-30
+
+- Added a required four-step first-run setup wizard covering connection, studio guidance, collaboration mode, and readiness.
+- Added connection choices for dry run, local ComfyUI, Comfy SDK, and RunPod.
+- Added local review handoff with a named reviewer; handoff notes are attributed in take-review history without creating a remote session.
+- Prevented Escape or backdrop clicks from dismissing first-run setup before completion.
+
+## 0.3.1 — 2026-10-30
+
 ## 0.3.1 — 2026-10-30
 
 - Hardens the native E2E journey to reopen the Advanced Studio immediately before restored-workspace selection.

@@ -156,6 +156,7 @@ def _browser_program() -> str:
             page.on("pageerror", lambda error: page_errors.append(str(error)))
             page.goto(base_url, wait_until="domcontentloaded")
             page.wait_for_function("() => Boolean(window.StudioUI)")
+            page.evaluate("() => window.StudioUI.finishWalkthrough()")
             page.locator("#advanced-studio > summary").click()
             page.wait_for_selector("#project-select", state="visible")
             page.select_option("#project-select", project_id)
