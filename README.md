@@ -64,14 +64,14 @@ The bundled local workflow uses the RecastRoom H3 performance-preserving graph:
 - MiniMax H3 Exact Audio Lock
 - exact word/frame schedule
 
-## Three surfaces
+## The production workspace
 
-| Route | Purpose |
-|---|---|
-| `/landing.html` | Public overview with the 23.8-second hero video |
-| `/` | Production workspace: source, references, attestation, workflow, renderer, and review |
-| `/sound-lab.html` | Keeper-video review plus the local Tone.js cue family |
-| `/legal.html` | Local-demo privacy, terms, and rights responsibilities |
+The main route is `/`: one workspace for source inspection, references,
+attestation, workflow preparation, execution, and review.
+
+The public overview, sound-design review tool, and legal notes are support
+pages linked from the app footer. They are not separate products or separate
+user journeys.
 
 The public hero is a metadata-clean stream copy of the frozen demonstration master.
 Its specifications and hash are recorded in [`media/README.md`](media/README.md).
@@ -90,7 +90,7 @@ Included:
 - Whisper-compatible word timing
 - Rights attestation gate
 - Media preflight and review artifacts
-- Public landing, sound-design review, and legal surfaces
+- Public overview and local review tools
 - Automated application, API, workflow, and browser tests
 
 CI runs on Python 3.11 and 3.12 and executes the full test suite.
@@ -172,7 +172,8 @@ Open:
 http://127.0.0.1:8768
 ```
 
-The public overview is at `/landing.html`; the sound-design review surface is at `/sound-lab.html`.
+The main workspace is at `/`. Public overview and legal notes are linked in the
+app footer.
 
 ## Repository guide
 

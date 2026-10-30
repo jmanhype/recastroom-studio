@@ -11,7 +11,7 @@ continuous-shot dialogue recasting.
 - Whisper-compatible word timing
 - Rights attestation gate
 - Media preflight and review artifacts
-- Public landing, sound-design review, and legal surfaces
+- Public overview and local review tools
 - Public media kit with hero, showreel, teaser, and proof assets
 - Automated application, API, workflow, and browser tests
 
