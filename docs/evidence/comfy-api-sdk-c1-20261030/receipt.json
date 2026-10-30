@@ -1,0 +1,84 @@
+{
+  "schema_version": "recastroom.comfy-api-sdk-c1-proof.v1",
+  "ok": true,
+  "adapter": "openjutsu.comfy_sdk_runner.ComfySdkRunner",
+  "sdk_version": "0.5.0",
+  "cli_version": "1.24.0",
+  "build_id": "56aad298-7715-42a7-b377-a799051b6a2e",
+  "release_id": "ef64ae9a-990a-4b26-945b-44f659ab5edf",
+  "release_version": 2,
+  "release_archive_sha256": "cc20135b537ef455bf51c1b28422ade9dc1ea1b711570e6b1219b56fcd83159b",
+  "deployment_id": "dep-0461465a-1020-4edb-a05c-0a92d0465997",
+  "deployment_teardown": "deleted; deploy_name_not_found readback",
+  "job_id": "233a17e4-253f-4797-baa6-f82a2b3bbbc8",
+  "job_status": "succeeded",
+  "submitted_utc": "2026-10-30T23:35:22Z",
+  "output_ready_utc": "2026-10-30T23:37:30Z",
+  "active_render_window_seconds": 128,
+  "workflow_sha256": "3bbdfa192ec8b2429b090aa1b6538909f701b62f9b14b6cd0066180cc9b2f139",
+  "input_sha256": {
+    "source": "8e607b45bc9563e2596663652682a7c6fb92fc83d9eca6094280be0d621f0d76",
+    "reference_1": "9f42df7a9fcb421739e51526a7baa46959742bf1756fdc95418eb5fce73ba343",
+    "reference_2": "fd42109d05845e4349ca7af9beb6cbabce092f0d1c20100e2cf87c5ea1b078a0"
+  },
+  "output": {
+    "generated_sha256": "f8ed7bcee8f9c2eb83f26d83c763d563e75a3625a1a08829ba32541399dabab8",
+    "generated_bytes": 2454604,
+    "final_exact_audio_sha256": "3962bb606e04443eb116dde19330d7ed6dc15d3ebd7a516d01b5a32d47738333",
+    "final_exact_audio_bytes": 2478102,
+    "source_decoded_audio_sha256": "ed03c8bfffaaf93f9b4cd90dcb1d63401ca39c358abfd0af4cef3562f9621d54",
+    "final_decoded_audio_sha256": "ed03c8bfffaaf93f9b4cd90dcb1d63401ca39c358abfd0af4cef3562f9621d54",
+    "audio_verification": "decoded source and final PCM SHA-256 identical",
+    "format": {
+      "width": 960,
+      "height": 384,
+      "fps": 24,
+      "duration_seconds": 8,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "sample_rate": 44100,
+      "channels": 2
+    }
+  },
+  "account_signal": {
+    "before_balance_usd": 27.02,
+    "after_balance_usd": 27.02,
+    "limitation": "CLI balance remained unchanged immediately; deployment invoice/settled usage was not exposed, so actual billable amount is not claimed."
+  },
+  "credential_hygiene": "local OAuth token read in-process only; not printed, committed, or written to evidence",
+  "artifacts": {
+    "generated.mp4": {
+      "bytes": 2454604,
+      "sha256": "f8ed7bcee8f9c2eb83f26d83c763d563e75a3625a1a08829ba32541399dabab8"
+    },
+    "final_exact_audio.mp4": {
+      "bytes": 2478102,
+      "sha256": "3962bb606e04443eb116dde19330d7ed6dc15d3ebd7a516d01b5a32d47738333"
+    },
+    "source_vs_sdk_final.mp4": {
+      "bytes": 2397684,
+      "sha256": "3919ccf5a15e37efc4099d3eb0547ca463ee86722a40a69f55e66fb08f8cc391"
+    },
+    "source_final_contact.jpg": {
+      "bytes": 217324,
+      "sha256": "7799fb9f80c1bc85cc476d4cdc700c30c1ca4f73ebdec7f5d394e87d469ac29c"
+    },
+    "submission.json": {
+      "bytes": 282,
+      "sha256": "b83d7330b0034d6e1b9c65d476cea52982874256adeb0aa80f5878958cecefe5"
+    },
+    "receipt.json": {
+      "bytes": 1088,
+      "sha256": "47dc86a914bd8a3ac6b623acc0cb504c2949424cdfe6fe61a87cbb589601d6bf"
+    },
+    "job-final.json": {
+      "bytes": 125,
+      "sha256": "31b9b1ff138485faccf8cd22dc8c23cec8a4ea61901d03a216b39eb05a0e95d5"
+    }
+  },
+  "code_commits": {
+    "sdk_bridge_and_ui": "de747d4a6e500e2e0e9218386c7d2227b2ffcf12",
+    "lora_path_fix": "c1c331c6068dee313d813ec92093335f27b9bce8",
+    "local_merge_head": "a1109a2"
+  }
+}
