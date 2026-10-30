@@ -105,6 +105,20 @@ Full walkthrough contact sheet: [`docs/images/app-walkthrough.jpg`](docs/images/
 
 Demo storyboard: [`docs/images/demo-v1-contact.jpg`](docs/images/demo-v1-contact.jpg)
 
+## Media kit
+
+| Asset | Purpose |
+|---|---|
+| [24-second showreel](media/recastroom-showreel-24s-16x9.mp4) | Hero plus proof-gallery overview |
+| [Six-second 16:9 teaser](media/recastroom-teaser-6s-16x9.mp4) | Fast social hook |
+| [Six-second vertical teaser](media/recastroom-teaser-6s-9x16.mp4) | Shorts, Reels, and TikTok hook |
+| [Source-versus-recast proof](media/recastroom-proof-9x16.mp4) | Direct before/after proof |
+| [Workflow diagram](docs/images/workflow-diagram.png) | Source-to-export pipeline |
+| [Architecture diagram](docs/images/architecture-diagram.png) | App/runtime/data boundaries |
+| [Media contact sheet](docs/images/media-contact-sheet.jpg) | One-page asset overview |
+
+The full inventory and hashes are in [`media/README.md`](media/README.md).
+
 ## Quickstart
 
 Install FFmpeg first. macOS users can run `brew install ffmpeg`; Ubuntu users can run `sudo apt-get install ffmpeg`.

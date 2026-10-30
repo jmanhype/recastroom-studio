@@ -96,6 +96,9 @@
 
 ## Unreleased — public release candidate
 
+- Added a public media kit with a 24-second showreel, three six-second teasers, and a vertical proof clip.
+- Added poster frames for the hero, showreel, proof, teaser, and social preview.
+- Added workflow and architecture diagrams plus a one-page media contact sheet.
 - Reorganized the repository around reviewer-first root documentation and public media.
 - Added root `RIGHTS.md`, `MODELS.md`, and `NOTICE` files.
 - Added one-command `setup.sh` and `run.sh` entry points.

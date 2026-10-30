@@ -23,7 +23,7 @@ else
   .venv/bin/python -m pip install --upgrade pip
   .venv/bin/python -m pip install ".[dev]"
 fi
-.venv/bin/python -m json.tool workflows/openjutsu_h3_lipsync_local.json >/dev/null
+.venv/bin/python -m json.tool workflows/recastroom_h3_workflow.json >/dev/null
 
 cat <<'EOF'
 Setup complete.

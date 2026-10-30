@@ -18,6 +18,9 @@ remote push is part of this path.
 | Model/license boundary | `MODELS.md` |
 | Copyright and AI-output notice | `NOTICE` |
 | Public media manifest | `media/README.md` |
+| Public media contact sheet | `docs/images/media-contact-sheet.jpg` |
+| Workflow diagram | `docs/images/workflow-diagram.png` |
+| Architecture diagram | `docs/images/architecture-diagram.png` |
 | One-command setup | `setup.sh` |
 | Local studio launcher | `run.sh` |
 | Model/runtime requirements | `docs/PIPELINE.md` |
