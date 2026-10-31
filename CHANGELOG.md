@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.5 — 2026-10-30
+
+- Surfaced the recorded official Comfy API SDK proof beside a clearly labeled no-inference preview.
+- Added the exact prepared-run contract: source/reference routing, seed, steps, identity-swap strength, audio policy, source treatment, graph nodes, and literal timing schedule.
+- Made hosted SDK runs fail closed before queueing until the API key, deployment URL, and asset bridge are configured.
+- Sanitized SDK recovery state to expose phase, provider job ID, and retry policy without idempotency keys, credentials, fingerprints, or provider exceptions.
+- Moved the SDK-generated MP4 to the stable advertised job download path.
+- Allowed the public hero’s bounded Hyperframes metadata through the fail-closed release audit while continuing to reject unknown media tags.
+
 ## 0.3.4 — 2026-10-30
 
 - Added Henge-style setup skipping: **Skip setup** closes the welcome screen with defaults, while later **Skip** advances one step.

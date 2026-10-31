@@ -31,7 +31,7 @@ python -m pytest -q
 recastroom --version
 ```
 
-The expected application version is `0.3.4`.
+The expected application version is `0.3.5`.
 
 ## 2. Confirm the bundled workflow
 

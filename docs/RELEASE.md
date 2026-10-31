@@ -1,8 +1,9 @@
 # Release candidate review guide
 
-This is a local release candidate for RecastRoom Studio `0.3.4`. It is ready for
-owner review, but no public repository, tag, social post, submission form, or
-remote push is part of this path.
+This is a local release candidate for RecastRoom Studio `0.3.5`. It is ready
+for owner review. The public repository may already exist, but no `v0.3.5` tag,
+public release, social post, submission form, or remote push is part of this
+path.
 
 ## Reviewer entry points
 
@@ -97,8 +98,8 @@ After the release commit is clean:
 ```bash
 python tools/build_release_archive.py \
   --commit HEAD \
-  --output work/release/recastroom-studio-v0.3.4.zip \
-  --receipt work/release/recastroom-studio-v0.3.4.receipt.json
+  --output work/release/recastroom-studio-v0.3.5.zip \
+  --receipt work/release/recastroom-studio-v0.3.5.receipt.json
 ```
 
 The tool records the source commit, source Git tree, filtered-content digest,
@@ -110,8 +111,8 @@ the two SHA-256 values to reproduce the archive.
 After the owner approves the exact commit and receipt, and only then:
 
 ```bash
-git tag -a v0.3.4 -m "RecastRoom Studio 0.3.4" <approved-commit>
-git show v0.3.4 --stat
+git tag -a v0.3.5 -m "RecastRoom Studio 0.3.5" <approved-commit>
+git show v0.3.5 --stat
 ```
 
 Do not push the branch or tag during candidate preparation. Publication requires
