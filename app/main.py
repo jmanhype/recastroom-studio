@@ -97,7 +97,7 @@ async def _worker_lifespan(_app: FastAPI):
         app.state.worker_error = app.state.worker_error or None
 
 
-app = FastAPI(title="RecastRoom Studio", version="0.3.4", lifespan=_worker_lifespan)
+app = FastAPI(title="RecastRoom Studio", version="0.3.5", lifespan=_worker_lifespan)
 app.state.workspace_store = PROJECT_STORE
 
 
