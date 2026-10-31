@@ -2,6 +2,7 @@
 
 ## 0.3.5 — 2026-10-30
 
+- Unslopped the public landing surface: quiet edit-suite chrome, real media evidence, calmer type, and purposeful motion.
 - Surfaced the recorded official Comfy API SDK proof beside a clearly labeled no-inference preview.
 - Added the exact prepared-run contract: source/reference routing, seed, steps, identity-swap strength, audio policy, source treatment, graph nodes, and literal timing schedule.
 - Made hosted SDK runs fail closed before queueing until the API key, deployment URL, and asset bridge are configured.

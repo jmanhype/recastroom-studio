@@ -106,6 +106,12 @@ The tool records the source commit, source Git tree, filtered-content digest,
 archive byte size, and archive SHA-256. Build the same commit twice and compare
 the two SHA-256 values to reproduce the archive.
 
+## Design-process credit
+
+The v0.3.5 landing redline process was guided by Damir Sokolovsky’s
+[unslop](https://github.com/heydamir/unslop) skill, licensed CC BY 4.0. No
+unslop application code or media was copied into RecastRoom.
+
 ## Local tag instruction only
 
 After the owner approves the exact commit and receipt, and only then:

@@ -37,41 +37,41 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-copy">
-        <p class="eyebrow">MiniMax H3 · Comfy workspace</p>
+        <p class="eyebrow">Authorized one-person dialogue recasting</p>
         <h1 id="hero-heading">Keep the performance.<br>Change the lead.</h1>
-        <p class="hero-sub">Review the original shot, prepare the recast, and compare the result with timing and dialogue intact.</p>
-        <p class="mode-pill">Default preview · Generation needs ComfyUI</p>
+        <p class="hero-sub">Review a source performance, attach an authorized likeness, and compare the MiniMax H3 result without losing timing or original dialogue.</p>
+        <p class="mode-note">Start with a local preview. Generation needs ComfyUI or a hosted Comfy deployment.</p>
         <a class="primary" href="/">Open the studio</a>
-        <p class="proof-line">23.8-second public example</p>
+        <p class="proof-line">23.8-second recorded example</p>
       </div>
-      <figure class="hero-media reveal">
+      <figure class="hero-media">
         <video controls playsinline preload="metadata" poster="/media/recastroom-hero-poster.jpg" aria-label="RecastRoom Studio performance recast proof">
           <source src="/media/recastroom-public-hero-16x9.mp4" type="video/mp4">
         </video>
-        <figcaption>Public example · source timing and original audio</figcaption>
+        <figcaption><span class="frame-mark" aria-hidden="true"></span>Recorded source/result example · original timing and audio</figcaption>
       </figure>
     </section>
 
-    <section class="tagline reveal" aria-label="RecastRoom promise">
+    <section class="tagline" aria-label="RecastRoom promise">
       <p data-tagline>The identity changes. The take stays yours.</p>
     </section>
 
-    <section class="argument reveal" aria-labelledby="argument-heading">
+    <section class="argument" aria-labelledby="argument-heading">
       <div class="section-head">
-        <p class="eyebrow">The problem</p>
-        <h2 id="argument-heading">Recasting usually loses the take</h2>
+        <p class="eyebrow">Why recasting is hard</p>
+        <h2 id="argument-heading">A replacement can lose the take</h2>
       </div>
       <div class="argument-grid">
-        <article><h3>One replacement destroys three things</h3><p>A new face can move the camera, stretch the timing, or invent speech that was never in the source.</p></article>
+        <article class="lead"><h3>One replacement can change three things</h3><p>A new face can move the camera, stretch the timing, or invent speech that was never in the source.</p><p>RecastRoom keeps those layers separate so a review can tell whether the performance survived.</p></article>
         <article><h3>Identity is only one layer</h3><p>RecastRoom keeps identity, performance, scene, and audio as separate workflow inputs instead of blending them into one hidden prompt.</p></article>
         <article><h3>The edit survives replacement</h3><p>Advanced project tools record source cuts, take selections, and export checks so review is repeatable.</p></article>
       </div>
     </section>
 
-    <section id="workflow" class="workflow reveal" aria-labelledby="workflow-heading">
+    <section id="workflow" class="workflow" aria-labelledby="workflow-heading">
       <div class="section-head">
-        <p class="eyebrow">How it works</p>
-        <h2 id="workflow-heading">From original shot to final export</h2>
+        <p class="eyebrow">Workflow</p>
+        <h2 id="workflow-heading">From source shot to reviewed export</h2>
       </div>
       <ol class="workflow-grid">
         <li><span>01</span><div><h3>Select the source you control</h3><p>Import a clip you own, license, or have explicit permission to modify. RecastRoom inspects the scene, timing, and audio before work starts.</p></div></li>
@@ -80,14 +80,14 @@
       </ol>
     </section>
 
-    <section id="runtime" class="runtime reveal" aria-labelledby="runtime-heading">
+    <section id="runtime" class="runtime" aria-labelledby="runtime-heading">
       <div class="section-head">
-        <p class="eyebrow">Runtime and cost</p>
-        <h2 id="runtime-heading">Know the cost boundary before you spend</h2>
+        <p class="eyebrow">Cost boundary</p>
+        <h2 id="runtime-heading">Know what a run changes</h2>
       </div>
       <div class="runtime-grid">
-        <article>
-          <span>Preview run</span>
+        <article class="lead">
+          <span>Preview</span>
           <h3>No GPU required</h3>
           <p>The default launcher starts here. It copies a source through preparation, status, download, and paired-review paths without generating a recast.</p>
           <dl>
@@ -98,7 +98,7 @@
         </article>
         <article>
           <span>Local ComfyUI</span>
-          <h3>Your local ComfyUI</h3>
+          <h3>Your configured endpoint</h3>
           <p>Runs the prepared MiniMax H3 workflow against your configured ComfyUI endpoint after the app reports the connection ready.</p>
           <dl>
             <div><dt>Provider charge</dt><dd>No RecastRoom fee</dd></div>
@@ -120,10 +120,10 @@
       <p class="runtime-note">The workspace shows connection status without treating a configured connection as proof of quality. You still review the final media.</p>
     </section>
 
-    <section id="setup" class="setup reveal" aria-labelledby="setup-heading">
+    <section id="setup" class="setup" aria-labelledby="setup-heading">
       <div class="section-head">
-        <p class="eyebrow">Setup diagnostics</p>
-        <h2 id="setup-heading">The first run tells you what is missing</h2>
+        <p class="eyebrow">Readiness</p>
+        <h2 id="setup-heading">The first run shows what is missing</h2>
       </div>
       <div class="setup-grid">
         <article><h3>Required locally</h3><p>Python, the package dependencies, FFmpeg, and the bundled Comfy workflow.</p></article>
@@ -134,41 +134,43 @@
     </section>
 
     <section id="features" class="features" aria-labelledby="features-heading">
-      <div class="section-head reveal">
-        <p class="eyebrow">What stays under control</p>
+      <div class="section-head">
+        <p class="eyebrow">Under control</p>
         <h2 id="features-heading">Every layer has a job</h2>
       </div>
       <div class="feature-grid">
-        <article class="feature-card reveal" data-story="source">
-          <div class="visual" aria-hidden="true"><div class="source-stage"><span class="source-frame"></span><span class="source-scan"></span></div></div>
+        <article class="feature-card wide">
+          <figure class="feature-media">
+            <img src="/media/posters/hero-16x9.webp" alt="Paused frame from the recorded source and result example" loading="lazy" decoding="async">
+            <figcaption><span class="frame-mark" aria-hidden="true"></span>Source performance under review</figcaption>
+          </figure>
           <h3>Source performance</h3><p>The source is probed for duration, dimensions, frame rate, and audio before preparation.</p>
         </article>
-        <article class="feature-card reveal" data-story="reference">
-          <div class="visual" aria-hidden="true"><div class="reference-stage"><span class="reference-outline"></span><span class="reference-chip"></span></div></div>
+        <article class="feature-card">
           <h3>Authorized reference</h3><p>The replacement likeness enters as a separate, recorded input.</p>
         </article>
-        <article class="feature-card reveal" data-story="rights">
-          <div class="visual rights-stage" aria-hidden="true"><span>Shot</span><span>Take</span><span>Export</span></div>
+        <article class="feature-card">
           <h3>Shot / take / export</h3><p>The studio records source cuts, take selections, edit maps, and export checks before review.</p>
         </article>
-        <article class="feature-card reveal" data-story="render">
-          <div class="visual" aria-hidden="true"><div class="render-stage"><span>Source</span><span>Mask</span><span>H3</span><span>Final</span><i class="render-pulse"></i></div></div>
+        <article class="feature-card">
           <h3>MiniMax H3 workflow</h3><p>The prepared Comfy workflow keeps source timing and dialogue schedule attached.</p>
         </article>
-        <article class="feature-card reveal" data-story="audio">
-          <div class="visual" aria-hidden="true"><div class="audio-stage"><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><b>Original audio kept</b></div></div>
+        <article class="feature-card">
           <h3>Example audio</h3><p>The review output restores the original source audio; advanced exports follow the selected audio policy.</p>
         </article>
-        <article class="feature-card reveal" data-story="review">
-          <div class="visual" aria-hidden="true"><div class="review-stage"><span class="review-a">Source</span><span class="review-b">Final</span><span class="review-scan"></span></div></div>
+        <article class="feature-card wide-full">
+          <figure class="feature-media">
+            <img src="/media/posters/core-recast.png" alt="Paused source and recast comparison frame" loading="lazy" decoding="async">
+            <figcaption><span class="frame-mark" aria-hidden="true"></span>Synchronized source and result review</figcaption>
+          </figure>
           <h3>Frame review</h3><p>A paired source/final video keeps both results aligned for playback and manual review.</p>
         </article>
       </div>
     </section>
 
-    <section id="proof" class="proof reveal" aria-labelledby="proof-heading">
+    <section id="proof" class="proof" aria-labelledby="proof-heading">
       <div class="section-head">
-        <p class="eyebrow">Local proof</p>
+        <p class="eyebrow">Evidence</p>
         <h2 id="proof-heading">Review files ship with the result</h2>
       </div>
       <dl class="proof-grid">
@@ -179,10 +181,10 @@
       </dl>
     </section>
 
-    <section id="gallery" class="gallery reveal" aria-labelledby="gallery-heading">
+    <section id="gallery" class="gallery" aria-labelledby="gallery-heading">
       <div class="section-head">
-        <p class="eyebrow">Proof gallery</p>
-      <h2 id="gallery-heading">See example comparisons</h2>
+        <p class="eyebrow">Examples</p>
+        <h2 id="gallery-heading">Watch recorded comparisons</h2>
       </div>
       <div class="gallery-grid">
         <article>
@@ -204,22 +206,22 @@
       <p class="gallery-note">These are recorded examples, not automated quality scores. Multi-person selection remains a roadmap feature rather than a current guided-workflow control.</p>
     </section>
 
-    <section id="roadmap" class="roadmap reveal" aria-labelledby="roadmap-heading">
+    <section id="roadmap" class="roadmap" aria-labelledby="roadmap-heading">
       <div class="section-head">
-        <p class="eyebrow">Studio growth path</p>
-        <h2 id="roadmap-heading">Broad, but not generic</h2>
+        <p class="eyebrow">Roadmap</p>
+        <h2 id="roadmap-heading">Focused now, broader later</h2>
       </div>
       <div class="roadmap-grid">
-        <article><span>Now</span><h3>One-person dialogue recast</h3><p>The focused path: permitted reference, source conditioning, original-audio restoration, and review.</p></article>
+        <article class="now"><span>Now</span><h3>One-person dialogue recast</h3><p>The focused path: permitted reference, source conditioning, original-audio restoration, and review.</p></article>
         <article><span>Next</span><h3>Multi-person engine</h3><p>Separate target assignment, masks, permission records, and review for each performer.</p></article>
         <article><span>Later</span><h3>Scene and effect recipes</h3><p>Reusable looks and effect lanes that still inherit the source schedule and review files.</p></article>
         <article><span>Later</span><h3>Take queue</h3><p>Take history, rerenders, and job summaries without hiding the underlying Comfy workflow.</p></article>
       </div>
     </section>
 
-    <section id="compare" class="compare reveal" aria-labelledby="compare-heading">
+    <section id="compare" class="compare" aria-labelledby="compare-heading">
       <div class="section-head">
-        <p class="eyebrow">Focused comparison</p>
+        <p class="eyebrow">Current version</p>
         <h2 id="compare-heading">What this version does</h2>
       </div>
       <div class="compare-scroll" tabindex="0" role="group" aria-label="Scrollable comparison table">
@@ -237,18 +239,18 @@
       </div>
     </section>
 
-    <section id="rights" class="rights reveal" aria-labelledby="rights-heading">
+    <section id="rights" class="rights" aria-labelledby="rights-heading">
       <div class="section-head">
-        <p class="eyebrow">Permission before production</p>
+        <p class="eyebrow">Permissions</p>
         <h2 id="rights-heading">Source and likeness permissions</h2>
       </div>
       <p>RecastRoom asks you to confirm source ownership, reference permission, and consent for every identifiable person before preparation. The gate is part of the workflow, not a footer warning.</p>
       <p>The application cannot prove legal clearance for you. It records your permission confirmation and keeps the production path closed until that declaration exists.</p>
     </section>
 
-    <section id="faq" class="faq reveal" aria-labelledby="faq-heading">
+    <section id="faq" class="faq" aria-labelledby="faq-heading">
       <div class="section-head">
-        <p class="eyebrow">Answers</p>
+        <p class="eyebrow">FAQ</p>
         <h2 id="faq-heading">Questions before you run it</h2>
       </div>
       <div class="faq-list">
@@ -263,10 +265,10 @@
       </div>
     </section>
 
-    <section class="final-cta reveal" aria-labelledby="final-heading">
+    <section class="final-cta" aria-labelledby="final-heading">
       <h2 id="final-heading">Start with a reviewed preview</h2>
       <p>Start with preview mode, inspect the prepared workflow, then connect ComfyUI.</p>
-      <a class="primary" href="/">Start the workflow</a>
+      <a class="primary" href="/">Open the studio</a>
     </section>
   </main>
 
