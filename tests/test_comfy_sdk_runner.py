@@ -1,6 +1,7 @@
 import json
 import sys
 from types import SimpleNamespace
+import hashlib
 
 import pytest
 
@@ -49,6 +50,21 @@ def test_resolved_api_key_is_forwarded_to_comfy(
         "api_key": expected_key,
         "client_info": "recastroom-studio",
     }
+
+
+def test_explicit_deployment_url_is_used_without_environment_fallback(monkeypatch):
+    constructed = install_fake_comfy(monkeypatch)
+    monkeypatch.delenv("COMFY_BASE_URL", raising=False)
+
+    runner = ComfySdkRunner(
+        api_key="configuration-present-for-test",
+        base_url="https://resolved-deployment.example",
+    )
+
+    assert len(constructed) == 1
+    assert runner._endpoint_fingerprint == hashlib.sha256(
+        b"https://resolved-deployment.example"
+    ).hexdigest()
 
 
 def test_missing_api_key_fails_closed_before_client_construction(monkeypatch):

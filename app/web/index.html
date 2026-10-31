@@ -184,6 +184,18 @@
     </label>
     </div><button id="submit" type="submit" disabled aria-describedby="prepare-help">Prepare workflow <span aria-hidden="true">↗</span></button><p id="prepare-help" class="hint">Select a source and primary reference, then confirm permission.</p><button id="reset" type="button" class="text-button">Reset workspace</button><p class="fine-print">Reset clears this workspace, not uploaded files or an already queued server job.</p></aside></div>
   </form>
+  <section id="run-contract" class="prepared-contract" hidden aria-labelledby="run-contract-heading">
+    <details id="prepared-contract">
+      <summary id="run-contract-heading">Inspect the exact prepared run</summary>
+      <dl id="prepared-contract-facts" class="contract-facts"></dl>
+      <div><h3>Word schedule sent to the graph</h3><pre id="prepared-word-schedule"></pre></div>
+    </details>
+    <details id="sdk-recovery" hidden>
+      <summary>SDK submission recovery</summary>
+      <dl id="sdk-recovery-facts" class="contract-facts"></dl>
+      <p id="sdk-recovery-guidance" class="hint"></p>
+    </details>
+  </section>
   <section id="result" class="result" hidden aria-labelledby="result-heading">
     <div class="section-heading"><h2 id="result-heading">Production desk</h2><span id="job-label"></span></div><div class="production"><div><p id="stage" class="eyebrow">PREPARING</p><p id="output" role="status" aria-live="polite"></p><p id="error" role="alert" hidden></p><div id="prepared-links" class="links"></div></div><div><button id="run" type="button" disabled aria-describedby="run-help">Run prepared workflow</button><p id="run-help" class="hint">Preparation must finish before running.</p><button id="retry-status" class="text-button" type="button" hidden>Check job status again</button></div></div>
     <div id="review" hidden><div class="section-heading"><h2>Watch the difference.</h2><span>SOURCE / RESULT</span></div><p class="hint">Compare the original above with the final below, or play the paired review. Review quality yourself; no automated score is provided.</p><div class="review-grid"><figure><video id="final-preview" controls playsinline preload="metadata" aria-label="Final result"></video><figcaption id="final-caption">Final · original audio restored</figcaption></figure><figure><video id="comparison-preview" controls playsinline preload="metadata" aria-label="Side-by-side source and result"></video><figcaption id="comparison-caption">Source / final · paired review</figcaption></figure></div><div id="downloads" class="links"></div></div>

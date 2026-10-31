@@ -191,13 +191,21 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "['source', 'reference_1', 'reference_2'].includes(event.target.id)" in js
     assert "$('rights').checked = false" in js
     assert "!ready || busy || !health?.ok || !health?.workflow_exists" in js
-    assert "!job || !recommended || busy || running || !health?.ok" in js
+    assert "!job || !recommended || busy || running || !runConnectionReady()" in js
     assert "Preview only: copies source media. No AI inference or recasting." in js
     assert "Preview complete · no AI inference or recasting · output copies the source." in js
     assert "status.state === 'complete' && status.backend === 'dry_run'" in js
     assert "Preview copy · no AI inference" in js
     assert "Final · original audio restored" in js
     assert "request('/api/proof/comfy-api-sdk-c1')" in js
+    assert "function renderPreparedContract(contract)" in js
+    assert "contract.timing?.status" in js
+    assert "contract.timing?.schedule" in js
+    assert "configuration_ready === true" in js
+    assert "Hosted Comfy configuration incomplete" in js
+    assert "SDK submission recovery" in client.get("/").text
+    assert "SDK outcome is unknown" in js
+    assert "guardedSdkStateRefusal" in js
     assert "status.state === 'complete'" in js
     assert "if (!status.artifacts?.[key]) continue" in js
     assert "status.state === 'error'" in js

@@ -22,9 +22,10 @@ from openjutsu.archive import ArchiveSearchError, search_public_video_sources
 from openjutsu.config import load_settings
 from openjutsu.media import make_side_by_side, restore_source_audio
 from openjutsu.pipeline import prepare_workflow
-from openjutsu.readiness import renderer_readiness
+from openjutsu.readiness import check_sdk_configuration, renderer_readiness
 from openjutsu.scene import analyze_scene
 from openjutsu.studio_catalog import catalog
+from openjutsu.workflow import WorkflowError, prepared_run_contract
 from openjutsu.workspace_store import (
     AttemptConflictError,
     AssetIntegrityError,
@@ -120,13 +121,23 @@ async def synchronize_workspace_store(request: Request, call_next) -> Response:
 
 @app.get("/api/health")
 def health() -> dict:
-    renderer = renderer_readiness(SETTINGS.backend, SETTINGS.comfy_url).as_dict()
+    if SETTINGS.backend == "sdk":
+        renderer = check_sdk_configuration(
+            SETTINGS.comfy_api_key,
+            SETTINGS.comfy_base_url,
+            os.environ.get("COMFY_SDK_ASSET_BRIDGE"),
+        ).as_dict()
+        configuration_ready = renderer["ready"]
+    else:
+        renderer = renderer_readiness(SETTINGS.backend, SETTINGS.comfy_url).as_dict()
+        configuration_ready = renderer["ready"]
     return {
         "ok": True,
         "workflow": SETTINGS.workflow.name,
         "workflow_exists": SETTINGS.workflow.is_file(),
         "backend": SETTINGS.backend,
-        "renderer_ready": renderer["ready"],
+        "renderer_ready": False if SETTINGS.backend == "sdk" else renderer["ready"],
+        "configuration_ready": configuration_ready,
         "renderer": renderer,
     }
 
@@ -352,7 +363,17 @@ async def prepare(
             identity_description=identity or None,
             seed=seed,
         )
-    except ValueError as error:
+        contract = prepared_run_contract(
+            workflow,
+            prompt=Path(job.prompt_path).read_text(encoding="utf-8"),
+            timing_input="supplied" if "words" in saved else "omitted",
+            timing_basis=(
+                "Whisper JSON at default 24 fps"
+                if "words" in saved
+                else "Default 24 fps fallback schedule"
+            ),
+        )
+    except (ValueError, WorkflowError) as error:
         raise HTTPException(status_code=422, detail=str(error)) from error
 
     background_tasks.add_task(lambda: None)
@@ -371,6 +392,7 @@ async def prepare(
         "job_id": job_id,
         "scene": _public_scene(report),
         "manifest": _public_manifest(job),
+        "contract": contract,
         "workflow_url": f"/api/jobs/{job_id}/workflow",
         "prompt_url": f"/api/jobs/{job_id}/prompt",
     }
@@ -396,6 +418,48 @@ def _job_dir(job_id: str) -> Path:
     if not path.is_dir():
         raise HTTPException(status_code=404, detail="Job not found")
     return path
+
+
+def _sdk_submission_projection(job_dir: Path) -> dict[str, object]:
+    """Project durable SDK state without exposing keys, fingerprints, or paths."""
+    state_path = job_dir / "sdk_outputs" / "submission.json"
+    if not state_path.is_file():
+        return {"sdk_phase": None, "provider_job_id": None, "retry": "allowed"}
+    if state_path.is_symlink():
+        return {
+            "sdk_phase": "invalid",
+            "provider_job_id": None,
+            "retry": "blocked",
+            "message": "SDK submission state is unreadable; manual reconciliation is required.",
+        }
+    try:
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        phase = state["phase"]
+        provider_job_id = state.get("job_id")
+        if (
+            not isinstance(phase, str)
+            or phase not in {"prepared", "submitting", "submitted"}
+            or not state.get("key")
+        ):
+            raise ValueError("invalid SDK submission state")
+        if phase == "prepared" and provider_job_id is not None:
+            raise ValueError("invalid SDK submission state")
+        if provider_job_id is not None and (
+            not isinstance(provider_job_id, str)
+            or not provider_job_id
+            or len(provider_job_id) > 128
+        ):
+            raise ValueError("invalid provider job ID")
+    except (OSError, TypeError, ValueError, KeyError, json.JSONDecodeError):
+        return {
+            "sdk_phase": "invalid",
+            "provider_job_id": None,
+            "retry": "blocked",
+            "message": "SDK submission state is unreadable; manual reconciliation is required.",
+        }
+
+    retry = "resume" if provider_job_id else ("allowed" if phase == "prepared" else "blocked")
+    return {"sdk_phase": phase, "provider_job_id": provider_job_id, "retry": retry}
 
 
 def _managed_projection(job_id: str) -> dict | None:
@@ -611,8 +675,17 @@ def _run_sdk_job(job_id: str) -> None:
             manifest = json.loads((job_dir / "job.json").read_text(encoding="utf-8"))
             workflow = json.loads((job_dir / "workflow.json").read_text(encoding="utf-8"))
             _require_recorded_attestation(manifest, "Hosted Comfy")
-            _set_status(job_id, state="generating", message="Submitting official Comfy SDK job")
-            runner = ComfySdkRunner(api_key=SETTINGS.comfy_api_key)
+            submission = _sdk_submission_projection(job_dir)
+            _set_status(
+                job_id,
+                state="generating",
+                message="Submitting official Comfy SDK job",
+                **submission,
+            )
+            runner = ComfySdkRunner(
+                api_key=SETTINGS.comfy_api_key,
+                base_url=SETTINGS.comfy_base_url,
+            )
             saved = runner.run_workflow(
                 workflow, job_dir / "sdk_outputs", source=manifest["source"],
                 reference_1=manifest["reference_1"], reference_2=manifest.get("reference_2"),
@@ -620,26 +693,40 @@ def _run_sdk_job(job_id: str) -> None:
             mp4s = [path for path in saved if path.suffix.lower() == ".mp4"]
             if not mp4s:
                 raise RuntimeError("Comfy SDK returned no MP4 output")
+            generated = job_dir / "generated.mp4"
+            if mp4s[0] != generated:
+                mp4s[0].replace(generated)
+            submission = _sdk_submission_projection(job_dir)
             _complete_media_job(
                 job_id,
                 backend="sdk",
-                generated=mp4s[0],
+                generated=generated,
                 source=Path(manifest["source"]),
                 message="Official Comfy SDK generation complete",
+                **submission,
             )
         except ComfySdkConfigurationError as error:
+            submission = _sdk_submission_projection(job_dir)
             _set_status(
                 job_id,
                 state="error",
                 backend="sdk",
                 message=error.message,
                 error=error.as_dict(),
+                **submission,
             )
         except RuntimeError as error:
-            _set_status(job_id, state="error", backend="sdk", message=str(error))
+            submission = _sdk_submission_projection(job_dir)
+            _set_status(job_id, state="error", backend="sdk", message=str(error), **submission)
         except Exception as error:
+            submission = _sdk_submission_projection(job_dir)
+            message = (
+                "SDK outcome is unknown; manual reconciliation is required. Do not start a new submission."
+                if submission["retry"] == "blocked"
+                else "SDK operation failed. Check local submission state before retrying."
+            )
             _set_status(job_id, state="error", backend="sdk",
-                        message="SDK operation failed. Check local submission state before retrying.")
+                        message=message, **submission)
 
 
 @app.post("/api/jobs/{job_id}/run")
@@ -660,6 +747,33 @@ def run_job(job_id: str, background_tasks: BackgroundTasks, request: Request) ->
             raise HTTPException(
                 status_code=503,
                 detail={"code": renderer.code, "message": renderer.message},
+            )
+    if SETTINGS.backend == "sdk":
+        submission = _sdk_submission_projection(SETTINGS.data_dir / "jobs" / job_id)
+        if submission["retry"] == "blocked":
+            raise HTTPException(
+                status_code=409,
+                detail={
+                    "code": "SDK_SUBMISSION_OUTCOME_UNKNOWN",
+                    "message": "The prior SDK submission outcome is unknown; reconcile it before starting another run.",
+                    **submission,
+                },
+            )
+        configuration = check_sdk_configuration(
+            SETTINGS.comfy_api_key,
+            SETTINGS.comfy_base_url,
+            os.environ.get("COMFY_SDK_ASSET_BRIDGE"),
+        )
+        if not configuration.ready:
+            raise HTTPException(
+                status_code=503,
+                detail={
+                    "error": {
+                        "code": configuration.code,
+                        "message": configuration.message,
+                        "environment_variable": configuration.environment_variable,
+                    }
+                },
             )
     _set_status(job_id, state="queued", message="Queued")
     runners = {

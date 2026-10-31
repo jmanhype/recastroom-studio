@@ -1,7 +1,15 @@
 # SPDX-License-Identifier: MIT
+import json
+from pathlib import Path
+
 import pytest
 
-from openjutsu.workflow import WorkflowError, configure_workflow, load_workflow
+from openjutsu.workflow import (
+    WorkflowError,
+    configure_workflow,
+    load_workflow,
+    prepared_run_contract,
+)
 
 
 def test_configure_workflow_requires_planner() -> None:
@@ -75,3 +83,48 @@ def test_bundled_workflow_is_recastroom_contract() -> None:
     assert workflow["1177"]["inputs"]["source_blur_segmenter"] == "SAM 3.1"
     assert workflow["200"]["class_type"] == "MiniMaxH3TimedAudio"
     assert workflow["201"]["class_type"] == "MiniMaxH3ExactAudioLock"
+
+
+def test_prepared_run_contract_projects_actual_graph_and_timing_provenance() -> None:
+    workflow = load_workflow(
+        Path(__file__).resolve().parents[1] / "workflows/recastroom_h3_workflow.json"
+    )
+    prompt = "prefix\nExact word/frame schedule:\n- frame schedule\n\nIntegrate"
+
+    contract = prepared_run_contract(
+        workflow,
+        prompt=prompt,
+        timing_input="supplied",
+        timing_basis="Whisper JSON at default 24 fps",
+    )
+
+    plan = json.loads(workflow["1189"]["inputs"]["plan"])
+    assert contract["source"] == plan["video"]
+    assert contract["reference_1"] == plan["global_ref"]
+    assert contract["seed"] == workflow["13"]["inputs"]["noise_seed"]
+    assert contract["steps"] == workflow["181"]["inputs"]["steps"]
+    assert contract["character_swap_strength"] == workflow["586"]["inputs"]["strength_model"]
+    assert contract["audio_conditioning"] is True
+    assert contract["source_treatment"] == {
+        "blur": "head + hands (keep mouth)",
+        "strength": 1.0,
+        "segmenter": "SAM 3.1",
+        "effect": "blur",
+    }
+    assert contract["timing"] == {
+        "input": "supplied",
+        "status": "Word timings supplied",
+        "basis": "Whisper JSON at default 24 fps",
+        "schedule": "- frame schedule",
+    }
+    assert contract["nodes"] == {
+        "planner": "1189",
+        "prompt": "1152",
+        "conditioning": "1177",
+        "seed": "13",
+        "scheduler": "181",
+        "character_swap": "586",
+        "audio": "200",
+        "exact_audio_lock": "201",
+        "output": "751",
+    }

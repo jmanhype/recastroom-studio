@@ -293,8 +293,15 @@ def test_dry_run_and_sdk_semantics_remain_unchanged(tmp_path, monkeypatch):
         lambda job_id: sdk_calls.append(job_id),
     )
 
+    monkeypatch.setenv("COMFY_SDK_ASSET_BRIDGE", "openjutsu-v1")
     for backend, calls in (("dry_run", dry_calls), ("sdk", sdk_calls)):
         with configured_app(tmp_path, backend, "http://127.0.0.1:9") as main:
+            if backend == "sdk":
+                main.SETTINGS = replace(
+                    main.SETTINGS,
+                    comfy_api_key="configuration-present",
+                    comfy_base_url="https://deployment.example",
+                )
             job_dir = prepared_job(tmp_path, f"b123456789{backend[:2]}")
             with TestClient(main.app) as client:
                 health = client.get("/api/health")
@@ -304,11 +311,49 @@ def test_dry_run_and_sdk_semantics_remain_unchanged(tmp_path, monkeypatch):
         assert health.json()["backend"] == backend
         assert health.json()["renderer"]["checked"] is (backend == "dry_run")
         if backend == "sdk":
+            assert health.json()["configuration_ready"] is True
             assert health.json()["renderer_ready"] is False
-            assert health.json()["renderer"]["code"] == "sdk_unchecked"
+            assert health.json()["renderer"]["code"] == "sdk_configuration_ready"
         assert run.status_code == 200
         assert calls == [job_dir.name]
         assert queued_memory[job_dir.name]["state"] == "queued"
+
+
+@pytest.mark.parametrize(
+    ("api_key", "base_url", "bridge", "code", "variable"),
+    [
+        (None, "https://deployment.example", "openjutsu-v1", "missing_comfy_api_key", "COMFY_API_KEY"),
+        ("configuration-present", None, "openjutsu-v1", "missing_comfy_base_url", "COMFY_BASE_URL"),
+        ("configuration-present", "https://deployment.example", None, "sdk_bridge_not_configured", "COMFY_SDK_ASSET_BRIDGE"),
+    ],
+)
+def test_sdk_run_refuses_configuration_before_queueing(
+    tmp_path, monkeypatch, api_key, base_url, bridge, code, variable
+):
+    monkeypatch.delenv("COMFY_SDK_ASSET_BRIDGE", raising=False)
+    if bridge:
+        monkeypatch.setenv("COMFY_SDK_ASSET_BRIDGE", bridge)
+    with configured_app(tmp_path, "sdk", "http://127.0.0.1:9") as main:
+        main.SETTINGS = replace(
+            main.SETTINGS,
+            comfy_api_key=api_key,
+            comfy_base_url=base_url,
+        )
+        job_dir = prepared_job(tmp_path)
+        before = {path.name: path.read_bytes() for path in job_dir.iterdir()}
+        with TestClient(main.app) as client:
+            health = client.get("/api/health")
+            run = client.post(f"/api/jobs/{job_dir.name}/run")
+
+    assert health.status_code == 200
+    assert health.json()["configuration_ready"] is False
+    assert health.json()["renderer"]["code"] == code
+    assert health.json()["renderer"]["environment_variable"] == variable
+    assert run.status_code == 503
+    assert run.json()["detail"]["error"]["code"] == code
+    assert run.json()["detail"]["error"]["environment_variable"] == variable
+    assert {path.name: path.read_bytes() for path in job_dir.iterdir()} == before
+    assert not (job_dir / "status.json").exists()
 
 
 def test_ui_guard_preserves_prepared_state_and_requires_fresh_check():

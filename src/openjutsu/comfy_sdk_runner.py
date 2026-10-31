@@ -66,7 +66,12 @@ class ComfySdkRunner:
     docs/deployment/SDK_ASSETS.md for the required deployment bridge and limits.
     """
 
-    def __init__(self, api_key: str | None = None, client_info: str = "recastroom-studio") -> None:
+    def __init__(
+        self,
+        api_key: str | None = None,
+        base_url: str | None = None,
+        client_info: str = "recastroom-studio",
+    ) -> None:
         resolved_api_key = api_key or os.environ.get("COMFY_API_KEY")
         if not resolved_api_key or not resolved_api_key.strip():
             raise ComfySdkConfigurationError(
@@ -74,7 +79,7 @@ class ComfySdkRunner:
                 "A Comfy API deployment requires an API key; no key was supplied.",
                 "COMFY_API_KEY",
             )
-        base_url = os.environ.get("COMFY_BASE_URL", "").strip()
+        base_url = (base_url or os.environ.get("COMFY_BASE_URL", "")).strip()
         if not base_url:
             raise ComfySdkConfigurationError(
                 "missing_comfy_base_url",
