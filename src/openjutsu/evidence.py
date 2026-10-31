@@ -26,6 +26,8 @@ ALLOWED_MEDIA_TAGS = {
     "compatible_brands",
     "encoder",
     "handler_name",
+    "hyperframes_renderer",
+    "hyperframes_version",
     "language",
     "major_brand",
     "minor_version",
