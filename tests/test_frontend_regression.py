@@ -152,6 +152,9 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert 'id="workflow-catalog"' in home.text
     assert 'id="workflow-note"' in home.text
     assert 'id="readiness"' in home.text
+    assert 'id="recorded-proof"' in home.text
+    assert "Recorded hosted H3 proof" in home.text
+    assert "This result was recorded on October 30" in home.text
     assert 'id="quickstart"' in home.text
     assert 'id="walkthrough"' in home.text
     assert 'id="advanced-studio"' in home.text
@@ -191,6 +194,10 @@ def test_served_ui_discloses_consent_no_ai_and_truthful_controls(studio):
     assert "!job || !recommended || busy || running || !health?.ok" in js
     assert "Preview only: copies source media. No AI inference or recasting." in js
     assert "Preview complete · no AI inference or recasting · output copies the source." in js
+    assert "status.state === 'complete' && status.backend === 'dry_run'" in js
+    assert "Preview copy · no AI inference" in js
+    assert "Final · original audio restored" in js
+    assert "request('/api/proof/comfy-api-sdk-c1')" in js
     assert "status.state === 'complete'" in js
     assert "if (!status.artifacts?.[key]) continue" in js
     assert "status.state === 'error'" in js

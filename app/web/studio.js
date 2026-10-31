@@ -319,6 +319,29 @@
     if (filename) link.download = filename;
     $(container).append(link);
   }
+  function updateReviewLanguage(status) {
+    const preview = status.backend === 'dry_run' || status.presentation === 'preview';
+    $('final-caption').textContent = preview
+      ? 'Preview copy · no AI inference'
+      : 'Final · original audio restored';
+    $('comparison-caption').textContent = preview
+      ? 'Source / preview copy · paired review'
+      : 'Source / final · paired review';
+  }
+  async function loadRecordedProof() {
+    try {
+      const proof = await request('/api/proof/comfy-api-sdk-c1');
+      $('proof-job').textContent = proof.job_id;
+      $('proof-status').textContent = proof.status;
+      $('proof-output').textContent = `${proof.format.width}×${proof.format.height} · ${proof.format.duration_seconds}s · SHA-256 ${proof.output_sha256.slice(0, 12)}…`;
+      $('proof-audio').textContent = 'Source and final decoded PCM match exactly';
+      $('proof-comparison').src = proof.media.comparison;
+      $('recorded-proof').hidden = false;
+    } catch (_) {
+      $('proof-summary').textContent = 'The recorded hosted proof is unavailable here. It remains available in the repository evidence.';
+      $('recorded-proof').hidden = false;
+    }
+  }
   async function searchArchive(version = ++archiveVersion) {
     const query = $('archive-query').value.trim();
     const results = $('archive-results'), note = $('archive-note');
@@ -431,10 +454,14 @@
       $('error').hidden = true;
       $('stage').textContent = String(status.state || 'unknown').toUpperCase();
       $('output').textContent = String(status.message || 'Waiting for a server update.');
-      if (status.backend === 'dry_run') $('output').textContent = 'Preview complete · no AI inference or recasting · output copies the source.';
+      if (status.state === 'complete' && status.backend === 'dry_run') $('output').textContent = 'Preview complete · no AI inference or recasting · output copies the source.';
       if (status.state === 'complete') {
         running = false; busy = false; $('review').hidden = false; $('downloads').replaceChildren();
-        const names = { generated: 'Generated clip', final: 'Final with audio', side_by_side: 'Side-by-side review' };
+        updateReviewLanguage(status);
+        const preview = status.backend === 'dry_run' || status.presentation === 'preview';
+        const names = preview
+          ? { generated: 'Preview source copy', final: 'Preview copy', side_by_side: 'Source / preview comparison' }
+          : { generated: 'Generated clip', final: 'Final with audio', side_by_side: 'Side-by-side review' };
         for (const key of Object.keys(names)) {
           if (!status.artifacts?.[key]) continue;
           const path = `/api/jobs/${id}/artifacts/${key}`;
@@ -528,6 +555,7 @@
     openWalkthrough,
   });
   moveAdvancedPanels();
+  loadRecordedProof();
   updateCollabStatus();
   let completedSetup = null;
   try { completedSetup = JSON.parse(localStorage.getItem(SETUP_KEY) || 'null'); } catch (_) { completedSetup = null; }

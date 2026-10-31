@@ -43,6 +43,12 @@ from .m1_api import create_m1_router
 ROOT = Path(__file__).resolve().parents[1]
 SETTINGS = load_settings()
 SETTINGS.data_dir.mkdir(parents=True, exist_ok=True)
+OFFICIAL_SDK_PROOF_DIR = ROOT / "docs/evidence/comfy-api-sdk-c1-20261030"
+OFFICIAL_SDK_PROOF_MEDIA = {
+    "final.mp4": "video/mp4",
+    "source_vs_final.mp4": "video/mp4",
+    "source_final_contact.jpg": "image/jpeg",
+}
 
 JOB_STATUS: dict[str, dict] = {}
 JOB_LOCKS: dict[str, threading.Lock] = {}
@@ -128,6 +134,47 @@ def health() -> dict:
 @app.get("/api/workflows")
 def workflows() -> dict:
     return catalog()
+
+
+@app.get("/api/proof/comfy-api-sdk-c1")
+def official_sdk_proof_summary() -> dict:
+    receipt = json.loads(
+        (OFFICIAL_SDK_PROOF_DIR / "receipt.json").read_text(encoding="utf-8")
+    )
+    output = receipt["output"]
+    return {
+        "kind": "recorded_hosted_h3_proof",
+        "adapter": receipt["adapter"],
+        "sdk_version": receipt["sdk_version"],
+        "cli_version": receipt["cli_version"],
+        "build_id": receipt["build_id"],
+        "release_id": receipt["release_id"],
+        "release_version": receipt["release_version"],
+        "job_id": receipt["job_id"],
+        "status": receipt["job_status"],
+        "submitted_utc": receipt["submitted_utc"],
+        "output_ready_utc": receipt["output_ready_utc"],
+        "active_render_window_seconds": receipt["active_render_window_seconds"],
+        "workflow_sha256": receipt["workflow_sha256"],
+        "output_sha256": output["generated_sha256"],
+        "final_sha256": output["final_exact_audio_sha256"],
+        "audio_verification": output["audio_verification"],
+        "format": output["format"],
+        "deployment_teardown": "deleted",
+        "media": {
+            "final": "/api/proof/comfy-api-sdk-c1/media/final.mp4",
+            "comparison": "/api/proof/comfy-api-sdk-c1/media/source_vs_final.mp4",
+            "contact_sheet": "/api/proof/comfy-api-sdk-c1/media/source_final_contact.jpg",
+        },
+    }
+
+
+@app.get("/api/proof/comfy-api-sdk-c1/media/{artifact}")
+def official_sdk_proof_media(artifact: str) -> FileResponse:
+    media_type = OFFICIAL_SDK_PROOF_MEDIA.get(artifact)
+    if media_type is None:
+        raise HTTPException(status_code=404, detail="Unknown proof artifact")
+    return FileResponse(OFFICIAL_SDK_PROOF_DIR / artifact, media_type=media_type)
 
 
 @app.get("/api/archive/sources")
@@ -441,6 +488,7 @@ def _complete_media_job(
         job_id,
         state="complete",
         backend=backend,
+        presentation="preview" if backend == "dry_run" else "generation",
         message=message,
         artifacts={
             "generated": generated.name,
@@ -485,14 +533,14 @@ def _run_dry_run_job(job_id: str) -> None:
                 job_id,
                 state="generating",
                 backend="dry_run",
-                message="Deterministic dry-run generation",
+                message="Validating preview copy · no AI inference",
                 prompt_id=prompt_id,
             )
             _set_status(
                 job_id,
                 state="downloading",
                 backend="dry_run",
-                message="Copying deterministic fixture output",
+                message="Preparing preview copy",
                 prompt_id=prompt_id,
             )
             generated = job_dir / "generated.mp4"
@@ -502,7 +550,7 @@ def _run_dry_run_job(job_id: str) -> None:
                 backend="dry_run",
                 generated=generated,
                 source=source,
-                message="Deterministic dry-run generation complete",
+                message="Preview complete · no AI inference or recasting · output copies the source",
                 prompt_id=prompt_id,
             )
         except Exception as error:

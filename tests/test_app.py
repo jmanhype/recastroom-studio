@@ -54,6 +54,39 @@ def test_workflow_catalog_prioritizes_recast_room_without_fake_readiness() -> No
     assert "/Users/" not in response.text
 
 
+def test_recorded_official_sdk_proof_is_exposed_through_bounded_routes() -> None:
+    client = TestClient(app)
+
+    summary = client.get("/api/proof/comfy-api-sdk-c1")
+    assert summary.status_code == 200
+    payload = summary.json()
+    assert payload["kind"] == "recorded_hosted_h3_proof"
+    assert payload["job_id"] == "233a17e4-253f-4797-baa6-f82a2b3bbbc8"
+    assert payload["status"] == "succeeded"
+    assert payload["adapter"] == "openjutsu.comfy_sdk_runner.ComfySdkRunner"
+    assert payload["output_sha256"] == "f8ed7bcee8f9c2eb83f26d83c763d563e75a3625a1a08829ba32541399dabab8"
+    assert payload["audio_verification"] == "decoded source and final PCM SHA-256 identical"
+    assert payload["deployment_teardown"] == "deleted"
+    assert "credential" not in response_text_lower(payload)
+    assert "27.02" not in summary.text
+
+    final = client.get("/api/proof/comfy-api-sdk-c1/media/final.mp4")
+    assert final.status_code == 200
+    assert final.headers["content-type"].startswith("video/mp4")
+    assert len(final.content) == 2478102
+
+    for path in (
+        "/api/proof/comfy-api-sdk-c1/media/../receipt.json",
+        "/api/proof/comfy-api-sdk-c1/media/unknown.mp4",
+        "/api/proof/comfy-api-sdk-c1/media/submission.json",
+    ):
+        assert client.get(path).status_code == 404
+
+
+def response_text_lower(payload: dict) -> str:
+    return str(payload).lower()
+
+
 def test_archive_source_discovery_is_key_free_and_rights_explicit(monkeypatch) -> None:
     client = TestClient(app)
     calls = {}

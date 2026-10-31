@@ -141,6 +141,9 @@ def test_dry_run_backend_completes_upload_to_review_artifacts(tmp_path, monkeypa
             assert status.status_code == 200
             assert status.json()["state"] == "complete"
             assert status.json()["backend"] == "dry_run"
+            assert status.json()["presentation"] == "preview"
+            assert "Preview complete" in status.json()["message"]
+            assert "no AI inference" in status.json()["message"]
             assert status.json()["prompt_id"].startswith("dry-run-")
 
             job_dir = tmp_path / "jobs" / job_id

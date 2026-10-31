@@ -35,16 +35,17 @@ verify them.
 
 ## Current submission status
 
-The authoritative current inventory and hashes are in
-[`evidence/OJ-g2xx/REPORT.md`](evidence/OJ-g2xx/REPORT.md). In summary:
+The public repository is live at
+[`jmanhype/recastroom-studio`](https://github.com/jmanhype/recastroom-studio).
+It contains the local app, MIT license, setup instructions, Comfy workflow,
+rights checkpoint, tests, public media, and the successful full RecastRoom C1
+render through the official Comfy API SDK:
+[`evidence/comfy-api-sdk-c1-20261030/README.md`](evidence/comfy-api-sdk-c1-20261030/README.md).
 
-- local app, MIT license, setup, workflow, rights controls, dry-run E2E,
-  and demo candidate are present;
-- a bounded official Comfy Cloud SDK workflow smoke is complete, but no public
-  repository/demo, X post, or Typeform receipt exists yet.
-
-The demo v1 candidate is 1:48, but its final repository URL card and exact-demo
-owner clearance are not publication receipts.
+The earlier no-model Cloud SDK smoke remains historical transport evidence at
+[`evidence/comfy-sdk-smoke-20261025/REPORT.md`](evidence/comfy-sdk-smoke-20261025/REPORT.md);
+it is not the hosted-execution proof. The final approved demo URL, public X
+post, and Typeform receipt remain owner-gated.
 
 ## Demo rule
 
@@ -52,11 +53,10 @@ The public demo must not use the private film/TV clips used during development. 
 
 ## SDK versus local/open-weights decision
 
-The local weight-loading H3 graph remains the category-safe default, but it cannot
-be the contest's only execution integration: the official challenge requires use
-of the Comfy Developer Platform. The decision record and fail-closed evidence
-are in [`evidence/OJ-i6n6-comfy-sdk.md`](evidence/OJ-i6n6-comfy-sdk.md); the
-completed one-job core-node smoke is in
-[`evidence/comfy-sdk-smoke-20261025/REPORT.md`](evidence/comfy-sdk-smoke-20261025/REPORT.md).
-The offline deployment candidate is under `deploy/comfy/`; its successful local
-syntax validation and zero-upload dry run do not prove a hosted runnable build.
+The local weight-loading H3 graph remains the category-safe default, and the
+official hosted integration is also proven. The decision record and fail-closed
+evidence are in [`evidence/OJ-i6n6-comfy-sdk.md`](evidence/OJ-i6n6-comfy-sdk.md).
+The completed full hosted proof is in
+[`evidence/comfy-api-sdk-c1-20261030/README.md`](evidence/comfy-api-sdk-c1-20261030/README.md).
+The deployment definition is under `deploy/comfy/`; its successful hosted
+release and execution are recorded separately from offline syntax validation.
