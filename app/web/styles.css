@@ -80,6 +80,16 @@
 .readiness-strip>div[data-state="blocked"] dd,.readiness-strip>div[data-state="warning"] dd{color:#f1c2ac}
 .readiness-strip>div[data-state="pending"],.readiness-strip>div[data-state="checking"],.readiness-strip>div[data-state="unknown"]{box-shadow:inset 2px 0 0 #686c60}
 .readiness-strip>div[data-state="pending"] dd,.readiness-strip>div[data-state="checking"] dd,.readiness-strip>div[data-state="unknown"] dd{color:var(--muted)}
+.proof-card{display:grid;gap:1.25rem;margin-top:1.5rem;padding:1.25rem;background:#191b18;border:1px solid var(--line);border-top:2px solid var(--accent)}
+.proof-copy{display:grid;gap:.7rem;align-content:start}
+.proof-copy h2{font-size:1.7rem}
+.proof-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:0}
+.proof-facts div{border:1px solid var(--line);padding:.65rem;background:#10110f}
+.proof-facts dt{color:var(--muted);font:.64rem/1.4 Menlo,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase}
+.proof-facts dd{margin:.2rem 0 0;font-size:.78rem;overflow-wrap:anywhere}
+.proof-card figure{margin:0;min-width:0}
+.proof-card video{width:100%;aspect-ratio:16/9;background:#000;border:1px solid var(--line);object-fit:contain}
+.proof-card figcaption{padding:.55rem 0;font-size:.72rem;color:var(--muted)}
 @media(min-width:768px){.workflow-catalog{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:768px){.readiness-strip{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(min-width:1024px){.workflow-catalog{grid-template-columns:repeat(3,1fr)}}

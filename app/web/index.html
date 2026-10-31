@@ -48,6 +48,24 @@
       <div data-readiness="renderer"><dt>ComfyUI</dt><dd>Checking</dd></div>
       <div data-readiness="execution"><dt>Execution</dt><dd>Checking</dd></div>
     </dl>
+    <section id="recorded-proof" class="proof-card" aria-labelledby="recorded-proof-heading" hidden>
+      <div class="proof-copy">
+        <p class="eyebrow">RECORDED HOSTED H3 PROOF</p>
+        <h2 id="recorded-proof-heading">A real official Comfy API SDK result</h2>
+        <p id="proof-summary">This result was recorded on October 30 through RecastRoom’s official SDK adapter.</p>
+        <dl class="proof-facts">
+          <div><dt>Job</dt><dd id="proof-job">Checking</dd></div>
+          <div><dt>Status</dt><dd id="proof-status">Checking</dd></div>
+          <div><dt>Output</dt><dd id="proof-output">Checking</dd></div>
+          <div><dt>Audio</dt><dd id="proof-audio">Checking</dd></div>
+        </dl>
+        <p class="hint">Recorded hosted H3 proof only. The temporary deployment was deleted after download.</p>
+      </div>
+      <figure>
+        <video id="proof-comparison" controls muted loop playsinline preload="none"></video>
+        <figcaption>Source / recorded SDK result</figcaption>
+      </figure>
+    </section>
   </section>
   <section class="projects-shell" aria-labelledby="projects-heading">
     <div class="section-heading"><h2 id="projects-heading">Saved projects</h2><span>REUSABLE REFERENCES / HISTORY</span></div>
@@ -168,7 +186,7 @@
   </form>
   <section id="result" class="result" hidden aria-labelledby="result-heading">
     <div class="section-heading"><h2 id="result-heading">Production desk</h2><span id="job-label"></span></div><div class="production"><div><p id="stage" class="eyebrow">PREPARING</p><p id="output" role="status" aria-live="polite"></p><p id="error" role="alert" hidden></p><div id="prepared-links" class="links"></div></div><div><button id="run" type="button" disabled aria-describedby="run-help">Run prepared workflow</button><p id="run-help" class="hint">Preparation must finish before running.</p><button id="retry-status" class="text-button" type="button" hidden>Check job status again</button></div></div>
-    <div id="review" hidden><div class="section-heading"><h2>Watch the difference.</h2><span>SOURCE / RESULT</span></div><p class="hint">Compare the original above with the final below, or play the paired review. Review quality yourself; no automated score is provided.</p><div class="review-grid"><figure><video id="final-preview" controls playsinline preload="metadata" aria-label="Final result"></video><figcaption>Final · original audio restored</figcaption></figure><figure><video id="comparison-preview" controls playsinline preload="metadata" aria-label="Side-by-side source and result"></video><figcaption>Source / final · paired review</figcaption></figure></div><div id="downloads" class="links"></div></div>
+    <div id="review" hidden><div class="section-heading"><h2>Watch the difference.</h2><span>SOURCE / RESULT</span></div><p class="hint">Compare the original above with the final below, or play the paired review. Review quality yourself; no automated score is provided.</p><div class="review-grid"><figure><video id="final-preview" controls playsinline preload="metadata" aria-label="Final result"></video><figcaption id="final-caption">Final · original audio restored</figcaption></figure><figure><video id="comparison-preview" controls playsinline preload="metadata" aria-label="Side-by-side source and result"></video><figcaption id="comparison-caption">Source / final · paired review</figcaption></figure></div><div id="downloads" class="links"></div></div>
   </section>
   <footer><span>RECASTROOM / INDEPENDENT TOOLS FOR MOVING IMAGES</span><span>Review every export before publication. <a href="/sound-lab.html">Sound lab</a></span></footer>
 </main>

@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_FILES = (
     "README.md",
+    "docs/CONTEST.md",
     "docs/QUICKSTART.md",
     "docs/RELEASE_STATUS.md",
     "app/web/index.html",
@@ -52,3 +53,14 @@ def test_default_launcher_and_hosted_instructions_match_runtime_boundary():
     assert "RecastRoom bridge" in quickstart
     assert "COMFY_SDK_ASSET_BRIDGE=openjutsu-v1" in quickstart
     assert not re.search(r"https?://", landing)
+
+
+def test_current_contest_plan_matches_public_repository_and_full_sdk_proof():
+    contest = (ROOT / "docs/CONTEST.md").read_text(encoding="utf-8")
+    contest = re.sub(r"\s+", " ", contest)
+
+    assert "evidence/comfy-api-sdk-c1-20261030/README.md" in contest
+    assert "full RecastRoom C1 render" in contest
+    assert "public repository is live" in contest
+    assert "no public\nrepository/demo" not in contest
+    assert "no-model Cloud SDK workflow smoke is complete" not in contest
