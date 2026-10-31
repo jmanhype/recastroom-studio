@@ -24,8 +24,14 @@
       this.beforeRequest = beforeRequest;
     }
   }
-  const publicMessage = (value) => typeof value === 'string' ? value : value && typeof value === 'object'
-    ? String(value.message || value.msg || 'The server could not complete this request.') : 'The server could not complete this request.';
+  const publicMessage = (value) => {
+    if (typeof value === 'string') return value;
+    if (value && typeof value === 'object') {
+      if (value.message || value.msg) return String(value.message || value.msg);
+      if (value.error) return publicMessage(value.error);
+    }
+    return 'The server could not complete this request.';
+  };
   const detailMessage = (payload, fallback) => {
     const detail = payload?.detail || payload?.message || fallback;
     return Array.isArray(detail) ? errorText(detail) : publicMessage(detail);
@@ -40,18 +46,32 @@
         && typeof detail === 'object' && detail !== null && !Array.isArray(detail)
         && typeof detail.code === 'string' && detail.code.startsWith('renderer_')
         && typeof detail.message === 'string';
+      const guardedSdkRefusal = response.status === 503
+        && typeof detail?.error === 'object' && detail.error !== null
+        && typeof detail.error.code === 'string'
+        && typeof detail.error.message === 'string';
+      const guardedSdkStateRefusal = response.status === 409
+        && detail?.code === 'SDK_SUBMISSION_OUTCOME_UNKNOWN'
+        && typeof detail?.message === 'string';
+      const refusalDetail = guardedSdkRefusal ? detail.error : detail;
       throw new APIError(
-        detailMessage(payload, `Request failed (${response.status})`),
+        publicMessage(refusalDetail) || `Request failed (${response.status})`,
         response.status,
         detail,
-        guardedLegacyRefusal,
+        guardedLegacyRefusal || guardedSdkRefusal || guardedSdkStateRefusal,
       );
     }
     return payload;
   }
   const isLegacy = (payload = health) => payload?.backend === 'legacy';
-  const runConnectionReady = (payload = health) => Boolean(payload?.ok) && (!isLegacy(payload) || payload.renderer_ready === true);
-    const rendererMessage = (payload = health) => payload?.renderer?.message || 'The ComfyUI connection is not verified. Check it again.';
+  const runConnectionReady = (payload = health) => {
+    if (!payload?.ok) return false;
+    if (payload.backend === 'dry_run') return true;
+    if (isLegacy(payload)) return payload.renderer_ready === true;
+    if (payload.backend === 'sdk') return payload.configuration_ready === true;
+    return false;
+  };
+  const rendererMessage = (payload = health) => payload?.renderer?.message || 'The Comfy connection is not configured. Check it again.';
   function readinessStates() {
     const hasSource = Boolean($('source').files.length);
     const savedReferences = window.ProjectsUI?.getReferenceState?.();
@@ -92,15 +112,19 @@
             ? { state: 'ok', label: 'Renderer reachable' }
             : isLegacy()
               ? { state: 'blocked', label: 'ComfyUI disconnected' }
-              : { state: 'pending', label: 'Hosted Comfy configured · reachability unchecked' },
+              : health.configuration_ready === true
+                ? { state: 'pending', label: 'Hosted Comfy configured · reachability unchecked' }
+                : { state: 'blocked', label: 'Hosted Comfy configuration incomplete' },
       execution: !health
         ? { state: 'unknown', label: 'Checking' }
         : health.backend === 'dry_run'
           ? { state: 'ok', label: 'Preview · no AI inference' }
           : job && !recommended
             ? { state: 'blocked', label: 'Blocked by preflight' }
-            : !connectionReady
+            : !connectionReady && health.backend === 'legacy'
               ? { state: 'blocked', label: 'Blocked until ComfyUI answers' }
+              : !connectionReady
+                ? { state: 'blocked', label: 'Blocked until SDK configuration is complete' }
               : job
                 ? { state: 'ok', label: 'H3 run ready' }
                 : { state: 'pending', label: 'Hosted Comfy configured' },
@@ -126,13 +150,14 @@
       ? 'Connection not verified. Check it before preparing.' : !health.workflow_exists
       ? 'The server workflow is missing. Restore the repository workflow.' : !ready
       ? 'Select a source and primary reference, then confirm permission.' : 'Ready for preflight. Your media will upload when you prepare.';
-    $('run').disabled = !job || !recommended || busy || running || !health?.ok || (isLegacy() && health.renderer_ready !== true);
+    $('run').disabled = !job || !recommended || busy || running || !runConnectionReady();
     $('run-help').textContent = running ? 'A run may be in progress. Check status before submitting again.' : !job
       ? 'Preparation must finish before running.' : !recommended ? 'Source preflight did not recommend this clip. Choose another source and prepare again.'
       : !health?.ok ? 'Connection unknown. Check it before running.' : isLegacy() && health.renderer_ready === undefined
       ? 'Checking the ComfyUI connection before running…' : isLegacy() && health.renderer_ready !== true
       ? `${rendererMessage()} Prepared files and permissions are preserved.` : health.backend === 'dry_run'
-      ? 'Preview only: copies source media. No AI inference or recasting.' : 'Runs the configured service. Hosted execution may incur provider charges.';
+      ? 'Preview only: copies source media. No AI inference or recasting.' : health.backend === 'sdk' && health.configuration_ready !== true
+      ? `${rendererMessage()} Prepared files and permissions are preserved.` : 'Runs the configured service. Hosted execution may incur provider charges.';
     updateReadiness();
   }
   function clearVideo(id) { const video = $(id); video.pause(); video.removeAttribute('src'); video.load(); }
@@ -141,6 +166,10 @@
     job = null; busy = false; running = false; recommended = false;
     $('result').hidden = true; $('review').hidden = true; $('error').hidden = true;
     $('retry-status').hidden = true; $('downloads').replaceChildren(); $('prepared-links').replaceChildren();
+    $('run-contract').hidden = true; $('prepared-contract-facts').replaceChildren();
+    $('prepared-word-schedule').textContent = '';
+    $('sdk-recovery').hidden = true; $('sdk-recovery-facts').replaceChildren();
+    $('sdk-recovery-guidance').textContent = '';
     clearVideo('final-preview'); clearVideo('comparison-preview'); setStep('upload'); controls();
   }
   function preview(id) {
@@ -328,6 +357,53 @@
       ? 'Source / preview copy · paired review'
       : 'Source / final · paired review';
   }
+  function renderFactList(container, facts) {
+    $(container).replaceChildren(...facts.map(([label, value]) => {
+      const item = document.createElement('div');
+      const name = document.createElement('dt');
+      name.textContent = label;
+      const detail = document.createElement('dd');
+      detail.textContent = value;
+      item.append(name, detail);
+      return item;
+    }));
+  }
+  function renderPreparedContract(contract) {
+    if (!contract) return;
+    const treatment = contract.source_treatment || {};
+    renderFactList('prepared-contract-facts', [
+      ['Source file', contract.source || 'Not routed'],
+      ['Primary reference', contract.reference_1 || 'Not routed'],
+      ['Second reference', contract.reference_2 || 'Not supplied'],
+      ['Seed', String(contract.seed ?? 'Unknown')],
+      ['Scheduler steps', String(contract.steps ?? 'Unknown')],
+      ['Character swap strength', String(contract.character_swap_strength ?? 'Unknown')],
+      ['Audio conditioning', contract.audio_conditioning === true ? 'Attached to H3' : 'Not attached'],
+      ['Source treatment', `${treatment.blur || 'Unset'} · ${treatment.effect || 'Unset'} · strength ${treatment.strength ?? 'Unknown'}`],
+      ['Timing', `${contract.timing?.status || 'Unknown'} · ${contract.timing?.basis || 'Unknown basis'}`],
+      ['Graph nodes', `planner ${contract.nodes?.planner} · conditioning ${contract.nodes?.conditioning} · output ${contract.nodes?.output}`],
+    ]);
+    $('prepared-word-schedule').textContent = contract.timing?.schedule || 'No schedule was embedded in the prompt.';
+    $('run-contract').hidden = false;
+  }
+  function renderSdkSubmission(status) {
+    const shouldShow = status?.backend === 'sdk' || Boolean(status?.sdk_phase);
+    $('sdk-recovery').hidden = !shouldShow;
+    if (!shouldShow) return;
+    const retry = status.retry || 'unknown';
+    renderFactList('sdk-recovery-facts', [
+      ['Local phase', status.sdk_phase ? String(status.sdk_phase) : 'No durable submission yet'],
+      ['Provider job ID', status.provider_job_id ? String(status.provider_job_id) : 'Not recorded'],
+      ['Retry policy', retry],
+    ]);
+    $('sdk-recovery-guidance').textContent = retry === 'blocked'
+      ? 'SDK outcome is unknown. Do not start a new submission; reconcile the recorded state first.'
+      : retry === 'resume'
+        ? 'A provider job ID is recorded. A retry should resume that submission rather than create a duplicate.'
+        : retry === 'allowed'
+          ? 'No prior provider submission is recorded for this prepared job.'
+          : 'SDK recovery state is unavailable. Check status before retrying.';
+  }
   async function loadRecordedProof() {
     try {
       const proof = await request('/api/proof/comfy-api-sdk-c1');
@@ -381,7 +457,9 @@
         : isLegacy(payload) ? payload.renderer_ready === true
           ? 'ComfyUI connected · model, cost, and location not verified'
           : `ComfyUI disconnected · ${publicMessage(payload.renderer)}`
-        : 'Hosted Comfy configured · reachability unchecked · cost and location not verified'
+        : payload.configuration_ready === true
+          ? 'Hosted Comfy configured · reachability unchecked · cost and location not verified'
+          : `Hosted Comfy incomplete · ${publicMessage(payload.renderer)}`
         : 'Connection unavailable';
     } catch (_) { if (version !== healthVersion) return; $('backend').textContent = 'Connection unavailable'; }
     updateConnectionGuidance();
@@ -441,6 +519,7 @@
       $('output').textContent = recommended ? 'Preflight recommends this source. Your workflow is prepared; nothing has been generated yet.' : 'Workflow prepared, but this source did not pass the recommendation check. Replace the clip before running.';
       addLink('prepared-links', `/api/jobs/${job}/workflow`, 'Workflow JSON');
       addLink('prepared-links', `/api/jobs/${job}/prompt`, 'Prompt'); setStep('run');
+      renderPreparedContract(payload.contract);
       document.dispatchEvent(new CustomEvent('projects:prepared', {detail: payload}));
     } catch (error) { if (version === epoch) { $('stage').textContent = 'PREPARATION STOPPED'; $('output').textContent = 'No runnable job was prepared.'; showError(`Could not prepare: ${error.message} Check your media and timing JSON, then prepare again.`); } }
     finally { if (version === epoch) { busy = false; controls(); } }
@@ -454,6 +533,7 @@
       $('error').hidden = true;
       $('stage').textContent = String(status.state || 'unknown').toUpperCase();
       $('output').textContent = String(status.message || 'Waiting for a server update.');
+      renderSdkSubmission(status);
       if (status.state === 'complete' && status.backend === 'dry_run') $('output').textContent = 'Preview complete · no AI inference or recasting · output copies the source.';
       if (status.state === 'complete') {
         running = false; busy = false; $('review').hidden = false; $('downloads').replaceChildren();
@@ -472,7 +552,8 @@
         setStep('review'); controls();
       } else if (status.state === 'error') {
         busy = false; running = false;
-        showError(`Run stopped: ${errorText(status.error?.message || status.message)} Check the configured service, then retry the run or reset.`); controls();
+        const blockedOutcome = status.retry === 'blocked';
+        showError(`Run stopped: ${errorText(status.error?.message || status.message)} ${blockedOutcome ? 'SDK outcome is unknown; do not start another submission.' : 'Check the configured service, then retry the run or reset.'}`); controls();
       } else { timer = setTimeout(() => poll(version, id), 1500); }
     } catch (error) {
       if (!isCurrent(version, id)) return;
@@ -503,14 +584,19 @@
       busy = false;
       if (error.provesNoSubmission) {
         running = false;
-        const detail = error.detail && typeof error.detail === 'object' ? error.detail : null;
+        const detail = error.detail?.error && typeof error.detail.error === 'object'
+          ? error.detail.error
+          : error.detail && typeof error.detail === 'object' ? error.detail : null;
         if (detail?.code || detail?.message) health = { ...health, renderer_ready: false, renderer: detail };
-        $('backend').textContent = `ComfyUI disconnected · ${publicMessage(detail)}`;
+        $('backend').textContent = health?.backend === 'sdk'
+          ? `Hosted Comfy incomplete · ${publicMessage(detail)}`
+          : `ComfyUI disconnected · ${publicMessage(detail)}`;
         $('stage').textContent = 'RUN BLOCKED';
         $('output').textContent = error.beforeRequest
           ? 'No run request was sent. Prepared files and permissions are preserved.'
           : 'The server refused the run before queueing or uploading. Prepared files and permissions are preserved.';
-        showError(`${error.beforeRequest ? 'Run not submitted:' : 'Run refused:'} ${publicMessage(detail)} Check the connection again, then run without preparing a new job.`);
+        const variable = detail?.environment_variable ? ` Set ${detail.environment_variable}, then restart in the matching mode.` : '';
+        showError(`${error.beforeRequest ? 'Run not submitted:' : 'Run refused:'} ${publicMessage(detail)}${variable} Check the connection again, then run without preparing a new job.`);
         $('retry-status').hidden = true; $('health-retry').hidden = false; controls();
       } else {
         showError(`Run confirmation unavailable: ${error.message} Check status first in case the request reached the server. If no job exists, prepare a new job.`);
@@ -549,6 +635,8 @@
   window.StudioUI = Object.freeze({
     errorText,
     getReadiness: readinessStates,
+    renderPreparedContract,
+    renderSdkSubmission,
     getState: () => ({ epoch, jobId: job, busy, running, recommended, backend: health?.backend || null, rendererReady: runConnectionReady() }),
     closeWalkthrough,
     finishWalkthrough,

@@ -59,6 +59,18 @@ def test_official_sdk_environment_is_surfaced_in_settings():
     assert settings.comfy_base_url == "https://deployment.example"
 
 
+def test_recastroom_sdk_aliases_fall_back_to_official_names():
+    settings = load_settings(
+        {
+            "RECASTROOM_COMFY_API_KEY": "alias-key",
+            "RECASTROOM_COMFY_BASE_URL": "https://alias-deployment.example",
+        }
+    )
+
+    assert settings.comfy_api_key == "alias-key"
+    assert settings.comfy_base_url == "https://alias-deployment.example"
+
+
 def test_unknown_backend_fails_closed():
     with pytest.raises(ValueError, match="RECASTROOM_BACKEND"):
         load_settings({"RECASTROOM_BACKEND": "typo"})

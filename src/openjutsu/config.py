@@ -68,9 +68,6 @@ def load_settings(env: dict[str, str] | None = None) -> Settings:
         ffmpeg=setting(source, "FFMPEG", "ffmpeg"),
         ffprobe=setting(source, "FFPROBE", "ffprobe"),
         whisper=setting(source, "WHISPER", "whisper"),
-        comfy_api_key=(
-            source.get("COMFY_API_KEY")
-            or setting(source, "COMFY_API_KEY")
-        ),
-        comfy_base_url=source.get("COMFY_BASE_URL"),
+        comfy_api_key=source.get("COMFY_API_KEY") or setting(source, "COMFY_API_KEY"),
+        comfy_base_url=source.get("COMFY_BASE_URL") or setting(source, "COMFY_BASE_URL"),
     )

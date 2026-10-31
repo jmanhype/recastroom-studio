@@ -17,15 +17,19 @@ class RendererReadiness:
     checked: bool
     code: str
     message: str
+    environment_variable: str | None = None
 
     def as_dict(self) -> dict[str, Any]:
-        return {
+        result = {
             "backend": self.backend,
             "ready": self.ready,
             "checked": self.checked,
             "code": self.code,
             "message": self.message,
         }
+        if self.environment_variable is not None:
+            result["environment_variable"] = self.environment_variable
+        return result
 
 
 def _legacy_not_ready(code: str, message: str) -> RendererReadiness:
@@ -106,6 +110,50 @@ def check_legacy_renderer(
     )
 
 
+def check_sdk_configuration(
+    api_key: str | None,
+    base_url: str | None,
+    asset_bridge: str | None,
+) -> RendererReadiness:
+    """Validate local hosted configuration without contacting the provider."""
+    resolved_key = (api_key or "").strip()
+    if not resolved_key:
+        return RendererReadiness(
+            backend="sdk",
+            ready=False,
+            checked=True,
+            code="missing_comfy_api_key",
+            message="A Comfy API deployment requires an API key; no key was supplied.",
+            environment_variable="COMFY_API_KEY",
+        )
+    resolved_base_url = (base_url or "").strip()
+    if not resolved_base_url:
+        return RendererReadiness(
+            backend="sdk",
+            ready=False,
+            checked=True,
+            code="missing_comfy_base_url",
+            message="A Comfy API deployment URL is required to avoid silently targeting Comfy Cloud.",
+            environment_variable="COMFY_BASE_URL",
+        )
+    if asset_bridge != "openjutsu-v1":
+        return RendererReadiness(
+            backend="sdk",
+            ready=False,
+            checked=True,
+            code="sdk_bridge_not_configured",
+            message="Set COMFY_SDK_ASSET_BRIDGE=openjutsu-v1 for a deployment containing the RecastRoom asset bridge.",
+            environment_variable="COMFY_SDK_ASSET_BRIDGE",
+        )
+    return RendererReadiness(
+        backend="sdk",
+        ready=True,
+        checked=False,
+        code="sdk_configuration_ready",
+        message="Hosted configuration is present. Provider reachability and model availability are not checked.",
+    )
+
+
 def _loopback_safe_get(*args: Any, **kwargs: Any) -> requests.Response:
     # The configured URL is the only intended target; ignore proxy environment
     # settings so a local readiness probe cannot be diverted.
@@ -132,13 +180,7 @@ def renderer_readiness(
             message="Preview mode is local only and performs no AI inference or renderer connection.",
         )
     if backend == "sdk":
-        return RendererReadiness(
-            backend=backend,
-            ready=False,
-            checked=False,
-            code="sdk_unchecked",
-        message="Hosted Comfy reachability is not checked by this local health endpoint.",
-        )
+        raise ValueError("call check_sdk_configuration for backend=sdk")
     return RendererReadiness(
         backend=backend,
         ready=False,

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from pathlib import Path
 import subprocess
 from types import SimpleNamespace
@@ -145,6 +146,11 @@ def test_dry_run_backend_completes_upload_to_review_artifacts(tmp_path, monkeypa
             assert "Preview complete" in status.json()["message"]
             assert "no AI inference" in status.json()["message"]
             assert status.json()["prompt_id"].startswith("dry-run-")
+            contract = payload["contract"]
+            assert contract["source"] == "synthetic_source.mp4"
+            assert contract["reference_1"] == "synthetic_reference.png"
+            assert contract["timing"]["input"] == "supplied"
+            assert "rights" in contract["timing"]["schedule"]
 
             job_dir = tmp_path / "jobs" / job_id
             assert (job_dir / "generated.mp4").read_bytes() == SOURCE.read_bytes()
@@ -169,6 +175,181 @@ def test_dry_run_backend_completes_upload_to_review_artifacts(tmp_path, monkeypa
         main.JOB_STATUS.update(original_status)
         main.JOB_LOCKS.clear()
         main.JOB_LOCKS.update(original_locks)
+
+
+def test_prepare_labels_omitted_word_timings_as_fallback_not_detection(tmp_path):
+    import app.main as main
+
+    original_settings = main.SETTINGS
+    original_status = main.JOB_STATUS.copy()
+    original_locks = main.JOB_LOCKS.copy()
+    configure_app(main, tmp_path, "dry_run")
+    try:
+        with TestClient(main.app) as client:
+            prepared = client.post(
+                "/api/prepare",
+                files={
+                    "source": (SOURCE.name, SOURCE.read_bytes(), "video/mp4"),
+                    "reference_1": (REFERENCE.name, REFERENCE.read_bytes(), "image/png"),
+                },
+                data={
+                    "identity": "Synthetic fixture performer",
+                    "seed": "50",
+                    "rights_attested": "true",
+                },
+            )
+            assert prepared.status_code == 200
+            timing = prepared.json()["contract"]["timing"]
+            assert timing["input"] == "omitted"
+            assert timing["status"] == "No word timings supplied; using fallback prompt"
+            assert timing["basis"] == "Default 24 fps fallback schedule"
+            assert "No speech detected" in timing["schedule"]
+            assert "detected silence" not in timing["status"]
+    finally:
+        main.SETTINGS = original_settings
+        main.JOB_STATUS.clear()
+        main.JOB_STATUS.update(original_status)
+        main.JOB_LOCKS.clear()
+        main.JOB_LOCKS.update(original_locks)
+
+
+def test_sdk_generated_artifact_moves_to_download_contract(tmp_path, monkeypatch):
+    import app.main as main
+
+    original_settings = main.SETTINGS
+    original_status = main.JOB_STATUS.copy()
+    original_locks = main.JOB_LOCKS.copy()
+    configure_app(main, tmp_path, "sdk")
+    main.SETTINGS = replace(
+        main.SETTINGS,
+        comfy_api_key="configuration-present",
+        comfy_base_url="https://deployment.example",
+    )
+
+    class Runner:
+        def __init__(self, **kwargs):
+            pass
+
+        def run_workflow(self, workflow, output_dir, **kwargs):
+            output = Path(output_dir) / "generated.mp4"
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_bytes(SOURCE.read_bytes())
+            return [output]
+
+    def fake_restore(generated, source, destination, ffmpeg=None):
+        destination.write_bytes(generated.read_bytes())
+
+    def fake_comparison(source, final, destination, ffmpeg=None):
+        destination.write_bytes(final.read_bytes())
+
+    monkeypatch.setattr(main, "ComfySdkRunner", Runner)
+    monkeypatch.setattr(main, "restore_source_audio", fake_restore)
+    monkeypatch.setattr(main, "make_side_by_side", fake_comparison)
+    try:
+        job_id = "sdk123456789"
+        job_dir = tmp_path / "jobs" / job_id
+        job_dir.mkdir(parents=True)
+        (job_dir / "job.json").write_text(
+            json.dumps(
+                {
+                    "source": str(SOURCE),
+                    "reference_1": str(REFERENCE),
+                    "rights_attested": True,
+                }
+            ),
+            encoding="utf-8",
+        )
+        (job_dir / "workflow.json").write_text("{}", encoding="utf-8")
+        with TestClient(main.app) as client:
+            main._run_sdk_job(job_id)
+            downloaded = client.get(f"/api/jobs/{job_id}/artifacts/generated")
+            assert downloaded.status_code == 200
+            assert downloaded.content == SOURCE.read_bytes()
+            assert (job_dir / "generated.mp4").read_bytes() == SOURCE.read_bytes()
+            assert main.JOB_STATUS[job_id]["artifacts"]["generated"] == "generated.mp4"
+    finally:
+        main.SETTINGS = original_settings
+        main.JOB_STATUS.clear()
+        main.JOB_STATUS.update(original_status)
+        main.JOB_LOCKS.clear()
+        main.JOB_LOCKS.update(original_locks)
+
+
+def test_sdk_submission_phase_blocks_unknown_retry_without_exposing_key(tmp_path):
+    import app.main as main
+
+    original_settings = main.SETTINGS
+    original_status = main.JOB_STATUS.copy()
+    original_locks = main.JOB_LOCKS.copy()
+    configure_app(main, tmp_path, "sdk")
+    main.SETTINGS = replace(
+        main.SETTINGS,
+        comfy_api_key="configuration-present",
+        comfy_base_url="https://deployment.example",
+    )
+    try:
+        job_id = "sdk987654321"
+        job_dir = tmp_path / "jobs" / job_id
+        sdk_dir = job_dir / "sdk_outputs"
+        sdk_dir.mkdir(parents=True)
+        (sdk_dir / "submission.json").write_text(
+            json.dumps(
+                {
+                    "key": "private-idempotency-key",
+                    "fingerprint": "unchanged",
+                    "endpoint": "unchanged",
+                    "phase": "submitting",
+                    "job_id": None,
+                }
+            ),
+            encoding="utf-8",
+        )
+        with TestClient(main.app) as client:
+            refused = client.post(f"/api/jobs/{job_id}/run")
+
+        assert refused.status_code == 409
+        assert refused.json()["detail"]["code"] == "SDK_SUBMISSION_OUTCOME_UNKNOWN"
+        assert refused.json()["detail"]["sdk_phase"] == "submitting"
+        assert refused.json()["detail"]["provider_job_id"] is None
+        assert "private-idempotency-key" not in refused.text
+        assert not (job_dir / "status.json").exists()
+    finally:
+        main.SETTINGS = original_settings
+        main.JOB_STATUS.clear()
+        main.JOB_STATUS.update(original_status)
+        main.JOB_LOCKS.clear()
+        main.JOB_LOCKS.update(original_locks)
+
+
+def test_sdk_submission_projection_sanitizes_durable_state(tmp_path):
+    import app.main as main
+
+    job_dir = tmp_path / "jobs" / "sdk987654322"
+    sdk_dir = job_dir / "sdk_outputs"
+    sdk_dir.mkdir(parents=True)
+    private_state = {
+        "key": "private-idempotency-key",
+        "fingerprint": "private-input-fingerprint",
+        "endpoint": "private-endpoint-fingerprint",
+        "phase": "submitted",
+        "job_id": "provider-job-123",
+    }
+    (sdk_dir / "submission.json").write_text(json.dumps(private_state), encoding="utf-8")
+
+    projected = main._sdk_submission_projection(job_dir)
+
+    assert projected == {
+        "sdk_phase": "submitted",
+        "provider_job_id": "provider-job-123",
+        "retry": "resume",
+    }
+
+    (sdk_dir / "submission.json").write_text("[]", encoding="utf-8")
+    invalid = main._sdk_submission_projection(job_dir)
+    assert invalid["sdk_phase"] == "invalid"
+    assert invalid["provider_job_id"] is None
+    assert invalid["retry"] == "blocked"
+    assert "private-idempotency-key" not in json.dumps(invalid)
 
 
 def test_custom_recastroom_compatible_workflow_replaces_default_template(tmp_path, monkeypatch):
@@ -215,7 +396,7 @@ def test_custom_recastroom_compatible_workflow_replaces_default_template(tmp_pat
         main.JOB_LOCKS.update(original_locks)
 
 
-def test_sdk_backend_without_credentials_fails_closed_in_status(tmp_path, monkeypatch):
+def test_sdk_backend_without_credentials_fails_closed_before_queueing(tmp_path, monkeypatch):
     import app.main as main
 
     original_settings = main.SETTINGS
@@ -237,11 +418,10 @@ def test_sdk_backend_without_credentials_fails_closed_in_status(tmp_path, monkey
                 },
             )
             job_id = prepared.json()["job_id"]
-            assert client.post(f"/api/jobs/{job_id}/run").status_code == 200
-            status = client.get(f"/api/jobs/{job_id}/status").json()
-            assert status["state"] == "error"
-            assert status["backend"] == "sdk"
-            assert status["error"]["error"]["code"] == "missing_comfy_api_key"
+            refused = client.post(f"/api/jobs/{job_id}/run")
+            assert refused.status_code == 503
+            assert refused.json()["detail"]["error"]["code"] == "missing_comfy_api_key"
+            assert not (tmp_path / "jobs" / job_id / "status.json").exists()
     finally:
         main.SETTINGS = original_settings
         main.JOB_STATUS.clear()
@@ -270,6 +450,13 @@ def test_tampered_attestation_blocks_every_backend(
     monkeypatch.delenv("OPENJUTSU_COMFY_API_KEY", raising=False)
     monkeypatch.delenv("COMFY_BASE_URL", raising=False)
     configure_app(main, tmp_path, backend)
+    if backend == "sdk":
+        monkeypatch.setenv("COMFY_SDK_ASSET_BRIDGE", "openjutsu-v1")
+        main.SETTINGS = replace(
+            main.SETTINGS,
+            comfy_api_key="configuration-present",
+            comfy_base_url="https://deployment.example",
+        )
     if backend == "legacy":
         monkeypatch.setattr(
             main,
