@@ -273,9 +273,9 @@ def test_landing_leads_with_workflow_and_scopes_audio_proof(studio):
 
     assert "Keep the performance, camera, timing, and original dialogue" in home.text
     assert "Discovery metadata does not bypass the permission checkpoint." in home.text
-    assert "From original shot to final export" in landing.text
+    assert "From source shot to reviewed export" in landing.text
     assert "Advanced project tools record source cuts, take selections, and export checks" in landing.text
-    assert "23.8-second public example" in landing.text
+    assert "23.8-second recorded example" in landing.text
     assert "Shot / take / export" in landing.text
     assert "review output restores the original source audio" in landing.text
     assert "advanced exports follow the selected audio policy" in landing.text
